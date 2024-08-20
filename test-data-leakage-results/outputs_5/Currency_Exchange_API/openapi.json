@@ -1,0 +1,3105 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Currency Exchange API",
+        "description": "**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid query parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.<br><br>**Be Reassured** - The tool *RESTSpecIT* has been thouroughly tested on various APIs, demonstrating an average GET route discovery rate of 85.05% and query parameter discovery rate of 81.05%. Additionally, the tool is capable of discovering undocumented and valid routes and query parameters of APIs.<br><br>**API Description** - The Currency Exchange API allows users to retrieve real-time exchange rates for different currencies.",
+        "termsOfService": "",
+        "contact": {
+            "name": "Currency Exchange API Contact",
+            "url": "",
+            "email": "support@currencyexchangeapi.com"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://api.exchangerate-api.com",
+            "description": "Production Server of the Currency Exchange API.",
+            "x-base-routes": 0
+        }
+    ],
+    "externalDocs": {
+        "url": "https://www.currencyconverterapi.com/docs",
+        "description": "Find more about the Currency Exchange API here:"
+    },
+    "paths": {
+        "": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/latest": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbols",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR,GBP": {
+                                "value": "EUR,GBP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-10-15": {
+                                "value": "2021-10-15"
+                            }
+                        }
+                    },
+                    {
+                        "name": "show_alternative_rates",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exclude",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "JPY": {
+                                "value": "JPY"
+                            }
+                        }
+                    },
+                    {
+                        "name": "show_historical_data",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "timeframe",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1hour": {
+                                "value": "1hour"
+                            }
+                        }
+                    },
+                    {
+                        "name": "currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "CHF": {
+                                "value": "CHF"
+                            }
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "fr": {
+                                "value": "fr"
+                            }
+                        }
+                    },
+                    {
+                        "name": "show_inverted_rates",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "json": {
+                                "value": "json"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_latest"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/convert": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-10-15": {
+                                "value": "2021-10-15"
+                            },
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "base_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "GBP": {
+                                "value": "GBP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "target_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "JPY": {
+                                "value": "JPY"
+                            }
+                        }
+                    },
+                    {
+                        "name": "source",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "bank": {
+                                "value": "bank"
+                            }
+                        }
+                    },
+                    {
+                        "name": "mode",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "live": {
+                                "value": "live"
+                            },
+                            "fast": {
+                                "value": "fast"
+                            }
+                        }
+                    },
+                    {
+                        "name": "api_key",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "123456789": {
+                                "value": "123456789"
+                            }
+                        }
+                    },
+                    {
+                        "name": "locale",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en_US": {
+                                "value": "en_US"
+                            }
+                        }
+                    },
+                    {
+                        "name": "time",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "12:00": {
+                                "value": "12:00"
+                            }
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "buy": {
+                                "value": "buy"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fee",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "0.5": {
+                                "value": "0.5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "UK": {
+                                "value": "UK"
+                            }
+                        }
+                    },
+                    {
+                        "name": "bank",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "HSBC": {
+                                "value": "HSBC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "account",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1234567890": {
+                                "value": "1234567890"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_convert"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/historical": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-10-15": {
+                                "value": "2021-10-15"
+                            },
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            },
+                            "2021-01-01": {
+                                "value": "2021-01-01"
+                            },
+                            "2021-10-20": {
+                                "value": "2021-10-20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbols",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "from_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "GBP": {
+                                "value": "GBP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "JPY": {
+                                "value": "JPY"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-01-01": {
+                                "value": "2021-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "end_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-01-31": {
+                                "value": "2021-01-31"
+                            },
+                            "2021-12-31": {
+                                "value": "2021-12-31"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interval",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "daily": {
+                                "value": "daily"
+                            },
+                            "monthly": {
+                                "value": "monthly"
+                            }
+                        }
+                    },
+                    {
+                        "name": "timeframe",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1M": {
+                                "value": "1M"
+                            }
+                        }
+                    },
+                    {
+                        "name": "base_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "target_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exchange_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "buy": {
+                                "value": "buy"
+                            }
+                        }
+                    },
+                    {
+                        "name": "location",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "US": {
+                                "value": "US"
+                            }
+                        }
+                    },
+                    {
+                        "name": "apikey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "123456789": {
+                                "value": "123456789"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_historical"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rates": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_rates"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/currencies": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_currencies"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/chart": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbols",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-01-01": {
+                                "value": "2021-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "end_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-12-31": {
+                                "value": "2021-12-31"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interval",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1day": {
+                                "value": "1day"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "line": {
+                                "value": "line"
+                            }
+                        }
+                    },
+                    {
+                        "name": "chart_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "bar": {
+                                "value": "bar"
+                            }
+                        }
+                    },
+                    {
+                        "name": "show_legend",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "theme",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "dark": {
+                                "value": "dark"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_chart"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/calculator": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "target",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "from_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "GBP": {
+                                "value": "GBP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "JPY": {
+                                "value": "JPY"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "$": {
+                                "value": "$"
+                            }
+                        }
+                    },
+                    {
+                        "name": "apikey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "123456": {
+                                "value": "123456"
+                            }
+                        }
+                    },
+                    {
+                        "name": "convert",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "precision",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_calculator"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/news": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_news"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forecast": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_forecast"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/comparison": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_comparison"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{id}": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "ID path parameter for the /{id} route.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "target",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "from",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "GBP": {
+                                "value": "GBP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "JPY": {
+                                "value": "JPY"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "$": {
+                                "value": "$"
+                            }
+                        }
+                    },
+                    {
+                        "name": "convert",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rate",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "0.5": {
+                                "value": "0.5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "history",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_id"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/exchange_rates": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            },
+                            "GBP": {
+                                "value": "GBP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbols",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "from",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "quote",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "JPY": {
+                                "value": "JPY"
+                            }
+                        }
+                    },
+                    {
+                        "name": "currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "CAD": {
+                                "value": "CAD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_exchange_rates"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/convert_currency": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "base_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "target_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-10-15": {
+                                "value": "2021-10-15"
+                            }
+                        }
+                    },
+                    {
+                        "name": "api_key",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "123456789": {
+                                "value": "123456789"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exchange_rate",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "1.5": {
+                                "value": "1.5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "json": {
+                                "value": "json"
+                            }
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en": {
+                                "value": "en"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "US": {
+                                "value": "US"
+                            }
+                        }
+                    },
+                    {
+                        "name": "time",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "12:00": {
+                                "value": "12:00"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_convert_currency"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/historical_data": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-01-15": {
+                                "value": "2021-01-15"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-01-01": {
+                                "value": "2021-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "end_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-12-31": {
+                                "value": "2021-12-31"
+                            }
+                        }
+                    },
+                    {
+                        "name": "base_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "target_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_historical_data"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/supported_currencies": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_supported_currencies"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/calculate_fee": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_calculate_fee"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/nearest_exchange_location": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_nearest_exchange_location"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/currency_trends": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_currency_trends"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/exchange_rate_prediction": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_exchange_rate_prediction"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/currency_converter": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_currency_converter"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/currency_comparison": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_currency_comparison"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/exchange_rate": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "target_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_exchange_rate"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/latest_rates": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            },
+                            "CAD": {
+                                "value": "CAD"
+                            },
+                            "GBP": {
+                                "value": "GBP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbols",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR,GBP": {
+                                "value": "EUR,GBP"
+                            },
+                            "JPY": {
+                                "value": "JPY"
+                            },
+                            "USD,AUD": {
+                                "value": "USD,AUD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            },
+                            "50": {
+                                "value": "50"
+                            },
+                            "200": {
+                                "value": "200"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-10-15": {
+                                "value": "2022-10-15"
+                            },
+                            "2022-12-25": {
+                                "value": "2022-12-25"
+                            },
+                            "2023-01-01": {
+                                "value": "2023-01-01"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_latest_rates"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/exchange_history": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_exchange_history"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/currency_pairs": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "target",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-05-15": {
+                                "value": "2022-05-15"
+                            }
+                        }
+                    },
+                    {
+                        "name": "source",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "bank": {
+                                "value": "bank"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interval",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "daily": {
+                                "value": "daily"
+                            }
+                        }
+                    },
+                    {
+                        "name": "apikey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "123456789": {
+                                "value": "123456789"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "$": {
+                                "value": "$"
+                            }
+                        }
+                    },
+                    {
+                        "name": "locale",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en_US": {
+                                "value": "en_US"
+                            }
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "json": {
+                                "value": "json"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_currency_pairs"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/compare_rates": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_compare_rates"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rate_trend": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_rate_trend"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/list": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_list"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/compare": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_compare"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/predictions": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_predictions"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/countries": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_countries"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/timeframe": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_timeframe"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/calculate": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_calculate"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/statistics": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbols",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "from",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-01-01": {
+                                "value": "2021-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-12-31": {
+                                "value": "2021-12-31"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interval",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "monthly": {
+                                "value": "monthly"
+                            }
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "average": {
+                                "value": "average"
+                            }
+                        }
+                    },
+                    {
+                        "name": "order",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "desc": {
+                                "value": "desc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_statistics"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404 Not Found</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema": {},
+            "ResponseSchema_latest": {},
+            "ResponseSchema_convert": {},
+            "ResponseSchema_historical": {},
+            "ResponseSchema_rates": {},
+            "ResponseSchema_currencies": {},
+            "ResponseSchema_chart": {},
+            "ResponseSchema_calculator": {},
+            "ResponseSchema_news": {},
+            "ResponseSchema_forecast": {},
+            "ResponseSchema_comparison": {},
+            "ResponseSchema_id": {},
+            "ResponseSchema_exchange_rates": {},
+            "ResponseSchema_convert_currency": {},
+            "ResponseSchema_historical_data": {},
+            "ResponseSchema_supported_currencies": {},
+            "ResponseSchema_calculate_fee": {},
+            "ResponseSchema_nearest_exchange_location": {},
+            "ResponseSchema_currency_trends": {},
+            "ResponseSchema_exchange_rate_prediction": {},
+            "ResponseSchema_currency_converter": {},
+            "ResponseSchema_currency_comparison": {},
+            "ResponseSchema_exchange_rate": {},
+            "ResponseSchema_latest_rates": {},
+            "ResponseSchema_exchange_history": {},
+            "ResponseSchema_currency_pairs": {},
+            "ResponseSchema_compare_rates": {},
+            "ResponseSchema_rate_trend": {},
+            "ResponseSchema_list": {},
+            "ResponseSchema_compare": {},
+            "ResponseSchema_predictions": {},
+            "ResponseSchema_countries": {},
+            "ResponseSchema_timeframe": {},
+            "ResponseSchema_calculate": {},
+            "ResponseSchema_statistics": {}
+        }
+    }
+}

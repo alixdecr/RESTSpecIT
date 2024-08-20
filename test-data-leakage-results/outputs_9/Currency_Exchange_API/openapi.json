@@ -1,0 +1,2415 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Currency Exchange API",
+        "description": "**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid query parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.<br><br>**Be Reassured** - The tool *RESTSpecIT* has been thouroughly tested on various APIs, demonstrating an average GET route discovery rate of 85.05% and query parameter discovery rate of 81.05%. Additionally, the tool is capable of discovering undocumented and valid routes and query parameters of APIs.<br><br>**API Description** - The Currency Exchange API is a tool that allows users to convert one currency to another at real-time exchange rates.",
+        "termsOfService": "",
+        "contact": {
+            "name": "Currency Exchange API Contact",
+            "url": "",
+            "email": "contact@currencyexchangeapi.com"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://api.exchangeratesapi.io",
+            "description": "Production Server of the Currency Exchange API.",
+            "x-base-routes": 0
+        }
+    ],
+    "externalDocs": {
+        "url": "https://www.exchangerate-api.com/docs",
+        "description": "Find more about the Currency Exchange API here:"
+    },
+    "paths": {
+        "": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/latest": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbols",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR,GBP": {
+                                "value": "EUR,GBP"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_latest"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/historical": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-10-15": {
+                                "value": "2021-10-15"
+                            },
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            },
+                            "2021-05-15": {
+                                "value": "2021-05-15"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_historical"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/convert": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "target",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "AUD": {
+                                "value": "AUD"
+                            },
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-10-01": {
+                                "value": "2021-10-01"
+                            },
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "from_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "GBP": {
+                                "value": "GBP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rate",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "1.5": {
+                                "value": "1.5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "$": {
+                                "value": "$"
+                            }
+                        }
+                    },
+                    {
+                        "name": "precision",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "locale",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en_US": {
+                                "value": "en_US"
+                            }
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "json": {
+                                "value": "json"
+                            }
+                        }
+                    },
+                    {
+                        "name": "api_key",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1234567890": {
+                                "value": "1234567890"
+                            }
+                        }
+                    },
+                    {
+                        "name": "source",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "bank": {
+                                "value": "bank"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_convert"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rates": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbols",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-10-15": {
+                                "value": "2021-10-15"
+                            },
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "from_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "GBP": {
+                                "value": "GBP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "CAD": {
+                                "value": "CAD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "json": {
+                                "value": "json"
+                            }
+                        }
+                    },
+                    {
+                        "name": "show",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "bid": {
+                                "value": "bid"
+                            },
+                            "full": {
+                                "value": "full"
+                            }
+                        }
+                    },
+                    {
+                        "name": "hide",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "ask": {
+                                "value": "ask"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            },
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "from",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "GBP": {
+                                "value": "GBP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "JPY": {
+                                "value": "JPY"
+                            }
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "buy": {
+                                "value": "buy"
+                            }
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_rates"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/symbols": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_symbols"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/timeseries": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_timeseries"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/list": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbols",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "from",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "GBP": {
+                                "value": "GBP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "CAD": {
+                                "value": "CAD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "source",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "API": {
+                                "value": "API"
+                            }
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "json": {
+                                "value": "json"
+                            }
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en": {
+                                "value": "en"
+                            }
+                        }
+                    },
+                    {
+                        "name": "timeframe",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1d": {
+                                "value": "1d"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_list"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/chart": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbols",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "end_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-12-31": {
+                                "value": "2022-12-31"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interval",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "daily": {
+                                "value": "daily"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1000": {
+                                "value": "1000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "from_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "GBP": {
+                                "value": "GBP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to_currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "JPY": {
+                                "value": "JPY"
+                            }
+                        }
+                    },
+                    {
+                        "name": "timeframe",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1hour": {
+                                "value": "1hour"
+                            }
+                        }
+                    },
+                    {
+                        "name": "chart_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "line": {
+                                "value": "line"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_chart"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/calculator": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_calculator"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/news": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbols",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-07-15": {
+                                "value": "2021-07-15"
+                            }
+                        }
+                    },
+                    {
+                        "name": "from",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "GBP": {
+                                "value": "GBP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "CAD": {
+                                "value": "CAD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "source",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Bloomberg": {
+                                "value": "Bloomberg"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "date": {
+                                "value": "date"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "forex": {
+                                "value": "forex"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_news"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{id}": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "ID path parameter for the /{id} route.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "target",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbols",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "GBP": {
+                                "value": "GBP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "from",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rate",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "1.5": {
+                                "value": "1.5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "currency",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "JPY": {
+                                "value": "JPY"
+                            }
+                        }
+                    },
+                    {
+                        "name": "conversion",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_id"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/exchange": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "target",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_exchange"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rate": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "target",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_rate"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/history": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_history"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/compare": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_compare"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forecast": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_forecast"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/currencies": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_currencies"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/live": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_live"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/info": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "target",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-05-20": {
+                                "value": "2021-05-20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "from",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "GBP": {
+                                "value": "GBP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "JPY": {
+                                "value": "JPY"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rate",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "1.5": {
+                                "value": "1.5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "United+States": {
+                                "value": "United+States"
+                            }
+                        }
+                    },
+                    {
+                        "name": "apiKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "abc123": {
+                                "value": "abc123"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_info"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/exchanges": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_exchanges"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/analysis": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_analysis"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/comparison": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbols",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "amount",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "from_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-01-01": {
+                                "value": "2021-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "to_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-01-31": {
+                                "value": "2021-01-31"
+                            }
+                        }
+                    },
+                    {
+                        "name": "provider",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "ECB": {
+                                "value": "ECB"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interval",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "daily": {
+                                "value": "daily"
+                            }
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "historical": {
+                                "value": "historical"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "asc": {
+                                "value": "asc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "show_chart",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_comparison"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json; Charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "success": false,
+                                    "error": {
+                                        "code": 101,
+                                        "type": "missing_access_key",
+                                        "info": "You have not supplied an API Access Key. [Required format: access_key=YOUR_ACCESS_KEY]"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "object"
+                    },
+                    "error": {
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "success",
+                    "error"
+                ]
+            },
+            "ResponseSchema": {},
+            "ResponseSchema_latest": {},
+            "ResponseSchema_historical": {},
+            "ResponseSchema_convert": {},
+            "ResponseSchema_rates": {},
+            "ResponseSchema_symbols": {},
+            "ResponseSchema_timeseries": {},
+            "ResponseSchema_list": {},
+            "ResponseSchema_chart": {},
+            "ResponseSchema_calculator": {},
+            "ResponseSchema_news": {},
+            "ResponseSchema_id": {},
+            "ResponseSchema_exchange": {},
+            "ResponseSchema_rate": {},
+            "ResponseSchema_history": {},
+            "ResponseSchema_compare": {},
+            "ResponseSchema_forecast": {},
+            "ResponseSchema_currencies": {},
+            "ResponseSchema_live": {},
+            "ResponseSchema_info": {},
+            "ResponseSchema_exchanges": {},
+            "ResponseSchema_analysis": {},
+            "ResponseSchema_comparison": {}
+        }
+    }
+}

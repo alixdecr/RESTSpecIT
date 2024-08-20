@@ -1,0 +1,1022 @@
+
+Generation-1: Rendering Sequence-1
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 01f0186d60c27804d3e2dcdcb4854dc52941cf91
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'descriptions'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [popularity, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'language='
+		+ restler_fuzzable_string: [en, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'source='
+		+ restler_fuzzable_string: [Smithsonian, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [5, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: [2021, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'taxonKey='
+		+ restler_fuzzable_int: [12345, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: [plant, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: [abc123, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: [es, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsageMatch='
+		+ restler_fuzzable_string: [exact, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:37.964: Sending: 'GET /v1/species/1/descriptions?sort=popularity&language=en&source=Smithsonian&limit=5&offset=10&year=2021&taxonKey=12345&q=plant&datasetKey=abc123&locale=es&nameUsageMatch=exact HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: d74fafd0-6f7a-4550-9f35-aa6e6ced271a\r\n\r\n'
+
+2023-11-30 11:58:38.136: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:37 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 983403292\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nContent-Length: 6302\r\nConnection: keep-alive\r\n\r\n{"offset":10,"limit":5,"endOfRecords":false,"results":[{"key":171162289,"taxonKey":1,"type":"description","language":"eng","description":"DESCRIPTION Measures (mm): maximum width (w) of osteoderms ranges between 1.1 and 3.9 mm. The osteoderms, when complete, are oval, suboval or subrectangular elements with more or less irregular margins. Gliding surfaces are absent. All bear a prominent medial keel that extends the full length of the osteoderm. A slight concavity on the underside of some osteoderms reflects the form of the keel. From the keel a pattern of deep pits or grooves and marked ridges radiates. The dorsal surface of most osteoderms is flat but a few have a rather strongly vaulted shape which certainly reflect different positions on the body.","source":"The lizard (Reptilia, Squamata) assemblage from the Paleocene of Montchenot (Paris Basin, MP 6)","sourceTaxonKey":189796616},{"key":171162290,"taxonKey":1,"type":"discussion","language":"eng","description":"COMPARISONS AND DISCUSSION Some characters are traditionally used to separate anguimorph taxa (and more specifically anguid genera) by their osteoderms (Hoffstetter 1962 a; Meszoely 1970; Bochaton et al. 2015, 2016), including the presence of a gliding surface and of a keel. For example, Gauthier (1982) considered keeled body osteoderms to be the plesiomorphic state for Anguimorpha. Referral of the osteoderms from Montchenot to Pan - Shinisaurus (sensu Smith & Gauthier 2013) follows from the combination of the features described above. These osteoderms are similar in shape to those of other fossil pan-shinisaurs, particularly Provaranosaurus fatuus Smith & Gauthier, 2013 (Smith & Gauthier 2013, early Eocene of the Wasatch Formation, Wyoming, United States), Merkurosaurus ornatus Klembara, 2008 (Klembara 2008, early Miocene, Orleanian, MN 3, Bohemia) and an indeterminate pan-shinisaur from Messel (Smith 2017, middle Eocene, Germany). Crocodile-tailed lizards (Chinese crocodile lizard) or shinisaurs are represented by a single living species, Shinisaurus crocodilurus Ahl, 1930. It is worth noting that similar osteoderms have already been reported in the European Paleocene and early Eocene, in particular in the localities of Cernay (MP 6, Hoffstetter 1943), Dormaal and Le Quesnoy (early Eocene, MP 7, Hecht & Hoffstetter 1962; Augé 1990) and perhaps at Rivecourt- Petit Pâtis (Smith et al. 2014). Hecht & Hoffstetter (1962) and Augé (2005) suggested that these osteoderms could be attributed to the genus Necrosaurus as they are also similar to those of Palaeovaranus cayluxi (Ex Necrosaurus), see figs. in Rage 1978; Estes 1983; Augé & Smith 2009; Klembara & Green 2010. However, the taxonomic status and phylogenetic affinities of these lizards are a complex matter. Georgalis (2017) pointed out that the name Necrosaurus, as established by Filhol (1876) is a nomina nuda and that Zittel (1887 - 1890) was the first author to make the name Palaeovaranus cayluxi available. The phylogenetic affinities of Palaeovaranus are a moot point: briefly, McDowell & Bogert (1954) noted significant morphological differences between Palaeovaranus and members of the Platynota (sensu Pregill et al. 1986) and they referred it to xenosaurid lizards, an option first adopted by Hoffstetter (1954). Later this author returned Palaeovaranus to the Platynota (Hoffstetter 1962 b). Lee (1997) rejected this taxon as paraphyletic. The phylogenetic position of Palaeovaranus is still a matter of discussion, although several derived characters suggest Platynotan relationships (see discussion in Smith 2017). In contrast, the attribution of Provaranosaurus fatuus and specimen SMF ME 11403 (an autotomized tail) from Messel to pan-shinisaur is a settled matter as they show no Platynotan derived characters (Smith & Gauthier 2013; Smith 2017). The fossils from Dormaal (osteoderms, vertebrae and an undescribed dentary) previously attributed to Necrosaurus (Palaeovaranus) show no Platynotan features and are nearly identical to the material of Provaranosaurus fatuus described by Smith & Gauthier 2013. In particular, Provaranosaurus has both rectangular and oval osteoderms, as in the material from Monchenot, while Palaeovaranus bears only ovoid osteoderms. On the basis of these resemblances, the osteoderms from Monchenot may be referred to pan- Shinisaurus and the presence of rectangular osteoderms seems to exclude an attribution to Palaeovaranus.","source":"The lizard (Reptilia, Squamata) assemblage from the Paleocene of Montchenot (Paris Basin, MP 6)","sourceTaxonKey":189796616},{"key":171162291,"taxonKey":1,"type":"materials_examined","language":"eng","description":"MATERIAL EXAMINED. — MNHN. F. MTC 240 - MTC 242, MTC 243, nearly fifty osteoderms, a few complete, most more or less severely damaged by digestive processes or post-burial damages (Fig. 9).","source":"The lizard (Reptilia, Squamata) assemblage from the Paleocene of Montchenot (Paris Basin, MP 6)","sourceTaxonKey":189796616},{"key":171183016,"taxonKey":1,"type":"description","language":"eng","description":"Description The specimen is a 20 mm long, nearly tubular fragment of a phragmocone with a circular conch cross section, 20 mm in diameter. Eight chambers occur in the length of the fragment and the sutures are straight and directly transverse. The conch surface is poorly preserved but was apparently smooth. The chambers are internally imploded and crushed, preserving only a small part of the siphuncle. This is 7 mm in diameter and positioned between the conch center and conch margin at a distance of ca 4 mm from the conch margin. The septal necks are orthochoanitic and 0.7 mm long, where the septal distance is 3 mm. The connecting ring is relatively thin compared to the septa and septal necks and concave on the dorsal side (the side directed toward the conch center), but convex on the ventral side.","source":"Early-Middle Ordovician cephalopods from Ny Friesland, Spitsbergen - a pelagic fauna with Laurentian affinities","sourceTaxonKey":191693571},{"key":171183017,"taxonKey":1,"type":"description","language":"eng","description":"Figs 9 C, 31 A – B, 32 B","source":"Early-Middle Ordovician cephalopods from Ny Friesland, Spitsbergen - a pelagic fauna with Laurentian affinities","sourceTaxonKey":191693571}]}'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 14bbe474dd30f1f2240412c33427f86425acba1f
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'synonyms'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: [plant, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: [species, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameType='
+		+ restler_fuzzable_string: [scientific, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: [2010, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: [d7dddbf4-2cf0-4f39-9b2a-bb099caae36c, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: [fr, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameStatus='
+		+ restler_fuzzable_string: [accepted, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'taxonKey='
+		+ restler_fuzzable_int: [12345, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsageMatch='
+		+ restler_fuzzable_string: [exact, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:38.230: Sending: 'GET /v1/species/1/synonyms?sort=%7B+%22fuzz%22%3A+false+%7D&limit=10&offset=10&q=plant&rank=species&nameType=scientific&year=2010&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c&locale=fr&nameStatus=accepted&taxonKey=12345&nameUsageMatch=exact HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 082300c5-f1a0-46ed-91ab-8ad285a35e1b\r\n\r\n'
+
+2023-11-30 11:58:38.278: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:37 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 1035046888\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nContent-Length: 57\r\nConnection: keep-alive\r\n\r\n{"offset":10,"limit":10,"endOfRecords":true,"results":[]}'
+
+
+Generation-1: Rendering Sequence-3
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 23184359c17727d5c8a1089ae5c27d633275c09a
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'children'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: [species, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'status='
+		+ restler_fuzzable_string: [accepted, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameType='
+		+ restler_fuzzable_string: [scientific, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsage='
+		+ restler_fuzzable_string: [accepted, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: [Canis%20lupus, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: [2000, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: [50c9509d-22c7-4a22-a47d-8c48425ef4a7, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'higherTaxonKey='
+		+ restler_fuzzable_int: [6, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameStatus='
+		+ restler_fuzzable_string: [SYNONYM, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameField='
+		+ restler_fuzzable_string: [canonical, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'language='
+		+ restler_fuzzable_string: [en, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsageMatch='
+		+ restler_fuzzable_string: [exact, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'parentKey='
+		+ restler_fuzzable_int: [89, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'strict='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'fields='
+		+ restler_fuzzable_string: [name,rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:38.388: Sending: 'GET /v1/species/1/children?sort=%7B+%22fuzz%22%3A+false+%7D&limit=10&offset=10&rank=species&status=accepted&nameType=scientific&nameUsage=accepted&name=Canis%2520lupus&year=2000&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&higherTaxonKey=6&nameStatus=SYNONYM&nameField=canonical&language=en&nameUsageMatch=exact&parentKey=89&strict=true&fields=name%2Crank HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 3f2b6038-db29-40d3-8324-987c40e6df78\r\n\r\n'
+
+2023-11-30 11:58:38.986: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:38 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 1001458242\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nContent-Length: 7393\r\nConnection: keep-alive\r\n\r\n{"offset":10,"limit":10,"endOfRecords":false,"results":[{"key":7663989,"nubKey":7663989,"nameKey":3511104,"taxonID":"gbif:7663989","sourceTaxonKey":174784920,"kingdom":"Animalia","phylum":"Dicyemida","kingdomKey":1,"phylumKey":7663989,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":1,"parent":"Animalia","scientificName":"Dicyemida","canonicalName":"Dicyemida","vernacularName":"dicyemids","authorship":"","nameType":"SCIENTIFIC","rank":"PHYLUM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":177,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:52:31.049+00:00","issues":[]},{"key":50,"nubKey":50,"nameKey":3808507,"taxonID":"gbif:50","sourceTaxonKey":174532378,"kingdom":"Animalia","phylum":"Echinodermata","kingdomKey":1,"phylumKey":50,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":1,"parent":"Animalia","scientificName":"Echinodermata","canonicalName":"Echinodermata","vernacularName":"Echinoderms","authorship":"","nameType":"SCIENTIFIC","rank":"PHYLUM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":28370,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:52:11.082+00:00","issues":[]},{"key":8173593,"nubKey":8173593,"nameKey":3985296,"taxonID":"gbif:8173593","sourceTaxonKey":211953123,"kingdom":"Animalia","phylum":"Entoprocta","kingdomKey":1,"phylumKey":8173593,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":1,"parent":"Animalia","scientificName":"Entoprocta","canonicalName":"Entoprocta","vernacularName":"entoprocts","authorship":"","nameType":"SCIENTIFIC","rank":"PHYLUM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":250,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:52:10.520+00:00","issues":[]},{"key":22,"nubKey":22,"nameKey":4614232,"taxonID":"gbif:22","sourceTaxonKey":210593997,"kingdom":"Animalia","phylum":"Gastrotricha","kingdomKey":1,"phylumKey":22,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":1,"parent":"Animalia","scientificName":"Gastrotricha","canonicalName":"Gastrotricha","vernacularName":"gastrotrichs","authorship":"","nameType":"SCIENTIFIC","rank":"PHYLUM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":1265,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:52:10.271+00:00","issues":[]},{"key":77,"nubKey":77,"nameKey":4761448,"taxonID":"gbif:77","sourceTaxonKey":210593995,"kingdom":"Animalia","phylum":"Gnathostomulida","kingdomKey":1,"phylumKey":77,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":1,"parent":"Animalia","scientificName":"Gnathostomulida","canonicalName":"Gnathostomulida","vernacularName":"gnathostomulids","authorship":"","nameType":"SCIENTIFIC","rank":"PHYLUM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":153,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:13:21.780+00:00","issues":[]},{"key":75,"nubKey":75,"nameKey":5106389,"taxonID":"gbif:75","sourceTaxonKey":198559179,"kingdom":"Animalia","phylum":"Hemichordata","kingdomKey":1,"phylumKey":75,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":1,"parent":"Animalia","scientificName":"Hemichordata","canonicalName":"Hemichordata","vernacularName":"acorn worm","authorship":"","nameType":"SCIENTIFIC","rank":"PHYLUM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":1537,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:52:31.240+00:00","issues":[]},{"key":5959089,"nubKey":5959089,"nameKey":5872049,"taxonID":"gbif:5959089","sourceTaxonKey":210593991,"kingdom":"Animalia","phylum":"Kinorhyncha","kingdomKey":1,"phylumKey":5959089,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":1,"parent":"Animalia","scientificName":"Kinorhyncha","canonicalName":"Kinorhyncha","vernacularName":"kinorhynchs","authorship":"","nameType":"SCIENTIFIC","rank":"PHYLUM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","publishedIn":"Reinhard, W. (1885). Kinorhyncha (Echinoderes), leur structure anatomique et leur place dans le système. Travaux De La Société Des Naturalistes À l’Université Impériale De Kharkow, 19: 205–305, pls. VIII–XII. [in Russian]. https://www.marinespecies.org/kinorhyncha/aphia.php?p=sourcedetails&id=167942","numDescendants":498,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:51:51.137+00:00","issues":[]},{"key":5967457,"nubKey":5967457,"nameKey":6475155,"taxonID":"gbif:5967457","sourceTaxonKey":210593936,"kingdom":"Animalia","phylum":"Loricifera","kingdomKey":1,"phylumKey":5967457,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":1,"parent":"Animalia","scientificName":"Loricifera","canonicalName":"Loricifera","vernacularName":"loriciferans","authorship":"","nameType":"SCIENTIFIC","rank":"PHYLUM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","publishedIn":"Kristensen, R. M. (1983). Loricifera, A New Phylum with Aschelminthes Characters from the Meiobenthos. Zeitschrift Fur Zoologische Systematik Und Evolutionsforschung, 21: 163–180. https://www.marinespecies.org/aphia.php?p=sourcedetails&id=227946","numDescendants":66,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:51:51.335+00:00","issues":[]},{"key":5967454,"nubKey":5967454,"nameKey":7011668,"taxonID":"gbif:5967454","sourceTaxonKey":174772014,"kingdom":"Animalia","phylum":"Micrognathozoa","kingdomKey":1,"phylumKey":5967454,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"7ddf754f-d193-4cc9-b351-99906754a03b","parentKey":1,"parent":"Animalia","scientificName":"Micrognathozoa","canonicalName":"Micrognathozoa","authorship":"","nameType":"SCIENTIFIC","rank":"PHYLUM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":5,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:52:30.422+00:00","issues":[]},{"key":52,"nubKey":52,"nameKey":7122131,"taxonID":"gbif:52","sourceTaxonKey":172389997,"kingdom":"Animalia","phylum":"Mollusca","kingdomKey":1,"phylumKey":52,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"daacce49-b206-469b-8dc2-2257719f3afa","parentKey":1,"parent":"Animalia","scientificName":"Mollusca","canonicalName":"Mollusca","vernacularName":"mollusk","authorship":"","nameType":"SCIENTIFIC","rank":"PHYLUM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":269672,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:14:11.446+00:00","issues":[]}]}'
+
+
+Generation-1: Rendering Sequence-4
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 2a792c356ed12229e733deaf77a84126d0bab613
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'media'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [50, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'mediaType='
+		+ restler_fuzzable_string: [image, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: [en, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'source='
+		+ restler_fuzzable_string: [Smithsonian, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'license='
+		+ restler_fuzzable_string: [CC-BY, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'tag='
+		+ restler_fuzzable_string: [Fungi, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'creator='
+		+ restler_fuzzable_string: [Smith, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'publishingCountry='
+		+ restler_fuzzable_string: [GB, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'taxonKey='
+		+ restler_fuzzable_int: [1234, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: [GENUS, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'createdBy='
+		+ restler_fuzzable_string: [John, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: [2020, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: [GB, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: [orchid, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsageMatch='
+		+ restler_fuzzable_string: [exact, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'media_type='
+		+ restler_fuzzable_string: [StillImage, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'basis_of_record='
+		+ restler_fuzzable_string: [PreservedSpecimen, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'dataset_key='
+		+ restler_fuzzable_string: [7b5d6a93-f0f9-4c40-8467-8a0f9dd3f93d, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'publishing_country='
+		+ restler_fuzzable_string: [DE, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'institution_code='
+		+ restler_fuzzable_string: [KUNHM, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:39.080: Sending: 'GET /v1/species/1/media?sort=%7B+%22fuzz%22%3A+false+%7D&limit=50&offset=10&mediaType=image&locale=en&source=Smithsonian&license=CC-BY&tag=Fungi&creator=Smith&publishingCountry=GB&taxonKey=1234&rank=GENUS&createdBy=John&year=2020&country=GB&q=orchid&nameUsageMatch=exact&media_type=StillImage&basis_of_record=PreservedSpecimen&dataset_key=7b5d6a93-f0f9-4c40-8467-8a0f9dd3f93d&publishing_country=DE&institution_code=KUNHM HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: e9abe0b4-2d3a-4f74-a562-863ce83d0166\r\n\r\n'
+
+2023-11-30 11:58:39.267: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:38 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 978160502\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\n\r\n002000\r\n{"offset":10,"limit":50,"endOfRecords":true,"results":[{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.8282350","title":"FIGURES 84–87. Chalcovietnamicus terbakar Yu, Maddison & Zhang sp. nov., male palp (84–85), epigynum (86) and vulva (87); in ventral (84, 86), retrolateral (85) and dorsal (87) view.","description":"FIGURES 84–87. Chalcovietnamicus terbakar Yu, Maddison & Zhang sp. nov., male palp (84–85), epigynum (86) and vulva (87); in ventral (84, 86), retrolateral (85) and dorsal (87) view.","source":"Review of Chalcovietnamicus Marusik, 1991, with description of four new species (Araneae, Salticidae, Euophryini)","audience":"biologists","created":"2023-08-24T00:00:00.000+00:00","creator":"Yu, Kun;Hoang, Quang Duy;Maddison, Wayne P.;Zhang, Junxia","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":212460934,"identifier":"https://zenodo.org/record/8282350/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.8282352","title":"FIGURES 88–91. Living Chalcovietnamicus weihangi Yu & Zhang sp. nov., male (88–89) and female (90–91). Figures are copyright © Weihang Wang.","description":"FIGURES 88–91. Living Chalcovietnamicus weihangi Yu & Zhang sp. nov., male (88–89) and female (90–91). Figures are copyright © Weihang Wang.","source":"Review of Chalcovietnamicus Marusik, 1991, with description of four new species (Araneae, Salticidae, Euophryini)","audience":"biologists","created":"2023-08-24T00:00:00.000+00:00","creator":"Yu, Kun;Hoang, Quang Duy;Maddison, Wayne P.;Zhang, Junxia","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":212460934,"identifier":"https://zenodo.org/record/8282352/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.8282356","title":"FIGURES 92–100. Chalcovietnamicus weihangi Yu & Zhang sp. nov., male holotype (92–93, 95, 97–98) and female paratypes (94, 96, 99–100). 92–95. Habitus; 96. Posterior part of sternum; 97–98. Palp; 99. Epigynum; 100. Vulva; in dorsal (92–94, 100), front (95), ventral (96–97, 99) and retrolateral (98) view.","description":"FIGURES 92–100. Chalcovietnamicus weihangi Yu & Zhang sp. nov., male holotype (92–93, 95, 97–98) and female paratypes (94, 96, 99–100). 92–95. Habitus; 96. Posterior part of sternum; 97–98. Palp; 99. Epigynum; 100. Vulva; in dorsal (92–94, 100), front (95), ventral (96–97, 99) and retrolateral (98) view.","source":"Review of Chalcovietnamicus Marusik, 1991, with description of four new species (Araneae, Salticidae, Euophryini)","audience":"biologists","created":"2023-08-24T00:00:00.000+00:00","creator":"Yu, Kun;Hoang, Quang Duy;Maddison, Wayne P.;Zhang, Junxia","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":212460934,"identifier":"https://zenodo.org/record/8282356/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.8282358","title":"FIGURES 101–104. Chalcovietnamicus weihangi Yu & Zhang sp. nov., palp of male from Hezhou, Guangxi (101–102), epigynum (103) and vulva (104); in ventral (101, 103), retrolateral (102) and dorsal (104) view. Abbreviations: aE = apical extension of embolus; G = groove; Ly = lyriform organ; PC = patellar crack; SD = sperm duct.","description":"FIGURES 101–104. Chalcovietnamicus weihangi Yu & Zhang sp. nov., palp of male from Hezhou, Guangxi (101–102), epigynum (103) and vulva (104); in ventral (101, 103), retrolateral (102) and dorsal (104) view. Abbreviations: aE = apical extension of embolus; G = groove; Ly = lyriform organ; PC = patellar crack; SD = sperm duct.","source":"Review of Chalcovietnamicus Marusik, 1991, with description of four new species (Araneae, Salticidae, Euophryini)","audience":"biologists","created":"2023-08-24T00:00:00.000+00:00","creator":"Yu, Kun;Hoang, Quang Duy;Maddison, Wayne P.;Zhang, Junxia","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":212460934,"identifier":"https://zenodo.org/record/8282358/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.8282362","title":"FIGURES 105–108. Living Chalcovietnamicus lii (Lei & Peng, 2010), female from Menglun, Xishuangbanna. Figures are copyright © Weihang Wang.","description":"FIGURES 105–108. Living Chalcovietnamicus lii (Lei & Peng, 2010), female from Menglun, Xishuangbanna. Figures are copyright © Weihang Wang.","source":"Review of Chalcovietnamicus Marusik, 1991, with description of four new species (Araneae, Salticidae, Euophryini)","audience":"biologists","created":"2023-08-24T00:00:00.000+00:00","creator":"Yu, Kun;Hoang, Quang Duy;Maddison, Wayne P.;Zhang, Junxia","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":212460934,"identifier":"https://zenodo.org/record/8282362/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.8282368","title":"FIGURES 118–123. Living Chalcovietnamicus vietnamensis (Żabka, 1985) from Singapore, male (118–120) and female (121– 123) (© 2019 W.P. Maddison).","description":"FIGURES 118–123. Living Chalcovietnamicus vietnamensis (Żabka, 1985) from Singapore, male (118–120) and female (121– 123) (© 2019 W.P. Maddison).","source":"Review of Chalcovietnamicus Marusik, 1991, with description of four new species (Araneae, Salticidae, Euophryini)","audience":"biologists","created":"2023-08-24T00:00:00.000+00:00","creator":"Yu, Kun;Hoang, Quang Duy;Maddison, Wayne P.;Zhang, Junxia","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":212460934,"identifier":"https://zenodo.org/record/8282368/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.8282370","title":"FIGURES 124–129. Chalcovietnamicus vietnamensis (Żabka, 1985) from Dak Lak, Vietnam (124–127) and Singapore (128– 129), male (124, 126, 129) and female (125, 127, 128). 124–127. Habitus; 128. Posterior part of sternum; 129. Endites; in dorsal (124–125), front (126–127) and ventral (128–129) view.","description":"FIGURES 124–129. Chalcovietnamicus vietnamensis (Żabka, 1985) from Dak Lak, Vietnam (124–127) and Singapore (128– 129), male (124, 126, 129) and female (125, 127, 128). 124–127. Habitus; 128. Posterior part of sternum; 129. Endites; in dorsal (124–125), front (126–127) and ventral (128–129) view.","source":"Review of Chalcovietnamicus Marusik, 1991, with description of four new species (Araneae, Salticidae, Euophryini)","audience":"biologists","created":"2023-08-24T00:00:00.000+00:00","creator":"Yu, Kun;Hoang, Quang Duy;Maddison, Wayne P.;Zhang, Junxia","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":212460934,"identifier":"https://zenodo.org/record/8282370/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.8282376","title":"FIGURES 130–140. Chalcovietnamicus vietnamensis (Żabka, 1985) from Singapore (130–136, 139) and Vietnam (137–138, 140), male (130–134, 137–140) and female (135–135). 130–132. Palp; 133–134. Embolus; 135. Epigynum; 136. Vulva; 137– 140. RTAs, from Dak Lak (137), Bac Giang (138) and Ha Noi (140, holotype); in pro-ventral (130), ventral (131, 133, 135), retrolateral (132, 137–140), retro-ventral (134) and dorsal (136) view. Abbreviations: dK = distal retro-ventral keel; EA = embolic apophysis.","description":"FIGURES 130–140. Chalcovietnamicus vietnamensis (Żabka, 1985) from Singapore (130–136, 139) and Vietnam (137–138, 140), male (130–134, 137–140) and female (135–135). 130–132. Palp; 133–134. Embolus; 135. Epigynum; 136. Vulva; 137– 140. RTAs, from Dak Lak (137), Bac Giang (138) and Ha Noi (140, holotype); in pro-ventral (130), ventral (131, 133, 135), retrolateral (132, 137–140), retro-ventral (134) and dorsal (136) view. Abbreviations: dK = distal retro-ventral keel; EA = embolic apophysis.","source":"Review of Chalcovietnamicus Marusik, 1991, with description of four new species (Araneae, Salticidae, Euophryini)","audience":"biologists","created":"2023-08-24T00:00:00.000+00:00","creator":"Yu, Ku\r\n002000\r\nn;Hoang, Quang Duy;Maddison, Wayne P.;Zhang, Junxia","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":212460934,"identifier":"https://zenodo.org/record/8282376/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.8282380","title":"FIGURES 141–146. Transparent male palpal bulbs of Chalcovietnamicus spp., in ventral view. 141. C. daiqini (Prószyński & Deeleman-Reinhold, 2012) comb. nov.; 142. C. logunovi Yu, Maddison & Zhang, sp. nov.; 143. C. marusiki Yu, Maddison & Zhang, sp. nov.; 144. C. weihangi Yu & Zhang, sp. nov.; 145–146. C. vietnamensis (Żabka, 1985). Abbreviations: E = embolus; ED = embolic disc; SD = sperm duct.","description":"FIGURES 141–146. Transparent male palpal bulbs of Chalcovietnamicus spp., in ventral view. 141. C. daiqini (Prószyński & Deeleman-Reinhold, 2012) comb. nov.; 142. C. logunovi Yu, Maddison & Zhang, sp. nov.; 143. C. marusiki Yu, Maddison & Zhang, sp. nov.; 144. C. weihangi Yu & Zhang, sp. nov.; 145–146. C. vietnamensis (Żabka, 1985). Abbreviations: E = embolus; ED = embolic disc; SD = sperm duct.","source":"Review of Chalcovietnamicus Marusik, 1991, with description of four new species (Araneae, Salticidae, Euophryini)","audience":"biologists","created":"2023-08-24T00:00:00.000+00:00","creator":"Yu, Kun;Hoang, Quang Duy;Maddison, Wayne P.;Zhang, Junxia","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":212460934,"identifier":"https://zenodo.org/record/8282380/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.8284243","title":"FIGURES 109–117. Chalcovietnamicus lii (Lei & Peng, 2010), male (112–113, 116–117) and female (109–111, 114–115) from Menglun, Xishuangbanna. 109–110. Habitus; 111. Posterior part of sternum, ventral view; 112–113. Palp, ventral (112) and retrolateral (113) view (modified from Wang & Li, 2022); 114. Epigynum, ventral view; 115. Vulva, dorsal view; 116–117. Embolus, in retrolateral (116) and ventral (117, slightly turning retrolaterally to show the EA) view. Abbreviations: aE = apical extension of embolus; EA = embolic apophysis; G = groove; SD = sperm duct.","description":"FIGURES 109–117. Chalcovietnamicus lii (Lei & Peng, 2010), male (112–113, 116–117) and female (109–111, 114–115) from Menglun, Xishuangbanna. 109–110. Habitus; 111. Posterior part of sternum, ventral view; 112–113. Palp, ventral (112) and retrolateral (113) view (modified from Wang & Li, 2022); 114. Epigynum, ventral view; 115. Vulva, dorsal view; 116–117. Embolus, in retrolateral (116) and ventral (117, slightly turning retrolaterally to show the EA) view. Abbreviations: aE = apical extension of embolus; EA = embolic apophysis; G = groove; SD = sperm duct.","source":"Review of Chalcovietnamicus Marusik, 1991, with description of four new species (Araneae, Salticidae, Euophryini)","audience":"biologists","created":"2023-08-24T00:00:00.000+00:00","creator":"Yu, Kun;Hoang, Quang Duy;Maddison, Wayne P.;Zhang, Junxia","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":212460934,"identifier":"https://zenodo.org/record/8284243/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.4605979","title":"FIG. 7. — Crocodyliformes remains from Gueran: A-J, Eusuchia indet.: A, FSAC BOUJ-410, last cervical (ninth) vertebra in left lateral view; B, FSAC BOUJ- 1b, anterior cervical vertebra in left lateral view; C, FSAC BOUJ-400, posterior dorsal vertebra in left lateral view; D, FSAC BOUJ-1a, first caudal vertebra in left lateral view; E, FSAC BOUJ-124, caudal vertebra in left lateral view; F, FSAC BOUJ-94, osteoderm in dorsal view; G, FSAC BOUJ-96, posterior portion of a dorsal osteoderm; H, FSAC BOUJ-96, lateral portion of a dorsal osteoderm in dorsal views; I, J, Crocodyliformes indet.: I, FSAC BOUJ-355, mid portion of a dentary in dorsal view; J, FSAC BOUJ-406, posterior fragment of a left mandibular ramus in dorsal view; K-P, Gavialoidea indet.: K, FSAC BOUJ-405, portion of a left dentary in dorsal view; L, FSAC BOUJ-402, mid portion of a right maxilla in ventral view; M, N, FSAC BOUJ-404, FSAC BOUJ-403 and FSAC BOUJ-401, anterior (M) and mid portion (N) of left maxilla in ventral views; O, P, FSAC BOUJ-407, posterior portion of a left maxilla in lateral (O) and ventral (P) views. Scale bar: 1 cm.","description":"FIG. 7. — Crocodyliformes remains from Gueran: A-J, Eusuchia indet.: A, FSAC BOUJ-410, last cervical (ninth) vertebra in left lateral view; B, FSAC BOUJ- 1b, anterior cervical vertebra in left lateral view; C, FSAC BOUJ-400, posterior dorsal vertebra in left lateral view; D, FSAC BOUJ-1a, first caudal vertebra in left lateral view; E, FSAC BOUJ-124, caudal vertebra in left lateral view; F, FSAC BOUJ-94, osteoderm in dorsal view; G, FSAC BOUJ-96, posterior portion of a dorsal osteoderm; H, FSAC BOUJ-96, lateral portion of a dorsal osteoderm in dorsal views; I, J, Crocodyliformes indet.: I, FSAC BOUJ-355, mid portion of a dentary in dorsal view; J, FSAC BOUJ-406, posterior fragment of a left mandibular ramus in dorsal view; K-P, Gavialoidea indet.: K, FSAC BOUJ-405, portion of a left dentary in dorsal view; L, FSAC BOUJ-402, mid portion of a right maxilla in ventral view; M, N, FSAC BOUJ-404, FSAC BOUJ-403 and FSAC BOUJ-401, anterior (M) and mid portion (N) of left maxilla in ventral views; O, P, FSAC BOUJ-407, posterior portion of a left maxilla in lateral (O) and ventral (P) views. Scale bar: 1 cm.","source":"Middle Eocene vertebrate fauna from the Aridal Formation, Sabkha of Gueran, southwestern Morocco","audience":"biologists","created":"2021-03-11T00:00:00.000+00:00","creator":"Zouhri, Samir;Gingerich, Philip D.;Khalloufi, Bouziane;Bourdon, Estelle;Adnet, Sylvain;Jouve, Stéphane;Elboudali, Najia;Amane, Ayoub;Rage, Jean-Claude;Tabuce, Rodolphe","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":180569432,"identifier":"https://zenodo.org/record/4605979/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.6902095","title":"FIG. 24. — Sauropod teeth from Angeac-Charente: A-D, posterior left maxillary tooth of Turiasauria indet. (ANG11-837) in labial (A), mesial (B), lingual (C) and distal (D) views; E-H, left maxillary tooth of Turiasauria indet. (ANG15-R905) in labial (E), mesial (F), lingual (G) and distal (H) views; I-L, left maxillary tooth of Turiasauria indet. (ANG13-2330) in labial (I), mesial (J), lingual (K) and distal (L) views; M-P, left premaxillary tooth of Turiasauria indet. (ANG14-R289) in labial (M), mesial (N), lingual (O) and distal (P) views; Q-T, dentary tooth of Turiasauria indet. (ANG14-3495) in labial (Q), mesial (R), lingual (S) and distal (T) views; U-X, left dentary tooth of Turiasauria indet. (ANG14- R435) in labial (U), mesial (V), lingual (W) and distal (X) views; Y-AA, maxillary tooth of Macronaria indet. (ANG R-1732) in labial (Y), distal (Z) and lingual (AA) views. Scale bar: A-X, 2 cm; Y-AA, 1 cm.","description":"FIG. 24. — Sauropod teeth from Angeac-Charente: A-D, posterior left maxillary tooth of Turiasauria indet. (ANG11-837) in labial (A), mesial (B), lingual (C) and distal (D) views; E-H, left maxillary tooth of Turiasauria indet. (ANG15-R905) in labial (E), mesial (F), lingual (G) and distal (H) views; I-L, left maxillary tooth of Turiasauria indet. (ANG13-2330) in labial (I), mesial (J), lingual (K) and distal (L) views; M-P, left premaxillary tooth of Turiasauria indet. (ANG14-R289) in labial (M), mesial (N), lingual (O) and distal (P) views; Q-T, dentary tooth of Turiasauria indet. (ANG14-3495) in labial (Q), mesial (R), lingual (S) and distal (T) views; U-X, left dentary tooth of Turiasauria indet. (ANG14- R435) in labial (U), mesial (V), lingual (W) and distal (X) views; Y-AA, maxillary tooth of Macronaria indet. (ANG R-1732) in labial (Y), distal (Z) and lingual (AA) views. Scale bar: A-X, 2 cm; Y-AA, 1 cm.","source":"Vertebrate paleobiodiversity of the Early Cretaceous (Berriasian) Angeac-Charente Lagerstätte (southwestern France): implications for continental faunal turnover at the J / K boundary","audie\r\n001e69\r\nnce":"biologists","created":"2022-07-21T00:00:00.000+00:00","creator":"Allain, Ronan;Vullo, Romain;Rozada, Lee;Anquetin, Jérémy;Bourgeais, Renaud;Goedert, Jean;Lasseron, Maxime;Martin, Jeremy E.;Pérez-García, Adán;Fabrègues, Claire Peyre De;Royo-Torres, Rafael;Augier, Dominique;Bailly, Gilles","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":197866723,"identifier":"https://zenodo.org/record/6902095/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.6902097","title":"FIG. 25. — Sauropod embryonic or hatchling teeth from Angeac-Charente: A, tooth of Macronaria indet. (ANGM-18) in lingual view; B, C, tooth of Turiasauria indet. (ANGM-118) in labial (B) and lingual (C) views. Scale bar: 500 µm.","description":"FIG. 25. — Sauropod embryonic or hatchling teeth from Angeac-Charente: A, tooth of Macronaria indet. (ANGM-18) in lingual view; B, C, tooth of Turiasauria indet. (ANGM-118) in labial (B) and lingual (C) views. Scale bar: 500 µm.","source":"Vertebrate paleobiodiversity of the Early Cretaceous (Berriasian) Angeac-Charente Lagerstätte (southwestern France): implications for continental faunal turnover at the J / K boundary","audience":"biologists","created":"2022-07-21T00:00:00.000+00:00","creator":"Allain, Ronan;Vullo, Romain;Rozada, Lee;Anquetin, Jérémy;Bourgeais, Renaud;Goedert, Jean;Lasseron, Maxime;Martin, Jeremy E.;Pérez-García, Adán;Fabrègues, Claire Peyre De;Royo-Torres, Rafael;Augier, Dominique;Bailly, Gilles","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":197866723,"identifier":"https://zenodo.org/record/6902097/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.6902099","title":"FIG. 26. — Sauropod caudal vertebrae from Angeac-Charente: A-C, anterior caudal vertebra of Turiasauria indet. (ANG15-R679) in left lateral (A), posterior (B) and dorsal (C) views; D-F, anterior caudal vertebra of Turiasauria indet. (ANG15-R698) in right lateral (D), posterior (E) and dorsal (F) views; G-I, anterior caudal vertebra of Turiasauria indet. (ANG15-R921) in right lateral (G), posterior (H) and dorsal (I) views; J-L, middle caudal vertebra of Turiasauria indet. (ANG15-R652) in right lateral (J), posterior (K) and dorsal (L) views. Scale bar: 10 cm.","description":"FIG. 26. — Sauropod caudal vertebrae from Angeac-Charente: A-C, anterior caudal vertebra of Turiasauria indet. (ANG15-R679) in left lateral (A), posterior (B) and dorsal (C) views; D-F, anterior caudal vertebra of Turiasauria indet. (ANG15-R698) in right lateral (D), posterior (E) and dorsal (F) views; G-I, anterior caudal vertebra of Turiasauria indet. (ANG15-R921) in right lateral (G), posterior (H) and dorsal (I) views; J-L, middle caudal vertebra of Turiasauria indet. (ANG15-R652) in right lateral (J), posterior (K) and dorsal (L) views. Scale bar: 10 cm.","source":"Vertebrate paleobiodiversity of the Early Cretaceous (Berriasian) Angeac-Charente Lagerstätte (southwestern France): implications for continental faunal turnover at the J / K boundary","audience":"biologists","created":"2022-07-21T00:00:00.000+00:00","creator":"Allain, Ronan;Vullo, Romain;Rozada, Lee;Anquetin, Jérémy;Bourgeais, Renaud;Goedert, Jean;Lasseron, Maxime;Martin, Jeremy E.;Pérez-García, Adán;Fabrègues, Claire Peyre De;Royo-Torres, Rafael;Augier, Dominique;Bailly, Gilles","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":197866723,"identifier":"https://zenodo.org/record/6902099/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.6902101","title":"FIG. 27. — Femur of Turiasauria indet. (ANG19-7000) from the Berriasian of Angeac-Charente discovered during the 2019 campaign. The length of the femur is 2 m. © L. Bocat.","description":"FIG. 27. — Femur of Turiasauria indet. (ANG19-7000) from the Berriasian of Angeac-Charente discovered during the 2019 campaign. The length of the femur is 2 m. © L. Bocat.","source":"Vertebrate paleobiodiversity of the Early Cretaceous (Berriasian) Angeac-Charente Lagerstätte (southwestern France): implications for continental faunal turnover at the J / K boundary","audience":"biologists","created":"2022-07-21T00:00:00.000+00:00","creator":"Allain, Ronan;Vullo, Romain;Rozada, Lee;Anquetin, Jérémy;Bourgeais, Renaud;Goedert, Jean;Lasseron, Maxime;Martin, Jeremy E.;Pérez-García, Adán;Fabrègues, Claire Peyre De;Royo-Torres, Rafael;Augier, Dominique;Bailly, Gilles","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":197866723,"identifier":"https://zenodo.org/record/6902101/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.6902105","title":"FIG. 29. — Ornithomimosaur remains from Angeac-Charente:A, right dentary (ANG11-776) in lateral view;B, pedal ungual (ANG11-1335) in lateral view; C, pedal ungual (ANG11-898) in lateral view; D-H, middle caudal vertebra (ANG12-1622) in dorsal (D), ventral (E), right lateral (F), anterior (G) and posterior (H) views; I-L, distal caudal vertebra (ANG14-3084) in dorsal (I), ventral (J), right lateral (K) and posterior (L) views. Scale bar: 2 cm.","description":"FIG. 29. — Ornithomimosaur remains from Angeac-Charente:A, right dentary (ANG11-776) in lateral view;B, pedal ungual (ANG11-1335) in lateral view; C, pedal ungual (ANG11-898) in lateral view; D-H, middle caudal vertebra (ANG12-1622) in dorsal (D), ventral (E), right lateral (F), anterior (G) and posterior (H) views; I-L, distal caudal vertebra (ANG14-3084) in dorsal (I), ventral (J), right lateral (K) and posterior (L) views. Scale bar: 2 cm.","source":"Vertebrate paleobiodiversity of the Early Cretaceous (Berriasian) Angeac-Charente Lagerstätte (southwestern France): implications for continental faunal turnover at the J / K boundary","audience":"biologists","created":"2022-07-21T00:00:00.000+00:00","creator":"Allain, Ronan;Vullo, Romain;Rozada, Lee;Anquetin, Jérémy;Bourgeais, Renaud;Goedert, Jean;Lasseron, Maxime;Martin, Jeremy E.;Pérez-García, Adán;Fabrègues, Claire Peyre De;Royo-Torres, Rafael;Augier, Dominique;Bailly, Gilles","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":197866722,"identifier":"https://zenodo.org/record/6902105/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.6902107","title":"FIG. 30. — Ornithomimosaur remains from Angeac-Charente: A-C, proximal end of right tibia (ANG12-1893) in posterior (A), anterior (B) and lateral (C) views; D, distal end of right tibia (ANG10-56) in anterior view; E, proximal end of right fibula (ANG11-696) in medial view; F-H, Left astragalus and calcaneum (ANG12- 1803) in anterior (F), posterior (G) and dorsal (H) views. Scale bar: A-E, 4 cm; F-H, 2 cm.","description":"FIG. 30. — Ornithomimosaur remains from Angeac-Charente: A-C, proximal end of right tibia (ANG12-1893) in posterior (A), anterior (B) and lateral (C) views; D, distal end of right tibia (ANG10-56) in anterior view; E, proximal end of right fibula (ANG11-696) in medial view; F-H, Left astragalus and calcaneum (ANG12- 1803) in anterior (F), posterior (G) and dorsal (H) views. Scale bar: A-E, 4 cm; F-H, 2 cm.","source":"Vertebrate paleobiodiversity of the Early Cretaceous (Berriasian) Angeac-Charente Lagerstätte (southwestern France): implications for continental faunal turnover at the J / K boundary","audience":"biologists","created":"2022-07-21T00:00:00.000+00:00","creator":"Allain, Ronan;Vullo, Romain;Rozada, Lee;Anquetin, Jérémy;Bourgeais, Renaud;Goedert, Jean;Lasseron, Maxime;Martin, Jeremy E.;Pérez-García, Adán;Fabrègues, Claire Peyre De;Royo-Torres, Rafael;Augier, Dominique;Bailly, Gilles","publisher":"Zenodo","taxonKey":1,"sourceTaxonK\r\n002197\r\ney":197866722,"identifier":"https://zenodo.org/record/6902107/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.6902109","title":"FIG. 31. — Reconstruction of the Angeac Ornithomimosaur, based on 3D surface scans of 232 bones. All the bones of the 3D reconstruction were scaled on the basis of a 40 cm long femur.","description":"FIG. 31. — Reconstruction of the Angeac Ornithomimosaur, based on 3D surface scans of 232 bones. All the bones of the 3D reconstruction were scaled on the basis of a 40 cm long femur.","source":"Vertebrate paleobiodiversity of the Early Cretaceous (Berriasian) Angeac-Charente Lagerstätte (southwestern France): implications for continental faunal turnover at the J / K boundary","audience":"biologists","created":"2022-07-21T00:00:00.000+00:00","creator":"Allain, Ronan;Vullo, Romain;Rozada, Lee;Anquetin, Jérémy;Bourgeais, Renaud;Goedert, Jean;Lasseron, Maxime;Martin, Jeremy E.;Pérez-García, Adán;Fabrègues, Claire Peyre De;Royo-Torres, Rafael;Augier, Dominique;Bailly, Gilles","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":197866722,"identifier":"https://zenodo.org/record/6902109/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.6902095","title":"FIG. 24. — Sauropod teeth from Angeac-Charente: A-D, posterior left maxillary tooth of Turiasauria indet. (ANG11-837) in labial (A), mesial (B), lingual (C) and distal (D) views; E-H, left maxillary tooth of Turiasauria indet. (ANG15-R905) in labial (E), mesial (F), lingual (G) and distal (H) views; I-L, left maxillary tooth of Turiasauria indet. (ANG13-2330) in labial (I), mesial (J), lingual (K) and distal (L) views; M-P, left premaxillary tooth of Turiasauria indet. (ANG14-R289) in labial (M), mesial (N), lingual (O) and distal (P) views; Q-T, dentary tooth of Turiasauria indet. (ANG14-3495) in labial (Q), mesial (R), lingual (S) and distal (T) views; U-X, left dentary tooth of Turiasauria indet. (ANG14- R435) in labial (U), mesial (V), lingual (W) and distal (X) views; Y-AA, maxillary tooth of Macronaria indet. (ANG R-1732) in labial (Y), distal (Z) and lingual (AA) views. Scale bar: A-X, 2 cm; Y-AA, 1 cm.","description":"FIG. 24. — Sauropod teeth from Angeac-Charente: A-D, posterior left maxillary tooth of Turiasauria indet. (ANG11-837) in labial (A), mesial (B), lingual (C) and distal (D) views; E-H, left maxillary tooth of Turiasauria indet. (ANG15-R905) in labial (E), mesial (F), lingual (G) and distal (H) views; I-L, left maxillary tooth of Turiasauria indet. (ANG13-2330) in labial (I), mesial (J), lingual (K) and distal (L) views; M-P, left premaxillary tooth of Turiasauria indet. (ANG14-R289) in labial (M), mesial (N), lingual (O) and distal (P) views; Q-T, dentary tooth of Turiasauria indet. (ANG14-3495) in labial (Q), mesial (R), lingual (S) and distal (T) views; U-X, left dentary tooth of Turiasauria indet. (ANG14- R435) in labial (U), mesial (V), lingual (W) and distal (X) views; Y-AA, maxillary tooth of Macronaria indet. (ANG R-1732) in labial (Y), distal (Z) and lingual (AA) views. Scale bar: A-X, 2 cm; Y-AA, 1 cm.","source":"Vertebrate paleobiodiversity of the Early Cretaceous (Berriasian) Angeac-Charente Lagerstätte (southwestern France): implications for continental faunal turnover at the J / K boundary","audience":"biologists","created":"2022-07-21T00:00:00.000+00:00","creator":"Allain, Ronan;Vullo, Romain;Rozada, Lee;Anquetin, Jérémy;Bourgeais, Renaud;Goedert, Jean;Lasseron, Maxime;Martin, Jeremy E.;Pérez-García, Adán;Fabrègues, Claire Peyre De;Royo-Torres, Rafael;Augier, Dominique;Bailly, Gilles","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":197866721,"identifier":"https://zenodo.org/record/6902095/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.5628453","title":"FIG. 9. — Pan-Shinisauridae,osteoderms,MNHN.F.MTC240-MTC242,specimen in:A, dorsal view;B, dorsal view;C, dorsal and ventral views.Scale bar:1 mm.","description":"FIG. 9. — Pan-Shinisauridae,osteoderms,MNHN.F.MTC240-MTC242,specimen in:A, dorsal view;B, dorsal view;C, dorsal and ventral views.Scale bar:1 mm.","source":"The lizard (Reptilia, Squamata) assemblage from the Paleocene of Montchenot (Paris Basin, MP 6)","audience":"biologists","created":"2021-09-09T00:00:00.000+00:00","creator":"Augé, Marc Louis;Dion, Michaël;Phélizon, Alain","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":189796616,"identifier":"https://zenodo.org/record/5628453/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.5793448","title":"Fig. 9. Orthoconic cephalopods with large siphuncles from the Olenidsletta Member, Floian, Ordovician, Profilstranda section, Ny Friesland, Spitsbergen. A–B, D–E. Buttsoceras buldrebreenense sp. nov. A–B. Specimen FMNH-P30422, from bed PO 131. A. Adoral view of septum and septal perforation. B. Lateral view with prosiphuncular side toward right. C. Cyptendoceratid genus and species indet., FMNH-P30431, from bed PO 131. D. Specimen FMNH-P30423, from bed PO 131, lateral view. E. Specimen FMNH-P30421, holotype, lateral view, note faint transverse ornament partly preserved. F–G. Cyptendoceras sp. A, FMNH-P30426, from bed PO 07. F. Ventral view, prosiphuncular side. G. Adoral view of septum and septal perforation. H–I. Proterocameroceras valhallfonnense sp. nov., FMNH-P30277, from bed PO 131. H. Ventral view, prosiphuncular side. I. Adoral view of septum and septal perforation. Scale bar = 10 mm for all figures.","description":"Fig. 9. Orthoconic cephalopods with large siphuncles from the Olenidsletta Member, Floian, Ordovician, Profilstranda section, Ny Friesland, Spitsbergen. A–B, D–E. Buttsoceras buldrebreenense sp. nov. A–B. Specimen FMNH-P30422, from bed PO 131. A. Adoral view of septum and septal perforation. B. Lateral view with prosiphuncular side toward right. C. Cyptendoceratid genus and species indet., FMNH-P30431, from bed PO 131. D. Specimen FMNH-P30423, from bed PO 131, lateral view. E. Specimen FMNH-P30421, holotype, lateral view, note faint transverse ornament partly preserved. F–G. Cyptendoceras sp. A, FMNH-P30426, from bed PO 07. F. Ventral view, prosiphuncular side. G. Adoral view of septum and septal perforation. H–I. Proterocameroceras valhallfonnense sp. nov., FMNH-P30277, from bed PO 131. H. Ventral view, prosiphuncular side. I. Adoral view of septum and septal perforation. Scale bar = 10 mm for all figures.","source":"Early-Middle Ordovician cephalopods from Ny Friesland, Spitsbergen - a pelagic fauna with Laurentian affinities","audience":"biologists","created":"2021-12-20T00:00:00.000+00:00","creator":"Kröger, Björn;Pohle, Alexander","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":191693571,"identifier":"https://zenodo.org/record/5793448/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.5793520","title":"Fig. 31. Median section of details of septal necks and siphuncle of cyptendoceratids from Olenidsletta Member, adjacent to Hinlopenstretet, Spitsbergen. A–B. Cyptendoceratid gen. et sp. indet., FMNH-P30431 from bed PO 131, Floian, Ordovician, Profilstranda section, Ny Friesland, Spitsbergen. Dorsal side directed toward left. A. General view of the siphuncle. Scale bar = 2 mm. B. Details of dorsal side of connecting ring. Scale bar = 1 mm. C. Cyptendoceras sp. B, FMNH-P30166 from Profilbekken river basin, locality PR-phosphatic, uppermost Olenidsletta Member, V3 trilobite zone, Dapingian. Scale bar = 5 mm.","description":"Fig. 31. Median section of details of septal necks and siphuncle of cyptendoceratids from Olenidsletta Member, adjacent to Hinlopenstretet, Spitsbergen. A–B. Cyptendoceratid gen. et sp. indet., FMNH-P30431 from bed PO 131, Floian, Ordovician, Profilstranda section, Ny Friesland, Spitsbergen. Dorsal side directed toward left. A. General view of the siphuncle. Scale bar = 2 mm. B. Details of dorsal side of connecting ring. Scale bar = 1 mm. C. Cyptendoceras sp. B, FMNH-P30166 from Profilbekken river basin, locality PR-phosphatic, uppermost Olenidsletta Member, V3 trilobite zone, Dapingian. Scale bar = 5 mm.","source":"Early-Middle Ordovician cephalopods from Ny Friesland, Spitsbergen - a pelagic fauna with Laurentian affinities","audience":"biologists","created":"2021-12-20T00:00:00.000+00:00","creator":"Kröger, Björn;Pohle, Alexander","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":191693571,"identifier":"\r\n00674\r\nhttps://zenodo.org/record/5793520/files/figure.png"},{"type":"StillImage","format":"image/png","references":"https://doi.org/10.5281/zenodo.5793522","title":"Fig. 32. Reconstruction and interpretation of details of connecting ring and septal necks in orthoconic cephalopods from the Olenidsletta Member, Floian, Ordovician, Profilstranda section, Ny Friesland, Spitsbergen. A. Catoraphiceras sp., FMNH-P30425, dorsal side of the connecting ring, see Fig. 10A. B. Cyptendoceratid gen. et sp. indet., FMNH-P30431, see Fig. 31B. C. Hemichoanella occulta sp. nov., FMNH-P30420, from bed PO 131, dorsal side of the connecting ring, see Fig. 36B. Black: septal neck and septum. Dark grey: connecting ring. Without scale.","description":"Fig. 32. Reconstruction and interpretation of details of connecting ring and septal necks in orthoconic cephalopods from the Olenidsletta Member, Floian, Ordovician, Profilstranda section, Ny Friesland, Spitsbergen. A. Catoraphiceras sp., FMNH-P30425, dorsal side of the connecting ring, see Fig. 10A. B. Cyptendoceratid gen. et sp. indet., FMNH-P30431, see Fig. 31B. C. Hemichoanella occulta sp. nov., FMNH-P30420, from bed PO 131, dorsal side of the connecting ring, see Fig. 36B. Black: septal neck and septum. Dark grey: connecting ring. Without scale.","source":"Early-Middle Ordovician cephalopods from Ny Friesland, Spitsbergen - a pelagic fauna with Laurentian affinities","audience":"biologists","created":"2021-12-20T00:00:00.000+00:00","creator":"Kröger, Björn;Pohle, Alexander","publisher":"Zenodo","taxonKey":1,"sourceTaxonKey":191693571,"identifier":"https://zenodo.org/record/5793522/files/figure.png"}]}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-5
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 37d581a1e6cd1b4b2dd8b8a946ab1f055ba5a18d
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'speciesProfiles'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [20, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: [plant, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: [species, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'status='
+		+ restler_fuzzable_string: [accepted, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameType='
+		+ restler_fuzzable_string: [SCIENTIFIC, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: [fr, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'countryCode='
+		+ restler_fuzzable_string: [GB, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: [7e380f4c-f762-11e1-a439-00145eb45e9a, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsageKey='
+		+ restler_fuzzable_int: [123456789, 1, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:39.377: Sending: 'GET /v1/species/1/speciesProfiles?sort=%7B+%22fuzz%22%3A+false+%7D&limit=10&offset=20&q=plant&rank=species&status=accepted&nameType=SCIENTIFIC&locale=fr&countryCode=GB&datasetKey=7e380f4c-f762-11e1-a439-00145eb45e9a&nameUsageKey=123456789 HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 7482ee23-5ef1-4989-bc27-88c4ebe9153d\r\n\r\n'
+
+2023-11-30 11:58:39.691: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:39 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 1036551400\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nContent-Length: 57\r\nConnection: keep-alive\r\n\r\n{"offset":20,"limit":10,"endOfRecords":true,"results":[]}'
+
+
+Generation-1: Rendering Sequence-6
+
+	Request: 1 (Remaining candidate combinations: 5)
+	Request hash: 5b9bfe0aad90433743309dbf9e3f05ddcbe9c907
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '?'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: [cat, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'name='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:39.785: Sending: 'GET /v1/species?q=cat&limit=10&name=%7B+%22fuzz%22%3A+false+%7D HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 94ee5fe1-e572-4167-82f6-681c23da6959\r\n\r\n'
+
+2023-11-30 11:58:39.832: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:39 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 1000409522\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\n\r\n0038\r\n{"offset":0,"limit":10,"endOfRecords":true,"results":[]}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-7
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 631845cc1bf390d01d03948fde2c8f3f8d25a6d2
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_static_string: 'suggest'
+		- restler_static_string: '?'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: [cat, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'strict='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: [species, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: [9a3c3bcf-1e7a-4b49-88e5-1e8e9ae849e8, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'kingdom='
+		+ restler_fuzzable_string: [Animalia, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'phylum='
+		+ restler_fuzzable_string: [Chordata, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'class='
+		+ restler_fuzzable_string: [Mammalia, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: [GB, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: [2020, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameType='
+		+ restler_fuzzable_string: [SCIENTIFIC, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameStatus='
+		+ restler_fuzzable_string: [ACCEPTED, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'taxonKey='
+		+ restler_fuzzable_int: [249, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsage='
+		+ restler_fuzzable_string: [accepted, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:39.926: Sending: 'GET /v1/species/suggest?q=cat&limit=10&strict=true&rank=species&datasetKey=9a3c3bcf-1e7a-4b49-88e5-1e8e9ae849e8&kingdom=Animalia&phylum=Chordata&class=Mammalia&country=GB&year=2020&nameType=SCIENTIFIC&nameStatus=ACCEPTED&sort=%7B+%22fuzz%22%3A+false+%7D&offset=10&taxonKey=249&nameUsage=accepted HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: e185466e-5c29-4423-b626-d70063cc6109\r\n\r\n'
+
+2023-11-30 11:58:39.973: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:39 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 1039664144\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\n\r\n002\r\n[]\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-8
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 6cd90083e526a9b6d61fea5204422dcf1bdf7b49
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'references'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: [taxonomy, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: [2021, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'publisher='
+		+ restler_fuzzable_string: [Smithsonian+Institution, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: [7f8f7d3b-7b55-45cc-8c5f-3a4f3fbe7b6d, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: [US, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'basisOfRecord='
+		+ restler_fuzzable_string: [FossilSpecimen, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: [SPECIES, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameStatus='
+		+ restler_fuzzable_string: [ACCEPTED, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'order='
+		+ restler_fuzzable_string: [asc, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'order_by='
+		+ restler_fuzzable_string: [title, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'basis_of_record='
+		+ restler_fuzzable_string: [FOSSIL_SPECIMEN, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: [en, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:40.083: Sending: 'GET /v1/species/1/references?sort=%7B+%22fuzz%22%3A+false+%7D&limit=10&offset=10&q=taxonomy&year=2021&publisher=Smithsonian%2BInstitution&datasetKey=7f8f7d3b-7b55-45cc-8c5f-3a4f3fbe7b6d&country=US&basisOfRecord=FossilSpecimen&rank=SPECIES&nameStatus=ACCEPTED&order=asc&order_by=title&basis_of_record=FOSSIL_SPECIMEN&locale=en HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: d4a95edb-5df5-4f27-88f4-8cf2122dc09a\r\n\r\n'
+
+2023-11-30 11:58:40.272: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:39 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 1042285363\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\n\r\n0039\r\n{"offset":10,"limit":10,"endOfRecords":true,"results":[]}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-9
+
+	Request: 1 (Remaining candidate combinations: 9)
+	Request hash: 7a4223a82279cd3f4ab5091f9dd50b1b8803e65a
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'vernacularNames'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [5, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsageMatch='
+		+ restler_fuzzable_string: [exact, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: [2021, 1, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:40.366: Sending: 'GET /v1/species/1/vernacularNames?sort=%7B+%22fuzz%22%3A+false+%7D&limit=5&nameUsageMatch=exact&year=2021 HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 0ee1634e-2c39-473a-bb71-11ad80738308\r\n\r\n'
+
+2023-11-30 11:58:40.522: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:40 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 1031766712\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\n\r\n002fe\r\n{"offset":0,"limit":5,"endOfRecords":false,"results":[{"taxonKey":1,"vernacularName":"Animal","language":"por","source":"Integrated Taxonomic Information System (ITIS)","sourceTaxonKey":101683523},{"taxonKey":1,"vernacularName":"Animals","language":"eng","source":"Martha\'s Vineyard species checklist","sourceTaxonKey":206226627},{"taxonKey":1,"vernacularName":"Animals","language":"eng","source":"Phthiraptera.myspecies.info","sourceTaxonKey":116891944},{"taxonKey":1,"vernacularName":"Animals","language":"eng","country":"US","source":"Checklist of Vermont Species","sourceTaxonKey":160779655},{"taxonKey":1,"vernacularName":"Dyreriget","language":"dan","country":"DK","source":"National checklist of all species occurring in Denmark","sourceTaxonKey":168508128}]}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-10
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 865ca9517a0e4274bfe4c70704957aa60f16c952
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_static_string: 'match'
+		- restler_static_string: '?'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: [cat, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [0, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: [species, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameType='
+		+ restler_fuzzable_string: [SCIENTIFIC, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: [d7dddbf4-2cf0-4f39-9b2a-bb099caae36c, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: [US, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: [2021, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'strict='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'phylum='
+		+ restler_fuzzable_string: [Chordata, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'class='
+		+ restler_fuzzable_string: [Mammalia, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'order='
+		+ restler_fuzzable_string: [Carnivora, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'family='
+		+ restler_fuzzable_string: [Felidae, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'genus='
+		+ restler_fuzzable_string: [Panthera, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:40.617: Sending: 'GET /v1/species/match?q=cat&limit=10&offset=0&rank=species&nameType=SCIENTIFIC&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c&country=US&year=2021&strict=true&sort=%7B+%22fuzz%22%3A+false+%7D&phylum=Chordata&class=Mammalia&order=Carnivora&family=Felidae&genus=Panthera HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 9cc6f24d-e78e-424e-b7a6-76fa356f507b\r\n\r\n'
+
+2023-11-30 11:58:40.668: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:39 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 1000409528\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\n\r\n0067\r\n{"confidence":99,"note":"No match because of too little confidence","matchType":"NONE","synonym":false}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 5)
+	Request hash: 90dff8af8e2f84d467b8edc7cd2cb37a41e5c63f
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'parents'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [5, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: [kingdom, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:40.757: Sending: 'GET /v1/species/1/parents?sort=%7B+%22fuzz%22%3A+false+%7D&limit=5&rank=kingdom HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: cbf63b61-b7f6-49e8-b6b3-400c2327b4c9\r\n\r\n'
+
+2023-11-30 11:58:40.915: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:40 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 905616206\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nContent-Length: 2\r\nConnection: keep-alive\r\n\r\n[]'
+
+
+Generation-1: Rendering Sequence-12
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 9675ad552c536a2ea1cc85d2be1132925f3b2163
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_static_string: 'search'
+		- restler_static_string: '?'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: [cat, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: [species, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [0, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: [50c9509d-22c7-4a22-a47d-8c48425ef4a7, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: [2000, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'kingdom='
+		+ restler_fuzzable_string: [Animalia, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'order='
+		+ restler_fuzzable_string: [Carnivora, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'mediaType='
+		+ restler_fuzzable_string: [StillImage, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: [fr, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameType='
+		+ restler_fuzzable_string: [SCIENTIFIC, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameStatus='
+		+ restler_fuzzable_string: [ACCEPTED, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: [Canis+lupus, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: [GB, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'strict='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'taxonKey='
+		+ restler_fuzzable_int: [521, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'phylum='
+		+ restler_fuzzable_string: [Chordata, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'class='
+		+ restler_fuzzable_string: [Mammalia, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'family='
+		+ restler_fuzzable_string: [Felidae, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'genus='
+		+ restler_fuzzable_string: [Panthera, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'highertaxon='
+		+ restler_fuzzable_string: [Primates, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:41.041: Sending: 'GET /v1/species/search?q=cat&limit=10&rank=species&offset=0&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&year=2000&kingdom=Animalia&order=Carnivora&mediaType=StillImage&locale=fr&nameType=SCIENTIFIC&nameStatus=ACCEPTED&name=Canis%2Blupus&country=GB&sort=%7B+%22fuzz%22%3A+false+%7D&strict=true&taxonKey=521&phylum=Chordata&class=Mammalia&family=Felidae&genus=Panthera&highertaxon=Primates HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 27a5b2fe-6129-4e38-a183-7970ebacda22\r\n\r\n'
+
+2023-11-30 11:58:41.120: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:40 GMT\r\nCache-Control: public, max-age=600\r\nX-Varnish: 905616211\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nContent-Length: 78\r\nConnection: keep-alive\r\n\r\n{"offset":0,"limit":10,"endOfRecords":true,"count":0,"results":[],"facets":[]}'
+
+
+Generation-1: Rendering Sequence-13
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: a1248fffed2987e5ab92f711f66bdbbc048359c0
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'distributions'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [5, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: [France, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'taxonKey='
+		+ restler_fuzzable_int: [123456, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'kingdom='
+		+ restler_fuzzable_string: [Animalia, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: [species, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: [2000, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: [orchid, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [50, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: [abc123, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'mediaType='
+		+ restler_fuzzable_string: [StillImage, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'basisOfRecord='
+		+ restler_fuzzable_string: [literature, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'geometryType='
+		+ restler_fuzzable_string: [POLYGON, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'institutionCode='
+		+ restler_fuzzable_string: [NYBG, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'geometry='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'protocol='
+		+ restler_fuzzable_string: [DWC_ARCHIVE, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'status='
+		+ restler_fuzzable_string: [ACCEPTED, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'citationType='
+		+ restler_fuzzable_string: [BOOK, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:41.230: Sending: 'GET /v1/species/1/distributions?sort=%7B+%22fuzz%22%3A+false+%7D&limit=5&country=France&taxonKey=123456&kingdom=Animalia&rank=species&year=2000&q=orchid&offset=50&datasetKey=abc123&mediaType=StillImage&basisOfRecord=literature&geometryType=POLYGON&institutionCode=NYBG&geometry=true&protocol=DWC_ARCHIVE&status=ACCEPTED&citationType=BOOK HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 3a1f2277-6905-4fce-af4d-28505718ef4d\r\n\r\n'
+
+2023-11-30 11:58:41.402: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:40 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 972916399\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nContent-Length: 56\r\nConnection: keep-alive\r\n\r\n{"offset":50,"limit":5,"endOfRecords":true,"results":[]}'
+
+
+Generation-1: Rendering Sequence-14
+
+	Request: 1 (Remaining candidate combinations: 17)
+	Request hash: bb4de49bb7aba137c8e16cddaddce7ccffa0716b
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_static_string: 'lookup'
+		- restler_static_string: '?'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: [cat, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'strict='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: [ebd6eac3-5a7c-4f38-bb8b-699e4424ecea, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: [2022, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:41.512: Sending: 'GET /v1/species/lookup?q=cat&strict=true&limit=10&datasetKey=ebd6eac3-5a7c-4f38-bb8b-699e4424ecea&year=2022&sort=%7B+%22fuzz%22%3A+false+%7D HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: ac5c80af-a11e-481e-9ecb-4dbfed6aedfc\r\n\r\n'
+
+2023-11-30 11:58:41.569: Received: 'HTTP/1.1 204 No Content\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nDate: Thu, 30 Nov 2023 10:58:41 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 1043694233\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nConnection: keep-alive\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-15
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: d6159dbb167904c1f0b3d3cc22e35ed32db62792
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '?'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: [cat, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'strict='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: [2022, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'tag='
+		+ restler_fuzzable_string: [Fungi, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: [en, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: [ebd6eac3-5a7c-4f38-bb8b-699e4424ecea, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:41.670: Sending: 'GET /v1/species/1?q=cat&limit=10&strict=true&sort=%7B+%22fuzz%22%3A+false+%7D&year=2022&tag=Fungi&offset=10&locale=en&datasetKey=ebd6eac3-5a7c-4f38-bb8b-699e4424ecea HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: ac8bc038-26b2-4de9-9c29-f7dbd2ea5325\r\n\r\n'
+
+2023-11-30 11:58:41.826: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:41 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 1031766723\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nContent-Length: 579\r\nConnection: keep-alive\r\n\r\n{"key":1,"nubKey":1,"nameKey":130188353,"taxonID":"gbif:1","sourceTaxonKey":1,"kingdom":"Animalia","kingdomKey":1,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","scientificName":"Animalia","canonicalName":"Animalia","vernacularName":"Animals","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":2981931,"lastCrawled":"2023-08-22T23:20:59.545+00:00","lastInterpreted":"2023-08-22T22:11:51.237+00:00","issues":[]}'
+
+
+Generation-1: Rendering Sequence-16
+
+	Request: 1 (Remaining candidate combinations: 5)
+	Request hash: e64f63e2a6154deb26feedcabab2fd59482cd2e9
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'related'
+		- restler_static_string: '?'
+		- restler_static_string: 'nameUsageMatch='
+		+ restler_fuzzable_string: [exact, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: [2021, 1, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:41.937: Sending: 'GET /v1/species/1/related?nameUsageMatch=exact&year=2021 HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: bd22af23-f088-468c-a900-063f45dd5889\r\n\r\n'
+
+2023-11-30 11:58:42.047: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:41 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 972916407\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\n\r\n0024fb\r\n{"offset":0,"limit":20,"endOfRecords":false,"results":[{"key":216047879,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":216047879,"datasetKey":"00024397-569d-43a8-9e08-9a1072e201df","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":335,"lastCrawled":"2023-11-02T06:11:46.438+00:00","lastInterpreted":"2023-11-02T06:11:49.454+00:00","issues":[]},{"key":215735302,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":215735302,"datasetKey":"0006731b-76dd-488f-b3f0-77b973ca9c25","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":6,"lastCrawled":"2023-10-26T19:42:03.630+00:00","lastInterpreted":"2023-10-26T19:42:12.407+00:00","issues":[]},{"key":212428527,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":212428527,"datasetKey":"00076a10-40f1-48fc-85e1-196b78cf28cb","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":206,"lastCrawled":"2023-08-24T11:03:24.102+00:00","lastInterpreted":"2023-08-17T13:50:50.937+00:00","issues":[]},{"key":215984072,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":215984072,"datasetKey":"000a7240-3d12-4025-aa65-16abe083cea0","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":23,"lastCrawled":"2023-11-01T11:22:19.917+00:00","lastInterpreted":"2023-11-01T11:22:30.522+00:00","issues":[]},{"key":214321238,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":214321238,"datasetKey":"000abe21-b031-424d-8e8b-20badc0b8ed1","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":13,"lastCrawled":"2023-10-25T22:58:39.179+00:00","lastInterpreted":"2023-10-25T22:58:42.111+00:00","issues":[]},{"key":217256669,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":217256669,"datasetKey":"000c326a-3188-45ea-ad58-6ef8757145b7","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":8,"lastCrawled":"2023-11-07T00:56:49.778+00:00","lastInterpreted":"2023-11-07T00:56:58.916+00:00","issues":[]},{"key":215828587,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":215828587,"datasetKey":"000e5e3d-ee09-4d51-b106-d4ad23a37513","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":8,"lastCrawled":"2023-10-28T17:17:06.189+00:00","lastInterpreted":"2023-10-28T17:17:07.995+00:00","issues":[]},{"key":217419710,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":217419710,"datasetKey":"000eb2e3-c56f-4967-912b-6e0399850400","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":7,"lastCrawled":"2023-11-09T09:47:42.323+00:00","lastInterpreted":"2023-11-09T09:58:10.098+00:00","issues":[]},{"key":203893645,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":203893645,"datasetKey":"00106674-20d9-4d70-bb0f-8f000fb311f2","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":41,"lastCrawled":"2023-08-24T11:08:42.802+00:00","lastInterpreted":"2022-11-02T09:36:07.836+00:00","issues":[]},{"key":215982003,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":215982003,"datasetKey":"0010c4e6-f37b-40c6-a2fc-f03234cd0a1e","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":14,"lastCrawled":"2023-11-01T11:10:05.577+00:00","lastInterpreted":"2023-11-01T11:10:12.262+00:00","issues":[]},{"key":205932786,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":205932786,"datasetKey":"0010d985-7b7c-462b-b2d9-ec991e99dccb","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":2,"lastCrawled":"2023-08-24T12:18:06.111+00:00","lastInterpreted":"2022-12-08T15:27:07.314+00:00","issues":[]},{"key":214334447,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":214334447,"datasetKey":"00135905-8eff-4f77-8a49-7cbdff453b2c","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":6,"lastCrawled":"2023-10-26T04:05:04.901+00:00","lastInterpreted":"2023-10-26T04:05:06.693+00:00","issues":[]},{"key":160611768,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":160611768,"datasetKey":"00164886-b979-494e-a696-9d683e9f3a8e","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":84,"lastCrawled":"2023-08-24T10:56:28.370+00:00","lastInterpreted":"2019-12-01T18:36:55.037+00:00","issues":[]},{"key":215796054,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":215796054,"datasetKey":"0017ddd3-3299-4282-bb0a-b0e7b78a920d","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":6,"lastCrawled":"2023-10-27T22:10:29.115+00:00","lastInterpreted":"2023-10-27T22:10:31.812+00:00","issues":[]},{"key":204913588,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":204913588,"datasetKey":"00181742-cb01-4a7f-a20c-ef5001502fd5","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":29,"lastCrawled":"2023-08-24T12:18:25.558+00:00","lastInterpreted":"2022-11-12T09:31:05.110+00:00","issues":[]},{"key":203777493,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":203777493,"datasetKey":"0018f7ca-cbb2-4943-a2dc-37f7249963e0","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":9,"lastCrawled":"2023-08-24T10:06:37.573+00:00","lastInterpreted":"2022-11-01T20:48:35.842+00:00","issues":[]},{"key":215969074,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":215969074,"datasetKey":"00194bc1-ea4e-4df1-b462-2bd898aeee0b","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":6,"lastCrawled":"2023-11-01T08:40:26.447+00:00","lastInterpreted":"2023-11-01T08:40:36.418+00:00","issues":[]},{"key":215721040,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":215721040,"datasetKey":"001a76ae-74ed-4330-9e5e-b46ae18b0326","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":6,"lastCrawled":"2023-10-26T16:27:59.251+00:00","lastInterpreted":"2023-10-26T17:55:00.639+00:00","issues":[]},{"key":215827679,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":215827679,"datasetKey":"001e3a91-4ea0-4bb3-9ec8-9d3697554a85","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":10,"lastCrawled":"2023-10-28T16:33:51.689+00:00","lastInterpreted":"2023-10-28T16:33:53.707+00:00","issues":[]},{"key":205305680,"nubKey":1,"nameKey":683619,"kingdom":"Animalia","kingdomKey":205305680,"datasetKey":"001f1eac-0d65-41d9-a634-d4fb65c8989b","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"DENORMED_CLASSIFICATION","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"numDescendants":7,"lastCrawled":"2023-08-24T11:06:26.832+00:00","lastInterpreted":"2022-12-01T01:52:13.972+00:00","issues":[]}]}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-17
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: f781192d324ed273cfd63990cee75181fe357d8a
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'name'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [popularity, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [5, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: [genus, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsageMatch='
+		+ restler_fuzzable_string: [exact, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: [Myrmecocystus, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: [en, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: [US, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: [2021, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'mediaType='
+		+ restler_fuzzable_string: [stillImage, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'class='
+		+ restler_fuzzable_string: [Insecta, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:42.143: Sending: 'GET /v1/species/1/name?sort=popularity&limit=5&rank=genus&nameUsageMatch=exact&offset=10&name=Myrmecocystus&locale=en&country=US&year=2021&mediaType=stillImage&class=Insecta HTTP/1.1\r\nAccept: application/json\r\nHost: api.gbif.org\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 393149c6-e85d-4e74-b5cd-6e8288f8c837\r\n\r\n'
+
+2023-11-30 11:58:42.173: Received: 'HTTP/1.1 200 OK\r\nVary: Origin, Access-Control-Request-Method, Access-Control-Request-Headers\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nPragma: no-cache\r\nExpires: 0\r\nX-Frame-Options: DENY\r\nContent-Type: application/json\r\nDate: Thu, 30 Nov 2023 10:58:41 GMT\r\nCache-Control: public, max-age=3601\r\nX-Varnish: 1016595317\r\nAge: 0\r\nVia: 1.1 varnish (Varnish/6.0)\r\nAccept-Ranges: bytes\r\nContent-Length: 228\r\nConnection: keep-alive\r\n\r\n{"key":130188353,"scientificName":"Animalia","type":"SCIENTIFIC","genusOrAbove":"Animalia","parsed":true,"parsedPartially":false,"canonicalName":"Animalia","canonicalNameWithMarker":"Animalia","canonicalNameComplete":"Animalia"}'
+

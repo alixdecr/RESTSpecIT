@@ -1,0 +1,310 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Bored API",
+        "description": "**API Description** - The Bored API provides random activities for users who are feeling bored.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "https://www.boredapi.com/terms",
+        "contact": {
+            "name": "Bored API Contact",
+            "url": "https://www.boredapi.com/contact",
+            "email": "info@boredapi.com"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://www.boredapi.com",
+            "description": "Production Server of the Bored API.",
+            "x-base-routes": 1
+        }
+    ],
+    "externalDocs": {
+        "url": "https://www.boredapi.com/documentation",
+        "description": "Find more about the Bored API here:"
+    },
+    "paths": {
+        "/api/activity": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "recreational": {
+                                "value": "recreational"
+                            },
+                            "education": {
+                                "value": "education"
+                            },
+                            "social": {
+                                "value": "social"
+                            },
+                            "diy": {
+                                "value": "diy"
+                            },
+                            "charity": {
+                                "value": "charity"
+                            }
+                        }
+                    },
+                    {
+                        "name": "participants",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "2": {
+                                "value": "2"
+                            },
+                            "3": {
+                                "value": "3"
+                            },
+                            "4": {
+                                "value": "4"
+                            },
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "price",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "0": {
+                                "value": "0"
+                            },
+                            "0.5": {
+                                "value": "0.5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "accessibility",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "0.2": {
+                                "value": "0.2"
+                            },
+                            "0": {
+                                "value": "0"
+                            }
+                        }
+                    },
+                    {
+                        "name": "minaccessibility",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "maxaccessibility",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "minparticipants",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "maxparticipants",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "key",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "minprice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "0.1": {
+                                "value": "0.1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "maxprice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "0.3": {
+                                "value": "0.3"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_activity"
+                                },
+                                "example": {
+                                    "activity": "Try a food you don't like",
+                                    "type": "recreational",
+                                    "participants": 1,
+                                    "price": 0.1,
+                                    "link": "",
+                                    "key": "6693574",
+                                    "accessibility": 0.05
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content=\"width=device-width,initial-scale=1\"><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css integrity=sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M crossorigin=anonymous><script src=https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js></scri..."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "recreational": {
+                                "value": "recreational"
+                            }
+                        }
+                    },
+                    {
+                        "name": "participants",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api"
+                                },
+                                "example": {
+                                    "message": "Bored API"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content=\"width=device-width,initial-scale=1\"><link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css integrity=sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M crossorigin=anonymous><script src=https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js></scri..."
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema_api_activity": {},
+            "ResponseSchema_api": {}
+        }
+    }
+}

@@ -1,0 +1,598 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Random User Generator API",
+        "description": "**API Description** - The Random User Generator API is an API that generates random user data such as names, addresses, and images.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "https://randomuser.me/documentation",
+        "contact": {
+            "name": "Random User Generator API Contact",
+            "url": "https://randomuser.me/documentation#contact",
+            "email": "support@randomuser.me"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://randomuser.me",
+            "description": "Production Server of the Random User Generator API.",
+            "x-base-routes": 1
+        }
+    ],
+    "externalDocs": {
+        "url": "https://randomuser.me/documentation",
+        "description": "Find more about the Random User Generator API here:"
+    },
+    "paths": {
+        "/api": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "results",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            },
+                            "10": {
+                                "value": "10"
+                            },
+                            "3": {
+                                "value": "3"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "gender",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "male": {
+                                "value": "male"
+                            },
+                            "female": {
+                                "value": "female"
+                            },
+                            "other": {
+                                "value": "other"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nat",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "us": {
+                                "value": "us"
+                            },
+                            "gb": {
+                                "value": "gb"
+                            },
+                            "au": {
+                                "value": "au"
+                            },
+                            "br": {
+                                "value": "br"
+                            },
+                            "fr": {
+                                "value": "fr"
+                            },
+                            "ca": {
+                                "value": "ca"
+                            },
+                            "nl": {
+                                "value": "nl"
+                            },
+                            "es": {
+                                "value": "es"
+                            },
+                            "de": {
+                                "value": "de"
+                            },
+                            "ie": {
+                                "value": "ie"
+                            }
+                        }
+                    },
+                    {
+                        "name": "inc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name,email": {
+                                "value": "name,email"
+                            },
+                            "cell": {
+                                "value": "cell"
+                            },
+                            "name": {
+                                "value": "name"
+                            },
+                            "email": {
+                                "value": "email"
+                            },
+                            "location": {
+                                "value": "location"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "login": {
+                                "value": "login"
+                            },
+                            "gender": {
+                                "value": "gender"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "abc123": {
+                                "value": "abc123"
+                            },
+                            "myseed": {
+                                "value": "myseed"
+                            },
+                            "xyz789": {
+                                "value": "xyz789"
+                            },
+                            "abcdefg": {
+                                "value": "abcdefg"
+                            },
+                            "1234": {
+                                "value": "1234"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            },
+                            "3": {
+                                "value": "3"
+                            }
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "json": {
+                                "value": "json"
+                            }
+                        }
+                    },
+                    {
+                        "name": "dob",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1980-01-01": {
+                                "value": "1980-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "password",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "123456": {
+                                "value": "123456"
+                            }
+                        }
+                    },
+                    {
+                        "name": "username",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "johnsmith": {
+                                "value": "johnsmith"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api"
+                                },
+                                "example": {
+                                    "results": [
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Miss",
+                                                "first": "Magdalena",
+                                                "last": "Gamez"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 487,
+                                                    "name": "Retorno Malta"
+                                                },
+                                                "city": "Tlacote El Bajo",
+                                                "state": "Guerrero",
+                                                "country": "Mexico",
+                                                "postcode": 48678,
+                                                "coordinates": {
+                                                    "latitude": "29.4284",
+                                                    "longitude": "101.9804"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+3:00",
+                                                    "description": "Baghdad, Riyadh, Moscow, St. Petersburg"
+                                                }
+                                            },
+                                            "email": "magdalena.gamez@example.com",
+                                            "login": {
+                                                "uuid": "95580ee6-6be6-4e39-96d1-b4bac2525f92",
+                                                "username": "bigostrich353",
+                                                "password": "stratus",
+                                                "salt": "S5B3lM2A",
+                                                "md5": "222a64ece119b7eaca39d3b16943bdb5",
+                                                "sha1": "41147191e7f9e747e3993c9fecdb8c248a62fab2",
+                                                "sha256": "8281dbf2fea83080a6b43d87c751ee39bb40a4e7c889e3d423c3f94da01c2626"
+                                            },
+                                            "dob": {
+                                                "date": "1986-05-11T02:19:29.227Z",
+                                                "age": 37
+                                            },
+                                            "registered": {
+                                                "date": "2015-11-23T19:21:19.075Z",
+                                                "age": 7
+                                            },
+                                            "phone": "(613) 139 5103",
+                                            "cell": "(628) 984 1838",
+                                            "id": {
+                                                "name": "NSS",
+                                                "value": "92 01 12 0887 7"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/74.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/74.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/74.jpg"
+                                            },
+                                            "nat": "MX"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Mrs",
+                                                "first": "D\u00fabia",
+                                                "last": "da Cunha"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 6726,
+                                                    "name": "Avenida D. Pedro Ii"
+                                                },
+                                                "city": "Lauro de Freitas",
+                                                "state": "Par\u00e1",
+                                                "country": "Brazil",
+                                                "postcode": 28883,
+                                                "coordinates": {
+                                                    "latitude": "-84.6075",
+                                                    "longitude": "-38.9233"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+10:00",
+                                                    "description": "Eastern Australia, Guam, Vladivostok"
+                                                }
+                                            },
+                                            "email": "dubia.dacunha@example.com",
+                                            "login": {
+                                                "uuid": "4efd72d5-de40-4213-8ddc-c1b438fa0783",
+                                                "username": "tinyfrog426",
+                                                "password": "nana",
+                                                "salt": "ESc4E8l4",
+                                                "md5": "367352ec280ac091dc1b86a61187fd3c",
+                                                "sha1": "c840fda471f070bd86246a0d625dfc82077441e0",
+                                                "sha256": "d96504aef51cb67b4b22a07b10f2222f03c0483eaf29fc9723952cbd13513af1"
+                                            },
+                                            "dob": {
+                                                "date": "1973-03-22T06:54:18.523Z",
+                                                "age": 50
+                                            },
+                                            "registered": {
+                                                "date": "2011-12-14T09:36:41.251Z",
+                                                "age": 11
+                                            },
+                                            "phone": "(71) 9563-5595",
+                                            "cell": "(56) 4301-9836",
+                                            "id": {
+                                                "name": "CPF",
+                                                "value": "517.292.996-96"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/59.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/59.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/59.jpg"
+                                            },
+                                            "nat": "BR"
+                                        },
+                                        {
+                                            "gender": "male",
+                                            "name": {
+                                                "title": "Mr",
+                                                "first": "Diy",
+                                                "last": "Harhalis"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 5481,
+                                                    "name": "Bodyanskogo"
+                                                },
+                                                "city": "Novogrodivka",
+                                                "state": "Vinnicka",
+                                                "country": "Ukraine",
+                                                "postcode": 35260,
+                                                "coordinates": {
+                                                    "latitude": "-0.8829",
+                                                    "longitude": "75.9036"
+                                                },
+                                                "timezone": {
+                                                    "offset": "-11:00",
+                                                    "description": "Midway Island, Samoa"
+                                                }
+                                            },
+                                            "email": "diy.harhalis@example.com",
+                                            "login": {
+                                                "uuid": "0e7f2eae-5587-49b1-a895-89f88a6612ec",
+                                                "username": "silverelephant457",
+                                                "password": "dorothy",
+                                                "salt": "YxDqucpR",
+                                                "md5": "51093cc1b5e623706f0fe3a03ba80133",
+                                                "sha1": "fe9327baeabb8c9c38c5c1edbb852ba74d3151d7",
+                                                "sha256": "2bc55a12f5c83fee87ca99eda0ab2c47521327a6e119b6c6c797761cadfa4edc"
+                                            },
+                                            "dob": {
+                                                "date": "1979-07-15T17:01:41.404Z",
+                                                "age": 44
+                                            },
+                                            "registered": {
+                                                "date": "2007-01-26T09:38:35.865Z",
+                                                "age": 16
+                                            },
+                                            "phone": "(099) K88-7616",
+                                            "cell": "(096) X43-9802",
+                                            "id": {
+                                                "name": "",
+                                                "value": null
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/men/35.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/men/35.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/35.jpg"
+                                            },
+                                            "nat": "UA"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Ms",
+                                                "first": "Seyda",
+                                                "last": "Zeelen"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 2146,
+                                                    "name": "Hasseltsedijk"
+                                                },
+                                                "city": "Nijensleek",
+                                                "state": "Zuid-Holland",
+                                                "country": "Netherlands",
+                                                "postcode": "6235 FU",
+                                                "coordinates": {
+                                                    "latitude": "-33.7507",
+                                                    "longitude": "48.1632"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+5:30",
+                                                    "description": "Bombay, Calcutta, Madras, New Delhi"
+                                                }
+                                            },
+                                            "email": "seyda.zeelen@example.com",
+                                            "login": {
+                                                "uuid": "82c3f4fe-afae-455e-8819-04c674503b4c",
+                                                "username": "heavycat691",
+                                                "password": "peterpan",
+                                                "salt": "MwRlvJNb",
+                                                "md5": "88ed8f38a53191c53c61acda39051b5e",
+                                                "sha1": "ae9c611485e0f51e8e77d69a230ee75f42b4432c",
+                                                "sha256": "eb787185ab91186e1b78ce41b7bec42cad9e6792e9bb3f6e1062906bd5004363"
+                                            },
+                                            "dob": {
+                                                "date": "1996-03-06T19:18:11.873Z",
+                                                "age": 27
+                                            },
+                                            "registered": {
+                                                "date": "2021-07-19T14:50:05.411Z",
+                                                "age": 2
+                                            },
+                                            "phone": "(0186) 266476",
+                                            "cell": "(06) 94780610",
+                                            "id": {
+                                                "name": "BSN",
+                                                "value": "94183553"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/91.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/91.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/91.jpg"
+                                            },
+                                            "nat": "NL"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Ms",
+                                                "first": "Mirna",
+                                                "last": "\u0160erbed\u017eija"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 754,
+                                                    "name": "Milorada \u017divkovi\u0107a"
+                                                },
+                                                "city": "\u0160id",
+                                                "state": "Rasina",
+                                                "country": "Serbia",
+                                                "postcode": 38654,
+                                                "coordinates": {
+                                                    "latitude": "-44.1611",
+                                                    "longitude": "-36.8731"
+                                                },
+                                                "timezone": {
+                                                    "offset": "-8:00",
+                                                    "description": "Pacific Time (US & Canada)"
+                                                }
+                                            },
+                                            "email": "mirna.serbedzija@example.com",
+                                            "login": {
+                                                "uuid": "935d6ddb-a1a7-4e75-bd03-a8dfbb3a9ff9",
+                                                "username": "bigsnake524",
+                                                "password": "annette",
+                                                "salt": "RlKZ1TdK",
+                                                "md5": "1ba8d28f1d8ab5dab9b9818ae572a407",
+                                                "sha1": "a001ebc82fb1c4e2ee78a5fca6eecf1333349f1c",
+                                                "sha256": "b22acce3ba724a52d1b9a481ef619ad8af6b732a7869057b3372ed40b5e5131f"
+                                            },
+                                            "dob": {
+                                                "date": "1945-02-01T10:46:40.689Z",
+                                                "age": 78
+                                            },
+                                            "registered": {
+                                                "date": "2017-01-04T14:02:14.028Z",
+                                                "age": 6
+                                            },
+                                            "phone": "032-3882-933",
+                                            "cell": "063-6911-901",
+                                            "id": {
+                                                "name": "SID",
+                                                "value": "985091050"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/48.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/48.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/48.jpg"
+                                            },
+                                            "nat": "RS"
+                                        }
+                                    ],
+                                    "info": {
+                                        "seed": "536ff1203cf9e03f",
+                                        "results": 5,
+                                        "page": 1,
+                                        "version": "1.4"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/plain; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "Not Found"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema_api": {}
+        }
+    }
+}

@@ -1,0 +1,3016 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "GBIF Species API",
+        "description": "**API Description** - The GBIF Species API is an interface that provides access to species-related data from the Global Biodiversity Information Facility (GBIF).<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "https://www.gbif.org/terms",
+        "contact": {
+            "name": "GBIF Species API Contact",
+            "url": "",
+            "email": "support@gbif.org"
+        },
+        "license": {
+            "name": "Creative Commons Attribution (CC BY) 4.0.",
+            "url": "https://creativecommons.org/licenses/by/4.0"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://api.gbif.org",
+            "description": "Production Server of the GBIF Species API.",
+            "x-base-routes": 2
+        }
+    ],
+    "externalDocs": {
+        "url": "https://www.gbif.org/developer/species",
+        "description": "Find more about the GBIF Species API here:"
+    },
+    "paths": {
+        "/v1/species/search": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "leopard": {
+                                "value": "leopard"
+                            },
+                            "orchid": {
+                                "value": "orchid"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "kingdom",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Animalia": {
+                                "value": "Animalia"
+                            },
+                            "Plantae": {
+                                "value": "Plantae"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rank",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "species": {
+                                "value": "species"
+                            },
+                            "family": {
+                                "value": "family"
+                            },
+                            "genus": {
+                                "value": "genus"
+                            }
+                        }
+                    },
+                    {
+                        "name": "taxonKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2488": {
+                                "value": "2488"
+                            },
+                            "123456": {
+                                "value": "123456"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nameType",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "SCIENTIFIC": {
+                                "value": "SCIENTIFIC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            },
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "year",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2010": {
+                                "value": "2010"
+                            },
+                            "2020": {
+                                "value": "2020"
+                            },
+                            "2015": {
+                                "value": "2015"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "US": {
+                                "value": "US"
+                            },
+                            "United+States": {
+                                "value": "United+States"
+                            },
+                            "GB": {
+                                "value": "GB"
+                            }
+                        }
+                    },
+                    {
+                        "name": "datasetKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "7ddf754f-d193-4cc9-b351-99906754a03b": {
+                                "value": "7ddf754f-d193-4cc9-b351-99906754a03b"
+                            },
+                            "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c": {
+                                "value": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
+                            },
+                            "7c5c6e5e-8e5d-4a4b-b5f9-9e5b1a270f0d": {
+                                "value": "7c5c6e5e-8e5d-4a4b-b5f9-9e5b1a270f0d"
+                            }
+                        }
+                    },
+                    {
+                        "name": "mediaType",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "StillImage": {
+                                "value": "StillImage"
+                            }
+                        }
+                    },
+                    {
+                        "name": "hasCoordinate",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "isExtinct",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Panthera%20leo": {
+                                "value": "Panthera%20leo"
+                            },
+                            "cat": {
+                                "value": "cat"
+                            }
+                        }
+                    },
+                    {
+                        "name": "hasImage",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "family",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Felidae": {
+                                "value": "Felidae"
+                            }
+                        }
+                    },
+                    {
+                        "name": "kingdomKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v1_species_search"
+                                },
+                                "example": {
+                                    "offset": 0,
+                                    "limit": 10,
+                                    "endOfRecords": false,
+                                    "count": 1781,
+                                    "results": [
+                                        {
+                                            "key": 103921353,
+                                            "datasetKey": "fab88965-e69d-4491-a04d-e3198b626e52",
+                                            "nubKey": 2407691,
+                                            "parentKey": 103921281,
+                                            "parent": "Canthigaster",
+                                            "kingdom": "Metazoa",
+                                            "phylum": "Chordata",
+                                            "order": "Tetraodontiformes",
+                                            "family": "Tetraodontidae",
+                                            "genus": "Canthigaster",
+                                            "species": "Canthigaster leoparda",
+                                            "kingdomKey": 103832354,
+                                            "phylumKey": 103882489,
+                                            "classKey": 103889489,
+                                            "orderKey": 103921139,
+                                            "familyKey": 103921176,
+                                            "genusKey": 103921281,
+                                            "speciesKey": 103921353,
+                                            "scientificName": "Canthigaster leoparda",
+                                            "canonicalName": "Canthigaster leoparda",
+                                            "nameType": "SCIENTIFIC",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "rank": "SPECIES",
+                                            "origin": "SOURCE",
+                                            "numDescendants": 0,
+                                            "numOccurrences": 0,
+                                            "habitats": [],
+                                            "nomenclaturalStatus": [],
+                                            "threatStatuses": [],
+                                            "descriptions": [],
+                                            "vernacularNames": [
+                                                {
+                                                    "vernacularName": "leopard shapnose puffer"
+                                                },
+                                                {
+                                                    "vernacularName": "leopard toby puffer"
+                                                }
+                                            ],
+                                            "synonym": false,
+                                            "higherClassificationMap": {
+                                                "103832354": "Metazoa",
+                                                "103882489": "Chordata",
+                                                "103889489": "Actinopteri",
+                                                "103921139": "Tetraodontiformes",
+                                                "103921176": "Tetraodontidae",
+                                                "103921281": "Canthigaster"
+                                            },
+                                            "class": "Actinopteri"
+                                        },
+                                        {
+                                            "key": 103886457,
+                                            "datasetKey": "fab88965-e69d-4491-a04d-e3198b626e52",
+                                            "nubKey": 5215903,
+                                            "parentKey": 103886352,
+                                            "parent": "Himantura",
+                                            "kingdom": "Metazoa",
+                                            "phylum": "Chordata",
+                                            "order": "Myliobatiformes",
+                                            "family": "Dasyatidae",
+                                            "genus": "Himantura",
+                                            "species": "Himantura leoparda",
+                                            "kingdomKey": 103832354,
+                                            "phylumKey": 103882489,
+                                            "classKey": 103883134,
+                                            "orderKey": 103886131,
+                                            "familyKey": 103886135,
+                                            "genusKey": 103886352,
+                                            "speciesKey": 103886457,
+                                            "scientificName": "Himantura leoparda",
+                                            "canonicalName": "Himantura leoparda",
+                                            "nameType": "SCIENTIFIC",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "rank": "SPECIES",
+                                            "origin": "SOURCE",
+                                            "numDescendants": 0,
+                                            "numOccurrences": 0,
+                                            "habitats": [],
+                                            "nomenclaturalStatus": [],
+                                            "threatStatuses": [],
+                                            "descriptions": [],
+                                            "vernacularNames": [
+                                                {
+                                                    "vernacularName": "leopard whipray"
+                                                }
+                                            ],
+                                            "synonym": false,
+                                            "higherClassificationMap": {
+                                                "103832354": "Metazoa",
+                                                "103882489": "Chordata",
+                                                "103883134": "Chondrichthyes",
+                                                "103886131": "Myliobatiformes",
+                                                "103886135": "Dasyatidae",
+                                                "103886352": "Himantura"
+                                            },
+                                            "class": "Chondrichthyes"
+                                        },
+                                        {
+                                            "key": 119594594,
+                                            "datasetKey": "949d783e-8c28-40b2-8203-e178a48ac1c7",
+                                            "nubKey": 8447113,
+                                            "parentKey": 215871664,
+                                            "parent": "Solter",
+                                            "kingdom": "Animalia",
+                                            "phylum": "Arthropoda",
+                                            "order": "Neuroptera",
+                                            "family": "Myrmeleontidae",
+                                            "genus": "Solter",
+                                            "species": "Solter leopardalis",
+                                            "kingdomKey": 215871659,
+                                            "phylumKey": 215871660,
+                                            "classKey": 215871661,
+                                            "orderKey": 215871662,
+                                            "familyKey": 215871663,
+                                            "genusKey": 215871664,
+                                            "speciesKey": 119594594,
+                                            "scientificName": "Solter leopardalis Michel",
+                                            "canonicalName": "Solter leopardalis",
+                                            "authorship": "Michel",
+                                            "nameType": "SCIENTIFIC",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "rank": "SPECIES",
+                                            "origin": "SOURCE",
+                                            "numDescendants": 0,
+                                            "numOccurrences": 0,
+                                            "habitats": [],
+                                            "nomenclaturalStatus": [],
+                                            "threatStatuses": [],
+                                            "descriptions": [
+                                                {
+                                                    "description": "Description (Based on 1 male, 2 females). Head (Figs 17, 18). Labrum, clypeus and frons yellow with two black lines below antennae. Vertex rounded, shiny, yellow with a brown transverse streak upon antennae and brown horizontal and vertical markings dorsally. Tentorial pit narrow but conspicuous and deep (Fig. 18). Last segment of labial palp slightly swollen with the apical part slender and almost as long as the enlarged part. (Fig. 19). Palpimacula small, pointed basally and more or less flat apically (Fig. 19). Thorax (Fig. 17). Pronotum with three longitudinal lines more or less interrupted at transverse furrow, the lateral lines incurved medially. Cervical sclerite shiny black. Mesoscutum with about seven black markings, the two behind premesoscutum being lighter. Mesoscutellum with two anterior and one posterior black spots. Postnotum black, yellow medially and laterally. Metascutum with irregular lateral dark markings. Metascutellum with a posterior dark spot. Legs slender. Entirely yellow. Tibial spurs extending beyond tarsomeres 2 in fore and mid legs and almost as long as tarsomeres 1 + 2 in hind legs (Fig. 20). Wings narrow, apices sub-acute. Pterostigma slightly darker basally. Forewings longitudinal veins pale, dark only at the connection with crossveins; crossveins black; 7 \u2013 8 presectoral crossveins. Hind wings with 4 \u2013 6 presectoral crossveins; some crossveins between Radius and RS black. FIGURES 22 \u2013 27. Solter leopardalis. 22 \u2014 3 rd instar larva, habitus, dorsal view. 23 \u2014 idem, head, dorsal view. 24 \u2014 idem, ventral view. 25 \u2014 idem, abdominal sternites 7 to 9. 26 \u2014 Exuvia of nymph, mandibles and labrum, dorsal view. 27 \u2014 Biotope between Missour and Endjil, the red arrow shows the cavity where larvae were collected. (OT = ocular tubercle). Abdomen. Tergite 1 ochre yellow. Tergite 2 dark, paler along anterior margin and laterally. Remainder of abdomen alternating ochre yellow and light brown bands. From tergite 2 covered with minute black setae. Posterior margin of sternite 7 of female largely concave with a stout median brown process (Fig. 21). Male genitalia (Figs 66 \u2013 67). Gonarcus largely arched with dorsal edge serrulate. Parameres with a conspicuous backward flat projection and the inner edge of basal half with very close and parallel large forward projections. Description of larva (Based on two 3 rd instar specimens) (Figs 22 \u2013 25). Length of body 27 mm. General coloration pale yellow with darker areas and brown markings on head, thorax and abdomen (Fig. 22). Ventral surface entirely pale. Body covered with variably developed conical macrochetae with a pointed tip and a shrunken base that can be assimilated to dolichasters. All have the same general shape but are more or less tapered. Head capsule (Figs 23, 24) longer than wide with two posterior brown markings. Dorsal surface covered with black dolichasters in the basal half and with smaller translucent dolichasters in the distal half. Ventral surface covered with black setae decreasing in size from outer margin to discal area. Clypeo-labrum concave, bordered with black and white dolichasters between the bases of mandibles and dense smaller white dolichasters around base of mandibles. Antennae thin, with 12 \u2013 14 flagellomeres. Ocular tubercle small but prominent. Labial palps equipped with small dolichasters. Mandibles as long as head capsule; the median tooth noticeably longer than the two other teeth, closer to apical tooth than basal tooth; distance between the base of the mandible and the basal tooth shorter than that between basal tooth and apex of mandible; 11 \u2013 13 stout setae between base of mandible and basal tooth, 2 \u2013 4 between basal tooth and median tooth and 1 \u2013 2 between median tooth and distal tooth. Dorsal surface of mandible with some minute black setae on the basal half; ventral surface without setae. Thorax. Prothorax with two lateral brown markings contiguous to the lateral margin of pronotum. Pronotum yellow with two longitudinal lines, densely covered with black dolichasters, quite longer at the latero-anterior angles. Mesothorax with a small anterior process and a slightly developed posterior process bearing short and long black dolichasters. Mesothoracic spiracle slightly projected. Metathorax with two transverse darker markings, bearing an unconspicuous anterior process equipped with 4 dolichasters and a slightly convex posterior setiferous process equipped with dense and thin long setae. Legs pale in color; pro- and mid femora bearing long thin setae while the tibiae are mainly equipped with black small dolichasters. Inferior margin of posterior tibiae with a fringe of small black dolichasters. Abdomen covered with transverse rows of small black dolichasters, longer on the lateral processes. Sternite 8 without odontoid processes. Sternite 9 equipped with long black stout dolichasters. Apical margin bearing a rastra of four dolichasters of which the two internal are smaller (Fig. 25). Nymph (based on exuvia) (Fig. 26). Inner edge of mandibles brown and serrulate with a stout apical tooth. Labrum with a median incision."
+                                                },
+                                                {
+                                                    "description": "Figs 16 \u2013 27, 66, 67."
+                                                },
+                                                {
+                                                    "description": "Redescription. Medium-sized species (Fig. 28). Forewing 26 \u2013 31 mm, hind wing 23 \u2013 28 mm. Labrum, clypeus and frons pale with a dark making above base of antennae, this marking weakened or absent in some specimens from Morocco (Fig. 29). Last segment of labial palp slightly enlarged with a long apical part (Fig. 30). Palpimacula variable, generally small and oval but sometimes narrowed and extended basally. Pronotum with a pair of anterior dots, a median posterior streak more or less V-shaped and two dots at each posterior angle. In some individuals only the dots of posterior angles are clearly marked. Meso and metascutum spotted (Fig. 31). Tibial spurs as long as tarsomeres 1 + 2 in fore and mid legs, extending beyond tarsomere 1 in hind legs (Fig. 32). Tarsomeres 3 and 4 generally darker. In male, gonarcus thick with two medio-lateral expansions (Fig. 68). Basal half of inner edge of parameres raised forward, more strongly in the basal fourth. Sternite 7 of female as in figure (Fig. 33). Canal of spermatheca long, of variable shape but sharply bent three times (Fig 81, 82)."
+                                                },
+                                                {
+                                                    "description": "Diagnosis. Medium-sized species (Fig. 16). Forewing 28 \u2013 29 mm, hind wing 25 \u2013 26 mm. General dorsal coloration ochre yellow and light brown. Thorax laterally and ventrally yellow, abdomen ventrally ochre yellow. Unmistakable species, characterized by the narrow wings, the forewing crossveins black and the strongly spotted mesonotum (Fig. 17)."
+                                                },
+                                                {
+                                                    "description": "Remarks. The male genitalia figured by Asp\u00f6ck et al. (1980) refer to S. naevipennis and not S. liber."
+                                                },
+                                                {
+                                                    "description": "Distribution (Fig. 86). Known only from the region of Missour in the Atlas Mountains. 5. Solter liber Nav\u00e1s, 1912 Figs 28 \u2013 33, 68, 80 \u2013 82."
+                                                },
+                                                {
+                                                    "description": "Distribution (Fig. 86). S. liber is a Mediterranean species with a wide area of distribution including Portugal, Spain, Morocco, Algeria, Tunisia, Egypt, Israel and Turkey. But as far as is known it is not present in Africa south of the Sahara since S. neglectus from Mali, synonymized with S. liber by Asp\u00f6ck et al. (2001), is reinstated as valid species."
+                                                },
+                                                {
+                                                    "description": "Etymology. Referring to the spotted coloration of thorax that resembles leopard fur."
+                                                },
+                                                {
+                                                    "description": "Material examined. Holotype \u2642, MOROCCO, between Missour and Enjil [33.05495 \u2013 4.13518], alt. 1037 m; stony and rocky area (reg) with Atractcylis sp. Larva collected on 15. viii. 2012 in fine sand inside a small cavity under a rock (Fig. 27); adult emerged on 04. viii. 2013, B. Michel & A. Fran\u00e7ois leg. Paratypes. same data as holotype, 1 \u2642 emerged on 30. vii. 2013; Missour, ECWP, 1 \u2640 11. viii. 2011, alt. 954 m, at light, A. Fran\u00e7ois leg. Larvae. Douirat [33.05665 \u2013 4.13559] 23. iv. 2014 alt. 1024 m. Burried in sandy soil inside a cavity under a rock overhang. Ecological note. Solter leopardalis lives in arid regions of the Atlas Mountain. The larvae do not dig a pit-fall trap as typical for the genus. They develop buried in fine sandy soil accumulated in cavities formed between fractured rocks. (Fig. 27)."
+                                                },
+                                                {
+                                                    "description": "Material examined. Lectotype \u2642 PORTUGAL San Fiel [approx. 39.86104 \u2013 7.30700] S. J. Silvano leg, 1908 (MNHN). SPAIN Rambla Roja (Almeria) [approx. 36.83902 \u2013 2.46632] 1 \u2642 18. vii 2011, F. Acevedo leg. (Facultad de Biolog\u00eda, Madrid); Tabernas (Almeria) [37.055555 \u2013 2.39294] 1 \u2640 25. vii. 1991, V. J. Monserrat leg. (Facultad de Biolog\u00eda, Madrid). MOROCCO Missour ECWP, alt. 954 m, at light, 1 \u2642 09. vi. 2010; 1 \u2640 07. viii. 2012.; 1 \u2642 15. viii. 2009; 3 \u2640\u2640 18. viii. 2011; 1 \u2640 21. ix. 2011 A. Fran\u00e7ois leg.; 2 \u2642, 7 \u2640\u2640 15. viii. 2012, at light, alt. 960 m, wadi with Tamarix sp., Phragmites australis, Retama sphaerocarpa bordered by a steppe with Helianthemum sp. and Moricandia suffruticosa, A. Fran\u00e7ois & B. Michel leg.; 7 \u2642\u2642, 2 \u2640\u2640 21. viii. 2012, at light, alt. 963 m, reg with Hammada scoparia, Helianthemum sp., Artemisia herba-alba, over a wadi with Tamarix sp. A. Fran\u00e7ois & B. Michel leg.; Zerouillet [33.57184 \u2013 3.36577], 1 \u2640 22. viii. 2012, at light, alt. 1096 m, steppe with Stipa tenacissima on a rocky and gullied slope, A. Fran\u00e7ois and B. Michel leg.; Douar Boukhalfa [32.99467 \u2013 4.04562] 1 \u2642 17. viii. 2012, at light, alt. 904 m, side of wadi Moulouya, vegetation consisting of olive tree plantations, alfalfa, orchards, poplars and tamarisks, A. Fran\u00e7ois and B. Michel leg.; between Ouled Ali and Ouatat el Haj [33.44759 \u2013 3.96888] 2 \u2640\u2640, 18. viii 2012, at light, matorral (low groupings) with Rosmarinus officinalis, Stipa tenacissima, Moricandia suffruticosa, Juniperus phoenicea, Pinus alepensis, Olea europaea, A. Fran\u00e7ois and B. Michel leg. Larva. Badano et al. (2014) described the larva and provided information on its ecology."
+                                                }
+                                            ],
+                                            "vernacularNames": [],
+                                            "synonym": false,
+                                            "higherClassificationMap": {
+                                                "215871659": "Animalia",
+                                                "215871660": "Arthropoda",
+                                                "215871661": "Insecta",
+                                                "215871662": "Neuroptera",
+                                                "215871663": "Myrmeleontidae",
+                                                "215871664": "Solter"
+                                            },
+                                            "class": "Insecta"
+                                        },
+                                        {
+                                            "key": 103897009,
+                                            "datasetKey": "fab88965-e69d-4491-a04d-e3198b626e52",
+                                            "nubKey": 5213878,
+                                            "parentKey": 103897008,
+                                            "parent": "Bothus",
+                                            "kingdom": "Metazoa",
+                                            "phylum": "Chordata",
+                                            "order": "Pleuronectiformes",
+                                            "family": "Bothidae",
+                                            "genus": "Bothus",
+                                            "species": "Bothus leopardinus",
+                                            "kingdomKey": 103832354,
+                                            "phylumKey": 103882489,
+                                            "classKey": 103889489,
+                                            "orderKey": 103896836,
+                                            "familyKey": 103896931,
+                                            "genusKey": 103897008,
+                                            "speciesKey": 103897009,
+                                            "scientificName": "Bothus leopardinus",
+                                            "canonicalName": "Bothus leopardinus",
+                                            "nameType": "SCIENTIFIC",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "rank": "SPECIES",
+                                            "origin": "SOURCE",
+                                            "numDescendants": 0,
+                                            "numOccurrences": 0,
+                                            "habitats": [],
+                                            "nomenclaturalStatus": [],
+                                            "threatStatuses": [],
+                                            "descriptions": [],
+                                            "vernacularNames": [
+                                                {
+                                                    "vernacularName": "Pacific leopard flounder"
+                                                }
+                                            ],
+                                            "synonym": false,
+                                            "higherClassificationMap": {
+                                                "103832354": "Metazoa",
+                                                "103882489": "Chordata",
+                                                "103889489": "Actinopteri",
+                                                "103896836": "Pleuronectiformes",
+                                                "103896931": "Bothidae",
+                                                "103897008": "Bothus"
+                                            },
+                                            "class": "Actinopteri"
+                                        },
+                                        {
+                                            "key": 159207803,
+                                            "datasetKey": "fab88965-e69d-4491-a04d-e3198b626e52",
+                                            "nubKey": 2457694,
+                                            "parentKey": 104096476,
+                                            "parent": "Helicops",
+                                            "kingdom": "Metazoa",
+                                            "phylum": "Chordata",
+                                            "order": "Squamata",
+                                            "family": "Dipsadidae",
+                                            "genus": "Helicops",
+                                            "species": "Helicops leopardinus",
+                                            "kingdomKey": 103832354,
+                                            "phylumKey": 103882489,
+                                            "classKey": 104072661,
+                                            "orderKey": 104072682,
+                                            "familyKey": 104095978,
+                                            "genusKey": 104096476,
+                                            "speciesKey": 159207803,
+                                            "scientificName": "Helicops leopardinus",
+                                            "canonicalName": "Helicops leopardinus",
+                                            "nameType": "SCIENTIFIC",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "rank": "SPECIES",
+                                            "origin": "SOURCE",
+                                            "numDescendants": 0,
+                                            "numOccurrences": 0,
+                                            "habitats": [],
+                                            "nomenclaturalStatus": [],
+                                            "threatStatuses": [],
+                                            "descriptions": [],
+                                            "vernacularNames": [
+                                                {
+                                                    "vernacularName": "Leopard keelback"
+                                                }
+                                            ],
+                                            "synonym": false,
+                                            "higherClassificationMap": {
+                                                "103832354": "Metazoa",
+                                                "103882489": "Chordata",
+                                                "104072661": "Lepidosauria",
+                                                "104072682": "Squamata",
+                                                "104095978": "Dipsadidae",
+                                                "104096476": "Helicops"
+                                            },
+                                            "class": "Lepidosauria"
+                                        },
+                                        {
+                                            "key": 103987247,
+                                            "datasetKey": "fab88965-e69d-4491-a04d-e3198b626e52",
+                                            "nubKey": 2344329,
+                                            "parentKey": 103987063,
+                                            "parent": "Synodontis",
+                                            "kingdom": "Metazoa",
+                                            "phylum": "Chordata",
+                                            "order": "Siluriformes",
+                                            "family": "Mochokidae",
+                                            "genus": "Synodontis",
+                                            "species": "Synodontis leopardinus",
+                                            "kingdomKey": 103832354,
+                                            "phylumKey": 103882489,
+                                            "classKey": 103889489,
+                                            "orderKey": 103978183,
+                                            "familyKey": 103986922,
+                                            "genusKey": 103987063,
+                                            "speciesKey": 103987247,
+                                            "scientificName": "Synodontis leopardinus",
+                                            "canonicalName": "Synodontis leopardinus",
+                                            "nameType": "SCIENTIFIC",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "rank": "SPECIES",
+                                            "origin": "SOURCE",
+                                            "numDescendants": 0,
+                                            "numOccurrences": 0,
+                                            "habitats": [],
+                                            "nomenclaturalStatus": [],
+                                            "threatStatuses": [],
+                                            "descriptions": [],
+                                            "vernacularNames": [
+                                                {
+                                                    "vernacularName": "leopard squeaker"
+                                                }
+                                            ],
+                                            "synonym": false,
+                                            "higherClassificationMap": {
+                                                "103832354": "Metazoa",
+                                                "103882489": "Chordata",
+                                                "103889489": "Actinopteri",
+                                                "103978183": "Siluriformes",
+                                                "103986922": "Mochokidae",
+                                                "103987063": "Synodontis"
+                                            },
+                                            "class": "Actinopteri"
+                                        },
+                                        {
+                                            "key": 115378661,
+                                            "datasetKey": "fab88965-e69d-4491-a04d-e3198b626e52",
+                                            "nubKey": 2466878,
+                                            "parentKey": 104090222,
+                                            "parent": "Diplolaemus",
+                                            "kingdom": "Metazoa",
+                                            "phylum": "Chordata",
+                                            "order": "Squamata",
+                                            "family": "Leiosauridae",
+                                            "genus": "Diplolaemus",
+                                            "species": "Diplolaemus leopardinus",
+                                            "kingdomKey": 103832354,
+                                            "phylumKey": 103882489,
+                                            "classKey": 104072661,
+                                            "orderKey": 104072682,
+                                            "familyKey": 156259068,
+                                            "genusKey": 104090222,
+                                            "speciesKey": 115378661,
+                                            "scientificName": "Diplolaemus leopardinus",
+                                            "canonicalName": "Diplolaemus leopardinus",
+                                            "nameType": "SCIENTIFIC",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "rank": "SPECIES",
+                                            "origin": "SOURCE",
+                                            "numDescendants": 0,
+                                            "numOccurrences": 0,
+                                            "habitats": [],
+                                            "nomenclaturalStatus": [],
+                                            "threatStatuses": [],
+                                            "descriptions": [],
+                                            "vernacularNames": [
+                                                {
+                                                    "vernacularName": "leopard iguana"
+                                                }
+                                            ],
+                                            "synonym": false,
+                                            "higherClassificationMap": {
+                                                "103832354": "Metazoa",
+                                                "103882489": "Chordata",
+                                                "104072661": "Lepidosauria",
+                                                "104072682": "Squamata",
+                                                "156259068": "Leiosauridae",
+                                                "104090222": "Diplolaemus"
+                                            },
+                                            "class": "Lepidosauria"
+                                        },
+                                        {
+                                            "key": 204356961,
+                                            "datasetKey": "6b6b2923-0a10-4708-b170-5b7c611aceef",
+                                            "parentKey": 179686734,
+                                            "parent": "unclassified Parvoviridae",
+                                            "kingdom": "Shotokuvirae",
+                                            "phylum": "Cossaviricota",
+                                            "order": "Piccovirales",
+                                            "family": "Parvoviridae",
+                                            "species": "Leopard lizard parvovirus",
+                                            "kingdomKey": 179677050,
+                                            "phylumKey": 179686601,
+                                            "classKey": 179686604,
+                                            "orderKey": 179686607,
+                                            "familyKey": 179686610,
+                                            "speciesKey": 204356961,
+                                            "scientificName": "Leopard lizard parvovirus",
+                                            "nameType": "VIRUS",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "rank": "SPECIES",
+                                            "origin": "SOURCE",
+                                            "numDescendants": 0,
+                                            "numOccurrences": 0,
+                                            "habitats": [],
+                                            "nomenclaturalStatus": [],
+                                            "threatStatuses": [],
+                                            "descriptions": [],
+                                            "vernacularNames": [],
+                                            "synonym": false,
+                                            "higherClassificationMap": {
+                                                "179677050": "Shotokuvirae",
+                                                "179686601": "Cossaviricota",
+                                                "179686604": "Quintoviricetes",
+                                                "179686607": "Piccovirales",
+                                                "179686610": "Parvoviridae",
+                                                "179686734": "unclassified Parvoviridae"
+                                            },
+                                            "class": "Quintoviricetes"
+                                        },
+                                        {
+                                            "key": 206154039,
+                                            "datasetKey": "fab88965-e69d-4491-a04d-e3198b626e52",
+                                            "parentKey": 166884957,
+                                            "parent": "unclassified Vallisneria",
+                                            "kingdom": "Viridiplantae",
+                                            "phylum": "Streptophyta",
+                                            "order": "Alismatales",
+                                            "family": "Hydrocharitaceae",
+                                            "genus": "Vallisneria",
+                                            "species": "Vallisneria sp.Leopard",
+                                            "kingdomKey": 102974832,
+                                            "phylumKey": 102986054,
+                                            "classKey": 103019693,
+                                            "orderKey": 103020216,
+                                            "familyKey": 103023430,
+                                            "genusKey": 103023591,
+                                            "speciesKey": 206154039,
+                                            "scientificName": "Vallisneria sp. Leopard",
+                                            "canonicalName": "Vallisneria sp.Leopard",
+                                            "nameType": "INFORMAL",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "rank": "SPECIES",
+                                            "origin": "SOURCE",
+                                            "numDescendants": 0,
+                                            "numOccurrences": 0,
+                                            "habitats": [],
+                                            "nomenclaturalStatus": [],
+                                            "threatStatuses": [],
+                                            "descriptions": [],
+                                            "vernacularNames": [],
+                                            "synonym": false,
+                                            "higherClassificationMap": {
+                                                "102974832": "Viridiplantae",
+                                                "102986054": "Streptophyta",
+                                                "103019693": "Magnoliopsida",
+                                                "103020216": "Alismatales",
+                                                "103023430": "Hydrocharitaceae",
+                                                "103023591": "Vallisneria",
+                                                "166884957": "unclassified Vallisneria"
+                                            },
+                                            "class": "Magnoliopsida"
+                                        },
+                                        {
+                                            "key": 193714031,
+                                            "datasetKey": "fab88965-e69d-4491-a04d-e3198b626e52",
+                                            "parentKey": 166440466,
+                                            "parent": "unclassified Symphysodon (in: bony fishes)",
+                                            "kingdom": "Metazoa",
+                                            "phylum": "Chordata",
+                                            "order": "Cichliformes",
+                                            "family": "Cichlidae",
+                                            "genus": "Symphysodon",
+                                            "species": "Symphysodon sp.Leopard",
+                                            "kingdomKey": 103832354,
+                                            "phylumKey": 103882489,
+                                            "classKey": 103889489,
+                                            "orderKey": 103944797,
+                                            "familyKey": 103944799,
+                                            "genusKey": 103952570,
+                                            "speciesKey": 193714031,
+                                            "scientificName": "Symphysodon sp. Leopard",
+                                            "canonicalName": "Symphysodon sp.Leopard",
+                                            "nameType": "INFORMAL",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "rank": "SPECIES",
+                                            "origin": "SOURCE",
+                                            "numDescendants": 0,
+                                            "numOccurrences": 0,
+                                            "habitats": [],
+                                            "nomenclaturalStatus": [],
+                                            "threatStatuses": [],
+                                            "descriptions": [],
+                                            "vernacularNames": [],
+                                            "synonym": false,
+                                            "higherClassificationMap": {
+                                                "103832354": "Metazoa",
+                                                "103882489": "Chordata",
+                                                "103889489": "Actinopteri",
+                                                "103944797": "Cichliformes",
+                                                "103944799": "Cichlidae",
+                                                "103952570": "Symphysodon",
+                                                "166440466": "unclassified Symphysodon (in: bony fishes)"
+                                            },
+                                            "class": "Actinopteri"
+                                        }
+                                    ],
+                                    "facets": []
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>404 Not Found. See https://www.gbif.org/developer for API documentation.</title>\n  </head>\n  <body>\n    <h1>Error 404 Not Found. See https://www.gbif.org/developer for API documentation.</h1>\n    <p>Not Found. See https://www.gbif.org/developer for API documentation.</p>\n    <h3>Guru Meditation:</h3>\n    <p>XID: 4067007</p>\n    <hr>\n    <p>Varnish cache s..."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/species": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "leopard": {
+                                "value": "leopard"
+                            },
+                            "orchid": {
+                                "value": "orchid"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "taxonKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2488": {
+                                "value": "2488"
+                            }
+                        }
+                    },
+                    {
+                        "name": "genus",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Panthera": {
+                                "value": "Panthera"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rank",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "species": {
+                                "value": "species"
+                            },
+                            "phylum": {
+                                "value": "phylum"
+                            }
+                        }
+                    },
+                    {
+                        "name": "mediaType",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "StillImage": {
+                                "value": "StillImage"
+                            }
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v1_species"
+                                },
+                                "example": {
+                                    "offset": 0,
+                                    "limit": 10,
+                                    "endOfRecords": false,
+                                    "results": [
+                                        {
+                                            "key": 0,
+                                            "nubKey": 0,
+                                            "nameKey": 130332213,
+                                            "taxonID": "gbif:0",
+                                            "sourceTaxonKey": 0,
+                                            "kingdom": "incertae sedis",
+                                            "kingdomKey": 0,
+                                            "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "constituentKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "scientificName": "incertae sedis",
+                                            "canonicalName": "incertae sedis",
+                                            "authorship": "",
+                                            "nameType": "PLACEHOLDER",
+                                            "rank": "KINGDOM",
+                                            "origin": "SOURCE",
+                                            "taxonomicStatus": "DOUBTFUL",
+                                            "nomenclaturalStatus": [],
+                                            "remarks": "",
+                                            "numDescendants": 3613,
+                                            "lastCrawled": "2023-08-22T23:20:59.545+00:00",
+                                            "lastInterpreted": "2023-08-22T23:19:21.731+00:00",
+                                            "issues": []
+                                        },
+                                        {
+                                            "key": 1,
+                                            "nubKey": 1,
+                                            "nameKey": 130188353,
+                                            "taxonID": "gbif:1",
+                                            "sourceTaxonKey": 1,
+                                            "kingdom": "Animalia",
+                                            "kingdomKey": 1,
+                                            "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "constituentKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "scientificName": "Animalia",
+                                            "canonicalName": "Animalia",
+                                            "vernacularName": "Animals",
+                                            "authorship": "",
+                                            "nameType": "SCIENTIFIC",
+                                            "rank": "KINGDOM",
+                                            "origin": "SOURCE",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "nomenclaturalStatus": [],
+                                            "remarks": "",
+                                            "numDescendants": 2981931,
+                                            "lastCrawled": "2023-08-22T23:20:59.545+00:00",
+                                            "lastInterpreted": "2023-08-22T22:11:51.237+00:00",
+                                            "issues": []
+                                        },
+                                        {
+                                            "key": 2,
+                                            "nubKey": 2,
+                                            "nameKey": 130277256,
+                                            "taxonID": "gbif:2",
+                                            "sourceTaxonKey": 170809364,
+                                            "kingdom": "Archaea",
+                                            "kingdomKey": 2,
+                                            "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "constituentKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "scientificName": "Archaea",
+                                            "canonicalName": "Archaea",
+                                            "vernacularName": "Archaea",
+                                            "authorship": "",
+                                            "nameType": "SCIENTIFIC",
+                                            "rank": "KINGDOM",
+                                            "origin": "SOURCE",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "nomenclaturalStatus": [],
+                                            "remarks": "",
+                                            "numDescendants": 4358,
+                                            "lastCrawled": "2023-08-22T23:20:59.545+00:00",
+                                            "lastInterpreted": "2023-08-22T22:52:34.813+00:00",
+                                            "issues": []
+                                        },
+                                        {
+                                            "key": 3,
+                                            "nubKey": 3,
+                                            "nameKey": 130277260,
+                                            "taxonID": "gbif:3",
+                                            "sourceTaxonKey": 3,
+                                            "kingdom": "Bacteria",
+                                            "kingdomKey": 3,
+                                            "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "constituentKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "scientificName": "Bacteria",
+                                            "canonicalName": "Bacteria",
+                                            "vernacularName": "Bacteria",
+                                            "authorship": "",
+                                            "nameType": "SCIENTIFIC",
+                                            "rank": "KINGDOM",
+                                            "origin": "SOURCE",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "nomenclaturalStatus": [],
+                                            "remarks": "",
+                                            "numDescendants": 67224,
+                                            "lastCrawled": "2023-08-22T23:20:59.545+00:00",
+                                            "lastInterpreted": "2023-08-22T22:52:35.110+00:00",
+                                            "issues": []
+                                        },
+                                        {
+                                            "key": 4,
+                                            "nubKey": 4,
+                                            "nameKey": 130277610,
+                                            "taxonID": "gbif:4",
+                                            "sourceTaxonKey": 172299416,
+                                            "kingdom": "Chromista",
+                                            "kingdomKey": 4,
+                                            "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "constituentKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "scientificName": "Chromista",
+                                            "canonicalName": "Chromista",
+                                            "vernacularName": "Kelp, Diatoms, And Allies",
+                                            "authorship": "",
+                                            "nameType": "SCIENTIFIC",
+                                            "rank": "KINGDOM",
+                                            "origin": "SOURCE",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "nomenclaturalStatus": [],
+                                            "remarks": "",
+                                            "numDescendants": 163420,
+                                            "lastCrawled": "2023-08-22T23:20:59.545+00:00",
+                                            "lastInterpreted": "2023-08-22T22:53:01.037+00:00",
+                                            "issues": []
+                                        },
+                                        {
+                                            "key": 5,
+                                            "nubKey": 5,
+                                            "nameKey": 130279178,
+                                            "taxonID": "gbif:5",
+                                            "sourceTaxonKey": 5,
+                                            "kingdom": "Fungi",
+                                            "kingdomKey": 5,
+                                            "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "constituentKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "scientificName": "Fungi",
+                                            "canonicalName": "Fungi",
+                                            "vernacularName": "Fungi",
+                                            "authorship": "",
+                                            "nameType": "SCIENTIFIC",
+                                            "rank": "KINGDOM",
+                                            "origin": "SOURCE",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "nomenclaturalStatus": [],
+                                            "remarks": "",
+                                            "numDescendants": 486142,
+                                            "lastCrawled": "2023-08-22T23:20:59.545+00:00",
+                                            "lastInterpreted": "2023-08-22T22:54:41.047+00:00",
+                                            "issues": []
+                                        },
+                                        {
+                                            "key": 6,
+                                            "nubKey": 6,
+                                            "nameKey": 130293770,
+                                            "taxonID": "gbif:6",
+                                            "sourceTaxonKey": 6,
+                                            "kingdom": "Plantae",
+                                            "kingdomKey": 6,
+                                            "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "constituentKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "scientificName": "Plantae",
+                                            "canonicalName": "Plantae",
+                                            "vernacularName": "Plants",
+                                            "authorship": "",
+                                            "nameType": "SCIENTIFIC",
+                                            "rank": "KINGDOM",
+                                            "origin": "SOURCE",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "nomenclaturalStatus": [],
+                                            "remarks": "",
+                                            "numDescendants": 716896,
+                                            "lastCrawled": "2023-08-22T23:20:59.545+00:00",
+                                            "lastInterpreted": "2023-08-22T23:01:27.670+00:00",
+                                            "issues": []
+                                        },
+                                        {
+                                            "key": 7,
+                                            "nubKey": 7,
+                                            "nameKey": 130322419,
+                                            "taxonID": "gbif:7",
+                                            "sourceTaxonKey": 170809337,
+                                            "kingdom": "Protozoa",
+                                            "kingdomKey": 7,
+                                            "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "constituentKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "scientificName": "Protozoa",
+                                            "canonicalName": "Protozoa",
+                                            "vernacularName": "protozoans",
+                                            "authorship": "",
+                                            "nameType": "SCIENTIFIC",
+                                            "rank": "KINGDOM",
+                                            "origin": "SOURCE",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "nomenclaturalStatus": [],
+                                            "remarks": "",
+                                            "numDescendants": 9113,
+                                            "lastCrawled": "2023-08-22T23:20:59.545+00:00",
+                                            "lastInterpreted": "2023-08-22T23:18:47.242+00:00",
+                                            "issues": []
+                                        },
+                                        {
+                                            "key": 8,
+                                            "nubKey": 8,
+                                            "nameKey": 130323256,
+                                            "taxonID": "gbif:8",
+                                            "sourceTaxonKey": 170809368,
+                                            "kingdom": "Viruses",
+                                            "kingdomKey": 8,
+                                            "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "constituentKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "scientificName": "Viruses",
+                                            "canonicalName": "Viruses",
+                                            "vernacularName": "Viruses",
+                                            "authorship": "",
+                                            "nameType": "SCIENTIFIC",
+                                            "rank": "KINGDOM",
+                                            "origin": "SOURCE",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "nomenclaturalStatus": [],
+                                            "remarks": "",
+                                            "numDescendants": 19564,
+                                            "lastCrawled": "2023-08-22T23:20:59.545+00:00",
+                                            "lastInterpreted": "2023-08-22T23:18:56.817+00:00",
+                                            "issues": []
+                                        },
+                                        {
+                                            "key": 9,
+                                            "nubKey": 9,
+                                            "nameKey": 6689984,
+                                            "taxonID": "gbif:9",
+                                            "sourceTaxonKey": 117196334,
+                                            "kingdom": "Plantae",
+                                            "phylum": "Marchantiophyta",
+                                            "kingdomKey": 6,
+                                            "phylumKey": 9,
+                                            "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                            "constituentKey": "daacce49-b206-469b-8dc2-2257719f3afa",
+                                            "parentKey": 6,
+                                            "parent": "Plantae",
+                                            "scientificName": "Marchantiophyta",
+                                            "canonicalName": "Marchantiophyta",
+                                            "vernacularName": "liverwort",
+                                            "authorship": "",
+                                            "nameType": "SCIENTIFIC",
+                                            "rank": "PHYLUM",
+                                            "origin": "SOURCE",
+                                            "taxonomicStatus": "ACCEPTED",
+                                            "nomenclaturalStatus": [],
+                                            "remarks": "",
+                                            "publishedIn": "Crandall-Stotler, B. J., & Stotler, R. E. (2000). Morphology and classification of the Marchantiophyta. In A. J. Shaw & B. Goffinet, Bryophyte Biology (pp. 21\u201370). Cambridge University Press. https://www.tropicos.org/reference/9021946",
+                                            "numDescendants": 12141,
+                                            "lastCrawled": "2023-08-22T23:20:59.545+00:00",
+                                            "lastInterpreted": "2023-08-22T23:18:32.752+00:00",
+                                            "issues": []
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>404 Not Found. See https://www.gbif.org/developer for API documentation.</title>\n  </head>\n  <body>\n    <h1>Error 404 Not Found. See https://www.gbif.org/developer for API documentation.</h1>\n    <p>Not Found. See https://www.gbif.org/developer for API documentation.</p>\n    <h3>Guru Meditation:</h3>\n    <p>XID: 4067007</p>\n    <hr>\n    <p>Varnish cache s..."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/species/suggest": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "leopard": {
+                                "value": "leopard"
+                            },
+                            "dog": {
+                                "value": "dog"
+                            },
+                            "cat": {
+                                "value": "cat"
+                            },
+                            "flower": {
+                                "value": "flower"
+                            },
+                            "orchid": {
+                                "value": "orchid"
+                            },
+                            "Elephant": {
+                                "value": "Elephant"
+                            },
+                            "tree": {
+                                "value": "tree"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rank",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "species": {
+                                "value": "species"
+                            },
+                            "family": {
+                                "value": "family"
+                            }
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            },
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "datasetKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "6eaf5d1e-df6f-4d59-8da2-09c8c7a0e3f8": {
+                                "value": "6eaf5d1e-df6f-4d59-8da2-09c8c7a0e3f8"
+                            },
+                            "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c": {
+                                "value": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
+                            },
+                            "7ddf754f-d193-4cc9-b351-99906754a03b": {
+                                "value": "7ddf754f-d193-4cc9-b351-99906754a03b"
+                            },
+                            "50c9509d-22c7-4a22-a47d-8c48425ef4a7": {
+                                "value": "50c9509d-22c7-4a22-a47d-8c48425ef4a7"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "US": {
+                                "value": "US"
+                            },
+                            "United+States": {
+                                "value": "United+States"
+                            },
+                            "GB": {
+                                "value": "GB"
+                            }
+                        }
+                    },
+                    {
+                        "name": "year",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2010": {
+                                "value": "2010"
+                            },
+                            "2022": {
+                                "value": "2022"
+                            },
+                            "2020": {
+                                "value": "2020"
+                            }
+                        }
+                    },
+                    {
+                        "name": "kingdom",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Animalia": {
+                                "value": "Animalia"
+                            }
+                        }
+                    },
+                    {
+                        "name": "family",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Canidae": {
+                                "value": "Canidae"
+                            },
+                            "Acanthaceae": {
+                                "value": "Acanthaceae"
+                            },
+                            "Asteraceae": {
+                                "value": "Asteraceae"
+                            },
+                            "Felidae": {
+                                "value": "Felidae"
+                            }
+                        }
+                    },
+                    {
+                        "name": "taxonKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2488": {
+                                "value": "2488"
+                            },
+                            "248": {
+                                "value": "248"
+                            }
+                        }
+                    },
+                    {
+                        "name": "isExtinct",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nameType",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "SCIENTIFIC": {
+                                "value": "SCIENTIFIC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "strict",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Panthera+leo": {
+                                "value": "Panthera+leo"
+                            },
+                            "Panthera%20leo": {
+                                "value": "Panthera%20leo"
+                            }
+                        }
+                    },
+                    {
+                        "name": "mediaType",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "StillImage": {
+                                "value": "StillImage"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nameUsage",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "ACCEPTED": {
+                                "value": "ACCEPTED"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nameUsageGroup",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "LIVING": {
+                                "value": "LIVING"
+                            },
+                            "FOSSIL": {
+                                "value": "FOSSIL"
+                            },
+                            "EXTINCT": {
+                                "value": "EXTINCT"
+                            },
+                            "EXCLUDED": {
+                                "value": "EXCLUDED"
+                            },
+                            "AMBIGUOUS": {
+                                "value": "AMBIGUOUS"
+                            }
+                        }
+                    },
+                    {
+                        "name": "order",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Coleoptera": {
+                                "value": "Coleoptera"
+                            },
+                            "Passeriformes": {
+                                "value": "Passeriformes"
+                            }
+                        }
+                    },
+                    {
+                        "name": "genus",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Rosa": {
+                                "value": "Rosa"
+                            }
+                        }
+                    },
+                    {
+                        "name": "hasCoordinate",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v1_species_suggest"
+                                },
+                                "example": [
+                                    {
+                                        "key": 1711545,
+                                        "nameKey": 6112445,
+                                        "kingdom": "Animalia",
+                                        "phylum": "Arthropoda",
+                                        "order": "Orthoptera",
+                                        "family": "Acrididae",
+                                        "genus": "Leopardia",
+                                        "kingdomKey": 1,
+                                        "phylumKey": 54,
+                                        "classKey": 216,
+                                        "orderKey": 1458,
+                                        "familyKey": 9394,
+                                        "genusKey": 1711545,
+                                        "parent": "Acrididae",
+                                        "parentKey": 9394,
+                                        "nubKey": 1711545,
+                                        "scientificName": "Leopardia Baccetti, 1985",
+                                        "canonicalName": "Leopardia",
+                                        "rank": "GENUS",
+                                        "status": "ACCEPTED",
+                                        "synonym": false,
+                                        "higherClassificationMap": {
+                                            "1": "Animalia",
+                                            "54": "Arthropoda",
+                                            "216": "Insecta",
+                                            "1458": "Orthoptera",
+                                            "9394": "Acrididae"
+                                        },
+                                        "class": "Insecta"
+                                    },
+                                    {
+                                        "key": 2434918,
+                                        "nameKey": 6112455,
+                                        "kingdom": "Animalia",
+                                        "phylum": "Chordata",
+                                        "order": "Carnivora",
+                                        "family": "Felidae",
+                                        "genus": "Leopardus",
+                                        "kingdomKey": 1,
+                                        "phylumKey": 44,
+                                        "classKey": 359,
+                                        "orderKey": 732,
+                                        "familyKey": 9703,
+                                        "genusKey": 2434918,
+                                        "parent": "Felidae",
+                                        "parentKey": 9703,
+                                        "nubKey": 2434918,
+                                        "scientificName": "Leopardus Gray, 1842",
+                                        "canonicalName": "Leopardus",
+                                        "rank": "GENUS",
+                                        "status": "ACCEPTED",
+                                        "synonym": false,
+                                        "higherClassificationMap": {
+                                            "1": "Animalia",
+                                            "44": "Chordata",
+                                            "359": "Mammalia",
+                                            "732": "Carnivora",
+                                            "9703": "Felidae"
+                                        },
+                                        "class": "Mammalia"
+                                    },
+                                    {
+                                        "key": 2813383,
+                                        "nameKey": 6112437,
+                                        "kingdom": "Plantae",
+                                        "phylum": "Tracheophyta",
+                                        "order": "Asparagales",
+                                        "family": "Orchidaceae",
+                                        "genus": "Dipodium",
+                                        "kingdomKey": 6,
+                                        "phylumKey": 7707728,
+                                        "classKey": 196,
+                                        "orderKey": 1169,
+                                        "familyKey": 7689,
+                                        "genusKey": 2819193,
+                                        "parent": "Orchidaceae",
+                                        "parentKey": 7689,
+                                        "nubKey": 2813383,
+                                        "scientificName": "Leopardanthus Blume",
+                                        "canonicalName": "Leopardanthus",
+                                        "rank": "GENUS",
+                                        "status": "SYNONYM",
+                                        "synonym": true,
+                                        "higherClassificationMap": {
+                                            "6": "Plantae",
+                                            "7707728": "Tracheophyta",
+                                            "196": "Liliopsida",
+                                            "1169": "Asparagales",
+                                            "7689": "Orchidaceae",
+                                            "2819193": "Dipodium"
+                                        },
+                                        "class": "Liliopsida"
+                                    },
+                                    {
+                                        "key": 8967163,
+                                        "nameKey": 17010387,
+                                        "kingdom": "Animalia",
+                                        "phylum": "Mollusca",
+                                        "order": "Stylommatophora",
+                                        "family": "Camaenidae",
+                                        "genus": "Helicostyla",
+                                        "species": "Helicostyla leopardus",
+                                        "kingdomKey": 1,
+                                        "phylumKey": 52,
+                                        "classKey": 225,
+                                        "orderKey": 1456,
+                                        "familyKey": 5495,
+                                        "genusKey": 4598849,
+                                        "speciesKey": 8894229,
+                                        "parent": "Helicostyla leopardus",
+                                        "parentKey": 8894229,
+                                        "nubKey": 8967163,
+                                        "scientificName": "Helicostyla leopardus leopardus",
+                                        "canonicalName": "Helicostyla leopardus leopardus",
+                                        "rank": "SUBSPECIES",
+                                        "status": "ACCEPTED",
+                                        "synonym": false,
+                                        "higherClassificationMap": {
+                                            "1": "Animalia",
+                                            "52": "Mollusca",
+                                            "225": "Gastropoda",
+                                            "1456": "Stylommatophora",
+                                            "5495": "Camaenidae",
+                                            "4598849": "Helicostyla",
+                                            "8894229": "Helicostyla leopardus"
+                                        },
+                                        "class": "Gastropoda"
+                                    },
+                                    {
+                                        "key": 7193924,
+                                        "nameKey": 16718370,
+                                        "kingdom": "Animalia",
+                                        "phylum": "Chordata",
+                                        "order": "Carnivora",
+                                        "family": "Felidae",
+                                        "genus": "Leopardus",
+                                        "species": "Leopardus geoffroyi",
+                                        "kingdomKey": 1,
+                                        "phylumKey": 44,
+                                        "classKey": 359,
+                                        "orderKey": 732,
+                                        "familyKey": 9703,
+                                        "genusKey": 2434918,
+                                        "speciesKey": 2434942,
+                                        "parent": "Leopardus geoffroyi",
+                                        "parentKey": 2434942,
+                                        "nubKey": 7193924,
+                                        "scientificName": "Leopardus geoffroyi geoffroyi",
+                                        "canonicalName": "Leopardus geoffroyi geoffroyi",
+                                        "rank": "SUBSPECIES",
+                                        "status": "ACCEPTED",
+                                        "synonym": false,
+                                        "higherClassificationMap": {
+                                            "1": "Animalia",
+                                            "44": "Chordata",
+                                            "359": "Mammalia",
+                                            "732": "Carnivora",
+                                            "9703": "Felidae",
+                                            "2434918": "Leopardus",
+                                            "2434942": "Leopardus geoffroyi"
+                                        },
+                                        "class": "Mammalia"
+                                    },
+                                    {
+                                        "key": 8978099,
+                                        "nameKey": 13327347,
+                                        "kingdom": "Animalia",
+                                        "phylum": "Chordata",
+                                        "order": "Carnivora",
+                                        "family": "Felidae",
+                                        "genus": "Leopardus",
+                                        "species": "Leopardus poliopardus",
+                                        "kingdomKey": 1,
+                                        "phylumKey": 44,
+                                        "classKey": 359,
+                                        "orderKey": 732,
+                                        "familyKey": 9703,
+                                        "genusKey": 2434918,
+                                        "speciesKey": 8978099,
+                                        "parent": "Leopardus",
+                                        "parentKey": 2434918,
+                                        "nubKey": 8978099,
+                                        "scientificName": "Leopardus poliopardus Brehm, 1863",
+                                        "canonicalName": "Leopardus poliopardus",
+                                        "rank": "SPECIES",
+                                        "status": "ACCEPTED",
+                                        "synonym": false,
+                                        "higherClassificationMap": {
+                                            "1": "Animalia",
+                                            "44": "Chordata",
+                                            "359": "Mammalia",
+                                            "732": "Carnivora",
+                                            "9703": "Felidae",
+                                            "2434918": "Leopardus"
+                                        },
+                                        "class": "Mammalia"
+                                    },
+                                    {
+                                        "key": 6164531,
+                                        "nameKey": 16718373,
+                                        "kingdom": "Animalia",
+                                        "phylum": "Chordata",
+                                        "order": "Carnivora",
+                                        "family": "Felidae",
+                                        "genus": "Leopardus",
+                                        "species": "Leopardus wiedii",
+                                        "kingdomKey": 1,
+                                        "phylumKey": 44,
+                                        "classKey": 359,
+                                        "orderKey": 732,
+                                        "familyKey": 9703,
+                                        "genusKey": 2434918,
+                                        "speciesKey": 2434950,
+                                        "parent": "Leopardus wiedii",
+                                        "parentKey": 2434950,
+                                        "nubKey": 6164531,
+                                        "scientificName": "Leopardus wiedii salvinius Pocock, 1941",
+                                        "canonicalName": "Leopardus wiedii salvinius",
+                                        "rank": "SUBSPECIES",
+                                        "status": "ACCEPTED",
+                                        "synonym": false,
+                                        "higherClassificationMap": {
+                                            "1": "Animalia",
+                                            "44": "Chordata",
+                                            "359": "Mammalia",
+                                            "732": "Carnivora",
+                                            "9703": "Felidae",
+                                            "2434918": "Leopardus",
+                                            "2434950": "Leopardus wiedii"
+                                        },
+                                        "class": "Mammalia"
+                                    },
+                                    {
+                                        "key": 6164556,
+                                        "nameKey": 16718270,
+                                        "kingdom": "Animalia",
+                                        "phylum": "Chordata",
+                                        "order": "Carnivora",
+                                        "family": "Felidae",
+                                        "genus": "Leopardus",
+                                        "species": "Leopardus pajeros",
+                                        "kingdomKey": 1,
+                                        "phylumKey": 44,
+                                        "classKey": 359,
+                                        "orderKey": 732,
+                                        "familyKey": 9703,
+                                        "genusKey": 2434918,
+                                        "speciesKey": 2434935,
+                                        "parent": "Leopardus pajeros",
+                                        "parentKey": 2434935,
+                                        "nubKey": 6164556,
+                                        "scientificName": "Leopardus pajeros budini (Pocock, 1941)",
+                                        "canonicalName": "Leopardus pajeros budini",
+                                        "rank": "SUBSPECIES",
+                                        "status": "ACCEPTED",
+                                        "synonym": false,
+                                        "higherClassificationMap": {
+                                            "1": "Animalia",
+                                            "44": "Chordata",
+                                            "359": "Mammalia",
+                                            "732": "Carnivora",
+                                            "9703": "Felidae",
+                                            "2434918": "Leopardus",
+                                            "2434935": "Leopardus pajeros"
+                                        },
+                                        "class": "Mammalia"
+                                    },
+                                    {
+                                        "key": 2434927,
+                                        "nameKey": 6112457,
+                                        "kingdom": "Animalia",
+                                        "phylum": "Chordata",
+                                        "order": "Carnivora",
+                                        "family": "Felidae",
+                                        "genus": "Leopardus",
+                                        "species": "Leopardus braccatus",
+                                        "kingdomKey": 1,
+                                        "phylumKey": 44,
+                                        "classKey": 359,
+                                        "orderKey": 732,
+                                        "familyKey": 9703,
+                                        "genusKey": 2434918,
+                                        "speciesKey": 2434927,
+                                        "parent": "Leopardus",
+                                        "parentKey": 2434918,
+                                        "nubKey": 2434927,
+                                        "scientificName": "Leopardus braccatus (Cope, 1889)",
+                                        "canonicalName": "Leopardus braccatus",
+                                        "rank": "SPECIES",
+                                        "status": "ACCEPTED",
+                                        "synonym": false,
+                                        "higherClassificationMap": {
+                                            "1": "Animalia",
+                                            "44": "Chordata",
+                                            "359": "Mammalia",
+                                            "732": "Carnivora",
+                                            "9703": "Felidae",
+                                            "2434918": "Leopardus"
+                                        },
+                                        "class": "Mammalia"
+                                    },
+                                    {
+                                        "key": 7209225,
+                                        "nameKey": 16880532,
+                                        "kingdom": "Animalia",
+                                        "genus": "Symmachia",
+                                        "species": "Symmachia leopardina",
+                                        "kingdomKey": 1,
+                                        "genusKey": 1936091,
+                                        "speciesKey": 5141047,
+                                        "parent": "Symmachia leopardina",
+                                        "parentKey": 5141047,
+                                        "nubKey": 7209225,
+                                        "scientificName": "Symmachia leopardina leopardina",
+                                        "canonicalName": "Symmachia leopardina leopardina",
+                                        "rank": "SUBSPECIES",
+                                        "status": "ACCEPTED",
+                                        "synonym": false,
+                                        "higherClassificationMap": {
+                                            "1": "Animalia",
+                                            "1936091": "Symmachia",
+                                            "5141047": "Symmachia leopardina"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>404 Not Found. See https://www.gbif.org/developer for API documentation.</title>\n  </head>\n  <body>\n    <h1>Error 404 Not Found. See https://www.gbif.org/developer for API documentation.</h1>\n    <p>Not Found. See https://www.gbif.org/developer for API documentation.</p>\n    <h3>Guru Meditation:</h3>\n    <p>XID: 4067007</p>\n    <hr>\n    <p>Varnish cache s..."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/species/{id}": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "ID path parameter for the /v1/species/{id} route.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "q",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "leopard": {
+                                "value": "leopard"
+                            },
+                            "orchid": {
+                                "value": "orchid"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "5": {
+                                "value": "5"
+                            },
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "0": {
+                                "value": "0"
+                            },
+                            "10": {
+                                "value": "10"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rank",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "kingsdom": {
+                                "value": "kingsdom"
+                            },
+                            "phylum": {
+                                "value": "phylum"
+                            },
+                            "class": {
+                                "value": "class"
+                            },
+                            "order": {
+                                "value": "order"
+                            },
+                            "family": {
+                                "value": "family"
+                            },
+                            "genus": {
+                                "value": "genus"
+                            },
+                            "species": {
+                                "value": "species"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nameType",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "scientific": {
+                                "value": "scientific"
+                            },
+                            "vernacular": {
+                                "value": "vernacular"
+                            },
+                            "SCIENTIFIC": {
+                                "value": "SCIENTIFIC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "year",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2020": {
+                                "value": "2020"
+                            },
+                            "2015": {
+                                "value": "2015"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "United+Kingdom": {
+                                "value": "United+Kingdom"
+                            },
+                            "GB": {
+                                "value": "GB"
+                            }
+                        }
+                    },
+                    {
+                        "name": "mediaType",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "image": {
+                                "value": "image"
+                            },
+                            "StillImage": {
+                                "value": "StillImage"
+                            }
+                        }
+                    },
+                    {
+                        "name": "datasetKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2a68b2a5-1457-453e-a9b3-894f2b5b9e57": {
+                                "value": "2a68b2a5-1457-453e-a9b3-894f2b5b9e57"
+                            },
+                            "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c": {
+                                "value": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
+                            }
+                        }
+                    },
+                    {
+                        "name": "issue",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "MISSING_COORDINATE": {
+                                "value": "MISSING_COORDINATE"
+                            }
+                        }
+                    },
+                    {
+                        "name": "taxonKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "248": {
+                                "value": "248"
+                            },
+                            "2488": {
+                                "value": "2488"
+                            }
+                        }
+                    },
+                    {
+                        "name": "isExtinct",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "kingdom",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Animalia": {
+                                "value": "Animalia"
+                            }
+                        }
+                    },
+                    {
+                        "name": "phylum",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Chordata": {
+                                "value": "Chordata"
+                            }
+                        }
+                    },
+                    {
+                        "name": "class",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Mammalia": {
+                                "value": "Mammalia"
+                            }
+                        }
+                    },
+                    {
+                        "name": "order",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Carnivora": {
+                                "value": "Carnivora"
+                            }
+                        }
+                    },
+                    {
+                        "name": "family",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Felidae": {
+                                "value": "Felidae"
+                            }
+                        }
+                    },
+                    {
+                        "name": "genus",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Panthera": {
+                                "value": "Panthera"
+                            }
+                        }
+                    },
+                    {
+                        "name": "highertaxonKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Homo+sapiens": {
+                                "value": "Homo+sapiens"
+                            },
+                            "Panthera+tigris": {
+                                "value": "Panthera+tigris"
+                            },
+                            "Bubo+scandiacus": {
+                                "value": "Bubo+scandiacus"
+                            },
+                            "Ailurus+fulgens": {
+                                "value": "Ailurus+fulgens"
+                            },
+                            "Ara+macao": {
+                                "value": "Ara+macao"
+                            },
+                            "Delphinus+delphis": {
+                                "value": "Delphinus+delphis"
+                            },
+                            "Panthera%20leo": {
+                                "value": "Panthera%20leo"
+                            },
+                            "Pan+troglodytes": {
+                                "value": "Pan+troglodytes"
+                            },
+                            "Pongo+abelii": {
+                                "value": "Pongo+abelii"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v1_species_id"
+                                },
+                                "example": {
+                                    "key": 10,
+                                    "nubKey": 10,
+                                    "nameKey": 2503060,
+                                    "taxonID": "119464409",
+                                    "kingdom": "Protozoa",
+                                    "phylum": "Ciliophora",
+                                    "kingdomKey": 7,
+                                    "phylumKey": 10,
+                                    "datasetKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+                                    "parentKey": 7,
+                                    "parent": "Protozoa",
+                                    "scientificName": "Ciliophora Doflein, 1901",
+                                    "canonicalName": "Ciliophora",
+                                    "authorship": "Doflein, 1901",
+                                    "nameType": "SCIENTIFIC",
+                                    "rank": "PHYLUM",
+                                    "origin": "SOURCE",
+                                    "taxonomicStatus": "ACCEPTED",
+                                    "nomenclaturalStatus": [],
+                                    "accordingTo": "The Catalogue of Life, 3rd January 2011",
+                                    "numDescendants": 12352,
+                                    "modified": "2013-02-08T04:15:41.847+00:00",
+                                    "deleted": "2016-04-13T15:53:47.951+00:00",
+                                    "lastCrawled": "2023-08-22T23:20:59.545+00:00",
+                                    "lastInterpreted": "2014-11-03T16:22:26.302+00:00",
+                                    "issues": []
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>404 Not Found. See https://www.gbif.org/developer for API documentation.</title>\n  </head>\n  <body>\n    <h1>Error 404 Not Found. See https://www.gbif.org/developer for API documentation.</h1>\n    <p>Not Found. See https://www.gbif.org/developer for API documentation.</p>\n    <h3>Guru Meditation:</h3>\n    <p>XID: 4067007</p>\n    <hr>\n    <p>Varnish cache s..."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/species/lookup": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "taxonKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2488": {
+                                "value": "2488"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nameType",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "SCIENTIFIC": {
+                                "value": "SCIENTIFIC"
+                            },
+                            "VERNACULAR": {
+                                "value": "VERNACULAR"
+                            },
+                            "BOTH": {
+                                "value": "BOTH"
+                            },
+                            "WELLFORMED": {
+                                "value": "WELLFORMED"
+                            },
+                            "MISAPPLIED": {
+                                "value": "MISAPPLIED"
+                            },
+                            "SYNONYM": {
+                                "value": "SYNONYM"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nameStatus",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "ACCEPTED": {
+                                "value": "ACCEPTED"
+                            },
+                            "SYNONYM": {
+                                "value": "SYNONYM"
+                            }
+                        }
+                    },
+                    {
+                        "name": "mediaType",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "StillImage": {
+                                "value": "StillImage"
+                            }
+                        }
+                    },
+                    {
+                        "name": "locale",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en": {
+                                "value": "en"
+                            },
+                            "fr": {
+                                "value": "fr"
+                            }
+                        }
+                    },
+                    {
+                        "name": "datasetKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "7ddf754f-d193-4cc9-b351-99906754a03b": {
+                                "value": "7ddf754f-d193-4cc9-b351-99906754a03b"
+                            }
+                        }
+                    },
+                    {
+                        "name": "year",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2010": {
+                                "value": "2010"
+                            },
+                            "2015": {
+                                "value": "2015"
+                            }
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "US": {
+                                "value": "US"
+                            }
+                        }
+                    },
+                    {
+                        "name": "order",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Lepidoptera": {
+                                "value": "Lepidoptera"
+                            },
+                            "Carnivora": {
+                                "value": "Carnivora"
+                            }
+                        }
+                    },
+                    {
+                        "name": "family",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Felidae": {
+                                "value": "Felidae"
+                            }
+                        }
+                    },
+                    {
+                        "name": "kingdomKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "phylumKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "54": {
+                                "value": "54"
+                            }
+                        }
+                    },
+                    {
+                        "name": "classKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "212": {
+                                "value": "212"
+                            }
+                        }
+                    },
+                    {
+                        "name": "phylum",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Chordata": {
+                                "value": "Chordata"
+                            }
+                        }
+                    },
+                    {
+                        "name": "class",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Mammalia": {
+                                "value": "Mammalia"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v1_species_lookup"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>404 Not Found. See https://www.gbif.org/developer for API documentation.</title>\n  </head>\n  <body>\n    <h1>Error 404 Not Found. See https://www.gbif.org/developer for API documentation.</h1>\n    <p>Not Found. See https://www.gbif.org/developer for API documentation.</p>\n    <h3>Guru Meditation:</h3>\n    <p>XID: 75759856</p>\n    <hr>\n    <p>Varnish cache ..."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/species/match": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Panthera%20leo": {
+                                "value": "Panthera%20leo"
+                            }
+                        }
+                    },
+                    {
+                        "name": "kingdom",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Animalia": {
+                                "value": "Animalia"
+                            }
+                        }
+                    },
+                    {
+                        "name": "taxonKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2488": {
+                                "value": "2488"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nameType",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "SCIENTIFIC": {
+                                "value": "SCIENTIFIC"
+                            },
+                            "wildcard": {
+                                "value": "wildcard"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            },
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "0": {
+                                "value": "0"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rank",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "species": {
+                                "value": "species"
+                            },
+                            "family": {
+                                "value": "family"
+                            }
+                        }
+                    },
+                    {
+                        "name": "strict",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "verbose",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en": {
+                                "value": "en"
+                            }
+                        }
+                    },
+                    {
+                        "name": "datasetKey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c": {
+                                "value": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
+                            },
+                            "7ddf754f-d193-4cc9-b351-99906754a03b": {
+                                "value": "7ddf754f-d193-4cc9-b351-99906754a03b"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sourceId",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "6f0442ff-8f4a-4ae5-8e5d-7fba77c078c8": {
+                                "value": "6f0442ff-8f4a-4ae5-8e5d-7fba77c078c8"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nameUsage",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "exact": {
+                                "value": "exact"
+                            },
+                            "ACCEPTED": {
+                                "value": "ACCEPTED"
+                            }
+                        }
+                    },
+                    {
+                        "name": "q",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "leopard": {
+                                "value": "leopard"
+                            }
+                        }
+                    },
+                    {
+                        "name": "parent",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2488": {
+                                "value": "2488"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v1_species_match"
+                                },
+                                "example": {
+                                    "usageKey": 5219404,
+                                    "scientificName": "Panthera leo (Linnaeus, 1758)",
+                                    "canonicalName": "Panthera leo",
+                                    "rank": "SPECIES",
+                                    "status": "ACCEPTED",
+                                    "confidence": 100,
+                                    "matchType": "EXACT",
+                                    "kingdom": "Animalia",
+                                    "phylum": "Chordata",
+                                    "order": "Carnivora",
+                                    "family": "Felidae",
+                                    "genus": "Panthera",
+                                    "species": "Panthera leo",
+                                    "kingdomKey": 1,
+                                    "phylumKey": 44,
+                                    "classKey": 359,
+                                    "orderKey": 732,
+                                    "familyKey": 9703,
+                                    "genusKey": 2435194,
+                                    "speciesKey": 5219404,
+                                    "synonym": false,
+                                    "class": "Mammalia"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html>\n  <head>\n    <title>404 Not Found. See https://www.gbif.org/developer for API documentation.</title>\n  </head>\n  <body>\n    <h1>Error 404 Not Found. See https://www.gbif.org/developer for API documentation.</h1>\n    <p>Not Found. See https://www.gbif.org/developer for API documentation.</p>\n    <h3>Guru Meditation:</h3>\n    <p>XID: 117703152</p>\n    <hr>\n    <p>Varnish cache..."
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema_v1_species_search": {},
+            "ResponseSchema_v1_species": {},
+            "ResponseSchema_v1_species_suggest": {},
+            "ResponseSchema_v1_species_id": {},
+            "ResponseSchema_v1_species_lookup": {},
+            "ResponseSchema_v1_species_match": {}
+        }
+    }
+}

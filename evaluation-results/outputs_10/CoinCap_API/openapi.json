@@ -1,0 +1,4025 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "CoinCap API",
+        "description": "**API Description** - The CoinCap API is a service that provides real-time cryptocurrency market data and information.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "https://docs.coincap.io/#terms-of-service",
+        "contact": {
+            "name": "CoinCap API Contact",
+            "url": "https://docs.coincap.io/#contact-us",
+            "email": "support@coincap.io"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://api.coincap.io",
+            "description": "Production Server of the CoinCap API.",
+            "x-base-routes": 1
+        }
+    ],
+    "externalDocs": {
+        "url": "https://docs.coincap.io",
+        "description": "Find more about the CoinCap API here:"
+    },
+    "paths": {
+        "/v2/assets": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "100": {
+                                "value": "100"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exchangeId",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "binance": {
+                                "value": "binance"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interval",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "d1": {
+                                "value": "d1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "convert",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "rank": {
+                                "value": "rank"
+                            }
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "bitcoin": {
+                                "value": "bitcoin"
+                            }
+                        }
+                    },
+                    {
+                        "name": "ids",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "bitcoin": {
+                                "value": "bitcoin"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1598889600000": {
+                                "value": "1598889600000"
+                            },
+                            "1583020800000": {
+                                "value": "1583020800000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "end",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1598976000000": {
+                                "value": "1598976000000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v2_assets"
+                                },
+                                "example": {
+                                    "data": [
+                                        {
+                                            "id": "bitcoin",
+                                            "rank": "1",
+                                            "symbol": "BTC",
+                                            "name": "Bitcoin",
+                                            "supply": "19547062.0000000000000000",
+                                            "maxSupply": "21000000.0000000000000000",
+                                            "marketCapUsd": "729157687431.7979415170239974",
+                                            "volumeUsd24Hr": "5277615099.5558888987118729",
+                                            "priceUsd": "37302.6743063381055177",
+                                            "changePercent24Hr": "0.3851932560039067",
+                                            "vwap24Hr": "37348.2405660919448157",
+                                            "explorer": "https://blockchain.info/"
+                                        },
+                                        {
+                                            "id": "ethereum",
+                                            "rank": "2",
+                                            "symbol": "ETH",
+                                            "name": "Ethereum",
+                                            "supply": "120252683.5477615300000000",
+                                            "maxSupply": null,
+                                            "marketCapUsd": "247909731897.8690476406613073",
+                                            "volumeUsd24Hr": "3678972422.3919472088635132",
+                                            "priceUsd": "2061.5733851744368645",
+                                            "changePercent24Hr": "0.3703559548844357",
+                                            "vwap24Hr": "2072.0353257388133502",
+                                            "explorer": "https://etherscan.io/"
+                                        },
+                                        {
+                                            "id": "tether",
+                                            "rank": "3",
+                                            "symbol": "USDT",
+                                            "name": "Tether",
+                                            "supply": "87693583982.6464100000000000",
+                                            "maxSupply": null,
+                                            "marketCapUsd": "87760578314.1561630281883639",
+                                            "volumeUsd24Hr": "11592220460.6396308641144884",
+                                            "priceUsd": "1.0007639593282333",
+                                            "changePercent24Hr": "0.0535340475191883",
+                                            "vwap24Hr": "1.0005189530749616",
+                                            "explorer": "https://www.omniexplorer.info/asset/31"
+                                        },
+                                        {
+                                            "id": "binance-coin",
+                                            "rank": "4",
+                                            "symbol": "BNB",
+                                            "name": "BNB",
+                                            "supply": "166801148.0000000000000000",
+                                            "maxSupply": "166801148.0000000000000000",
+                                            "marketCapUsd": "38749117157.2399735528342032",
+                                            "volumeUsd24Hr": "321680094.2714178377080164",
+                                            "priceUsd": "232.3072570054492284",
+                                            "changePercent24Hr": "-1.3636999511149278",
+                                            "vwap24Hr": "235.1660754049292422",
+                                            "explorer": "https://etherscan.io/token/0xB8c77482e45F1F44dE1745F52C74426C631bDD52"
+                                        },
+                                        {
+                                            "id": "xrp",
+                                            "rank": "5",
+                                            "symbol": "XRP",
+                                            "name": "XRP",
+                                            "supply": "45404028640.0000000000000000",
+                                            "maxSupply": "100000000000.0000000000000000",
+                                            "marketCapUsd": "28132973809.9040147630391040",
+                                            "volumeUsd24Hr": "497701224.9852735395424181",
+                                            "priceUsd": "0.6196140442286536",
+                                            "changePercent24Hr": "2.5256928832259570",
+                                            "vwap24Hr": "0.6125692734542242",
+                                            "explorer": "https://xrpcharts.ripple.com/#/graph/"
+                                        },
+                                        {
+                                            "id": "usd-coin",
+                                            "rank": "6",
+                                            "symbol": "USDC",
+                                            "name": "USDC",
+                                            "supply": "24436873852.2890780000000000",
+                                            "maxSupply": null,
+                                            "marketCapUsd": "24453869606.5137002179075667",
+                                            "volumeUsd24Hr": "944662274.7584988457748976",
+                                            "priceUsd": "1.0006954962540362",
+                                            "changePercent24Hr": "0.0546561387214407",
+                                            "vwap24Hr": "1.0002915623528634",
+                                            "explorer": "https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+                                        },
+                                        {
+                                            "id": "solana",
+                                            "rank": "7",
+                                            "symbol": "SOL",
+                                            "name": "Solana",
+                                            "supply": "422869184.0387105000000000",
+                                            "maxSupply": null,
+                                            "marketCapUsd": "24021106784.6520687578946630",
+                                            "volumeUsd24Hr": "540241918.5364347576654733",
+                                            "priceUsd": "56.8050538826993757",
+                                            "changePercent24Hr": "0.6867387759141403",
+                                            "vwap24Hr": "57.6105583059241794",
+                                            "explorer": "https://explorer.solana.com/"
+                                        },
+                                        {
+                                            "id": "cardano",
+                                            "rank": "8",
+                                            "symbol": "ADA",
+                                            "name": "Cardano",
+                                            "supply": "35281631317.3040000000000000",
+                                            "maxSupply": "45000000000.0000000000000000",
+                                            "marketCapUsd": "13496789555.5046625568246469",
+                                            "volumeUsd24Hr": "111573032.4923305851396295",
+                                            "priceUsd": "0.3825443737031829",
+                                            "changePercent24Hr": "1.5956233507818938",
+                                            "vwap24Hr": "0.3816310518144622",
+                                            "explorer": "https://cardanoexplorer.com/"
+                                        },
+                                        {
+                                            "id": "dogecoin",
+                                            "rank": "9",
+                                            "symbol": "DOGE",
+                                            "name": "Dogecoin",
+                                            "supply": "141896866383.7052600000000000",
+                                            "maxSupply": null,
+                                            "marketCapUsd": "10766217407.9304623347679454",
+                                            "volumeUsd24Hr": "149826461.2081735944458385",
+                                            "priceUsd": "0.0758735388758860",
+                                            "changePercent24Hr": "-0.0239692732440375",
+                                            "vwap24Hr": "0.0758430209877569",
+                                            "explorer": "http://dogechain.info/chain/Dogecoin"
+                                        },
+                                        {
+                                            "id": "tron",
+                                            "rank": "10",
+                                            "symbol": "TRX",
+                                            "name": "TRON",
+                                            "supply": "88628129776.1845100000000000",
+                                            "maxSupply": null,
+                                            "marketCapUsd": "9019339915.8667452203409393",
+                                            "volumeUsd24Hr": "93096683.0248211237674702",
+                                            "priceUsd": "0.1017661090067406",
+                                            "changePercent24Hr": "0.7464084063276468",
+                                            "vwap24Hr": "0.1015306978285950",
+                                            "explorer": "https://tronscan.org/#/"
+                                        }
+                                    ],
+                                    "timestamp": 1700764530970
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /invalidRoute/</pre>\n</body>\n</html>\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/exchanges": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "100": {
+                                "value": "100"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exchangeId",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "binance": {
+                                "value": "binance"
+                            },
+                            "coinbase": {
+                                "value": "coinbase"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "rank": {
+                                "value": "rank"
+                            },
+                            "volume": {
+                                "value": "volume"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interval",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1d": {
+                                "value": "1d"
+                            },
+                            "h1": {
+                                "value": "h1"
+                            },
+                            "d1": {
+                                "value": "d1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "convert",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "active": {
+                                "value": "active"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rank",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "baseAsset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "quoteAsset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "ETH": {
+                                "value": "ETH"
+                            }
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "spot": {
+                                "value": "spot"
+                            }
+                        }
+                    },
+                    {
+                        "name": "hidden",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "affiliate",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "ids",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "binance": {
+                                "value": "binance"
+                            }
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Kraken": {
+                                "value": "Kraken"
+                            }
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "direction",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "asc": {
+                                "value": "asc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "baseSymbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "ETH": {
+                                "value": "ETH"
+                            }
+                        }
+                    },
+                    {
+                        "name": "quoteSymbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v2_exchanges"
+                                },
+                                "example": {
+                                    "data": [
+                                        {
+                                            "exchangeId": "binance",
+                                            "name": "Binance",
+                                            "rank": "1",
+                                            "percentTotalVolume": "39.004065347172510731000000000000000000",
+                                            "volumeUsd": "5633415242.1256096229063193",
+                                            "tradingPairs": "828",
+                                            "socket": true,
+                                            "exchangeUrl": "https://www.binance.com/",
+                                            "updated": 1700764512812
+                                        },
+                                        {
+                                            "exchangeId": "gdax",
+                                            "name": "Coinbase Pro",
+                                            "rank": "2",
+                                            "percentTotalVolume": "9.427125702938761105000000000000000000",
+                                            "volumeUsd": "1361573803.9526988441129478",
+                                            "tradingPairs": "218",
+                                            "socket": true,
+                                            "exchangeUrl": "https://pro.coinbase.com/",
+                                            "updated": 1700764529323
+                                        },
+                                        {
+                                            "exchangeId": "whitebit",
+                                            "name": "WhiteBIT",
+                                            "rank": "3",
+                                            "percentTotalVolume": "7.204128527985022282000000000000000000",
+                                            "volumeUsd": "1040503011.5335084432606422",
+                                            "tradingPairs": "90",
+                                            "socket": false,
+                                            "exchangeUrl": "https://whitebit.com",
+                                            "updated": 1700764532050
+                                        },
+                                        {
+                                            "exchangeId": "kraken",
+                                            "name": "Kraken",
+                                            "rank": "4",
+                                            "percentTotalVolume": "5.258676858227351609000000000000000000",
+                                            "volumeUsd": "759518529.7447130485683580",
+                                            "tradingPairs": "343",
+                                            "socket": false,
+                                            "exchangeUrl": "https://kraken.com",
+                                            "updated": 1700764527995
+                                        },
+                                        {
+                                            "exchangeId": "digifinex",
+                                            "name": "DigiFinex",
+                                            "rank": "5",
+                                            "percentTotalVolume": "4.800543868985197776000000000000000000",
+                                            "volumeUsd": "693349699.8664601397155537",
+                                            "tradingPairs": "135",
+                                            "socket": false,
+                                            "exchangeUrl": "https://www.digifinex.com/",
+                                            "updated": 1700764532172
+                                        },
+                                        {
+                                            "exchangeId": "gate",
+                                            "name": "Gate",
+                                            "rank": "6",
+                                            "percentTotalVolume": "4.418706110854690836000000000000000000",
+                                            "volumeUsd": "638200303.8349153396942844",
+                                            "tradingPairs": "1292",
+                                            "socket": false,
+                                            "exchangeUrl": "https://gate.io/",
+                                            "updated": 1700764532011
+                                        },
+                                        {
+                                            "exchangeId": "huobi",
+                                            "name": "Huobi",
+                                            "rank": "7",
+                                            "percentTotalVolume": "3.921106836005248344000000000000000000",
+                                            "volumeUsd": "566331299.5540395595318656",
+                                            "tradingPairs": "207",
+                                            "socket": true,
+                                            "exchangeUrl": "https://www.hbg.com/",
+                                            "updated": 1700764529016
+                                        },
+                                        {
+                                            "exchangeId": "uniswap-v3",
+                                            "name": "Uniswap (V3)",
+                                            "rank": "8",
+                                            "percentTotalVolume": "3.897524415666929007000000000000000000",
+                                            "volumeUsd": "562925255.4661318952730240",
+                                            "tradingPairs": "288",
+                                            "socket": false,
+                                            "exchangeUrl": "https://uniswap.org/",
+                                            "updated": 1700764496828
+                                        },
+                                        {
+                                            "exchangeId": "bibox",
+                                            "name": "Bibox",
+                                            "rank": "9",
+                                            "percentTotalVolume": "2.869896223289576295000000000000000000",
+                                            "volumeUsd": "414503385.3187876718575975",
+                                            "tradingPairs": "140",
+                                            "socket": false,
+                                            "exchangeUrl": "https://www.bibox.com",
+                                            "updated": 1700764529867
+                                        },
+                                        {
+                                            "exchangeId": "kucoin",
+                                            "name": "Kucoin",
+                                            "rank": "10",
+                                            "percentTotalVolume": "2.684553097250272303000000000000000000",
+                                            "volumeUsd": "387734001.6158472493937910",
+                                            "tradingPairs": "624",
+                                            "socket": false,
+                                            "exchangeUrl": "https://www.kucoin.io/",
+                                            "updated": 1700764523076
+                                        }
+                                    ],
+                                    "timestamp": 1700764567739
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /invalidRoute/</pre>\n</body>\n</html>\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/rates": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "20": {
+                                "value": "20"
+                            },
+                            "5": {
+                                "value": "5"
+                            },
+                            "50": {
+                                "value": "50"
+                            },
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "ids",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "bitcoin,ethereum,litecoin": {
+                                "value": "bitcoin,ethereum,litecoin"
+                            },
+                            "bitcoin,ethereum": {
+                                "value": "bitcoin,ethereum"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "asc": {
+                                "value": "asc"
+                            },
+                            "desc": {
+                                "value": "desc"
+                            },
+                            "rank": {
+                                "value": "rank"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            },
+                            "ETH": {
+                                "value": "ETH"
+                            },
+                            "LTC": {
+                                "value": "LTC"
+                            },
+                            "XRP": {
+                                "value": "XRP"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interval",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1d": {
+                                "value": "1d"
+                            },
+                            "1h": {
+                                "value": "1h"
+                            },
+                            "h1": {
+                                "value": "h1"
+                            },
+                            "d1": {
+                                "value": "d1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "convert",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            },
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "50": {
+                                "value": "50"
+                            },
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            },
+                            "0": {
+                                "value": "0"
+                            },
+                            "1577836800000": {
+                                "value": "1577836800000"
+                            },
+                            "1583020800000": {
+                                "value": "1583020800000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exchangeId",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "binance": {
+                                "value": "binance"
+                            }
+                        }
+                    },
+                    {
+                        "name": "end",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            },
+                            "1609459199000": {
+                                "value": "1609459199000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "time",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1577836800": {
+                                "value": "1577836800"
+                            }
+                        }
+                    },
+                    {
+                        "name": "direction",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "asc": {
+                                "value": "asc"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v2_rates"
+                                },
+                                "example": {
+                                    "data": [
+                                        {
+                                            "id": "chilean-peso",
+                                            "symbol": "CLP",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0011420087934677"
+                                        },
+                                        {
+                                            "id": "israeli-new-sheqel",
+                                            "symbol": "ILS",
+                                            "currencySymbol": "\u20aa",
+                                            "type": "fiat",
+                                            "rateUsd": "0.2668915672940398"
+                                        },
+                                        {
+                                            "id": "norwegian-krone",
+                                            "symbol": "NOK",
+                                            "currencySymbol": "kr",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0928673682177220"
+                                        },
+                                        {
+                                            "id": "jersey-pound",
+                                            "symbol": "JEP",
+                                            "currencySymbol": "\u00a3",
+                                            "type": "fiat",
+                                            "rateUsd": "1.2531705214191906"
+                                        },
+                                        {
+                                            "id": "litecoin",
+                                            "symbol": "LTC",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "69.4846974948398525"
+                                        },
+                                        {
+                                            "id": "lebanese-pound",
+                                            "symbol": "LBP",
+                                            "currencySymbol": "\u00a3",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0000664899050095"
+                                        },
+                                        {
+                                            "id": "waves",
+                                            "symbol": "WAVES",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "2.0879044936553214"
+                                        },
+                                        {
+                                            "id": "saint-helena-pound",
+                                            "symbol": "SHP",
+                                            "currencySymbol": "\u00a3",
+                                            "type": "fiat",
+                                            "rateUsd": "1.2531705214191906"
+                                        },
+                                        {
+                                            "id": "guinean-franc",
+                                            "symbol": "GNF",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0001163383378467"
+                                        },
+                                        {
+                                            "id": "lesotho-loti",
+                                            "symbol": "LSL",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0535307776812202"
+                                        },
+                                        {
+                                            "id": "chilean-unit-of-account-(uf)",
+                                            "symbol": "CLF",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "31.5119430264070100"
+                                        },
+                                        {
+                                            "id": "philippine-peso",
+                                            "symbol": "PHP",
+                                            "currencySymbol": "\u20b1",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0180397954640774"
+                                        },
+                                        {
+                                            "id": "armenian-dram",
+                                            "symbol": "AMD",
+                                            "currencySymbol": "\u058f",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0024835622329162"
+                                        },
+                                        {
+                                            "id": "thorchain",
+                                            "symbol": "RUNE",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "5.6691557920348273"
+                                        },
+                                        {
+                                            "id": "paraguayan-guarani",
+                                            "symbol": "PYG",
+                                            "currencySymbol": "Gs",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0001343148586475"
+                                        },
+                                        {
+                                            "id": "moroccan-dirham",
+                                            "symbol": "MAD",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0987090826175280"
+                                        },
+                                        {
+                                            "id": "russian-ruble",
+                                            "symbol": "RUB",
+                                            "currencySymbol": "\u20bd",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0112898678539032"
+                                        },
+                                        {
+                                            "id": "guyanaese-dollar",
+                                            "symbol": "GYD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0047767907659552"
+                                        },
+                                        {
+                                            "id": "guernsey-pound",
+                                            "symbol": "GGP",
+                                            "currencySymbol": "\u00a3",
+                                            "type": "fiat",
+                                            "rateUsd": "1.2531705214191906"
+                                        },
+                                        {
+                                            "id": "chinese-yuan-renminbi",
+                                            "symbol": "CNY",
+                                            "currencySymbol": "\u00a5",
+                                            "type": "fiat",
+                                            "rateUsd": "0.1409085785142600"
+                                        },
+                                        {
+                                            "id": "laotian-kip",
+                                            "symbol": "LAK",
+                                            "currencySymbol": "\u20ad",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0000482180325860"
+                                        },
+                                        {
+                                            "id": "eos",
+                                            "symbol": "EOS",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "0.6697491171292144"
+                                        },
+                                        {
+                                            "id": "persistence",
+                                            "symbol": "XPRT",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "0.2704442310321165"
+                                        },
+                                        {
+                                            "id": "botswanan-pula",
+                                            "symbol": "BWP",
+                                            "currencySymbol": "P",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0737013526851467"
+                                        },
+                                        {
+                                            "id": "tanzanian-shilling",
+                                            "symbol": "TZS",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0003992015968064"
+                                        },
+                                        {
+                                            "id": "polish-zloty",
+                                            "symbol": "PLN",
+                                            "currencySymbol": "z\u0142",
+                                            "type": "fiat",
+                                            "rateUsd": "0.2494898556177257"
+                                        },
+                                        {
+                                            "id": "british-pound-sterling",
+                                            "symbol": "GBP",
+                                            "currencySymbol": "\u00a3",
+                                            "type": "fiat",
+                                            "rateUsd": "1.2531705214191906"
+                                        },
+                                        {
+                                            "id": "brunei-dollar",
+                                            "symbol": "BND",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.7457305064181295"
+                                        },
+                                        {
+                                            "id": "macedonian-denar",
+                                            "symbol": "MKD",
+                                            "currencySymbol": "\u0434\u0435\u043d",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0177633709733835"
+                                        },
+                                        {
+                                            "id": "iraqi-dinar",
+                                            "symbol": "IQD",
+                                            "currencySymbol": "\u062f.\u0639",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0007628894327409"
+                                        },
+                                        {
+                                            "id": "mongolian-tugrik",
+                                            "symbol": "MNT",
+                                            "currencySymbol": "\u20ae",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0002898550724638"
+                                        },
+                                        {
+                                            "id": "afghan-afghani",
+                                            "symbol": "AFN",
+                                            "currencySymbol": "\u060b ",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0143959351176932"
+                                        },
+                                        {
+                                            "id": "hong-kong-dollar",
+                                            "symbol": "HKD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.1282430256633531"
+                                        },
+                                        {
+                                            "id": "sri-lankan-rupee",
+                                            "symbol": "LKR",
+                                            "currencySymbol": "\u20a8",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0030398248117347"
+                                        },
+                                        {
+                                            "id": "somali-shilling",
+                                            "symbol": "SOS",
+                                            "currencySymbol": "S",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0017485805700507"
+                                        },
+                                        {
+                                            "id": "bhutanese-ngultrum",
+                                            "symbol": "BTN",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0119974376832391"
+                                        },
+                                        {
+                                            "id": "new-zealand-dollar",
+                                            "symbol": "NZD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.6045784727743200"
+                                        },
+                                        {
+                                            "id": "kyrgystani-som",
+                                            "symbol": "KGS",
+                                            "currencySymbol": "\u043b\u0432",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0112590297418530"
+                                        },
+                                        {
+                                            "id": "dogecoin",
+                                            "symbol": "DOGE",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "0.0759021734359797"
+                                        },
+                                        {
+                                            "id": "bitcoin-cash",
+                                            "symbol": "BCH",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "225.2390704343563912"
+                                        },
+                                        {
+                                            "id": "swiss-franc",
+                                            "symbol": "CHF",
+                                            "currencySymbol": "CHF",
+                                            "type": "fiat",
+                                            "rateUsd": "1.1315225201269568"
+                                        },
+                                        {
+                                            "id": "macanese-pataca",
+                                            "symbol": "MOP",
+                                            "currencySymbol": "MOP$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.1244245210371381"
+                                        },
+                                        {
+                                            "id": "burundian-franc",
+                                            "symbol": "BIF",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0003515015448264"
+                                        },
+                                        {
+                                            "id": "ethiopian-birr",
+                                            "symbol": "ETB",
+                                            "currencySymbol": "Br",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0179530596430084"
+                                        },
+                                        {
+                                            "id": "croatian-kuna",
+                                            "symbol": "HRK",
+                                            "currencySymbol": "kn",
+                                            "type": "fiat",
+                                            "rateUsd": "0.1447298646023171"
+                                        },
+                                        {
+                                            "id": "mozambican-metical",
+                                            "symbol": "MZN",
+                                            "currencySymbol": "MT",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0156617068807877"
+                                        },
+                                        {
+                                            "id": "pakistani-rupee",
+                                            "symbol": "PKR",
+                                            "currencySymbol": "\u20a8",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0035437931234218"
+                                        },
+                                        {
+                                            "id": "kazakhstani-tenge",
+                                            "symbol": "KZT",
+                                            "currencySymbol": "\u043b\u0432",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0021655781287142"
+                                        },
+                                        {
+                                            "id": "algerian-dinar",
+                                            "symbol": "DZD",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0074389145165693"
+                                        },
+                                        {
+                                            "id": "brazilian-real",
+                                            "symbol": "BRL",
+                                            "currencySymbol": "R$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.2042108272580613"
+                                        },
+                                        {
+                                            "id": "singapore-dollar",
+                                            "symbol": "SGD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.7456370909714533"
+                                        },
+                                        {
+                                            "id": "australian-dollar",
+                                            "symbol": "AUD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.6560551926112440"
+                                        },
+                                        {
+                                            "id": "venezuelan-bol\u00edvar-soberano",
+                                            "symbol": "VES",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0282431543536399"
+                                        },
+                                        {
+                                            "id": "mauritian-rupee",
+                                            "symbol": "MUR",
+                                            "currencySymbol": "\u20a8",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0226500566251416"
+                                        },
+                                        {
+                                            "id": "ukrainian-hryvnia",
+                                            "symbol": "UAH",
+                                            "currencySymbol": "\u20b4",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0277569531236967"
+                                        },
+                                        {
+                                            "id": "bitcoin",
+                                            "symbol": "BTC",
+                                            "currencySymbol": "\u20bf",
+                                            "type": "crypto",
+                                            "rateUsd": "37300.7888876688346372"
+                                        },
+                                        {
+                                            "id": "saudi-riyal",
+                                            "symbol": "SAR",
+                                            "currencySymbol": "\ufdfc",
+                                            "type": "fiat",
+                                            "rateUsd": "0.2666205946279150"
+                                        },
+                                        {
+                                            "id": "chinese-yuan-(offshore)",
+                                            "symbol": "CNH",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.1398180966562502"
+                                        },
+                                        {
+                                            "id": "euro",
+                                            "symbol": "EUR",
+                                            "currencySymbol": "\u20ac",
+                                            "type": "fiat",
+                                            "rateUsd": "1.0906219598912870"
+                                        },
+                                        {
+                                            "id": "barbadian-dollar",
+                                            "symbol": "BBD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.5000000000000000"
+                                        },
+                                        {
+                                            "id": "cape-verdean-escudo",
+                                            "symbol": "CVE",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0098922120830126"
+                                        },
+                                        {
+                                            "id": "tether",
+                                            "symbol": "USDT",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "1.0007719789134813"
+                                        },
+                                        {
+                                            "id": "samoan-tala",
+                                            "symbol": "WST",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.3571428571428572"
+                                        },
+                                        {
+                                            "id": "belarusian-ruble",
+                                            "symbol": "BYN",
+                                            "currencySymbol": "Br",
+                                            "type": "fiat",
+                                            "rateUsd": "0.3033314284119629"
+                                        },
+                                        {
+                                            "id": "hungarian-forint",
+                                            "symbol": "HUF",
+                                            "currencySymbol": "Ft",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0028733931680106"
+                                        },
+                                        {
+                                            "id": "turkish-lira",
+                                            "symbol": "TRY",
+                                            "currencySymbol": "Kr",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0347026670283610"
+                                        },
+                                        {
+                                            "id": "moldovan-leu",
+                                            "symbol": "MDL",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0563996992542437"
+                                        },
+                                        {
+                                            "id": "japanese-yen",
+                                            "symbol": "JPY",
+                                            "currencySymbol": "\u00a5",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0066835920677853"
+                                        },
+                                        {
+                                            "id": "dash",
+                                            "symbol": "DASH",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "29.3502154634060571"
+                                        },
+                                        {
+                                            "id": "nepalese-rupee",
+                                            "symbol": "NPR",
+                                            "currencySymbol": "\u20a8",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0074984197267886"
+                                        },
+                                        {
+                                            "id": "zcash",
+                                            "symbol": "ZEC",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "28.6058021221847138"
+                                        },
+                                        {
+                                            "id": "cuban-convertible-peso",
+                                            "symbol": "CUC",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "1.0000000000000000"
+                                        },
+                                        {
+                                            "id": "bangladeshi-taka",
+                                            "symbol": "BDT",
+                                            "currencySymbol": "Tk",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0090641515507286"
+                                        },
+                                        {
+                                            "id": "indian-rupee",
+                                            "symbol": "INR",
+                                            "currencySymbol": "\u20b9",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0120042694384685"
+                                        },
+                                        {
+                                            "id": "namibian-dollar",
+                                            "symbol": "NAD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0537056928034372"
+                                        },
+                                        {
+                                            "id": "multi-collateral-dai",
+                                            "symbol": "DAI",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "1.0006922262204380"
+                                        },
+                                        {
+                                            "id": "platinum-ounce",
+                                            "symbol": "XPT",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "918.0628873077807000"
+                                        },
+                                        {
+                                            "id": "qtum",
+                                            "symbol": "QTUM",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "3.0446541075647175"
+                                        },
+                                        {
+                                            "id": "angolan-kwanza",
+                                            "symbol": "AOA",
+                                            "currencySymbol": "Kz",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0012081438561052"
+                                        },
+                                        {
+                                            "id": "jamaican-dollar",
+                                            "symbol": "JMD",
+                                            "currencySymbol": "J$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0064238226177013"
+                                        },
+                                        {
+                                            "id": "bosnia-herzegovina-convertible-mark",
+                                            "symbol": "BAM",
+                                            "currencySymbol": "KM",
+                                            "type": "fiat",
+                                            "rateUsd": "0.5577079985923450"
+                                        },
+                                        {
+                                            "id": "vietnamese-dong",
+                                            "symbol": "VND",
+                                            "currencySymbol": "\u20ab",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0000412399975744"
+                                        },
+                                        {
+                                            "id": "malaysian-ringgit",
+                                            "symbol": "MYR",
+                                            "currencySymbol": "RM",
+                                            "type": "fiat",
+                                            "rateUsd": "0.2137208805300278"
+                                        },
+                                        {
+                                            "id": "surinamese-dollar",
+                                            "symbol": "SRD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0264256646054648"
+                                        },
+                                        {
+                                            "id": "yemeni-rial",
+                                            "symbol": "YER",
+                                            "currencySymbol": "\ufdfc",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0039952064234865"
+                                        },
+                                        {
+                                            "id": "fijian-dollar",
+                                            "symbol": "FJD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.4460800713728114"
+                                        },
+                                        {
+                                            "id": "comorian-franc",
+                                            "symbol": "KMF",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0022175417652315"
+                                        },
+                                        {
+                                            "id": "malawian-kwacha",
+                                            "symbol": "MWK",
+                                            "currencySymbol": "MK",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0005936465510964"
+                                        },
+                                        {
+                                            "id": "georgian-lari",
+                                            "symbol": "GEL",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.3696857670979667"
+                                        },
+                                        {
+                                            "id": "thai-baht",
+                                            "symbol": "THB",
+                                            "currencySymbol": "\u0e3f",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0283338291753439"
+                                        },
+                                        {
+                                            "id": "argentine-peso",
+                                            "symbol": "ARS",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0028009235205032"
+                                        },
+                                        {
+                                            "id": "gold-ounce",
+                                            "symbol": "XAU",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "1992.8258270227180000"
+                                        },
+                                        {
+                                            "id": "solomon-islands-dollar",
+                                            "symbol": "SBD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.1180915275469745"
+                                        },
+                                        {
+                                            "id": "seychellois-rupee",
+                                            "symbol": "SCR",
+                                            "currencySymbol": "\u20a8",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0749388461545956"
+                                        },
+                                        {
+                                            "id": "united-states-dollar",
+                                            "symbol": "USD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "1.0000000000000000"
+                                        },
+                                        {
+                                            "id": "palladium-ounce",
+                                            "symbol": "XPD",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "1050.8617065994115000"
+                                        },
+                                        {
+                                            "id": "new-taiwan-dollar",
+                                            "symbol": "TWD",
+                                            "currencySymbol": "NT$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0316235542224892"
+                                        },
+                                        {
+                                            "id": "silver-ounce",
+                                            "symbol": "XAG",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "23.7026980070060450"
+                                        },
+                                        {
+                                            "id": "colombian-peso",
+                                            "symbol": "COP",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0002456238782190"
+                                        },
+                                        {
+                                            "id": "crypto-com-coin",
+                                            "symbol": "CRO",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "0.0931257773393750"
+                                        },
+                                        {
+                                            "id": "tunisian-dinar",
+                                            "symbol": "TND",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.3221908981071285"
+                                        },
+                                        {
+                                            "id": "cfp-franc",
+                                            "symbol": "XPF",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0091394131195325"
+                                        },
+                                        {
+                                            "id": "bolivian-boliviano",
+                                            "symbol": "BOB",
+                                            "currencySymbol": "$b",
+                                            "type": "fiat",
+                                            "rateUsd": "0.1446254367507408"
+                                        },
+                                        {
+                                            "id": "trinidad-and-tobago-dollar",
+                                            "symbol": "TTD",
+                                            "currencySymbol": "TT$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.1471024999922771"
+                                        },
+                                        {
+                                            "id": "gambian-dalasi",
+                                            "symbol": "GMD",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0148698884758364"
+                                        },
+                                        {
+                                            "id": "honduran-lempira",
+                                            "symbol": "HNL",
+                                            "currencySymbol": "L",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0404742120581582"
+                                        },
+                                        {
+                                            "id": "myanma-kyat",
+                                            "symbol": "MMK",
+                                            "currencySymbol": "K",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0004758807021007"
+                                        },
+                                        {
+                                            "id": "north-korean-won",
+                                            "symbol": "KPW",
+                                            "currencySymbol": "\u20a9",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0011111111111111"
+                                        },
+                                        {
+                                            "id": "panamanian-balboa",
+                                            "symbol": "PAB",
+                                            "currencySymbol": "B/.",
+                                            "type": "fiat",
+                                            "rateUsd": "1.0000000000000000"
+                                        },
+                                        {
+                                            "id": "sudanese-pound",
+                                            "symbol": "SDG",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0016638935108153"
+                                        },
+                                        {
+                                            "id": "swazi-lilangeni",
+                                            "symbol": "SZL",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0532867621242171"
+                                        },
+                                        {
+                                            "id": "rwandan-franc",
+                                            "symbol": "RWF",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0008084516002425"
+                                        },
+                                        {
+                                            "id": "peruvian-nuevo-sol",
+                                            "symbol": "PEN",
+                                            "currencySymbol": "S/.",
+                                            "type": "fiat",
+                                            "rateUsd": "0.2673312878925392"
+                                        },
+                                        {
+                                            "id": "serbian-dinar",
+                                            "symbol": "RSD",
+                                            "currencySymbol": "\u0414\u0438\u043d.",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0093069978674783"
+                                        },
+                                        {
+                                            "id": "azerbaijani-manat",
+                                            "symbol": "AZN",
+                                            "currencySymbol": "\u20bc",
+                                            "type": "fiat",
+                                            "rateUsd": "0.5882352941176471"
+                                        },
+                                        {
+                                            "id": "maldivian-rufiyaa",
+                                            "symbol": "MVR",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0649350649350649"
+                                        },
+                                        {
+                                            "id": "danish-krone",
+                                            "symbol": "DKK",
+                                            "currencySymbol": "kr",
+                                            "type": "fiat",
+                                            "rateUsd": "0.1462659545074852"
+                                        },
+                                        {
+                                            "id": "vanuatu-vatu",
+                                            "symbol": "VUV",
+                                            "currencySymbol": "VT",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0084230386954398"
+                                        },
+                                        {
+                                            "id": "malagasy-ariary",
+                                            "symbol": "MGA",
+                                            "currencySymbol": "Ar",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0002201781312155"
+                                        },
+                                        {
+                                            "id": "manx-pound",
+                                            "symbol": "IMP",
+                                            "currencySymbol": "\u00a3",
+                                            "type": "fiat",
+                                            "rateUsd": "1.2531705214191906"
+                                        },
+                                        {
+                                            "id": "belize-dollar",
+                                            "symbol": "BZD",
+                                            "currencySymbol": "BZ$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.4957865579373693"
+                                        },
+                                        {
+                                            "id": "kenyan-shilling",
+                                            "symbol": "KES",
+                                            "currencySymbol": "KSh",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0065423617926071"
+                                        },
+                                        {
+                                            "id": "ethereum",
+                                            "symbol": "ETH",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "2061.6328525927155281"
+                                        },
+                                        {
+                                            "id": "special-drawing-rights",
+                                            "symbol": "XDR",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "1.3303816598905893"
+                                        },
+                                        {
+                                            "id": "cuban-peso",
+                                            "symbol": "CUP",
+                                            "currencySymbol": "\u20b1",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0388349514563107"
+                                        },
+                                        {
+                                            "id": "netherlands-antillean-guilder",
+                                            "symbol": "ANG",
+                                            "currencySymbol": "\u0192",
+                                            "type": "fiat",
+                                            "rateUsd": "0.5545041540678702"
+                                        },
+                                        {
+                                            "id": "haitian-gourde",
+                                            "symbol": "HTG",
+                                            "currencySymbol": "G",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0075387364402255"
+                                        },
+                                        {
+                                            "id": "sentinel",
+                                            "symbol": "DVPN",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "0.0005187582207161"
+                                        },
+                                        {
+                                            "id": "ugandan-shilling",
+                                            "symbol": "UGX",
+                                            "currencySymbol": "UGX",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0002632190211896"
+                                        },
+                                        {
+                                            "id": "gibraltar-pound",
+                                            "symbol": "GIP",
+                                            "currencySymbol": "\u00a3",
+                                            "type": "fiat",
+                                            "rateUsd": "1.2531705214191906"
+                                        },
+                                        {
+                                            "id": "libyan-dinar",
+                                            "symbol": "LYD",
+                                            "currencySymbol": "LD",
+                                            "type": "fiat",
+                                            "rateUsd": "0.2073697982063757"
+                                        },
+                                        {
+                                            "id": "mexican-peso",
+                                            "symbol": "MXN",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0581886704796539"
+                                        },
+                                        {
+                                            "id": "eritrean-nakfa",
+                                            "symbol": "ERN",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0666666666666667"
+                                        },
+                                        {
+                                            "id": "zimbabwean-dollar",
+                                            "symbol": "ZWL",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0031055900621118"
+                                        },
+                                        {
+                                            "id": "salvadoran-col\u00f3n",
+                                            "symbol": "SVC",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.1142162316570160"
+                                        },
+                                        {
+                                            "id": "mauritanian-ouguiya",
+                                            "symbol": "MRU",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0250393687735384"
+                                        },
+                                        {
+                                            "id": "liberian-dollar",
+                                            "symbol": "LRD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0053191492473970"
+                                        },
+                                        {
+                                            "id": "czech-republic-koruna",
+                                            "symbol": "CZK",
+                                            "currencySymbol": "K\u010d",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0446909398057732"
+                                        },
+                                        {
+                                            "id": "papua-new-guinean-kina",
+                                            "symbol": "PGK",
+                                            "currencySymbol": "K",
+                                            "type": "fiat",
+                                            "rateUsd": "0.2645561435756774"
+                                        },
+                                        {
+                                            "id": "romanian-leu",
+                                            "symbol": "RON",
+                                            "currencySymbol": "lei",
+                                            "type": "fiat",
+                                            "rateUsd": "0.2194329851663302"
+                                        },
+                                        {
+                                            "id": "bahraini-dinar",
+                                            "symbol": "BHD",
+                                            "currencySymbol": "BD",
+                                            "type": "fiat",
+                                            "rateUsd": "2.6531039990236580"
+                                        },
+                                        {
+                                            "id": "binance-coin",
+                                            "symbol": "BNB",
+                                            "currencySymbol": null,
+                                            "type": "crypto",
+                                            "rateUsd": "232.4654090730949967"
+                                        },
+                                        {
+                                            "id": "costa-rican-col\u00f3n",
+                                            "symbol": "CRC",
+                                            "currencySymbol": "\u20a1",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0018825760118162"
+                                        },
+                                        {
+                                            "id": "cayman-islands-dollar",
+                                            "symbol": "KYD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "1.1991859925482584"
+                                        },
+                                        {
+                                            "id": "omani-rial",
+                                            "symbol": "OMR",
+                                            "currencySymbol": "\ufdfc",
+                                            "type": "fiat",
+                                            "rateUsd": "2.5978546915956800"
+                                        },
+                                        {
+                                            "id": "indonesian-rupiah",
+                                            "symbol": "IDR",
+                                            "currencySymbol": "Rp",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0000644694481606"
+                                        },
+                                        {
+                                            "id": "falkland-islands-pound",
+                                            "symbol": "FKP",
+                                            "currencySymbol": "\u00a3",
+                                            "type": "fiat",
+                                            "rateUsd": "1.2531705214191906"
+                                        },
+                                        {
+                                            "id": "dominican-peso",
+                                            "symbol": "DOP",
+                                            "currencySymbol": "RD$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0175674829825110"
+                                        },
+                                        {
+                                            "id": "icelandic-kr\u00f3na",
+                                            "symbol": "ISK",
+                                            "currencySymbol": "kr",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0071326676176890"
+                                        },
+                                        {
+                                            "id": "cfa-franc-bceao",
+                                            "symbol": "XOF",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0016626426613078"
+                                        },
+                                        {
+                                            "id": "east-caribbean-dollar",
+                                            "symbol": "XCD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.3700209061811993"
+                                        },
+                                        {
+                                            "id": "aruban-florin",
+                                            "symbol": "AWG",
+                                            "currencySymbol": "\u0192",
+                                            "type": "fiat",
+                                            "rateUsd": "0.5656108597285068"
+                                        },
+                                        {
+                                            "id": "cfa-franc-beac",
+                                            "symbol": "XAF",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0016626426613078"
+                                        },
+                                        {
+                                            "id": "united-arab-emirates-dirham",
+                                            "symbol": "AED",
+                                            "currencySymbol": "\u0641\u0644\u0633",
+                                            "type": "fiat",
+                                            "rateUsd": "0.2722922240148127"
+                                        },
+                                        {
+                                            "id": "south-sudanese-pound",
+                                            "symbol": "SSP",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0076769537847382"
+                                        },
+                                        {
+                                            "id": "south-korean-won",
+                                            "symbol": "KRW",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0007682353294845"
+                                        },
+                                        {
+                                            "id": "ghanaian-cedi",
+                                            "symbol": "GHS",
+                                            "currencySymbol": "\u00a2",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0836668713158339"
+                                        },
+                                        {
+                                            "id": "syrian-pound",
+                                            "symbol": "SYP",
+                                            "currencySymbol": "\u00a3",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0003980051979479"
+                                        },
+                                        {
+                                            "id": "canadian-dollar",
+                                            "symbol": "CAD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.7300458395782671"
+                                        },
+                                        {
+                                            "id": "nigerian-naira",
+                                            "symbol": "NGN",
+                                            "currencySymbol": "\u20a6",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0012423286207668"
+                                        },
+                                        {
+                                            "id": "south-african-rand",
+                                            "symbol": "ZAR",
+                                            "currencySymbol": "R",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0531348216396875"
+                                        },
+                                        {
+                                            "id": "swedish-krona",
+                                            "symbol": "SEK",
+                                            "currencySymbol": "kr",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0953524000628182"
+                                        },
+                                        {
+                                            "id": "bulgarian-lev",
+                                            "symbol": "BGN",
+                                            "currencySymbol": "\u043b\u0432",
+                                            "type": "fiat",
+                                            "rateUsd": "0.5570639609698707"
+                                        },
+                                        {
+                                            "id": "s\u00e3o-tom\u00e9-and-pr\u00edncipe-dobra-(pre-2018)",
+                                            "symbol": "STD",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0000448796775844"
+                                        },
+                                        {
+                                            "id": "qatari-rial",
+                                            "symbol": "QAR",
+                                            "currencySymbol": "\ufdfc",
+                                            "type": "fiat",
+                                            "rateUsd": "0.2741303967023210"
+                                        },
+                                        {
+                                            "id": "uruguayan-peso",
+                                            "symbol": "UYU",
+                                            "currencySymbol": "$U",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0253610326870488"
+                                        },
+                                        {
+                                            "id": "jordanian-dinar",
+                                            "symbol": "JOD",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "1.4098406880022556"
+                                        },
+                                        {
+                                            "id": "zambian-kwacha",
+                                            "symbol": "ZMW",
+                                            "currencySymbol": "ZK",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0427533024147151"
+                                        },
+                                        {
+                                            "id": "cambodian-riel",
+                                            "symbol": "KHR",
+                                            "currencySymbol": "\u17db",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0002429348867859"
+                                        },
+                                        {
+                                            "id": "uzbekistan-som",
+                                            "symbol": "UZS",
+                                            "currencySymbol": "\u043b\u0432",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0000812109751693"
+                                        },
+                                        {
+                                            "id": "djiboutian-franc",
+                                            "symbol": "DJF",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0056234122717207"
+                                        },
+                                        {
+                                            "id": "sierra-leonean-leone",
+                                            "symbol": "SLL",
+                                            "currencySymbol": "Le",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0000476883092110"
+                                        },
+                                        {
+                                            "id": "nicaraguan-c\u00f3rdoba",
+                                            "symbol": "NIO",
+                                            "currencySymbol": "C$",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0273036282781385"
+                                        },
+                                        {
+                                            "id": "s\u00e3o-tom\u00e9-and-pr\u00edncipe-dobra",
+                                            "symbol": "STN",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0445216330837762"
+                                        },
+                                        {
+                                            "id": "iranian-rial",
+                                            "symbol": "IRR",
+                                            "currencySymbol": "\ufdfc",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0000236616385685"
+                                        },
+                                        {
+                                            "id": "tajikistani-somoni",
+                                            "symbol": "TJS",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0914733651514287"
+                                        },
+                                        {
+                                            "id": "guatemalan-quetzal",
+                                            "symbol": "GTQ",
+                                            "currencySymbol": "Q",
+                                            "type": "fiat",
+                                            "rateUsd": "0.1276495091684898"
+                                        },
+                                        {
+                                            "id": "bermudan-dollar",
+                                            "symbol": "BMD",
+                                            "currencySymbol": "$",
+                                            "type": "fiat",
+                                            "rateUsd": "1.0000000000000000"
+                                        },
+                                        {
+                                            "id": "kuwaiti-dinar",
+                                            "symbol": "KWD",
+                                            "currencySymbol": "\u0643",
+                                            "type": "fiat",
+                                            "rateUsd": "3.2435728603771623"
+                                        },
+                                        {
+                                            "id": "congolese-franc",
+                                            "symbol": "CDF",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.0004028156486756"
+                                        },
+                                        {
+                                            "id": "egyptian-pound",
+                                            "symbol": "EGP",
+                                            "currencySymbol": "\u00a3",
+                                            "type": "fiat",
+                                            "rateUsd": "0.0323665446447934"
+                                        },
+                                        {
+                                            "id": "turkmenistani-manat",
+                                            "symbol": "TMT",
+                                            "currencySymbol": null,
+                                            "type": "fiat",
+                                            "rateUsd": "0.2857142857142857"
+                                        }
+                                    ],
+                                    "timestamp": 1700764568269
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /invalidRoute/</pre>\n</body>\n</html>\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/markets": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "100": {
+                                "value": "100"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exchangeId",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "binance": {
+                                "value": "binance"
+                            },
+                            "coinbase-pro": {
+                                "value": "coinbase-pro"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "rank": {
+                                "value": "rank"
+                            }
+                        }
+                    },
+                    {
+                        "name": "baseSymbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "quoteSymbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interval",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "d1": {
+                                "value": "d1"
+                            },
+                            "h1": {
+                                "value": "h1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "quote",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "base",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "ETH": {
+                                "value": "ETH"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rank",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "desc": {
+                                "value": "desc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "minVolume",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100000": {
+                                "value": "100000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "maxVolume",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "500000": {
+                                "value": "500000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "active": {
+                                "value": "active"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v2_markets"
+                                },
+                                "example": {
+                                    "data": [
+                                        {
+                                            "exchangeId": "alterdice",
+                                            "rank": "1",
+                                            "baseSymbol": "RANK",
+                                            "baseId": "rank-token",
+                                            "quoteSymbol": "USDT",
+                                            "quoteId": "tether",
+                                            "priceQuote": "0.0022999900000000",
+                                            "priceUsd": "0.0023017658560440",
+                                            "volumeUsd24Hr": "0.0000000000000000",
+                                            "percentExchangeVolume": null,
+                                            "tradesCount24Hr": null,
+                                            "updated": 1700764511346
+                                        },
+                                        {
+                                            "exchangeId": "alterdice",
+                                            "rank": "2",
+                                            "baseSymbol": "LRC",
+                                            "baseId": "loopring",
+                                            "quoteSymbol": "ETH",
+                                            "quoteId": "ethereum",
+                                            "priceQuote": "0.0001108500000000",
+                                            "priceUsd": "0.2285328272149730",
+                                            "volumeUsd24Hr": "0.0000000000000000",
+                                            "percentExchangeVolume": null,
+                                            "tradesCount24Hr": "73",
+                                            "updated": 1700764483570
+                                        },
+                                        {
+                                            "exchangeId": "alterdice",
+                                            "rank": "3",
+                                            "baseSymbol": "ALGO",
+                                            "baseId": "algorand",
+                                            "quoteSymbol": "USDT",
+                                            "quoteId": "tether",
+                                            "priceQuote": "0.0965000000000000",
+                                            "priceUsd": "0.0965745090666665",
+                                            "volumeUsd24Hr": "0.0000000000000000",
+                                            "percentExchangeVolume": null,
+                                            "tradesCount24Hr": "504",
+                                            "updated": 1700764509536
+                                        },
+                                        {
+                                            "exchangeId": "alterdice",
+                                            "rank": "4",
+                                            "baseSymbol": "EOS",
+                                            "baseId": "eos",
+                                            "quoteSymbol": "ETH",
+                                            "quoteId": "ethereum",
+                                            "priceQuote": "0.0003490000000000",
+                                            "priceUsd": "0.7195124645739789",
+                                            "volumeUsd24Hr": "0.0000000000000000",
+                                            "percentExchangeVolume": null,
+                                            "tradesCount24Hr": "34",
+                                            "updated": 1700764503382
+                                        },
+                                        {
+                                            "exchangeId": "alterdice",
+                                            "rank": "5",
+                                            "baseSymbol": "VIDA",
+                                            "baseId": "vidiachange",
+                                            "quoteSymbol": "ETH",
+                                            "quoteId": "ethereum",
+                                            "priceQuote": "0.0001999400000000",
+                                            "priceUsd": "0.4122043615098033",
+                                            "volumeUsd24Hr": "0.0000000000000000",
+                                            "percentExchangeVolume": null,
+                                            "tradesCount24Hr": null,
+                                            "updated": 1700764510125
+                                        },
+                                        {
+                                            "exchangeId": "alterdice",
+                                            "rank": "6",
+                                            "baseSymbol": "FTM",
+                                            "baseId": "fantom",
+                                            "quoteSymbol": "BTC",
+                                            "quoteId": "bitcoin",
+                                            "priceQuote": "0.0000078300000000",
+                                            "priceUsd": "0.2920657947253810",
+                                            "volumeUsd24Hr": "0.0000000000000000",
+                                            "percentExchangeVolume": null,
+                                            "tradesCount24Hr": "771",
+                                            "updated": 1700764501563
+                                        },
+                                        {
+                                            "exchangeId": "alterdice",
+                                            "rank": "7",
+                                            "baseSymbol": "ALGO",
+                                            "baseId": "algorand",
+                                            "quoteSymbol": "BTC",
+                                            "quoteId": "bitcoin",
+                                            "priceQuote": "0.0000036900000000",
+                                            "priceUsd": "0.1376402021119612",
+                                            "volumeUsd24Hr": "0.0000000000000000",
+                                            "percentExchangeVolume": null,
+                                            "tradesCount24Hr": "1223",
+                                            "updated": 1700764508954
+                                        },
+                                        {
+                                            "exchangeId": "alterdice",
+                                            "rank": "8",
+                                            "baseSymbol": "AT",
+                                            "baseId": "aware",
+                                            "quoteSymbol": "BTC",
+                                            "quoteId": "bitcoin",
+                                            "priceQuote": "0.0000310000000000",
+                                            "priceUsd": "1.1563269012115980",
+                                            "volumeUsd24Hr": "0.0000000000000000",
+                                            "percentExchangeVolume": null,
+                                            "tradesCount24Hr": "5793",
+                                            "updated": 1700764522151
+                                        },
+                                        {
+                                            "exchangeId": "alterdice",
+                                            "rank": "9",
+                                            "baseSymbol": "FME",
+                                            "baseId": "fme",
+                                            "quoteSymbol": "USDT",
+                                            "quoteId": "tether",
+                                            "priceQuote": "0.0007100000000000",
+                                            "priceUsd": "0.0007105482014231",
+                                            "volumeUsd24Hr": "0.0000000000000000",
+                                            "percentExchangeVolume": null,
+                                            "tradesCount24Hr": null,
+                                            "updated": 1700764499758
+                                        },
+                                        {
+                                            "exchangeId": "alterdice",
+                                            "rank": "10",
+                                            "baseSymbol": "BBC",
+                                            "baseId": "b2bcoin",
+                                            "quoteSymbol": "BTC",
+                                            "quoteId": "bitcoin",
+                                            "priceQuote": "0.0000279000000000",
+                                            "priceUsd": "1.0406942110904382",
+                                            "volumeUsd24Hr": "0.0000000000000000",
+                                            "percentExchangeVolume": null,
+                                            "tradesCount24Hr": null,
+                                            "updated": 1700764523356
+                                        }
+                                    ],
+                                    "timestamp": 1700764568846
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /invalidRoute/</pre>\n</body>\n</html>\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/rates/{id}": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "ID path parameter for the /v2/rates/{id} route.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "5": {
+                                "value": "5"
+                            },
+                            "100": {
+                                "value": "100"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "asc": {
+                                "value": "asc"
+                            },
+                            "rank": {
+                                "value": "rank"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            },
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            },
+                            "2021-01-01": {
+                                "value": "2021-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "convert",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interval",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1h": {
+                                "value": "1h"
+                            },
+                            "hour": {
+                                "value": "hour"
+                            },
+                            "1d": {
+                                "value": "1d"
+                            },
+                            "d1": {
+                                "value": "d1"
+                            },
+                            "daily": {
+                                "value": "daily"
+                            }
+                        }
+                    },
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "timestamp",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1609459200": {
+                                "value": "1609459200"
+                            }
+                        }
+                    },
+                    {
+                        "name": "ids",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "bitcoin,ethereum": {
+                                "value": "bitcoin,ethereum"
+                            },
+                            "bitcoin": {
+                                "value": "bitcoin"
+                            }
+                        }
+                    },
+                    {
+                        "name": "time",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01T00:00:00Z": {
+                                "value": "2022-01-01T00:00:00Z"
+                            },
+                            "1632300000": {
+                                "value": "1632300000"
+                            },
+                            "1638356400000": {
+                                "value": "1638356400000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rank",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "gte10": {
+                                "value": "gte10"
+                            },
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "end",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-31": {
+                                "value": "2022-01-31"
+                            },
+                            "2021-12-31": {
+                                "value": "2021-12-31"
+                            }
+                        }
+                    },
+                    {
+                        "name": "direction",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "asc": {
+                                "value": "asc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "marker",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "abc123": {
+                                "value": "abc123"
+                            }
+                        }
+                    },
+                    {
+                        "name": "timeframe",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "hourly": {
+                                "value": "hourly"
+                            }
+                        }
+                    },
+                    {
+                        "name": "period",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "7": {
+                                "value": "7"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rank_range",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1-10": {
+                                "value": "1-10"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v2_rates_id"
+                                },
+                                "example": {
+                                    "timestamp": 1700764570547
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /invalidRoute/</pre>\n</body>\n</html>\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/candles": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "rank": {
+                                "value": "rank"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interval",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "m1": {
+                                "value": "m1"
+                            },
+                            "m5": {
+                                "value": "m5"
+                            },
+                            "h1": {
+                                "value": "h1"
+                            },
+                            "d1": {
+                                "value": "d1"
+                            },
+                            "1m": {
+                                "value": "1m"
+                            },
+                            "5m": {
+                                "value": "5m"
+                            },
+                            "15m": {
+                                "value": "15m"
+                            },
+                            "30m": {
+                                "value": "30m"
+                            },
+                            "1h": {
+                                "value": "1h"
+                            },
+                            "6h": {
+                                "value": "6h"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1583020800000": {
+                                "value": "1583020800000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "end",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1583107200000": {
+                                "value": "1583107200000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "convert",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exchange",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "binance": {
+                                "value": "binance"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v2_candles"
+                                },
+                                "example": {
+                                    "data": [],
+                                    "timestamp": 1700766794920
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /invalidRoute/</pre>\n</body>\n</html>\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/rates/assets": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "rank": {
+                                "value": "rank"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exchange",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "binance": {
+                                "value": "binance"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interval",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1h": {
+                                "value": "1h"
+                            }
+                        }
+                    },
+                    {
+                        "name": "time",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "range",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "24h": {
+                                "value": "24h"
+                            }
+                        }
+                    },
+                    {
+                        "name": "convert",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "market": {
+                                "value": "market"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "end",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "3": {
+                                "value": "3"
+                            }
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "bitcoin": {
+                                "value": "bitcoin"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v2_rates_assets"
+                                },
+                                "example": {
+                                    "timestamp": 1700767371373
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /invalidRoute/</pre>\n</body>\n</html>\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/rates/exchanges": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "rank": {
+                                "value": "rank"
+                            },
+                            "asc": {
+                                "value": "asc"
+                            },
+                            "desc": {
+                                "value": "desc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "baseSymbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "100": {
+                                "value": "100"
+                            },
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interval",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1d": {
+                                "value": "1d"
+                            },
+                            "1h": {
+                                "value": "1h"
+                            },
+                            "1m": {
+                                "value": "1m"
+                            }
+                        }
+                    },
+                    {
+                        "name": "convert",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            },
+                            "EUR": {
+                                "value": "EUR"
+                            },
+                            "JPY": {
+                                "value": "JPY"
+                            },
+                            "CNY": {
+                                "value": "CNY"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v2_rates_exchanges"
+                                },
+                                "example": {
+                                    "timestamp": 1700767372006
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /invalidRoute/</pre>\n</body>\n</html>\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/rates/markets": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "rank": {
+                                "value": "rank"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "convert",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "interval",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "d1": {
+                                "value": "d1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exchange",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "binance": {
+                                "value": "binance"
+                            }
+                        }
+                    },
+                    {
+                        "name": "ids",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "bitcoin": {
+                                "value": "bitcoin"
+                            }
+                        }
+                    },
+                    {
+                        "name": "minCap",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1000000": {
+                                "value": "1000000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "maxCap",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1000000000": {
+                                "value": "1000000000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v2_rates_markets"
+                                },
+                                "example": {
+                                    "timestamp": 1700767372571
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /invalidRoute/</pre>\n</body>\n</html>\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/rates/trading-pairs": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "rank": {
+                                "value": "rank"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v2_rates_trading-pairs"
+                                },
+                                "example": {
+                                    "timestamp": 1700767373144
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /invalidRoute/</pre>\n</body>\n</html>\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/rates/BTC": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1583020800000": {
+                                "value": "1583020800000"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v2_rates_BTC"
+                                },
+                                "example": {
+                                    "timestamp": 1700768089762
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /invalidRoute/</pre>\n</body>\n</html>\n"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/rates/history": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "symbol",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BTC": {
+                                "value": "BTC"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1583020800000": {
+                                "value": "1583020800000"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v2_rates_history"
+                                },
+                                "example": {
+                                    "timestamp": 1700768090314
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /invalidRoute/</pre>\n</body>\n</html>\n"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema_v2_assets": {},
+            "ResponseSchema_v2_exchanges": {},
+            "ResponseSchema_v2_rates": {},
+            "ResponseSchema_v2_markets": {},
+            "ResponseSchema_v2_rates_id": {},
+            "ResponseSchema_v2_candles": {},
+            "ResponseSchema_v2_rates_assets": {},
+            "ResponseSchema_v2_rates_exchanges": {},
+            "ResponseSchema_v2_rates_markets": {},
+            "ResponseSchema_v2_rates_trading-pairs": {},
+            "ResponseSchema_v2_rates_BTC": {},
+            "ResponseSchema_v2_rates_history": {}
+        }
+    }
+}

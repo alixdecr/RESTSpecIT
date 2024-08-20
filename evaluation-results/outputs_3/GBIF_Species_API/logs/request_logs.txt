@@ -1,0 +1,530 @@
+TIME     | VALID | REASON      | COD | RESPONSE DATA                     | REQUEST
+==================================================================================
+12:02:45 | True  | valid-req   | 200 | <!DOCTYPE html><!--All GBIF me... | https://www.gbif.org/terms 
+12:02:53 | False | status-code | 404 | <!DOCTYPE html><!--All GBIF me... | https://www.gbif.org/contact 
+12:02:58 | False | status-code | 404 | <!DOCTYPE html><!--All GBIF me... | https://www.gbif.org/contact 
+12:03:00 | True  | valid-req   | 200 | <!DOCTYPE html><!--All GBIF me... | https://www.gbif.org/contact-us 
+12:03:07 | True  | valid-req   | 200 | <!DOCTYPE html><html dir="ltr"... | https://creativecommons.org/publicdomain/zero/1.0 
+12:03:10 | True  | valid-req   | 200 | <!DOCTYPE html><!--All GBIF me... | https://www.gbif.org/developer/species 
+12:03:15 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species 
+12:03:16 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species 
+12:03:17 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:04:17 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?kingdom=Animalia&rank=species 
+12:04:17 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?kingdom=Animalia&rank=species 
+12:04:18 | False | status-code | 400 | For input string: "A1B2C3D4"      | https://api.gbif.org/v1/species/A1B2C3D4?kingdom=Animalia&rank=species 
+12:04:19 | False | status-code | 400 | For input string: "genus"         | https://api.gbif.org/v1/species/genus?kingdom=Animalia&rank=species 
+12:04:19 | False | status-code | 400 | For input string: "family"        | https://api.gbif.org/v1/species/family?kingdom=Animalia&rank=species 
+12:04:20 | False | status-code | 400 | For input string: "order"         | https://api.gbif.org/v1/species/order?kingdom=Animalia&rank=species 
+12:04:21 | False | status-code | 400 | For input string: "class"         | https://api.gbif.org/v1/species/class?kingdom=Animalia&rank=species 
+12:04:21 | False | status-code | 400 | For input string: "phylum"        | https://api.gbif.org/v1/species/phylum?kingdom=Animalia&rank=species 
+12:04:22 | False | status-code | 400 | For input string: "kingdom"       | https://api.gbif.org/v1/species/kingdom?kingdom=Animalia&rank=species 
+12:04:22 | False | status-code | 400 | For input string: "taxonomy"      | https://api.gbif.org/v1/species/taxonomy?kingdom=Animalia&rank=species 
+12:04:23 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=Aves&kingdom=Animalia&rank=species 
+12:04:24 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?limit=10&kingdom=Animalia&rank=species 
+12:04:25 | False | status-code | 400 | For input string: "A1B2C3D4"      | https://api.gbif.org/v1/species/A1B2C3D4?limit=10&kingdom=Animalia&rank=species 
+12:04:25 | False | status-code | 404 | {"timestamp":"2023-11-22T11:04... | https://api.gbif.org/v1/species/23?kingdom=Animalia&rank=species 
+12:04:26 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/v1?kingdom=Animalia&rank=species 
+12:04:27 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species 
+12:04:28 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?kingdom=Animalia&rank=species 
+12:04:28 | False | status-code | 404 | {"timestamp":"2023-11-22T11:04... | https://api.gbif.org/v1/name/usage?kingdom=Animalia&rank=species 
+12:04:30 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?kingdom=Animalia&rank=species 
+12:04:31 | False | status-code | 404 | {"timestamp":"2023-11-22T11:04... | https://api.gbif.org/v1/search?kingdom=Animalia&rank=species 
+12:04:31 | False | error-msg   | 200 | {"usageKey":1,"scientificName"... | https://api.gbif.org/v1/species/match?kingdom=Animalia&rank=species 
+12:04:32 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&rank=species 
+12:04:33 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?kingdom=Animalia&rank=species 
+12:04:33 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?kingdom=Animalia&rank=species 
+12:04:34 | False | status-code | 400 | For input string: "interpret"     | https://api.gbif.org/v1/species/interpret?kingdom=Animalia&rank=species 
+12:04:35 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species&kingdom=Animalia&rank=species 
+12:04:36 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2483&kingdom=Animalia&rank=species 
+12:04:37 | False | status-code | 404 | {"timestamp":"2023-11-22T11:04... | https://api.gbif.org/v1/name/usage?datasetKey=7bdbd7b2-6f7c-4e9d-8bb9-6b8e8c8d6b77&kingdom=Animalia&rank=species 
+12:04:37 | False | status-code | 404 | {"timestamp":"2023-11-22T11:04... | https://api.gbif.org/v1/32?kingdom=Animalia&rank=species 
+12:04:38 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species 
+12:04:39 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?kingdom=Animalia&rank=species 
+12:04:39 | False | status-code | 404 | {"timestamp":"2023-11-22T11:04... | https://api.gbif.org/v1/name?kingdom=Animalia&rank=species 
+12:04:40 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?kingdom=Animalia&rank=species 
+12:04:41 | False | status-code | 404 | {"timestamp":"2023-11-22T11:04... | https://api.gbif.org/v1/reference?kingdom=Animalia&rank=species 
+12:04:42 | False | status-code | 404 | {"timestamp":"2023-11-22T11:04... | https://api.gbif.org/v1/metadata?kingdom=Animalia&rank=species 
+12:04:43 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?kingdom=Animalia&rank=species 
+12:04:44 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?kingdom=Animalia&rank=species 
+12:04:44 | False | status-code | 404 | {"timestamp":"2023-11-22T11:04... | https://api.gbif.org/v1/installations?kingdom=Animalia&rank=species 
+12:04:45 | False | status-code | 404 | {"timestamp":"2023-11-22T11:04... | https://api.gbif.org/v1/grscicoll?kingdom=Animalia&rank=species 
+12:04:46 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species&kingdom=Animalia&rank=species 
+12:04:47 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2481703&kingdom=Animalia&rank=species 
+12:04:48 | False | status-code | 404 | {"timestamp":"2023-11-22T11:04... | https://api.gbif.org/v1/name?limit=10&kingdom=Animalia&rank=species 
+12:04:48 | False | status-code | 404 | {"timestamp":"2023-11-22T11:04... | https://api.gbif.org/v1/39?kingdom=Animalia&rank=species 
+12:05:21 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&rank=species&limit=5 
+12:05:21 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&rank=species&offset=10 
+12:05:22 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&rank=species&nameStatus=synonym 
+12:05:23 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&rank=species&nameType=scientific 
+12:05:24 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&rank=species&year=2021 
+12:05:24 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&rank=species&higherTaxonKey=238 
+12:05:25 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&rank=species&locale=fr 
+12:05:26 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&rank=species&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c 
+12:05:26 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&rank=species&country=BR 
+12:05:27 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&rank=species&publishingCountry=US 
+12:05:28 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?kingdom=Animalia 
+12:05:29 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&phylum=Mollusca 
+12:05:30 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&class=Insecta 
+12:05:31 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&order=Coleoptera 
+12:05:32 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&family=Fabaceae 
+12:05:32 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&genus=Panthera 
+12:05:33 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&rank=species 
+12:05:34 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&nameStatus=accepted 
+12:05:35 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&nameType=scientific 
+12:05:35 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&limit=50 
+12:05:36 | True  | valid-req   | 200 | {"key":71,"nubKey":71,"nameKey... | https://api.gbif.org/v1/species/71?kingdom=Animalia&offset=100 
+12:05:37 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia 
+12:05:38 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?phylum=Chordata 
+12:05:40 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?class=Mammalia 
+12:05:41 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?order=Carnivora 
+12:05:42 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?family=Felidae 
+12:05:43 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?genus=Panthera 
+12:05:44 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?country=United+States 
+12:05:45 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?year=2022 
+12:05:46 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species 
+12:05:48 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/species?limit=100 
+12:21:09 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:22:23 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/search?kingdom=Animalia&rank=species 
+12:22:24 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/lookup?kingdom=Animalia&rank=species 
+12:22:24 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/autoComplete?kingdom=Animalia&rank=species 
+12:22:25 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/suggest?kingdom=Animalia&rank=species 
+12:22:25 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/metadata?kingdom=Animalia&rank=species 
+12:22:25 | False | status-code | 400 | For input string: "suggest"       | https://api.gbif.org/v1/species/suggest/name?kingdom=Animalia&rank=species 
+12:22:26 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/key?kingdom=Animalia&rank=species 
+12:22:27 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/dataset?kingdom=Animalia&rank=species 
+12:22:27 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/parent?kingdom=Animalia&rank=species 
+12:22:27 | False | status-code | 400 | For input string: "suggest"       | https://api.gbif.org/v1/species/suggest/children?kingdom=Animalia&rank=species 
+12:22:28 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/search?q=orchid&kingdom=Animalia&rank=species 
+12:22:28 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/lookup?name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:22:29 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/19?kingdom=Animalia&rank=species 
+12:22:30 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&class=Insecta 
+12:22:30 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species 
+12:22:32 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?kingdom=Animalia&rank=species 
+12:22:32 | False | error-msg   | 200 | {"usageKey":1,"scientificName"... | https://api.gbif.org/v1/species/match?kingdom=Animalia&rank=species 
+12:22:33 | False | status-code | 403 | Access is denied                  | https://api.gbif.org/v1/occurrence/download?kingdom=Animalia&rank=species 
+12:22:33 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?kingdom=Animalia&rank=species 
+12:22:34 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/gridded?kingdom=Animalia&rank=species 
+12:22:34 | False | status-code | 400 | For input string: "count"         | https://api.gbif.org/v1/species/count?kingdom=Animalia&rank=species 
+12:22:35 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/geo?kingdom=Animalia&rank=species 
+12:22:36 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/lookup?kingdom=Animalia&rank=species 
+12:22:36 | False | status-code | 400 | For input string: "get"           | https://api.gbif.org/v1/occurrence/get?kingdom=Animalia&rank=species 
+12:22:37 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species&kingdom=Animalia&rank=species 
+12:22:37 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:22:38 | False | status-code | 404 | {"timestamp":"2023-11-22T11:22... | https://api.gbif.org/v1/2?kingdom=Animalia&rank=species 
+12:22:38 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species 
+12:22:39 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?kingdom=Animalia&rank=species 
+12:22:39 | False | status-code | 404 | {"timestamp":"2023-11-22T11:22... | https://api.gbif.org/v1/name?kingdom=Animalia&rank=species 
+12:22:42 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?kingdom=Animalia&rank=species 
+12:22:43 | False | status-code | 404 | {"timestamp":"2023-11-22T11:22... | https://api.gbif.org/v1/reference?kingdom=Animalia&rank=species 
+12:22:43 | False | status-code | 404 | {"timestamp":"2023-11-22T11:22... | https://api.gbif.org/v1/media?kingdom=Animalia&rank=species 
+12:22:44 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/description?kingdom=Animalia&rank=species 
+12:22:44 | False | status-code | 404 | {"timestamp":"2023-11-22T11:22... | https://api.gbif.org/v1/metrics?kingdom=Animalia&rank=species 
+12:22:45 | False | status-code | 404 | {"timestamp":"2023-11-22T11:22... | https://api.gbif.org/v1/nub?kingdom=Animalia&rank=species 
+12:22:45 | False | status-code | 404 | {"timestamp":"2023-11-22T11:22... | https://api.gbif.org/v1/search?kingdom=Animalia&rank=species 
+12:22:46 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species?limit=10&kingdom=Animalia&rank=species 
+12:22:46 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2481717&kingdom=Animalia&rank=species 
+12:22:47 | False | status-code | 404 | {"timestamp":"2023-11-22T11:22... | https://api.gbif.org/v1/name?name=example&kingdom=Animalia&rank=species 
+12:22:47 | False | status-code | 404 | {"timestamp":"2023-11-22T11:22... | https://api.gbif.org/v1/10?kingdom=Animalia&rank=species 
+12:23:13 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/species/suggest?kingdom=Animalia&rank=species&datasetKey=7b5c9834-f762-11e1-a439-00145eb45e9a 
+12:23:14 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?kingdom=Animalia&rank=species&limit=100 
+12:23:14 | True  | valid-req   | 200 | [{"key":1000079,"nameKey":9578... | https://api.gbif.org/v1/species/suggest?kingdom=Animalia&rank=species&offset=50 
+12:23:15 | True  | valid-req   | 200 | [{"key":6188324,"nameKey":2088... | https://api.gbif.org/v1/species/suggest?kingdom=Animalia&rank=species&q=Cat 
+12:23:16 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?kingdom=Animalia&rank=species&language=fr 
+12:23:16 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?kingdom=Animalia&rank=species&country=US 
+12:23:17 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?kingdom=Animalia&rank=species&year=2021 
+12:23:17 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?kingdom=Animalia&rank=species&basisOfRecord=HUMAN_OBSERVATION 
+12:23:18 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?kingdom=Animalia&rank=species&taxonKey=2481839 
+12:23:19 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?kingdom=Animalia&rank=species&nameType=SCIENTIFIC 
+12:23:19 | True  | valid-req   | 200 | [{"key":0,"nameKey":130332213,... | https://api.gbif.org/v1/species/suggest?kingdom=Animalia 
+12:23:20 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&rank 
+12:23:20 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&limit 
+12:23:21 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&offset 
+12:23:21 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&datasetKey 
+12:23:22 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&year 
+12:23:22 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&country 
+12:23:23 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&region 
+12:23:23 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&nubKey 
+12:23:24 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&strict 
+12:23:24 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&verbose 
+12:23:26 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/dataset?limit=100 
+12:23:27 | True  | valid-req   | 200 | {"offset":50,"limit":20,"endOf... | https://api.gbif.org/v1/dataset?offset=50 
+12:23:32 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?q=plants 
+12:23:33 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?taxonKey=12345 
+12:23:34 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?country=US 
+12:23:35 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?year=2020 
+12:23:36 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?basisOfRecord=FOSSIL_SPECIMEN 
+12:23:37 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publisher=Smithsonian 
+12:23:38 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?datasetKey=abcd-efgh-ijkl 
+12:23:39 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?institutionCode=MOBOT 
+12:35:23 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:36:01 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/scientificName?name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:36:02 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/vernacularName?name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:36:02 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/canonicalName?name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:36:02 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/taxonKey?name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:36:03 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/nameBackbone?name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:36:03 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/nameSearch?name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:36:04 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/nameUsage?name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:36:04 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/nameLookup?name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:36:05 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/nameMatch?name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:36:05 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/nameInterpreted?name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:36:05 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/scientificName?kingdom=Animalia&name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:36:06 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/vernacularName?name=cat&name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:36:06 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/canonicalName?strict=true&name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:36:07 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/11?name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:36:07 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera+tigris&kingdom=Animalia&datasetKey 
+12:36:08 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?kingdom=Animalia&rank=species 
+12:36:08 | False | status-code | 400 | For input string: "chordata"      | https://api.gbif.org/v1/species/chordata?kingdom=Animalia&rank=species 
+12:36:09 | False | status-code | 400 | For input string: "mammalia"      | https://api.gbif.org/v1/species/mammalia?kingdom=Animalia&rank=species 
+12:36:09 | False | status-code | 400 | For input string: "aves"          | https://api.gbif.org/v1/species/aves?kingdom=Animalia&rank=species 
+12:36:10 | False | status-code | 400 | For input string: "reptilia"      | https://api.gbif.org/v1/species/reptilia?kingdom=Animalia&rank=species 
+12:36:10 | False | status-code | 400 | For input string: "amphibia"      | https://api.gbif.org/v1/species/amphibia?kingdom=Animalia&rank=species 
+12:36:10 | False | status-code | 400 | For input string: "actinoptery... | https://api.gbif.org/v1/species/actinopterygii?kingdom=Animalia&rank=species 
+12:36:11 | False | status-code | 400 | For input string: "insecta"       | https://api.gbif.org/v1/species/insecta?kingdom=Animalia&rank=species 
+12:36:11 | False | status-code | 400 | For input string: "arachnida"     | https://api.gbif.org/v1/species/arachnida?kingdom=Animalia&rank=species 
+12:36:12 | False | status-code | 400 | For input string: "mollusca"      | https://api.gbif.org/v1/species/mollusca?kingdom=Animalia&rank=species 
+12:36:12 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?rank=species&kingdom=Animalia&rank=species 
+12:36:13 | False | status-code | 400 | For input string: "chordata"      | https://api.gbif.org/v1/species/chordata?rank=genus&kingdom=Animalia&rank=species 
+12:36:13 | False | status-code | 400 | For input string: "mammalia"      | https://api.gbif.org/v1/species/mammalia?limit=10&kingdom=Animalia&rank=species 
+12:36:14 | True  | valid-req   | 200 | {"key":85,"nubKey":85,"nameKey... | https://api.gbif.org/v1/species/85?kingdom=Animalia&rank=species 
+12:36:14 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species 
+12:36:15 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?kingdom=Animalia&rank=species 
+12:36:16 | False | status-code | 404 | {"timestamp":"2023-11-22T11:36... | https://api.gbif.org/v1/name-usage?kingdom=Animalia&rank=species 
+12:36:17 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?kingdom=Animalia&rank=species 
+12:36:18 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?kingdom=Animalia&rank=species 
+12:36:18 | False | status-code | 404 | {"timestamp":"2023-11-22T11:36... | https://api.gbif.org/v1/grscicoll/person?kingdom=Animalia&rank=species 
+12:36:19 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?kingdom=Animalia&rank=species 
+12:36:19 | False | status-code | 404 | {"timestamp":"2023-11-22T11:36... | https://api.gbif.org/v1/grscicoll/agent?kingdom=Animalia&rank=species 
+12:36:20 | False | status-code | 404 | {"timestamp":"2023-11-22T11:36... | https://api.gbif.org/v1/grscicoll/metrics?kingdom=Animalia&rank=species 
+12:36:20 | False | status-code | 404 | {"timestamp":"2023-11-22T11:36... | https://api.gbif.org/v1/registry/dataset?kingdom=Animalia&rank=species 
+12:36:20 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species?limit=10&kingdom=Animalia&rank=species 
+12:36:21 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2486869&kingdom=Animalia&rank=species 
+12:36:22 | False | status-code | 404 | {"timestamp":"2023-11-22T11:36... | https://api.gbif.org/v1/name-usage?name=Panthera%20leo&kingdom=Animalia&rank=species 
+12:36:22 | False | status-code | 404 | {"timestamp":"2023-11-22T11:36... | https://api.gbif.org/v1/97?kingdom=Animalia&rank=species 
+12:37:11 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?kingdom=Animalia&rank=species&taxonKey=123456 
+12:37:13 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?kingdom=Animalia&rank=species&country=US 
+12:37:14 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?kingdom=Animalia&rank=species&year=2021 
+12:37:15 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?kingdom=Animalia&rank=species&basisOfRecord=PreservedSpecimen 
+12:37:16 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?kingdom=Animalia&rank=species&datasetKey=af3db5cd-4b4b-4d74-86b0-4d4fb0f2d1c7 
+12:37:17 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?kingdom=Animalia&rank=species&institutionCode=KUNHM 
+12:37:18 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?kingdom=Animalia&rank=species&catalogNumber=12345 
+12:37:19 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?kingdom=Animalia&rank=species&recordedBy=John+Doe 
+12:37:20 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?kingdom=Animalia&rank=species&recordNumber=98765 
+12:37:21 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?kingdom=Animalia&rank=species&eventDate=2021-10-01 
+12:37:22 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?kingdom=Animalia 
+12:37:22 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?kingdom=Animalia&limit=10 
+12:37:23 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?kingdom=Animalia&rank=species 
+12:37:23 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?kingdom=Animalia&name=Panthera+leo 
+12:37:24 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?kingdom=Animalia&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c 
+12:37:24 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?kingdom=Animalia&year=2021 
+12:37:25 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?kingdom=Animalia&country=BR 
+12:37:26 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?kingdom=Animalia&q=plant 
+12:37:26 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?kingdom=Animalia&mediaType=StillImage 
+12:37:27 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?kingdom=Animalia&issue=MISSPELLED 
+12:37:27 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?kingdom=Animalia&language=fr 
+12:37:28 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?institutionCode=ABC123 
+12:37:29 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?country=GB 
+12:37:30 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?city=London 
+12:37:31 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?state=Texas 
+12:37:32 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?type=herbarium 
+12:37:32 | False | status-code | 400 | Invalid UUID for contact: John... | https://api.gbif.org/v1/grscicoll/institution?contact=John+Doe 
+12:37:33 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?yearEstablished=1990 
+12:37:34 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?active=true 
+12:37:35 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?deleted=false 
+12:37:36 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/grscicoll/institution?limit=100 
+12:45:30 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:46:22 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/dataset?kingdom=Animalia&rank=species&taxonKey=123456 
+12:46:22 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/gridded?kingdom=Animalia&rank=species&taxonKey=123456 
+12:46:23 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/facet?kingdom=Animalia&rank=species&taxonKey=123456 
+12:46:23 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence/search/facet/datasetKey?kingdom=Animalia&rank=species&taxonKey=123456 
+12:46:24 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence/search/facet/datasetKey/endpointType?kingdom=Animalia&rank=species&taxonKey=123456 
+12:46:24 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence/search/facet/iucnStatus?kingdom=Animalia&rank=species&taxonKey=123456 
+12:46:25 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence/search/facet/iucnStatus/endpointType?kingdom=Animalia&rank=species&taxonKey=123456 
+12:46:25 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence/search/facet/issue?kingdom=Animalia&rank=species&taxonKey=123456 
+12:46:25 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence/search/facet/issue/endpointType?kingdom=Animalia&rank=species&taxonKey=123456 
+12:46:26 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence/search/facet/issue/datasetKey?kingdom=Animalia&rank=species&taxonKey=123456 
+12:46:26 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence/search/facet/issue/datasetKey/endpointType?kingdom=Animalia&rank=species&taxonKey=123456 
+12:46:27 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/dataset?limit=10&kingdom=Animalia&rank=species&taxonKey=123456 
+12:46:27 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/gridded?taxonKey=2483160&kingdom=Animalia&rank=species&taxonKey=123456 
+12:46:27 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/86?kingdom=Animalia&rank=species&taxonKey=123456 
+12:46:28 | False | status-code | 404 | {"timestamp":"2023-11-22T11:46... | https://api.gbif.org/v1/grscicoll?type=herbarium 
+12:46:29 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?kingdom=Animalia&rank=species&institutionCode=KUNHM 
+12:46:29 | False | status-code | 400 | For input string: "get"           | https://api.gbif.org/v1/occurrence/get?kingdom=Animalia&rank=species&institutionCode=KUNHM 
+12:46:29 | False | status-code | 403 | Access is denied                  | https://api.gbif.org/v1/occurrence/download?kingdom=Animalia&rank=species&institutionCode=KUNHM 
+12:46:30 | False | status-code | 400 | For input string: "suggest"       | https://api.gbif.org/v1/occurrence/suggest?kingdom=Animalia&rank=species&institutionCode=KUNHM 
+12:46:30 | False | status-code | 400 | For input string: "species"       | https://api.gbif.org/v1/occurrence/species?kingdom=Animalia&rank=species&institutionCode=KUNHM 
+12:46:31 | False | status-code | 400 | For input string: "dataset"       | https://api.gbif.org/v1/occurrence/dataset?kingdom=Animalia&rank=species&institutionCode=KUNHM 
+12:46:31 | False | status-code | 400 | For input string: "taxon"         | https://api.gbif.org/v1/occurrence/taxon?kingdom=Animalia&rank=species&institutionCode=KUNHM 
+12:46:32 | False | status-code | 400 | For input string: "gridded"       | https://api.gbif.org/v1/occurrence/gridded?kingdom=Animalia&rank=species&institutionCode=KUNHM 
+12:46:32 | False | status-code | 400 | For input string: "nearest"       | https://api.gbif.org/v1/occurrence/nearest?kingdom=Animalia&rank=species&institutionCode=KUNHM 
+12:46:32 | False | status-code | 400 | For input string: "map"           | https://api.gbif.org/v1/occurrence/map?kingdom=Animalia&rank=species&institutionCode=KUNHM 
+12:46:33 | False | status-code | 400 | For input string: "get"           | https://api.gbif.org/v1/occurrence/get?occurrenceId=123456789&kingdom=Animalia&rank=species&institutionCode=KUNHM 
+12:46:33 | False | status-code | 403 | Access is denied                  | https://api.gbif.org/v1/occurrence/download?taxonKey=123456&kingdom=Animalia&rank=species&institutionCode=KUNHM 
+12:46:34 | False | status-code | 404 | Entity not found for uri: /       | https://api.gbif.org/v1/occurrence/69?kingdom=Animalia&rank=species&institutionCode=KUNHM 
+12:46:35 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species&kingdom=Animalia&rank=species 
+12:46:35 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?rank=species&kingdom=Animalia&rank=species 
+12:46:36 | False | status-code | 404 | {"timestamp":"2023-11-22T11:46... | https://api.gbif.org/v1/name?rank=species&kingdom=Animalia&rank=species 
+12:46:37 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?rank=species&kingdom=Animalia&rank=species 
+12:46:37 | False | status-code | 404 | {"timestamp":"2023-11-22T11:46... | https://api.gbif.org/v1/interpretation?rank=species&kingdom=Animalia&rank=species 
+12:46:38 | False | status-code | 404 | {"timestamp":"2023-11-22T11:46... | https://api.gbif.org/v1/reference?rank=species&kingdom=Animalia&rank=species 
+12:46:38 | False | status-code | 404 | {"timestamp":"2023-11-22T11:46... | https://api.gbif.org/v1/name_lookup?rank=species&kingdom=Animalia&rank=species 
+12:46:39 | False | status-code | 404 | {"timestamp":"2023-11-22T11:46... | https://api.gbif.org/v1/metrics?rank=species&kingdom=Animalia&rank=species 
+12:46:39 | False | status-code | 404 | {"timestamp":"2023-11-22T11:46... | https://api.gbif.org/v1/search?rank=species&kingdom=Animalia&rank=species 
+12:46:40 | False | status-code | 404 | {"timestamp":"2023-11-22T11:46... | https://api.gbif.org/v1/grscicoll?rank=species&kingdom=Animalia&rank=species 
+12:46:40 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=genus&rank=species&kingdom=Animalia&rank=species 
+12:46:41 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?limit=10&rank=species&kingdom=Animalia&rank=species 
+12:46:42 | False | status-code | 404 | {"timestamp":"2023-11-22T11:46... | https://api.gbif.org/v1/name?rank=species&rank=species&kingdom=Animalia&rank=species 
+12:46:42 | False | status-code | 404 | {"timestamp":"2023-11-22T11:46... | https://api.gbif.org/v1/33?rank=species&kingdom=Animalia&rank=species 
+12:47:26 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species&limit=10 
+12:47:26 | True  | valid-req   | 200 | {"offset":20,"limit":20,"endOf... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species&offset=20 
+12:47:27 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species&name=Canis 
+12:47:28 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species&year=2000 
+12:47:28 | False | status-code | 400 | Invalid UUID string: 1234         | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species&datasetKey=1234 
+12:47:29 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species&country=US 
+12:47:30 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species&order=asc 
+12:47:30 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species&rank=genus 
+12:47:31 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species&isExtinct=true 
+12:47:32 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&rank=species&mediaType=image 
+12:47:33 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?rank=species&kingdom=Animalia 
+12:47:33 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&class=Mammalia 
+12:47:34 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&order=Carnivora 
+12:47:34 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&family=Felidae 
+12:47:35 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&genus=Panthera 
+12:47:35 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&rank=species 
+12:47:36 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&year=1758 
+12:47:36 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&limit=10 
+12:47:37 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&offset=0 
+12:47:37 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&strict=true 
+12:47:38 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&highertaxonKey=2 
+12:47:38 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?institutionCode=K 
+12:47:39 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?catalogNumber=1234 
+12:47:40 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?country=GB 
+12:47:40 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?year=2021 
+12:47:41 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?basisOfRecord=PreservedSpecimen 
+12:47:42 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?recordedBy=John+Doe 
+12:47:43 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?decimalLatitude=51.5074 
+12:47:43 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?decimalLongitude=-0.1278 
+12:47:44 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?taxonKey=12345 
+12:47:45 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?recordNumber=ABCD 
+12:50:53 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:51:54 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/organization/search?kingdom=Animalia&rank=species 
+12:51:54 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&rank=species 
+12:51:54 | False | status-code | 400 | Invalid UUID string: species      | https://api.gbif.org/v1/organization/species?kingdom=Animalia&rank=species 
+12:51:55 | False | status-code | 400 | Invalid UUID string: occurrenc... | https://api.gbif.org/v1/organization/occurrence?kingdom=Animalia&rank=species 
+12:51:55 | False | status-code | 400 | Invalid UUID string: dataset      | https://api.gbif.org/v1/organization/dataset?kingdom=Animalia&rank=species 
+12:51:56 | False | status-code | 400 | Invalid UUID string: network      | https://api.gbif.org/v1/organization/network?kingdom=Animalia&rank=species 
+12:51:56 | False | status-code | 400 | Invalid UUID string: installat... | https://api.gbif.org/v1/organization/installation?kingdom=Animalia&rank=species 
+12:51:56 | False | status-code | 400 | Invalid UUID string: grscicoll    | https://api.gbif.org/v1/organization/grscicoll?kingdom=Animalia&rank=species 
+12:51:57 | False | status-code | 404 | {"timestamp":"2023-11-22T11:51... | https://api.gbif.org/v1/organization/species/match?kingdom=Animalia&rank=species 
+12:51:57 | False | status-code | 404 | {"timestamp":"2023-11-22T11:51... | https://api.gbif.org/v1/organization/species/search?kingdom=Animalia&rank=species 
+12:51:58 | False | status-code | 400 | Invalid UUID string: species      | https://api.gbif.org/v1/organization/species?limit=10&kingdom=Animalia&rank=species 
+12:51:58 | False | status-code | 400 | Invalid UUID string: 55           | https://api.gbif.org/v1/organization/55?kingdom=Animalia&rank=species 
+12:51:59 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/v1?limit=100 
+12:51:59 | False | status-code | 404 | {"timestamp":"2023-11-22T11:51... | https://api.gbif.org/v1/grscicoll/institutions?kingdom=Animalia&rank=species 
+12:52:00 | False | status-code | 404 | {"timestamp":"2023-11-22T11:51... | https://api.gbif.org/v1/grscicoll/collections?kingdom=Animalia&rank=species 
+12:52:00 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/grscicoll/institutions/5?kingdom=Animalia&rank=species 
+12:52:01 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/grscicoll/collections/53?kingdom=Animalia&rank=species 
+12:52:01 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/grscicoll/grscicoll?kingdom=Animalia&rank=species 
+12:52:01 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/grscicoll/grscicoll/32?kingdom=Animalia&rank=species 
+12:52:02 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/grscicoll/grscicoll/30/institutions?kingdom=Animalia&rank=species 
+12:52:02 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/grscicoll/grscicoll/7/collections?kingdom=Animalia&rank=species 
+12:52:03 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/grscicoll/grscicoll/2/institutions/92?kingdom=Animalia&rank=species 
+12:52:03 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/grscicoll/grscicoll/2/collections/31?kingdom=Animalia&rank=species 
+12:52:03 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/grscicoll/institutions?country=US&kingdom=Animalia&rank=species 
+12:52:04 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/grscicoll/collections?country=United+States&kingdom=Animalia&rank=species 
+12:52:04 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/grscicoll/institutions/5?limit=10&kingdom=Animalia&rank=species 
+12:52:05 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/grscicoll/75?kingdom=Animalia&rank=species 
+12:52:05 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera+tigris&kingdom=Animalia&family=Felidae 
+12:52:06 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?name=Panthera+tigris&kingdom=Animalia&family=Felidae 
+12:52:07 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?name=Panthera+tigris&kingdom=Animalia&family=Felidae 
+12:52:07 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?name=Panthera+tigris&kingdom=Animalia&family=Felidae 
+12:52:08 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?name=Panthera+tigris&kingdom=Animalia&family=Felidae 
+12:52:09 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?name=Panthera+tigris&kingdom=Animalia&family=Felidae 
+12:52:09 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/machineTag?name=Panthera+tigris&kingdom=Animalia&family=Felidae 
+12:52:10 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/tag?name=Panthera+tigris&kingdom=Animalia&family=Felidae 
+12:52:10 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/metadata?name=Panthera+tigris&kingdom=Animalia&family=Felidae 
+12:52:10 | True  | valid-req   | 200 | {"usageKey":5219416,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera+tigris&kingdom=Animalia&family=Felidae 
+12:52:11 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species&name=Panthera+tigris&kingdom=Animalia&family=Felidae 
+12:52:12 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2481752&name=Panthera+tigris&kingdom=Animalia&family=Felidae 
+12:52:13 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publisher=Smithsonian&name=Panthera+tigris&kingdom=Animalia&family=Felidae 
+12:52:13 | False | status-code | 404 | {"timestamp":"2023-11-22T11:52... | https://api.gbif.org/v1/6?name=Panthera+tigris&kingdom=Animalia&family=Felidae 
+12:52:41 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?kingdom=Animalia&rank=species&family=Felidae 
+12:52:42 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?kingdom=Animalia&rank=species&order=Carnivora 
+12:52:43 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?kingdom=Animalia&rank=species&genus=Panthera 
+12:52:44 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?kingdom=Animalia&rank=species&year=2000 
+12:52:44 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?kingdom=Animalia&rank=species&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c 
+12:52:45 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/species/search?kingdom=Animalia&rank=species&limit=100 
+12:52:46 | True  | valid-req   | 200 | {"offset":50,"limit":20,"endOf... | https://api.gbif.org/v1/species/search?kingdom=Animalia&rank=species&offset=50 
+12:52:46 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?kingdom=Animalia&rank=species&country=United+States 
+12:52:47 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?kingdom=Animalia&rank=species&continent=Europe 
+12:52:48 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?kingdom=Animalia&rank=species&q=cat 
+12:52:49 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?kingdom=Animalia 
+12:52:50 | True  | valid-req   | 200 | {"offset":0,"limit":5,"endOfRe... | https://api.gbif.org/v1/species/search?q=Aves&kingdom=Animalia&limit=5 
+12:52:51 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=Aves&kingdom=Animalia&rank=species 
+12:52:51 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=Aves&kingdom=Animalia&name=Passer+domesticus 
+12:52:52 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=Aves&kingdom=Animalia&rank=genus 
+12:52:52 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=Aves&kingdom=Animalia&rank=family 
+12:52:53 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=Aves&kingdom=Animalia&rank=order 
+12:52:54 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=Aves&kingdom=Animalia&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c 
+12:52:54 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=Aves&kingdom=Animalia&hasCoordinate=true 
+12:52:55 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=Aves&kingdom=Animalia&hasGeospatialIssue=false 
+12:52:55 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=Aves&kingdom=Animalia&year=2020 
+12:52:56 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?rank=kingdom 
+12:52:56 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?name=Canis%20lupus 
+12:52:57 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?limit=100 
+12:52:57 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?offset=50 
+12:52:58 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?year=2000 
+12:52:58 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?datasetKey=7a245ab4-4f26-4b8b-9af9-252792b8620c 
+12:52:59 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?higherTaxonKey=1234 
+12:52:59 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?country=US 
+12:53:00 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?mediaType=StillImage 
+12:53:00 | True  | valid-req   | 200 | {"key":123456789,"nubKey":2136... | https://api.gbif.org/v1/species/123456789?status=ACCEPTED 
+12:55:28 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:56:48 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/search?kingdom=Animalia&rank=species&eventDate=2021-10-01 
+12:56:48 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/get?kingdom=Animalia&rank=species&eventDate=2021-10-01 
+12:56:49 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/count?kingdom=Animalia&rank=species&eventDate=2021-10-01 
+12:56:49 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/suggest?kingdom=Animalia&rank=species&eventDate=2021-10-01 
+12:56:50 | False | status-code | 403 | Access is denied                  | https://api.gbif.org/v1/occurrence/search/download?kingdom=Animalia&rank=species&eventDate=2021-10-01 
+12:56:50 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/species?kingdom=Animalia&rank=species&eventDate=2021-10-01 
+12:56:50 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/dataset?kingdom=Animalia&rank=species&eventDate=2021-10-01 
+12:56:51 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/taxon?kingdom=Animalia&rank=species&eventDate=2021-10-01 
+12:56:51 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/grscicoll?kingdom=Animalia&rank=species&eventDate=2021-10-01 
+12:56:52 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/publisher?kingdom=Animalia&rank=species&eventDate=2021-10-01 
+12:56:52 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/search?taxonKey=2481699&kingdom=Animalia&rank=species&eventDate=2021-10-01 
+12:56:53 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/get?taxonKey=212&kingdom=Animalia&rank=species&eventDate=2021-10-01 
+12:56:53 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/count?basisOfRecord=HUMAN_OBSERVATION&kingdom=Animalia&rank=species&eventDate=2021-10-01 
+12:56:53 | False | status-code | 400 | Invalid UUID string: search       | https://api.gbif.org/v1/occurrence/search/7?kingdom=Animalia&rank=species&eventDate=2021-10-01 
+12:56:54 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?kingdom=Animalia&rank=species&taxonKey=123456 
+12:56:54 | False | status-code | 400 | For input string: "mammalia"      | https://api.gbif.org/v1/species/mammalia?rank=species&kingdom=Animalia 
+12:56:55 | False | status-code | 400 | For input string: "aves"          | https://api.gbif.org/v1/species/aves?rank=species&kingdom=Animalia 
+12:56:55 | False | status-code | 400 | For input string: "reptilia"      | https://api.gbif.org/v1/species/reptilia?rank=species&kingdom=Animalia 
+12:56:56 | False | status-code | 400 | For input string: "amphibia"      | https://api.gbif.org/v1/species/amphibia?rank=species&kingdom=Animalia 
+12:56:56 | False | status-code | 400 | For input string: "actinoptery... | https://api.gbif.org/v1/species/actinopterygii?rank=species&kingdom=Animalia 
+12:56:57 | False | status-code | 400 | For input string: "insecta"       | https://api.gbif.org/v1/species/insecta?rank=species&kingdom=Animalia 
+12:56:57 | False | status-code | 400 | For input string: "fungi"         | https://api.gbif.org/v1/species/fungi?rank=species&kingdom=Animalia 
+12:56:57 | False | status-code | 400 | For input string: "plantae"       | https://api.gbif.org/v1/species/plantae?rank=species&kingdom=Animalia 
+12:56:58 | False | status-code | 400 | For input string: "bacteria"      | https://api.gbif.org/v1/species/bacteria?rank=species&kingdom=Animalia 
+12:56:58 | False | status-code | 400 | For input string: "protozoa"      | https://api.gbif.org/v1/species/protozoa?rank=species&kingdom=Animalia 
+12:56:59 | False | status-code | 400 | For input string: "mammalia"      | https://api.gbif.org/v1/species/mammalia?limit=10&rank=species&kingdom=Animalia 
+12:56:59 | False | status-code | 400 | For input string: "aves"          | https://api.gbif.org/v1/species/aves?rank=species&rank=species&kingdom=Animalia 
+12:57:00 | False | status-code | 400 | For input string: "reptilia"      | https://api.gbif.org/v1/species/reptilia?limit=10&rank=species&kingdom=Animalia 
+12:57:00 | True  | valid-req   | 200 | {"key":76,"nubKey":76,"nameKey... | https://api.gbif.org/v1/species/76?rank=species&kingdom=Animalia 
+12:57:01 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia&language=fr 
+12:57:01 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?kingdom=Animalia&language=fr 
+12:57:02 | False | status-code | 404 | {"timestamp":"2023-11-22T11:57... | https://api.gbif.org/v1/name?kingdom=Animalia&language=fr 
+12:57:03 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?kingdom=Animalia&language=fr 
+12:57:03 | False | status-code | 404 | {"timestamp":"2023-11-22T11:57... | https://api.gbif.org/v1/publisher?kingdom=Animalia&language=fr 
+12:57:04 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?kingdom=Animalia&language=fr 
+12:57:05 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?kingdom=Animalia&language=fr 
+12:57:05 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?kingdom=Animalia&language=fr 
+12:57:06 | False | status-code | 404 | {"timestamp":"2023-11-22T11:57... | https://api.gbif.org/v1/grscicoll?kingdom=Animalia&language=fr 
+12:57:06 | False | status-code | 404 | {"timestamp":"2023-11-22T11:57... | https://api.gbif.org/v1/multimedia?kingdom=Animalia&language=fr 
+12:57:07 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species&kingdom=Animalia&language=fr 
+12:57:08 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2481787&kingdom=Animalia&language=fr 
+12:57:08 | False | status-code | 404 | {"timestamp":"2023-11-22T11:57... | https://api.gbif.org/v1/name?datasetKey=b0c0e9be-b8a1-4b28-95d8-297de1e27603&kingdom=Animalia&language=fr 
+12:57:08 | False | status-code | 404 | {"timestamp":"2023-11-22T11:57... | https://api.gbif.org/v1/21?kingdom=Animalia&language=fr 
+12:57:37 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?kingdom=Animalia&language=fr&country=GB 
+12:57:38 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?kingdom=Animalia&language=fr&basisOfRecord=PreservedSpecimen 
+12:57:39 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?kingdom=Animalia&language=fr&datasetKey=2fdbf5f9-ff22-4d35-9f19-4ed032e68552 
+12:57:39 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?kingdom=Animalia&language=fr&year=2010 
+12:57:40 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?kingdom=Animalia&language=fr&taxonKey=2485082 
+12:57:41 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?kingdom=Animalia&language=fr&publisher=U.S.+Geological+Survey 
+12:57:41 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?kingdom=Animalia&language=fr&institutionCode=KUNHM 
+12:57:42 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?kingdom=Animalia&language=fr&typeStatus=Holotype 
+12:57:42 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?kingdom=Animalia&language=fr&decimalLatitude=51.5074 
+12:57:43 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?kingdom=Animalia&language=fr&decimalLongitude=-0.1278 
+12:57:44 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution 
+12:57:44 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&limit=5 
+12:57:45 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&offset=10 
+12:57:45 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&rank=species 
+12:57:45 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&name=Cat 
+12:57:46 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&country=USA 
+12:57:46 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&year=2020 
+12:57:47 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7 
+12:57:47 | True  | valid-req   | 200 | [{"key":"24c3dc90-822b-11d8-b7... | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&q=plant 
+12:57:48 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&publishingCountry=CA 
+12:57:48 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&type=COLLECTION 
+12:57:50 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/dataset?limit=100 
+12:57:51 | True  | valid-req   | 200 | {"offset":50,"limit":20,"endOf... | https://api.gbif.org/v1/dataset?offset=50 
+12:57:57 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?q=plantae 
+12:57:58 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishingCountry=DE 
+12:57:59 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?country=US 
+12:58:00 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?mediaType=StillImage 
+12:58:01 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?year=2021 
+12:58:02 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?basisOfRecord=PreservedSpecimen 
+12:58:03 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?institutionCode=BGBM 
+12:58:04 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?protocol=dwca 
+12:58:04 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:58:39 | False | status-code | 400 | Invalid UUID string: species      | https://api.gbif.org/v1/network/species?kingdom=Animalia&rank=species 
+12:58:39 | False | status-code | 400 | Invalid UUID string: kingdom      | https://api.gbif.org/v1/network/kingdom?kingdom=Animalia&rank=species 
+12:58:40 | False | status-code | 400 | Invalid UUID string: rank         | https://api.gbif.org/v1/network/rank?kingdom=Animalia&rank=species 
+12:58:40 | False | status-code | 400 | Invalid UUID string: network      | https://api.gbif.org/v1/network/network?kingdom=Animalia&rank=species 
+12:58:41 | False | status-code | 400 | Invalid UUID string: occurrenc... | https://api.gbif.org/v1/network/occurrence?kingdom=Animalia&rank=species 
+12:58:41 | False | status-code | 400 | Invalid UUID string: dataset      | https://api.gbif.org/v1/network/dataset?kingdom=Animalia&rank=species 
+12:58:42 | False | status-code | 400 | Invalid UUID string: registry     | https://api.gbif.org/v1/network/registry?kingdom=Animalia&rank=species 
+12:58:42 | False | status-code | 400 | Invalid UUID string: grscicoll    | https://api.gbif.org/v1/network/grscicoll?kingdom=Animalia&rank=species 
+12:58:42 | False | status-code | 400 | Invalid UUID string: organizat... | https://api.gbif.org/v1/network/organization?kingdom=Animalia&rank=species 
+12:58:43 | False | status-code | 400 | Invalid UUID string: installat... | https://api.gbif.org/v1/network/installation?kingdom=Animalia&rank=species 
+12:58:43 | False | status-code | 400 | Invalid UUID string: species      | https://api.gbif.org/v1/network/species?rank=species&kingdom=Animalia&rank=species 
+12:58:44 | False | status-code | 400 | Invalid UUID string: kingdom      | https://api.gbif.org/v1/network/kingdom?limit=10&kingdom=Animalia&rank=species 
+12:58:44 | False | status-code | 400 | Invalid UUID string: rank         | https://api.gbif.org/v1/network/rank?rank=kingdom&kingdom=Animalia&rank=species 
+12:58:44 | False | status-code | 400 | Invalid UUID string: 41           | https://api.gbif.org/v1/network/41?kingdom=Animalia&rank=species 
+12:58:45 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?kingdom=Animalia&publishingCountry=CA 
+12:58:46 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?publishingCountry=DE 
+12:58:47 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?publishingCountry=DE 
+12:58:47 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishingCountry=DE 
+12:58:48 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?publishingCountry=DE 
+12:58:49 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?publishingCountry=DE 
+12:58:49 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?publishingCountry=DE 
+12:58:51 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/node?publishingCountry=DE 
+12:58:51 | False | status-code | 404 | {"timestamp":"2023-11-22T11:58... | https://api.gbif.org/v1/grscicoll?publishingCountry=DE 
+12:58:52 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?publishingCountry=DE 
+12:58:52 | False | status-code | 404 | {"timestamp":"2023-11-22T11:58... | https://api.gbif.org/v1/grscicoll/person?publishingCountry=DE 
+12:58:53 | True  | valid-req   | 200 | {"offset":20,"limit":10,"endOf... | https://api.gbif.org/v1/species?rank=species&limit=10&offset=20&publishingCountry=DE 
+12:58:54 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2487138&publishingCountry=DE 
+12:58:55 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishing_country=US&publishingCountry=DE 
+12:58:55 | False | status-code | 404 | {"timestamp":"2023-11-22T11:58... | https://api.gbif.org/v1/9?publishingCountry=DE 
+12:58:56 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?institutionCode=MOBOT 
+12:58:56 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?institutionCode=MOBOT 
+12:58:57 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?institutionCode=MOBOT 
+12:58:58 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?institutionCode=MOBOT 
+12:58:58 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?institutionCode=MOBOT 
+12:58:59 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?institutionCode=MOBOT 
+12:59:00 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/node?institutionCode=MOBOT 
+12:59:01 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?institutionCode=MOBOT 
+12:59:01 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?institutionCode=MOBOT 
+12:59:02 | False | status-code | 404 | {"timestamp":"2023-11-22T11:59... | https://api.gbif.org/v1/grscicoll/person?institutionCode=MOBOT 
+12:59:03 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Homo+sapiens&institutionCode=MOBOT 
+12:59:03 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2486100&institutionCode=MOBOT 
+12:59:04 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/dataset?limit=10&institutionCode=MOBOT 
+12:59:05 | False | status-code | 404 | {"timestamp":"2023-11-22T11:59... | https://api.gbif.org/v1/94?institutionCode=MOBOT 
+13:00:21 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&country=US 
+13:00:22 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&year=2020 
+13:00:22 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&datasetKey=5e6f551e-bc56-4312-a1e5-4bcf7b4c1f1f 
+13:00:23 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&basisOfRecord=PreservedSpecimen 
+13:00:23 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&limit=100 
+13:00:24 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&q=orchid 
+13:00:24 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&rank=species 
+13:00:25 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&mediaType=StillImage 
+13:00:25 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&taxonKey=248 
+13:00:26 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/organization/suggest?kingdom=Animalia&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&publishingOrg=3b0e9b8e-69b1-4db5-bb75-4624169c0a9e 
+13:00:26 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection 
+13:00:27 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?country=Germany 
+13:00:28 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?institutionCode=ABC 
+13:00:29 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?basisOfRecord=PreservedSpecimen 
+13:00:29 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?year=2020 
+13:00:30 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?taxonKey=12345 
+13:00:31 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?recordedBy=John+Smith 
+13:00:32 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?collectionCode=XYZ 
+13:00:32 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?recordNumber=123 
+13:00:33 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?catalogNumber=ABC123 
+13:00:34 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?eventDate=2020-01-01 
+13:00:35 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?kingdom=Animalia 
+13:00:36 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?phylum=Chordata 
+13:00:36 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?class=Mammalia 
+13:00:37 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?order=Carnivora 
+13:00:38 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?family=Felidae 
+13:00:39 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?genus=Panthera 
+13:00:39 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species 
+13:00:41 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/species?limit=100 
+13:00:41 | True  | valid-req   | 200 | {"offset":50,"limit":20,"endOf... | https://api.gbif.org/v1/species?offset=50 
+13:00:42 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?nameStatus=synonym 

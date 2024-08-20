@@ -1,0 +1,371 @@
+
+Generation-1: Rendering Sequence-1
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 00d52c69b0e3be70d95c1e9669744c06a9e7fa52
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '/'
+		- restler_static_string: 'books'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '?'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: [Jon%20Snow, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'gender='
+		+ restler_fuzzable_string: [male, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'format='
+		+ restler_fuzzable_string: [json, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'pageSize='
+		+ restler_fuzzable_int: [50, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'fromReleaseDate='
+		+ restler_fuzzable_string: [2000-01-01, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'toReleaseDate='
+		+ restler_fuzzable_string: [2022-12-31, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'publisher='
+		+ restler_fuzzable_string: [Bantam+Books, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: [United+States, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'author='
+		+ restler_fuzzable_string: [George+R.+R.+Martin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'character='
+		+ restler_fuzzable_string: [Daenerys+Targaryen, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'isbns='
+		+ restler_fuzzable_string: [978-0553103540, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'released='
+		+ restler_fuzzable_string: [1996-08-01, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'books='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'spouse='
+		+ restler_fuzzable_string: [Ygritte, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'numberOfPages='
+		+ restler_fuzzable_int: [694, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'authors='
+		+ restler_fuzzable_string: [George+R.R.+Martin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'characters='
+		+ restler_fuzzable_string: [Jon+Snow, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: anapioficeandfire.com\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:23:05.545: Sending: 'GET /api/books/1?name=Jon%2520Snow&gender=male&format=json&pageSize=50&fromReleaseDate=2000-01-01&toReleaseDate=2022-12-31&publisher=Bantam%2BBooks&country=United%2BStates&author=George%2BR.%2BR.%2BMartin&character=Daenerys%2BTargaryen&isbns=978-0553103540&released=1996-08-01&books=%7B+%22fuzz%22%3A+false+%7D&spouse=Ygritte&numberOfPages=694&authors=George%2BR.R.%2BMartin&characters=Jon%2BSnow HTTP/1.1\r\nAccept: application/json\r\nHost: anapioficeandfire.com\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 98267df8-7996-4fbd-bb51-385c956cc0ed\r\n\r\n'
+
+2023-11-30 11:23:06.001: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 10:23:05 GMT\r\nContent-Type: application/json; charset=utf-8\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nVary: Accept-Encoding\r\nX-Powered-By: ASP.NET\r\nCache-Control: max-age=2678400\r\nCF-Cache-Status: MISS\r\nLast-Modified: Thu, 30 Nov 2023 10:23:05 GMT\r\nReport-To: {"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=XewY9wM92sZdbZPoIdHNZnjawElndfWzay7KNfylTAO3EmLugO6HoKftnmSQEzuHrTTBsFDSkNnBA5plAY%2FSR5gFIzhuwj84FAjUQ%2F7P%2BuwEQsT0zi767wc5cTTUjkNRmVj%2BqoGdc%2F8%3D"}],"group":"cf-nel","max_age":604800}\r\nNEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}\r\nServer: cloudflare\r\nCF-RAY: 82e25f7c3f47b7cd-AMS\r\nalt-svc: h3=":443"; ma=86400\r\n\r\n6118\r\n{"url":"https://www.anapioficeandfire.com/api/books/1","name":"A Game of Thrones","isbn":"978-0553103540","authors":["George R. R. Martin"],"numberOfPages":694,"publisher":"Bantam Books","country":"United States","mediaType":"Hardcover","released":"1996-08-01T00:00:00","characters":["https://www.anapioficeandfire.com/api/characters/2","https://www.anapioficeandfire.com/api/characters/12","https://www.anapioficeandfire.com/api/characters/13","https://www.anapioficeandfire.com/api/characters/16","https://www.anapioficeandfire.com/api/characters/20","https://www.anapioficeandfire.com/api/characters/27","https://www.anapioficeandfire.com/api/characters/31","https://www.anapioficeandfire.com/api/characters/38","https://www.anapioficeandfire.com/api/characters/39","https://www.anapioficeandfire.com/api/characters/40","https://www.anapioficeandfire.com/api/characters/41","https://www.anapioficeandfire.com/api/characters/42","https://www.anapioficeandfire.com/api/characters/46","https://www.anapioficeandfire.com/api/characters/54","https://www.anapioficeandfire.com/api/characters/56","https://www.anapioficeandfire.com/api/characters/57","https://www.anapioficeandfire.com/api/characters/60","https://www.anapioficeandfire.com/api/characters/61","https://www.anapioficeandfire.com/api/characters/62","https://www.anapioficeandfire.com/api/characters/66","https://www.anapioficeandfire.com/api/characters/67","https://www.anapioficeandfire.com/api/characters/69","https://www.anapioficeandfire.com/api/characters/79","https://www.anapioficeandfire.com/api/characters/89","https://www.anapioficeandfire.com/api/characters/107","https://www.anapioficeandfire.com/api/characters/115","https://www.anapioficeandfire.com/api/characters/116","https://www.anapioficeandfire.com/api/characters/120","https://www.anapioficeandfire.com/api/characters/125","https://www.anapioficeandfire.com/api/characters/128","https://www.anapioficeandfire.com/api/characters/129","https://www.anapioficeandfire.com/api/characters/130","https://www.anapioficeandfire.com/api/characters/135","https://www.anapioficeandfire.com/api/characters/137","https://www.anapioficeandfire.com/api/characters/142","https://www.anapioficeandfire.com/api/characters/147","https://www.anapioficeandfire.com/api/characters/149","https://www.anapioficeandfire.com/api/characters/150","https://www.anapioficeandfire.com/api/characters/151","https://www.anapioficeandfire.com/api/characters/160","https://www.anapioficeandfire.com/api/characters/164","https://www.anapioficeandfire.com/api/characters/168","https://www.anapioficeandfire.com/api/characters/171","https://www.anapioficeandfire.com/api/characters/181","https://www.anapioficeandfire.com/api/characters/190","https://www.anapioficeandfire.com/api/characters/194","https://www.anapioficeandfire.com/api/characters/198","https://www.anapioficeandfire.com/api/characters/202","https://www.anapioficeandfire.com/api/characters/203","https://www.anapioficeandfire.com/api/characters/206","https://www.anapioficeandfire.com/api/characters/209","https://www.anapioficeandfire.com/api/characters/211","https://www.anapioficeandfire.com/api/characters/213","https://www.anapioficeandfire.com/api/characters/217","https://www.anapioficeandfire.com/api/characters/220","https://www.anapioficeandfire.com/api/characters/223","https://www.anapioficeandfire.com/api/characters/225","https://www.anapioficeandfire.com/api/characters/235","https://www.anapioficeandfire.com/api/characters/238","https://www.anapioficeandfire.com/api/characters/245","https://www.anapioficeandfire.com/api/characters/259","https://www.anapioficeandfire.com/api/characters/264","https://www.anapioficeandfire.com/api/characters/273","https://www.anapioficeandfire.com/api/characters/274","https://www.anapioficeandfire.com/api/characters/291","https://www.anapioficeandfire.com/api/characters/292","https://www.anapioficeandfire.com/api/characters/293","https://www.anapioficeandfire.com/api/characters/294","https://www.anapioficeandfire.com/api/characters/303","https://www.anapioficeandfire.com/api/characters/306","https://www.anapioficeandfire.com/api/characters/313","https://www.anapioficeandfire.com/api/characters/315","https://www.anapioficeandfire.com/api/characters/325","https://www.anapioficeandfire.com/api/characters/326","https://www.anapioficeandfire.com/api/characters/327","https://www.anapioficeandfire.com/api/characters/338","https://www.anapioficeandfire.com/api/characters/346","https://www.anapioficeandfire.com/api/characters/347","https://www.anapioficeandfire.com/api/characters/348","https://www.anapioficeandfire.com/api/characters/361","https://www.anapioficeandfire.com/api/characters/368","https://www.anapioficeandfire.com/api/characters/377","https://www.anapioficeandfire.com/api/characters/379","https://www.anapioficeandfire.com/api/characters/380","https://www.anapioficeandfire.com/api/characters/384","https://www.anapioficeandfire.com/api/characters/385","https://www.anapioficeandfire.com/api/characters/393","https://www.anapioficeandfire.com/api/characters/394","https://www.anapioficeandfire.com/api/characters/397","https://www.anapioficeandfire.com/api/characters/400","https://www.anapioficeandfire.com/api/characters/401","https://www.anapioficeandfire.com/api/characters/405","https://www.anapioficeandfire.com/api/characters/408","https://www.anapioficeandfire.com/api/characters/413","https://www.anapioficeandfire.com/api/characters/415","https://www.anapioficeandfire.com/api/characters/418","https://www.anapioficeandfire.com/api/characters/421","https://www.anapioficeandfire.com/api/characters/427","https://www.anapioficeandfire.com/api/characters/435","https://www.anapioficeandfire.com/api/characters/439","https://www.anapioficeandfire.com/api/characters/458","https://www.anapioficeandfire.com/api/characters/461","https://www.anapioficeandfire.com/api/characters/463","https://www.anapioficeandfire.com/api/characters/466","https://www.anapioficeandfire.com/api/characters/467","https://www.anapioficeandfire.com/api/characters/475","https://www.anapioficeandfire.com/api/characters/476","https://www.anapioficeandfire.com/api/characters/484","https://www.anapioficeandfire.com/api/characters/487","https://www.anapioficeandfire.com/api/characters/490","https://www.anapioficeandfire.com/api/characters/494","https://www.anapioficeandfire.com/api/characters/496","https://www.anapioficeandfire.com/api/characters/498","https://www.anapioficeandfire.com/api/characters/501","https://www.anapioficeandfire.com/api/characters/503","https://www.anapioficeandfire.com/api/characters/506","https://www.anapioficeandfire.com/api/characters/508","https://www.anapioficeandfire.com/api/characters/519","https://www.anapioficeandfire.com/api/characters/521","https://www.anapioficeandfire.com/api/characters/526","https://www.anapioficeandfire.com/api/characters/527","https://www.anapioficeandfire.com/api/characters/529","https://www.anapioficeandfire.com/api/characters/531","https://www.anapioficeandfire.com/api/characters/532","https://www.anapioficeandfire.com/api/characters/533","https://www.anapioficeandfire.com/api/characters/535","https://www.anapioficeandfire.com/api/characters/536","https://www.anapioficeandfire.com/api/characters/539","https://www.anapioficeandfire.com/api/characters/547","https://www.anapioficeandfire.com/api/characters/557","https://www.anapioficeandfire.com/api/characters/558","https://www.anapioficeandfire.com/api/characters/562","https://www.anapioficeandfire.com/api/characters/565","https://www.anapioficeandfire.com/api/characters/572","https://www.anapioficeandfire.com/api/characters/584","https://www.anapioficeandfire.com/api/characters/585","https://www.anapioficeandfire.com/api/characters/586","https://www.anapioficeandfire.com/api/characters/588","https://www.anapioficeandfire.com/api/characters/595","https://www.anapioficeandfire.com/api/characters/600","https://www.anapioficeandfire.com/api/characters/604","https://www.anapioficeandfire.com/api/characters/605","https://www.anapioficeandfire.com/api/characters/613","https://www.anapioficeandfire.com/api/characters/615","https://www.anapioficeandfire.com/api/characters/622","https://www.anapioficeandfire.com/api/characters/631","https://www.anapioficeandfire.com/api/characters/632","https://www.anapioficeandfire.com/api/characters/635","https://www.anapioficeandfire.com/api/characters/640","https://www.anapioficeandfire.com/api/characters/649","https://www.anapioficeandfire.com/api/characters/650","https://www.anapioficeandfire.com/api/characters/651","https://www.anapioficeandfire.com/api/characters/672","https://www.anapioficeandfire.com/api/characters/677","https://www.anapioficeandfire.com/api/characters/688","https://www.anapioficeandfire.com/api/characters/691","https://www.anapioficeandfire.com/api/characters/692","https://www.anapioficeandfire.com/api/characters/694","https://www.anapioficeandfire.com/api/characters/695","https://www.anapioficeandfire.com/api/characters/701","https://www.anapioficeandfire.com/api/characters/709","https://www.anapioficeandfire.com/api/characters/714","https://www.anapioficeandfire.com/api/characters/718","https://www.anapioficeandfire.com/api/characters/721","https://www.anapioficeandfire.com/api/characters/724","https://www.anapioficeandfire.com/api/characters/725","https://www.anapioficeandfire.com/api/characters/731","https://www.anapioficeandfire.com/api/characters/734","https://www.anapioficeandfire.com/api/characters/749","https://www.anapioficeandfire.com/api/characters/751","https://www.anapioficeandfire.com/api/characters/752","https://www.anapioficeandfire.com/api/characters/754","https://www.anapioficeandfire.com/api/characters/755","https://www.anapioficeandfire.com/api/characters/759","https://www.anapioficeandfire.com/api/characters/766","https://www.anapioficeandfire.com/api/characters/768","https://www.anapioficeandfire.com/api/characters/775","https://www.anapioficeandfire.com/api/characters/778","https://www.anapioficeandfire.com/api/characters/779","https://www.anapioficeandfire.com/api/characters/782","https://www.anapioficeandfire.com/api/characters/784","https://www.anapioficeandfire.com/api/characters/786","https://www.anapioficeandfire.com/api/characters/797","https://www.anapioficeandfire.com/api/characters/805","https://www.anapioficeandfire.com/api/characters/806","https://www.anapioficeandfire.com/api/characters/814","https://www.anapioficeandfire.com/api/characters/815","https://www.anapioficeandfire.com/api/characters/820","https://www.anapioficeandfire.com/api/characters/823","https://www.anapioficeandfire.com/api/characters/827","https://www.anapioficeandfire.com/api/characters/828","https://www.anapioficeandfire.com/api/characters/829","https://www.anapioficeandfire.com/api/characters/832","https://www.anapioficeandfire.com/api/characters/837","https://www.anapioficeandfire.com/api/characters/844","https://www.anapioficeandfire.com/api/characters/850","https://www.anapioficeandfire.com/api/characters/852","https://www.anapioficeandfire.com/api/characters/860","https://www.anapioficeandfire.com/api/characters/862","https://www.anapioficeandfire.com/api/characters/867","https://www.anapioficeandfire.com/api/characters/869","https://www.anapioficeandfire.com/api/characters/876","https://www.anapioficeandfire.com/api/characters/884","https://www.anapioficeandfire.com/api/characters/886","https://www.anapioficeandfire.com/api/characters/887","https://www.anapioficeandfire.com/api/characters/891","https://www.anapioficeandfire.com/api/characters/892","https://www.anapioficeandfire.com/api/characters/894","https://www.anapioficeandfire.com/api/characters/901","https://www.anapioficeandfire.com/api/characters/903","https://www.anapioficeandfire.com/api/characters/909","https://www.anapioficeandfire.com/api/characters/912","https://www.anapioficeandfire.com/api/characters/913","https://www.anapioficeandfire.com/api/characters/916","https://www.anapioficeandfire.com/api/characters/933","https://www.anapioficeandfire.com/api/characters/945","https://www.anapioficeandfire.com/api/characters/954","https://www.anapioficeandfire.com/api/characters/955","https://www.anapioficeandfire.com/api/characters/969","https://www.anapioficeandfire.com/api/characters/972","https://www.anapioficeandfire.com/api/characters/975","https://www.anapioficeandfire.com/api/characters/983","https://www.anapioficeandfire.com/api/characters/984","https://www.anapioficeandfire.com/api/characters/994","https://www.anapioficeandfire.com/api/characters/1010","https://www.anapioficeandfire.com/api/characters/1017","https://www.anapioficeandfire.com/api/characters/1022","https://www.anapioficeandfire.com/api/characters/1023","https://www.anapioficeandfire.com/api/characters/1025","https://www.anapioficeandfire.com/api/characters/1029","https://www.anapioficeandfire.com/api/characters/1033","https://www.anapioficeandfire.com/api/characters/1034","https://www.anapioficeandfire.com/api/characters/1043","https://www.anapioficeandfire.com/api/characters/1044","https://www.anapioficeandfire.com/api/characters/1049","https://www.anapioficeandfire.com/api/characters/1051","https://www.anapioficeandfire.com/api/characters/1055","https://www.anapioficeandfire.com/api/characters/1063","https://www.anapioficeandfire.com/api/characters/1068","https://www.anapioficeandfire.com/api/characters/1069","https://www.anapioficeandfire.com/api/characters/1072","https://www.anapioficeandfire.com/api/characters/1074","https://www.anapioficeandfire.com/api/characters/1076","https://www.anapioficeandfire.com/api/characters/1077","https://www.anapioficeandfire.com/api/characters/1079","https://www.anapioficeandfire.com/api/characters/1080","https://www.anapioficeandfire.com/api/characters/1089","https://www.anapioficeandfire.com/api/characters/1090","https://www.anapioficeandfire.com/api/characters/1091","https://www.anapioficeandfire.com/api/characters/1093","https://www.anapioficeandfire.com/api/characters/1096","https://www.anapioficeandfire.com/api/characters/1104","https://www.anapioficeandfire.com/api/characters/1106","https://www.anapioficeandfire.com/api/characters/1107","https://www.anapioficeandfire.com/api/characters/1110","https://www.anapioficeandfire.com/api/characters/1113","https://www.anapioficeandfire.com/api/characters/1114","https://www.anapioficeandfire.com/api/characters/1116","https://www.anapioficeandfire.com/api/characters/1120","https://www.anapioficeandfire.com/api/characters/1122","https://www.anapioficeandfire.com/api/characters/1124","https://www.anapioficeandfire.com/api/characters/1131","https://www.anapioficeandfire.com/api/characters/1132","https://www.anapioficeandfire.com/api/characters/1140","https://www.anapioficeandfire.com/api/characters/1142","https://www.anapioficeandfire.com/api/characters/1147","https://www.anapioficeandfire.com/api/characters/1152","https://www.anapioficeandfire.com/api/characters/1158","https://www.anapioficeandfire.com/api/characters/1165","https://www.anapioficeandfire.com/api/characters/1166","https://www.anapioficeandfire.com/api/characters/1178","https://www.anapioficeandfire.com/api/characters/1188","https://www.anapioficeandfire.com/api/characters/1193","https://www.anapioficeandfire.com/api/characters/1214","https://www.anapioficeandfire.com/api/characters/1219","https://www.anapioficeandfire.com/api/characters/1228","https://www.anapioficeandfire.com/api/characters/1245","https://www.anapioficeandfire.com/api/characters/1247","https://www.anapioficeandfire.com/api/characters/1253","https://www.anapioficeandfire.com/api/characters/1260","https://www.anapioficeandfire.com/api/characters/1262","https://www.anapioficeandfire.com/api/characters/1265","https://www.anapioficeandfire.com/api/characters/1266","https://www.anapioficeandfire.com/api/characters/1267","https://www.anapioficeandfire.com/api/characters/1268","https://www.anapioficeandfire.com/api/characters/1269","https://www.anapioficeandfire.com/api/characters/1275","https://www.anapioficeandfire.com/api/characters/1277","https://www.anapioficeandfire.com/api/characters/1278","https://www.anapioficeandfire.com/api/characters/1280","https://www.anapioficeandfire.com/api/characters/1282","https://www.anapioficeandfire.com/api/characters/1284","https://www.anapioficeandfire.com/api/characters/1289","https://www.anapioficeandfire.com/api/characters/1296","https://www.anapioficeandfire.com/api/characters/1299","https://www.anapioficeandfire.com/api/characters/1304","https://www.anapioficeandfire.com/api/characters/1317","https://www.anapioficeandfire.com/api/characters/1326","https://www.anapioficeandfire.com/api/characters/1333","https://www.anapioficeandfire.com/api/characters/1335","https://www.anapioficeandfire.com/api/characters/1336","https://www.anapioficeandfire.com/api/characters/1340","https://www.anapioficeandfire.com/api/characters/1346","https://www.anapioficeandfire.com/api/characters/1352","https://www.anapioficeandfire.com/api/characters/1355","https://www.anapioficeandfire.com/api/characters/1373","https://www.anapioficeandfire.com/api/characters/1383","https://www.anapioficeandfire.com/api/characters/1389","https://www.anapioficeandfire.com/api/characters/1396","https://www.anapioficeandfire.com/api/characters/1409","https://www.anapioficeandfire.com/api/characters/1410","https://www.anapioficeandfire.com/api/characters/1418","https://www.anapioficeandfire.com/api/characters/1430","https://www.anapioficeandfire.com/api/characters/1434","https://www.anapioficeandfire.com/api/characters/1442","https://www.anapioficeandfire.com/api/characters/1444","https://www.anapioficeandfire.com/api/characters/1453","https://www.anapioficeandfire.com/api/characters/1455","https://www.anapioficeandfire.com/api/characters/1456","https://www.anapioficeandfire.com/api/characters/1463","https://www.anapioficeandfire.com/api/characters/1466","https://www.anapioficeandfire.com/api/characters/1468","https://www.anapioficeandfire.com/api/characters/1470","https://www.anapioficeandfire.com/api/characters/1488","https://www.anapioficeandfire.com/api/characters/1499","https://www.anapioficeandfire.com/api/characters/1502","https://www.anapioficeandfire.com/api/characters/1515","https://www.anapioficeandfire.com/api/characters/1520","https://www.anapioficeandfire.com/api/characters/1523","https://www.anapioficeandfire.com/api/characters/1526","https://www.anapioficeandfire.com/api/characters/1529","https://www.anapioficeandfire.com/api/characters/1530","https://www.anapioficeandfire.com/api/characters/1531","https://www.anapioficeandfire.com/api/characters/1540","https://www.anapioficeandfire.com/api/characters/1547","https://www.anapioficeandfire.com/api/characters/1548","https://www.anapioficeandfire.com/api/characters/1549","https://www.anapioficeandfire.com/api/characters/1551","https://www.anapioficeandfire.com/api/characters/1559","https://www.anapioficeandfire.com/api/characters/1560","https://www.anapioficeandfire.com/api/characters/1565","https://www.anapioficeandfire.com/api/characters/1566","https://www.anapioficeandfire.com/api/characters/1568","https://www.anapioficeandfire.com/api/characters/1570","https://www.anapioficeandfire.com/api/characters/1573","https://www.anapioficeandfire.com/api/characters/1585","https://www.anapioficeandfire.com/api/characters/1596","https://www.anapioficeandfire.com/api/characters/1602","https://www.anapioficeandfire.com/api/characters/1620","https://www.anapioficeandfire.com/api/characters/1624","https://www.anapioficeandfire.com/api/characters/1627","https://www.anapioficeandfire.com/api/characters/1631","https://www.anapioficeandfire.com/api/characters/1649","https://www.anapioficeandfire.com/api/characters/1650","https://www.anapioficeandfire.com/api/characters/1660","https://www.anapioficeandfire.com/api/characters/1662","https://www.anapioficeandfire.com/api/characters/1665","https://www.anapioficeandfire.com/api/characters/1666","https://www.anapioficeandfire.com/api/characters/1670","https://www.anapioficeandfire.com/api/characters/1674","https://www.anapioficeandfire.com/api/characters/1675","https://www.anapioficeandfire.com/api/characters/1677","https://www.anapioficeandfire.com/api/characters/1682","https://www.anapioficeandfire.com/api/characters/1697","https://www.anapioficeandfire.com/api/characters/1706","https://www.anapioficeandfire.com/api/characters/1708","https://www.anapioficeandfire.com/api/characters/1710","https://www.anapioficeandfire.com/api/characters/1713","https://www.anapioficeandfire.com/api/characters/1715","https://www.anapioficeandfire.com/api/characters/1717","https://www.anapioficeandfire.com/api/characters/1721","https://www.anapioficeandfire.com/api/characters/1724","https://www.anapioficeandfire.com/api/characters/1725","https://www.anapioficeandfire.com/api/characters/1727","https://www.anapioficeandfire.com/api/characters/1741","https://www.anapioficeandfire.com/api/characters/1742","https://www.anapioficeandfire.com/api/characters/1749","https://www.anapioficeandfire.com/api/characters/1755","https://www.anapioficeandfire.com/api/characters/1770","https://www.anapioficeandfire.com/api/characters/1772","https://www.anapioficeandfire.com/api/characters/1787","https://www.anapioficeandfire.com/api/characters/1790","https://www.anapioficeandfire.com/api/characters/1802","https://www.anapioficeandfire.com/api/characters/1815","https://www.anapioficeandfire.com/api/characters/1816","https://www.anapioficeandfire.com/api/characters/1826","https://www.anapioficeandfire.com/api/characters/1837","https://www.anapioficeandfire.com/api/characters/1838","https://www.anapioficeandfire.com/api/characters/1840","https://www.anapioficeandfire.com/api/characters/1843","https://www.anapioficeandfire.com/api/characters/1855","https://www.anapioficeandfire.com/api/characters/1856","https://www.anapioficeandfire.com/api/characters/1861","https://www.anapioficeandfire.com/api/characters/1873","https://www.anapioficeandfire.com/api/characters/1874","https://www.anapioficeandfire.com/api/characters/1875","https://www.anapioficeandfire.com/api/characters/1880","https://www.anapioficeandfire.com/api/characters/1882","https://www.anapioficeandfire.com/api/characters/1900","https://www.anapioficeandfire.com/api/characters/1909","https://www.anapioficeandfire.com/api/characters/1911","https://www.anapioficeandfire.com/api/characters/1916","https://www.anapioficeandfire.com/api/characters/1935","https://www.anapioficeandfire.com/api/characters/1938","https://www.anapioficeandfire.com/api/characters/1939","https://www.anapioficeandfire.com/api/characters/1942","https://www.anapioficeandfire.com/api/characters/1963","https://www.anapioficeandfire.com/api/characters/1968","https://www.anapioficeandfire.com/api/characters/1976","https://www.anapioficeandfire.com/api/characters/1979","https://www.anapioficeandfire.com/api/characters/1997","https://www.anapioficeandfire.com/api/characters/2002","https://www.anapioficeandfire.com/api/characters/2008","https://www.anapioficeandfire.com/api/characters/2009","https://www.anapioficeandfire.com/api/characters/2013","https://www.anapioficeandfire.com/api/characters/2014","https://www.anapioficeandfire.com/api/characters/2020","https://www.anapioficeandfire.com/api/characters/2025","https://www.anapioficeandfire.com/api/characters/2029","https://www.anapioficeandfire.com/api/characters/2044","https://www.anapioficeandfire.com/api/characters/2045","https://www.anapioficeandfire.com/api/characters/2047","https://www.anapioficeandfire.com/api/characters/2051","https://www.anapioficeandfire.com/api/characters/2059","https://www.anapioficeandfire.com/api/characters/2067","https://www.anapioficeandfire.com/api/characters/2068","https://www.anapioficeandfire.com/api/characters/2069","https://www.anapioficeandfire.com/api/characters/2071","https://www.anapioficeandfire.com/api/characters/2073","https://www.anapioficeandfire.com/api/characters/2076","https://www.anapioficeandfire.com/api/characters/2089","https://www.anapioficeandfire.com/api/characters/2114","https://www.anapioficeandfire.com/api/characters/2119","https://www.anapioficeandfire.com/api/characters/2121"],"povCharacters":["https://www.anapioficeandfire.com/api/characters/148","https://www.anapioficeandfire.com/api/characters/208","https://www.anapioficeandfire.com/api/characters/232","https://www.anapioficeandfire.com/api/characters/339","https://www.anapioficeandfire.com/api/characters/583","https://www.anapioficeandfire.com/api/characters/957","https://www.anapioficeandfire.com/api/characters/1052","https://www.anapioficeandfire.com/api/characters/1109","https://www.anapioficeandfire.com/api/characters/1303"]}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 328bf0fd07fc14078a6e9deed0323719526a7fec
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '/'
+		- restler_static_string: 'houses'
+		- restler_static_string: '?'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: [Jon%20Snow, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'gender='
+		+ restler_fuzzable_string: [male, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'region='
+		+ restler_fuzzable_string: [The+Westerlands, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'books='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'spouse='
+		+ restler_fuzzable_string: [Ygritte, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'words='
+		+ restler_fuzzable_string: [Winter+is+Coming, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'hasWords='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'hasTitles='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'hasSeats='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'hasDiedOut='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'hasAncestralWeapons='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'pageSize='
+		+ restler_fuzzable_int: [50, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'page='
+		+ restler_fuzzable_int: [2, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'orderBy='
+		+ restler_fuzzable_string: [region, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: anapioficeandfire.com\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:23:06.095: Sending: 'GET /api/houses?name=Jon%2520Snow&gender=male&region=The%2BWesterlands&books=%7B+%22fuzz%22%3A+false+%7D&spouse=Ygritte&words=Winter%2Bis%2BComing&hasWords=true&hasTitles=true&hasSeats=true&hasDiedOut=true&hasAncestralWeapons=true&pageSize=50&page=2&orderBy=region HTTP/1.1\r\nAccept: application/json\r\nHost: anapioficeandfire.com\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 05a3cfd0-b1ca-4b0b-80b1-8702e5d12876\r\n\r\n'
+
+2023-11-30 11:23:06.518: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 10:23:06 GMT\r\nContent-Type: application/json; charset=utf-8\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nVary: Accept-Encoding\r\nLink: <https://anapioficeandfire.com/api/houses?name=Jon%2520Snow&region=The%2BWesterlands&words=Winter%2Bis%2BComing&hasWords=True&hasTitles=True&hasSeats=True&hasDiedOut=True&hasAncestralWeapons=True&page=1&pageSize=50>; rel="first", <https://anapioficeandfire.com/api/houses?name=Jon%2520Snow&region=The%2BWesterlands&words=Winter%2Bis%2BComing&hasWords=True&hasTitles=True&hasSeats=True&hasDiedOut=True&hasAncestralWeapons=True&page=1&pageSize=50>; rel="last"\r\nX-Powered-By: ASP.NET\r\nCache-Control: max-age=2678400\r\nCF-Cache-Status: MISS\r\nLast-Modified: Thu, 30 Nov 2023 10:23:06 GMT\r\nReport-To: {"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=im9yi%2FFfqkU%2F3uR5otJnO8nq0CWNeUGxWa2CJRhUV5OnzUvYQ98jduLQ%2FKPJtAEw%2FfXSmWiHbK5zTq8%2FzgnVx0Fh9B0ksfieESKVibfFiTG7HtKajeg353loJo8rAa2%2FSj2AXzDDle8%3D"}],"group":"cf-nel","max_age":604800}\r\nNEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}\r\nServer: cloudflare\r\nCF-RAY: 82e25f7f39dcb7cd-AMS\r\nalt-svc: h3=":443"; ma=86400\r\n\r\n2\r\n[]\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-3
+
+	Request: 1 (Remaining candidate combinations: 9)
+	Request hash: 7246fc7ffa67627798263ffe6cff54f41c7d4d95
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '/'
+		- restler_static_string: 'characters'
+		- restler_static_string: '?'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: [Jon%20Snow, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'gender='
+		+ restler_fuzzable_string: [male, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'books='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'spouse='
+		+ restler_fuzzable_string: [Ygritte, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: anapioficeandfire.com\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:23:06.628: Sending: 'GET /api/characters?name=Jon%2520Snow&gender=male&books=%7B+%22fuzz%22%3A+false+%7D&spouse=Ygritte HTTP/1.1\r\nAccept: application/json\r\nHost: anapioficeandfire.com\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 46aed743-f3ea-4752-a45b-926f3c1f29f2\r\n\r\n'
+
+2023-11-30 11:23:07.006: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 10:23:07 GMT\r\nContent-Type: application/json; charset=utf-8\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nVary: Accept-Encoding\r\nLink: <https://anapioficeandfire.com/api/characters?name=Jon%2520Snow&gender=Male&page=1&pageSize=10>; rel="first", <https://anapioficeandfire.com/api/characters?name=Jon%2520Snow&gender=Male&page=1&pageSize=10>; rel="last"\r\nX-Powered-By: ASP.NET\r\nCache-Control: max-age=2678400\r\nCF-Cache-Status: MISS\r\nLast-Modified: Thu, 30 Nov 2023 10:23:07 GMT\r\nReport-To: {"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=wXFohkn8Uj9ibn1FpTdNrRVKRkxmC6fqCc8ifDVAqGvE0USOJIfLU1CJe8yQgkaNI3kEKMBoKjvbswLEKlnI5xbmfRJZwfeAJPs%2BQ2ujhsON3eCb9viLVC8Eom1fhQ0scWGGQzpAkZI%3D"}],"group":"cf-nel","max_age":604800}\r\nNEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}\r\nServer: cloudflare\r\nCF-RAY: 82e25f828c7db7cd-AMS\r\nalt-svc: h3=":443"; ma=86400\r\n\r\n2\r\n[]\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-4
+
+	Request: 1 (Remaining candidate combinations: 17)
+	Request hash: a213e822d958d489f90e2776fafe29811dd796b3
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '/'
+		- restler_static_string: 'books'
+		- restler_static_string: '?'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: [Jon%20Snow, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'gender='
+		+ restler_fuzzable_string: [male, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'pageSize='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'books='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'spouse='
+		+ restler_fuzzable_string: [Ygritte, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: anapioficeandfire.com\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:23:07.116: Sending: 'GET /api/books?name=Jon%2520Snow&gender=male&pageSize=10&books=%7B+%22fuzz%22%3A+false+%7D&spouse=Ygritte HTTP/1.1\r\nAccept: application/json\r\nHost: anapioficeandfire.com\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 96a6f42b-8900-4517-9893-4670b9ecaf01\r\n\r\n'
+
+2023-11-30 11:23:07.493: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 10:23:07 GMT\r\nContent-Type: application/json; charset=utf-8\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nVary: Accept-Encoding\r\nLink: <https://anapioficeandfire.com/api/books?name=Jon%2520Snow&page=1&pageSize=10>; rel="first", <https://anapioficeandfire.com/api/books?name=Jon%2520Snow&page=1&pageSize=10>; rel="last"\r\nX-Powered-By: ASP.NET\r\nCache-Control: max-age=2678400\r\nCF-Cache-Status: MISS\r\nLast-Modified: Thu, 30 Nov 2023 10:23:07 GMT\r\nReport-To: {"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=Chjhkoy6WqSENApw85qqBzWBnh975CumQtwLFQy3XO9rsDQTPEXBZuVxcF3OQVDH9ipcWaLraebwXDImYOqA12TkDg4L%2Bz9ZtWJbVu8BjTOKu1R7rRfRm6y%2Bi6r%2BTchu%2FNPzKni%2F7mk%3D"}],"group":"cf-nel","max_age":604800}\r\nNEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}\r\nServer: cloudflare\r\nCF-RAY: 82e25f858f0fb7cd-AMS\r\nalt-svc: h3=":443"; ma=86400\r\n\r\n2\r\n[]\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-5
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: be420020107284d05b8c206af6f77861e1f02158
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '/'
+		- restler_static_string: 'houses'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '?'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: [Jon%20Snow, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'gender='
+		+ restler_fuzzable_string: [male, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'region='
+		+ restler_fuzzable_string: [The+North, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'coatOfArms='
+		+ restler_fuzzable_string: [Argent,+a+direwolf, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'words='
+		+ restler_fuzzable_string: [Winter+is+Coming, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'titles='
+		+ restler_fuzzable_string: [Lord+of+Winterfell, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'currentLord='
+		+ restler_fuzzable_string: [Eddard+Stark, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'heir='
+		+ restler_fuzzable_string: [Robb+Stark, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'overlord='
+		+ restler_fuzzable_string: [House+Baratheon, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'founded='
+		+ restler_fuzzable_string: [Age+of+Heroes, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'diedOut='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'ancestralWeapons='
+		+ restler_fuzzable_string: [Ice, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'seats='
+		+ restler_fuzzable_string: [Winterfell, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'books='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'spouse='
+		+ restler_fuzzable_string: [Ygritte, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: anapioficeandfire.com\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:23:07.588: Sending: 'GET /api/houses/1?name=Jon%2520Snow&gender=male&region=The%2BNorth&coatOfArms=Argent%2C%2Ba%2Bdirewolf&words=Winter%2Bis%2BComing&titles=Lord%2Bof%2BWinterfell&currentLord=Eddard%2BStark&heir=Robb%2BStark&overlord=House%2BBaratheon&founded=Age%2Bof%2BHeroes&diedOut=%7B+%22fuzz%22%3A+false+%7D&ancestralWeapons=Ice&seats=Winterfell&books=%7B+%22fuzz%22%3A+false+%7D&spouse=Ygritte HTTP/1.1\r\nAccept: application/json\r\nHost: anapioficeandfire.com\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 9c93e05e-d4e0-4a2f-b956-2a4ead3daf29\r\n\r\n'
+
+2023-11-30 11:23:07.949: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 10:23:07 GMT\r\nContent-Type: application/json; charset=utf-8\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nVary: Accept-Encoding\r\nX-Powered-By: ASP.NET\r\nCache-Control: max-age=2678400\r\nCF-Cache-Status: MISS\r\nLast-Modified: Thu, 30 Nov 2023 10:23:07 GMT\r\nReport-To: {"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=qJwpVFp5iQZD97Y5Ou7X64st9LD5cMjKI42UsDgHhx0bCRexiDsS7t4cXAVEU2fsE9xLzeEsCZjfBViebnk7J6wt1%2BRJOUS45NkHq2IwV6L8rRdFMUuj%2BimXznW7BdF0nOIuNPi2oO0%3D"}],"group":"cf-nel","max_age":604800}\r\nNEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}\r\nServer: cloudflare\r\nCF-RAY: 82e25f88895bb7cd-AMS\r\nalt-svc: h3=":443"; ma=86400\r\n\r\n1b7\r\n{"url":"https://anapioficeandfire.com/api/houses/1","name":"House Algood","region":"The Westerlands","coatOfArms":"A golden wreath, on a blue field with a gold border(Azure, a garland of laurel within a bordure or)","words":"","titles":[""],"seats":[""],"currentLord":"","heir":"","overlord":"https://anapioficeandfire.com/api/houses/229","founded":"","founder":"","diedOut":"","ancestralWeapons":[""],"cadetBranches":[],"swornMembers":[]}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-6
+
+	Request: 1 (Remaining candidate combinations: 5)
+	Request hash: d6110a0f32ffe0a3e75c193d28b8bd29a8331d63
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '?'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: [Jon%20Snow, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'gender='
+		+ restler_fuzzable_string: [male, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: anapioficeandfire.com\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:23:08.059: Sending: 'GET /api?name=Jon%2520Snow&gender=male HTTP/1.1\r\nAccept: application/json\r\nHost: anapioficeandfire.com\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 971d1541-afe7-4f07-a743-265b2ad4c5d8\r\n\r\n'
+
+2023-11-30 11:23:08.436: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 10:23:08 GMT\r\nContent-Type: application/json; charset=utf-8\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nVary: Accept-Encoding\r\nX-Powered-By: ASP.NET\r\nCache-Control: max-age=2678400\r\nCF-Cache-Status: MISS\r\nLast-Modified: Thu, 30 Nov 2023 10:23:08 GMT\r\nReport-To: {"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=m0E4pSqC3B9WoHACZVjSBXci89RSdo9wgKj25a8n%2BJZD9Y4cMsabrKX8urEv7caf6g6GZN7DEUMeHiFbYYMCPlwXnRrJjTCq9YP76mQ4TyR5c9Dn4EAOaV9qgKc2WAuJjBBZGAMScNg%3D"}],"group":"cf-nel","max_age":604800}\r\nNEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}\r\nServer: cloudflare\r\nCF-RAY: 82e25f8b7bedb7cd-AMS\r\nalt-svc: h3=":443"; ma=86400\r\n\r\na3\r\n{"books":"https://anapioficeandfire.com/api/books","characters":"https://anapioficeandfire.com/api/characters","houses":"https://anapioficeandfire.com/api/houses"}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-7
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: ee2a968cd3adbfd1acf133cab6f7b79a9e2f5efd
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '/'
+		- restler_static_string: 'characters'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '?'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: [Jon%20Snow, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'gender='
+		+ restler_fuzzable_string: [male, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'books='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'culture='
+		+ restler_fuzzable_string: [Northmen, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'born='
+		+ restler_fuzzable_string: [In+283+AC, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'died='
+		+ restler_fuzzable_string: [In+300+AC, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'isAlive='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'titles='
+		+ restler_fuzzable_string: [Lord+Commander+of+the+Night's+Watch, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'aliases='
+		+ restler_fuzzable_string: [Lord+Snow, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'father='
+		+ restler_fuzzable_string: [+Eddard+Stark, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'mother='
+		+ restler_fuzzable_string: [+Wylla, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'spouse='
+		+ restler_fuzzable_string: [Ygritte, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'allegiances='
+		+ restler_fuzzable_string: [Night's+Watch, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'povBooks='
+		+ restler_fuzzable_int: [2, 1, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: anapioficeandfire.com\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:23:08.530: Sending: 'GET /api/characters/1?name=Jon%2520Snow&gender=male&books=1&culture=Northmen&born=In%2B283%2BAC&died=In%2B300%2BAC&isAlive=true&titles=Lord%2BCommander%2Bof%2Bthe%2BNight%27s%2BWatch&aliases=Lord%2BSnow&father=%2BEddard%2BStark&mother=%2BWylla&spouse=Ygritte&allegiances=Night%27s%2BWatch&povBooks=2 HTTP/1.1\r\nAccept: application/json\r\nHost: anapioficeandfire.com\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 06b6011d-1747-4648-926b-d0f15760b8c4\r\n\r\n'
+
+2023-11-30 11:23:08.891: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 10:23:08 GMT\r\nContent-Type: application/json; charset=utf-8\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nVary: Accept-Encoding\r\nX-Powered-By: ASP.NET\r\nCache-Control: max-age=2678400\r\nCF-Cache-Status: MISS\r\nLast-Modified: Thu, 30 Nov 2023 10:23:08 GMT\r\nReport-To: {"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=3I6aAVA2vNCoxNDVNhfl9KWCZPFWbqFx%2FA87HzTViPzwUy0ucCVy1w0JFSHFonH31A54xxoLC3x3Ghn58hLrTC2WBuDCkjjvS4ZeF11lalLa56ynP8eeIpAr1U8N8lpTybRibm2AFtk%3D"}],"group":"cf-nel","max_age":604800}\r\nNEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}\r\nServer: cloudflare\r\nCF-RAY: 82e25f8e6ea9b7cd-AMS\r\nalt-svc: h3=":443"; ma=86400\r\n\r\n153\r\n{"url":"https://www.anapioficeandfire.com/api/characters/1","name":"","gender":"Female","culture":"Braavosi","born":"","died":"","titles":[""],"aliases":["The Daughter of the Dusk"],"father":"","mother":"","spouse":"","allegiances":[],"books":["https://www.anapioficeandfire.com/api/books/5"],"povBooks":[],"tvSeries":[""],"playedBy":[""]}\r\n0\r\n\r\n'
+

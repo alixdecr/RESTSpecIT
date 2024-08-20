@@ -1,0 +1,44 @@
+This file contains the failing requests, ordered by the number of blocked dependent requests.
+To improve coverage, fix the failing requests in the order listed in this file.
+
+Note: some requests are labeled as 'sequence failure'.
+This means the request depends on another request that is failing intermittently.
+For example, a DELETE request for a resource may be skipped because the resource
+PUT request failed due to exceeding quota.  The same PUT request succeeded earlier (and may
+succeed later depending on the resource clean-up behavior in the service), so it is
+considered an intermittent failure.
+
+-----------------------------------------------
+Request: Get /v2/assets
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=binance&ids=bitcoin%2Cethereum&search=bitcoin&sort=rank HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:15 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-FVFCh7BJSb2DyMgFACxI1BMshzg"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 177\r\nX-Ratelimit-Reset: 1701343295\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4b02a562e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343275560}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=binance&ids=bitcoin%2Cethereum&search=bitcoin&sort=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:15 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-uHsQFBSVEFFV5MvKMtfdEWx8av8"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 191\r\nX-Ratelimit-Reset: 1701343332\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4b0db9e2e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343275730}
+
+
+	+++ Combination 3 +++:
+	Request sequence: 
+	> GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=binance&ids=bitcoin%2Cethereum&search=fuzzstring&sort=rank HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:15 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-Ke/60XEBx8vvfb73PbjaKoq3XNE"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 187\r\nX-Ratelimit-Reset: 1701343323\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4b1fd932e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343275853}
+
+
+	+++ Combination 4 +++:
+	Request sequence: 
+	> GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=binance&ids=bitcoin%2Cethereum&search=fuzzstring&sort=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:16 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-z9ovRViW8Xfacz2obGVyexpPAFs"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 196\r\nX-Ratelimit-Reset: 1701343334\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4b2bec52e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343276163}
+
+
+	+++ Combination 5 +++:
+	Request sequence: 
+	> GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=binance&ids=fuzzstring&search=bitcoin&sort=rank HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\n\r\n
+	< HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:16 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-omDccOccIUHvquM1Yh7LoTZ9+rg"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 182\r\nX-Ratelimit-Reset: 1701343313\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4b4a9e82e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343276280}
+
+

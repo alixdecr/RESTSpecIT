@@ -1,0 +1,431 @@
+Random seed: 12345
+Setting fuzzing schemes: directed-smoke-test
+2023-11-30 11:23:49.736: Going to fuzz a set with 8 requests
+2023-11-30 11:23:49.736: Request-0: Value Combinations: 20
+2023-11-30 11:23:49.736: Request-1: Value Combinations: 20
+2023-11-30 11:23:49.736: Request-2: Value Combinations: 20
+2023-11-30 11:23:49.736: Request-3: Value Combinations: 5
+2023-11-30 11:23:49.736: Request-4: Value Combinations: 20
+2023-11-30 11:23:49.736: Request-5: Value Combinations: 5
+2023-11-30 11:23:49.736: Request-6: Value Combinations: 17
+2023-11-30 11:23:49.736: Request-7: Value Combinations: 9
+2023-11-30 11:23:49.736: Avg. Value Combinations per Request: 14.5
+2023-11-30 11:23:49.736: Median Value Combinations per Request: 18.5
+2023-11-30 11:23:49.736: Min Value Combinations per Request: 5
+2023-11-30 11:23:49.736: Max Value Combinations per Request: 20
+2023-11-30 11:23:49.736: Total dependencies: 0
+
+2023-11-30 11:23:49.741: Generation: 1 / Sequences Collection Size: 8 
+(After directed-smoke-test Extend)
+
+Rendering request 0 from scratch
+
+2023-11-30 11:23:50.349: Request 0
+2023-11-30 11:23:50.349: Endpoint - /api/v1/games
+2023-11-30 11:23:50.349: Hex Def - 0e0b449a3c87295c090ae8f51cd3369696f5a567
+2023-11-30 11:23:50.349: Sequence length that satisfies dependencies: 1
+2023-11-30 11:23:50.353: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'games'
+		- restler_static_string: '?'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: ['Stephen%20Curry', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'team_ids[]='
+		+ restler_fuzzable_int: ['5', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'seasons[]='
+		+ restler_fuzzable_int: ['2021', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'start_date='
+		+ restler_fuzzable_string: ['2022-01-01', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'end_date='
+		+ restler_fuzzable_string: ['2022-01-31', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'seasons='
+		+ restler_fuzzable_int: ['2020', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'dates='
+		+ restler_fuzzable_string: ['2021-01-01', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'teams[]='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'players[]='
+		+ restler_fuzzable_int: ['23', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'per_page='
+		+ restler_fuzzable_int: ['50', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'page='
+		+ restler_fuzzable_int: ['2', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: ['desc', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'team_ids='
+		+ restler_fuzzable_string: ['1,2,3', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'player_ids='
+		+ restler_fuzzable_int: ['12345', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'postseason='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'venue='
+		+ restler_fuzzable_string: ['home', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: www.balldontlie.io\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 1 from scratch
+
+2023-11-30 11:24:50.575: Request 1
+2023-11-30 11:24:50.575: Endpoint - /api/v1/teams
+2023-11-30 11:24:50.575: Hex Def - 22cf19d3cabe60c2a293c96c3114f4bdd3e8f4c8
+2023-11-30 11:24:50.575: Sequence length that satisfies dependencies: 1
+2023-11-30 11:24:50.575: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'teams'
+		- restler_static_string: '?'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: ['Stephen%20Curry', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'per_page='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'page='
+		+ restler_fuzzable_int: ['2', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: ['points', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'conference='
+		+ restler_fuzzable_string: ['east', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'division='
+		+ restler_fuzzable_string: ['atlantic', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'city='
+		+ restler_fuzzable_string: ['toronto', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'abbreviation='
+		+ restler_fuzzable_string: ['LAL', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'full_name='
+		+ restler_fuzzable_string: ['Chicago+Bulls', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: ['Warriors', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'year_founded='
+		+ restler_fuzzable_int: ['1995', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'venue='
+		+ restler_fuzzable_string: ['Staples+Center', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'team_ids[]='
+		+ restler_fuzzable_int: ['2', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'team_ids='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: www.balldontlie.io\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 2 from scratch
+
+2023-11-30 11:24:51.219: Request 2
+2023-11-30 11:24:51.219: Endpoint - /api/v1/players/{id}
+2023-11-30 11:24:51.219: Hex Def - 38f509c2606ef154a58ab6fbabfa76d75b9d3865
+2023-11-30 11:24:51.219: Sequence length that satisfies dependencies: 1
+2023-11-30 11:24:51.219: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'players'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '?'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: ['Stephen%20Curry', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'per_page='
+		+ restler_fuzzable_int: ['20', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'page='
+		+ restler_fuzzable_int: ['2', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'seasons[]='
+		+ restler_fuzzable_int: ['2019', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'team_ids[]='
+		+ restler_fuzzable_int: ['2', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: ['desc', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'fields[]='
+		+ restler_fuzzable_string: ['id', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: www.balldontlie.io\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 3 from scratch
+
+2023-11-30 11:25:52.011: Request 3
+2023-11-30 11:25:52.011: Endpoint - /api/v1/teams/{id}
+2023-11-30 11:25:52.011: Hex Def - 4581fb4524552a46bdcd42f2cf894496bac2f1f5
+2023-11-30 11:25:52.011: Sequence length that satisfies dependencies: 1
+2023-11-30 11:25:52.011: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'teams'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '?'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: ['Stephen%20Curry', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: ['points', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: www.balldontlie.io\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 4 from scratch
+
+2023-11-30 11:26:52.934: Request 4
+2023-11-30 11:26:52.934: Endpoint - /api/v1/season_averages
+2023-11-30 11:26:52.934: Hex Def - 5e716e9c4a6a9cc41d52980bf7f9ca1f604c45e3
+2023-11-30 11:26:52.934: Sequence length that satisfies dependencies: 1
+2023-11-30 11:26:52.934: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'season_averages'
+		- restler_static_string: '?'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: ['Stephen%20Curry', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'per_page='
+		+ restler_fuzzable_int: ['20', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'page='
+		+ restler_fuzzable_int: ['2', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'season='
+		+ restler_fuzzable_int: ['2019', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'player_ids[]='
+		+ restler_fuzzable_int: ['123', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'team_ids[]='
+		+ restler_fuzzable_int: ['456', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'start_date='
+		+ restler_fuzzable_string: ['2020-01-01', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'end_date='
+		+ restler_fuzzable_string: ['2020-12-31', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: ['points', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'order='
+		+ restler_fuzzable_string: ['desc', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'post_season='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'team_ids='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: www.balldontlie.io\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 5 from scratch
+
+2023-11-30 11:27:53.176: Request 5
+2023-11-30 11:27:53.176: Endpoint - /api/v1/games/{id}
+2023-11-30 11:27:53.176: Hex Def - 6d31c4b7f139d7a71835da3882d640760e8687a9
+2023-11-30 11:27:53.176: Sequence length that satisfies dependencies: 1
+2023-11-30 11:27:53.176: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'games'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '?'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: ['Stephen%20Curry', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: ['points', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: www.balldontlie.io\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 6 from scratch
+
+2023-11-30 11:27:53.788: Request 6
+2023-11-30 11:27:53.788: Endpoint - /api/v1/players
+2023-11-30 11:27:53.788: Hex Def - 94033b0c3d188fbc30b7b2a5c7eeac985f45af61
+2023-11-30 11:27:53.788: Sequence length that satisfies dependencies: 1
+2023-11-30 11:27:53.804: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'players'
+		- restler_static_string: '?'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: ['Stephen%20Curry', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'per_page='
+		+ restler_fuzzable_int: ['20', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: ['points', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'team_ids[]='
+		+ restler_fuzzable_int: ['2', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'team_ids='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: www.balldontlie.io\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 7 from scratch
+
+2023-11-30 11:28:56.450: Request 7
+2023-11-30 11:28:56.450: Endpoint - /api/v1/stats
+2023-11-30 11:28:56.450: Hex Def - a79b6bc0a3f2bf35796fdcd7897539a811072160
+2023-11-30 11:28:56.450: Sequence length that satisfies dependencies: 1
+2023-11-30 11:28:56.463: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'stats'
+		- restler_static_string: '?'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: ['Stephen%20Curry', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: ['points', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'seasons='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'per_page='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'page='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'player_ids='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'team_ids='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'start_date='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'end_date='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'game_ids='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'post_season='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'start_time='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'team_ids[]='
+		+ restler_fuzzable_int: ['2', '1']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: www.balldontlie.io\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:28:56.466: Generation: 1 / Sequences Collection Size: 8 
+(After directed-smoke-test Render)
+
+2023-11-30 11:28:56.482: Final Swagger spec coverage: 8 / 8
+2023-11-30 11:28:56.482: Rendered requests: 8 / 8
+2023-11-30 11:28:56.482: Rendered requests with "valid" status codes: 8 / 8
+2023-11-30 11:28:56.482: Num fully valid requests (no resource creation failures): 8
+2023-11-30 11:28:56.482: Num requests not rendered due to invalid sequence re-renders: 0
+2023-11-30 11:28:56.482: Num invalid requests caused by failed resource creations: 0
+2023-11-30 11:28:56.482: Total Creations of Dyn Objects: 0
+2023-11-30 11:28:56.482: Total Requests Sent: {'gc': 0, 'main_driver': 18}
+2023-11-30 11:28:56.482: Bug Buckets: {}
+
+Testing completed -- below are the final stats:
+
+2023-11-30 11:28:56.513: Final Swagger spec coverage: 8 / 8
+2023-11-30 11:28:56.513: Rendered requests: 8 / 8
+2023-11-30 11:28:56.513: Rendered requests with "valid" status codes: 8 / 8
+2023-11-30 11:28:56.513: Num fully valid requests (no resource creation failures): 8
+2023-11-30 11:28:56.513: Num requests not rendered due to invalid sequence re-renders: 0
+2023-11-30 11:28:56.513: Num invalid requests caused by failed resource creations: 0
+2023-11-30 11:28:56.513: Total Creations of Dyn Objects: 0
+2023-11-30 11:28:56.513: Total Requests Sent: {'gc': 0, 'main_driver': 18}
+2023-11-30 11:28:56.513: Bug Buckets: {}

@@ -1,0 +1,1024 @@
+Random seed: 12345
+Setting fuzzing schemes: directed-smoke-test
+2023-11-30 11:58:37.760: Going to fuzz a set with 17 requests
+2023-11-30 11:58:37.760: Request-0: Value Combinations: 20
+2023-11-30 11:58:37.760: Request-1: Value Combinations: 20
+2023-11-30 11:58:37.760: Request-2: Value Combinations: 20
+2023-11-30 11:58:37.760: Request-3: Value Combinations: 20
+2023-11-30 11:58:37.760: Request-4: Value Combinations: 20
+2023-11-30 11:58:37.760: Request-5: Value Combinations: 5
+2023-11-30 11:58:37.760: Request-6: Value Combinations: 20
+2023-11-30 11:58:37.760: Request-7: Value Combinations: 20
+2023-11-30 11:58:37.760: Request-8: Value Combinations: 9
+2023-11-30 11:58:37.760: Request-9: Value Combinations: 20
+2023-11-30 11:58:37.760: Request-10: Value Combinations: 5
+2023-11-30 11:58:37.760: Request-11: Value Combinations: 20
+2023-11-30 11:58:37.760: Request-12: Value Combinations: 20
+2023-11-30 11:58:37.760: Request-13: Value Combinations: 17
+2023-11-30 11:58:37.760: Request-14: Value Combinations: 20
+2023-11-30 11:58:37.760: Request-15: Value Combinations: 5
+2023-11-30 11:58:37.760: Request-16: Value Combinations: 20
+2023-11-30 11:58:37.760: Avg. Value Combinations per Request: 16.529411764705884
+2023-11-30 11:58:37.760: Median Value Combinations per Request: 20
+2023-11-30 11:58:37.760: Min Value Combinations per Request: 5
+2023-11-30 11:58:37.760: Max Value Combinations per Request: 20
+2023-11-30 11:58:37.760: Total dependencies: 0
+
+2023-11-30 11:58:37.775: Generation: 1 / Sequences Collection Size: 17 
+(After directed-smoke-test Extend)
+
+Rendering request 0 from scratch
+
+2023-11-30 11:58:38.152: Request 0
+2023-11-30 11:58:38.152: Endpoint - /v1/species/{id}/descriptions
+2023-11-30 11:58:38.152: Hex Def - 01f0186d60c27804d3e2dcdcb4854dc52941cf91
+2023-11-30 11:58:38.152: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:38.161: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'descriptions'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: ['popularity', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'language='
+		+ restler_fuzzable_string: ['en', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'source='
+		+ restler_fuzzable_string: ['Smithsonian', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['5', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: ['2021', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'taxonKey='
+		+ restler_fuzzable_int: ['12345', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: ['plant', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: ['abc123', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: ['es', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsageMatch='
+		+ restler_fuzzable_string: ['exact', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 1 from scratch
+
+2023-11-30 11:58:38.309: Request 1
+2023-11-30 11:58:38.309: Endpoint - /v1/species/{id}/synonyms
+2023-11-30 11:58:38.309: Hex Def - 14bbe474dd30f1f2240412c33427f86425acba1f
+2023-11-30 11:58:38.309: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:38.309: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'synonyms'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: ['plant', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: ['species', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameType='
+		+ restler_fuzzable_string: ['scientific', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: ['2010', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: ['d7dddbf4-2cf0-4f39-9b2a-bb099caae36c', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: ['fr', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameStatus='
+		+ restler_fuzzable_string: ['accepted', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'taxonKey='
+		+ restler_fuzzable_int: ['12345', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsageMatch='
+		+ restler_fuzzable_string: ['exact', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 2 from scratch
+
+2023-11-30 11:58:39.001: Request 2
+2023-11-30 11:58:39.001: Endpoint - /v1/species/{id}/children
+2023-11-30 11:58:39.001: Hex Def - 23184359c17727d5c8a1089ae5c27d633275c09a
+2023-11-30 11:58:39.001: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:39.001: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'children'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: ['species', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'status='
+		+ restler_fuzzable_string: ['accepted', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameType='
+		+ restler_fuzzable_string: ['scientific', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsage='
+		+ restler_fuzzable_string: ['accepted', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: ['Canis%20lupus', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: ['2000', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: ['50c9509d-22c7-4a22-a47d-8c48425ef4a7', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'higherTaxonKey='
+		+ restler_fuzzable_int: ['6', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameStatus='
+		+ restler_fuzzable_string: ['SYNONYM', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameField='
+		+ restler_fuzzable_string: ['canonical', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'language='
+		+ restler_fuzzable_string: ['en', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsageMatch='
+		+ restler_fuzzable_string: ['exact', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'parentKey='
+		+ restler_fuzzable_int: ['89', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'strict='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'fields='
+		+ restler_fuzzable_string: ['name,rank', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 3 from scratch
+
+2023-11-30 11:58:39.299: Request 3
+2023-11-30 11:58:39.299: Endpoint - /v1/species/{id}/media
+2023-11-30 11:58:39.299: Hex Def - 2a792c356ed12229e733deaf77a84126d0bab613
+2023-11-30 11:58:39.299: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:39.299: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'media'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['50', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'mediaType='
+		+ restler_fuzzable_string: ['image', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: ['en', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'source='
+		+ restler_fuzzable_string: ['Smithsonian', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'license='
+		+ restler_fuzzable_string: ['CC-BY', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'tag='
+		+ restler_fuzzable_string: ['Fungi', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'creator='
+		+ restler_fuzzable_string: ['Smith', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'publishingCountry='
+		+ restler_fuzzable_string: ['GB', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'taxonKey='
+		+ restler_fuzzable_int: ['1234', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: ['GENUS', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'createdBy='
+		+ restler_fuzzable_string: ['John', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: ['2020', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: ['GB', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: ['orchid', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsageMatch='
+		+ restler_fuzzable_string: ['exact', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'media_type='
+		+ restler_fuzzable_string: ['StillImage', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'basis_of_record='
+		+ restler_fuzzable_string: ['PreservedSpecimen', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'dataset_key='
+		+ restler_fuzzable_string: ['7b5d6a93-f0f9-4c40-8467-8a0f9dd3f93d', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'publishing_country='
+		+ restler_fuzzable_string: ['DE', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'institution_code='
+		+ restler_fuzzable_string: ['KUNHM', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 4 from scratch
+
+2023-11-30 11:58:39.722: Request 4
+2023-11-30 11:58:39.722: Endpoint - /v1/species/{id}/speciesProfiles
+2023-11-30 11:58:39.722: Hex Def - 37d581a1e6cd1b4b2dd8b8a946ab1f055ba5a18d
+2023-11-30 11:58:39.722: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:39.722: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'speciesProfiles'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: ['20', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: ['plant', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: ['species', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'status='
+		+ restler_fuzzable_string: ['accepted', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameType='
+		+ restler_fuzzable_string: ['SCIENTIFIC', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: ['fr', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'countryCode='
+		+ restler_fuzzable_string: ['GB', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: ['7e380f4c-f762-11e1-a439-00145eb45e9a', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsageKey='
+		+ restler_fuzzable_int: ['123456789', '1']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 5 from scratch
+
+2023-11-30 11:58:39.863: Request 5
+2023-11-30 11:58:39.863: Endpoint - /v1/species
+2023-11-30 11:58:39.863: Hex Def - 5b9bfe0aad90433743309dbf9e3f05ddcbe9c907
+2023-11-30 11:58:39.863: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:39.865: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '?'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: ['cat', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'name='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 6 from scratch
+
+2023-11-30 11:58:40.005: Request 6
+2023-11-30 11:58:40.005: Endpoint - /v1/species/suggest
+2023-11-30 11:58:40.005: Hex Def - 631845cc1bf390d01d03948fde2c8f3f8d25a6d2
+2023-11-30 11:58:40.005: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:40.005: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_static_string: 'suggest'
+		- restler_static_string: '?'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: ['cat', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'strict='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: ['species', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: ['9a3c3bcf-1e7a-4b49-88e5-1e8e9ae849e8', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'kingdom='
+		+ restler_fuzzable_string: ['Animalia', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'phylum='
+		+ restler_fuzzable_string: ['Chordata', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'class='
+		+ restler_fuzzable_string: ['Mammalia', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: ['GB', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: ['2020', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameType='
+		+ restler_fuzzable_string: ['SCIENTIFIC', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameStatus='
+		+ restler_fuzzable_string: ['ACCEPTED', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'taxonKey='
+		+ restler_fuzzable_int: ['249', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsage='
+		+ restler_fuzzable_string: ['accepted', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 7 from scratch
+
+2023-11-30 11:58:40.303: Request 7
+2023-11-30 11:58:40.303: Endpoint - /v1/species/{id}/references
+2023-11-30 11:58:40.303: Hex Def - 6cd90083e526a9b6d61fea5204422dcf1bdf7b49
+2023-11-30 11:58:40.303: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:40.303: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'references'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: ['taxonomy', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: ['2021', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'publisher='
+		+ restler_fuzzable_string: ['Smithsonian+Institution', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: ['7f8f7d3b-7b55-45cc-8c5f-3a4f3fbe7b6d', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: ['US', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'basisOfRecord='
+		+ restler_fuzzable_string: ['FossilSpecimen', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: ['SPECIES', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameStatus='
+		+ restler_fuzzable_string: ['ACCEPTED', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'order='
+		+ restler_fuzzable_string: ['asc', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'order_by='
+		+ restler_fuzzable_string: ['title', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'basis_of_record='
+		+ restler_fuzzable_string: ['FOSSIL_SPECIMEN', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: ['en', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 8 from scratch
+
+2023-11-30 11:58:40.554: Request 8
+2023-11-30 11:58:40.554: Endpoint - /v1/species/{id}/vernacularNames
+2023-11-30 11:58:40.554: Hex Def - 7a4223a82279cd3f4ab5091f9dd50b1b8803e65a
+2023-11-30 11:58:40.554: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:40.554: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'vernacularNames'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['5', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsageMatch='
+		+ restler_fuzzable_string: ['exact', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: ['2021', '1']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 9 from scratch
+
+2023-11-30 11:58:40.695: Request 9
+2023-11-30 11:58:40.695: Endpoint - /v1/species/match
+2023-11-30 11:58:40.695: Hex Def - 865ca9517a0e4274bfe4c70704957aa60f16c952
+2023-11-30 11:58:40.695: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:40.695: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_static_string: 'match'
+		- restler_static_string: '?'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: ['cat', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: ['0', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: ['species', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameType='
+		+ restler_fuzzable_string: ['SCIENTIFIC', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: ['d7dddbf4-2cf0-4f39-9b2a-bb099caae36c', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: ['US', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: ['2021', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'strict='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'phylum='
+		+ restler_fuzzable_string: ['Chordata', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'class='
+		+ restler_fuzzable_string: ['Mammalia', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'order='
+		+ restler_fuzzable_string: ['Carnivora', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'family='
+		+ restler_fuzzable_string: ['Felidae', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'genus='
+		+ restler_fuzzable_string: ['Panthera', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 10 from scratch
+
+2023-11-30 11:58:40.947: Request 10
+2023-11-30 11:58:40.947: Endpoint - /v1/species/{id}/parents
+2023-11-30 11:58:40.947: Hex Def - 90dff8af8e2f84d467b8edc7cd2cb37a41e5c63f
+2023-11-30 11:58:40.947: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:40.962: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'parents'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['5', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: ['kingdom', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 11 from scratch
+
+2023-11-30 11:58:41.151: Request 11
+2023-11-30 11:58:41.151: Endpoint - /v1/species/search
+2023-11-30 11:58:41.151: Hex Def - 9675ad552c536a2ea1cc85d2be1132925f3b2163
+2023-11-30 11:58:41.151: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:41.169: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_static_string: 'search'
+		- restler_static_string: '?'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: ['cat', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: ['species', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: ['0', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: ['50c9509d-22c7-4a22-a47d-8c48425ef4a7', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: ['2000', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'kingdom='
+		+ restler_fuzzable_string: ['Animalia', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'order='
+		+ restler_fuzzable_string: ['Carnivora', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'mediaType='
+		+ restler_fuzzable_string: ['StillImage', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: ['fr', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameType='
+		+ restler_fuzzable_string: ['SCIENTIFIC', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameStatus='
+		+ restler_fuzzable_string: ['ACCEPTED', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: ['Canis+lupus', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: ['GB', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'strict='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'taxonKey='
+		+ restler_fuzzable_int: ['521', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'phylum='
+		+ restler_fuzzable_string: ['Chordata', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'class='
+		+ restler_fuzzable_string: ['Mammalia', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'family='
+		+ restler_fuzzable_string: ['Felidae', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'genus='
+		+ restler_fuzzable_string: ['Panthera', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'highertaxon='
+		+ restler_fuzzable_string: ['Primates', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 12 from scratch
+
+2023-11-30 11:58:41.449: Request 12
+2023-11-30 11:58:41.449: Endpoint - /v1/species/{id}/distributions
+2023-11-30 11:58:41.449: Hex Def - a1248fffed2987e5ab92f711f66bdbbc048359c0
+2023-11-30 11:58:41.449: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:41.449: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'distributions'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['5', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: ['France', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'taxonKey='
+		+ restler_fuzzable_int: ['123456', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'kingdom='
+		+ restler_fuzzable_string: ['Animalia', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: ['species', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: ['2000', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: ['orchid', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: ['50', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: ['abc123', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'mediaType='
+		+ restler_fuzzable_string: ['StillImage', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'basisOfRecord='
+		+ restler_fuzzable_string: ['literature', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'geometryType='
+		+ restler_fuzzable_string: ['POLYGON', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'institutionCode='
+		+ restler_fuzzable_string: ['NYBG', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'geometry='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'protocol='
+		+ restler_fuzzable_string: ['DWC_ARCHIVE', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'status='
+		+ restler_fuzzable_string: ['ACCEPTED', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'citationType='
+		+ restler_fuzzable_string: ['BOOK', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 13 from scratch
+
+2023-11-30 11:58:41.591: Request 13
+2023-11-30 11:58:41.591: Endpoint - /v1/species/lookup
+2023-11-30 11:58:41.591: Hex Def - bb4de49bb7aba137c8e16cddaddce7ccffa0716b
+2023-11-30 11:58:41.591: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:41.591: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_static_string: 'lookup'
+		- restler_static_string: '?'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: ['cat', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'strict='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: ['ebd6eac3-5a7c-4f38-bb8b-699e4424ecea', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: ['2022', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 14 from scratch
+
+2023-11-30 11:58:41.857: Request 14
+2023-11-30 11:58:41.857: Endpoint - /v1/species/{id}
+2023-11-30 11:58:41.857: Hex Def - d6159dbb167904c1f0b3d3cc22e35ed32db62792
+2023-11-30 11:58:41.857: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:41.870: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '?'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: ['cat', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'strict='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: ['2022', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'tag='
+		+ restler_fuzzable_string: ['Fungi', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: ['en', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'datasetKey='
+		+ restler_fuzzable_string: ['ebd6eac3-5a7c-4f38-bb8b-699e4424ecea', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 15 from scratch
+
+2023-11-30 11:58:42.078: Request 15
+2023-11-30 11:58:42.078: Endpoint - /v1/species/{id}/related
+2023-11-30 11:58:42.078: Hex Def - e64f63e2a6154deb26feedcabab2fd59482cd2e9
+2023-11-30 11:58:42.078: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:42.078: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'related'
+		- restler_static_string: '?'
+		- restler_static_string: 'nameUsageMatch='
+		+ restler_fuzzable_string: ['exact', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: ['2021', '1']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 16 from scratch
+
+2023-11-30 11:58:42.204: Request 16
+2023-11-30 11:58:42.204: Endpoint - /v1/species/{id}/name
+2023-11-30 11:58:42.204: Hex Def - f781192d324ed273cfd63990cee75181fe357d8a
+2023-11-30 11:58:42.204: Sequence length that satisfies dependencies: 1
+2023-11-30 11:58:42.204: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v1'
+		- restler_static_string: '/'
+		- restler_static_string: 'species'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '/'
+		- restler_static_string: 'name'
+		- restler_static_string: '?'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: ['popularity', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: ['5', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_string: ['genus', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nameUsageMatch='
+		+ restler_fuzzable_string: ['exact', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: ['Myrmecocystus', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'locale='
+		+ restler_fuzzable_string: ['en', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: ['US', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'year='
+		+ restler_fuzzable_int: ['2021', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'mediaType='
+		+ restler_fuzzable_string: ['stillImage', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'class='
+		+ restler_fuzzable_string: ['Insecta', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.gbif.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:58:42.220: Generation: 1 / Sequences Collection Size: 17 
+(After directed-smoke-test Render)
+
+2023-11-30 11:58:42.220: Final Swagger spec coverage: 17 / 17
+2023-11-30 11:58:42.220: Rendered requests: 17 / 17
+2023-11-30 11:58:42.220: Rendered requests with "valid" status codes: 17 / 17
+2023-11-30 11:58:42.220: Num fully valid requests (no resource creation failures): 17
+2023-11-30 11:58:42.220: Num requests not rendered due to invalid sequence re-renders: 0
+2023-11-30 11:58:42.220: Num invalid requests caused by failed resource creations: 0
+2023-11-30 11:58:42.220: Total Creations of Dyn Objects: 0
+2023-11-30 11:58:42.220: Total Requests Sent: {'gc': 0, 'main_driver': 17}
+2023-11-30 11:58:42.220: Bug Buckets: {}
+
+Testing completed -- below are the final stats:
+
+2023-11-30 11:58:42.251: Final Swagger spec coverage: 17 / 17
+2023-11-30 11:58:42.251: Rendered requests: 17 / 17
+2023-11-30 11:58:42.251: Rendered requests with "valid" status codes: 17 / 17
+2023-11-30 11:58:42.251: Num fully valid requests (no resource creation failures): 17
+2023-11-30 11:58:42.251: Num requests not rendered due to invalid sequence re-renders: 0
+2023-11-30 11:58:42.251: Num invalid requests caused by failed resource creations: 0
+2023-11-30 11:58:42.251: Total Creations of Dyn Objects: 0
+2023-11-30 11:58:42.251: Total Requests Sent: {'gc': 0, 'main_driver': 17}
+2023-11-30 11:58:42.251: Bug Buckets: {}

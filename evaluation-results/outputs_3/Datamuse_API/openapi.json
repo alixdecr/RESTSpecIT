@@ -1,0 +1,1460 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Datamuse API",
+        "description": "**API Description** - The Datamuse API is a tool for finding words and related information based on user input.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "",
+        "contact": {
+            "name": "Datamuse API Contact",
+            "url": "https://www.datamuse.com/api",
+            "email": "hello@datamuse.com"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://api.datamuse.com",
+            "description": "Production Server of the Datamuse API.",
+            "x-base-routes": 0
+        }
+    ],
+    "externalDocs": {
+        "url": "https://www.datamuse.com/api",
+        "description": "Find more about the Datamuse API here:"
+    },
+    "paths": {
+        "/words": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "rel_rhy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "cat": {
+                                "value": "cat"
+                            },
+                            "blue": {
+                                "value": "blue"
+                            },
+                            "example": {
+                                "value": "example"
+                            },
+                            "hello": {
+                                "value": "hello"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_nry",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "cat": {
+                                "value": "cat"
+                            },
+                            "example": {
+                                "value": "example"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sl",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "cat": {
+                                "value": "cat"
+                            },
+                            "de": {
+                                "value": "de"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sp",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "cat": {
+                                "value": "cat"
+                            },
+                            "": {
+                                "value": ""
+                            },
+                            "fruit": {
+                                "value": "fruit"
+                            },
+                            "example": {
+                                "value": "example"
+                            },
+                            "eng": {
+                                "value": "eng"
+                            },
+                            "gr*": {
+                                "value": "gr*"
+                            }
+                        }
+                    },
+                    {
+                        "name": "md",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "ps": {
+                                "value": "ps"
+                            },
+                            "": {
+                                "value": ""
+                            },
+                            "p": {
+                                "value": "p"
+                            },
+                            "d": {
+                                "value": "d"
+                            }
+                        }
+                    },
+                    {
+                        "name": "max",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "topics",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "animals": {
+                                "value": "animals"
+                            },
+                            "topic": {
+                                "value": "topic"
+                            },
+                            "food": {
+                                "value": "food"
+                            },
+                            "computers": {
+                                "value": "computers"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "": {
+                                "value": ""
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_jja",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "": {
+                                "value": ""
+                            },
+                            "word": {
+                                "value": "word"
+                            },
+                            "cat": {
+                                "value": "cat"
+                            },
+                            "example": {
+                                "value": "example"
+                            },
+                            "funny": {
+                                "value": "funny"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_jjb",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "": {
+                                "value": ""
+                            },
+                            "word": {
+                                "value": "word"
+                            },
+                            "example": {
+                                "value": "example"
+                            },
+                            "smart": {
+                                "value": "smart"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_syn",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "": {
+                                "value": ""
+                            },
+                            "play": {
+                                "value": "play"
+                            },
+                            "word": {
+                                "value": "word"
+                            },
+                            "cat": {
+                                "value": "cat"
+                            },
+                            "example": {
+                                "value": "example"
+                            },
+                            "dog": {
+                                "value": "dog"
+                            },
+                            "python": {
+                                "value": "python"
+                            }
+                        }
+                    },
+                    {
+                        "name": "ml",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            },
+                            "apple": {
+                                "value": "apple"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_ant",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "word": {
+                                "value": "word"
+                            },
+                            "cat": {
+                                "value": "cat"
+                            },
+                            "example": {
+                                "value": "example"
+                            },
+                            "big": {
+                                "value": "big"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_trg",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "word": {
+                                "value": "word"
+                            },
+                            "house": {
+                                "value": "house"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_spc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "word": {
+                                "value": "word"
+                            },
+                            "cat": {
+                                "value": "cat"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_gen",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "word": {
+                                "value": "word"
+                            },
+                            "cat": {
+                                "value": "cat"
+                            }
+                        }
+                    },
+                    {
+                        "name": "v",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "es": {
+                                "value": "es"
+                            },
+                            "red": {
+                                "value": "red"
+                            },
+                            "enwiki": {
+                                "value": "enwiki"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_com",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "cat": {
+                                "value": "cat"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_par",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "cat": {
+                                "value": "cat"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_bga",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "cat": {
+                                "value": "cat"
+                            },
+                            "example": {
+                                "value": "example"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_bgb",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "cat": {
+                                "value": "cat"
+                            },
+                            "example": {
+                                "value": "example"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_cns",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "cat": {
+                                "value": "cat"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_bgc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "rel_brd",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "rel_brs",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "ipa",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_words"
+                                },
+                                "example": [
+                                    {
+                                        "word": "at",
+                                        "score": 5475,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "caveat",
+                                        "score": 4418,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "that",
+                                        "score": 3776,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "hat",
+                                        "score": 3091,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "rat",
+                                        "score": 2723,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "bat",
+                                        "score": 2642,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "flat",
+                                        "score": 2483,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "mat",
+                                        "score": 1848,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "fat",
+                                        "score": 1792,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "chat",
+                                        "score": 1729,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "pat",
+                                        "score": 1678,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "scat",
+                                        "score": 1275,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "format",
+                                        "score": 1223,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "combat",
+                                        "score": 1206,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "habitat",
+                                        "score": 1190,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "spat",
+                                        "score": 1160,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "tat",
+                                        "score": 1140,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "brat",
+                                        "score": 1053,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "matte",
+                                        "score": 1043,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "stat",
+                                        "score": 988,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "gnat",
+                                        "score": 910,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "plutocrat",
+                                        "score": 900,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "sat",
+                                        "score": 870,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "vat",
+                                        "score": 815,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "aristocrat",
+                                        "score": 812,
+                                        "numSyllables": 4
+                                    },
+                                    {
+                                        "word": "splat",
+                                        "score": 709,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "matt",
+                                        "score": 701,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "gat",
+                                        "score": 699,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "slat",
+                                        "score": 682,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "nat",
+                                        "score": 679,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "autocrat",
+                                        "score": 663,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "acrobat",
+                                        "score": 634,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "ziggurat",
+                                        "score": 629,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "polecat",
+                                        "score": 624,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "thermostat",
+                                        "score": 608,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "sprat",
+                                        "score": 599,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "bobcat",
+                                        "score": 570,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "laundromat",
+                                        "score": 564,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "diplomat",
+                                        "score": 536,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "copycat",
+                                        "score": 528,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "chitchat",
+                                        "score": 527,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "brickbat",
+                                        "score": 515,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "democrat",
+                                        "score": 511,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "muskrat",
+                                        "score": 507,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "wildcat",
+                                        "score": 507,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "bureaucrat",
+                                        "score": 462,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "kat",
+                                        "score": 452,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "batt",
+                                        "score": 449,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "begat",
+                                        "score": 438,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "doormat",
+                                        "score": 429,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "wombat",
+                                        "score": 419,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "dat",
+                                        "score": 392,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "tomcat",
+                                        "score": 388,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "aerostat",
+                                        "score": 385,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "latke",
+                                        "score": 379,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "look at",
+                                        "score": 331,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "technocrat",
+                                        "score": 311,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "strat",
+                                        "score": 288,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "platte",
+                                        "score": 275,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "sadat",
+                                        "score": 269,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "thundercat",
+                                        "score": 262,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "scrat",
+                                        "score": 259,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "gatt",
+                                        "score": 252,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "pussycat",
+                                        "score": 252,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "schmatte",
+                                        "score": 216,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "platt",
+                                        "score": 204,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "scatt",
+                                        "score": 203,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "tit-for-tat",
+                                        "score": 202,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "pratt",
+                                        "score": 201,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "pack rat",
+                                        "score": 186,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "placemat",
+                                        "score": 176,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "elat",
+                                        "score": 175,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "in that",
+                                        "score": 175,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "bratt",
+                                        "score": 172,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "glatt",
+                                        "score": 168,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "hard hat",
+                                        "score": 168,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "tit for tat",
+                                        "score": 164,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "top hat",
+                                        "score": 154,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "such that",
+                                        "score": 152,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "nonfat",
+                                        "score": 149,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "pick at",
+                                        "score": 148,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "butterfat",
+                                        "score": 144,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "get at",
+                                        "score": 142,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "cowboy hat",
+                                        "score": 139,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "blatt",
+                                        "score": 137,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "gujarat",
+                                        "score": 131,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "patte",
+                                        "score": 124,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "high hat",
+                                        "score": 120,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "kitcat",
+                                        "score": 118,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "arrive at",
+                                        "score": 107,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "hatte",
+                                        "score": 106,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "fall flat",
+                                        "score": 100,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "inmarsat",
+                                        "score": 99,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "babysat",
+                                        "score": 96,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "gnaw at",
+                                        "score": 96,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "stand pat",
+                                        "score": 94,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "place mat",
+                                        "score": 93,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "mexican hat",
+                                        "score": 91,
+                                        "numSyllables": 4
+                                    },
+                                    {
+                                        "word": "patt",
+                                        "score": 90,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "catt",
+                                        "score": 89,
+                                        "numSyllables": 1
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "code": 404,
+                                    "message": "HTTP 404 Not Found"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sug": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "rel_rhy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "cat": {
+                                "value": "cat"
+                            }
+                        }
+                    },
+                    {
+                        "name": "s",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "": {
+                                "value": ""
+                            },
+                            "kitten": {
+                                "value": "kitten"
+                            }
+                        }
+                    },
+                    {
+                        "name": "max",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sp",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "hello": {
+                                "value": "hello"
+                            },
+                            "fr": {
+                                "value": "fr"
+                            },
+                            "hard": {
+                                "value": "hard"
+                            },
+                            "^b": {
+                                "value": "^b"
+                            }
+                        }
+                    },
+                    {
+                        "name": "term",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "computer": {
+                                "value": "computer"
+                            },
+                            "hello": {
+                                "value": "hello"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_syn",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "dog": {
+                                "value": "dog"
+                            },
+                            "world": {
+                                "value": "world"
+                            }
+                        }
+                    },
+                    {
+                        "name": "ml",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "world": {
+                                "value": "world"
+                            },
+                            "cat": {
+                                "value": "cat"
+                            },
+                            "dog": {
+                                "value": "dog"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_ant",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "goodbye": {
+                                "value": "goodbye"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_jja",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "blue": {
+                                "value": "blue"
+                            },
+                            "big": {
+                                "value": "big"
+                            }
+                        }
+                    },
+                    {
+                        "name": "topics",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "science": {
+                                "value": "science"
+                            },
+                            "love": {
+                                "value": "love"
+                            },
+                            "politics": {
+                                "value": "politics"
+                            }
+                        }
+                    },
+                    {
+                        "name": "v",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "es": {
+                                "value": "es"
+                            },
+                            "enwiki": {
+                                "value": "enwiki"
+                            }
+                        }
+                    },
+                    {
+                        "name": "md",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "d": {
+                                "value": "d"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en": {
+                                "value": "en"
+                            },
+                            "python": {
+                                "value": "python"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_jjb",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "rel_spc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "rel_gen",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "rel_com",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "rel_par",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "qe",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "ipa",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "mds",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "rel_bga",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "sl",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "hi": {
+                                "value": "hi"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_nry",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "sounds_like",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "rel_trg",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json;charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_sug"
+                                },
+                                "example": []
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "code": 404,
+                                    "message": "HTTP 404 Not Found"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "code",
+                    "message"
+                ]
+            },
+            "ResponseSchema_words": {},
+            "ResponseSchema_sug": {}
+        }
+    }
+}

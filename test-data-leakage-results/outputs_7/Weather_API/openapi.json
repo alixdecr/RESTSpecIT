@@ -1,0 +1,1656 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Weather API",
+        "description": "**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid query parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.<br><br>**Be Reassured** - The tool *RESTSpecIT* has been thouroughly tested on various APIs, demonstrating an average GET route discovery rate of 85.05% and query parameter discovery rate of 81.05%. Additionally, the tool is capable of discovering undocumented and valid routes and query parameters of APIs.<br><br>**API Description** - The Weather API provides real-time and forecasted weather data for specific locations worldwide.",
+        "termsOfService": "",
+        "contact": {
+            "name": "Weather API Contact",
+            "url": "https://www.weatherapi.com/contact.aspx",
+            "email": "support@weatherapi.com"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://api.weatherapi.com",
+            "description": "Production Server of the Weather API.",
+            "x-base-routes": 1
+        }
+    ],
+    "externalDocs": {
+        "url": "https://www.weatherapi.com/docs",
+        "description": "Find more about the Weather API here:"
+    },
+    "paths": {
+        "": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/current": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "New+York": {
+                                "value": "New+York"
+                            },
+                            "NewYork": {
+                                "value": "NewYork"
+                            }
+                        }
+                    },
+                    {
+                        "name": "zip",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10001": {
+                                "value": "10001"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lat",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "40.7128": {
+                                "value": "40.7128"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "US": {
+                                "value": "US"
+                            }
+                        }
+                    },
+                    {
+                        "name": "units",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "imperial": {
+                                "value": "imperial"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lang",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en": {
+                                "value": "en"
+                            }
+                        }
+                    },
+                    {
+                        "name": "appid",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1234567890": {
+                                "value": "1234567890"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exclude",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "minutely,hourly": {
+                                "value": "minutely,hourly"
+                            }
+                        }
+                    },
+                    {
+                        "name": "timezone",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "America": {
+                                "value": "America"
+                            }
+                        }
+                    },
+                    {
+                        "name": "q",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "London": {
+                                "value": "London"
+                            }
+                        }
+                    },
+                    {
+                        "name": "zipcode",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10001": {
+                                "value": "10001"
+                            }
+                        }
+                    },
+                    {
+                        "name": "latitude",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "40.7128": {
+                                "value": "40.7128"
+                            }
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en": {
+                                "value": "en"
+                            }
+                        }
+                    },
+                    {
+                        "name": "humidity",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "wind_speed",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "mph": {
+                                "value": "mph"
+                            }
+                        }
+                    },
+                    {
+                        "name": "temperature_scale",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "fahrenheit": {
+                                "value": "fahrenheit"
+                            }
+                        }
+                    },
+                    {
+                        "name": "time_zone",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "est": {
+                                "value": "est"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_current"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/forecast": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "New+York": {
+                                "value": "New+York"
+                            },
+                            "NewYork": {
+                                "value": "NewYork"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_forecast"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/alerts": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "New+York": {
+                                "value": "New+York"
+                            }
+                        }
+                    },
+                    {
+                        "name": "location",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "NewYork": {
+                                "value": "NewYork"
+                            }
+                        }
+                    },
+                    {
+                        "name": "severity",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "severe": {
+                                "value": "severe"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_alerts"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/historical": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_historical"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/hourly": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "NewYork": {
+                                "value": "NewYork"
+                            }
+                        }
+                    },
+                    {
+                        "name": "zipcode",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "90210": {
+                                "value": "90210"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lat",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "40.7128": {
+                                "value": "40.7128"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "US": {
+                                "value": "US"
+                            }
+                        }
+                    },
+                    {
+                        "name": "units",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "metric": {
+                                "value": "metric"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lang",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en": {
+                                "value": "en"
+                            }
+                        }
+                    },
+                    {
+                        "name": "time",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1621814400": {
+                                "value": "1621814400"
+                            }
+                        }
+                    },
+                    {
+                        "name": "max_results",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exclude",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "minutely": {
+                                "value": "minutely"
+                            }
+                        }
+                    },
+                    {
+                        "name": "apikey",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "123abc456def": {
+                                "value": "123abc456def"
+                            }
+                        }
+                    },
+                    {
+                        "name": "latitude",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "40.7128": {
+                                "value": "40.7128"
+                            }
+                        }
+                    },
+                    {
+                        "name": "temperature_units",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Celsius": {
+                                "value": "Celsius"
+                            }
+                        }
+                    },
+                    {
+                        "name": "forecast_days",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "es": {
+                                "value": "es"
+                            }
+                        }
+                    },
+                    {
+                        "name": "time_zone",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "PST": {
+                                "value": "PST"
+                            }
+                        }
+                    },
+                    {
+                        "name": "wind_speed_units",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "km": {
+                                "value": "km"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rainfall_units",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "mm": {
+                                "value": "mm"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_hourly"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/daily": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "New+York": {
+                                "value": "New+York"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-10-15": {
+                                "value": "2022-10-15"
+                            },
+                            "2021-10-15": {
+                                "value": "2021-10-15"
+                            }
+                        }
+                    },
+                    {
+                        "name": "zipcode",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10001": {
+                                "value": "10001"
+                            },
+                            "90210": {
+                                "value": "90210"
+                            }
+                        }
+                    },
+                    {
+                        "name": "latitude",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "40.7128": {
+                                "value": "40.7128"
+                            }
+                        }
+                    },
+                    {
+                        "name": "longitude",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "-74.0060": {
+                                "value": "-74.0060"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "US": {
+                                "value": "US"
+                            }
+                        }
+                    },
+                    {
+                        "name": "units",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "imperial": {
+                                "value": "imperial"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lang",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en": {
+                                "value": "en"
+                            }
+                        }
+                    },
+                    {
+                        "name": "appid",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1234567890": {
+                                "value": "1234567890"
+                            }
+                        }
+                    },
+                    {
+                        "name": "humidity",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lat",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "40.7128": {
+                                "value": "40.7128"
+                            }
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en": {
+                                "value": "en"
+                            }
+                        }
+                    },
+                    {
+                        "name": "timeZone",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EST": {
+                                "value": "EST"
+                            }
+                        }
+                    },
+                    {
+                        "name": "windSpeed",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_daily"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/conditions": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_conditions"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/radar": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_radar"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/map": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_map"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/air-quality": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_air-quality"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{id}": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "ID path parameter for the /{id} route.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "New+York": {
+                                "value": "New+York"
+                            }
+                        }
+                    },
+                    {
+                        "name": "zipcode",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10001": {
+                                "value": "10001"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lat",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "40.7128": {
+                                "value": "40.7128"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "US": {
+                                "value": "US"
+                            }
+                        }
+                    },
+                    {
+                        "name": "units",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "imperial": {
+                                "value": "imperial"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lang",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en": {
+                                "value": "en"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exclude",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "minutely": {
+                                "value": "minutely"
+                            }
+                        }
+                    },
+                    {
+                        "name": "hourly",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "daily",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "alerts",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_id"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/history": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_history"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/airquality": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_airquality"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sunrise-sunset": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_sunrise-sunset"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/moon-phase": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-10-15": {
+                                "value": "2022-10-15"
+                            }
+                        }
+                    },
+                    {
+                        "name": "location",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "New+York": {
+                                "value": "New+York"
+                            }
+                        }
+                    },
+                    {
+                        "name": "units",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "imperial": {
+                                "value": "imperial"
+                            }
+                        }
+                    },
+                    {
+                        "name": "time",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "12:00": {
+                                "value": "12:00"
+                            }
+                        }
+                    },
+                    {
+                        "name": "forecast",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "weekly": {
+                                "value": "weekly"
+                            }
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "es": {
+                                "value": "es"
+                            }
+                        }
+                    },
+                    {
+                        "name": "latitude",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "40.7128": {
+                                "value": "40.7128"
+                            }
+                        }
+                    },
+                    {
+                        "name": "longitude",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "-74.0060": {
+                                "value": "-74.0060"
+                            }
+                        }
+                    },
+                    {
+                        "name": "zipcode",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10001": {
+                                "value": "10001"
+                            }
+                        }
+                    },
+                    {
+                        "name": "city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Los+Angeles": {
+                                "value": "Los+Angeles"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_moon-phase"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "< DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema": {},
+            "ResponseSchema_current": {},
+            "ResponseSchema_forecast": {},
+            "ResponseSchema_alerts": {},
+            "ResponseSchema_historical": {},
+            "ResponseSchema_hourly": {},
+            "ResponseSchema_daily": {},
+            "ResponseSchema_conditions": {},
+            "ResponseSchema_radar": {},
+            "ResponseSchema_map": {},
+            "ResponseSchema_air-quality": {},
+            "ResponseSchema_id": {},
+            "ResponseSchema_history": {},
+            "ResponseSchema_airquality": {},
+            "ResponseSchema_sunrise-sunset": {},
+            "ResponseSchema_moon-phase": {}
+        }
+    }
+}

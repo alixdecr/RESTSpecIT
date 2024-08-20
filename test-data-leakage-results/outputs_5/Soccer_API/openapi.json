@@ -1,0 +1,1871 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Soccer API",
+        "description": "**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid query parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.<br><br>**Be Reassured** - The tool *RESTSpecIT* has been thouroughly tested on various APIs, demonstrating an average GET route discovery rate of 85.05% and query parameter discovery rate of 81.05%. Additionally, the tool is capable of discovering undocumented and valid routes and query parameters of APIs.<br><br>**API Description** - The Soccer API is a service that provides data and information related to soccer matches, teams, players, and statistics.",
+        "termsOfService": "",
+        "contact": {
+            "name": "Soccer API Contact",
+            "url": "",
+            "email": "support@soccerapi.com"
+        },
+        "license": {
+            "name": "The license used by the Soccer API is 'Creative Commons Attribution-NonCommercial 4.0 International License'.",
+            "url": "https://creativecommons.org/licenses/by-nc/4.0"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://api.sportsdata.io",
+            "description": "Production Server of the Soccer API.",
+            "x-base-routes": 4
+        }
+    ],
+    "externalDocs": {
+        "url": "https://www.api-football.com",
+        "description": "Find more about the Soccer API here:"
+    },
+    "paths": {
+        "": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/teams": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USA": {
+                                "value": "USA"
+                            },
+                            "England": {
+                                "value": "England"
+                            }
+                        }
+                    },
+                    {
+                        "name": "league",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Premier+League": {
+                                "value": "Premier+League"
+                            },
+                            "premierleague": {
+                                "value": "premierleague"
+                            },
+                            "Premier%20League": {
+                                "value": "Premier%20League"
+                            },
+                            "PremierLeague": {
+                                "value": "PremierLeague"
+                            }
+                        }
+                    },
+                    {
+                        "name": "season",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2021": {
+                                "value": "2021"
+                            }
+                        }
+                    },
+                    {
+                        "name": "teamName",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Liverpool": {
+                                "value": "Liverpool"
+                            }
+                        }
+                    },
+                    {
+                        "name": "playerName",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Messi": {
+                                "value": "Messi"
+                            }
+                        }
+                    },
+                    {
+                        "name": "coachName",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Guardiola": {
+                                "value": "Guardiola"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rank",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "London": {
+                                "value": "London"
+                            }
+                        }
+                    },
+                    {
+                        "name": "stadiumName",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "OldTrafford": {
+                                "value": "OldTrafford"
+                            }
+                        }
+                    },
+                    {
+                        "name": "playerPosition",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "forward": {
+                                "value": "forward"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_teams"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/players": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "team",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Barcelona": {
+                                "value": "Barcelona"
+                            }
+                        }
+                    },
+                    {
+                        "name": "position",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "forward": {
+                                "value": "forward"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_players"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/matches": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-05-15": {
+                                "value": "2022-05-15"
+                            },
+                            "2022-10-01": {
+                                "value": "2022-10-01"
+                            },
+                            "2022-10-15": {
+                                "value": "2022-10-15"
+                            }
+                        }
+                    },
+                    {
+                        "name": "team",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Barcelona": {
+                                "value": "Barcelona"
+                            }
+                        }
+                    },
+                    {
+                        "name": "league",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Premier+League": {
+                                "value": "Premier+League"
+                            }
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "completed": {
+                                "value": "completed"
+                            }
+                        }
+                    },
+                    {
+                        "name": "season",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-2022": {
+                                "value": "2021-2022"
+                            }
+                        }
+                    },
+                    {
+                        "name": "venue",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Wembley+Stadium": {
+                                "value": "Wembley+Stadium"
+                            }
+                        }
+                    },
+                    {
+                        "name": "player",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Messi": {
+                                "value": "Messi"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Spain": {
+                                "value": "Spain"
+                            }
+                        }
+                    },
+                    {
+                        "name": "competition",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Champions+League": {
+                                "value": "Champions+League"
+                            }
+                        }
+                    },
+                    {
+                        "name": "result",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "draw": {
+                                "value": "draw"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_matches"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/standings": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_standings"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/fixtures": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-09-01": {
+                                "value": "2022-09-01"
+                            },
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            },
+                            "2022-10-15": {
+                                "value": "2022-10-15"
+                            }
+                        }
+                    },
+                    {
+                        "name": "team",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Barcelona": {
+                                "value": "Barcelona"
+                            },
+                            "Liverpool": {
+                                "value": "Liverpool"
+                            },
+                            "Manchester+United": {
+                                "value": "Manchester+United"
+                            }
+                        }
+                    },
+                    {
+                        "name": "league",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Premier+League": {
+                                "value": "Premier+League"
+                            },
+                            "PremierLeague": {
+                                "value": "PremierLeague"
+                            }
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "completed": {
+                                "value": "completed"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            },
+                            "1": {
+                                "value": "1"
+                            },
+                            "3": {
+                                "value": "3"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "50": {
+                                "value": "50"
+                            },
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "season",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2021": {
+                                "value": "2021"
+                            },
+                            "2021-2022": {
+                                "value": "2021-2022"
+                            }
+                        }
+                    },
+                    {
+                        "name": "venue",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Wembley+Stadium": {
+                                "value": "Wembley+Stadium"
+                            },
+                            "home": {
+                                "value": "home"
+                            }
+                        }
+                    },
+                    {
+                        "name": "timezone",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Europe": {
+                                "value": "Europe"
+                            },
+                            "EST": {
+                                "value": "EST"
+                            }
+                        }
+                    },
+                    {
+                        "name": "round",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "final": {
+                                "value": "final"
+                            },
+                            "Final": {
+                                "value": "Final"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "asc": {
+                                "value": "asc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Spain": {
+                                "value": "Spain"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_fixtures"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/topscorers": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_topscorers"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/leagues": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "England": {
+                                "value": "England"
+                            },
+                            "USA": {
+                                "value": "USA"
+                            }
+                        }
+                    },
+                    {
+                        "name": "season",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2021": {
+                                "value": "2021"
+                            }
+                        }
+                    },
+                    {
+                        "name": "team",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Liverpool": {
+                                "value": "Liverpool"
+                            }
+                        }
+                    },
+                    {
+                        "name": "player",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Messi": {
+                                "value": "Messi"
+                            }
+                        }
+                    },
+                    {
+                        "name": "min_goals",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "max_goals",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "asc": {
+                                "value": "asc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "round",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "final": {
+                                "value": "final"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_leagues"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/statistics": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "team",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Barcelona": {
+                                "value": "Barcelona"
+                            }
+                        }
+                    },
+                    {
+                        "name": "player",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Messi": {
+                                "value": "Messi"
+                            }
+                        }
+                    },
+                    {
+                        "name": "season",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2021": {
+                                "value": "2021"
+                            }
+                        }
+                    },
+                    {
+                        "name": "league",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Premier+League": {
+                                "value": "Premier+League"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Spain": {
+                                "value": "Spain"
+                            }
+                        }
+                    },
+                    {
+                        "name": "competition",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Champions+League": {
+                                "value": "Champions+League"
+                            }
+                        }
+                    },
+                    {
+                        "name": "match_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "friendly": {
+                                "value": "friendly"
+                            }
+                        }
+                    },
+                    {
+                        "name": "venue",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Stadium": {
+                                "value": "Stadium"
+                            }
+                        }
+                    },
+                    {
+                        "name": "top_scorer",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_statistics"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/lineups": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_lineups"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/transfers": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_transfers"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/{id}": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "ID path parameter for the /{id} route.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "team",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Barcelona": {
+                                "value": "Barcelona"
+                            }
+                        }
+                    },
+                    {
+                        "name": "player",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Messi": {
+                                "value": "Messi"
+                            }
+                        }
+                    },
+                    {
+                        "name": "league",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Premier+League": {
+                                "value": "Premier+League"
+                            },
+                            "LaLiga": {
+                                "value": "LaLiga"
+                            },
+                            "PremierLeague": {
+                                "value": "PremierLeague"
+                            }
+                        }
+                    },
+                    {
+                        "name": "season",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2021": {
+                                "value": "2021"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Spain": {
+                                "value": "Spain"
+                            },
+                            "England": {
+                                "value": "England"
+                            }
+                        }
+                    },
+                    {
+                        "name": "tournament",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Champions+League": {
+                                "value": "Champions+League"
+                            },
+                            "ChampionsLeague": {
+                                "value": "ChampionsLeague"
+                            }
+                        }
+                    },
+                    {
+                        "name": "match",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Real+Madrid+vs+Barcelona": {
+                                "value": "Real+Madrid+vs+Barcelona"
+                            },
+                            "1234": {
+                                "value": "1234"
+                            },
+                            "12345": {
+                                "value": "12345"
+                            }
+                        }
+                    },
+                    {
+                        "name": "player_position",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "forward": {
+                                "value": "forward"
+                            }
+                        }
+                    },
+                    {
+                        "name": "team_ranking",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "goal_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "penalty": {
+                                "value": "penalty"
+                            }
+                        }
+                    },
+                    {
+                        "name": "goal",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "scored": {
+                                "value": "scored"
+                            }
+                        }
+                    },
+                    {
+                        "name": "assist",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "provided": {
+                                "value": "provided"
+                            }
+                        }
+                    },
+                    {
+                        "name": "position",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "forward": {
+                                "value": "forward"
+                            }
+                        }
+                    },
+                    {
+                        "name": "player_stat",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "goals": {
+                                "value": "goals"
+                            }
+                        }
+                    },
+                    {
+                        "name": "team_stat",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "possesion": {
+                                "value": "possesion"
+                            }
+                        }
+                    },
+                    {
+                        "name": "venue",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "StadiumName": {
+                                "value": "StadiumName"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_id"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/schedule": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_schedule"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/live": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_live"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/news": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "team",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Barcelona": {
+                                "value": "Barcelona"
+                            }
+                        }
+                    },
+                    {
+                        "name": "league",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Premier+League": {
+                                "value": "Premier+League"
+                            }
+                        }
+                    },
+                    {
+                        "name": "player",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Messi": {
+                                "value": "Messi"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Spain": {
+                                "value": "Spain"
+                            }
+                        }
+                    },
+                    {
+                        "name": "date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "topic",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "transfers": {
+                                "value": "transfers"
+                            }
+                        }
+                    },
+                    {
+                        "name": "competition",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Champions+League": {
+                                "value": "Champions+League"
+                            }
+                        }
+                    },
+                    {
+                        "name": "season",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-2022": {
+                                "value": "2021-2022"
+                            }
+                        }
+                    },
+                    {
+                        "name": "keyword",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "goals": {
+                                "value": "goals"
+                            }
+                        }
+                    },
+                    {
+                        "name": "author",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "John+Doe": {
+                                "value": "John+Doe"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_news"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/historical": {
+            "get": {
+                "description": "No description.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_historical"
+                                },
+                                "example": {
+                                    "valid": "true",
+                                    "response": "this is a valid request"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "statusCode": "401",
+                                    "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "object",
+                "properties": {
+                    "statusCode": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "statusCode",
+                    "message"
+                ]
+            },
+            "ResponseSchema": {},
+            "ResponseSchema_teams": {},
+            "ResponseSchema_players": {},
+            "ResponseSchema_matches": {},
+            "ResponseSchema_standings": {},
+            "ResponseSchema_fixtures": {},
+            "ResponseSchema_topscorers": {},
+            "ResponseSchema_leagues": {},
+            "ResponseSchema_statistics": {},
+            "ResponseSchema_lineups": {},
+            "ResponseSchema_transfers": {},
+            "ResponseSchema_id": {},
+            "ResponseSchema_schedule": {},
+            "ResponseSchema_live": {},
+            "ResponseSchema_news": {},
+            "ResponseSchema_historical": {}
+        }
+    }
+}

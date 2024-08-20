@@ -1,0 +1,44 @@
+This file contains the failing requests, ordered by the number of blocked dependent requests.
+To improve coverage, fix the failing requests in the order listed in this file.
+
+Note: some requests are labeled as 'sequence failure'.
+This means the request depends on another request that is failing intermittently.
+For example, a DELETE request for a resource may be skipped because the resource
+PUT request failed due to exceeding quota.  The same PUT request succeeded earlier (and may
+succeed later depending on the resource clean-up behavior in the service), so it is
+considered an intermittent failure.
+
+-----------------------------------------------
+Request: Get /sug
+Number of blocked dependent requests: 0
+
+	+++ Combination 1 +++:
+	Request sequence: 
+	> GET /sug?rel_syn=funny&s=python&max=5&md=d&rel_trg=funny&ml=apple&sp=apple&topics=politics&ipa=%C9%99%CB%88ple%C9%AA&lc=en&rel_ant=hot&v=enwiktionary&qe=ml&sl=fr&term=apple&rel_jjb=example&rel_jja=example&rc=example&rel_rhy=blue&sad=%7B+%22fuzz%22%3A+false+%7D&mds=%7B+%22fuzz%22%3A+false+%7D HTTP/1.1\r\nAccept: application/json\r\nHost: api.datamuse.com\r\n\r\n
+	< HTTP/1.1 500 Internal Server Error\r\nDate: Thu, 30 Nov 2023 10:43:15 GMT\r\nContent-Type: application/json\r\nContent-Length: 110\r\nConnection: keep-alive\r\nCache-Control: no-transform, max-age=86400\r\n\r\n{"code":500,"message":"There was an error processing your request. It has been logged (ID 0eb2625ae9043d7c)."}
+
+
+	+++ Combination 2 +++:
+	Request sequence: 
+	> GET /sug?rel_syn=funny&s=python&max=5&md=d&rel_trg=funny&ml=apple&sp=apple&topics=politics&ipa=%C9%99%CB%88ple%C9%AA&lc=en&rel_ant=hot&v=enwiktionary&qe=ml&sl=fr&term=apple&rel_jjb=example&rel_jja=example&rc=example&rel_rhy=fuzzstring&sad=%7B+%22fuzz%22%3A+false+%7D&mds=%7B+%22fuzz%22%3A+false+%7D HTTP/1.1\r\nAccept: application/json\r\nHost: api.datamuse.com\r\n\r\n
+	< HTTP/1.1 500 Internal Server Error\r\nDate: Thu, 30 Nov 2023 10:43:16 GMT\r\nContent-Type: application/json\r\nContent-Length: 110\r\nConnection: keep-alive\r\nCache-Control: no-transform, max-age=86400\r\n\r\n{"code":500,"message":"There was an error processing your request. It has been logged (ID 2e46d905ba4185c9)."}
+
+
+	+++ Combination 3 +++:
+	Request sequence: 
+	> GET /sug?rel_syn=funny&s=python&max=5&md=d&rel_trg=funny&ml=apple&sp=apple&topics=politics&ipa=%C9%99%CB%88ple%C9%AA&lc=en&rel_ant=hot&v=enwiktionary&qe=ml&sl=fr&term=apple&rel_jjb=example&rel_jja=example&rc=fuzzstring&rel_rhy=blue&sad=%7B+%22fuzz%22%3A+false+%7D&mds=%7B+%22fuzz%22%3A+false+%7D HTTP/1.1\r\nAccept: application/json\r\nHost: api.datamuse.com\r\n\r\n
+	< HTTP/1.1 500 Internal Server Error\r\nDate: Thu, 30 Nov 2023 10:43:16 GMT\r\nContent-Type: application/json\r\nContent-Length: 110\r\nConnection: keep-alive\r\nCache-Control: no-transform, max-age=86400\r\n\r\n{"code":500,"message":"There was an error processing your request. It has been logged (ID bbd1ba8806bfbc68)."}
+
+
+	+++ Combination 4 +++:
+	Request sequence: 
+	> GET /sug?rel_syn=funny&s=python&max=5&md=d&rel_trg=funny&ml=apple&sp=apple&topics=politics&ipa=%C9%99%CB%88ple%C9%AA&lc=en&rel_ant=hot&v=enwiktionary&qe=ml&sl=fr&term=apple&rel_jjb=example&rel_jja=example&rc=fuzzstring&rel_rhy=fuzzstring&sad=%7B+%22fuzz%22%3A+false+%7D&mds=%7B+%22fuzz%22%3A+false+%7D HTTP/1.1\r\nAccept: application/json\r\nHost: api.datamuse.com\r\n\r\n
+	< HTTP/1.1 500 Internal Server Error\r\nDate: Thu, 30 Nov 2023 10:43:16 GMT\r\nContent-Type: application/json\r\nContent-Length: 110\r\nConnection: keep-alive\r\nCache-Control: no-transform, max-age=86400\r\n\r\n{"code":500,"message":"There was an error processing your request. It has been logged (ID d2c1b78c300c04f0)."}
+
+
+	+++ Combination 5 +++:
+	Request sequence: 
+	> GET /sug?rel_syn=funny&s=python&max=5&md=d&rel_trg=funny&ml=apple&sp=apple&topics=politics&ipa=%C9%99%CB%88ple%C9%AA&lc=en&rel_ant=hot&v=enwiktionary&qe=ml&sl=fr&term=apple&rel_jjb=example&rel_jja=fuzzstring&rc=example&rel_rhy=blue&sad=%7B+%22fuzz%22%3A+false+%7D&mds=%7B+%22fuzz%22%3A+false+%7D HTTP/1.1\r\nAccept: application/json\r\nHost: api.datamuse.com\r\n\r\n
+	< HTTP/1.1 500 Internal Server Error\r\nDate: Thu, 30 Nov 2023 10:43:16 GMT\r\nContent-Type: application/json\r\nContent-Length: 110\r\nConnection: keep-alive\r\nCache-Control: no-transform, max-age=86400\r\n\r\n{"code":500,"message":"There was an error processing your request. It has been logged (ID 0189ebf3a715c6e1)."}
+
+

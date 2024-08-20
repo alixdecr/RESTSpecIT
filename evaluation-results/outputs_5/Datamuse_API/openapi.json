@@ -1,0 +1,996 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Datamuse API",
+        "description": "**API Description** - The Datamuse API is a tool that provides access to a vast collection of linguistic data and search capabilities.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "",
+        "contact": {
+            "name": "Datamuse API Contact",
+            "url": "https://www.datamuse.com/api",
+            "email": "support@datamuse.com"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://api.datamuse.com",
+            "description": "Production Server of the Datamuse API.",
+            "x-base-routes": 0
+        }
+    ],
+    "externalDocs": {
+        "url": "https://www.datamuse.com/api",
+        "description": "Find more about the Datamuse API here:"
+    },
+    "paths": {
+        "/words": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "ml",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "happy": {
+                                "value": "happy"
+                            },
+                            "example": {
+                                "value": "example"
+                            },
+                            "cat": {
+                                "value": "cat"
+                            },
+                            "angry": {
+                                "value": "angry"
+                            },
+                            "sad": {
+                                "value": "sad"
+                            },
+                            "love": {
+                                "value": "love"
+                            },
+                            "dog": {
+                                "value": "dog"
+                            }
+                        }
+                    },
+                    {
+                        "name": "max",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            },
+                            "10": {
+                                "value": "10"
+                            },
+                            "100": {
+                                "value": "100"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_syn",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "love": {
+                                "value": "love"
+                            },
+                            "funny": {
+                                "value": "funny"
+                            },
+                            "example": {
+                                "value": "example"
+                            },
+                            "joy": {
+                                "value": "joy"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_trg",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "happy": {
+                                "value": "happy"
+                            },
+                            "laugh": {
+                                "value": "laugh"
+                            },
+                            "sad": {
+                                "value": "sad"
+                            },
+                            "love": {
+                                "value": "love"
+                            },
+                            "surprise": {
+                                "value": "surprise"
+                            },
+                            "angry": {
+                                "value": "angry"
+                            },
+                            "excited": {
+                                "value": "excited"
+                            },
+                            "tired": {
+                                "value": "tired"
+                            },
+                            "car": {
+                                "value": "car"
+                            },
+                            "computer": {
+                                "value": "computer"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_ant",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "sad": {
+                                "value": "sad"
+                            },
+                            "example": {
+                                "value": "example"
+                            },
+                            "dry": {
+                                "value": "dry"
+                            },
+                            "happy": {
+                                "value": "happy"
+                            },
+                            "hot": {
+                                "value": "hot"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_jjb",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "amusing": {
+                                "value": "amusing"
+                            },
+                            "content": {
+                                "value": "content"
+                            },
+                            "blue": {
+                                "value": "blue"
+                            },
+                            "small": {
+                                "value": "small"
+                            },
+                            "big": {
+                                "value": "big"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_jja",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "sad": {
+                                "value": "sad"
+                            },
+                            "big": {
+                                "value": "big"
+                            },
+                            "small": {
+                                "value": "small"
+                            }
+                        }
+                    },
+                    {
+                        "name": "topics",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "entertainment": {
+                                "value": "entertainment"
+                            },
+                            "happiness": {
+                                "value": "happiness"
+                            },
+                            "example": {
+                                "value": "example"
+                            },
+                            "animals": {
+                                "value": "animals"
+                            },
+                            "food": {
+                                "value": "food"
+                            },
+                            "technology": {
+                                "value": "technology"
+                            },
+                            "sports": {
+                                "value": "sports"
+                            },
+                            "science": {
+                                "value": "science"
+                            },
+                            "politics": {
+                                "value": "politics"
+                            }
+                        }
+                    },
+                    {
+                        "name": "md",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "d": {
+                                "value": "d"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sp",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "cat": {
+                                "value": "cat"
+                            },
+                            "fr*": {
+                                "value": "fr*"
+                            },
+                            "adjective": {
+                                "value": "adjective"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "eng": {
+                                "value": "eng"
+                            },
+                            "example": {
+                                "value": "example"
+                            }
+                        }
+                    },
+                    {
+                        "name": "v",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "enwiki": {
+                                "value": "enwiki"
+                            },
+                            "es": {
+                                "value": "es"
+                            },
+                            "blue": {
+                                "value": "blue"
+                            }
+                        }
+                    },
+                    {
+                        "name": "ipa",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_bga",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "love": {
+                                "value": "love"
+                            },
+                            "tree": {
+                                "value": "tree"
+                            },
+                            "yellow": {
+                                "value": "yellow"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_bgb",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "happiness": {
+                                "value": "happiness"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_nry",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_spc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            },
+                            "fruit": {
+                                "value": "fruit"
+                            },
+                            "computer": {
+                                "value": "computer"
+                            },
+                            "animals": {
+                                "value": "animals"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_gen",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            },
+                            "food": {
+                                "value": "food"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_com",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_par",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "rel_rhy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "hello": {
+                                "value": "hello"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sl",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "water": {
+                                "value": "water"
+                            },
+                            "hello": {
+                                "value": "hello"
+                            },
+                            "funny": {
+                                "value": "funny"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_words"
+                                },
+                                "example": [
+                                    {
+                                        "word": "pleased",
+                                        "score": 40004395,
+                                        "tags": [
+                                            "syn",
+                                            "adj",
+                                            "v",
+                                            "results_type:primary_rel"
+                                        ]
+                                    },
+                                    {
+                                        "word": "blissful",
+                                        "score": 40004156,
+                                        "tags": [
+                                            "syn",
+                                            "adj"
+                                        ]
+                                    },
+                                    {
+                                        "word": "content",
+                                        "score": 40004024,
+                                        "tags": [
+                                            "syn",
+                                            "adj"
+                                        ]
+                                    },
+                                    {
+                                        "word": "glad",
+                                        "score": 40003904,
+                                        "tags": [
+                                            "syn",
+                                            "adj"
+                                        ]
+                                    },
+                                    {
+                                        "word": "contented",
+                                        "score": 40003711,
+                                        "tags": [
+                                            "syn",
+                                            "adj",
+                                            "v"
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "code": 404,
+                                    "message": "HTTP 404 Not Found"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sug": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "ml",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "happy": {
+                                "value": "happy"
+                            },
+                            "kitten": {
+                                "value": "kitten"
+                            },
+                            "hello": {
+                                "value": "hello"
+                            }
+                        }
+                    },
+                    {
+                        "name": "max",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            },
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "s",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "dog": {
+                                "value": "dog"
+                            },
+                            "happy": {
+                                "value": "happy"
+                            },
+                            "youtube": {
+                                "value": "youtube"
+                            },
+                            "love": {
+                                "value": "love"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sp",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "apple": {
+                                "value": "apple"
+                            },
+                            "1": {
+                                "value": "1"
+                            },
+                            "banana": {
+                                "value": "banana"
+                            },
+                            "cat": {
+                                "value": "cat"
+                            },
+                            "eng": {
+                                "value": "eng"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_trg",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "happy": {
+                                "value": "happy"
+                            },
+                            "run": {
+                                "value": "run"
+                            },
+                            "cat": {
+                                "value": "cat"
+                            }
+                        }
+                    },
+                    {
+                        "name": "term",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "apple": {
+                                "value": "apple"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_rhy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "funny": {
+                                "value": "funny"
+                            },
+                            "orange": {
+                                "value": "orange"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_syn",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "joyful": {
+                                "value": "joyful"
+                            },
+                            "car": {
+                                "value": "car"
+                            },
+                            "dog": {
+                                "value": "dog"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_ant",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "sad": {
+                                "value": "sad"
+                            },
+                            "hot": {
+                                "value": "hot"
+                            },
+                            "big": {
+                                "value": "big"
+                            }
+                        }
+                    },
+                    {
+                        "name": "topics",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "love": {
+                                "value": "love"
+                            },
+                            "animals": {
+                                "value": "animals"
+                            },
+                            "politics": {
+                                "value": "politics"
+                            },
+                            "technology": {
+                                "value": "technology"
+                            },
+                            "music": {
+                                "value": "music"
+                            },
+                            "sports": {
+                                "value": "sports"
+                            }
+                        }
+                    },
+                    {
+                        "name": "v",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "es": {
+                                "value": "es"
+                            },
+                            "blue": {
+                                "value": "blue"
+                            }
+                        }
+                    },
+                    {
+                        "name": "md",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "d": {
+                                "value": "d"
+                            },
+                            "s": {
+                                "value": "s"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en": {
+                                "value": "en"
+                            },
+                            "eng": {
+                                "value": "eng"
+                            }
+                        }
+                    },
+                    {
+                        "name": "ipa",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sl",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "de": {
+                                "value": "de"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_jja",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "beautiful": {
+                                "value": "beautiful"
+                            },
+                            "funny": {
+                                "value": "funny"
+                            },
+                            "smart": {
+                                "value": "smart"
+                            },
+                            "nice": {
+                                "value": "nice"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_jjb",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "smart": {
+                                "value": "smart"
+                            },
+                            "funny": {
+                                "value": "funny"
+                            },
+                            "sad": {
+                                "value": "sad"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_spc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "fruit": {
+                                "value": "fruit"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_gen",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "country": {
+                                "value": "country"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_bga",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "green": {
+                                "value": "green"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json;charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_sug"
+                                },
+                                "example": []
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "code": 404,
+                                    "message": "HTTP 404 Not Found"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "code",
+                    "message"
+                ]
+            },
+            "ResponseSchema_words": {},
+            "ResponseSchema_sug": {}
+        }
+    }
+}

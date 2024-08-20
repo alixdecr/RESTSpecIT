@@ -1,0 +1,952 @@
+TIME     | VALID | REASON      | COD | RESPONSE DATA                     | REQUEST
+==================================================================================
+11:28:38 | True  | valid-req   | 200 | <!DOCTYPE html><!--All GBIF me... | https://www.gbif.org/terms 
+11:28:40 | False | status-code | 404 | <!DOCTYPE html><!--All GBIF me... | https://www.gbif.org/contact 
+11:28:42 | False | status-code | 404 | <!DOCTYPE html><!--All GBIF me... | https://www.gbif.org/contact 
+11:28:47 | False | status-code | 404 | <!DOCTYPE html><!--All GBIF me... | https://www.gbif.org/contact 
+11:28:59 | True  | valid-req   | 200 | <!DOCTYPE html><html dir="ltr"... | https://creativecommons.org/licenses/by/4.0 
+11:29:02 | True  | valid-req   | 200 | <!DOCTYPE html><!--All GBIF me... | https://www.gbif.org/developer/species 
+11:29:08 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera%20leo&kingdom=Animalia 
+11:29:09 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera%20leo&kingdom=Animalia 
+11:29:09 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+11:30:29 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?name=Panthera%20leo&kingdom=Animalia 
+11:30:29 | False | status-code | 400 | For input string: "occurrence"    | https://api.gbif.org/v1/species/occurrence?name=Panthera%20leo&kingdom=Animalia 
+11:30:30 | False | status-code | 400 | For input string: "name"          | https://api.gbif.org/v1/species/name?name=Panthera%20leo&kingdom=Animalia 
+11:30:30 | True  | valid-req   | 200 | [{"key":0,"nameKey":130332213,... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&kingdom=Animalia 
+11:30:31 | False | status-code | 400 | For input string: "parent"        | https://api.gbif.org/v1/species/parent?name=Panthera%20leo&kingdom=Animalia 
+11:30:31 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&kingdom=Animalia 
+11:30:32 | False | status-code | 400 | For input string: "key"           | https://api.gbif.org/v1/species/key?name=Panthera%20leo&kingdom=Animalia 
+11:30:32 | False | status-code | 400 | For input string: "children"      | https://api.gbif.org/v1/species/children?name=Panthera%20leo&kingdom=Animalia 
+11:30:33 | False | status-code | 400 | For input string: "synonyms"      | https://api.gbif.org/v1/species/synonyms?name=Panthera%20leo&kingdom=Animalia 
+11:30:33 | False | status-code | 400 | For input string: "related"       | https://api.gbif.org/v1/species/related?name=Panthera%20leo&kingdom=Animalia 
+11:30:34 | False | status-code | 400 | For input string: "occurrence"    | https://api.gbif.org/v1/species/occurrence?taxonKey=123456&name=Panthera%20leo&kingdom=Animalia 
+11:30:34 | False | status-code | 400 | For input string: "name"          | https://api.gbif.org/v1/species/name?name=Panthera%20leo&name=Panthera%20leo&kingdom=Animalia 
+11:30:35 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia 
+11:30:35 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/v1?name=Panthera%20leo&kingdom=Animalia 
+11:30:36 | False | status-code | 404 | {"timestamp":"2023-11-23T10:30... | https://api.gbif.org/v1/15?name=Panthera%20leo&kingdom=Animalia 
+11:30:36 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera%20leo&kingdom=Animalia 
+11:30:37 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?name=Panthera%20leo&kingdom=Animalia 
+11:30:37 | False | status-code | 404 | {"timestamp":"2023-11-23T10:30... | https://api.gbif.org/v1/name-usage?name=Panthera%20leo&kingdom=Animalia 
+11:30:38 | False | status-code | 404 | {"timestamp":"2023-11-23T10:30... | https://api.gbif.org/v1/name-backbone?name=Panthera%20leo&kingdom=Animalia 
+11:30:39 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?name=Panthera%20leo&kingdom=Animalia 
+11:30:40 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&kingdom=Animalia 
+11:30:40 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?name=Panthera%20leo&kingdom=Animalia 
+11:30:41 | False | status-code | 404 | {"timestamp":"2023-11-23T10:30... | https://api.gbif.org/v1/grscicoll/person?name=Panthera%20leo&kingdom=Animalia 
+11:30:41 | False | status-code | 400 | Invalid UUID string: 66           | https://api.gbif.org/v1/grscicoll/institution/66?name=Panthera%20leo&kingdom=Animalia 
+11:30:42 | False | status-code | 400 | Invalid UUID string: 49           | https://api.gbif.org/v1/grscicoll/collection/49?name=Panthera%20leo&kingdom=Animalia 
+11:30:42 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species?limit=10&name=Panthera%20leo&kingdom=Animalia 
+11:30:43 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2489397&name=Panthera%20leo&kingdom=Animalia 
+11:30:43 | False | status-code | 404 | {"timestamp":"2023-11-23T10:30... | https://api.gbif.org/v1/name-usage?name=Panthera+leo&name=Panthera%20leo&kingdom=Animalia 
+11:30:44 | False | status-code | 404 | {"timestamp":"2023-11-23T10:30... | https://api.gbif.org/v1/23?name=Panthera%20leo&kingdom=Animalia 
+11:31:14 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&rank 
+11:31:15 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&limit 
+11:31:15 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&offset 
+11:31:16 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&year 
+11:31:17 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&country 
+11:31:18 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&datasetKey 
+11:31:19 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&taxonKey 
+11:31:19 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&status 
+11:31:20 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&sourceId 
+11:31:21 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?name=Panthera%20leo 
+11:31:22 | True  | valid-req   | 200 | [{"key":0,"nameKey":130332213,... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&limit=5 
+11:31:23 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species 
+11:31:24 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&datasetKey=9d083c1d-1e29-4a20-aa86-33a27aff2a33 
+11:31:25 | False | status-code | 400 | Cannot parse wildcard into a k... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&nameType=wildcard 
+11:31:26 | True  | valid-req   | 200 | [{"key":0,"nameKey":130332213,... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&kingdom=Animalia 
+11:31:27 | True  | valid-req   | 200 | [{"key":0,"nameKey":130332213,... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&language=en 
+11:31:27 | True  | valid-req   | 200 | [{"key":2435194,"nameKey":8115... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&q=Panthera 
+11:31:28 | True  | valid-req   | 200 | [{"key":0,"nameKey":130332213,... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&country=US 
+11:31:29 | True  | valid-req   | 200 | [{"key":0,"nameKey":130332213,... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&year=2021 
+11:31:30 | True  | valid-req   | 200 | [{"key":0,"nameKey":130332213,... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&mediaType=StillImage 
+11:31:32 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishingCountry=US 
+11:31:33 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishingCountry=CA 
+11:31:36 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/dataset?limit=100 
+11:31:38 | True  | valid-req   | 200 | {"offset":50,"limit":20,"endOf... | https://api.gbif.org/v1/dataset?offset=50 
+11:31:43 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?q=orchid 
+11:31:45 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?year=2020 
+11:31:46 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?mediaType=StillImage 
+11:31:47 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?typeStatus=holotype 
+11:31:48 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?basisOfRecord=PreservedSpecimen 
+11:31:50 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?locale=en 
+11:50:37 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+11:51:28 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/search?name=Panthera%20leo&datasetKey=9d083c1d-1e29-4a20-aa86-33a27aff2a33 
+11:51:29 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/suggest?name=Panthera%20leo&datasetKey=9d083c1d-1e29-4a20-aa86-33a27aff2a33 
+11:51:29 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/lookup?name=Panthera%20leo&datasetKey=9d083c1d-1e29-4a20-aa86-33a27aff2a33 
+11:51:30 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/match?name=Panthera%20leo&datasetKey=9d083c1d-1e29-4a20-aa86-33a27aff2a33 
+11:51:30 | False | status-code | 400 | For input string: "suggest"       | https://api.gbif.org/v1/species/suggest/name?name=Panthera%20leo&datasetKey=9d083c1d-1e29-4a20-aa86-33a27aff2a33 
+11:51:31 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/taxonKey?name=Panthera%20leo&datasetKey=9d083c1d-1e29-4a20-aa86-33a27aff2a33 
+11:51:31 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/parent?name=Panthera%20leo&datasetKey=9d083c1d-1e29-4a20-aa86-33a27aff2a33 
+11:51:32 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/rank?name=Panthera%20leo&datasetKey=9d083c1d-1e29-4a20-aa86-33a27aff2a33 
+11:51:32 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/verbose?name=Panthera%20leo&datasetKey=9d083c1d-1e29-4a20-aa86-33a27aff2a33 
+11:51:32 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/strict?name=Panthera%20leo&datasetKey=9d083c1d-1e29-4a20-aa86-33a27aff2a33 
+11:51:33 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/suggest/88?name=Panthera%20leo&datasetKey=9d083c1d-1e29-4a20-aa86-33a27aff2a33 
+11:51:33 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera%20leo&kingdom=Animalia 
+11:51:34 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/grscicoll/institutions?name=Panthera%20leo&kingdom=Animalia 
+11:51:35 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/grscicoll/collections?name=Panthera%20leo&kingdom=Animalia 
+11:51:35 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/grscicoll/institutions/search?name=Panthera%20leo&kingdom=Animalia 
+11:51:36 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/grscicoll/collections/search?name=Panthera%20leo&kingdom=Animalia 
+11:51:36 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/grscicoll/institutions/14?name=Panthera%20leo&kingdom=Animalia 
+11:51:36 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/grscicoll/collections/73?name=Panthera%20leo&kingdom=Animalia 
+11:51:37 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/grscicoll/institutions/85/contacts?name=Panthera%20leo&kingdom=Animalia 
+11:51:37 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/grscicoll/institutions/50/contacts/72?name=Panthera%20leo&kingdom=Animalia 
+11:51:38 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/grscicoll/collections/43/contacts?name=Panthera%20leo&kingdom=Animalia 
+11:51:38 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/grscicoll/collections/46/contacts/97?name=Panthera%20leo&kingdom=Animalia 
+11:51:39 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/grscicoll/institutions?country=United%20States&name=Panthera%20leo&kingdom=Animalia 
+11:51:39 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/grscicoll/collections?country=US&name=Panthera%20leo&kingdom=Animalia 
+11:51:40 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/grscicoll/76?name=Panthera%20leo&kingdom=Animalia 
+11:51:40 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera%20leo&kingdom=Animalia 
+11:51:41 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?name=Panthera%20leo&kingdom=Animalia 
+11:51:41 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/name_usage?name=Panthera%20leo&kingdom=Animalia 
+11:51:42 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?name=Panthera%20leo&kingdom=Animalia 
+11:51:43 | False | status-code | 403 | Access is denied                  | https://api.gbif.org/v1/occurrence/download?name=Panthera%20leo&kingdom=Animalia 
+11:51:44 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&kingdom=Animalia 
+11:51:44 | True  | valid-req   | 200 | {"usageKey":5219404,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera%20leo&kingdom=Animalia 
+11:51:45 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?name=Panthera%20leo&kingdom=Animalia 
+11:51:45 | True  | valid-req   | 200 | [{"key":0,"nameKey":130332213,... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&kingdom=Animalia 
+11:51:46 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/statistics?name=Panthera%20leo&kingdom=Animalia 
+11:51:46 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species&name=Panthera%20leo&kingdom=Animalia 
+11:51:47 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2480444&name=Panthera%20leo&kingdom=Animalia 
+11:51:48 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/name_usage?name=Quercus&name=Panthera%20leo&kingdom=Animalia 
+11:51:48 | False | status-code | 404 | {"timestamp":"2023-11-23T10:51... | https://api.gbif.org/v1/11?name=Panthera%20leo&kingdom=Animalia 
+11:52:17 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&limit=10 
+11:52:17 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&offset=0 
+11:52:18 | True  | valid-req   | 200 | [{"key":9597309,"nameKey":1671... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&q=Panthera 
+11:52:18 | True  | valid-req   | 200 | [{"key":240,"nameKey":3597168,... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&rank=order 
+11:52:19 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&kingdom=Animalia 
+11:52:20 | True  | valid-req   | 200 | []                                | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7 
+11:52:20 | True  | valid-req   | 200 | [{"key":1000427,"nameKey":5203... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&highertaxonKey=1 
+11:52:21 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&nameType=SCIENTIFIC 
+11:52:22 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&nameUsage=ACCEPTED 
+11:52:22 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&nameUsageID=123456 
+11:52:23 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo 
+11:52:23 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&country=United+States 
+11:52:24 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&code=NY 
+11:52:24 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&type=Herbarium 
+11:52:25 | False | status-code | 400 | Invalid UUID for contact: John... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&contact=John+Smith 
+11:52:25 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&identifier=123456 
+11:52:26 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&start=2020-01-01 
+11:52:26 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&end=2020-12-31 
+11:52:27 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&limit=100 
+11:52:27 | True  | valid-req   | 200 | {"offset":50,"limit":20,"endOf... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&offset=50 
+11:52:28 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&q=Panthera+tigris 
+11:52:28 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Homo+sapiens 
+11:52:29 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?rank=species 
+11:52:29 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7 
+11:52:30 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?limit=100 
+11:52:30 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?offset=50 
+11:52:31 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?year=2022 
+11:52:31 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?kingdom=Animalia 
+11:52:32 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?country=United+Kingdom 
+11:52:32 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?mediaType=StillImage 
+11:52:33 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?issue=ZERO_COORDINATE 
+12:03:37 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:04:05 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/search?name=Panthera%20leo&kingdom=Animalia 
+12:04:06 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/classification?name=Panthera%20leo&kingdom=Animalia 
+12:04:06 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/suggest?name=Panthera%20leo&kingdom=Animalia 
+12:04:07 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/lookup?name=Panthera%20leo&kingdom=Animalia 
+12:04:07 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/usage?name=Panthera%20leo&kingdom=Animalia 
+12:04:08 | False | status-code | 400 | For input string: "search"        | https://api.gbif.org/v1/species/search/name?name=Panthera%20leo&kingdom=Animalia 
+12:04:08 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/key?name=Panthera%20leo&kingdom=Animalia 
+12:04:09 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/dataset?name=Panthera%20leo&kingdom=Animalia 
+12:04:09 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/parent?name=Panthera%20leo&kingdom=Animalia 
+12:04:10 | False | status-code | 400 | For input string: "search"        | https://api.gbif.org/v1/species/search/children?name=Panthera%20leo&kingdom=Animalia 
+12:04:10 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/classification?name=Panthera%20leo&name=Panthera%20leo&kingdom=Animalia 
+12:04:11 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/80?name=Panthera%20leo&kingdom=Animalia 
+12:04:11 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera%20leo&kingdom=Animalia&rank 
+12:04:12 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?name=Panthera%20leo&kingdom=Animalia 
+12:04:13 | True  | valid-req   | 200 | [{"key":0,"nameKey":130332213,... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&kingdom=Animalia 
+12:04:13 | False | status-code | 400 | For input string: "autocomplet... | https://api.gbif.org/v1/species/autocomplete?name=Panthera%20leo&kingdom=Animalia 
+12:04:14 | False | status-code | 400 | For input string: "metrics"       | https://api.gbif.org/v1/species/metrics?name=Panthera%20leo&kingdom=Animalia 
+12:04:14 | False | status-code | 400 | For input string: "name"          | https://api.gbif.org/v1/species/name?name=Panthera%20leo&kingdom=Animalia 
+12:04:15 | False | status-code | 400 | For input string: "key"           | https://api.gbif.org/v1/species/key?name=Panthera%20leo&kingdom=Animalia 
+12:04:15 | False | status-code | 400 | For input string: "parent"        | https://api.gbif.org/v1/species/parent?name=Panthera%20leo&kingdom=Animalia 
+12:04:16 | False | status-code | 400 | For input string: "children"      | https://api.gbif.org/v1/species/children?name=Panthera%20leo&kingdom=Animalia 
+12:04:16 | False | status-code | 400 | For input string: "synonyms"      | https://api.gbif.org/v1/species/synonyms?name=Panthera%20leo&kingdom=Animalia 
+12:04:17 | False | status-code | 400 | For input string: "vernacularN... | https://api.gbif.org/v1/species/vernacularNames?name=Panthera%20leo&kingdom=Animalia 
+12:04:18 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:04:18 | True  | valid-req   | 200 | {"key":70,"nubKey":70,"nameKey... | https://api.gbif.org/v1/species/70?name=Panthera%20leo&kingdom=Animalia 
+12:04:19 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera%20leo&kingdom=Animalia 
+12:04:20 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?name=Panthera%20leo&kingdom=Animalia 
+12:04:21 | False | status-code | 404 | {"timestamp":"2023-11-23T11:04... | https://api.gbif.org/v1/name_usage?name=Panthera%20leo&kingdom=Animalia 
+12:04:21 | True  | valid-req   | 200 | {"usageKey":5219404,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera%20leo&kingdom=Animalia 
+12:04:22 | False | status-code | 404 | {"timestamp":"2023-11-23T11:04... | https://api.gbif.org/v1/taxonomy?name=Panthera%20leo&kingdom=Animalia 
+12:04:23 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/name?name=Panthera%20leo&kingdom=Animalia 
+12:04:24 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?name=Panthera%20leo&kingdom=Animalia 
+12:04:24 | True  | valid-req   | 200 | [{"key":0,"nameKey":130332213,... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&kingdom=Animalia 
+12:04:25 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/dataset?name=Panthera%20leo&kingdom=Animalia 
+12:04:26 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/usage?name=Panthera%20leo&kingdom=Animalia 
+12:04:27 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species&name=Panthera%20leo&kingdom=Animalia 
+12:04:27 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?limit=10&name=Panthera%20leo&kingdom=Animalia 
+12:04:28 | False | status-code | 404 | {"timestamp":"2023-11-23T11:04... | https://api.gbif.org/v1/name_usage?name=Panthera%20leo&name=Panthera%20leo&kingdom=Animalia 
+12:04:29 | False | status-code | 404 | {"timestamp":"2023-11-23T11:04... | https://api.gbif.org/v1/76?name=Panthera%20leo&kingdom=Animalia 
+12:04:57 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&kingdom=Animalia&country=United+Kingdom 
+12:04:58 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&kingdom=Animalia&state=California 
+12:04:59 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:04:59 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&kingdom=Animalia&code=US 
+12:05:00 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&kingdom=Animalia&collectionCode=BMNH 
+12:05:00 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&kingdom=Animalia&institutionCode=NHM 
+12:05:01 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&kingdom=Animalia&catalogNumber=12345 
+12:05:02 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&kingdom=Animalia&recordedBy=John+Smith 
+12:05:03 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&kingdom=Animalia&year=2022 
+12:05:04 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&kingdom=Animalia&basisOfRecord=Fossil 
+12:05:06 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset 
+12:05:07 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&limit=10 
+12:05:07 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&offset=0 
+12:05:08 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c 
+12:05:09 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&kingdomKey=1 
+12:05:10 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&phylumKey=1 
+12:05:11 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&classKey=358 
+12:05:12 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&orderKey=972 
+12:05:13 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&familyKey=69 
+12:05:14 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&genusKey=521 
+12:05:15 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&taxonKey=2435097 
+12:05:17 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishingCountry=US 
+12:05:18 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishingCountry=CA 
+12:05:19 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?type=CHECKLIST 
+12:05:21 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?type=OCCURRENCE 
+12:05:23 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/dataset?limit=100 
+12:05:25 | True  | valid-req   | 200 | {"offset":50,"limit":20,"endOf... | https://api.gbif.org/v1/dataset?offset=50 
+12:05:30 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?q=orchid 
+12:05:31 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?year=2020 
+12:05:33 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?basisOfRecord=FOSSIL_SPECIMEN 
+12:05:34 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?institutionCode=KUNHM 
+12:18:44 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:19:34 | False | status-code | 400 | Invalid UUID string: species      | https://api.gbif.org/v1/dataset/species?publishingCountry=US 
+12:19:34 | False | status-code | 400 | Invalid UUID string: occurrenc... | https://api.gbif.org/v1/dataset/occurrence?publishingCountry=US 
+12:19:35 | False | status-code | 400 | Invalid UUID string: checklist    | https://api.gbif.org/v1/dataset/checklist?publishingCountry=US 
+12:19:35 | False | status-code | 400 | Invalid UUID string: name         | https://api.gbif.org/v1/dataset/name?publishingCountry=US 
+12:19:35 | False | status-code | 400 | Invalid UUID string: descripti... | https://api.gbif.org/v1/dataset/description?publishingCountry=US 
+12:19:36 | False | status-code | 400 | Invalid UUID string: citation     | https://api.gbif.org/v1/dataset/citation?publishingCountry=US 
+12:19:36 | False | status-code | 400 | Invalid UUID string: metadata     | https://api.gbif.org/v1/dataset/metadata?publishingCountry=US 
+12:19:37 | False | status-code | 400 | Invalid UUID string: metrics      | https://api.gbif.org/v1/dataset/metrics?publishingCountry=US 
+12:19:38 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset/search?publishingCountry=US 
+12:19:38 | False | status-code | 400 | Invalid UUID string: networks     | https://api.gbif.org/v1/dataset/networks?publishingCountry=US 
+12:19:38 | False | status-code | 400 | Invalid UUID string: species      | https://api.gbif.org/v1/dataset/species?limit=100&publishingCountry=US 
+12:19:39 | False | status-code | 400 | Invalid UUID string: occurrenc... | https://api.gbif.org/v1/dataset/occurrence?limit=10&publishingCountry=US 
+12:19:39 | False | status-code | 400 | Invalid UUID string: checklist    | https://api.gbif.org/v1/dataset/checklist?datasetKey=5d71127a-2aef-4dab-8c29-61c2bf1b1f2d&publishingCountry=US 
+12:19:40 | False | status-code | 400 | Invalid UUID string: 15           | https://api.gbif.org/v1/dataset/15?publishingCountry=US 
+12:19:40 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera%20leo&kingdom=Animalia 
+12:19:41 | False | status-code | 404 | {"timestamp":"2023-11-23T11:19... | https://api.gbif.org/v1/grscicoll/institutions?name=Panthera%20leo&start=2020-01-01 
+12:19:42 | False | status-code | 404 | {"timestamp":"2023-11-23T11:19... | https://api.gbif.org/v1/grscicoll/collections?name=Panthera%20leo&start=2020-01-01 
+12:19:42 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?name=Panthera%20leo&start=2020-01-01 
+12:19:43 | False | status-code | 404 | {"timestamp":"2023-11-23T11:19... | https://api.gbif.org/v1/grscicoll/contact?name=Panthera%20leo&start=2020-01-01 
+12:19:43 | False | status-code | 404 | {"timestamp":"2023-11-23T11:19... | https://api.gbif.org/v1/grscicoll/stats?name=Panthera%20leo&start=2020-01-01 
+12:19:43 | False | status-code | 404 | {"timestamp":"2023-11-23T11:19... | https://api.gbif.org/v1/grscicoll/suggestions?name=Panthera%20leo&start=2020-01-01 
+12:19:44 | False | status-code | 404 | {"timestamp":"2023-11-23T11:19... | https://api.gbif.org/v1/grscicoll/publishing-orgs?name=Panthera%20leo&start=2020-01-01 
+12:19:44 | False | status-code | 404 | {"timestamp":"2023-11-23T11:19... | https://api.gbif.org/v1/grscicoll/contacts?name=Panthera%20leo&start=2020-01-01 
+12:19:45 | False | status-code | 404 | {"timestamp":"2023-11-23T11:19... | https://api.gbif.org/v1/grscicoll/grscicoll?name=Panthera%20leo&start=2020-01-01 
+12:19:45 | False | status-code | 404 | {"timestamp":"2023-11-23T11:19... | https://api.gbif.org/v1/grscicoll/networks?name=Panthera%20leo&start=2020-01-01 
+12:19:46 | False | status-code | 404 | {"timestamp":"2023-11-23T11:19... | https://api.gbif.org/v1/grscicoll/institutions?country=US&name=Panthera%20leo&start=2020-01-01 
+12:19:46 | False | status-code | 404 | {"timestamp":"2023-11-23T11:19... | https://api.gbif.org/v1/grscicoll/collections?country=US&name=Panthera%20leo&start=2020-01-01 
+12:19:47 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?institutionCode=NYBG&name=Panthera%20leo&start=2020-01-01 
+12:19:47 | False | status-code | 404 | {"timestamp":"2023-11-23T11:19... | https://api.gbif.org/v1/grscicoll/14?name=Panthera%20leo&start=2020-01-01 
+12:19:48 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?basisOfRecord=FOSSIL_SPECIMEN 
+12:19:49 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?basisOfRecord=FOSSIL_SPECIMEN 
+12:19:50 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?basisOfRecord=FOSSIL_SPECIMEN 
+12:19:51 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?basisOfRecord=FOSSIL_SPECIMEN 
+12:19:51 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?basisOfRecord=FOSSIL_SPECIMEN 
+12:19:52 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?basisOfRecord=FOSSIL_SPECIMEN 
+12:19:53 | False | status-code | 404 | {"timestamp":"2023-11-23T11:19... | https://api.gbif.org/v1/grscicoll?basisOfRecord=FOSSIL_SPECIMEN 
+12:19:54 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?basisOfRecord=FOSSIL_SPECIMEN 
+12:19:55 | False | status-code | 404 | {"timestamp":"2023-11-23T11:19... | https://api.gbif.org/v1/grscicoll/person?basisOfRecord=FOSSIL_SPECIMEN 
+12:19:55 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?basisOfRecord=FOSSIL_SPECIMEN 
+12:19:56 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=class&basisOfRecord=FOSSIL_SPECIMEN 
+12:19:57 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=123456&basisOfRecord=FOSSIL_SPECIMEN 
+12:19:58 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishingCountry=US&basisOfRecord=FOSSIL_SPECIMEN 
+12:19:58 | False | status-code | 404 | {"timestamp":"2023-11-23T11:19... | https://api.gbif.org/v1/55?basisOfRecord=FOSSIL_SPECIMEN 
+12:20:44 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?basisOfRecord=FOSSIL_SPECIMEN&institutionCode=NHM 
+12:20:45 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?basisOfRecord=FOSSIL_SPECIMEN&catalogNumber=12345 
+12:20:46 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?basisOfRecord=FOSSIL_SPECIMEN&country=United+Kingdom 
+12:20:47 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?basisOfRecord=FOSSIL_SPECIMEN&collector=John+Smith 
+12:20:48 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?basisOfRecord=FOSSIL_SPECIMEN&year=2005 
+12:20:49 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?basisOfRecord=FOSSIL_SPECIMEN&family=Asteraceae 
+12:20:49 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?basisOfRecord=FOSSIL_SPECIMEN&kingdom=Animalia 
+12:20:50 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?basisOfRecord=FOSSIL_SPECIMEN&genus=Panthera 
+12:20:51 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?basisOfRecord=FOSSIL_SPECIMEN&datasetKey=7ce8aef0-9e92-11dd-8738-b8a03c50a862 
+12:20:52 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?basisOfRecord=FOSSIL_SPECIMEN&recordedBy=Jane+Doe 
+12:20:53 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection 
+12:20:53 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&limit=10 
+12:20:54 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&rank=species 
+12:20:54 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c 
+12:20:55 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&year=2020 
+12:20:55 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&locale=en 
+12:20:56 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&typeStatus=holotype 
+12:20:56 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&basisOfRecord=preserved_specimen 
+12:20:57 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&country=US 
+12:20:57 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&q=Panthera 
+12:20:58 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&rank=genus 
+12:20:58 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&higherTaxonKey=1 
+12:20:59 | True  | valid-req   | 200 | {"key":70,"nubKey":70,"nameKey... | https://api.gbif.org/v1/species/70?limit=100 
+12:20:59 | True  | valid-req   | 200 | {"key":70,"nubKey":70,"nameKey... | https://api.gbif.org/v1/species/70?offset=50 
+12:21:00 | True  | valid-req   | 200 | {"key":70,"nubKey":70,"nameKey... | https://api.gbif.org/v1/species/70?rank=SPECIES 
+12:21:00 | True  | valid-req   | 200 | {"key":70,"nubKey":70,"nameKey... | https://api.gbif.org/v1/species/70?year=2000 
+12:21:01 | True  | valid-req   | 200 | {"key":70,"nubKey":70,"nameKey... | https://api.gbif.org/v1/species/70?taxonKey=12345 
+12:21:01 | True  | valid-req   | 200 | {"key":70,"nubKey":70,"nameKey... | https://api.gbif.org/v1/species/70?datasetKey=abcd-1234 
+12:21:02 | True  | valid-req   | 200 | {"key":70,"nubKey":70,"nameKey... | https://api.gbif.org/v1/species/70?q=plant 
+12:21:02 | True  | valid-req   | 200 | {"key":70,"nubKey":70,"nameKey... | https://api.gbif.org/v1/species/70?country=US 
+12:21:03 | True  | valid-req   | 200 | {"key":70,"nubKey":70,"nameKey... | https://api.gbif.org/v1/species/70?mediaType=IMAGE 
+12:21:03 | True  | valid-req   | 200 | {"key":70,"nubKey":70,"nameKey... | https://api.gbif.org/v1/species/70?nameType=SCIENTIFIC 
+12:27:56 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:29:00 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/classification?name=Panthera%20leo&kingdom=Animalia 
+12:29:01 | False | status-code | 400 | For input string: "search"        | https://api.gbif.org/v1/species/search/name?name=Panthera%20leo&kingdom=Animalia 
+12:29:01 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/vernacularName?name=Panthera%20leo&kingdom=Animalia 
+12:29:02 | False | status-code | 400 | For input string: "search"        | https://api.gbif.org/v1/species/search/media?name=Panthera%20leo&kingdom=Animalia 
+12:29:02 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/description?name=Panthera%20leo&kingdom=Animalia 
+12:29:02 | False | status-code | 400 | For input string: "search"        | https://api.gbif.org/v1/species/search/parents?name=Panthera%20leo&kingdom=Animalia 
+12:29:03 | False | status-code | 400 | For input string: "search"        | https://api.gbif.org/v1/species/search/children?name=Panthera%20leo&kingdom=Animalia 
+12:29:03 | False | status-code | 400 | For input string: "search"        | https://api.gbif.org/v1/species/search/synonyms?name=Panthera%20leo&kingdom=Animalia 
+12:29:04 | False | status-code | 400 | For input string: "search"        | https://api.gbif.org/v1/species/search/references?name=Panthera%20leo&kingdom=Animalia 
+12:29:04 | False | status-code | 400 | For input string: "search"        | https://api.gbif.org/v1/species/search/metrics?name=Panthera%20leo&kingdom=Animalia 
+12:29:05 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/classification?name=Panthera%20leo&name=Panthera%20leo&kingdom=Animalia 
+12:29:05 | False | status-code | 400 | For input string: "search"        | https://api.gbif.org/v1/species/search/name?q=Elephantidae&name=Panthera%20leo&kingdom=Animalia 
+12:29:06 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/vernacularName?name=dog&name=Panthera%20leo&kingdom=Animalia 
+12:29:06 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/48?name=Panthera%20leo&kingdom=Animalia 
+12:29:07 | False | status-code | 404 | {"timestamp":"2023-11-23T11:29... | https://api.gbif.org/v1/grscicoll?basisOfRecord=FOSSIL_SPECIMEN&year=2005 
+12:29:07 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:29:08 | True  | valid-req   | 200 | [{"key":9705453,"nameKey":8279... | https://api.gbif.org/v1/species/suggest?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:29:08 | False | status-code | 400 | For input string: "occurrence"    | https://api.gbif.org/v1/species/occurrence?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:29:09 | False | status-code | 400 | For input string: "name"          | https://api.gbif.org/v1/species/name?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:29:09 | False | status-code | 400 | For input string: "key"           | https://api.gbif.org/v1/species/key?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:29:10 | False | status-code | 400 | For input string: "common"        | https://api.gbif.org/v1/species/common?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:29:10 | False | status-code | 400 | For input string: "vernacularN... | https://api.gbif.org/v1/species/vernacularName?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:29:11 | False | status-code | 400 | For input string: "synonym"       | https://api.gbif.org/v1/species/synonym?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:29:11 | False | status-code | 400 | For input string: "parent"        | https://api.gbif.org/v1/species/parent?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:29:12 | False | status-code | 400 | For input string: "dataset"       | https://api.gbif.org/v1/species/dataset?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:29:12 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:29:13 | False | status-code | 400 | For input string: "occurrence"    | https://api.gbif.org/v1/species/occurrence?taxonKey=2481703&q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:29:13 | True  | valid-req   | 200 | {"key":39,"nubKey":39,"nameKey... | https://api.gbif.org/v1/species/39?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:29:14 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?year=2000 
+12:29:15 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?year=2000 
+12:29:16 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?year=2000 
+12:29:17 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?year=2000 
+12:29:18 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?year=2000 
+12:29:19 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000 
+12:29:19 | False | status-code | 404 | {"timestamp":"2023-11-23T11:29... | https://api.gbif.org/v1/grscicoll?year=2000 
+12:29:20 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?year=2000 
+12:29:21 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?year=2000 
+12:29:21 | False | status-code | 404 | {"timestamp":"2023-11-23T11:29... | https://api.gbif.org/v1/grscicoll/person?year=2000 
+12:29:22 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species&year=2000 
+12:29:23 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2481766&year=2000 
+12:29:29 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/dataset?limit=10&year=2000 
+12:29:29 | False | status-code | 404 | {"timestamp":"2023-11-23T11:29... | https://api.gbif.org/v1/48?year=2000 
+12:30:17 | True  | valid-req   | 200 | {"offset":0,"limit":50,"endOfR... | https://api.gbif.org/v1/organization?year=2000&limit=50 
+12:30:17 | True  | valid-req   | 200 | {"offset":10,"limit":20,"endOf... | https://api.gbif.org/v1/organization?year=2000&offset=10 
+12:30:18 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&q=taxonKey 
+12:30:19 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&publishingCountry=US 
+12:30:19 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&country=GB 
+12:30:20 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&datasetKey=1a2b3c4d 
+12:30:21 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&tag=threatened 
+12:30:22 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&type=RESEARCH 
+12:30:23 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&publishingOrgKey=xyz123 
+12:30:23 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&basisOfRecord=OBSERVATION 
+12:30:24 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset/search 
+12:30:25 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&limit=10 
+12:30:25 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&offset=0 
+12:30:26 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&rank=SPECIES 
+12:30:27 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c 
+12:30:27 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&country=US 
+12:30:28 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&year=2022 
+12:30:29 | False | status-code | 400 | Cannot parse ACCEPTED into a k... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&issue=ACCEPTED 
+12:30:29 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&rank=KINGDOM 
+12:30:30 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&taxonKey=2481410 
+12:30:31 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&nameType=SCIENTIFIC 
+12:30:31 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&language=en 
+12:30:37 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishing_country=US 
+12:30:38 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishing_country=GB 
+12:30:39 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishing_country=BR 
+12:30:40 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishing_country=AU 
+12:30:41 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishing_country=CA 
+12:30:42 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishing_country=DE 
+12:30:43 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishing_country=FR 
+12:30:44 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishing_country=IT 
+12:30:45 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishing_country=ES 
+12:30:46 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishing_country=JP 
+12:35:19 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:35:49 | False | status-code | 400 | Invalid UUID string: route1       | https://api.gbif.org/v1/grscicoll/institution/route1?name=Panthera%20leo&kingdom=Animalia&collectionCode=BMNH 
+12:35:49 | False | status-code | 400 | Invalid UUID string: route2       | https://api.gbif.org/v1/grscicoll/institution/route2?name=Panthera%20leo&kingdom=Animalia&collectionCode=BMNH 
+12:35:49 | False | status-code | 400 | Invalid UUID string: route3       | https://api.gbif.org/v1/grscicoll/institution/route3?name=Panthera%20leo&kingdom=Animalia&collectionCode=BMNH 
+12:35:50 | False | status-code | 400 | Invalid UUID string: route4       | https://api.gbif.org/v1/grscicoll/institution/route4?name=Panthera%20leo&kingdom=Animalia&collectionCode=BMNH 
+12:35:50 | False | status-code | 400 | Invalid UUID string: route5       | https://api.gbif.org/v1/grscicoll/institution/route5?name=Panthera%20leo&kingdom=Animalia&collectionCode=BMNH 
+12:35:51 | False | status-code | 400 | Invalid UUID string: route6       | https://api.gbif.org/v1/grscicoll/institution/route6?name=Panthera%20leo&kingdom=Animalia&collectionCode=BMNH 
+12:35:51 | False | status-code | 400 | Invalid UUID string: route7       | https://api.gbif.org/v1/grscicoll/institution/route7?name=Panthera%20leo&kingdom=Animalia&collectionCode=BMNH 
+12:35:52 | False | status-code | 400 | Invalid UUID string: route8       | https://api.gbif.org/v1/grscicoll/institution/route8?name=Panthera%20leo&kingdom=Animalia&collectionCode=BMNH 
+12:35:52 | False | status-code | 400 | Invalid UUID string: route9       | https://api.gbif.org/v1/grscicoll/institution/route9?name=Panthera%20leo&kingdom=Animalia&collectionCode=BMNH 
+12:35:53 | False | status-code | 400 | Invalid UUID string: route10      | https://api.gbif.org/v1/grscicoll/institution/route10?name=Panthera%20leo&kingdom=Animalia&collectionCode=BMNH 
+12:35:53 | False | status-code | 400 | Invalid UUID string: route1       | https://api.gbif.org/v1/grscicoll/institution/route1?limit=10&name=Panthera%20leo&kingdom=Animalia&collectionCode=BMNH 
+12:35:53 | False | status-code | 400 | Invalid UUID string: route2       | https://api.gbif.org/v1/grscicoll/institution/route2?limit=10&name=Panthera%20leo&kingdom=Animalia&collectionCode=BMNH 
+12:35:54 | False | status-code | 400 | Invalid UUID string: route3       | https://api.gbif.org/v1/grscicoll/institution/route3?limit=10&name=Panthera%20leo&kingdom=Animalia&collectionCode=BMNH 
+12:35:54 | False | status-code | 400 | Invalid UUID string: 54           | https://api.gbif.org/v1/grscicoll/institution/54?name=Panthera%20leo&kingdom=Animalia&collectionCode=BMNH 
+12:35:55 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera%20leo&rank=species&nameUsage=ACCEPTED 
+12:35:55 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&start=2020-01-01 
+12:35:56 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?name=Panthera%20leo&start=2020-01-01 
+12:35:57 | False | status-code | 404 | {"timestamp":"2023-11-23T11:35... | https://api.gbif.org/v1/grscicoll/person?name=Panthera%20leo&start=2020-01-01 
+12:35:57 | False | status-code | 404 | {"timestamp":"2023-11-23T11:35... | https://api.gbif.org/v1/grscicoll/contact?name=Panthera%20leo&start=2020-01-01 
+12:35:58 | False | status-code | 404 | {"timestamp":"2023-11-23T11:35... | https://api.gbif.org/v1/grscicoll/grscicollmatch?name=Panthera%20leo&start=2020-01-01 
+12:35:58 | False | status-code | 404 | {"timestamp":"2023-11-23T11:35... | https://api.gbif.org/v1/grscicoll/grscicollsummary?name=Panthera%20leo&start=2020-01-01 
+12:35:58 | False | status-code | 404 | {"timestamp":"2023-11-23T11:35... | https://api.gbif.org/v1/grscicoll/grscicollsearch?name=Panthera%20leo&start=2020-01-01 
+12:35:59 | False | status-code | 404 | {"timestamp":"2023-11-23T11:35... | https://api.gbif.org/v1/grscicoll/grscicollstats?name=Panthera%20leo&start=2020-01-01 
+12:36:00 | False | status-code | 404 | {"timestamp":"2023-11-23T11:36... | https://api.gbif.org/v1/grscicoll/grscicolltransfer?name=Panthera%20leo&start=2020-01-01 
+12:36:00 | False | status-code | 404 | {"timestamp":"2023-11-23T11:36... | https://api.gbif.org/v1/grscicoll/grscicollmetasync?name=Panthera%20leo&start=2020-01-01 
+12:36:01 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?country=United%20States&name=Panthera%20leo&start=2020-01-01 
+12:36:01 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?country=US&name=Panthera%20leo&start=2020-01-01 
+12:36:02 | False | status-code | 404 | {"timestamp":"2023-11-23T11:36... | https://api.gbif.org/v1/grscicoll/person?identifier=123456&name=Panthera%20leo&start=2020-01-01 
+12:36:02 | False | status-code | 404 | {"timestamp":"2023-11-23T11:36... | https://api.gbif.org/v1/grscicoll/91?name=Panthera%20leo&start=2020-01-01 
+12:36:02 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:36:03 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:36:04 | False | status-code | 404 | {"timestamp":"2023-11-23T11:36... | https://api.gbif.org/v1/name?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:36:08 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:36:09 | False | status-code | 404 | {"timestamp":"2023-11-23T11:36... | https://api.gbif.org/v1/search?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:36:09 | False | status-code | 404 | {"timestamp":"2023-11-23T11:36... | https://api.gbif.org/v1/taxonomy?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:36:10 | False | status-code | 404 | {"timestamp":"2023-11-23T11:36... | https://api.gbif.org/v1/grscicoll?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:36:10 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:36:11 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:36:11 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:36:12 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species&q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:36:12 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2488022&q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:36:13 | False | status-code | 404 | {"timestamp":"2023-11-23T11:36... | https://api.gbif.org/v1/name?q=species&q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:36:13 | False | status-code | 404 | {"timestamp":"2023-11-23T11:36... | https://api.gbif.org/v1/23?q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:36:40 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&country=US&limit=10 
+12:36:40 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&country=US&offset=20 
+12:36:41 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&country=US&rank=species 
+12:36:41 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&country=US&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7 
+12:36:42 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&country=US&year=2020 
+12:36:42 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&country=US&issue=holotype 
+12:36:43 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&country=US&mediaType=StillImage 
+12:36:43 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&country=US&isExtinct=false 
+12:36:44 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&country=US&isMarine=true 
+12:36:44 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&country=US&higherTaxonKey=6 
+12:36:45 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?name=Panthera%20leo&kingdom=Animalia&country=US&rank=genus 
+12:36:45 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset/search 
+12:36:46 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&limit=100 
+12:36:47 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&offset=0 
+12:36:48 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&rank=species 
+12:36:48 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&rank=genus 
+12:36:49 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&rank=family 
+12:36:50 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&country=US 
+12:36:50 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:36:51 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&nameType=SCIENTIFIC 
+12:36:52 | False | status-code | 400 | Cannot parse CANONICAL into a ... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&nameType=CANONICAL 
+12:36:52 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:36:58 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?q=plantae 
+12:36:59 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?country=US 
+12:37:01 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/dataset?limit=100 
+12:37:02 | True  | valid-req   | 200 | {"offset":50,"limit":20,"endOf... | https://api.gbif.org/v1/dataset?offset=50 
+12:37:03 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?year=2022 
+12:37:04 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?taxonKey=12345 
+12:37:05 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publisherKey=abcdefg 
+12:37:06 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?institutionCode=NYBG 
+12:37:07 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?basisOfRecord=FOSSIL_SPECIMEN 
+12:37:08 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?mediaType=StillImage 
+12:40:26 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:41:10 | False | status-code | 400 | For input string: "search"        | https://api.gbif.org/v1/species/search/name?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:11 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/taxonKey?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:11 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/kingdom?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:12 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/phylum?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:12 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/class?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:12 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/order?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:13 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/family?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:13 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/genus?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:14 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/datasetKey?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:14 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/issue?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:15 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/rank?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:15 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/limit?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:16 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/offset?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:16 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/sort?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:17 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/locale?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:17 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/country?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:18 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/continent?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:18 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/mediaType?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:18 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/hasCoordinate?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:19 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/hasGeospatialIssue?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:19 | False | status-code | 400 | For input string: "search"        | https://api.gbif.org/v1/species/search/name?q=plant&q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:20 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/taxonKey?scientificName=Panthera%20leo&q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:20 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/kingdom?name=animalia&q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:21 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/84?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:41:21 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/v1?country=US 
+12:41:22 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?year=2000 
+12:41:22 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?year=2000 
+12:41:23 | False | status-code | 404 | {"timestamp":"2023-11-23T11:41... | https://api.gbif.org/v1/grscicoll?year=2000 
+12:41:24 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?year=2000 
+12:41:25 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?year=2000 
+12:41:25 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000 
+12:41:26 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?year=2000 
+12:41:27 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/node?year=2000 
+12:41:27 | False | status-code | 403 | Access is denied                  | https://api.gbif.org/v1/occurrence/download?year=2000 
+12:41:28 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?q=Primates&year=2000 
+12:41:29 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2487926&year=2000 
+12:41:29 | False | status-code | 404 | {"timestamp":"2023-11-23T11:41... | https://api.gbif.org/v1/grscicoll?institutionCode=NYBG&year=2000 
+12:41:30 | False | status-code | 404 | {"timestamp":"2023-11-23T11:41... | https://api.gbif.org/v1/35?year=2000 
+12:41:30 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera%20leo&kingdom=Animalia 
+12:41:31 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?name=Panthera%20leo&kingdom=Animalia 
+12:41:31 | False | status-code | 404 | {"timestamp":"2023-11-23T11:41... | https://api.gbif.org/v1/name_suggest?name=Panthera%20leo&kingdom=Animalia 
+12:41:32 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?name=Panthera%20leo&kingdom=Animalia 
+12:41:33 | False | status-code | 404 | {"timestamp":"2023-11-23T11:41... | https://api.gbif.org/v1/search?name=Panthera%20leo&kingdom=Animalia 
+12:41:33 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&kingdom=Animalia 
+12:41:34 | True  | valid-req   | 200 | {"usageKey":5219404,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera%20leo&kingdom=Animalia 
+12:41:35 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?name=Panthera%20leo&kingdom=Animalia 
+12:41:35 | False | status-code | 400 | For input string: "autocomplet... | https://api.gbif.org/v1/species/autocomplete?name=Panthera%20leo&kingdom=Animalia 
+12:41:36 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/match/name?name=Panthera%20leo&kingdom=Animalia 
+12:41:36 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species?limit=10&name=Panthera%20leo&kingdom=Animalia 
+12:41:37 | False | status-code | 404 | {"timestamp":"2023-11-23T11:41... | https://api.gbif.org/v1/name_suggest?q=genus:Panthera&name=Panthera%20leo&kingdom=Animalia 
+12:41:37 | False | status-code | 404 | {"timestamp":"2023-11-23T11:41... | https://api.gbif.org/v1/99?name=Panthera%20leo&kingdom=Animalia 
+12:42:06 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/network?basisOfRecord=FOSSIL_SPECIMEN&limit=100 
+12:42:07 | True  | valid-req   | 200 | {"offset":10,"limit":20,"endOf... | https://api.gbif.org/v1/network?basisOfRecord=FOSSIL_SPECIMEN&offset=10 
+12:42:07 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?basisOfRecord=FOSSIL_SPECIMEN&country=US 
+12:42:08 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?basisOfRecord=FOSSIL_SPECIMEN&year=2020 
+12:42:09 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?basisOfRecord=FOSSIL_SPECIMEN&kingdom=Plantae 
+12:42:09 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?basisOfRecord=FOSSIL_SPECIMEN&order=Carnivora 
+12:42:10 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?basisOfRecord=FOSSIL_SPECIMEN&family=Felidae 
+12:42:11 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?basisOfRecord=FOSSIL_SPECIMEN&genus=Panthera 
+12:42:11 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?basisOfRecord=FOSSIL_SPECIMEN&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c 
+12:42:12 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?basisOfRecord=FOSSIL_SPECIMEN&taxonKey=2481696 
+12:42:13 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo 
+12:42:13 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&country=United+States 
+12:42:14 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&limit=100 
+12:42:15 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&rank=species 
+12:42:15 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&year=2020 
+12:42:16 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&datasetKey=d7dddbf4-2cf0-4f39-9b2a-bb099caae36c 
+12:42:17 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&mediaType=StillImage 
+12:42:18 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&hasCoordinate=true 
+12:42:18 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&kingdom=Animalia 
+12:42:19 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&taxonKey=212 
+12:42:20 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&locale=fr 
+12:42:20 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?institutionCode=ABC 
+12:42:21 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?collectionCode=DEF 
+12:42:21 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?country=USA 
+12:42:22 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?year=2021 
+12:42:22 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?basisOfRecord=Fossil 
+12:42:23 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?recordedBy=John 
+12:42:23 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?taxonKey=12345 
+12:42:24 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?catalogNumber=ABC123 
+12:42:24 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?decimalLatitude=51.5074 
+12:42:25 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?decimalLongitude=-0.1278 
+12:42:26 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:43:03 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/children?rank=species 
+12:43:03 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/synonyms?rank=species 
+12:43:04 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?rank=species 
+12:43:04 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/references?rank=species 
+12:43:04 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/media?rank=species 
+12:43:05 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/vernacularNames?rank=species 
+12:43:05 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?rank=species 
+12:43:06 | True  | valid-req   | 200 | {"key":3147151,"scientificName... | https://api.gbif.org/v1/species/45/name?rank=species 
+12:43:07 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/nameAccordingTo?rank=species 
+12:43:07 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/namePublishedIn?rank=species 
+12:43:08 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species 
+12:43:08 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/synonyms?limit=10&rank=species 
+12:43:09 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?language=en&rank=species 
+12:43:09 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/84?rank=species 
+12:43:10 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishingCountry=US 
+12:43:10 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?year=2000 
+12:43:11 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?year=2000 
+12:43:12 | False | status-code | 404 | {"timestamp":"2023-11-23T11:43... | https://api.gbif.org/v1/checklist?year=2000 
+12:43:12 | False | status-code | 404 | {"timestamp":"2023-11-23T11:43... | https://api.gbif.org/v1/reference?year=2000 
+12:43:13 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?year=2000 
+12:43:14 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?year=2000 
+12:43:15 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000 
+12:43:15 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?year=2000 
+12:43:16 | False | status-code | 404 | {"timestamp":"2023-11-23T11:43... | https://api.gbif.org/v1/grscicoll?year=2000 
+12:43:16 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?year=2000 
+12:43:17 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species?limit=10&year=2000 
+12:43:18 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2483045&year=2000 
+12:43:18 | False | status-code | 404 | {"timestamp":"2023-11-23T11:43... | https://api.gbif.org/v1/checklist?taxonKey=2488063&year=2000 
+12:43:19 | False | status-code | 404 | {"timestamp":"2023-11-23T11:43... | https://api.gbif.org/v1/40?year=2000 
+12:43:19 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera%20leo&rank=species&genusKey=521 
+12:43:20 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?name=Panthera%20leo&rank=species&genusKey=521 
+12:43:20 | False | status-code | 404 | {"timestamp":"2023-11-23T11:43... | https://api.gbif.org/v1/name_usage?name=Panthera%20leo&rank=species&genusKey=521 
+12:43:21 | True  | valid-req   | 200 | {"usageKey":5219404,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera%20leo&rank=species&genusKey=521 
+12:43:21 | True  | valid-req   | 200 | [{"key":1000003,"nameKey":1800... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&rank=species&genusKey=521 
+12:43:22 | False | status-code | 400 | For input string: "autocomplet... | https://api.gbif.org/v1/species/autocomplete?name=Panthera%20leo&rank=species&genusKey=521 
+12:43:23 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?name=Panthera%20leo&rank=species&genusKey=521 
+12:43:23 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&rank=species&genusKey=521 
+12:43:24 | True  | valid-req   | 200 | {"key":22,"nubKey":22,"nameKey... | https://api.gbif.org/v1/species/22?name=Panthera%20leo&rank=species&genusKey=521 
+12:43:24 | True  | valid-req   | 200 | {"key":2418430,"scientificName... | https://api.gbif.org/v1/species/97/name?name=Panthera%20leo&rank=species&genusKey=521 
+12:43:25 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?q=Primates&name=Panthera%20leo&rank=species&genusKey=521 
+12:43:26 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2486978&name=Panthera%20leo&rank=species&genusKey=521 
+12:43:26 | False | status-code | 404 | {"timestamp":"2023-11-23T11:43... | https://api.gbif.org/v1/name_usage?name=Panthera%20leo&name=Panthera%20leo&rank=species&genusKey=521 
+12:43:26 | False | status-code | 404 | {"timestamp":"2023-11-23T11:43... | https://api.gbif.org/v1/1?name=Panthera%20leo&rank=species&genusKey=521 
+12:43:44 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&nameStatus=potential_homonym 
+12:43:44 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&nameType=wellformed 
+12:43:45 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&taxonKey=123456 
+12:43:45 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&datasetKey=abc123 
+12:43:46 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&year=2020 
+12:43:46 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&country=US 
+12:43:47 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&kingdom=Animalia 
+12:43:47 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&class=Mammalia 
+12:43:48 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&order=Carnivora 
+12:43:48 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&family=Felidae 
+12:43:49 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo 
+12:43:50 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset 
+12:43:51 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?name=example 
+12:43:52 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?country=GB 
+12:43:52 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?type=non-profit 
+12:43:53 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?q=science 
+12:43:54 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?identifier=12345 
+12:43:54 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?machineTagNamespace=gbif 
+12:43:55 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?machineTagName=species 
+12:43:55 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?tag=important 
+12:43:56 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?identifierType=uuid 
+12:43:57 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?identifierType=doi 
+12:43:57 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:44:57 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/search?q=orchid&q=parus+major&name=Panthera%20leo 
+12:44:57 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/classification?q=orchid&q=parus+major&name=Panthera%20leo 
+12:44:58 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/suggest?q=orchid&q=parus+major&name=Panthera%20leo 
+12:44:58 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/suggestDataset?q=orchid&q=parus+major&name=Panthera%20leo 
+12:44:59 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/suggestDatasetTitle?q=orchid&q=parus+major&name=Panthera%20leo 
+12:44:59 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/suggestDatasetType?q=orchid&q=parus+major&name=Panthera%20leo 
+12:44:59 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/suggestInstitution?q=orchid&q=parus+major&name=Panthera%20leo 
+12:45:00 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/suggestInstitutionCode?q=orchid&q=parus+major&name=Panthera%20leo 
+12:45:00 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/suggestScientificName?q=orchid&q=parus+major&name=Panthera%20leo 
+12:45:01 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/suggestVernacularName?q=orchid&q=parus+major&name=Panthera%20leo 
+12:45:01 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/search?limit=10&q=orchid&q=parus+major&name=Panthera%20leo 
+12:45:02 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/classification?name=Homo+sapiens&q=orchid&q=parus+major&name=Panthera%20leo 
+12:45:02 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/suggest?q=elephant&q=orchid&q=parus+major&name=Panthera%20leo 
+12:45:03 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/search/68?q=orchid&q=parus+major&name=Panthera%20leo 
+12:45:03 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera%20leo&datasetKey=9d083c1d-1e29-4a20-aa86-33a27aff2a33 
+12:45:04 | False | status-code | 400 | Invalid UUID string: species      | https://api.gbif.org/v1/dataset/species?publishingCountry=US 
+12:45:04 | False | status-code | 400 | Invalid UUID string: occurrenc... | https://api.gbif.org/v1/dataset/occurrence?publishingCountry=US 
+12:45:04 | False | status-code | 400 | Invalid UUID string: metadata     | https://api.gbif.org/v1/dataset/metadata?publishingCountry=US 
+12:45:05 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset/search?publishingCountry=US 
+12:45:05 | False | status-code | 400 | Invalid UUID string: metrics      | https://api.gbif.org/v1/dataset/metrics?publishingCountry=US 
+12:45:06 | False | status-code | 400 | Invalid UUID string: network      | https://api.gbif.org/v1/dataset/network?publishingCountry=US 
+12:45:06 | False | status-code | 400 | Invalid UUID string: installat... | https://api.gbif.org/v1/dataset/installation?publishingCountry=US 
+12:45:07 | False | status-code | 400 | Invalid UUID string: organizat... | https://api.gbif.org/v1/dataset/organization?publishingCountry=US 
+12:45:07 | False | status-code | 400 | Invalid UUID string: project      | https://api.gbif.org/v1/dataset/project?publishingCountry=US 
+12:45:08 | False | status-code | 400 | Invalid UUID string: grscicoll    | https://api.gbif.org/v1/dataset/grscicoll?publishingCountry=US 
+12:45:08 | False | status-code | 400 | Invalid UUID string: species      | https://api.gbif.org/v1/dataset/species?rank=species&publishingCountry=US 
+12:45:09 | False | status-code | 400 | Invalid UUID string: occurrenc... | https://api.gbif.org/v1/dataset/occurrence?limit=100&publishingCountry=US 
+12:45:09 | False | status-code | 400 | Invalid UUID string: metadata     | https://api.gbif.org/v1/dataset/metadata?limit=10&publishingCountry=US 
+12:45:09 | False | status-code | 400 | Invalid UUID string: 82           | https://api.gbif.org/v1/dataset/82?publishingCountry=US 
+12:45:10 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?year=2000 
+12:45:11 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?year=2000 
+12:45:13 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?year=2000 
+12:45:13 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?year=2000 
+12:45:14 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?year=2000 
+12:45:15 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000 
+12:45:15 | False | status-code | 404 | {"timestamp":"2023-11-23T11:45... | https://api.gbif.org/v1/grscicoll?year=2000 
+12:45:16 | False | status-code | 404 | {"timestamp":"2023-11-23T11:45... | https://api.gbif.org/v1/registry?year=2000 
+12:45:16 | False | status-code | 404 | {"timestamp":"2023-11-23T11:45... | https://api.gbif.org/v1/search?year=2000 
+12:45:17 | True  | valid-req   | 200 | {"confidence":100,"note":"No n... | https://api.gbif.org/v1/species/match?year=2000 
+12:45:17 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species&year=2000 
+12:45:18 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2482362&year=2000 
+12:45:19 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/dataset?limit=10&year=2000 
+12:45:19 | False | status-code | 404 | {"timestamp":"2023-11-23T11:45... | https://api.gbif.org/v1/59?year=2000 
+12:45:49 | True  | valid-req   | 200 | {"offset":0,"limit":50,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?rank=species&limit=50 
+12:45:50 | True  | valid-req   | 200 | {"offset":10,"limit":20,"endOf... | https://api.gbif.org/v1/species/45/speciesProfiles?rank=species&offset=10 
+12:45:50 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?rank=species&locale=en 
+12:45:51 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?rank=species&year=2021 
+12:45:51 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?rank=species&kingdom=Animalia 
+12:45:52 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?rank=species&phylum=Chordata 
+12:45:52 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?rank=species&class=Mammalia 
+12:45:53 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?rank=species&order=Carnivora 
+12:45:53 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?rank=species&family=Felidae 
+12:45:54 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?rank=species&genus=Panthera 
+12:45:54 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/synonyms?limit=10 
+12:45:55 | True  | valid-req   | 200 | {"usageKey":5219404,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera%20leo&name_status=accepted 
+12:45:55 | True  | valid-req   | 200 | {"usageKey":5219404,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera%20leo&kingdom=Animalia 
+12:45:56 | True  | valid-req   | 200 | {"usageKey":5219404,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera%20leo&rank=species 
+12:45:56 | True  | valid-req   | 200 | {"usageKey":5219404,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera%20leo&higher_taxon_key=1 
+12:45:57 | True  | valid-req   | 200 | {"usageKey":5219404,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera%20leo&parent=Panthera 
+12:45:57 | True  | valid-req   | 200 | {"usageKey":5219404,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera%20leo&limit=10 
+12:45:58 | True  | valid-req   | 200 | {"usageKey":5219404,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera%20leo&offset=0 
+12:45:58 | True  | valid-req   | 200 | {"usageKey":5219404,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera%20leo&strict=true 
+12:45:59 | True  | valid-req   | 200 | {"usageKey":5219404,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera%20leo&year=2020 
+12:45:59 | True  | valid-req   | 200 | {"usageKey":5219404,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera%20leo&datasetKey=4fa7b334-ce0d-4e88-aaae-2e0c138d049e 
+12:46:00 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?locale=en 
+12:46:00 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?preferredLanguage=fr 
+12:46:01 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?fields=vernacularNames 
+12:46:01 | True  | valid-req   | 200 | {"offset":0,"limit":5,"endOfRe... | https://api.gbif.org/v1/species/45/descriptions?limit=5 
+12:46:02 | True  | valid-req   | 200 | {"offset":10,"limit":20,"endOf... | https://api.gbif.org/v1/species/45/descriptions?offset=10 
+12:46:02 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?sort=taxonomicStatus 
+12:46:03 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?q=plantae 
+12:46:03 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?rank=kingdom 
+12:46:04 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7 
+12:46:04 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?country=GB 
+12:46:05 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:46:55 | False | status-code | 400 | For input string: "mammalia"      | https://api.gbif.org/v1/species/mammalia?rank=species&year=2000 
+12:46:56 | False | status-code | 400 | For input string: "aves"          | https://api.gbif.org/v1/species/aves?rank=species&year=2000 
+12:46:56 | False | status-code | 400 | For input string: "reptilia"      | https://api.gbif.org/v1/species/reptilia?rank=species&year=2000 
+12:46:56 | False | status-code | 400 | For input string: "actinoptery... | https://api.gbif.org/v1/species/actinopterygii?rank=species&year=2000 
+12:46:57 | False | status-code | 400 | For input string: "insecta"       | https://api.gbif.org/v1/species/insecta?rank=species&year=2000 
+12:46:57 | False | status-code | 400 | For input string: "amphibia"      | https://api.gbif.org/v1/species/amphibia?rank=species&year=2000 
+12:46:58 | False | status-code | 400 | For input string: "mollusca"      | https://api.gbif.org/v1/species/mollusca?rank=species&year=2000 
+12:46:58 | False | status-code | 400 | For input string: "arachnida"     | https://api.gbif.org/v1/species/arachnida?rank=species&year=2000 
+12:46:59 | False | status-code | 400 | For input string: "annelida"      | https://api.gbif.org/v1/species/annelida?rank=species&year=2000 
+12:46:59 | False | status-code | 400 | For input string: "fungi"         | https://api.gbif.org/v1/species/fungi?rank=species&year=2000 
+12:47:00 | False | status-code | 400 | For input string: "mammalia"      | https://api.gbif.org/v1/species/mammalia?limit=10&rank=species&year=2000 
+12:47:00 | False | status-code | 400 | For input string: "aves"          | https://api.gbif.org/v1/species/aves?limit=10&rank=species&year=2000 
+12:47:00 | False | status-code | 400 | For input string: "reptilia"      | https://api.gbif.org/v1/species/reptilia?limit=10&rank=species&year=2000 
+12:47:01 | True  | valid-req   | 200 | {"key":84,"nubKey":84,"nameKey... | https://api.gbif.org/v1/species/84?rank=species&year=2000 
+12:47:02 | False | status-code | 404 | {"timestamp":"2023-11-23T11:47... | https://api.gbif.org/v1/grscicoll?name=Panthera%20leo&end=2020-12-31 
+12:47:02 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?name=Panthera%20leo&name_status=accepted 
+12:47:03 | True  | valid-req   | 200 | [{"key":0,"nameKey":130332213,... | https://api.gbif.org/v1/species/suggest?name=Panthera%20leo&name_status=accepted 
+12:47:03 | False | error-msg   | 200 | {"key":5219404,"canonical":"Pa... | https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&name_status=accepted 
+12:47:04 | False | status-code | 400 | For input string: "classificat... | https://api.gbif.org/v1/species/classification?name=Panthera%20leo&name_status=accepted 
+12:47:04 | False | status-code | 400 | For input string: "usage"         | https://api.gbif.org/v1/species/usage?name=Panthera%20leo&name_status=accepted 
+12:47:05 | False | status-code | 400 | For input string: "parent"        | https://api.gbif.org/v1/species/parent?name=Panthera%20leo&name_status=accepted 
+12:47:05 | False | status-code | 400 | For input string: "children"      | https://api.gbif.org/v1/species/children?name=Panthera%20leo&name_status=accepted 
+12:47:06 | False | status-code | 400 | For input string: "synonyms"      | https://api.gbif.org/v1/species/synonyms?name=Panthera%20leo&name_status=accepted 
+12:47:06 | False | status-code | 400 | For input string: "vernacularN... | https://api.gbif.org/v1/species/vernacularNames?name=Panthera%20leo&name_status=accepted 
+12:47:07 | False | status-code | 400 | For input string: "media"         | https://api.gbif.org/v1/species/media?name=Panthera%20leo&name_status=accepted 
+12:47:07 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=Genus%20equals%20Panthera&name=Panthera%20leo&name_status=accepted 
+12:47:08 | True  | valid-req   | 204 | < DATA>                           | https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&name=Panthera%20leo&name_status=accepted 
+12:47:08 | True  | valid-req   | 200 | {"key":9,"nubKey":9,"nameKey":... | https://api.gbif.org/v1/species/9?name=Panthera%20leo&name_status=accepted 
+12:47:09 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species&genus=Panthera 
+12:47:10 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?rank=species&genus=Panthera 
+12:47:10 | False | status-code | 404 | {"timestamp":"2023-11-23T11:47... | https://api.gbif.org/v1/name/usage?rank=species&genus=Panthera 
+12:47:11 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?rank=species&genus=Panthera 
+12:47:12 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?rank=species&genus=Panthera 
+12:47:12 | False | status-code | 404 | {"timestamp":"2023-11-23T11:47... | https://api.gbif.org/v1/grscicoll/holding?rank=species&genus=Panthera 
+12:47:13 | False | status-code | 404 | {"timestamp":"2023-11-23T11:47... | https://api.gbif.org/v1/grscicoll/person?rank=species&genus=Panthera 
+12:47:13 | False | status-code | 404 | {"timestamp":"2023-11-23T11:47... | https://api.gbif.org/v1/grscicoll/person/institution?rank=species&genus=Panthera 
+12:47:14 | False | status-code | 404 | {"timestamp":"2023-11-23T11:47... | https://api.gbif.org/v1/grscicoll/person/collection?rank=species&genus=Panthera 
+12:47:16 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?rank=species&genus=Panthera 
+12:47:17 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?q=Primates&rank=species&genus=Panthera 
+12:47:17 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?year=2020&rank=species&genus=Panthera 
+12:47:18 | False | status-code | 404 | {"timestamp":"2023-11-23T11:47... | https://api.gbif.org/v1/name/usage?name=Abies+alba&rank=species&genus=Panthera 
+12:47:18 | False | status-code | 404 | {"timestamp":"2023-11-23T11:47... | https://api.gbif.org/v1/59?rank=species&genus=Panthera 
+12:48:06 | True  | valid-req   | 200 | {"offset":0,"limit":5,"endOfRe... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&language=en&limit=5 
+12:48:07 | True  | valid-req   | 200 | {"offset":10,"limit":20,"endOf... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&language=en&offset=10 
+12:48:07 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&language=en&rank=species 
+12:48:08 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&language=en&rank=genus 
+12:48:09 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&language=en&rank=family 
+12:48:09 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&language=en&country=GB 
+12:48:10 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&language=en&year=2010 
+12:48:11 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&language=en&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7 
+12:48:11 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&language=en&mediaType=StillImage 
+12:48:12 | False | status-code | 400 | Cannot parse MISSING_COORDINAT... | https://api.gbif.org/v1/species/search?q=orchid&q=parus+major&name=Panthera%20leo&language=en&issue=MISSING_COORDINATE 
+12:48:13 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000 
+12:48:13 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?rank=species&taxonKey=12345 
+12:48:15 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?rank=species&country=GB 
+12:48:16 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?rank=species&year=2020 
+12:48:18 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?rank=species&basisOfRecord=PreservedSpecimen 
+12:48:18 | False | status-code | 400 | Invalid UUID string: abcd-1234    | https://api.gbif.org/v1/occurrence/search?rank=species&datasetKey=abcd-1234 
+12:48:19 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?rank=species&institutionCode=ABC 
+12:48:20 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?rank=species&catalogNumber=12345 
+12:48:21 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?rank=species&recordedBy=John+Doe 
+12:48:21 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?rank=species&decimalLatitude=51.5074 
+12:48:22 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/occurrence/search?rank=species&decimalLongitude=-0.1278 
+12:48:23 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?taxonKey=45 
+12:48:23 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?language=en 
+12:48:24 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?country=US 
+12:48:24 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?rank=species 
+12:48:25 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?datasetKey=7ddf754f-d193-4cc9-b351-99906754a03b 
+12:48:25 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?limit=10 
+12:48:26 | True  | valid-req   | 200 | {"offset":20,"limit":20,"endOf... | https://api.gbif.org/v1/species/45/speciesProfiles?offset=20 
+12:48:26 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?field=vernacularNames 
+12:48:27 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?mediaType=StillImage 
+12:48:27 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?isExtinct=true 
+12:48:28 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:49:09 | False | status-code | 400 | Invalid UUID string: species      | https://api.gbif.org/v1/node/species?year=2000 
+12:49:10 | False | status-code | 400 | Invalid UUID string: occurrenc... | https://api.gbif.org/v1/node/occurrence?year=2000 
+12:49:10 | False | status-code | 400 | Invalid UUID string: taxon        | https://api.gbif.org/v1/node/taxon?year=2000 
+12:49:11 | False | status-code | 400 | Invalid UUID string: reference    | https://api.gbif.org/v1/node/reference?year=2000 
+12:49:11 | False | status-code | 400 | Invalid UUID string: meta         | https://api.gbif.org/v1/node/meta?year=2000 
+12:49:11 | False | status-code | 400 | Invalid UUID string: dataset      | https://api.gbif.org/v1/node/dataset?year=2000 
+12:49:12 | False | status-code | 400 | Invalid UUID string: network      | https://api.gbif.org/v1/node/network?year=2000 
+12:49:12 | False | status-code | 400 | Invalid UUID string: installat... | https://api.gbif.org/v1/node/installation?year=2000 
+12:49:13 | False | status-code | 400 | Invalid UUID string: organizat... | https://api.gbif.org/v1/node/organization?year=2000 
+12:49:13 | False | status-code | 400 | Invalid UUID string: grscicoll    | https://api.gbif.org/v1/node/grscicoll?year=2000 
+12:49:14 | False | status-code | 400 | Invalid UUID string: species      | https://api.gbif.org/v1/node/species?rank=species&year=2000 
+12:49:14 | False | status-code | 400 | Invalid UUID string: occurrenc... | https://api.gbif.org/v1/node/occurrence?taxonKey=2481698&year=2000 
+12:49:14 | False | status-code | 400 | Invalid UUID string: taxon        | https://api.gbif.org/v1/node/taxon?rank=species&year=2000 
+12:49:15 | False | status-code | 400 | Invalid UUID string: 96           | https://api.gbif.org/v1/node/96?year=2000 
+12:49:15 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/v1?publishing_country=GB 
+12:49:16 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/children?taxonKey=45 
+12:49:16 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/classification?taxonKey=45 
+12:49:17 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/commonNames?taxonKey=45 
+12:49:17 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?taxonKey=45 
+12:49:18 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/distributions?taxonKey=45 
+12:49:18 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/elevations?taxonKey=45 
+12:49:19 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/images?taxonKey=45 
+12:49:19 | True  | valid-req   | 200 | {"key":3147151,"scientificName... | https://api.gbif.org/v1/species/45/name?taxonKey=45 
+12:49:20 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/parent?taxonKey=45 
+12:49:20 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/synonyms?taxonKey=45 
+12:49:21 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/classification?kingdom=Animalia&taxonKey=45 
+12:49:21 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/commonNames?locale=en&taxonKey=45 
+12:49:22 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/62?taxonKey=45 
+12:49:22 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?publishing_country=FR 
+12:49:23 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?publishing_country=FR 
+12:49:24 | False | status-code | 404 | {"timestamp":"2023-11-23T11:49... | https://api.gbif.org/v1/name?publishing_country=FR 
+12:49:24 | False | status-code | 403 | Access is denied                  | https://api.gbif.org/v1/occurrence/download?publishing_country=FR 
+12:49:25 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?publishing_country=FR 
+12:49:26 | True  | valid-req   | 200 | {"confidence":100,"note":"No n... | https://api.gbif.org/v1/species/match?publishing_country=FR 
+12:49:26 | True  | valid-req   | 200 | {"key":37,"nubKey":37,"nameKey... | https://api.gbif.org/v1/species/37?publishing_country=FR 
+12:49:27 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?publishing_country=FR 
+12:49:28 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishing_country=FR 
+12:49:28 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?publishing_country=FR 
+12:49:29 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species&publishing_country=FR 
+12:49:30 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=123456&publishing_country=FR 
+12:49:31 | False | status-code | 404 | {"timestamp":"2023-11-23T11:49... | https://api.gbif.org/v1/name?limit=10&publishing_country=FR 
+12:49:31 | False | status-code | 404 | {"timestamp":"2023-11-23T11:49... | https://api.gbif.org/v1/42?publishing_country=FR 
+12:49:58 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&family=Felidae&order=Carnivora 
+12:49:59 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&family=Felidae&class=Mammalia 
+12:50:00 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&family=Felidae&kingdom=Animalia 
+12:50:00 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&family=Felidae&year=2000 
+12:50:01 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&family=Felidae&country=United+Kingdom 
+12:50:01 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&family=Felidae&continent=Europe 
+12:50:02 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&family=Felidae&hasImage=true 
+12:50:02 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&family=Felidae&isMarine=true 
+12:50:03 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&family=Felidae&issue=ACCEPTED 
+12:50:03 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/children?limit=10&rank=species&family=Felidae&nameType=SCIENTIFIC 
+12:50:04 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?rank=species 
+12:50:04 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&country=US 
+12:50:05 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&datasetKey=2f5d0f71-7148-4ff9-823a-192f062b57d5 
+12:50:06 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&publishingOrg=6d408b12-4c2d-11d8-b4bc-b8a03c50a862 
+12:50:07 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&q=plantae 
+12:50:08 | True  | valid-req   | 200 | {"offset":0,"limit":50,"endOfR... | https://api.gbif.org/v1/organization?year=2000&limit=50 
+12:50:08 | True  | valid-req   | 200 | {"offset":100,"limit":20,"endO... | https://api.gbif.org/v1/organization?year=2000&offset=100 
+12:50:09 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&type=OCCURRENCE 
+12:50:10 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&basisOfRecord=PRESERVED_SPECIMEN 
+12:50:10 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&taxonKey=2488559 
+12:50:11 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?year=2000&year=2005 
+12:50:12 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/species/45/speciesProfiles?limit=100 
+12:50:12 | True  | valid-req   | 200 | {"offset":50,"limit":20,"endOf... | https://api.gbif.org/v1/species/45/speciesProfiles?offset=50 
+12:50:13 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?rank=species 
+12:50:13 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?nameType=SCIENTIFIC 
+12:50:14 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?language=en 
+12:50:14 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?isExtinct=true 
+12:50:15 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?isMarine=false 
+12:50:15 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?isFreshwater=true 
+12:50:16 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?habitat=terrestrial 
+12:50:16 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/speciesProfiles?year=2021 
+12:50:17 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:51:30 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/children/Aves?limit=10&rank=species&year=2020 
+12:51:31 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/children/Mammalia?limit=10&rank=species&year=2020 
+12:51:31 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/children/Insecta?limit=10&rank=species&year=2020 
+12:51:31 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/children/Reptilia?limit=10&rank=species&year=2020 
+12:51:32 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/children/Actinopterygii?limit=10&rank=species&year=2020 
+12:51:32 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/children/Amphibia?limit=10&rank=species&year=2020 
+12:51:33 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/children/Arachnida?limit=10&rank=species&year=2020 
+12:51:33 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/children/Fungi?limit=10&rank=species&year=2020 
+12:51:34 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/children/Mollusca?limit=10&rank=species&year=2020 
+12:51:34 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/children/Plantae?limit=10&rank=species&year=2020 
+12:51:35 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/children/Aves?limit=10&limit=10&rank=species&year=2020 
+12:51:35 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/children/Mammalia?limit=10&limit=10&rank=species&year=2020 
+12:51:36 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/children/Insecta?limit=10&limit=10&rank=species&year=2020 
+12:51:36 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/children/5?limit=10&rank=species&year=2020 
+12:51:37 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?rank=species&year=2020 
+12:51:37 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/classification?rank=species 
+12:51:38 | True  | valid-req   | 200 | {"key":3147151,"scientificName... | https://api.gbif.org/v1/species/45/name?rank=species 
+12:51:38 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/synonyms?rank=species 
+12:51:39 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?rank=species 
+12:51:39 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/media?rank=species 
+12:51:40 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/vernacularNames?rank=species 
+12:51:40 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/references?rank=species 
+12:51:41 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/nubKey?rank=species 
+12:51:41 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/parent?rank=species 
+12:51:42 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/children?rank=species 
+12:51:42 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/classification?rank=kingdom&rank=species 
+12:51:43 | True  | valid-req   | 200 | {"key":3147151,"scientificName... | https://api.gbif.org/v1/species/45/name?language=en&rank=species 
+12:51:43 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/species/45/synonyms?limit=10&rank=species 
+12:51:45 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/24?rank=species 
+12:51:45 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:51:46 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:51:47 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:51:48 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:51:48 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:51:49 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:51:50 | False | status-code | 404 | {"timestamp":"2023-11-23T11:51... | https://api.gbif.org/v1/metadata?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:51:50 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/collection?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:51:51 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/grscicoll/institution?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:51:51 | False | status-code | 404 | {"timestamp":"2023-11-23T11:51... | https://api.gbif.org/v1/grscicoll/person?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:51:52 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species&name=Panthera%20leo&kingdom=Animalia&city=London 
+12:51:52 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2481250&name=Panthera%20leo&kingdom=Animalia&city=London 
+12:51:56 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/dataset?limit=10&name=Panthera%20leo&kingdom=Animalia&city=London 
+12:51:57 | False | status-code | 404 | {"timestamp":"2023-11-23T11:51... | https://api.gbif.org/v1/80?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:52:55 | True  | valid-req   | 200 | {"offset":0,"limit":50,"endOfR... | https://api.gbif.org/v1/species/45/references?rank=species&limit=50 
+12:52:56 | True  | valid-req   | 200 | {"offset":10,"limit":20,"endOf... | https://api.gbif.org/v1/species/45/references?rank=species&offset=10 
+12:52:56 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/references?rank=species&order=asc 
+12:52:57 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/references?rank=species&locale=en 
+12:52:57 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/references?rank=species&datasetKey=abc123 
+12:52:58 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/references?rank=species&year=2020 
+12:52:58 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/references?rank=species&basisOfRecord=FOSSIL_SPECIMEN 
+12:52:59 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/references?rank=species&country=US 
+12:52:59 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/references?rank=species&taxonKey=12345 
+12:53:00 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/references?rank=species&sourceTaxonKey=67890 
+12:53:01 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?basisOfRecord=FOSSIL_SPECIMEN 
+12:53:01 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?country=US 
+12:53:02 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?publishingCountry=MX 
+12:53:02 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?basisOfRecord=FOSSIL_SPECIMEN 
+12:53:03 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?typeStatus=SYNTYPE 
+12:53:04 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?year=2000 
+12:53:04 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?q=orchid 
+12:53:05 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/installation?limit=100 
+12:53:06 | True  | valid-req   | 200 | {"offset":50,"limit":20,"endOf... | https://api.gbif.org/v1/installation?offset=50 
+12:53:06 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?order=ASC 
+12:53:07 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?rank=SPECIES 
+12:53:08 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?q=Cat 
+12:53:08 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?rank=species 
+12:53:09 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/species/search?limit=100 
+12:53:10 | True  | valid-req   | 200 | {"offset":50,"limit":20,"endOf... | https://api.gbif.org/v1/species/search?offset=50 
+12:53:11 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?year=2022 
+12:53:12 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?country=Germany 
+12:53:13 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?datasetKey=7a9e5f3c-4d7b-4eaf-9b9b-18ae4e1849ad 
+12:53:13 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?kingdom=Animalia 
+12:53:14 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?nameType=SCIENTIFIC 
+12:53:15 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/search?taxonKey=123456 
+12:53:17 | False | status-code | 404 | <!DOCTYPE html><html>  <head> ... | https://api.gbif.org/invalidRoute/?invalidParam=invalidValue 
+12:54:03 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/references/bibliography?rank=species&year=2020 
+12:54:04 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/references/citations?rank=species&year=2020 
+12:54:04 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/references/publications?rank=species&year=2020 
+12:54:05 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/references/references?rank=species&year=2020 
+12:54:05 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/references/literature?rank=species&year=2020 
+12:54:06 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/references/sources?rank=species&year=2020 
+12:54:06 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/references/papers?rank=species&year=2020 
+12:54:07 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/references/studies?rank=species&year=2020 
+12:54:07 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/references/articles?rank=species&year=2020 
+12:54:08 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/references/documents?rank=species&year=2020 
+12:54:08 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/references/bibliography?limit=10&rank=species&year=2020 
+12:54:08 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/references/citations?offset=10&limit=20&rank=species&year=2020 
+12:54:09 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/references/publications?limit=10&offset=20&rank=species&year=2020 
+12:54:09 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/species/45/references/1?rank=species&year=2020 
+12:54:10 | True  | valid-req   | 200 | {"key":45,"nubKey":45,"nameKey... | https://api.gbif.org/v1/species/45?country=GB 
+12:54:10 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:54:11 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:54:12 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:54:13 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:54:13 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:54:14 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:54:15 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/node?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:54:16 | False | status-code | 404 | {"timestamp":"2023-11-23T11:54... | https://api.gbif.org/v1/metadata?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:54:16 | False | status-code | 404 | {"timestamp":"2023-11-23T11:54... | https://api.gbif.org/v1/search?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:54:17 | True  | valid-req   | 200 | {"usageKey":5219404,"scientifi... | https://api.gbif.org/v1/species/match?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:54:17 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?name=Panthera%20leo&name=Panthera%20leo&kingdom=Animalia&city=London 
+12:54:18 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?limit=10&name=Panthera%20leo&kingdom=Animalia&city=London 
+12:54:19 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/dataset?limit=10&name=Panthera%20leo&kingdom=Animalia&city=London 
+12:54:19 | False | status-code | 404 | {"timestamp":"2023-11-23T11:54... | https://api.gbif.org/v1/67?name=Panthera%20leo&kingdom=Animalia&city=London 
+12:54:20 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?publishing_country=ES 
+12:54:20 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?publishing_country=ES 
+12:54:21 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset?publishing_country=ES 
+12:54:22 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/organization?publishing_country=ES 
+12:54:23 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/network?publishing_country=ES 
+12:54:24 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/installation?publishing_country=ES 
+12:54:24 | False | status-code | 404 | {"timestamp":"2023-11-23T11:54... | https://api.gbif.org/v1/grscicoll?publishing_country=ES 
+12:54:25 | False | status-code | 404 | {"timestamp":"2023-11-23T11:54... | https://api.gbif.org/v1/identifier?publishing_country=ES 
+12:54:25 | False | status-code | 404 | {"timestamp":"2023-11-23T11:54... | https://api.gbif.org/v1/metadata?publishing_country=ES 
+12:54:26 | False | status-code | 404 | {"timestamp":"2023-11-23T11:54... | https://api.gbif.org/v1/search?publishing_country=ES 
+12:54:26 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species?rank=species&publishing_country=ES 
+12:54:27 | False | status-code | 404 | < DATA>                           | https://api.gbif.org/v1/occurrence?taxonKey=2480358&publishing_country=ES 
+12:54:28 | True  | valid-req   | 200 | {"offset":0,"limit":10,"endOfR... | https://api.gbif.org/v1/dataset?limit=10&publishing_country=ES 
+12:54:28 | False | status-code | 404 | {"timestamp":"2023-11-23T11:54... | https://api.gbif.org/v1/74?publishing_country=ES 
+12:54:44 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&locale=en 
+12:54:44 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&language=eng 
+12:54:45 | True  | valid-req   | 200 | {"offset":0,"limit":100,"endOf... | https://api.gbif.org/v1/species/45/descriptions?datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&limit=100 
+12:54:45 | True  | valid-req   | 200 | {"offset":50,"limit":20,"endOf... | https://api.gbif.org/v1/species/45/descriptions?datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&offset=50 
+12:54:46 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&sort=created 
+12:54:46 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&sortDesc=true 
+12:54:47 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&q=plant 
+12:54:47 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&rank=species 
+12:54:48 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&year=2020 
+12:54:48 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/species/45/descriptions?datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7&publishingCountry=ES 
+12:54:49 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset/search 
+12:54:50 | True  | valid-req   | 200 | {"offset":0,"limit":20,"endOfR... | https://api.gbif.org/v1/dataset/search 
+12:54:50 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?institutionCode=ABC 
+12:54:51 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?collectionCode=XYZ 
+12:54:51 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?country=United+States 
+12:54:52 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?year=2021 
+12:54:52 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?basisOfRecord=PreservedSpecimen 
+12:54:53 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?catalogNumber=12345 
+12:54:53 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?recordedBy=John+Doe 
+12:54:54 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?genus=Acer 
+12:54:54 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?recordNumber=789 
+12:54:55 | True  | valid-req   | 200 | [{"type":"institution","key":"... | https://api.gbif.org/v1/grscicoll/search?identifiedBy=Jane+Smith 

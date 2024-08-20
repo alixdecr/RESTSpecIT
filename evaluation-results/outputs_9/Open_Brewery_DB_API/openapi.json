@@ -1,0 +1,1323 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Open Brewery DB API",
+        "description": "**API Description** - The Open Brewery DB API is a database API that provides information about breweries worldwide.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "",
+        "contact": {
+            "name": "Open Brewery DB API Contact",
+            "url": "",
+            "email": "info@openbrewerydb.org"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://api.openbrewerydb.org",
+            "description": "Production Server of the Open Brewery DB API.",
+            "x-base-routes": 0
+        }
+    ],
+    "externalDocs": {
+        "url": "https://www.openbrewerydb.org/documentation",
+        "description": "Find more about the Open Brewery DB API here:"
+    },
+    "paths": {
+        "/breweries": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "by_city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "san_diego": {
+                                "value": "san_diego"
+                            },
+                            "Portland": {
+                                "value": "Portland"
+                            },
+                            "los_angeles": {
+                                "value": "los_angeles"
+                            },
+                            "Los+Angeles": {
+                                "value": "Los+Angeles"
+                            },
+                            "portland": {
+                                "value": "portland"
+                            },
+                            "San+Francisco": {
+                                "value": "San+Francisco"
+                            },
+                            "Denver": {
+                                "value": "Denver"
+                            },
+                            "Chicago": {
+                                "value": "Chicago"
+                            },
+                            "san_francisco": {
+                                "value": "san_francisco"
+                            },
+                            "seattle": {
+                                "value": "seattle"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "20": {
+                                "value": "20"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_state",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "california": {
+                                "value": "california"
+                            },
+                            "ohio": {
+                                "value": "ohio"
+                            },
+                            "oregon": {
+                                "value": "oregon"
+                            },
+                            "California": {
+                                "value": "California"
+                            },
+                            "texas": {
+                                "value": "texas"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "micro": {
+                                "value": "micro"
+                            },
+                            "regional": {
+                                "value": "regional"
+                            },
+                            "brewpub": {
+                                "value": "brewpub"
+                            },
+                            "large": {
+                                "value": "large"
+                            },
+                            "planning": {
+                                "value": "planning"
+                            },
+                            "bar": {
+                                "value": "bar"
+                            },
+                            "contract": {
+                                "value": "contract"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "stone": {
+                                "value": "stone"
+                            },
+                            "example": {
+                                "value": "example"
+                            },
+                            "Stone+Brewing": {
+                                "value": "Stone+Brewing"
+                            },
+                            "Hoppy": {
+                                "value": "Hoppy"
+                            },
+                            "anchor": {
+                                "value": "anchor"
+                            },
+                            "abc_brewery": {
+                                "value": "abc_brewery"
+                            },
+                            "hop": {
+                                "value": "hop"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_tag",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "dog_friendly": {
+                                "value": "dog_friendly"
+                            },
+                            "patio": {
+                                "value": "patio"
+                            },
+                            "dog-friendly": {
+                                "value": "dog-friendly"
+                            },
+                            "organic": {
+                                "value": "organic"
+                            },
+                            "craft": {
+                                "value": "craft"
+                            },
+                            "brewpub": {
+                                "value": "brewpub"
+                            },
+                            "ipa": {
+                                "value": "ipa"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_postal",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "92101": {
+                                "value": "92101"
+                            },
+                            "12345": {
+                                "value": "12345"
+                            },
+                            "94110": {
+                                "value": "94110"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "United+States": {
+                                "value": "United+States"
+                            },
+                            "united_states": {
+                                "value": "united_states"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_phone",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "555-123-4567": {
+                                "value": "555-123-4567"
+                            },
+                            "1234567890": {
+                                "value": "1234567890"
+                            },
+                            "123-456-7890": {
+                                "value": "123-456-7890"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_website",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "www.example.com": {
+                                "value": "www.example.com"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name": {
+                                "value": "name"
+                            },
+                            "-name": {
+                                "value": "-name"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "desc": {
+                                "value": "desc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_street",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Main": {
+                                "value": "Main"
+                            },
+                            "Main+Street": {
+                                "value": "Main+Street"
+                            },
+                            "main_street": {
+                                "value": "main_street"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_brewery_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "contract": {
+                                "value": "contract"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_order",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name": {
+                                "value": "name"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_breweries"
+                                },
+                                "example": [
+                                    {
+                                        "id": "ef970757-fe42-416f-931d-722451f1f59c",
+                                        "name": "10 Barrel Brewing Co",
+                                        "brewery_type": "large",
+                                        "address_1": "1501 E St",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92101-6618",
+                                        "country": "United States",
+                                        "longitude": "-117.129593",
+                                        "latitude": "32.714813",
+                                        "phone": "6195782311",
+                                        "website_url": "http://10barrel.com",
+                                        "state": "California",
+                                        "street": "1501 E St"
+                                    },
+                                    {
+                                        "id": "5fdcc498-f9df-4fa5-b35d-487a59f0fecc",
+                                        "name": "2Kids Brewing Company",
+                                        "brewery_type": "micro",
+                                        "address_1": "8680 Miralani Dr Ste 123",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92126-6391",
+                                        "country": "United States",
+                                        "longitude": "-117.137429",
+                                        "latitude": "32.896584",
+                                        "phone": "8584805437",
+                                        "website_url": "http://www.2kidsBrewing.com",
+                                        "state": "California",
+                                        "street": "8680 Miralani Dr Ste 123"
+                                    },
+                                    {
+                                        "id": "3b0b5b9b-f6d8-49e3-8ebd-0bcef6939bcd",
+                                        "name": "32 North Brewing Co",
+                                        "brewery_type": "closed",
+                                        "address_1": "8655 Production Ave Ste A",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92121-2258",
+                                        "country": "United States",
+                                        "longitude": "-117.1649842",
+                                        "latitude": "32.88313237",
+                                        "phone": null,
+                                        "website_url": null,
+                                        "state": "California",
+                                        "street": "8655 Production Ave Ste A"
+                                    },
+                                    {
+                                        "id": "4db32843-26ff-4e73-9e24-1cb874109b24",
+                                        "name": "Abnormal Beer Company",
+                                        "brewery_type": "micro",
+                                        "address_1": "16990 Via Tazon Ste 123",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92127-1649",
+                                        "country": "United States",
+                                        "longitude": "-117.08575",
+                                        "latitude": "33.02391",
+                                        "phone": "8586182463",
+                                        "website_url": "http://abnormalbeer.co",
+                                        "state": "California",
+                                        "street": "16990 Via Tazon Ste 123"
+                                    },
+                                    {
+                                        "id": "2fe1e670-d832-4ba5-b957-f86a09ee062d",
+                                        "name": "Acoustic Ales Brewing Experiment",
+                                        "brewery_type": "closed",
+                                        "address_1": "1795 Hancock St Ste P1",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92110-2006",
+                                        "country": "United States",
+                                        "longitude": "-117.1840465",
+                                        "latitude": "32.74219079",
+                                        "phone": "6192992537",
+                                        "website_url": "http://www.acousticales.com",
+                                        "state": "California",
+                                        "street": "1795 Hancock St Ste P1"
+                                    },
+                                    {
+                                        "id": "f8097dbc-c8e6-4068-9540-5c4bd4ac0bcf",
+                                        "name": "AleSmith Brewing Co",
+                                        "brewery_type": "regional",
+                                        "address_1": "9990 Alesmith Ct",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92126-4200",
+                                        "country": "United States",
+                                        "longitude": "-117.1495496",
+                                        "latitude": "32.88858458",
+                                        "phone": "8585499888",
+                                        "website_url": "http://www.alesmith.com",
+                                        "state": "California",
+                                        "street": "9990 Alesmith Ct"
+                                    },
+                                    {
+                                        "id": "68b447a3-c65c-459f-8d02-334757bc6f71",
+                                        "name": "Align Brewing Co",
+                                        "brewery_type": "micro",
+                                        "address_1": "8680 Miralani Dr",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92126-6300",
+                                        "country": "United States",
+                                        "longitude": "-117.137429",
+                                        "latitude": "32.896584",
+                                        "phone": null,
+                                        "website_url": "http://www.facebook.com/alignbrewing",
+                                        "state": "California",
+                                        "street": "8680 Miralani Dr"
+                                    },
+                                    {
+                                        "id": "1d7c2273-8031-40d2-bb50-7f518722e291",
+                                        "name": "Alpine Beer Company",
+                                        "brewery_type": "brewpub",
+                                        "address_1": "6550 Mira Mesa Blvd",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92121-4100",
+                                        "country": "United States",
+                                        "longitude": "-117.113975",
+                                        "latitude": "32.9167796",
+                                        "phone": "6194452337",
+                                        "website_url": "http://www.alpinebrewing.com",
+                                        "state": "California",
+                                        "street": "6550 Mira Mesa Blvd"
+                                    },
+                                    {
+                                        "id": "728f9750-1c56-48be-9f96-b26d04215958",
+                                        "name": "Alta Brewing Company",
+                                        "brewery_type": "micro",
+                                        "address_1": "1983 Julian Avenue",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92113-1125",
+                                        "country": "United States",
+                                        "longitude": "-117.1414712",
+                                        "latitude": "32.7018758",
+                                        "phone": "6197957300",
+                                        "website_url": "http://www.altabrewing.com",
+                                        "state": "California",
+                                        "street": "1983 Julian Avenue"
+                                    },
+                                    {
+                                        "id": "fd0d376e-1c1d-48ce-ba6f-897298c20b85",
+                                        "name": "Amplified Ale Works",
+                                        "brewery_type": "brewpub",
+                                        "address_1": "4150 Mission Blvd Ste 208",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92109-5054",
+                                        "country": "United States",
+                                        "longitude": "-117.2511178",
+                                        "latitude": "32.7719729",
+                                        "phone": "6195871400",
+                                        "website_url": "http://www.amplifiedales.com",
+                                        "state": "California",
+                                        "street": "4150 Mission Blvd Ste 208"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/breweries/random": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "by_state",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "oregon": {
+                                "value": "oregon"
+                            },
+                            "California": {
+                                "value": "California"
+                            },
+                            "california": {
+                                "value": "california"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "san_diego": {
+                                "value": "san_diego"
+                            },
+                            "portland": {
+                                "value": "portland"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            },
+                            "25": {
+                                "value": "25"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "brewery_name": {
+                                "value": "brewery_name"
+                            },
+                            "brewery": {
+                                "value": "brewery"
+                            },
+                            "hop": {
+                                "value": "hop"
+                            },
+                            "hopworks": {
+                                "value": "hopworks"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "micro": {
+                                "value": "micro"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_tag",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "dog_friendly": {
+                                "value": "dog_friendly"
+                            },
+                            "dog-friendly": {
+                                "value": "dog-friendly"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "-name": {
+                                "value": "-name"
+                            },
+                            "+name": {
+                                "value": "+name"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "since",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2010-01-01": {
+                                "value": "2010-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_postal",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "90210": {
+                                "value": "90210"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_dist",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "united_states": {
+                                "value": "united_states"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_phone",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "555-123-4567": {
+                                "value": "555-123-4567"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_street",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "by_website",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_breweries_random"
+                                },
+                                "example": [
+                                    {
+                                        "id": "f8d5fa60-f3d6-41b1-8e60-750dc9baf9e4",
+                                        "name": "Catalina Brewing Company",
+                                        "brewery_type": "micro",
+                                        "address_1": "6918 N Camino Martin",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "Tucson",
+                                        "state_province": "Arizona",
+                                        "postal_code": "85741-2281",
+                                        "country": "United States",
+                                        "longitude": null,
+                                        "latitude": null,
+                                        "phone": "5203293622",
+                                        "website_url": "http://www.catalinabrewingco.com/",
+                                        "state": "Arizona",
+                                        "street": "6918 N Camino Martin"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/breweries/search": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "by_state",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "oregon": {
+                                "value": "oregon"
+                            },
+                            "California": {
+                                "value": "California"
+                            },
+                            "california": {
+                                "value": "california"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "san_diego": {
+                                "value": "san_diego"
+                            },
+                            "San+Francisco": {
+                                "value": "San+Francisco"
+                            },
+                            "seattle": {
+                                "value": "seattle"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "query",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "IPA": {
+                                "value": "IPA"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_postal",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "94110": {
+                                "value": "94110"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Golden": {
+                                "value": "Golden"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "micro": {
+                                "value": "micro"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_tag",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "dog-friendly": {
+                                "value": "dog-friendly"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name": {
+                                "value": "name"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_phone",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1234567890": {
+                                "value": "1234567890"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_breweries_search"
+                                },
+                                "example": []
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/breweries/autocomplete": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "by_state",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "oregon": {
+                                "value": "oregon"
+                            },
+                            "california": {
+                                "value": "california"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "san_diego": {
+                                "value": "san_diego"
+                            },
+                            "san_francisco": {
+                                "value": "san_francisco"
+                            },
+                            "portland": {
+                                "value": "portland"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "abc": {
+                                "value": "abc"
+                            },
+                            "stone": {
+                                "value": "stone"
+                            },
+                            "example": {
+                                "value": "example"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "micro": {
+                                "value": "micro"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_postal",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "12345": {
+                                "value": "12345"
+                            },
+                            "92101": {
+                                "value": "92101"
+                            },
+                            "97202": {
+                                "value": "97202"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "united_states": {
+                                "value": "united_states"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_tag",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "craft": {
+                                "value": "craft"
+                            },
+                            "dog-friendly": {
+                                "value": "dog-friendly"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_phone",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1234567890": {
+                                "value": "1234567890"
+                            },
+                            "555-123-4567": {
+                                "value": "555-123-4567"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_website",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example.com": {
+                                "value": "example.com"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_street",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "main_street": {
+                                "value": "main_street"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_food",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "vegan": {
+                                "value": "vegan"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_breweries_autocomplete"
+                                },
+                                "example": []
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema_breweries": {},
+            "ResponseSchema_breweries_random": {},
+            "ResponseSchema_breweries_search": {},
+            "ResponseSchema_breweries_autocomplete": {}
+        }
+    }
+}

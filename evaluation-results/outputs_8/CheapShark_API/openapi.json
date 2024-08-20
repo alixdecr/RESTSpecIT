@@ -1,0 +1,3272 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "CheapShark API",
+        "description": "**API Description** - The CheapShark API is an interface that allows developers to access data related to video game deals and prices from the CheapShark platform.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "https://apidocs.cheapshark.com",
+        "contact": {
+            "name": "CheapShark API Contact",
+            "url": "https://www.cheapshark.com/contact",
+            "email": "support@cheapshark.com"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://www.cheapshark.com",
+            "description": "Production Server of the CheapShark API.",
+            "x-base-routes": 1
+        }
+    ],
+    "externalDocs": {
+        "url": "https://apidocs.cheapshark.com",
+        "description": "Find more about the CheapShark API here:"
+    },
+    "paths": {
+        "/api/1.0/deals": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "storeID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lowerPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            },
+                            "20": {
+                                "value": "20"
+                            },
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "upperPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            },
+                            "5": {
+                                "value": "5"
+                            },
+                            "10": {
+                                "value": "10"
+                            },
+                            "50": {
+                                "value": "50"
+                            },
+                            "30": {
+                                "value": "30"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            },
+                            "4": {
+                                "value": "4"
+                            }
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Assassin's+Creed": {
+                                "value": "Assassin's+Creed"
+                            },
+                            "game": {
+                                "value": "game"
+                            },
+                            "sims": {
+                                "value": "sims"
+                            }
+                        }
+                    },
+                    {
+                        "name": "onSale",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "0": {
+                                "value": "0"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exact",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "0": {
+                                "value": "0"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "price": {
+                                "value": "price"
+                            },
+                            "savings": {
+                                "value": "savings"
+                            }
+                        }
+                    },
+                    {
+                        "name": "desc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "0": {
+                                "value": "0"
+                            },
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageNumber",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "AAA",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "0": {
+                                "value": "0"
+                            },
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamAppID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1234": {
+                                "value": "1234"
+                            },
+                            "12345": {
+                                "value": "12345"
+                            }
+                        }
+                    },
+                    {
+                        "name": "price",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "metacritic",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "90": {
+                                "value": "90"
+                            }
+                        }
+                    },
+                    {
+                        "name": "release",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_1.0_deals"
+                                },
+                                "example": [
+                                    {
+                                        "internalName": "SIDMEIERSCIVILIZATIONVI",
+                                        "title": "Sid Meiers Civilization VI",
+                                        "metacriticLink": "/game/sid-meiers-civilization-vi/",
+                                        "dealID": "5xRuVIgFiH0TW2PTPJPlTN4NYMjAt4bg3p1CvKMMJv8%3D",
+                                        "storeID": "1",
+                                        "gameID": "152578",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "90.015003",
+                                        "metacriticScore": "88",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "85",
+                                        "steamRatingCount": "208019",
+                                        "steamAppID": "289070",
+                                        "releaseDate": 1476921600,
+                                        "lastChange": 1700592193,
+                                        "dealRating": "9.7",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/289070/capsule_sm_120.jpg?t=1680898825"
+                                    },
+                                    {
+                                        "internalName": "GUNHEAD",
+                                        "title": "GUNHEAD",
+                                        "metacriticLink": "/game/gunhead/",
+                                        "dealID": "nOR%2B%2B98IZTNQHtg2dAKthOZFm6P9MZCr6%2BYTIhTz4oY%3D",
+                                        "storeID": "1",
+                                        "gameID": "278143",
+                                        "salePrice": "19.46",
+                                        "normalPrice": "34.98",
+                                        "isOnSale": "1",
+                                        "savings": "44.368210",
+                                        "metacriticScore": "0",
+                                        "steamRatingText": "Mostly Positive",
+                                        "steamRatingPercent": "76",
+                                        "steamRatingCount": "60",
+                                        "steamAppID": "704000",
+                                        "releaseDate": 1699401600,
+                                        "lastChange": 1700592332,
+                                        "dealRating": "9.7",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/704000/capsule_sm_120.jpg?t=1700322238"
+                                    },
+                                    {
+                                        "internalName": "SIDMEIERSCIVILIZATIONIV",
+                                        "title": "Sid Meier's Civilization IV",
+                                        "metacriticLink": "/game/sid-meiers-civilization-iv/",
+                                        "dealID": "khSrhkgpaxgOWWEYV9MdKid%2FcDzIGa0zHzvh5j73lLo%3D",
+                                        "storeID": "1",
+                                        "gameID": "126",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.026676",
+                                        "metacriticScore": "94",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "93",
+                                        "steamRatingCount": "2218",
+                                        "steamAppID": "3900",
+                                        "releaseDate": 1130198400,
+                                        "lastChange": 1700592512,
+                                        "dealRating": "9.6",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/3900/capsule_sm_120.jpg?t=1573063101"
+                                    },
+                                    {
+                                        "internalName": "BRAMBLETHEMOUNTAINKING",
+                                        "title": "Bramble: The Mountain King",
+                                        "metacriticLink": "/game/bramble-the-mountain-king/",
+                                        "dealID": "wurENHLQj3xUYpG48mM4XSQndhdbFnjrJa0j6TN4170%3D",
+                                        "storeID": "1",
+                                        "gameID": "259924",
+                                        "salePrice": "9.49",
+                                        "normalPrice": "49.98",
+                                        "isOnSale": "1",
+                                        "savings": "81.012405",
+                                        "metacriticScore": "75",
+                                        "steamRatingText": "Overwhelmingly Positive",
+                                        "steamRatingPercent": "96",
+                                        "steamRatingCount": "1933",
+                                        "steamAppID": "1623940",
+                                        "releaseDate": 1682553600,
+                                        "lastChange": 1700592314,
+                                        "dealRating": "9.6",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1623940/capsule_sm_120.jpg?t=1700669879"
+                                    },
+                                    {
+                                        "internalName": "DISCOELYSIUMTHEFINALCUT",
+                                        "title": "Disco Elysium - The Final Cut",
+                                        "metacriticLink": "/game/disco-elysium-the-final-cut/",
+                                        "dealID": "Uk9pH81%2BgPUwbkh9YzwMnYLT%2B%2FEaktqN8AgwMr6Y2wQ%3D",
+                                        "storeID": "1",
+                                        "gameID": "227942",
+                                        "salePrice": "9.99",
+                                        "normalPrice": "39.99",
+                                        "isOnSale": "1",
+                                        "savings": "75.018755",
+                                        "metacriticScore": "97",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "93",
+                                        "steamRatingCount": "77698",
+                                        "steamAppID": "632470",
+                                        "releaseDate": 1617062400,
+                                        "lastChange": 1700592230,
+                                        "dealRating": "9.6",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/632470/capsule_sm_120.jpg?t=1698833230"
+                                    },
+                                    {
+                                        "internalName": "MORTALKOMBAT11ULTIMATE",
+                                        "title": "Mortal Kombat 11 Ultimate",
+                                        "metacriticLink": "/game/mortal-kombat-11-ultimate/",
+                                        "dealID": "hBzFkwXV5CCVfkjbLZexRx1fhOrxUk1Idvnte3OGtao%3D",
+                                        "storeID": "1",
+                                        "gameID": "223428",
+                                        "salePrice": "8.99",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.014169",
+                                        "metacriticScore": "91",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "88",
+                                        "steamRatingCount": "68000",
+                                        "steamAppID": "518699",
+                                        "releaseDate": 1605571200,
+                                        "lastChange": 1700595632,
+                                        "dealRating": "9.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/subs/518699/capsule_sm_120.jpg?t=1691103019"
+                                    },
+                                    {
+                                        "internalName": "RAWDATA",
+                                        "title": "Raw Data",
+                                        "metacriticLink": "/game/raw-data/",
+                                        "dealID": "tig%2F7psZsOY4%2Fkzb1%2BKetf6fAOQd9OGjSC3MokgpmYo%3D",
+                                        "storeID": "1",
+                                        "gameID": "154911",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "39.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.021255",
+                                        "metacriticScore": "87",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "82",
+                                        "steamRatingCount": "2004",
+                                        "steamAppID": "436320",
+                                        "releaseDate": 1506902400,
+                                        "lastChange": 1700595978,
+                                        "dealRating": "9.2",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/436320/capsule_sm_120.jpg?t=1688151692"
+                                    },
+                                    {
+                                        "internalName": "FEAR",
+                                        "title": "F.E.A.R.",
+                                        "metacriticLink": "/game/f-e-a-r/",
+                                        "dealID": "WFwstQjgLzBa%2B3oookD3gXsxLY5aYVxO6KU%2F1ouKAoE%3D",
+                                        "storeID": "1",
+                                        "gameID": "226",
+                                        "salePrice": "8.24",
+                                        "normalPrice": "54.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.015457",
+                                        "metacriticScore": "88",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "93",
+                                        "steamRatingCount": "9552",
+                                        "steamAppID": "21090",
+                                        "releaseDate": 1129507200,
+                                        "lastChange": 1700604711,
+                                        "dealRating": "9.2",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/21090/capsule_sm_120.jpg?t=1681232225"
+                                    },
+                                    {
+                                        "internalName": "BIOSHOCKINFINITE",
+                                        "title": "BioShock Infinite",
+                                        "metacriticLink": "/game/bioshock-infinite/",
+                                        "dealID": "X8sebHhbc1Ga0dTkgg59WgyM506af9oNZZJLU9uSrX8%3D",
+                                        "storeID": "1",
+                                        "gameID": "93503",
+                                        "salePrice": "7.49",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "75.025008",
+                                        "metacriticScore": "94",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "93",
+                                        "steamRatingCount": "100121",
+                                        "steamAppID": "8870",
+                                        "releaseDate": 1364169600,
+                                        "lastChange": 1700592238,
+                                        "dealRating": "9.2",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/8870/capsule_sm_120.jpg?t=1602794480"
+                                    },
+                                    {
+                                        "internalName": "WOLFENSTEINIITHENEWCOLOSSUS",
+                                        "title": "Wolfenstein II: The New Colossus",
+                                        "metacriticLink": "/game/wolfenstein-ii-the-new-colossus/",
+                                        "dealID": "87xV5nWWYreL5zsHRwL8OARvLSv%2BtjQKkqK9z04jzsc%3D",
+                                        "storeID": "1",
+                                        "gameID": "170049",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "39.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.021255",
+                                        "metacriticScore": "86",
+                                        "steamRatingText": "Mostly Positive",
+                                        "steamRatingPercent": "79",
+                                        "steamRatingCount": "25980",
+                                        "steamAppID": "612880",
+                                        "releaseDate": 1509062400,
+                                        "lastChange": 1700592267,
+                                        "dealRating": "9.1",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/612880/capsule_sm_120.jpg?t=1691683256"
+                                    },
+                                    {
+                                        "internalName": "SOULCALIBURVI",
+                                        "title": "Soul Calibur VI",
+                                        "metacriticLink": "/game/soulcalibur-vi/",
+                                        "dealID": "LG2g7Gkt2pcNX16hUqv%2Bf%2BZSNpUvCwWrfPeRiQqdHeQ%3D",
+                                        "storeID": "1",
+                                        "gameID": "176105",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "90.015003",
+                                        "metacriticScore": "80",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "82",
+                                        "steamRatingCount": "8107",
+                                        "steamAppID": "544750",
+                                        "releaseDate": 1539820800,
+                                        "lastChange": 1700592261,
+                                        "dealRating": "9.1",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/544750/capsule_sm_120.jpg?t=1646956219"
+                                    },
+                                    {
+                                        "internalName": "RAYMANLEGENDS",
+                                        "title": "Rayman Legends",
+                                        "metacriticLink": "/game/rayman-legends/",
+                                        "dealID": "e61fgLI7J6vwKPRiiPcGMLTTgHG7jRdr%2FhXNriK7tlY%3D",
+                                        "storeID": "1",
+                                        "gameID": "100522",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.026676",
+                                        "metacriticScore": "89",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "89",
+                                        "steamRatingCount": "6705",
+                                        "steamAppID": "242550",
+                                        "releaseDate": 1378166400,
+                                        "lastChange": 1700592373,
+                                        "dealRating": "9.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/242550/capsule_sm_120.jpg?t=1680012063"
+                                    },
+                                    {
+                                        "internalName": "THEELDERSCROLLSONLINENECROM",
+                                        "title": "The Elder Scrolls Online: Necrom",
+                                        "metacriticLink": "/game/the-elder-scrolls-online-necrom/",
+                                        "dealID": "JGXhu2zLPTLlC6UN6FofD3esnnUD6aSbU6VljMVwIyQ%3D",
+                                        "storeID": "1",
+                                        "gameID": "256512",
+                                        "salePrice": "13.19",
+                                        "normalPrice": "39.99",
+                                        "isOnSale": "1",
+                                        "savings": "67.016754",
+                                        "metacriticScore": "82",
+                                        "steamRatingText": "Mostly Positive",
+                                        "steamRatingPercent": "72",
+                                        "steamRatingCount": "199",
+                                        "steamAppID": "2172860",
+                                        "releaseDate": 1685923200,
+                                        "lastChange": 1700592232,
+                                        "dealRating": "9.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/2172860/capsule_sm_120.jpg?t=1698940684"
+                                    },
+                                    {
+                                        "internalName": "SNIPERELITE4",
+                                        "title": "Sniper Elite 4",
+                                        "metacriticLink": "/game/sniper-elite-4/",
+                                        "dealID": "PB0QwRBuCWGkI%2FCzoZhoPZTz8MIJ7yTTVLbztoRr24g%3D",
+                                        "storeID": "1",
+                                        "gameID": "158730",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "90.015003",
+                                        "metacriticScore": "78",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "91",
+                                        "steamRatingCount": "44950",
+                                        "steamAppID": "312660",
+                                        "releaseDate": 1487030400,
+                                        "lastChange": 1700592255,
+                                        "dealRating": "9.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/312660/capsule_sm_120.jpg?t=1681207252"
+                                    },
+                                    {
+                                        "internalName": "THEWITCHER3WILDHUNT",
+                                        "title": "The Witcher 3: Wild Hunt",
+                                        "metacriticLink": "/game/the-witcher-3-wild-hunt/",
+                                        "dealID": "zm2ORJ1RIWrq7UFFCs9J4ps4rgsNUV7FTSnWxzxxj8Q%3D",
+                                        "storeID": "1",
+                                        "gameID": "112330",
+                                        "salePrice": "9.99",
+                                        "normalPrice": "39.99",
+                                        "isOnSale": "1",
+                                        "savings": "75.018755",
+                                        "metacriticScore": "93",
+                                        "steamRatingText": "Overwhelmingly Positive",
+                                        "steamRatingPercent": "96",
+                                        "steamRatingCount": "680284",
+                                        "steamAppID": "292030",
+                                        "releaseDate": 1431907200,
+                                        "lastChange": 1700592203,
+                                        "dealRating": "9.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/292030/capsule_sm_120.jpg?t=1693590732"
+                                    },
+                                    {
+                                        "internalName": "DRAGONBALLFIGHTERZ",
+                                        "title": "DRAGON BALL FighterZ",
+                                        "metacriticLink": "/game/dragon-ball-fighterz/",
+                                        "dealID": "pN%2BP8X75%2BXEx5ATM5T3lmHIDXGLhrdo8LosbfLj9MaA%3D",
+                                        "storeID": "1",
+                                        "gameID": "174454",
+                                        "salePrice": "8.99",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.014169",
+                                        "metacriticScore": "85",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "46250",
+                                        "steamAppID": "678950",
+                                        "releaseDate": 1516924800,
+                                        "lastChange": 1700592230,
+                                        "dealRating": "8.9",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/678950/capsule_sm_120.jpg?t=1687902534"
+                                    },
+                                    {
+                                        "internalName": "ASSASSINSCREEDORIGINS",
+                                        "title": "Assassins Creed Origins",
+                                        "metacriticLink": "/game/assassins-creed-origins/",
+                                        "dealID": "Xseq2XZs5sP%2BATR28J3Bpv2BPe%2BIWvMy3yCk03ABFgo%3D",
+                                        "storeID": "1",
+                                        "gameID": "170047",
+                                        "salePrice": "8.99",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.014169",
+                                        "metacriticScore": "84",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "86",
+                                        "steamRatingCount": "87250",
+                                        "steamAppID": "582160",
+                                        "releaseDate": 1509062400,
+                                        "lastChange": 1700592257,
+                                        "dealRating": "8.8",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/582160/capsule_sm_120.jpg?t=1692034680"
+                                    },
+                                    {
+                                        "internalName": "SENGOKUJIDAISHADOWOFTHESHOGUN",
+                                        "title": "Sengoku Jidai: Shadow of the Shogun",
+                                        "metacriticLink": "/game/sengoku-jidai-shadow-of-the-shogun/",
+                                        "dealID": "r6%2B6Mn8ToDAyVG%2Fjgkhp8orjyP%2BE5BB9a45VBnNRdgs%3D",
+                                        "storeID": "1",
+                                        "gameID": "152812",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.026676",
+                                        "metacriticScore": "85",
+                                        "steamRatingText": "Mostly Positive",
+                                        "steamRatingPercent": "73",
+                                        "steamRatingCount": "140",
+                                        "steamAppID": "397190",
+                                        "releaseDate": 1463616000,
+                                        "lastChange": 1700614304,
+                                        "dealRating": "8.8",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/397190/capsule_sm_120.jpg?t=1631260479"
+                                    },
+                                    {
+                                        "internalName": "FLOODLAND",
+                                        "title": "Floodland",
+                                        "metacriticLink": "/game/floodland/",
+                                        "dealID": "PnyJhO9uNfYF%2BjjwDlwyEqOMhNWKJxz1iNAFdgFzeZ0%3D",
+                                        "storeID": "1",
+                                        "gameID": "253383",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.026676",
+                                        "metacriticScore": "73",
+                                        "steamRatingText": "Mixed",
+                                        "steamRatingPercent": "56",
+                                        "steamRatingCount": "628",
+                                        "steamAppID": "1336180",
+                                        "releaseDate": 1668470400,
+                                        "lastChange": 1700592693,
+                                        "dealRating": "8.8",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1336180/capsule_sm_120.jpg?t=1687425773"
+                                    },
+                                    {
+                                        "internalName": "NINOKUNIWRATHOFTHEWHITEWITCHREMASTERED",
+                                        "title": "Ni no Kuni: Wrath of the White Witch Remastered",
+                                        "metacriticLink": "/game/ni-no-kuni-wrath-of-the-white-witch-remastered/",
+                                        "dealID": "Tpjyg1tuVZENc7xJuUsyAbDzszrOagp6zgIng2jUCEo%3D",
+                                        "storeID": "1",
+                                        "gameID": "204654",
+                                        "salePrice": "7.49",
+                                        "normalPrice": "49.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.017003",
+                                        "metacriticScore": "82",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "85",
+                                        "steamRatingCount": "2861",
+                                        "steamAppID": "798460",
+                                        "releaseDate": 1568937600,
+                                        "lastChange": 1700592291,
+                                        "dealRating": "8.8",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/798460/capsule_sm_120.jpg?t=1605603000"
+                                    },
+                                    {
+                                        "internalName": "CIVILIZATIONIVBEYONDTHESWORD",
+                                        "title": "Civilization IV: Beyond the Sword",
+                                        "metacriticLink": null,
+                                        "dealID": "CTCeBGzs%2FYqcY2tFVzvfzUWrcun%2BHdDkBHh15w2JeGs%3D",
+                                        "storeID": "1",
+                                        "gameID": "218",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.026676",
+                                        "metacriticScore": "86",
+                                        "steamRatingText": "Overwhelmingly Positive",
+                                        "steamRatingPercent": "96",
+                                        "steamRatingCount": "2962",
+                                        "steamAppID": "8800",
+                                        "releaseDate": 0,
+                                        "lastChange": 1700595931,
+                                        "dealRating": "8.8",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/8800/capsule_sm_120.jpg?t=1573063843"
+                                    },
+                                    {
+                                        "internalName": "RISEOFTHETOMBRAIDER",
+                                        "title": "Rise of the Tomb Raider",
+                                        "metacriticLink": "/game/rise-of-the-tomb-raider/",
+                                        "dealID": "JLFqGNvtew3enSlgxRtAZBJ3GeU4Rd0XYhGePiQcaI8%3D",
+                                        "storeID": "1",
+                                        "gameID": "145517",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.026676",
+                                        "metacriticScore": "86",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "94",
+                                        "steamRatingCount": "97710",
+                                        "steamAppID": "391220",
+                                        "releaseDate": 1453939200,
+                                        "lastChange": 1700592311,
+                                        "dealRating": "8.8",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/391220/capsule_sm_120.jpg?t=1699902983"
+                                    },
+                                    {
+                                        "internalName": "TOTALWARSHOGUN2",
+                                        "title": "Total War: SHOGUN 2",
+                                        "metacriticLink": "/game/total-war-shogun-2/",
+                                        "dealID": "jFVI38mQYZ7dXFtgt5xEbnfGoxi61820AvVF%2BhQZkO4%3D",
+                                        "storeID": "1",
+                                        "gameID": "44",
+                                        "salePrice": "7.49",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "75.025008",
+                                        "metacriticScore": "90",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "91",
+                                        "steamRatingCount": "30178",
+                                        "steamAppID": "201270",
+                                        "releaseDate": 1300147200,
+                                        "lastChange": 1700592236,
+                                        "dealRating": "8.7",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/201270/capsule_sm_120.jpg?t=1603131194"
+                                    },
+                                    {
+                                        "internalName": "THEEVILWITHIN2",
+                                        "title": "The Evil Within 2",
+                                        "metacriticLink": "/game/the-evil-within-2/",
+                                        "dealID": "upTMRlRtJRwK%2F7HKQ5WiJPHzxfCz3%2BTxp7smpnNpp%2FM%3D",
+                                        "storeID": "1",
+                                        "gameID": "170048",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "39.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.021255",
+                                        "metacriticScore": "80",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "92",
+                                        "steamRatingCount": "16002",
+                                        "steamAppID": "601430",
+                                        "releaseDate": 1507766400,
+                                        "lastChange": 1700592358,
+                                        "dealRating": "8.7",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/601430/capsule_sm_120.jpg?t=1698759472"
+                                    },
+                                    {
+                                        "internalName": "SUPERDRAGONBALLHEROESWORLDMISSION",
+                                        "title": "Super Dragon Ball Heroes World Mission",
+                                        "metacriticLink": "/game/super-dragon-ball-heroes-world-mission/",
+                                        "dealID": "m9DxZnxIHDezgc1cvpNb0byIAWlsH8ArWke9fA27UDY%3D",
+                                        "storeID": "1",
+                                        "gameID": "199647",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "90.015003",
+                                        "metacriticScore": "72",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "84",
+                                        "steamRatingCount": "1198",
+                                        "steamAppID": "798510",
+                                        "releaseDate": 1554336000,
+                                        "lastChange": 1700592649,
+                                        "dealRating": "8.7",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/798510/capsule_sm_120.jpg?t=1563959290"
+                                    },
+                                    {
+                                        "internalName": "FIGMENT2CREEDVALLEY",
+                                        "title": "Figment 2: Creed Valley",
+                                        "metacriticLink": "/game/figment-2-creed-valley/",
+                                        "dealID": "iCGMXRwFFuNM5RdGa4bH7sJUyZq5bOZ9rmZYYVnCNdw%3D",
+                                        "storeID": "1",
+                                        "gameID": "258191",
+                                        "salePrice": "12.38",
+                                        "normalPrice": "44.98",
+                                        "isOnSale": "1",
+                                        "savings": "72.476656",
+                                        "metacriticScore": "76",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "96",
+                                        "steamRatingCount": "294",
+                                        "steamAppID": "1085220",
+                                        "releaseDate": 1678320000,
+                                        "lastChange": 1700592779,
+                                        "dealRating": "8.7",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1085220/capsule_sm_120.jpg?t=1697539005"
+                                    },
+                                    {
+                                        "internalName": "DIVINITYORIGINALSINENHANCEDEDITION",
+                                        "title": "Divinity: Original Sin - Enhanced Edition",
+                                        "metacriticLink": "/game/divinity-original-sin-enhanced-edition/",
+                                        "dealID": "vTZ81A14wUS99zrsTQ2UVPE%2BbPMgndYC%2BNJbOgQZ7Fs%3D",
+                                        "storeID": "1",
+                                        "gameID": "146697",
+                                        "salePrice": "11.99",
+                                        "normalPrice": "39.99",
+                                        "isOnSale": "1",
+                                        "savings": "70.017504",
+                                        "metacriticScore": "94",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "89",
+                                        "steamRatingCount": "20379",
+                                        "steamAppID": "373420",
+                                        "releaseDate": 1445904000,
+                                        "lastChange": 1700592273,
+                                        "dealRating": "8.6",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/373420/capsule_sm_120.jpg?t=1665155407"
+                                    },
+                                    {
+                                        "internalName": "NEEDFORSPEEDHEAT",
+                                        "title": "Need for Speed Heat",
+                                        "metacriticLink": "/game/need-for-speed-heat/",
+                                        "dealID": "I%2BKyFHIkqTza%2FEM3EEeICP%2F0UyJGfB%2FXej9zQ%2BxEf6I%3D",
+                                        "storeID": "1",
+                                        "gameID": "204096",
+                                        "salePrice": "6.99",
+                                        "normalPrice": "69.99",
+                                        "isOnSale": "1",
+                                        "savings": "90.012859",
+                                        "metacriticScore": "72",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "84",
+                                        "steamRatingCount": "75488",
+                                        "steamAppID": "1222680",
+                                        "releaseDate": 1573171200,
+                                        "lastChange": 1700592244,
+                                        "dealRating": "8.6",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1222680/capsule_sm_120.jpg?t=1690398297"
+                                    },
+                                    {
+                                        "internalName": "MORTALKOMBATXL",
+                                        "title": "Mortal Kombat XL",
+                                        "metacriticLink": "/game/mortal-kombat-xl/",
+                                        "dealID": "PWjv3eUkcTlZYYIuPOHA5HkD7DX22852FfANriPGrz0%3D",
+                                        "storeID": "1",
+                                        "gameID": "160047",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.026676",
+                                        "metacriticScore": "84",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "86",
+                                        "steamRatingCount": "33845",
+                                        "steamAppID": "128345",
+                                        "releaseDate": 1475539200,
+                                        "lastChange": 1700595937,
+                                        "dealRating": "8.6",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/subs/128345/capsule_sm_120.jpg?t=1698957925"
+                                    },
+                                    {
+                                        "internalName": "FROSTPUNK",
+                                        "title": "Frostpunk",
+                                        "metacriticLink": "/game/frostpunk/",
+                                        "dealID": "yiJ%2B%2BQm1oghJrTjJJ7BUKdpTlOrbBKCkOYw67UHarPE%3D",
+                                        "storeID": "1",
+                                        "gameID": "173596",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.026676",
+                                        "metacriticScore": "84",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "92",
+                                        "steamRatingCount": "79444",
+                                        "steamAppID": "323190",
+                                        "releaseDate": 1524528000,
+                                        "lastChange": 1700592237,
+                                        "dealRating": "8.6",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/323190/capsule_sm_120.jpg?t=1699445066"
+                                    },
+                                    {
+                                        "internalName": "XCOMENEMYUNKNOWN",
+                                        "title": "XCOM: Enemy Unknown",
+                                        "metacriticLink": "/game/xcom-enemy-unknown/",
+                                        "dealID": "F8so5KCN6t%2BVObO8mQwaxJJ8vfmf5iSOCZd65O82loI%3D",
+                                        "storeID": "1",
+                                        "gameID": "88305",
+                                        "salePrice": "7.49",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "75.025008",
+                                        "metacriticScore": "89",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "94",
+                                        "steamRatingCount": "35751",
+                                        "steamAppID": "200510",
+                                        "releaseDate": 1349654400,
+                                        "lastChange": 1700592355,
+                                        "dealRating": "8.6",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/200510/capsule_sm_120.jpg?t=1587584126"
+                                    },
+                                    {
+                                        "internalName": "PILLARSOFETERNITY",
+                                        "title": "Pillars of Eternity",
+                                        "metacriticLink": "/game/pillars-of-eternity/",
+                                        "dealID": "xSxFguFqKoSVIAkSyxknVF8DhGC%2BAnTtFdmR9Z5E5aM%3D",
+                                        "storeID": "1",
+                                        "gameID": "137316",
+                                        "salePrice": "7.49",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "75.025008",
+                                        "metacriticScore": "89",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "87",
+                                        "steamRatingCount": "14422",
+                                        "steamAppID": "291650",
+                                        "releaseDate": 1427328000,
+                                        "lastChange": 1700592335,
+                                        "dealRating": "8.6",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/291650/capsule_sm_120.jpg?t=1683221851"
+                                    },
+                                    {
+                                        "internalName": "DRAGONAGEINQUISITION",
+                                        "title": "Dragon Age Inquisition",
+                                        "metacriticLink": "/game/dragon-age-inquisition/",
+                                        "dealID": "T3I%2F613QRowMzusivVCs7SH3MvFA7Dsj3JUGpgecSus%3D",
+                                        "storeID": "1",
+                                        "gameID": "108600",
+                                        "salePrice": "7.99",
+                                        "normalPrice": "39.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.020005",
+                                        "metacriticScore": "85",
+                                        "steamRatingText": "Mostly Positive",
+                                        "steamRatingPercent": "75",
+                                        "steamRatingCount": "12478",
+                                        "steamAppID": "1222690",
+                                        "releaseDate": 1416268800,
+                                        "lastChange": 1700592300,
+                                        "dealRating": "8.6",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1222690/capsule_sm_120.jpg?t=1668811031"
+                                    },
+                                    {
+                                        "internalName": "INDIVISIBLE",
+                                        "title": "Indivisible",
+                                        "metacriticLink": "/game/indivisible/",
+                                        "dealID": "JMBT8pEc2pkZMSCdKx12D45A7e%2FEqho2vPUknM4lF9M%3D",
+                                        "storeID": "1",
+                                        "gameID": "203925",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "39.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.021255",
+                                        "metacriticScore": "78",
+                                        "steamRatingText": "Mostly Positive",
+                                        "steamRatingPercent": "72",
+                                        "steamRatingCount": "1996",
+                                        "steamAppID": "421170",
+                                        "releaseDate": 1570492800,
+                                        "lastChange": 1700595598,
+                                        "dealRating": "8.6",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/421170/capsule_sm_120.jpg?t=1677520885"
+                                    },
+                                    {
+                                        "internalName": "HOTWHEELSUNLEASHED",
+                                        "title": "HOT WHEELS UNLEASHED",
+                                        "metacriticLink": "/game/hot-wheels-unleashed/",
+                                        "dealID": "Pq2HQtYvg3%2F0L3gR9OM95WhRzCICJ72I6s8dqECd59o%3D",
+                                        "storeID": "1",
+                                        "gameID": "233274",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "39.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.021255",
+                                        "metacriticScore": "78",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "82",
+                                        "steamRatingCount": "4252",
+                                        "steamAppID": "1271700",
+                                        "releaseDate": 1632960000,
+                                        "lastChange": 1700592316,
+                                        "dealRating": "8.6",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1271700/capsule_sm_120.jpg?t=1685547345"
+                                    },
+                                    {
+                                        "internalName": "ANCESTORSLEGACY",
+                                        "title": "Ancestors Legacy",
+                                        "metacriticLink": "/game/ancestors-legacy/",
+                                        "dealID": "ejS0hPLtQn1kbWmytSo%2FB4BawkDY1aR2RNlGv%2F0s%2Bxs%3D",
+                                        "storeID": "1",
+                                        "gameID": "177880",
+                                        "salePrice": "5.24",
+                                        "normalPrice": "34.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.024293",
+                                        "metacriticScore": "77",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "80",
+                                        "steamRatingCount": "4871",
+                                        "steamAppID": "620590",
+                                        "releaseDate": 1526947200,
+                                        "lastChange": 1700592469,
+                                        "dealRating": "8.6",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/620590/capsule_sm_120.jpg?t=1699435680"
+                                    },
+                                    {
+                                        "internalName": "THEBARDSTALEIVDIRECTORSCUT",
+                                        "title": "The Bard's Tale IV: Director's Cut",
+                                        "metacriticLink": "/game/the-bards-tale-iv-directors-cut/",
+                                        "dealID": "U0fmr0EtnLg%2FnIP0LH4YOymQoYy7xQSCwwubNKy%2FvAc%3D",
+                                        "storeID": "1",
+                                        "gameID": "203144",
+                                        "salePrice": "6.99",
+                                        "normalPrice": "34.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.022864",
+                                        "metacriticScore": "84",
+                                        "steamRatingText": "Mostly Positive",
+                                        "steamRatingPercent": "77",
+                                        "steamRatingCount": "551",
+                                        "steamAppID": "1091980",
+                                        "releaseDate": 1566864000,
+                                        "lastChange": 1700608115,
+                                        "dealRating": "8.6",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1091980/capsule_sm_120.jpg?t=1689780612"
+                                    },
+                                    {
+                                        "internalName": "PLANTSVSZOMBIESBATTLEFORNEIGHBORVILLE",
+                                        "title": "Plants vs. Zombies: Battle for Neighborville",
+                                        "metacriticLink": "/game/plants-vs-zombies-battle-for-neighborville/",
+                                        "dealID": "NtotB%2Bp2IFFFXY4x2AjoFNDR98ipQBYdALwI0%2F5pBpY%3D",
+                                        "storeID": "1",
+                                        "gameID": "206020",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "39.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.021255",
+                                        "metacriticScore": "77",
+                                        "steamRatingText": "Mostly Positive",
+                                        "steamRatingPercent": "73",
+                                        "steamRatingCount": "9957",
+                                        "steamAppID": "1262240",
+                                        "releaseDate": 1567555200,
+                                        "lastChange": 1700592411,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1262240/capsule_sm_120.jpg?t=1614957327"
+                                    },
+                                    {
+                                        "internalName": "NINOKUNIIIREVENANTKINGDOM",
+                                        "title": "Ni no Kuni II: Revenant Kingdom",
+                                        "metacriticLink": "/game/ni-no-kuni-ii-revenant-kingdom/",
+                                        "dealID": "mUJiiBZYI0a3aCgRu9wpLmT2ZfT0K0fQS%2FKzIQb3LUk%3D",
+                                        "storeID": "1",
+                                        "gameID": "171779",
+                                        "salePrice": "9.59",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "84.014002",
+                                        "metacriticScore": "81",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "83",
+                                        "steamRatingCount": "7322",
+                                        "steamAppID": "589360",
+                                        "releaseDate": 1521763200,
+                                        "lastChange": 1700592340,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/589360/capsule_sm_120.jpg?t=1666168049"
+                                    },
+                                    {
+                                        "internalName": "SIDMEIERSCIVILIZATIONIVCOLONIZATION",
+                                        "title": "Sid Meier's Civilization IV: Colonization",
+                                        "metacriticLink": "/game/sid-meiers-civilization-iv-colonization/",
+                                        "dealID": "FO6QgfKrVp69VIZDF%2BjcIkDqtR7BG8sAYEgq2e6DWE8%3D",
+                                        "storeID": "1",
+                                        "gameID": "263",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.026676",
+                                        "metacriticScore": "83",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "87",
+                                        "steamRatingCount": "936",
+                                        "steamAppID": "16810",
+                                        "releaseDate": 1222041600,
+                                        "lastChange": 1700592395,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/16810/capsule_sm_120.jpg?t=1573064277"
+                                    },
+                                    {
+                                        "internalName": "PRISONARCHITECT",
+                                        "title": "Prison Architect",
+                                        "metacriticLink": "/game/prison-architect/",
+                                        "dealID": "dJu%2F9ZZqaUj7w3LKkdORdn3qBkI9KiMDeXn%2FNKnXScg%3D",
+                                        "storeID": "1",
+                                        "gameID": "96246",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.026676",
+                                        "metacriticScore": "83",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "54147",
+                                        "steamAppID": "233450",
+                                        "releaseDate": 1444089600,
+                                        "lastChange": 1700592240,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/233450/capsule_sm_120.jpg?t=1700131126"
+                                    },
+                                    {
+                                        "internalName": "NEEDFORSPEEDUNBOUND",
+                                        "title": "Need for Speed Unbound",
+                                        "metacriticLink": "/game/need-for-speed-unbound/",
+                                        "dealID": "ZzJ5c7WnXezZx5fGFv%2BK8fvfpUh9lZQAEDfAq1zQgSk%3D",
+                                        "storeID": "1",
+                                        "gameID": "251767",
+                                        "salePrice": "13.99",
+                                        "normalPrice": "69.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.011430",
+                                        "metacriticScore": "73",
+                                        "steamRatingText": "Mixed",
+                                        "steamRatingPercent": "63",
+                                        "steamRatingCount": "17184",
+                                        "steamAppID": "1846380",
+                                        "releaseDate": 1669939200,
+                                        "lastChange": 1700592281,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1846380/capsule_sm_120.jpg?t=1700060404"
+                                    },
+                                    {
+                                        "internalName": "IMMORTALSFENYXRISING",
+                                        "title": "Immortals Fenyx Rising",
+                                        "metacriticLink": "/game/immortals-fenyx-rising/",
+                                        "dealID": "KjhT0URCq9H42v7C%2FGwBRlyTvPBDnt2YhVmuVgjJPiw%3D",
+                                        "storeID": "1",
+                                        "gameID": "220398",
+                                        "salePrice": "8.99",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.014169",
+                                        "metacriticScore": "79",
+                                        "steamRatingText": "Mixed",
+                                        "steamRatingPercent": "68",
+                                        "steamRatingCount": "1505",
+                                        "steamAppID": "2221920",
+                                        "releaseDate": 1606953600,
+                                        "lastChange": 1700592309,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/2221920/capsule_sm_120.jpg?t=1696603538"
+                                    },
+                                    {
+                                        "internalName": "UNITYOFCOMMANDII",
+                                        "title": "Unity of Command II",
+                                        "metacriticLink": "/game/unity-of-command-ii/",
+                                        "dealID": "fwNwzWaH9FmEtHMgvo6sAC3Rh%2BYLdvHR2LPBx21jh9U%3D",
+                                        "storeID": "1",
+                                        "gameID": "207139",
+                                        "salePrice": "7.49",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "75.025008",
+                                        "metacriticScore": "88",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "81",
+                                        "steamRatingCount": "1541",
+                                        "steamAppID": "809230",
+                                        "releaseDate": 1573516800,
+                                        "lastChange": 1700592384,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/809230/capsule_sm_120.jpg?t=1695719319"
+                                    },
+                                    {
+                                        "internalName": "ASSASSINSCREEDODYSSEY",
+                                        "title": "Assassins Creed Odyssey",
+                                        "metacriticLink": "/game/assassins-creed-odyssey/",
+                                        "dealID": "ELkqXEh9wV57QTgQ0yCCjEXFDTbrWV%2Fljw8aMEd1vqI%3D",
+                                        "storeID": "1",
+                                        "gameID": "188214",
+                                        "salePrice": "11.99",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.013336",
+                                        "metacriticScore": "86",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "89",
+                                        "steamRatingCount": "131056",
+                                        "steamAppID": "812140",
+                                        "releaseDate": 1538438400,
+                                        "lastChange": 1700592224,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/812140/capsule_sm_120.jpg?t=1692034673"
+                                    },
+                                    {
+                                        "internalName": "MASSEFFECTLEGENDARYEDITION",
+                                        "title": "Mass Effect Legendary Edition",
+                                        "metacriticLink": "/game/mass-effect-legendary-edition/",
+                                        "dealID": "y3FMzZnEmRe2zOrsfxcD3uHBpntwe%2BE64Ug0enLeGlU%3D",
+                                        "storeID": "1",
+                                        "gameID": "225750",
+                                        "salePrice": "11.99",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.013336",
+                                        "metacriticScore": "86",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "91",
+                                        "steamRatingCount": "37352",
+                                        "steamAppID": "1328670",
+                                        "releaseDate": 1620950400,
+                                        "lastChange": 1700592231,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1328670/capsule_sm_120.jpg?t=1669773470"
+                                    },
+                                    {
+                                        "internalName": "RESIDENTEVIL2",
+                                        "title": "Resident Evil 2",
+                                        "metacriticLink": "/game/resident-evil-2/",
+                                        "dealID": "wfO%2F2i0XG%2FAvVi9EAI2k%2FBVnHsZMNGA%2FvrDGUw%2BZz7g%3D",
+                                        "storeID": "1",
+                                        "gameID": "212722",
+                                        "salePrice": "9.99",
+                                        "normalPrice": "39.99",
+                                        "isOnSale": "1",
+                                        "savings": "75.018755",
+                                        "metacriticScore": "89",
+                                        "steamRatingText": "Overwhelmingly Positive",
+                                        "steamRatingPercent": "97",
+                                        "steamRatingCount": "96837",
+                                        "steamAppID": "883710",
+                                        "releaseDate": 1548374400,
+                                        "lastChange": 1700592245,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/883710/capsule_sm_120.jpg?t=1692001351"
+                                    },
+                                    {
+                                        "internalName": "LEGODCSUPERVILLAINS",
+                                        "title": "LEGO DC Super-Villains",
+                                        "metacriticLink": "/game/lego-dc-super-villains/",
+                                        "dealID": "PIprGWCRai6qXH4oIjNjDDniWWGRKwJ4W1GecAzJLkM%3D",
+                                        "storeID": "1",
+                                        "gameID": "187756",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "39.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.021255",
+                                        "metacriticScore": "76",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "4094",
+                                        "steamAppID": "829110",
+                                        "releaseDate": 1539648000,
+                                        "lastChange": 1700592377,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/829110/capsule_sm_120.jpg?t=1648765422"
+                                    },
+                                    {
+                                        "internalName": "RIDE4",
+                                        "title": "RIDE 4",
+                                        "metacriticLink": "/game/ride-4/",
+                                        "dealID": "pSvC5TDK5iGVHdCbFjab9Fv%2FVujgScce4gyXAo7Kxh0%3D",
+                                        "storeID": "1",
+                                        "gameID": "220134",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "39.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.021255",
+                                        "metacriticScore": "76",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "82",
+                                        "steamRatingCount": "7561",
+                                        "steamAppID": "1259980",
+                                        "releaseDate": 1602115200,
+                                        "lastChange": 1700592326,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1259980/capsule_sm_120.jpg?t=1681462820"
+                                    },
+                                    {
+                                        "internalName": "WARHAMMERVERMINTIDE2",
+                                        "title": "Warhammer: Vermintide 2",
+                                        "metacriticLink": "/game/warhammer-vermintide-2/",
+                                        "dealID": "WsGdr8u7VzKVcEhPy%2BuEqhvHQegMgCeyKlIthyE7rWI%3D",
+                                        "storeID": "1",
+                                        "gameID": "174250",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.026676",
+                                        "metacriticScore": "82",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "84",
+                                        "steamRatingCount": "75432",
+                                        "steamAppID": "552500",
+                                        "releaseDate": 1520467200,
+                                        "lastChange": 1700592204,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/552500/capsule_sm_120.jpg?t=1697731296"
+                                    },
+                                    {
+                                        "internalName": "METROEXODUS",
+                                        "title": "Metro Exodus",
+                                        "metacriticLink": "/game/metro-exodus/",
+                                        "dealID": "l7KtB1naNb4PDbjpECJuOfLqnBxx9O%2BMEJjGGZd7u84%3D",
+                                        "storeID": "1",
+                                        "gameID": "191008",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.026676",
+                                        "metacriticScore": "82",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "89",
+                                        "steamRatingCount": "84339",
+                                        "steamAppID": "412020",
+                                        "releaseDate": 1550188800,
+                                        "lastChange": 1700592246,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/412020/capsule_sm_120.jpg?t=1669390585"
+                                    },
+                                    {
+                                        "internalName": "FARCRY5",
+                                        "title": "Far Cry 5",
+                                        "metacriticLink": "/game/far-cry-5/",
+                                        "dealID": "jluOI%2BBXFfbMYh4Tpf0b1%2Bjxfwp7AfUnYAdoNuXFcE8%3D",
+                                        "storeID": "1",
+                                        "gameID": "169243",
+                                        "salePrice": "8.99",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.014169",
+                                        "metacriticScore": "78",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "80",
+                                        "steamRatingCount": "133000",
+                                        "steamAppID": "552520",
+                                        "releaseDate": 1522022400,
+                                        "lastChange": 1700592229,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/552520/capsule_sm_120.jpg?t=1694554810"
+                                    },
+                                    {
+                                        "internalName": "RESIDENTEVILREVELATIONS",
+                                        "title": "Resident Evil: Revelations",
+                                        "metacriticLink": "/game/resident-evil-revelations/",
+                                        "dealID": "aJNIfwEa%2BrKl1%2FMYVpxD%2FOPQweGAoiuM9jxqTnncAjo%3D",
+                                        "storeID": "1",
+                                        "gameID": "96701",
+                                        "salePrice": "5.09",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "83.027676",
+                                        "metacriticScore": "77",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "86",
+                                        "steamRatingCount": "7626",
+                                        "steamAppID": "222480",
+                                        "releaseDate": 1369008000,
+                                        "lastChange": 1700592407,
+                                        "dealRating": "8.4",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/222480/capsule_sm_120.jpg?t=1700453030"
+                                    },
+                                    {
+                                        "internalName": "WASTELAND2DIRECTORSCUT",
+                                        "title": "Wasteland 2: Director's Cut",
+                                        "metacriticLink": "/game/wasteland-2-directors-cut/",
+                                        "dealID": "VrYEH%2FPDNtQxyvq58aXsf07QEWBC1FM%2BqM2%2BRR0wssA%3D",
+                                        "storeID": "1",
+                                        "gameID": "146483",
+                                        "salePrice": "7.49",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "75.025008",
+                                        "metacriticScore": "87",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "82",
+                                        "steamRatingCount": "4573",
+                                        "steamAppID": "240760",
+                                        "releaseDate": 1444694400,
+                                        "lastChange": 1700592774,
+                                        "dealRating": "8.4",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/240760/capsule_sm_120.jpg?t=1686191412"
+                                    },
+                                    {
+                                        "internalName": "BAYONETTA",
+                                        "title": "Bayonetta",
+                                        "metacriticLink": "/game/bayonetta/",
+                                        "dealID": "f7xMPsxHRp%2FuOS9yhvVZF9JevOvXC5dErqAbdraUHCI%3D",
+                                        "storeID": "1",
+                                        "gameID": "168082",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "19.99",
+                                        "isOnSale": "1",
+                                        "savings": "70.035018",
+                                        "metacriticScore": "90",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "92",
+                                        "steamRatingCount": "21554",
+                                        "steamAppID": "460790",
+                                        "releaseDate": 1491868800,
+                                        "lastChange": 1700592441,
+                                        "dealRating": "8.4",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/460790/capsule_sm_120.jpg?t=1670260448"
+                                    },
+                                    {
+                                        "internalName": "BACK4BLOOD",
+                                        "title": "Back 4 Blood",
+                                        "metacriticLink": "/game/back-4-blood/",
+                                        "dealID": "ESIIJCjm9wUuaO1hhZLZLgd7OS3qorpPmT44E70YSas%3D",
+                                        "storeID": "1",
+                                        "gameID": "224258",
+                                        "salePrice": "8.99",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "85.014169",
+                                        "metacriticScore": "77",
+                                        "steamRatingText": "Mixed",
+                                        "steamRatingPercent": "66",
+                                        "steamRatingCount": "37590",
+                                        "steamAppID": "924970",
+                                        "releaseDate": 1633996800,
+                                        "lastChange": 1700592231,
+                                        "dealRating": "8.4",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/924970/capsule_sm_120.jpg?t=1699984050"
+                                    },
+                                    {
+                                        "internalName": "CASTLEVANIALORDSOFSHADOWULTIMATEEDITION",
+                                        "title": "Castlevania: Lords of Shadow  Ultimate Edition",
+                                        "metacriticLink": "/game/castlevania-lords-of-shadow-ultimate-edition/",
+                                        "dealID": "X4qPiIfxJUUTCPkJESwvmjKCzcZ9eXop%2BxDME9pPeGM%3D",
+                                        "storeID": "1",
+                                        "gameID": "100454",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.026676",
+                                        "metacriticScore": "81",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "80",
+                                        "steamRatingCount": "6198",
+                                        "steamAppID": "234080",
+                                        "releaseDate": 1377561600,
+                                        "lastChange": 1700592379,
+                                        "dealRating": "8.4",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/234080/capsule_sm_120.jpg?t=1690415965"
+                                    },
+                                    {
+                                        "internalName": "UNDERNIGHTINBIRTHEXELATE",
+                                        "title": "UNDER NIGHT IN-BIRTH Exe:Late",
+                                        "metacriticLink": "/game/under-night-in-birth-exelate/",
+                                        "dealID": "%2B3P3%2FpKcDEE0hWRPUiL9xNjigW08yeTKFI81jEof%2BDE%3D",
+                                        "storeID": "1",
+                                        "gameID": "154592",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.026676",
+                                        "metacriticScore": "81",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "715",
+                                        "steamAppID": "452510",
+                                        "releaseDate": 1468281600,
+                                        "lastChange": 1700596086,
+                                        "dealRating": "8.4",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/452510/capsule_sm_120.jpg?t=1671432712"
+                                    },
+                                    {
+                                        "internalName": "ARIZONASUNSHINE",
+                                        "title": "Arizona Sunshine",
+                                        "metacriticLink": "/game/arizona-sunshine/",
+                                        "dealID": "3N%2BMqrFUwwZZfvowOid4C%2FyvD8RzUDcN45aFUbBiRM8%3D",
+                                        "storeID": "1",
+                                        "gameID": "162090",
+                                        "salePrice": "5.99",
+                                        "normalPrice": "29.99",
+                                        "isOnSale": "1",
+                                        "savings": "80.026676",
+                                        "metacriticScore": "81",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "80",
+                                        "steamRatingCount": "6995",
+                                        "steamAppID": "342180",
+                                        "releaseDate": 1480896000,
+                                        "lastChange": 1700592332,
+                                        "dealRating": "8.4",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/342180/capsule_sm_120.jpg?t=1685526920"
+                                    },
+                                    {
+                                        "internalName": "TURBOOVERKILL",
+                                        "title": "Turbo Overkill",
+                                        "metacriticLink": "/game/turbo-overkill/",
+                                        "dealID": "SssVGcm73JCJPtKFsiMIHwJ%2Begk%2FnwkG%2BSgIKzrCGxU%3D",
+                                        "storeID": "1",
+                                        "gameID": "244211",
+                                        "salePrice": "14.43",
+                                        "normalPrice": "26.98",
+                                        "isOnSale": "1",
+                                        "savings": "46.515938",
+                                        "metacriticScore": "91",
+                                        "steamRatingText": "Overwhelmingly Positive",
+                                        "steamRatingPercent": "96",
+                                        "steamRatingCount": "3806",
+                                        "steamAppID": "1328350",
+                                        "releaseDate": 1689638400,
+                                        "lastChange": 1700592235,
+                                        "dealRating": "8.4",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1328350/capsule_sm_120.jpg?t=1700522383"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<title>Not Found | CheapShark</title>\n<meta name=\"description\" content=\"404 Page Not Found!\" />\n<meta name=\"robots\" content=\"noindex\">\n\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n<meta name=\"keywords\" content=\"game,deals,steam,digital,downloads,pc,sales,compare,prices,search,gamersgate,greenmangaming,gog\">\n<meta property=\"og:title\" ..."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/1.0/stores": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "storeID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "2": {
+                                "value": "2"
+                            },
+                            "3": {
+                                "value": "3"
+                            },
+                            "4": {
+                                "value": "4"
+                            },
+                            "5": {
+                                "value": "5"
+                            },
+                            "6": {
+                                "value": "6"
+                            },
+                            "7": {
+                                "value": "7"
+                            },
+                            "8": {
+                                "value": "8"
+                            },
+                            "9": {
+                                "value": "9"
+                            },
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lowerPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            },
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "upperPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            },
+                            "30": {
+                                "value": "30"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "4": {
+                                "value": "4"
+                            }
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Assassin's+Creed": {
+                                "value": "Assassin's+Creed"
+                            },
+                            "Call+of+Duty": {
+                                "value": "Call+of+Duty"
+                            }
+                        }
+                    },
+                    {
+                        "name": "onSale",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name": {
+                                "value": "name"
+                            },
+                            "price": {
+                                "value": "price"
+                            },
+                            "rating": {
+                                "value": "rating"
+                            }
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "action": {
+                                "value": "action"
+                            }
+                        }
+                    },
+                    {
+                        "name": "AAA",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "0": {
+                                "value": "0"
+                            },
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "genre",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "action": {
+                                "value": "action"
+                            }
+                        }
+                    },
+                    {
+                        "name": "metacritic",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "80": {
+                                "value": "80"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamRating",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "positive": {
+                                "value": "positive"
+                            },
+                            "overwhelmingly+positive": {
+                                "value": "overwhelmingly+positive"
+                            }
+                        }
+                    },
+                    {
+                        "name": "release",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-01-01": {
+                                "value": "2021-01-01"
+                            },
+                            "2021-02-01": {
+                                "value": "2021-02-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "US": {
+                                "value": "US"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exact",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "0": {
+                                "value": "0"
+                            },
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "desc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "0": {
+                                "value": "0"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamAppID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1250": {
+                                "value": "1250"
+                            },
+                            "250": {
+                                "value": "250"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_1.0_stores"
+                                },
+                                "example": [
+                                    {
+                                        "storeID": "1",
+                                        "storeName": "Steam",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/0.png",
+                                            "logo": "/img/stores/logos/0.png",
+                                            "icon": "/img/stores/icons/0.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "2",
+                                        "storeName": "GamersGate",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/1.png",
+                                            "logo": "/img/stores/logos/1.png",
+                                            "icon": "/img/stores/icons/1.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "3",
+                                        "storeName": "GreenManGaming",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/2.png",
+                                            "logo": "/img/stores/logos/2.png",
+                                            "icon": "/img/stores/icons/2.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "4",
+                                        "storeName": "Amazon",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/3.png",
+                                            "logo": "/img/stores/logos/3.png",
+                                            "icon": "/img/stores/icons/3.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "5",
+                                        "storeName": "GameStop",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/4.png",
+                                            "logo": "/img/stores/logos/4.png",
+                                            "icon": "/img/stores/icons/4.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "6",
+                                        "storeName": "Direct2Drive",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/5.png",
+                                            "logo": "/img/stores/logos/5.png",
+                                            "icon": "/img/stores/icons/5.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "7",
+                                        "storeName": "GOG",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/6.png",
+                                            "logo": "/img/stores/logos/6.png",
+                                            "icon": "/img/stores/icons/6.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "8",
+                                        "storeName": "Origin",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/7.png",
+                                            "logo": "/img/stores/logos/7.png",
+                                            "icon": "/img/stores/icons/7.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "9",
+                                        "storeName": "Get Games",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/8.png",
+                                            "logo": "/img/stores/logos/8.png",
+                                            "icon": "/img/stores/icons/8.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "10",
+                                        "storeName": "Shiny Loot",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/9.png",
+                                            "logo": "/img/stores/logos/9.png",
+                                            "icon": "/img/stores/icons/9.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "11",
+                                        "storeName": "Humble Store",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/10.png",
+                                            "logo": "/img/stores/logos/10.png",
+                                            "icon": "/img/stores/icons/10.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "12",
+                                        "storeName": "Desura",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/11.png",
+                                            "logo": "/img/stores/logos/11.png",
+                                            "icon": "/img/stores/icons/11.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "13",
+                                        "storeName": "Uplay",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/12.png",
+                                            "logo": "/img/stores/logos/12.png",
+                                            "icon": "/img/stores/icons/12.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "14",
+                                        "storeName": "IndieGameStand",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/13.png",
+                                            "logo": "/img/stores/logos/13.png",
+                                            "icon": "/img/stores/icons/13.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "15",
+                                        "storeName": "Fanatical",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/14.png",
+                                            "logo": "/img/stores/logos/14.png",
+                                            "icon": "/img/stores/icons/14.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "16",
+                                        "storeName": "Gamesrocket",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/15.png",
+                                            "logo": "/img/stores/logos/15.png",
+                                            "icon": "/img/stores/icons/15.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "17",
+                                        "storeName": "Games Republic",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/16.png",
+                                            "logo": "/img/stores/logos/16.png",
+                                            "icon": "/img/stores/icons/16.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "18",
+                                        "storeName": "SilaGames",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/17.png",
+                                            "logo": "/img/stores/logos/17.png",
+                                            "icon": "/img/stores/icons/17.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "19",
+                                        "storeName": "Playfield",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/18.png",
+                                            "logo": "/img/stores/logos/18.png",
+                                            "icon": "/img/stores/icons/18.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "20",
+                                        "storeName": "ImperialGames",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/19.png",
+                                            "logo": "/img/stores/logos/19.png",
+                                            "icon": "/img/stores/icons/19.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "21",
+                                        "storeName": "WinGameStore",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/20.png",
+                                            "logo": "/img/stores/logos/20.png",
+                                            "icon": "/img/stores/icons/20.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "22",
+                                        "storeName": "FunStockDigital",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/21.png",
+                                            "logo": "/img/stores/logos/21.png",
+                                            "icon": "/img/stores/icons/21.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "23",
+                                        "storeName": "GameBillet",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/22.png",
+                                            "logo": "/img/stores/logos/22.png",
+                                            "icon": "/img/stores/icons/22.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "24",
+                                        "storeName": "Voidu",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/23.png",
+                                            "logo": "/img/stores/logos/23.png",
+                                            "icon": "/img/stores/icons/23.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "25",
+                                        "storeName": "Epic Games Store",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/24.png",
+                                            "logo": "/img/stores/logos/24.png",
+                                            "icon": "/img/stores/icons/24.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "26",
+                                        "storeName": "Razer Game Store",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/25.png",
+                                            "logo": "/img/stores/logos/25.png",
+                                            "icon": "/img/stores/icons/25.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "27",
+                                        "storeName": "Gamesplanet",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/26.png",
+                                            "logo": "/img/stores/logos/26.png",
+                                            "icon": "/img/stores/icons/26.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "28",
+                                        "storeName": "Gamesload",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/27.png",
+                                            "logo": "/img/stores/logos/27.png",
+                                            "icon": "/img/stores/icons/27.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "29",
+                                        "storeName": "2Game",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/28.png",
+                                            "logo": "/img/stores/logos/28.png",
+                                            "icon": "/img/stores/icons/28.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "30",
+                                        "storeName": "IndieGala",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/29.png",
+                                            "logo": "/img/stores/logos/29.png",
+                                            "icon": "/img/stores/icons/29.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "31",
+                                        "storeName": "Blizzard Shop",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/30.png",
+                                            "logo": "/img/stores/logos/30.png",
+                                            "icon": "/img/stores/icons/30.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "32",
+                                        "storeName": "AllYouPlay",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/31.png",
+                                            "logo": "/img/stores/logos/31.png",
+                                            "icon": "/img/stores/icons/31.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "33",
+                                        "storeName": "DLGamer",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/32.png",
+                                            "logo": "/img/stores/logos/32.png",
+                                            "icon": "/img/stores/icons/32.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "34",
+                                        "storeName": "Noctre",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/33.png",
+                                            "logo": "/img/stores/logos/33.png",
+                                            "icon": "/img/stores/icons/33.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "35",
+                                        "storeName": "DreamGame",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/34.png",
+                                            "logo": "/img/stores/logos/34.png",
+                                            "icon": "/img/stores/icons/34.png"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<title>Not Found | CheapShark</title>\n<meta name=\"description\" content=\"404 Page Not Found!\" />\n<meta name=\"robots\" content=\"noindex\">\n\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n<meta name=\"keywords\" content=\"game,deals,steam,digital,downloads,pc,sales,compare,prices,search,gamersgate,greenmangaming,gog\">\n<meta property=\"og:title\" ..."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/1.0/games": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Assassin's+Creed": {
+                                "value": "Assassin's+Creed"
+                            },
+                            "call+of+duty": {
+                                "value": "call+of+duty"
+                            },
+                            "fallout": {
+                                "value": "fallout"
+                            },
+                            "Call+of+Duty": {
+                                "value": "Call+of+Duty"
+                            },
+                            "Skyrim": {
+                                "value": "Skyrim"
+                            },
+                            "fortnite": {
+                                "value": "fortnite"
+                            }
+                        }
+                    },
+                    {
+                        "name": "storeID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lowerPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            },
+                            "10": {
+                                "value": "10"
+                            },
+                            "15": {
+                                "value": "15"
+                            }
+                        }
+                    },
+                    {
+                        "name": "upperPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            },
+                            "50": {
+                                "value": "50"
+                            },
+                            "30": {
+                                "value": "30"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "releaseDate": {
+                                "value": "releaseDate"
+                            },
+                            "price": {
+                                "value": "price"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamRating",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "80": {
+                                "value": "80"
+                            },
+                            "positive": {
+                                "value": "positive"
+                            }
+                        }
+                    },
+                    {
+                        "name": "metacritic",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "70": {
+                                "value": "70"
+                            },
+                            "90": {
+                                "value": "90"
+                            },
+                            "80": {
+                                "value": "80"
+                            }
+                        }
+                    },
+                    {
+                        "name": "retailPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "30": {
+                                "value": "30"
+                            }
+                        }
+                    },
+                    {
+                        "name": "onSale",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "true": {
+                                "value": "true"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exact",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "50": {
+                                "value": "50"
+                            },
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageNumber",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "AAA",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "true": {
+                                "value": "true"
+                            }
+                        }
+                    },
+                    {
+                        "name": "freeGames",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamAppID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "12345": {
+                                "value": "12345"
+                            },
+                            "730": {
+                                "value": "730"
+                            },
+                            "123456": {
+                                "value": "123456"
+                            }
+                        }
+                    },
+                    {
+                        "name": "releaseDate",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-01-01": {
+                                "value": "2021-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "desc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            },
+                            "0": {
+                                "value": "0"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            },
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamworks",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "4": {
+                                "value": "4"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_1.0_games"
+                                },
+                                "example": [
+                                    {
+                                        "gameID": "3301",
+                                        "steamAppID": null,
+                                        "cheapest": "4.30",
+                                        "cheapestDealID": "fK8YSab3VBUKcRgFPZzTKTRiAl8DRkIcAeuj0kfo9Z4%3D",
+                                        "external": "Assassin's Creed",
+                                        "internalName": "ASSASSINSCREED",
+                                        "thumb": "https://images.greenmangaming.com/169acc04c3d44cc6a03163a002e71c1f/369cdf3b5e704859bc2e449cc37bd80a.jpg"
+                                    },
+                                    {
+                                        "gameID": "233214",
+                                        "steamAppID": "33230",
+                                        "cheapest": "4.99",
+                                        "cheapestDealID": "Kq9lPKKO%2F12z55H5%2FV5%2ByhuU47hJZc4D82j5yuenVvc%3D",
+                                        "external": "Assassins Creed 2",
+                                        "internalName": "ASSASSINSCREED2",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/33230/capsule_sm_120.jpg?t=1682004272"
+                                    },
+                                    {
+                                        "gameID": "232354",
+                                        "steamAppID": null,
+                                        "cheapest": "2.15",
+                                        "cheapestDealID": "a8Bxusg31DPJTc1qzrnMSrKUwmUdb9UnkFKPGVLIKuQ%3D",
+                                        "external": "Assassins Creed II",
+                                        "internalName": "ASSASSINSCREEDII",
+                                        "thumb": "https://images.greenmangaming.com/50983bd6a94044a6a79dafe9828c52c8/98ed34f62af14594969a159d97b538e0.jpg"
+                                    },
+                                    {
+                                        "gameID": "141460",
+                                        "steamAppID": "311560",
+                                        "cheapest": "5.15",
+                                        "cheapestDealID": "91onKPz4IxXOXx7rB0Pu54ojCL6RD33QbRoGvFleQcM%3D",
+                                        "external": "Assassins Creed Rogue",
+                                        "internalName": "ASSASSINSCREEDROGUE",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/311560/capsule_sm_120.jpg?t=1692034790"
+                                    },
+                                    {
+                                        "gameID": "113269",
+                                        "steamAppID": "289650",
+                                        "cheapest": "6.44",
+                                        "cheapestDealID": "z2IwbSxTgSH8DvJ4Mc11xwvMP%2BRdUjWi7T4gonchZRQ%3D",
+                                        "external": "Assassin's Creed Unity",
+                                        "internalName": "ASSASSINSCREEDUNITY",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/289650/capsule_sm_120.jpg?t=1692034779"
+                                    },
+                                    {
+                                        "gameID": "266407",
+                                        "steamAppID": null,
+                                        "cheapest": "39.99",
+                                        "cheapestDealID": "B7gAYgRMs0zDQCzfe4%2F7gDQw59MQWCvRf51F0b%2FL4tc%3D",
+                                        "external": "Assassins Creed Mirage",
+                                        "internalName": "ASSASSINSCREEDMIRAGE",
+                                        "thumb": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dwb1a1bd7b/images/large/62ea4f8e09372571f2736a71.jpg?sw=197&amp;sh=261&amp;sm=fit"
+                                    },
+                                    {
+                                        "gameID": "188214",
+                                        "steamAppID": "812140",
+                                        "cheapest": "10.31",
+                                        "cheapestDealID": "3T53%2F1Y%2B1NpdYCFXkRQjXTYMLaKcLxz0a9PRSsgzLcY%3D",
+                                        "external": "Assassins Creed Odyssey",
+                                        "internalName": "ASSASSINSCREEDODYSSEY",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/812140/capsule_sm_120.jpg?t=1692034673"
+                                    },
+                                    {
+                                        "gameID": "170047",
+                                        "steamAppID": "582160",
+                                        "cheapest": "7.73",
+                                        "cheapestDealID": "W3XW7iU4PIzzAoPd94M1INn%2Fssnph3S9EraOvmX3IsY%3D",
+                                        "external": "Assassins Creed Origins",
+                                        "internalName": "ASSASSINSCREEDORIGINS",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/582160/capsule_sm_120.jpg?t=1692034680"
+                                    },
+                                    {
+                                        "gameID": "214911",
+                                        "steamAppID": "2208920",
+                                        "cheapest": "12.60",
+                                        "cheapestDealID": "mGhA9eHrZZOxJIft%2Fiqgl5qvk7gm168m7TMcBUD5V08%3D",
+                                        "external": "Assassins Creed Valhalla",
+                                        "internalName": "ASSASSINSCREEDVALHALLA",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/2208920/capsule_sm_120.jpg?t=1697654233"
+                                    },
+                                    {
+                                        "gameID": "143858",
+                                        "steamAppID": "368500",
+                                        "cheapest": "6.45",
+                                        "cheapestDealID": "VLN8XRvGtwnM01Zmx0hExJ%2BVQFdXZV0AAusjUZrIAxg%3D",
+                                        "external": "Assassins Creed Syndicate",
+                                        "internalName": "ASSASSINSCREEDSYNDICATE",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/368500/capsule_sm_120.jpg?t=1692034785"
+                                    },
+                                    {
+                                        "gameID": "278430",
+                                        "steamAppID": null,
+                                        "cheapest": "5.00",
+                                        "cheapestDealID": "%2Fp7hm8mK8yGUpLjDW8nOnpJR%2BBV1E5BlGY3RfGPawa0%3D",
+                                        "external": "Assassins Creed Liberation",
+                                        "internalName": "ASSASSINSCREEDLIBERATION",
+                                        "thumb": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dwf46b2896/images/large/56c4948188a7e300458b46d0.jpg?sw=197&amp;sh=261&amp;sm=fit"
+                                    },
+                                    {
+                                        "gameID": "107188",
+                                        "steamAppID": "277590",
+                                        "cheapest": "3.23",
+                                        "cheapestDealID": "3HQhvYZF%2FiN2imiAJwl8uGhfWsM3YhSumCvF0BG9%2BfQ%3D",
+                                        "external": "Assassins Creed Freedom Cry",
+                                        "internalName": "ASSASSINSCREEDFREEDOMCRY",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/277590/capsule_sm_120.jpg?t=1692034508"
+                                    },
+                                    {
+                                        "gameID": "23",
+                                        "steamAppID": "201870",
+                                        "cheapest": "5.15",
+                                        "cheapestDealID": "d6z15tJKd6RoEXzhxv0T7nKrUDqI%2FK6UZh7veEiOKAg%3D",
+                                        "external": "Assassin's Creed Revelations",
+                                        "internalName": "ASSASSINSCREEDREVELATIONS",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/201870/capsule_sm_120.jpg?t=1698435866"
+                                    },
+                                    {
+                                        "gameID": "98236",
+                                        "steamAppID": "242050",
+                                        "cheapest": "11.99",
+                                        "cheapestDealID": "vEsHQc5l4Ds7hZGDjMvC4ZzHt74I5HdOQNKfmgJv7kQ%3D",
+                                        "external": "Assassin's Creed IV Black Flag",
+                                        "internalName": "ASSASSINSCREEDIVBLACKFLAG",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/242050/capsule_sm_120.jpg?t=1698852989"
+                                    },
+                                    {
+                                        "gameID": "104",
+                                        "steamAppID": "48190",
+                                        "cheapest": "4.29",
+                                        "cheapestDealID": "2j0ixBO61oglkDi1qQyP3F36zamgraaJ7g7znj48iS4%3D",
+                                        "external": "Assassins Creed Brotherhood",
+                                        "internalName": "ASSASSINSCREEDBROTHERHOOD",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/48190/capsule_sm_120.jpg?t=1681861086"
+                                    },
+                                    {
+                                        "gameID": "102456",
+                                        "steamAppID": "260210",
+                                        "cheapest": "4.75",
+                                        "cheapestDealID": "ea0d8Cs%2FA43Sw7pLRLrlFwH1U3ohSVoUVtLMyfwpmvk%3D",
+                                        "external": "Assassins Creed Liberation HD",
+                                        "internalName": "ASSASSINSCREEDLIBERATIONHD",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/260210/capsule_sm_120.jpg?t=1692034621"
+                                    },
+                                    {
+                                        "gameID": "5226",
+                                        "steamAppID": null,
+                                        "cheapest": "4.99",
+                                        "cheapestDealID": "Ivrv4hUZmRCg5mPrUidcshDQeSGNR82ZEBdsu0BSn5g%3D",
+                                        "external": "Assassin's Creed Director's Cut",
+                                        "internalName": "ASSASSINSCREEDDIRECTORSCUT",
+                                        "thumb": "https://images.gog-statics.com/792fd887d9b8b773c6ee33d60626f39d4b82440374f733e53cbc6e36e4eb2609_product_tile_117h.webp"
+                                    },
+                                    {
+                                        "gameID": "274875",
+                                        "steamAppID": null,
+                                        "cheapest": "4.99",
+                                        "cheapestDealID": "IowcES1ySc522Zz7KtVuXgm%2F81XxWXYnwrO%2BES8JW%2B0%3D",
+                                        "external": "Assassins Creed Mirage Map Pack",
+                                        "internalName": "ASSASSINSCREEDMIRAGEMAPPACK",
+                                        "thumb": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw5ae7b4dc/images/large/64e5dd4a4d42df3872462389.jpg?sw=197&amp;sh=261&amp;sm=fit"
+                                    },
+                                    {
+                                        "gameID": "278095",
+                                        "steamAppID": null,
+                                        "cheapest": "19.99",
+                                        "cheapestDealID": "sN64IKkKgIWFkPASfMAZPRaJuEZp3jwEn%2FXLoJrkW4w%3D",
+                                        "external": "Assassins Creed I: Directors Cut",
+                                        "internalName": "ASSASSINSCREEDIDIRECTORSCUT",
+                                        "thumb": "https://cdn1.epicgames.com/f9a21c4ce910440d82b83b01d1c48c5e/offer/ASSA_STD_Store_Portrait-860x1148-1900e7c91c1a913a9e754e3d98a41372.jpg"
+                                    },
+                                    {
+                                        "gameID": "266422",
+                                        "steamAppID": null,
+                                        "cheapest": "32.00",
+                                        "cheapestDealID": "zKut633M7HlDfr4zNwxas13K8u7P20h89KrZEcaCaTA%3D",
+                                        "external": "Assassins Creed Mythology Pack",
+                                        "internalName": "ASSASSINSCREEDMYTHOLOGYPACK",
+                                        "thumb": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw31ace545/images/large/5f6b58a50d253c2228fda460.jpg?sw=197&amp;sh=261&amp;sm=fit"
+                                    },
+                                    {
+                                        "gameID": "199609",
+                                        "steamAppID": "911400",
+                                        "cheapest": "8.59",
+                                        "cheapestDealID": "tx8qN82YYfKHWn6SInQBn0otzLTm6GA1NskTaALChCo%3D",
+                                        "external": "Assassin's Creed III Remastered",
+                                        "internalName": "ASSASSINSCREEDIIIREMASTERED",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/911400/capsule_sm_120.jpg?t=1692034844"
+                                    },
+                                    {
+                                        "gameID": "274876",
+                                        "steamAppID": null,
+                                        "cheapest": "9.99",
+                                        "cheapestDealID": "%2FNv0h43IanhnZ98JQXVq7ndLjqzD4q8QL%2BNo%2BaIjtSU%3D",
+                                        "external": "Assassins Creed Mirage Jinn Pack",
+                                        "internalName": "ASSASSINSCREEDMIRAGEJINNPACK",
+                                        "thumb": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw95fb8fd7/images/large/64e5dd4a4d42df3872462387.jpg?sw=197&amp;sh=261&amp;sm=fit"
+                                    },
+                                    {
+                                        "gameID": "142987",
+                                        "steamAppID": "354380",
+                                        "cheapest": "2.57",
+                                        "cheapestDealID": "BBS%2F3ytJPzqfabxoWCsPU1ZfVDtbi0K08xFo3H%2BE4dE%3D",
+                                        "external": "Assassin's Creed Chronicles: China",
+                                        "internalName": "ASSASSINSCREEDCHRONICLESCHINA",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/354380/capsule_sm_120.jpg?t=1692034852"
+                                    },
+                                    {
+                                        "gameID": "239945",
+                                        "steamAppID": null,
+                                        "cheapest": "7.74",
+                                        "cheapestDealID": "uGquiq72EUZpgrrhZcDXB4AhMygrsmfyAepxgIVOOO0%3D",
+                                        "external": "Assassins Creed: Revelations Gold",
+                                        "internalName": "ASSASSINSCREEDREVELATIONSGOLD",
+                                        "thumb": "https://images.greenmangaming.com/4ddc92ca8521427bb214099fec4be35b/99b7a678df45425e8997bde58b024659.jpg"
+                                    },
+                                    {
+                                        "gameID": "147898",
+                                        "steamAppID": "359610",
+                                        "cheapest": "2.57",
+                                        "cheapestDealID": "Dspc2Ss6I2BeMCMzigALJmim5X%2Fms1D%2Bw2lJ%2BE5RClU%3D",
+                                        "external": "Assassin's Creed Chronicles: India",
+                                        "internalName": "ASSASSINSCREEDCHRONICLESINDIA",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/359610/capsule_sm_120.jpg?t=1692034847"
+                                    },
+                                    {
+                                        "gameID": "266417",
+                                        "steamAppID": null,
+                                        "cheapest": "11.60",
+                                        "cheapestDealID": "OboTc%2F2fe%2FYQogrwj0%2B%2BEekdc6Tr0alzMIivlScH%2B1k%3D",
+                                        "external": "Assassins Creed Ezio Auditore Pack",
+                                        "internalName": "ASSASSINSCREEDEZIOAUDITOREPACK",
+                                        "thumb": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dwbb9aceb0/images/large/5c9101796b54a4f661915fff.jpg?sw=197&amp;sh=261&amp;sm=fit"
+                                    },
+                                    {
+                                        "gameID": "274879",
+                                        "steamAppID": null,
+                                        "cheapest": "9.99",
+                                        "cheapestDealID": "0YwD8zEGOWKG%2B40wmwSj%2FWURZ6vCg17ALKDRI0DH6PI%3D",
+                                        "external": "Assassins Creed Mirage Deluxe Pack",
+                                        "internalName": "ASSASSINSCREEDMIRAGEDELUXEPACK",
+                                        "thumb": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw8e981eb0/images/large/64e5dd494d42df3872462384.jpg?sw=197&amp;sh=261&amp;sm=fit"
+                                    },
+                                    {
+                                        "gameID": "233193",
+                                        "steamAppID": null,
+                                        "cheapest": "4.99",
+                                        "cheapestDealID": "efOqChUP6%2FFoRv%2BkoXlhA2QozcZAPmu0YPyUm%2Fq2E%2Bk%3D",
+                                        "external": "Assassins Creed 2 Standard Edition",
+                                        "internalName": "ASSASSINSCREED2STANDARDEDITION",
+                                        "thumb": "https://hb.imgix.net/dfc6f6f09b6e8fa6c74ea8daedae5101962ab9d9.jpg?auto=compress,format&fit=crop&h=84&w=135&s=2fa29c90668469c874c9dfbf00c1c46a"
+                                    },
+                                    {
+                                        "gameID": "175522",
+                                        "steamAppID": null,
+                                        "cheapest": "6.99",
+                                        "cheapestDealID": "eAP6F%2FZpRRHahfo2fumVpVqx6uhXnzLfwA7AF1VwmbM%3D",
+                                        "external": "Assassin's Creed Origins - Horus Pack",
+                                        "internalName": "ASSASSINSCREEDORIGINSHORUSPACK",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-origins-horus-pack/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "149762",
+                                        "steamAppID": "359600",
+                                        "cheapest": "2.57",
+                                        "cheapestDealID": "dJAZiLg5gsP4c8ooKU5lkjaiaFeg1a%2BPoTt515fUOKs%3D",
+                                        "external": "Assassin's Creed Chronicles: Russia",
+                                        "internalName": "ASSASSINSCREEDCHRONICLESRUSSIA",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/359600/capsule_sm_120.jpg?t=1692034902"
+                                    },
+                                    {
+                                        "gameID": "192924",
+                                        "steamAppID": null,
+                                        "cheapest": "13.75",
+                                        "cheapestDealID": "stYVWrsvSvq1i9Q9Y4rrj%2FEM2R7x0Vtlt8G57WAQlp0%3D",
+                                        "external": "Assassins Creed Odyssey Season Pass",
+                                        "internalName": "ASSASSINSCREEDODYSSEYSEASONPASS",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-odyssey-season-pass/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "149790",
+                                        "steamAppID": null,
+                                        "cheapest": "6.44",
+                                        "cheapestDealID": "6LEwRAhjqGH6evmR3kJSqXZ0sOP%2FRmLrrWmY%2FFu8yGE%3D",
+                                        "external": "Assassin's Creed Chronicles - Trilogy",
+                                        "internalName": "ASSASSINSCREEDCHRONICLESTRILOGY",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-chronicles-trilogy/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "172768",
+                                        "steamAppID": null,
+                                        "cheapest": "10.31",
+                                        "cheapestDealID": "%2FNRzJsOISlovZBv%2B9LVdQW1%2FZX0om9S9iaeCheauKrc%3D",
+                                        "external": "Assassin's Creed Origins Season Pass",
+                                        "internalName": "ASSASSINSCREEDORIGINSSEASONPASS",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-origins-season-pass/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "174603",
+                                        "steamAppID": null,
+                                        "cheapest": "9.99",
+                                        "cheapestDealID": "BXCpaavXxKfJEp8EPtB53q2AaEsw2RWJ6g6AoTX1DCA%3D",
+                                        "external": "Assassin's Creed Origins - Deluxe Pack",
+                                        "internalName": "ASSASSINSCREEDORIGINSDELUXEPACK",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-origins-deluxe-pack/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "234419",
+                                        "steamAppID": null,
+                                        "cheapest": "19.99",
+                                        "cheapestDealID": "13GZn5Hv0ZmPLXF1RquKdzSMUz4SZEQRW%2BR%2B6nhv%2Bes%3D",
+                                        "external": "Assassins Creed II Standard Edition",
+                                        "internalName": "ASSASSINSCREEDIISTANDARDEDITION",
+                                        "thumb": "https://cdn1.epicgames.com/salesEvent/salesEvent/AC2_GameName_Store_Portrait_1200x1600_1200x1600-2c5e000213988c5dde375bb2602e9986"
+                                    },
+                                    {
+                                        "gameID": "141459",
+                                        "steamAppID": null,
+                                        "cheapest": "7.73",
+                                        "cheapestDealID": "g%2BggBSFJnmmwSD6sVDbBsk3oulF6yUpx1BwVOZkFRWM%3D",
+                                        "external": "Assassins Creed Rogue Deluxe Edition",
+                                        "internalName": "ASSASSINSCREEDROGUEDELUXEEDITION",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-rogue-deluxe-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "170045",
+                                        "steamAppID": null,
+                                        "cheapest": "17.19",
+                                        "cheapestDealID": "XneYYKAieKNf38GxZ56b2LgyiRQ0l4pn1o1%2BCcvsnC0%3D",
+                                        "external": "Assassins Creed Origins Gold Edition",
+                                        "internalName": "ASSASSINSCREEDORIGINSGOLDEDITION",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-origins-gold-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "236997",
+                                        "steamAppID": null,
+                                        "cheapest": "13.75",
+                                        "cheapestDealID": "06vMMKPWVe8JIpLBr7Zcrg2xLG0ylK0Cxs2iBdbns94%3D",
+                                        "external": "Assassins Creed Valhalla - Season Pass",
+                                        "internalName": "ASSASSINSCREEDVALHALLASEASONPASS",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-valhalla-season-pass/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "276988",
+                                        "steamAppID": null,
+                                        "cheapest": "9.99",
+                                        "cheapestDealID": "zxUu9vjD0kPXOsU%2F4ZkC5QTPyj5Ud7eRxbWXed8bEA4%3D",
+                                        "external": "Assassins Creed Mirage Guardian Pack",
+                                        "internalName": "ASSASSINSCREEDMIRAGEGUARDIANPACK",
+                                        "thumb": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw7d4f4452/images/large/64e5dd4a4d42df387246238a.jpg?sw=197&amp;sh=261&amp;sm=fit"
+                                    },
+                                    {
+                                        "gameID": "188216",
+                                        "steamAppID": null,
+                                        "cheapest": "17.19",
+                                        "cheapestDealID": "Uq1DfXH63BYZGHioGNFKueiIeNrUHDRltCZOdqtPgno%3D",
+                                        "external": "Assassins Creed Odyssey Gold Edition",
+                                        "internalName": "ASSASSINSCREEDODYSSEYGOLDEDITION",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-odyssey-gold-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "147062",
+                                        "steamAppID": null,
+                                        "cheapest": "6.44",
+                                        "cheapestDealID": "hxMmfV8i8gOczTBPGhzuv%2FoO8yP7HgyoEJCv%2FWzaGCQ%3D",
+                                        "external": "Assassin's Creed Syndicate - Season Pass",
+                                        "internalName": "ASSASSINSCREEDSYNDICATESEASONPASS",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-syndicate-season-pass/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "418",
+                                        "steamAppID": "15100",
+                                        "cheapest": "4.29",
+                                        "cheapestDealID": "SSvx%2FY0MJ17tbGLQ0dmqvB6u4qsurq0jyqTKMtau8aE%3D",
+                                        "external": "Assassin's Creed: Director's Cut Edition",
+                                        "internalName": "ASSASSINSCREEDDIRECTORSCUTEDITION",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/15100/capsule_sm_120.jpg?t=1602600542"
+                                    },
+                                    {
+                                        "gameID": "266412",
+                                        "steamAppID": null,
+                                        "cheapest": "47.99",
+                                        "cheapestDealID": "Fugq%2Bv%2B1q5%2BwoMV24TSdwuILQahWC%2FI1nyCVOty76ZA%3D",
+                                        "external": "Assassins Creed Mirage Deluxe Edition",
+                                        "internalName": "ASSASSINSCREEDMIRAGEDELUXEEDITION",
+                                        "thumb": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw16115bc2/images/large/62ea4b5609372571f2736a6b.jpg?sw=197&amp;sh=261&amp;sm=fit"
+                                    },
+                                    {
+                                        "gameID": "264926",
+                                        "steamAppID": null,
+                                        "cheapest": "99.99",
+                                        "cheapestDealID": "f8qw8F7vS33r6Ld2nQpIJrD7azWokj48Npuypwf%2Bjjo%3D",
+                                        "external": "Assassins Creed Valhalla Gold Edition",
+                                        "internalName": "ASSASSINSCREEDVALHALLAGOLDEDITION",
+                                        "thumb": "https://www.indiegalacdn.com/get_store_img?img=store-img_game/games/medium/584b9332.jpg&s=medium"
+                                    },
+                                    {
+                                        "gameID": "274878",
+                                        "steamAppID": null,
+                                        "cheapest": "4.99",
+                                        "cheapestDealID": "jUdupS1whVd8VyjmwTCGw0o2ZjmUIHhpmwWv4Gi8Y0I%3D",
+                                        "external": "Assassins Creed Mirage Lightning Pack",
+                                        "internalName": "ASSASSINSCREEDMIRAGELIGHTNINGPACK",
+                                        "thumb": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dwa07145e6/images/large/64e5dd4a4d42df3872462386.jpg?sw=197&amp;sh=261&amp;sm=fit"
+                                    },
+                                    {
+                                        "gameID": "274873",
+                                        "steamAppID": null,
+                                        "cheapest": "14.99",
+                                        "cheapestDealID": "hLpeRGuGvjmvLd0eA1AScDsIgxk%2F1DTjmMED3FT8C3E%3D",
+                                        "external": "Assassins Creed Mirage Fire Demon Pack",
+                                        "internalName": "ASSASSINSCREEDMIRAGEFIREDEMONPACK",
+                                        "thumb": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw422b0b09/images/large/64e5dd4a4d42df3872462388.jpg?sw=197&amp;sh=261&amp;sm=fit"
+                                    },
+                                    {
+                                        "gameID": "266418",
+                                        "steamAppID": null,
+                                        "cheapest": "28.00",
+                                        "cheapestDealID": "N6EyuSwzDS1LaGtubUB3ytnyJ2f4a4f%2FuoEdQxtQrCo%3D",
+                                        "external": "Assassins Creed American History Pack",
+                                        "internalName": "ASSASSINSCREEDAMERICANHISTORYPACK",
+                                        "thumb": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw7f70cdc3/images/large/5c9101796b54a4f661916005.jpg?sw=197&amp;sh=261&amp;sm=fit"
+                                    },
+                                    {
+                                        "gameID": "175690",
+                                        "steamAppID": null,
+                                        "cheapest": "5.16",
+                                        "cheapestDealID": "yWYDjTfojCRNVyAoqj7hNVg4%2B7TEaFyRL4u5kisUWn8%3D",
+                                        "external": "Assassin's Creed Rogue Standard Edition",
+                                        "internalName": "ASSASSINSCREEDROGUESTANDARDEDITION",
+                                        "thumb": "https://images.greenmangaming.com/840d24df9b394bfda6a507a14e17a945/dc6a2b41c4e249f98ea5f5281f78021a.jpg"
+                                    },
+                                    {
+                                        "gameID": "188229",
+                                        "steamAppID": null,
+                                        "cheapest": "13.75",
+                                        "cheapestDealID": "O9lqMshIkM0k7T%2FXbQd%2BZ3ZWEK3IPfy%2Bv75PQACZnok%3D",
+                                        "external": "Assassin's Creed Odyssey - Deluxe Edition",
+                                        "internalName": "ASSASSINSCREEDODYSSEYDELUXEEDITION",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-odyssey-deluxe-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "177382",
+                                        "steamAppID": null,
+                                        "cheapest": "8.99",
+                                        "cheapestDealID": "p1J5jiRwiloe6bSr5AlO%2BuGGHdu5MeUfgI2nyYQFG%2FI%3D",
+                                        "external": "Assassin's Creed Origins - The Hidden Ones",
+                                        "internalName": "ASSASSINSCREEDORIGINSTHEHIDDENONES",
+                                        "thumb": "https://hb.imgix.net/4aa75f54ac346bbec47945cce662dbcd0f6b79be.jpg?auto=compress,format&fit=crop&h=84&w=135&s=804c98ef6146c557b2f1efe9562324df"
+                                    },
+                                    {
+                                        "gameID": "143860",
+                                        "steamAppID": null,
+                                        "cheapest": "14.99",
+                                        "cheapestDealID": "yQBKU7xqjbQgqQchlMfNqztwYxE%2BZZUKze%2BpCVEHdqM%3D",
+                                        "external": "Assassins Creed Syndicate Gold Edition",
+                                        "internalName": "ASSASSINSCREEDSYNDICATEGOLDEDITION",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-syndicate-gold-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "170046",
+                                        "steamAppID": null,
+                                        "cheapest": "12.03",
+                                        "cheapestDealID": "yR86rhcDD0L8V4Y4quJUkNjUgHoDWeg49aUGSjaZLsE%3D",
+                                        "external": "Assassins Creed Origins Deluxe Edition",
+                                        "internalName": "ASSASSINSCREEDORIGINSDELUXEEDITION",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-origins-deluxe-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "233316",
+                                        "steamAppID": null,
+                                        "cheapest": "16.80",
+                                        "cheapestDealID": "TsnIChIEn600PkSebzYkhl7TfPkZ7k3OHEuvdfPFKok%3D",
+                                        "external": "Assassins Creed Valhalla Deluxe Edition",
+                                        "internalName": "ASSASSINSCREEDVALHALLADELUXEEDITION",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-valhalla-deluxe-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "238387",
+                                        "steamAppID": null,
+                                        "cheapest": "13.75",
+                                        "cheapestDealID": "xbfUWv75lFiwSvz3n8u3VPGuAxxrWwl%2B%2FFHVPuv40F8%3D",
+                                        "external": "Assassins Creed Valhalla: Dawn of Ragnark",
+                                        "internalName": "ASSASSINSCREEDVALHALLADAWNOFRAGNARK",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-valhalla-dawn-of-ragnarok/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "236889",
+                                        "steamAppID": null,
+                                        "cheapest": "9.99",
+                                        "cheapestDealID": "G5MUzE%2BNaP4mNRw4sNIFPHYVKIAfRllC8GbuOMJVi4s%3D",
+                                        "external": "Assassins Creed Origins - 1 The Hidden Ones",
+                                        "internalName": "ASSASSINSCREEDORIGINS1THEHIDDENONES",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-origins-dlc-1-the-hidden-ones/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "266419",
+                                        "steamAppID": null,
+                                        "cheapest": "18.00",
+                                        "cheapestDealID": "tcRSDrHMhluatrk4bOMSdRt7R4Cyrayd8X%2Fkj9a3xWM%3D",
+                                        "external": "Assassins Creed Modern Revolutions Pack",
+                                        "internalName": "ASSASSINSCREEDMODERNREVOLUTIONSPACK",
+                                        "thumb": "https://store.ubisoft.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw6d3a8167/images/large/5c9101796b54a4f66191600d.jpg?sw=197&amp;sh=261&amp;sm=fit"
+                                    },
+                                    {
+                                        "gameID": "278082",
+                                        "steamAppID": null,
+                                        "cheapest": "59.99",
+                                        "cheapestDealID": "BkMdKNG9OxJfTYM13L16lbcRznafn1RC3LSBkLQzlyY%3D",
+                                        "external": "Assassins Creed Origins Standard Edition",
+                                        "internalName": "ASSASSINSCREEDORIGINSSTANDARDEDITION",
+                                        "thumb": "https://cdn1.epicgames.com/offer/camellia/ACOrigins_STD_Store_Portrait_1200x1600_1200x1600-4a79f9f393f7a3a9e5be3a0ae581f3d5"
+                                    },
+                                    {
+                                        "gameID": "188217",
+                                        "steamAppID": null,
+                                        "cheapest": "20.63",
+                                        "cheapestDealID": "l0PjUuYO9XN5cZLlvUKw4fHJap2FRjwW8j80SgNO0ec%3D",
+                                        "external": "Assassins Creed Odyssey Ultimate Edition",
+                                        "internalName": "ASSASSINSCREEDODYSSEYULTIMATEEDITION",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-odyssey-ultimate-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "101842",
+                                        "steamAppID": null,
+                                        "cheapest": "10.31",
+                                        "cheapestDealID": "DKv0n4a7WGS9igTPckBO%2B%2BaI2CcYmCZ28C9SoGT8yzM%3D",
+                                        "external": "Assassin's Creed IV Black Flag Gold Edition",
+                                        "internalName": "ASSASSINSCREEDIVBLACKFLAGGOLDEDITION",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/assassins-creed-iv-black-flagtm-gold-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "gameID": "246591",
+                                        "steamAppID": null,
+                                        "cheapest": "59.99",
+                                        "cheapestDealID": "CMZKN3hbab%2FN8ZWPEtK83K8vYkDgXBHVQo8Xxi4LEKs%3D",
+                                        "external": "Assassins Creed Odyssey Standard Edition",
+                                        "internalName": "ASSASSINSCREEDODYSSEYSTANDARDEDITION",
+                                        "thumb": "https://cdn1.epicgames.com/offer/clary/ACOdyssey_STD_Store_Portrait_1200x1600_1200x1600-3add642bad2d1207487527d53d715220"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<title>Not Found | CheapShark</title>\n<meta name=\"description\" content=\"404 Page Not Found!\" />\n<meta name=\"robots\" content=\"noindex\">\n\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n<meta name=\"keywords\" content=\"game,deals,steam,digital,downloads,pc,sales,compare,prices,search,gamersgate,greenmangaming,gog\">\n<meta property=\"og:title\" ..."
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema_api_1.0_deals": {},
+            "ResponseSchema_api_1.0_stores": {},
+            "ResponseSchema_api_1.0_games": {}
+        }
+    }
+}

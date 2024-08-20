@@ -1,0 +1,3279 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Balldontlie API",
+        "description": "**API Description** - The Balldontlie API is a sports API that provides basketball-related data and statistics.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "",
+        "contact": {
+            "name": "Balldontlie API Contact",
+            "url": "https://www.balldontlie.io/#contact",
+            "email": ""
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://www.balldontlie.io",
+            "description": "Production Server of the Balldontlie API.",
+            "x-base-routes": 1
+        }
+    ],
+    "externalDocs": {
+        "url": "https://www.balldontlie.io",
+        "description": "Find more about the Balldontlie API here:"
+    },
+    "paths": {
+        "/api/v1/players": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "LeBron": {
+                                "value": "LeBron"
+                            },
+                            "LeBron+James": {
+                                "value": "LeBron+James"
+                            },
+                            "Jordan": {
+                                "value": "Jordan"
+                            },
+                            "jordan": {
+                                "value": "jordan"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "20": {
+                                "value": "20"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "team_ids[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            },
+                            "3": {
+                                "value": "3"
+                            },
+                            "12": {
+                                "value": "12"
+                            },
+                            "1": {
+                                "value": "1"
+                            },
+                            "4": {
+                                "value": "4"
+                            },
+                            "5": {
+                                "value": "5"
+                            },
+                            "6": {
+                                "value": "6"
+                            },
+                            "7": {
+                                "value": "7"
+                            },
+                            "8": {
+                                "value": "8"
+                            },
+                            "9": {
+                                "value": "9"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seasons[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2019": {
+                                "value": "2019"
+                            }
+                        }
+                    },
+                    {
+                        "name": "height",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "6-6": {
+                                "value": "6-6"
+                            },
+                            "6-8": {
+                                "value": "6-8"
+                            }
+                        }
+                    },
+                    {
+                        "name": "weight",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "200": {
+                                "value": "200"
+                            },
+                            "250": {
+                                "value": "250"
+                            }
+                        }
+                    },
+                    {
+                        "name": "position",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "PG": {
+                                "value": "PG"
+                            },
+                            "forward": {
+                                "value": "forward"
+                            }
+                        }
+                    },
+                    {
+                        "name": "conference",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EAST": {
+                                "value": "EAST"
+                            },
+                            "west": {
+                                "value": "west"
+                            },
+                            "West": {
+                                "value": "West"
+                            }
+                        }
+                    },
+                    {
+                        "name": "division",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Atlantic": {
+                                "value": "Atlantic"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "points": {
+                                "value": "points"
+                            },
+                            "first_name": {
+                                "value": "first_name"
+                            }
+                        }
+                    },
+                    {
+                        "name": "order",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "asc": {
+                                "value": "asc"
+                            },
+                            "desc": {
+                                "value": "desc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "first_name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "LeBron": {
+                                "value": "LeBron"
+                            }
+                        }
+                    },
+                    {
+                        "name": "last_name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "James": {
+                                "value": "James"
+                            }
+                        }
+                    },
+                    {
+                        "name": "height_feet",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "6": {
+                                "value": "6"
+                            }
+                        }
+                    },
+                    {
+                        "name": "weight_pounds",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "200": {
+                                "value": "200"
+                            }
+                        }
+                    },
+                    {
+                        "name": "stats",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "LeBron+James": {
+                                "value": "LeBron+James"
+                            }
+                        }
+                    },
+                    {
+                        "name": "team",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Los+Angeles+Lakers": {
+                                "value": "Los+Angeles+Lakers"
+                            }
+                        }
+                    },
+                    {
+                        "name": "age",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "36": {
+                                "value": "36"
+                            }
+                        }
+                    },
+                    {
+                        "name": "college",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Duke": {
+                                "value": "Duke"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USA": {
+                                "value": "USA"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_v1_players"
+                                },
+                                "example": {
+                                    "data": [
+                                        {
+                                            "id": 237,
+                                            "first_name": "LeBron",
+                                            "height_feet": 6,
+                                            "height_inches": 8,
+                                            "last_name": "James",
+                                            "position": "F",
+                                            "team": {
+                                                "id": 14,
+                                                "abbreviation": "LAL",
+                                                "city": "Los Angeles",
+                                                "conference": "West",
+                                                "division": "Pacific",
+                                                "full_name": "Los Angeles Lakers",
+                                                "name": "Lakers"
+                                            },
+                                            "weight_pounds": 250
+                                        }
+                                    ],
+                                    "meta": {
+                                        "total_pages": 1,
+                                        "current_page": 1,
+                                        "next_page": null,
+                                        "per_page": 10,
+                                        "total_count": 1
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/players/{id}": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "ID path parameter for the /api/v1/players/{id} route.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "LeBron": {
+                                "value": "LeBron"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "team_ids",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seasons[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2019": {
+                                "value": "2019"
+                            }
+                        }
+                    },
+                    {
+                        "name": "game_ids[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "123": {
+                                "value": "123"
+                            }
+                        }
+                    },
+                    {
+                        "name": "position",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "C": {
+                                "value": "C"
+                            }
+                        }
+                    },
+                    {
+                        "name": "weight",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "200": {
+                                "value": "200"
+                            }
+                        }
+                    },
+                    {
+                        "name": "height",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "6-2": {
+                                "value": "6-2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USA": {
+                                "value": "USA"
+                            }
+                        }
+                    },
+                    {
+                        "name": "college",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "North+Carolina": {
+                                "value": "North+Carolina"
+                            }
+                        }
+                    },
+                    {
+                        "name": "age",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "25": {
+                                "value": "25"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "asc": {
+                                "value": "asc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "positions[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "min_age",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "max_age",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "is_active",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_v1_players_id"
+                                },
+                                "example": {
+                                    "id": 40,
+                                    "first_name": "Marco",
+                                    "height_feet": 6,
+                                    "height_inches": 5,
+                                    "last_name": "Belinelli",
+                                    "position": "G-F",
+                                    "team": {
+                                        "id": 27,
+                                        "abbreviation": "SAS",
+                                        "city": "San Antonio",
+                                        "conference": "West",
+                                        "division": "Southwest",
+                                        "full_name": "San Antonio Spurs",
+                                        "name": "Spurs"
+                                    },
+                                    "weight_pounds": 210
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/teams": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "LeBron": {
+                                "value": "LeBron"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "conference",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "west": {
+                                "value": "west"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_v1_teams"
+                                },
+                                "example": {
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "abbreviation": "ATL",
+                                            "city": "Atlanta",
+                                            "conference": "East",
+                                            "division": "Southeast",
+                                            "full_name": "Atlanta Hawks",
+                                            "name": "Hawks"
+                                        },
+                                        {
+                                            "id": 2,
+                                            "abbreviation": "BOS",
+                                            "city": "Boston",
+                                            "conference": "East",
+                                            "division": "Atlantic",
+                                            "full_name": "Boston Celtics",
+                                            "name": "Celtics"
+                                        },
+                                        {
+                                            "id": 3,
+                                            "abbreviation": "BKN",
+                                            "city": "Brooklyn",
+                                            "conference": "East",
+                                            "division": "Atlantic",
+                                            "full_name": "Brooklyn Nets",
+                                            "name": "Nets"
+                                        },
+                                        {
+                                            "id": 4,
+                                            "abbreviation": "CHA",
+                                            "city": "Charlotte",
+                                            "conference": "East",
+                                            "division": "Southeast",
+                                            "full_name": "Charlotte Hornets",
+                                            "name": "Hornets"
+                                        },
+                                        {
+                                            "id": 5,
+                                            "abbreviation": "CHI",
+                                            "city": "Chicago",
+                                            "conference": "East",
+                                            "division": "Central",
+                                            "full_name": "Chicago Bulls",
+                                            "name": "Bulls"
+                                        },
+                                        {
+                                            "id": 6,
+                                            "abbreviation": "CLE",
+                                            "city": "Cleveland",
+                                            "conference": "East",
+                                            "division": "Central",
+                                            "full_name": "Cleveland Cavaliers",
+                                            "name": "Cavaliers"
+                                        },
+                                        {
+                                            "id": 7,
+                                            "abbreviation": "DAL",
+                                            "city": "Dallas",
+                                            "conference": "West",
+                                            "division": "Southwest",
+                                            "full_name": "Dallas Mavericks",
+                                            "name": "Mavericks"
+                                        },
+                                        {
+                                            "id": 8,
+                                            "abbreviation": "DEN",
+                                            "city": "Denver",
+                                            "conference": "West",
+                                            "division": "Northwest",
+                                            "full_name": "Denver Nuggets",
+                                            "name": "Nuggets"
+                                        },
+                                        {
+                                            "id": 9,
+                                            "abbreviation": "DET",
+                                            "city": "Detroit",
+                                            "conference": "East",
+                                            "division": "Central",
+                                            "full_name": "Detroit Pistons",
+                                            "name": "Pistons"
+                                        },
+                                        {
+                                            "id": 10,
+                                            "abbreviation": "GSW",
+                                            "city": "Golden State",
+                                            "conference": "West",
+                                            "division": "Pacific",
+                                            "full_name": "Golden State Warriors",
+                                            "name": "Warriors"
+                                        }
+                                    ],
+                                    "meta": {
+                                        "total_pages": 5,
+                                        "current_page": 1,
+                                        "next_page": 2,
+                                        "per_page": 10,
+                                        "total_count": 45
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/games": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "LeBron": {
+                                "value": "LeBron"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "3": {
+                                "value": "3"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "25": {
+                                "value": "25"
+                            },
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seasons[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2021": {
+                                "value": "2021"
+                            },
+                            "2019": {
+                                "value": "2019"
+                            }
+                        }
+                    },
+                    {
+                        "name": "team_ids[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "2": {
+                                "value": "2"
+                            },
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-01-01": {
+                                "value": "2021-01-01"
+                            },
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "end_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-12-31": {
+                                "value": "2021-12-31"
+                            },
+                            "2022-01-31": {
+                                "value": "2022-01-31"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "asc": {
+                                "value": "asc"
+                            },
+                            "desc": {
+                                "value": "desc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "player_ids[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "123": {
+                                "value": "123"
+                            },
+                            "1234": {
+                                "value": "1234"
+                            }
+                        }
+                    },
+                    {
+                        "name": "venue_ids[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "456": {
+                                "value": "456"
+                            }
+                        }
+                    },
+                    {
+                        "name": "playoff",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "postseason",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start_time",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "18:00": {
+                                "value": "18:00"
+                            }
+                        }
+                    },
+                    {
+                        "name": "end_time",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "22:00": {
+                                "value": "22:00"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seasons",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2020": {
+                                "value": "2020"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fields[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "home_team": {
+                                "value": "home_team"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_v1_games"
+                                },
+                                "example": {
+                                    "data": [
+                                        {
+                                            "id": 47179,
+                                            "date": "2019-01-30T00:00:00.000Z",
+                                            "home_team": {
+                                                "id": 2,
+                                                "abbreviation": "BOS",
+                                                "city": "Boston",
+                                                "conference": "East",
+                                                "division": "Atlantic",
+                                                "full_name": "Boston Celtics",
+                                                "name": "Celtics"
+                                            },
+                                            "home_team_score": 126,
+                                            "period": 4,
+                                            "postseason": false,
+                                            "season": 2018,
+                                            "status": "Final",
+                                            "time": " ",
+                                            "visitor_team": {
+                                                "id": 4,
+                                                "abbreviation": "CHA",
+                                                "city": "Charlotte",
+                                                "conference": "East",
+                                                "division": "Southeast",
+                                                "full_name": "Charlotte Hornets",
+                                                "name": "Hornets"
+                                            },
+                                            "visitor_team_score": 94
+                                        },
+                                        {
+                                            "id": 48751,
+                                            "date": "2019-02-09T00:00:00.000Z",
+                                            "home_team": {
+                                                "id": 2,
+                                                "abbreviation": "BOS",
+                                                "city": "Boston",
+                                                "conference": "East",
+                                                "division": "Atlantic",
+                                                "full_name": "Boston Celtics",
+                                                "name": "Celtics"
+                                            },
+                                            "home_team_score": 112,
+                                            "period": 4,
+                                            "postseason": false,
+                                            "season": 2018,
+                                            "status": "Final",
+                                            "time": "     ",
+                                            "visitor_team": {
+                                                "id": 13,
+                                                "abbreviation": "LAC",
+                                                "city": "LA",
+                                                "conference": "West",
+                                                "division": "Pacific",
+                                                "full_name": "LA Clippers",
+                                                "name": "Clippers"
+                                            },
+                                            "visitor_team_score": 123
+                                        },
+                                        {
+                                            "id": 48739,
+                                            "date": "2019-02-08T00:00:00.000Z",
+                                            "home_team": {
+                                                "id": 23,
+                                                "abbreviation": "PHI",
+                                                "city": "Philadelphia",
+                                                "conference": "East",
+                                                "division": "Atlantic",
+                                                "full_name": "Philadelphia 76ers",
+                                                "name": "76ers"
+                                            },
+                                            "home_team_score": 117,
+                                            "period": 4,
+                                            "postseason": false,
+                                            "season": 2018,
+                                            "status": "Final",
+                                            "time": "     ",
+                                            "visitor_team": {
+                                                "id": 8,
+                                                "abbreviation": "DEN",
+                                                "city": "Denver",
+                                                "conference": "West",
+                                                "division": "Northwest",
+                                                "full_name": "Denver Nuggets",
+                                                "name": "Nuggets"
+                                            },
+                                            "visitor_team_score": 110
+                                        },
+                                        {
+                                            "id": 48740,
+                                            "date": "2019-02-08T00:00:00.000Z",
+                                            "home_team": {
+                                                "id": 30,
+                                                "abbreviation": "WAS",
+                                                "city": "Washington",
+                                                "conference": "East",
+                                                "division": "Southeast",
+                                                "full_name": "Washington Wizards",
+                                                "name": "Wizards"
+                                            },
+                                            "home_team_score": 119,
+                                            "period": 4,
+                                            "postseason": false,
+                                            "season": 2018,
+                                            "status": "Final",
+                                            "time": "     ",
+                                            "visitor_team": {
+                                                "id": 6,
+                                                "abbreviation": "CLE",
+                                                "city": "Cleveland",
+                                                "conference": "East",
+                                                "division": "Central",
+                                                "full_name": "Cleveland Cavaliers",
+                                                "name": "Cavaliers"
+                                            },
+                                            "visitor_team_score": 106
+                                        },
+                                        {
+                                            "id": 48746,
+                                            "date": "2019-02-08T00:00:00.000Z",
+                                            "home_team": {
+                                                "id": 26,
+                                                "abbreviation": "SAC",
+                                                "city": "Sacramento",
+                                                "conference": "West",
+                                                "division": "Pacific",
+                                                "full_name": "Sacramento Kings",
+                                                "name": "Kings"
+                                            },
+                                            "home_team_score": 102,
+                                            "period": 4,
+                                            "postseason": false,
+                                            "season": 2018,
+                                            "status": "Final",
+                                            "time": "     ",
+                                            "visitor_team": {
+                                                "id": 16,
+                                                "abbreviation": "MIA",
+                                                "city": "Miami",
+                                                "conference": "East",
+                                                "division": "Southeast",
+                                                "full_name": "Miami Heat",
+                                                "name": "Heat"
+                                            },
+                                            "visitor_team_score": 96
+                                        },
+                                        {
+                                            "id": 48762,
+                                            "date": "2019-02-11T00:00:00.000Z",
+                                            "home_team": {
+                                                "id": 9,
+                                                "abbreviation": "DET",
+                                                "city": "Detroit",
+                                                "conference": "East",
+                                                "division": "Central",
+                                                "full_name": "Detroit Pistons",
+                                                "name": "Pistons"
+                                            },
+                                            "home_team_score": 121,
+                                            "period": 4,
+                                            "postseason": false,
+                                            "season": 2018,
+                                            "status": "Final",
+                                            "time": "     ",
+                                            "visitor_team": {
+                                                "id": 30,
+                                                "abbreviation": "WAS",
+                                                "city": "Washington",
+                                                "conference": "East",
+                                                "division": "Southeast",
+                                                "full_name": "Washington Wizards",
+                                                "name": "Wizards"
+                                            },
+                                            "visitor_team_score": 112
+                                        },
+                                        {
+                                            "id": 48745,
+                                            "date": "2019-02-08T00:00:00.000Z",
+                                            "home_team": {
+                                                "id": 19,
+                                                "abbreviation": "NOP",
+                                                "city": "New Orleans",
+                                                "conference": "West",
+                                                "division": "Southwest",
+                                                "full_name": "New Orleans Pelicans",
+                                                "name": "Pelicans"
+                                            },
+                                            "home_team_score": 122,
+                                            "period": 4,
+                                            "postseason": false,
+                                            "season": 2018,
+                                            "status": "Final",
+                                            "time": "     ",
+                                            "visitor_team": {
+                                                "id": 18,
+                                                "abbreviation": "MIN",
+                                                "city": "Minnesota",
+                                                "conference": "West",
+                                                "division": "Northwest",
+                                                "full_name": "Minnesota Timberwolves",
+                                                "name": "Timberwolves"
+                                            },
+                                            "visitor_team_score": 117
+                                        },
+                                        {
+                                            "id": 48748,
+                                            "date": "2019-02-09T00:00:00.000Z",
+                                            "home_team": {
+                                                "id": 12,
+                                                "abbreviation": "IND",
+                                                "city": "Indiana",
+                                                "conference": "East",
+                                                "division": "Central",
+                                                "full_name": "Indiana Pacers",
+                                                "name": "Pacers"
+                                            },
+                                            "home_team_score": 105,
+                                            "period": 4,
+                                            "postseason": false,
+                                            "season": 2018,
+                                            "status": "Final",
+                                            "time": "     ",
+                                            "visitor_team": {
+                                                "id": 6,
+                                                "abbreviation": "CLE",
+                                                "city": "Cleveland",
+                                                "conference": "East",
+                                                "division": "Central",
+                                                "full_name": "Cleveland Cavaliers",
+                                                "name": "Cavaliers"
+                                            },
+                                            "visitor_team_score": 90
+                                        },
+                                        {
+                                            "id": 48749,
+                                            "date": "2019-02-09T00:00:00.000Z",
+                                            "home_team": {
+                                                "id": 1,
+                                                "abbreviation": "ATL",
+                                                "city": "Atlanta",
+                                                "conference": "East",
+                                                "division": "Southeast",
+                                                "full_name": "Atlanta Hawks",
+                                                "name": "Hawks"
+                                            },
+                                            "home_team_score": 120,
+                                            "period": 4,
+                                            "postseason": false,
+                                            "season": 2018,
+                                            "status": "Final",
+                                            "time": "     ",
+                                            "visitor_team": {
+                                                "id": 4,
+                                                "abbreviation": "CHA",
+                                                "city": "Charlotte",
+                                                "conference": "East",
+                                                "division": "Southeast",
+                                                "full_name": "Charlotte Hornets",
+                                                "name": "Hornets"
+                                            },
+                                            "visitor_team_score": 129
+                                        },
+                                        {
+                                            "id": 48747,
+                                            "date": "2019-02-09T00:00:00.000Z",
+                                            "home_team": {
+                                                "id": 29,
+                                                "abbreviation": "UTA",
+                                                "city": "Utah",
+                                                "conference": "West",
+                                                "division": "Northwest",
+                                                "full_name": "Utah Jazz",
+                                                "name": "Jazz"
+                                            },
+                                            "home_team_score": 125,
+                                            "period": 4,
+                                            "postseason": false,
+                                            "season": 2018,
+                                            "status": "Final",
+                                            "time": "     ",
+                                            "visitor_team": {
+                                                "id": 27,
+                                                "abbreviation": "SAS",
+                                                "city": "San Antonio",
+                                                "conference": "West",
+                                                "division": "Southwest",
+                                                "full_name": "San Antonio Spurs",
+                                                "name": "Spurs"
+                                            },
+                                            "visitor_team_score": 105
+                                        }
+                                    ],
+                                    "meta": {
+                                        "total_pages": 7051,
+                                        "current_page": 1,
+                                        "next_page": 2,
+                                        "per_page": 10,
+                                        "total_count": 70508
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/stats": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "LeBron": {
+                                "value": "LeBron"
+                            },
+                            "James": {
+                                "value": "James"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seasons[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2020": {
+                                "value": "2020"
+                            },
+                            "2019": {
+                                "value": "2019"
+                            }
+                        }
+                    },
+                    {
+                        "name": "team_ids[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            },
+                            "1": {
+                                "value": "1"
+                            },
+                            "456": {
+                                "value": "456"
+                            }
+                        }
+                    },
+                    {
+                        "name": "player_ids[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "23": {
+                                "value": "23"
+                            },
+                            "123": {
+                                "value": "123"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-01-01": {
+                                "value": "2021-01-01"
+                            },
+                            "2020-01-01": {
+                                "value": "2020-01-01"
+                            },
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "end_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-12-31": {
+                                "value": "2021-12-31"
+                            },
+                            "2020-12-31": {
+                                "value": "2020-12-31"
+                            },
+                            "2022-01-31": {
+                                "value": "2022-01-31"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "points": {
+                                "value": "points"
+                            },
+                            "desc": {
+                                "value": "desc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "order",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "desc": {
+                                "value": "desc"
+                            },
+                            "asc": {
+                                "value": "asc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "playoffs",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "game_ids[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "123": {
+                                "value": "123"
+                            },
+                            "1234": {
+                                "value": "1234"
+                            }
+                        }
+                    },
+                    {
+                        "name": "postseason",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "post_season",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fields[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "points": {
+                                "value": "points"
+                            }
+                        }
+                    },
+                    {
+                        "name": "season",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2021": {
+                                "value": "2021"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_v1_stats"
+                                },
+                                "example": {
+                                    "data": [
+                                        {
+                                            "id": 6929528,
+                                            "ast": 2,
+                                            "blk": 1,
+                                            "dreb": 1,
+                                            "fg3_pct": 0.0,
+                                            "fg3a": 1,
+                                            "fg3m": 0,
+                                            "fg_pct": 0.0,
+                                            "fga": 2,
+                                            "fgm": 0,
+                                            "ft_pct": 0.0,
+                                            "fta": 0,
+                                            "ftm": 0,
+                                            "game": {
+                                                "id": 445510,
+                                                "date": "2021-06-29T00:00:00.000Z",
+                                                "home_team_id": 1,
+                                                "home_team_score": 110,
+                                                "period": 4,
+                                                "postseason": true,
+                                                "season": 2020,
+                                                "status": "Final",
+                                                "time": "",
+                                                "visitor_team_id": 17,
+                                                "visitor_team_score": 88
+                                            },
+                                            "min": "10:57",
+                                            "oreb": 0,
+                                            "pf": 1,
+                                            "player": {
+                                                "id": 139,
+                                                "first_name": "Kris",
+                                                "height_feet": 6,
+                                                "height_inches": 4,
+                                                "last_name": "Dunn",
+                                                "position": "G",
+                                                "team_id": 29,
+                                                "weight_pounds": 205
+                                            },
+                                            "pts": 0,
+                                            "reb": 1,
+                                            "stl": 1,
+                                            "team": {
+                                                "id": 1,
+                                                "abbreviation": "ATL",
+                                                "city": "Atlanta",
+                                                "conference": "East",
+                                                "division": "Southeast",
+                                                "full_name": "Atlanta Hawks",
+                                                "name": "Hawks"
+                                            },
+                                            "turnover": 2
+                                        },
+                                        {
+                                            "id": 6929529,
+                                            "ast": 0,
+                                            "blk": 0,
+                                            "dreb": 0,
+                                            "fg3_pct": 0.0,
+                                            "fg3a": 0,
+                                            "fg3m": 0,
+                                            "fg_pct": 0.0,
+                                            "fga": 0,
+                                            "fgm": 0,
+                                            "ft_pct": 0.0,
+                                            "fta": 0,
+                                            "ftm": 0,
+                                            "game": {
+                                                "id": 445510,
+                                                "date": "2021-06-29T00:00:00.000Z",
+                                                "home_team_id": 1,
+                                                "home_team_score": 110,
+                                                "period": 4,
+                                                "postseason": true,
+                                                "season": 2020,
+                                                "status": "Final",
+                                                "time": "",
+                                                "visitor_team_id": 17,
+                                                "visitor_team_score": 88
+                                            },
+                                            "min": "1:00",
+                                            "oreb": 0,
+                                            "pf": 0,
+                                            "player": {
+                                                "id": 666564,
+                                                "first_name": "Bruno",
+                                                "height_feet": null,
+                                                "height_inches": null,
+                                                "last_name": "Fernando",
+                                                "position": "F",
+                                                "team_id": 1,
+                                                "weight_pounds": null
+                                            },
+                                            "pts": 0,
+                                            "reb": 0,
+                                            "stl": 0,
+                                            "team": {
+                                                "id": 1,
+                                                "abbreviation": "ATL",
+                                                "city": "Atlanta",
+                                                "conference": "East",
+                                                "division": "Southeast",
+                                                "full_name": "Atlanta Hawks",
+                                                "name": "Hawks"
+                                            },
+                                            "turnover": 0
+                                        },
+                                        {
+                                            "id": 6929531,
+                                            "ast": 0,
+                                            "blk": 0,
+                                            "dreb": 0,
+                                            "fg3_pct": 0.0,
+                                            "fg3a": 0,
+                                            "fg3m": 0,
+                                            "fg_pct": 0.0,
+                                            "fga": 0,
+                                            "fgm": 0,
+                                            "ft_pct": 0.0,
+                                            "fta": 0,
+                                            "ftm": 0,
+                                            "game": {
+                                                "id": 445510,
+                                                "date": "2021-06-29T00:00:00.000Z",
+                                                "home_team_id": 1,
+                                                "home_team_score": 110,
+                                                "period": 4,
+                                                "postseason": true,
+                                                "season": 2020,
+                                                "status": "Final",
+                                                "time": "",
+                                                "visitor_team_id": 17,
+                                                "visitor_team_score": 88
+                                            },
+                                            "min": "0:00",
+                                            "oreb": 0,
+                                            "pf": 0,
+                                            "player": {
+                                                "id": 212,
+                                                "first_name": "Solomon",
+                                                "height_feet": 6,
+                                                "height_inches": 7,
+                                                "last_name": "Hill",
+                                                "position": "F",
+                                                "team_id": 20,
+                                                "weight_pounds": 225
+                                            },
+                                            "pts": 0,
+                                            "reb": 0,
+                                            "stl": 0,
+                                            "team": {
+                                                "id": 1,
+                                                "abbreviation": "ATL",
+                                                "city": "Atlanta",
+                                                "conference": "East",
+                                                "division": "Southeast",
+                                                "full_name": "Atlanta Hawks",
+                                                "name": "Hawks"
+                                            },
+                                            "turnover": 0
+                                        },
+                                        {
+                                            "id": 6929536,
+                                            "ast": 0,
+                                            "blk": 0,
+                                            "dreb": 0,
+                                            "fg3_pct": 0.0,
+                                            "fg3a": 1,
+                                            "fg3m": 0,
+                                            "fg_pct": 0.0,
+                                            "fga": 1,
+                                            "fgm": 0,
+                                            "ft_pct": 0.0,
+                                            "fta": 0,
+                                            "ftm": 0,
+                                            "game": {
+                                                "id": 445510,
+                                                "date": "2021-06-29T00:00:00.000Z",
+                                                "home_team_id": 1,
+                                                "home_team_score": 110,
+                                                "period": 4,
+                                                "postseason": true,
+                                                "season": 2020,
+                                                "status": "Final",
+                                                "time": "",
+                                                "visitor_team_id": 17,
+                                                "visitor_team_score": 88
+                                            },
+                                            "min": "1:58",
+                                            "oreb": 0,
+                                            "pf": 0,
+                                            "player": {
+                                                "id": 426,
+                                                "first_name": "Tony",
+                                                "height_feet": 6,
+                                                "height_inches": 7,
+                                                "last_name": "Snell",
+                                                "position": "G",
+                                                "team_id": 19,
+                                                "weight_pounds": 213
+                                            },
+                                            "pts": 0,
+                                            "reb": 0,
+                                            "stl": 0,
+                                            "team": {
+                                                "id": 1,
+                                                "abbreviation": "ATL",
+                                                "city": "Atlanta",
+                                                "conference": "East",
+                                                "division": "Southeast",
+                                                "full_name": "Atlanta Hawks",
+                                                "name": "Hawks"
+                                            },
+                                            "turnover": 1
+                                        },
+                                        {
+                                            "id": 6929537,
+                                            "ast": 0,
+                                            "blk": 0,
+                                            "dreb": 0,
+                                            "fg3_pct": 0.0,
+                                            "fg3a": 0,
+                                            "fg3m": 0,
+                                            "fg_pct": 0.0,
+                                            "fga": 0,
+                                            "fgm": 0,
+                                            "ft_pct": 0.0,
+                                            "fta": 0,
+                                            "ftm": 0,
+                                            "game": {
+                                                "id": 445510,
+                                                "date": "2021-06-29T00:00:00.000Z",
+                                                "home_team_id": 1,
+                                                "home_team_score": 110,
+                                                "period": 4,
+                                                "postseason": true,
+                                                "season": 2020,
+                                                "status": "Final",
+                                                "time": "",
+                                                "visitor_team_id": 17,
+                                                "visitor_team_score": 88
+                                            },
+                                            "min": "",
+                                            "oreb": 0,
+                                            "pf": 0,
+                                            "player": {
+                                                "id": 490,
+                                                "first_name": "Trae",
+                                                "height_feet": 6,
+                                                "height_inches": 2,
+                                                "last_name": "Young",
+                                                "position": "G",
+                                                "team_id": 1,
+                                                "weight_pounds": 180
+                                            },
+                                            "pts": 0,
+                                            "reb": 0,
+                                            "stl": 0,
+                                            "team": {
+                                                "id": 1,
+                                                "abbreviation": "ATL",
+                                                "city": "Atlanta",
+                                                "conference": "East",
+                                                "division": "Southeast",
+                                                "full_name": "Atlanta Hawks",
+                                                "name": "Hawks"
+                                            },
+                                            "turnover": 0
+                                        },
+                                        {
+                                            "id": 6933719,
+                                            "ast": 0,
+                                            "blk": 0,
+                                            "dreb": 1,
+                                            "fg3_pct": 0.0,
+                                            "fg3a": 0,
+                                            "fg3m": 0,
+                                            "fg_pct": 0.0,
+                                            "fga": 0,
+                                            "fgm": 0,
+                                            "ft_pct": 0.0,
+                                            "fta": 0,
+                                            "ftm": 0,
+                                            "game": {
+                                                "id": 445798,
+                                                "date": "2021-06-30T00:00:00.000Z",
+                                                "home_team_id": 13,
+                                                "home_team_score": 103,
+                                                "period": 4,
+                                                "postseason": true,
+                                                "season": 2020,
+                                                "status": "Final",
+                                                "time": "",
+                                                "visitor_team_id": 24,
+                                                "visitor_team_score": 130
+                                            },
+                                            "min": "6:03",
+                                            "oreb": 0,
+                                            "pf": 0,
+                                            "player": {
+                                                "id": 339,
+                                                "first_name": "Abdel",
+                                                "height_feet": 6,
+                                                "height_inches": 6,
+                                                "last_name": "Nader",
+                                                "position": "F",
+                                                "team_id": 24,
+                                                "weight_pounds": 225
+                                            },
+                                            "pts": 0,
+                                            "reb": 1,
+                                            "stl": 0,
+                                            "team": {
+                                                "id": 24,
+                                                "abbreviation": "PHX",
+                                                "city": "Phoenix",
+                                                "conference": "West",
+                                                "division": "Pacific",
+                                                "full_name": "Phoenix Suns",
+                                                "name": "Suns"
+                                            },
+                                            "turnover": 0
+                                        },
+                                        {
+                                            "id": 6933713,
+                                            "ast": 0,
+                                            "blk": 0,
+                                            "dreb": 0,
+                                            "fg3_pct": 0.0,
+                                            "fg3a": 0,
+                                            "fg3m": 0,
+                                            "fg_pct": 0.0,
+                                            "fga": 0,
+                                            "fgm": 0,
+                                            "ft_pct": 0.0,
+                                            "fta": 0,
+                                            "ftm": 0,
+                                            "game": {
+                                                "id": 445798,
+                                                "date": "2021-06-30T00:00:00.000Z",
+                                                "home_team_id": 13,
+                                                "home_team_score": 103,
+                                                "period": 4,
+                                                "postseason": true,
+                                                "season": 2020,
+                                                "status": "Final",
+                                                "time": "",
+                                                "visitor_team_id": 24,
+                                                "visitor_team_score": 130
+                                            },
+                                            "min": "0:00",
+                                            "oreb": 0,
+                                            "pf": 0,
+                                            "player": {
+                                                "id": 3547296,
+                                                "first_name": "Ty-Shon",
+                                                "height_feet": null,
+                                                "height_inches": null,
+                                                "last_name": "Alexander",
+                                                "position": "G",
+                                                "team_id": 24,
+                                                "weight_pounds": null
+                                            },
+                                            "pts": 0,
+                                            "reb": 0,
+                                            "stl": 0,
+                                            "team": {
+                                                "id": 24,
+                                                "abbreviation": "PHX",
+                                                "city": "Phoenix",
+                                                "conference": "West",
+                                                "division": "Pacific",
+                                                "full_name": "Phoenix Suns",
+                                                "name": "Suns"
+                                            },
+                                            "turnover": 0
+                                        },
+                                        {
+                                            "id": 6933716,
+                                            "ast": 0,
+                                            "blk": 0,
+                                            "dreb": 0,
+                                            "fg3_pct": 0.0,
+                                            "fg3a": 0,
+                                            "fg3m": 0,
+                                            "fg_pct": 0.0,
+                                            "fga": 0,
+                                            "fgm": 0,
+                                            "ft_pct": 0.0,
+                                            "fta": 0,
+                                            "ftm": 0,
+                                            "game": {
+                                                "id": 445798,
+                                                "date": "2021-06-30T00:00:00.000Z",
+                                                "home_team_id": 13,
+                                                "home_team_score": 103,
+                                                "period": 4,
+                                                "postseason": true,
+                                                "season": 2020,
+                                                "status": "Final",
+                                                "time": "",
+                                                "visitor_team_id": 24,
+                                                "visitor_team_score": 130
+                                            },
+                                            "min": "0:00",
+                                            "oreb": 0,
+                                            "pf": 0,
+                                            "player": {
+                                                "id": 168,
+                                                "first_name": "Langston",
+                                                "height_feet": 6,
+                                                "height_inches": 2,
+                                                "last_name": "Galloway",
+                                                "position": "G",
+                                                "team_id": 17,
+                                                "weight_pounds": 200
+                                            },
+                                            "pts": 0,
+                                            "reb": 0,
+                                            "stl": 0,
+                                            "team": {
+                                                "id": 24,
+                                                "abbreviation": "PHX",
+                                                "city": "Phoenix",
+                                                "conference": "West",
+                                                "division": "Pacific",
+                                                "full_name": "Phoenix Suns",
+                                                "name": "Suns"
+                                            },
+                                            "turnover": 0
+                                        },
+                                        {
+                                            "id": 6933717,
+                                            "ast": 0,
+                                            "blk": 0,
+                                            "dreb": 0,
+                                            "fg3_pct": 0.0,
+                                            "fg3a": 0,
+                                            "fg3m": 0,
+                                            "fg_pct": 0.0,
+                                            "fga": 0,
+                                            "fgm": 0,
+                                            "ft_pct": 0.0,
+                                            "fta": 0,
+                                            "ftm": 0,
+                                            "game": {
+                                                "id": 445798,
+                                                "date": "2021-06-30T00:00:00.000Z",
+                                                "home_team_id": 13,
+                                                "home_team_score": 103,
+                                                "period": 4,
+                                                "postseason": true,
+                                                "season": 2020,
+                                                "status": "Final",
+                                                "time": "",
+                                                "visitor_team_id": 24,
+                                                "visitor_team_score": 130
+                                            },
+                                            "min": "0:00",
+                                            "oreb": 0,
+                                            "pf": 0,
+                                            "player": {
+                                                "id": 252,
+                                                "first_name": "Frank",
+                                                "height_feet": 7,
+                                                "height_inches": 0,
+                                                "last_name": "Kaminsky",
+                                                "position": "F-C",
+                                                "team_id": 11,
+                                                "weight_pounds": 242
+                                            },
+                                            "pts": 0,
+                                            "reb": 0,
+                                            "stl": 0,
+                                            "team": {
+                                                "id": 24,
+                                                "abbreviation": "PHX",
+                                                "city": "Phoenix",
+                                                "conference": "West",
+                                                "division": "Pacific",
+                                                "full_name": "Phoenix Suns",
+                                                "name": "Suns"
+                                            },
+                                            "turnover": 0
+                                        },
+                                        {
+                                            "id": 6937788,
+                                            "ast": 0,
+                                            "blk": 0,
+                                            "dreb": 0,
+                                            "fg3_pct": 0.0,
+                                            "fg3a": 0,
+                                            "fg3m": 0,
+                                            "fg_pct": 0.0,
+                                            "fga": 0,
+                                            "fgm": 0,
+                                            "ft_pct": 0.0,
+                                            "fta": 0,
+                                            "ftm": 0,
+                                            "game": {
+                                                "id": 446086,
+                                                "date": "2021-07-01T00:00:00.000Z",
+                                                "home_team_id": 17,
+                                                "home_team_score": 123,
+                                                "period": 4,
+                                                "postseason": true,
+                                                "season": 2020,
+                                                "status": "Final",
+                                                "time": "",
+                                                "visitor_team_id": 1,
+                                                "visitor_team_score": 112
+                                            },
+                                            "min": "3:16",
+                                            "oreb": 0,
+                                            "pf": 3,
+                                            "player": {
+                                                "id": 2148,
+                                                "first_name": "Thanasis",
+                                                "height_feet": null,
+                                                "height_inches": null,
+                                                "last_name": "Antetokounmpo",
+                                                "position": "",
+                                                "team_id": 17,
+                                                "weight_pounds": null
+                                            },
+                                            "pts": 0,
+                                            "reb": 0,
+                                            "stl": 1,
+                                            "team": {
+                                                "id": 17,
+                                                "abbreviation": "MIL",
+                                                "city": "Milwaukee",
+                                                "conference": "East",
+                                                "division": "Central",
+                                                "full_name": "Milwaukee Bucks",
+                                                "name": "Bucks"
+                                            },
+                                            "turnover": 0
+                                        }
+                                    ],
+                                    "meta": {
+                                        "total_pages": 155687,
+                                        "current_page": 1,
+                                        "next_page": 2,
+                                        "per_page": 10,
+                                        "total_count": 1556863
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/season_averages": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "LeBron": {
+                                "value": "LeBron"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "50": {
+                                "value": "50"
+                            },
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "team_ids",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5678": {
+                                "value": "5678"
+                            },
+                            "5": {
+                                "value": "5"
+                            },
+                            "456": {
+                                "value": "456"
+                            }
+                        }
+                    },
+                    {
+                        "name": "season",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2021": {
+                                "value": "2021"
+                            },
+                            "2022": {
+                                "value": "2022"
+                            }
+                        }
+                    },
+                    {
+                        "name": "min_games",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "points": {
+                                "value": "points"
+                            }
+                        }
+                    },
+                    {
+                        "name": "order",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "desc": {
+                                "value": "desc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "player_stats",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seasons[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2019": {
+                                "value": "2019"
+                            },
+                            "2020": {
+                                "value": "2020"
+                            }
+                        }
+                    },
+                    {
+                        "name": "player_ids[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "team_ids[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "season_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "regular": {
+                                "value": "regular"
+                            }
+                        }
+                    },
+                    {
+                        "name": "measure_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "base": {
+                                "value": "base"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_v1_season_averages"
+                                },
+                                "example": {
+                                    "data": []
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/teams/{id}": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "ID path parameter for the /api/v1/teams/{id} route.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "LeBron": {
+                                "value": "LeBron"
+                            },
+                            "Kobe": {
+                                "value": "Kobe"
+                            },
+                            "Los+Angeles": {
+                                "value": "Los+Angeles"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "asc": {
+                                "value": "asc"
+                            },
+                            "desc": {
+                                "value": "desc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seasons[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2020": {
+                                "value": "2020"
+                            },
+                            "2021": {
+                                "value": "2021"
+                            },
+                            "2019": {
+                                "value": "2019"
+                            },
+                            "2018": {
+                                "value": "2018"
+                            }
+                        }
+                    },
+                    {
+                        "name": "conference",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "east": {
+                                "value": "east"
+                            },
+                            "west": {
+                                "value": "west"
+                            },
+                            "West": {
+                                "value": "West"
+                            }
+                        }
+                    },
+                    {
+                        "name": "division",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "atlantic": {
+                                "value": "atlantic"
+                            },
+                            "pacific": {
+                                "value": "pacific"
+                            },
+                            "Pacific": {
+                                "value": "Pacific"
+                            }
+                        }
+                    },
+                    {
+                        "name": "stats",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "stats[seasons][]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2018": {
+                                "value": "2018"
+                            },
+                            "2020": {
+                                "value": "2020"
+                            },
+                            "2021": {
+                                "value": "2021"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seasons",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "fields",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "player_ids",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "game_ids",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "start_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "end_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "venue",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "madison_square_garden": {
+                                "value": "madison_square_garden"
+                            },
+                            "Staples+Center": {
+                                "value": "Staples+Center"
+                            }
+                        }
+                    },
+                    {
+                        "name": "players[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "23": {
+                                "value": "23"
+                            }
+                        }
+                    },
+                    {
+                        "name": "playoffs",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Los+Angeles": {
+                                "value": "Los+Angeles"
+                            }
+                        }
+                    },
+                    {
+                        "name": "full_name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Lakers": {
+                                "value": "Lakers"
+                            }
+                        }
+                    },
+                    {
+                        "name": "abbreviation",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "LAL": {
+                                "value": "LAL"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_v1_teams_id"
+                                },
+                                "example": {
+                                    "id": 15,
+                                    "abbreviation": "MEM",
+                                    "city": "Memphis",
+                                    "conference": "West",
+                                    "division": "Southwest",
+                                    "full_name": "Memphis Grizzlies",
+                                    "name": "Grizzlies"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/games/{id}": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "description": "ID path parameter for the /api/v1/games/{id} route.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seasons",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2019": {
+                                "value": "2019"
+                            }
+                        }
+                    },
+                    {
+                        "name": "team_ids[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "start_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2020-01-01": {
+                                "value": "2020-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "end_date",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2020-12-31": {
+                                "value": "2020-12-31"
+                            }
+                        }
+                    },
+                    {
+                        "name": "player_ids[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "123": {
+                                "value": "123"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "desc": {
+                                "value": "desc"
+                            }
+                        }
+                    },
+                    {
+                        "name": "venue_ids[]",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "456": {
+                                "value": "456"
+                            }
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "final": {
+                                "value": "final"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_v1_games_id"
+                                },
+                                "example": {
+                                    "id": 1,
+                                    "date": "2018-10-16 00:00:00 UTC",
+                                    "home_team": {
+                                        "id": 2,
+                                        "abbreviation": "BOS",
+                                        "city": "Boston",
+                                        "conference": "East",
+                                        "division": "Atlantic",
+                                        "full_name": "Boston Celtics",
+                                        "name": "Celtics"
+                                    },
+                                    "home_team_score": 105,
+                                    "period": 4,
+                                    "postseason": false,
+                                    "season": 2018,
+                                    "status": "Final",
+                                    "time": " ",
+                                    "visitor_team": {
+                                        "id": 23,
+                                        "abbreviation": "PHI",
+                                        "city": "Philadelphia",
+                                        "conference": "East",
+                                        "division": "Atlantic",
+                                        "full_name": "Philadelphia 76ers",
+                                        "name": "76ers"
+                                    },
+                                    "visitor_team_score": 87
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema_api_v1_players": {},
+            "ResponseSchema_api_v1_players_id": {},
+            "ResponseSchema_api_v1_teams": {},
+            "ResponseSchema_api_v1_games": {},
+            "ResponseSchema_api_v1_stats": {},
+            "ResponseSchema_api_v1_season_averages": {},
+            "ResponseSchema_api_v1_teams_id": {},
+            "ResponseSchema_api_v1_games_id": {}
+        }
+    }
+}

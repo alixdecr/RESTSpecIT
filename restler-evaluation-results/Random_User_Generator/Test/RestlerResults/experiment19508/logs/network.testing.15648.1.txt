@@ -1,0 +1,47 @@
+
+Generation-1: Rendering Sequence-1
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: d6110a0f32ffe0a3e75c193d28b8bd29a8331d63
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '?'
+		- restler_static_string: 'results='
+		+ restler_fuzzable_int: [5, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'gender='
+		+ restler_fuzzable_string: [male, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'nat='
+		+ restler_fuzzable_string: [us, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'inc='
+		+ restler_fuzzable_string: [name,email, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exc='
+		+ restler_fuzzable_string: [login, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'seed='
+		+ restler_fuzzable_string: [abc123, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'page='
+		+ restler_fuzzable_int: [2, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'password='
+		+ restler_fuzzable_string: [upper, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'format='
+		+ restler_fuzzable_string: [json, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: randomuser.me\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:05:28.787: Sending: 'GET /api?results=5&gender=male&nat=us&inc=name%2Cemail&exc=login&seed=abc123&page=2&password=upper&format=json HTTP/1.1\r\nAccept: application/json\r\nHost: randomuser.me\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: d5d538e9-527c-4f70-bf04-53db96ecafca\r\n\r\n'
+
+2023-11-30 12:05:29.651: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:05:29 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 521\r\nConnection: keep-alive\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: *\r\nCache-Control: no-cache\r\nETag: W/"209-zvotSqeXNaJ2Y8LtnRBW3MTAvcQ"\r\nVary: Accept-Encoding\r\nCF-Cache-Status: DYNAMIC\r\nReport-To: {"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=6QAfQz677is26BcimOcyxHEMGoYN9I8O1XbeMUQuIzbQonXS0%2FhaG9FxcXqSIBVMSKhssZvfExACDPLMmCJstkOA82SbOoq2sdPWtl%2B53p2GqdH2ckeB9ZE9P0nNTPii"}],"group":"cf-nel","max_age":604800}\r\nNEL: {"success_fraction":0,"report_to":"cf-nel","max_age":604800}\r\nServer: cloudflare\r\nCF-RAY: 82e29d933bfbb737-AMS\r\nalt-svc: h3=":443"; ma=86400\r\n\r\n{"results":[{"name":{"title":"Mr","first":"Carl","last":"Shaw"},"email":"carl.shaw@example.com"},{"name":{"title":"Mr","first":"Theodore","last":"Dunn"},"email":"theodore.dunn@example.com"},{"name":{"title":"Mr","first":"Gene","last":"Ford"},"email":"gene.ford@example.com"},{"name":{"title":"Mrs","first":"Carmen","last":"Ford"},"email":"carmen.ford@example.com"},{"name":{"title":"Mr","first":"Fernando","last":"West"},"email":"fernando.west@example.com"}],"info":{"seed":"abc123","results":5,"page":2,"version":"1.4"}}'
+

@@ -1,0 +1,1695 @@
+
+Generation-1: Rendering Sequence-1
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 0e5ff790d2498edd99425e83760fcca736b3cfce
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'exchanges'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'status='
+		+ restler_fuzzable_string: [active, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'type='
+		+ restler_fuzzable_string: [spot, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: [US, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'volume='
+		+ restler_fuzzable_int: [1000000, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'assets='
+		- restler_fuzzable_bool: 'true'
+		- restler_static_string: '&'
+		- restler_static_string: 'id='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: [coinbase, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'slug='
+		+ restler_fuzzable_string: [kraken, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:13.976: Sending: 'GET /v2/exchanges?limit=10&convert=USD&sort=rank&status=active&type=spot&rank=1&country=US&volume=1000000&assets=true&id=binance&name=coinbase&slug=kraken&interval=d1&exchangeId=binance&ids=bitcoin%2Cethereum HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 6d033f53-e67b-4bd7-b3b8-e5ab32aadf6f\r\n\r\n'
+
+2023-11-30 12:21:14.054: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:14 GMT\r\nContent-Type: application/json; charset=utf-8\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"a10-mkApjboryDafGpYIB2gB8b+IhAY"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 183\r\nX-Ratelimit-Reset: 1701343320\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4a66fd52e50-BRU\r\n\r\na10\r\n{"data":[{"exchangeId":"binance","name":"Binance","rank":"1","percentTotalVolume":"37.214203764587505395000000000000000000","volumeUsd":"4973505324.9907239240804961","tradingPairs":"820","socket":true,"exchangeUrl":"https://www.binance.com/","updated":1701343236740},{"exchangeId":"gdax","name":"Coinbase Pro","rank":"2","percentTotalVolume":"9.557827221607343158000000000000000000","volumeUsd":"1277359174.0054879793947639","tradingPairs":"218","socket":true,"exchangeUrl":"https://pro.coinbase.com/","updated":1701343234238},{"exchangeId":"whitebit","name":"WhiteBIT","rank":"3","percentTotalVolume":"8.504792582302179195000000000000000000","volumeUsd":"1136625990.0009538729825806","tradingPairs":"90","socket":false,"exchangeUrl":"https://whitebit.com","updated":1701343235789},{"exchangeId":"kraken","name":"Kraken","rank":"4","percentTotalVolume":"4.487537458306393951000000000000000000","volumeUsd":"599738518.8238375295021364","tradingPairs":"342","socket":false,"exchangeUrl":"https://kraken.com","updated":1701343236257},{"exchangeId":"digifinex","name":"DigiFinex","rank":"5","percentTotalVolume":"4.264308450918427708000000000000000000","volumeUsd":"569904999.7739707930617319","tradingPairs":"135","socket":false,"exchangeUrl":"https://www.digifinex.com/","updated":1701343233589},{"exchangeId":"bibox","name":"Bibox","rank":"6","percentTotalVolume":"4.229313262010541949000000000000000000","volumeUsd":"565228055.4684191476531460","tradingPairs":"111","socket":false,"exchangeUrl":"https://www.bibox.com","updated":1701343235362},{"exchangeId":"uniswap-v3","name":"Uniswap (V3)","rank":"7","percentTotalVolume":"3.990036236468291938000000000000000000","volumeUsd":"533249793.3991725680662266","tradingPairs":"286","socket":false,"exchangeUrl":"https://uniswap.org/","updated":1701343236555},{"exchangeId":"gate","name":"Gate","rank":"8","percentTotalVolume":"3.937919035546409769000000000000000000","volumeUsd":"526284571.7878681148026732","tradingPairs":"1291","socket":false,"exchangeUrl":"https://gate.io/","updated":1701343236541},{"exchangeId":"huobi","name":"Huobi","rank":"9","percentTotalVolume":"3.413166110535430987000000000000000000","volumeUsd":"456153782.9268132078660549","tradingPairs":"179","socket":true,"exchangeUrl":"https://www.hbg.com/","updated":1701343235019},{"exchangeId":"lbank","name":"LBank","rank":"10","percentTotalVolume":"3.395425536635904145000000000000000000","volumeUsd":"453782837.7007420461371813","tradingPairs":"103","socket":false,"exchangeUrl":"https://www.lbank.info","updated":1701343235969}],"timestamp":1701343274034}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 1408d5771176e97a55f00e77960f604573eae581
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '/'
+		- restler_static_string: 'polkadot'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [h1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [50, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'status='
+		+ restler_fuzzable_string: [active, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'symbol='
+		+ restler_fuzzable_string: [DOT, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'minCap='
+		+ restler_fuzzable_int: [100000000, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'maxCap='
+		+ restler_fuzzable_int: [1000000000, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'changePercent='
+		+ restler_fuzzable_string: [1h, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:14.148: Sending: 'GET /v2/assets/polkadot?limit=10&convert=USD&ids=bitcoin&interval=h1&sort=rank&search=ethereum&offset=50&status=active&symbol=DOT&rank=10&minCap=100000000&maxCap=1000000000&changePercent=1h HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 4c99328d-2d30-4b30-af24-b58ece29b8fd\r\n\r\n'
+
+2023-11-30 12:21:14.195: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:14 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 391\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"187-+Oo84VliyzCzT0nVSNzSGimL/DU"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 181\r\nX-Ratelimit-Reset: 1701343315\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4a769e12e50-BRU\r\n\r\n{"data":{"id":"polkadot","rank":"14","symbol":"DOT","name":"Polkadot","supply":"1302127452.7127400000000000","maxSupply":null,"marketCapUsd":"6752753258.9092374716421105","volumeUsd24Hr":"78154754.1309351299529824","priceUsd":"5.1859387841344823","changePercent24Hr":"-2.7409174277692055","vwap24Hr":"5.1962863923367498","explorer":"https://polkascan.io/polkadot"},"timestamp":1701343274170}'
+
+
+Generation-1: Rendering Sequence-3
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 32ae0213cb2d892d4a7bc8c516e7b007f4706f72
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '/'
+		- restler_static_string: 'dogecoin'
+		- restler_static_string: '/'
+		- restler_static_string: 'markets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'start='
+		+ restler_fuzzable_string: [2022-01-01, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [1d, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'quote='
+		+ restler_fuzzable_string: [BTC, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchange='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'time='
+		+ restler_fuzzable_int: [1609459200000, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'end='
+		+ restler_fuzzable_string: [31/01/2022 23:59:59, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:14.289: Sending: 'GET /v2/assets/dogecoin/markets?limit=10&start=2022-01-01&interval=1d&sort=rank&convert=USD&quote=BTC&exchange=binance&time=1609459200000&end=31/01/2022+23%3A59%3A59&ids=bitcoin%2Cethereum HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 9a07149c-4bdb-445e-950a-5902f32300d0\r\n\r\n'
+
+2023-11-30 12:21:14.348: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:14 GMT\r\nContent-Type: application/json; charset=utf-8\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"8c5-JQTY20SA9yMn/nt+WZf0LK7keIY"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 193\r\nX-Ratelimit-Reset: 1701343332\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4a85bbe2e50-BRU\r\n\r\n8c5\r\n{"data":[{"exchangeId":"Binance","baseId":"dogecoin","quoteId":"tether","baseSymbol":"DOGE","quoteSymbol":"USDT","volumeUsd24Hr":"129075594.0069074188578253","priceUsd":"0.0817219892115741","volumePercent":"47.5441528847304021"},{"exchangeId":"Coinbase Pro","baseId":"dogecoin","quoteId":"united-states-dollar","baseSymbol":"DOGE","quoteSymbol":"USD","volumeUsd24Hr":"28074709.6292100000000000","priceUsd":"0.0817800000000000","volumePercent":"10.3411361154312601"},{"exchangeId":"Huobi","baseId":"dogecoin","quoteId":"tether","baseSymbol":"DOGE","quoteSymbol":"USDT","volumeUsd24Hr":"22844134.7114226377869309","priceUsd":"0.0809746966917915","volumePercent":"8.4144879719176975"},{"exchangeId":"WhiteBIT","baseId":"dogecoin","quoteId":"tether","baseSymbol":"DOGE","quoteSymbol":"USDT","volumeUsd24Hr":"18356386.9022434538007595","priceUsd":"0.0817589036613465","volumePercent":"6.7614553472039127"},{"exchangeId":"CoinTiger","baseId":"dogecoin","quoteId":"tether","baseSymbol":"DOGE","quoteSymbol":"USDT","volumeUsd24Hr":"13851880.2682540621409493","priceUsd":"0.0817920166230665","volumePercent":"5.1022497187160582"},{"exchangeId":"Gate","baseId":"dogecoin","quoteId":"tether","baseSymbol":"DOGE","quoteSymbol":"USDT","volumeUsd24Hr":"9533239.9348515251025980","priceUsd":"0.0817630052668768","volumePercent":"3.5115067293445325"},{"exchangeId":"Kucoin","baseId":"dogecoin","quoteId":"tether","baseSymbol":"DOGE","quoteSymbol":"USDT","volumeUsd24Hr":"6761578.8819125319265955","priceUsd":"0.0817920166230665","volumePercent":"2.4905834644976367"},{"exchangeId":"Kraken","baseId":"dogecoin","quoteId":"united-states-dollar","baseSymbol":"DOGE","quoteSymbol":"USD","volumeUsd24Hr":"5278429.9273617115969050","priceUsd":"0.0816573000000000","volumePercent":"1.9442752240550734"},{"exchangeId":"Dex-Trade","baseId":"dogecoin","quoteId":"tether","baseSymbol":"DOGE","quoteSymbol":"USDT","volumeUsd24Hr":"3733340.9107972858667932","priceUsd":"0.0817920166230665","volumePercent":"1.3751517659044517"},{"exchangeId":"DigiFinex","baseId":"dogecoin","quoteId":"tether","baseSymbol":"DOGE","quoteSymbol":"USDT","volumeUsd24Hr":"3464841.8408212801748845","priceUsd":"0.0817730091828043","volumePercent":"1.2762518853300962"}],"timestamp":1701343274322}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-4
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 4b7cc50e9fd0d6fe003a50766975b64b765b5010
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'candles'
+		- restler_static_string: '?'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [m1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:14.430: Sending: 'GET /v2/candles?exchangeId=binance&limit=10&convert=USD&interval=m1&sort=rank HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: c4ddee40-3285-4954-a336-be972242f9ab\r\n\r\n'
+
+2023-11-30 12:21:14.478: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:14 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 37\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"25-YrlFH/YSE0+eDX1oCxqFz+0bpyE"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 194\r\nX-Ratelimit-Reset: 1701343323\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4a94d0a2e50-BRU\r\n\r\n{"data":[],"timestamp":1701343274465}'
+
+
+Generation-1: Rendering Sequence-5
+
+	Request: 1 (Remaining candidate combinations: 5)
+	Request hash: 5750c8af74e88197a54be786b0691f1b84c8709c
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '/'
+		- restler_static_string: 'tezos'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:14.572: Sending: 'GET /v2/assets/tezos?limit=10&convert=USD HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 636b88b6-eefd-4f1f-8089-1519ad19ac39\r\n\r\n'
+
+2023-11-30 12:21:14.635: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:14 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 370\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"172-aoRP+OOePVbgUuC7EBwwLz6bZ0k"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 174\r\nX-Ratelimit-Reset: 1701343297\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4aa2edf2e50-BRU\r\n\r\n{"data":{"id":"tezos","rank":"56","symbol":"XTZ","name":"Tezos","supply":"958103355.6657850000000000","maxSupply":null,"marketCapUsd":"781384561.4776129706425886","volumeUsd24Hr":"15630519.1269584355374472","priceUsd":"0.8155535171199037","changePercent24Hr":"-0.1190248628968331","vwap24Hr":"0.8194419104351387","explorer":"https://tzkt.io/"},"timestamp":1701343274608}'
+
+
+Generation-1: Rendering Sequence-6
+
+	Request: 1 (Remaining candidate combinations: 5)
+	Request hash: 63efda13de9edda76c8574cd019ae7dd0638f3d8
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '/'
+		- restler_static_string: 'chainlink'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:14.729: Sending: 'GET /v2/assets/chainlink?limit=10&convert=USD HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 921ddb16-3ae4-4247-96c8-5cd4b3fcb3d5\r\n\r\n'
+
+2023-11-30 12:21:14.776: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:14 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 461\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"1cd-EGPM+YJdyHmpEmuM+S32X2mjSKE"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 180\r\nX-Ratelimit-Reset: 1701343320\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4ab18842e50-BRU\r\n\r\n{"data":{"id":"chainlink","rank":"11","symbol":"LINK","name":"Chainlink","supply":"556849970.4527867000000000","maxSupply":"1000000000.0000000000000000","marketCapUsd":"8131939342.6096163801438545","volumeUsd24Hr":"306290431.8984396394558598","priceUsd":"14.6034655187237622","changePercent24Hr":"-1.1212643494783919","vwap24Hr":"14.5648953147884722","explorer":"https://etherscan.io/token/0x514910771af9ca656af840dff83e8264ecf986ca"},"timestamp":1701343274759}'
+
+
+Generation-1: Rendering Sequence-7
+
+	Request: 1 (Remaining candidate combinations: 9)
+	Request hash: 7ce82bc03329f0720ae5fbd63a74b1809a9ae1e4
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '/'
+		- restler_static_string: 'ethereum'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:14.886: Sending: 'GET /v2/assets/ethereum?limit=10&convert=USD&interval=d1 HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 3fd5a372-da3e-4177-89fb-242652ef76ee\r\n\r\n'
+
+2023-11-30 12:21:14.933: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:14 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 391\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"187-k9pvFrxFNgibvzctRzCHdQGrMJQ"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 183\r\nX-Ratelimit-Reset: 1701343313\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4ac0a952e50-BRU\r\n\r\n{"data":{"id":"ethereum","rank":"2","symbol":"ETH","name":"Ethereum","supply":"120252683.5477615300000000","maxSupply":null,"marketCapUsd":"244641009530.8924905146539613","volumeUsd24Hr":"2886739309.2615693772911688","priceUsd":"2034.3912693950555446","changePercent24Hr":"-1.0164057462059219","vwap24Hr":"2038.0520181328243657","explorer":"https://etherscan.io/"},"timestamp":1701343274906}'
+
+
+Generation-1: Rendering Sequence-8
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 80d79bf799ac85b072271ab09f999bef4e3df187
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '/'
+		- restler_static_string: 'dogecoin'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [marketCap, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [daily, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'start='
+		+ restler_fuzzable_string: [2022-01-01, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'end='
+		+ restler_fuzzable_string: [2022-12-31, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_int: [100, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [20, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'page='
+		+ restler_fuzzable_int: [2, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'symbol='
+		+ restler_fuzzable_string: [DOGE, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [coin, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:15.027: Sending: 'GET /v2/assets/dogecoin?limit=10&convert=USD&sort=marketCap&interval=daily&start=2022-01-01&end=2022-12-31&rank=100&offset=20&page=2&ids=bitcoin%2Cethereum&symbol=DOGE&search=coin HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: e1923b59-e63d-47c8-9e40-2be8b83801a0\r\n\r\n'
+
+2023-11-30 12:21:15.137: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:15 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 401\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"191-3RRY/hpwYwkZ45czhBh1qbq4PrU"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 180\r\nX-Ratelimit-Reset: 1701343315\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4acfc902e50-BRU\r\n\r\n{"data":{"id":"dogecoin","rank":"9","symbol":"DOGE","name":"Dogecoin","supply":"141896866383.7052600000000000","maxSupply":null,"marketCapUsd":"11594782044.6399235703225798","volumeUsd24Hr":"271627198.8984200021880084","priceUsd":"0.0817127420790697","changePercent24Hr":"2.1195633011827412","vwap24Hr":"0.0811315470537913","explorer":"http://dogechain.info/chain/Dogecoin"},"timestamp":1701343275057}'
+
+
+Generation-1: Rendering Sequence-9
+
+	Request: 1 (Remaining candidate combinations: 5)
+	Request hash: 8f1dc7930ecbaedf9565163fdac27a0b266c4f39
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '/'
+		- restler_static_string: 'eos'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:15.251: Sending: 'GET /v2/assets/eos?limit=10&convert=USD HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 55f274e6-99af-4e97-9cd2-05aa406aa5de\r\n\r\n'
+
+2023-11-30 12:21:15.295: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:15 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 368\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"170-2LD9IGMQ8gYefyh0Mep8eHc4bhk"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 169\r\nX-Ratelimit-Reset: 1701343292\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4ae5f2c2e50-BRU\r\n\r\n{"data":{"id":"eos","rank":"59","symbol":"EOS","name":"EOS","supply":"1108902828.0334000000000000","maxSupply":null,"marketCapUsd":"750408201.8594387330354019","volumeUsd24Hr":"82517967.3461759460985105","priceUsd":"0.6767123167953870","changePercent24Hr":"-0.2292339987674441","vwap24Hr":"0.6786274971041884","explorer":"https://bloks.io/"},"timestamp":1701343275275}'
+
+
+Generation-1: Rendering Sequence-10
+
+	Request: 1 (Remaining candidate combinations: 5)
+	Request hash: 8fc74b3be80d4c8b71e5c79fd062929883b13dfe
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '/'
+		- restler_static_string: 'stellar'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'time='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'start='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'end='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'minSupply='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'maxSupply='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:15.389: Sending: 'GET /v2/assets/stellar?limit=10&convert=USD&ids=%7B+%22fuzz%22%3A+false+%7D&interval=%7B+%22fuzz%22%3A+false+%7D&time=%7B+%22fuzz%22%3A+false+%7D&start=%7B+%22fuzz%22%3A+false+%7D&end=%7B+%22fuzz%22%3A+false+%7D&minSupply=%7B+%22fuzz%22%3A+false+%7D&maxSupply=%7B+%22fuzz%22%3A+false+%7D&sort=%7B+%22fuzz%22%3A+false+%7D HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: c86494be-bb52-4bc8-aebc-8e7f41ab4ffb\r\n\r\n'
+
+2023-11-30 12:21:15.436: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:15 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 417\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"1a1-w00kTb+83TnBIr3RdtlJXwt9o+s"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 178\r\nX-Ratelimit-Reset: 1701343303\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4af38e82e50-BRU\r\n\r\n{"data":{"id":"stellar","rank":"23","symbol":"XLM","name":"Stellar","supply":"27988596865.9852640000000000","maxSupply":"50001806812.0000000000000000","marketCapUsd":"3326284678.9261759646603361","volumeUsd24Hr":"46311180.3334306030008192","priceUsd":"0.1188442812925943","changePercent24Hr":"-0.2383145983384704","vwap24Hr":"0.1191187947114487","explorer":"https://dashboard.stellar.org/"},"timestamp":1701343275420}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:15.530: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=binance&ids=bitcoin%2Cethereum&search=bitcoin&sort=rank HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: ec524f15-e22d-42f8-bee6-c705e7db49b9\r\n\r\n'
+
+2023-11-30 12:21:15.578: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:15 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-FVFCh7BJSb2DyMgFACxI1BMshzg"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 177\r\nX-Ratelimit-Reset: 1701343295\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4b02a562e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343275560}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 19)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:15.652: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=binance&ids=bitcoin%2Cethereum&search=bitcoin&sort=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: dee84d6d-860f-4488-949f-dd8e0235df48\r\n\r\n'
+
+2023-11-30 12:21:15.752: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:15 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-uHsQFBSVEFFV5MvKMtfdEWx8av8"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 191\r\nX-Ratelimit-Reset: 1701343332\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4b0db9e2e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343275730}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 18)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:15.829: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=binance&ids=bitcoin%2Cethereum&search=fuzzstring&sort=rank HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 38d8999f-7521-48b5-a447-787e5efe2a9a\r\n\r\n'
+
+2023-11-30 12:21:15.876: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:15 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-Ke/60XEBx8vvfb73PbjaKoq3XNE"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 187\r\nX-Ratelimit-Reset: 1701343323\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4b1fd932e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343275853}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 17)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:15.938: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=binance&ids=bitcoin%2Cethereum&search=fuzzstring&sort=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 0badaba9-3e5b-4320-9db7-9dc9093340cd\r\n\r\n'
+
+2023-11-30 12:21:16.190: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:16 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-z9ovRViW8Xfacz2obGVyexpPAFs"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 196\r\nX-Ratelimit-Reset: 1701343334\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4b2bec52e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343276163}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 16)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:16.253: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=binance&ids=fuzzstring&search=bitcoin&sort=rank HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: ff1358d3-8caa-425a-99c6-3d4c160cd7e4\r\n\r\n'
+
+2023-11-30 12:21:16.300: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:16 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-omDccOccIUHvquM1Yh7LoTZ9+rg"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 182\r\nX-Ratelimit-Reset: 1701343313\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4b4a9e82e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343276280}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 15)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:16.379: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=binance&ids=fuzzstring&search=bitcoin&sort=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 8d80ca3e-8e28-4864-88dd-33dc50b3bebc\r\n\r\n'
+
+2023-11-30 12:21:16.488: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:16 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-nyVnEZqwCaMAO4JjqCd05ghm1D8"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 195\r\nX-Ratelimit-Reset: 1701343334\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4b56b382e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343276469}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 14)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:16.554: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=binance&ids=fuzzstring&search=fuzzstring&sort=rank HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: c615a7b6-318e-4666-a1dd-8bb17aa381f2\r\n\r\n'
+
+2023-11-30 12:21:16.614: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:16 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-FL8rJyTHAftZXbhOZepg9y7g++U"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 177\r\nX-Ratelimit-Reset: 1701343303\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4b68d3e2e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343276587}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 13)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:16.677: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=binance&ids=fuzzstring&search=fuzzstring&sort=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 78737caf-db3a-4503-8cb0-ce3539eeb2a4\r\n\r\n'
+
+2023-11-30 12:21:16.787: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:16 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-WKcBSmiC6z8CIarZffuy8ALG5nw"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 199\r\nX-Ratelimit-Reset: 1701343337\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4b74e962e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343276773}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 12)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:16.866: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=fuzzstring&ids=bitcoin%2Cethereum&search=bitcoin&sort=rank HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 664a5cc1-8cbf-406f-9f5a-ce950dce6303\r\n\r\n'
+
+2023-11-30 12:21:16.913: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:16 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-Jfbvnv+ptAKiwhzoU3dyZ0rfVWQ"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 194\r\nX-Ratelimit-Reset: 1701343334\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4b879492e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343276893}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 11)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:16.976: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=fuzzstring&ids=bitcoin%2Cethereum&search=bitcoin&sort=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 56221d9e-0577-4694-b9a9-beb982283cc1\r\n\r\n'
+
+2023-11-30 12:21:17.039: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:17 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-boFnBMb1tl7/alUCpVmgSNinhjI"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 180\r\nX-Ratelimit-Reset: 1701343313\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4b93ab52e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343277013}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 10)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:17.117: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=fuzzstring&ids=bitcoin%2Cethereum&search=fuzzstring&sort=rank HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 5445681e-e270-47db-ab36-21b267f5c2ef\r\n\r\n'
+
+2023-11-30 12:21:17.165: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:17 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-qvYh0JmUByZkHKDWEpLISKH47Jg"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 192\r\nX-Ratelimit-Reset: 1701343334\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4ba0c0c2e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343277144}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 9)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:17.243: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=fuzzstring&ids=bitcoin%2Cethereum&search=fuzzstring&sort=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: ef2ab5af-5c96-4ac8-8d51-541f1b7d2678\r\n\r\n'
+
+2023-11-30 12:21:17.291: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:17 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-YCVWCzBa9J/am1FRf3yVjP3Ux8A"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 198\r\nX-Ratelimit-Reset: 1701343337\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4bacd332e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343277268}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 8)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:17.369: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=fuzzstring&ids=fuzzstring&search=bitcoin&sort=rank HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 58b71f1c-599f-4f9b-8def-137822b6df28\r\n\r\n'
+
+2023-11-30 12:21:17.432: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:17 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-B0GPyftusYiFplEwf2yNE4Rc6F0"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 184\r\nX-Ratelimit-Reset: 1701343323\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4bbbe922e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343277413}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 7)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:17.495: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=fuzzstring&ids=fuzzstring&search=bitcoin&sort=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: a8376d95-1485-4533-9be8-6a9e30c1a822\r\n\r\n'
+
+2023-11-30 12:21:17.542: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:17 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-KQY7KoMLp+bvi8N+RuUv+0I7zNs"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 177\r\nX-Ratelimit-Reset: 1701343315\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4bc6feb2e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343277526}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 6)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:17.621: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=fuzzstring&ids=fuzzstring&search=fuzzstring&sort=rank HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: c3342f68-b5b5-4742-9d61-5e4b4e974411\r\n\r\n'
+
+2023-11-30 12:21:17.668: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:17 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-nOazs8RHyZ+F6O+gHzAcD5r/tYw"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 175\r\nX-Ratelimit-Reset: 1701343306\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4bd29412e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343277646}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 5)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:17.730: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=d1&exchangeId=fuzzstring&ids=fuzzstring&search=fuzzstring&sort=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: cae9a1ea-d91c-4825-bdbc-8dd4920a5015\r\n\r\n'
+
+2023-11-30 12:21:17.778: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:17 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-hUc7bFWiTeTyEGv2ovDR/g+HATo"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 175\r\nX-Ratelimit-Reset: 1701343320\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4bdea782e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343277757}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 4)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:17.856: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=fuzzstring&exchangeId=binance&ids=bitcoin%2Cethereum&search=bitcoin&sort=rank HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 3c54d011-1f97-450f-9ac0-84326f654089\r\n\r\n'
+
+2023-11-30 12:21:17.904: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:17 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-KMiO94JII5FH6SiqUD0bh84UTeY"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 174\r\nX-Ratelimit-Reset: 1701343320\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4beabeb2e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343277880}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 3)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:17.967: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=fuzzstring&exchangeId=binance&ids=bitcoin%2Cethereum&search=bitcoin&sort=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 566bffd9-23eb-4f24-bca0-ab1a1d4dc594\r\n\r\n'
+
+2023-11-30 12:21:18.014: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:18 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-Cgi5xeuoSVP4hlTXpQZAum+DH5c"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 172\r\nX-Ratelimit-Reset: 1701343305\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4bf5d132e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343277997}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 2)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:18.092: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=fuzzstring&exchangeId=binance&ids=bitcoin%2Cethereum&search=fuzzstring&sort=rank HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: d55339de-96db-46ae-ad76-42e5039ad273\r\n\r\n'
+
+2023-11-30 12:21:18.140: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:18 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-nhRzhvF9MJkyWmdihzTdrUGSmPE"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 197\r\nX-Ratelimit-Reset: 1701343337\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4c01e442e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343278124}'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 1)
+	Request hash: 985eeb983c85254c483870bf0e60c519cbb834b7
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:18.236: Sending: 'GET /v2/assets?limit=10&convert=USD&interval=fuzzstring&exchangeId=binance&ids=bitcoin%2Cethereum&search=fuzzstring&sort=fuzzstring HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 47a0ce71-7bb2-4c33-8e97-82c74fdb5c6b\r\n\r\n'
+
+2023-11-30 12:21:18.283: Received: 'HTTP/1.1 400 Bad Request\r\nDate: Thu, 30 Nov 2023 11:21:18 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 80\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"50-Znu9ZB3zJbzEnFnnqOSqaxgXOUk"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 192\r\nX-Ratelimit-Reset: 1701343324\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4c0ffdb2e50-BRU\r\n\r\n{"error":"only one of search or ids can be specified","timestamp":1701343278257}'
+
+
+Generation-1: Rendering Sequence-12
+
+	Request: 1 (Remaining candidate combinations: 5)
+	Request hash: a64905b779a9a4982267ca9d9913fc5e2b4bf843
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '/'
+		- restler_static_string: 'cardano'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:18.377: Sending: 'GET /v2/assets/cardano?limit=10&convert=USD HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: e87bff7f-6844-4d1a-acde-050143e6bb73\r\n\r\n'
+
+2023-11-30 12:21:18.424: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:18 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 416\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"1a0-PjnWviA+tH3WmO1Z5WcfHxCAfdw"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 174\r\nX-Ratelimit-Reset: 1701343303\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4c1d9ba2e50-BRU\r\n\r\n{"data":{"id":"cardano","rank":"8","symbol":"ADA","name":"Cardano","supply":"35281631317.3040000000000000","maxSupply":"45000000000.0000000000000000","marketCapUsd":"13244947778.2294139106903907","volumeUsd24Hr":"110894549.2219014073140359","priceUsd":"0.3754063313884634","changePercent24Hr":"-2.3930996112747941","vwap24Hr":"0.3809795085087343","explorer":"https://cardanoexplorer.com/"},"timestamp":1701343278401}'
+
+
+Generation-1: Rendering Sequence-13
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: b88ff53d8b5909ac4f9ae4a6ddc1c7fb7bc6d6e4
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'markets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:18.528: Sending: 'GET /v2/markets?limit=10&convert=USD&exchangeId=binance&interval=d1&ids=bitcoin%2Cethereum&sort=rank HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 282215d2-8ab9-40ef-b3cf-885727be4b42\r\n\r\n'
+
+2023-11-30 12:21:18.581: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:18 GMT\r\nContent-Type: application/json; charset=utf-8\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"cd0-DBOOu5X1nS4eFZ2YHj9ASRjsOdI"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 171\r\nX-Ratelimit-Reset: 1701343297\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4c2cbb22e50-BRU\r\n\r\ncd0\r\n{"data":[{"exchangeId":"binance","rank":"1","baseSymbol":"BTC","baseId":"bitcoin","quoteSymbol":"USDT","quoteId":"tether","priceQuote":"37734.4500000000000000","priceUsd":"37753.2644840588994931","volumeUsd24Hr":"1079442386.5363667766229260","percentExchangeVolume":"21.6917578152478685","tradesCount24Hr":"1646263","updated":1701343182684},{"exchangeId":"binance","rank":"2","baseSymbol":"ETH","baseId":"ethereum","quoteSymbol":"USDT","quoteId":"tether","priceQuote":"2034.4600000000000000","priceUsd":"2035.4743864621975055","volumeUsd24Hr":"504500108.7103299740206008","percentExchangeVolume":"10.1380993672347417","tradesCount24Hr":"1650931","updated":1701343182694},{"exchangeId":"binance","rank":"3","baseSymbol":"USDC","baseId":"usd-coin","quoteSymbol":"USDT","quoteId":"tether","priceQuote":"0.9999000000000000","priceUsd":"1.0003985524530103","volumeUsd24Hr":"490169095.2658790530875271","percentExchangeVolume":"9.8501128320000357","tradesCount24Hr":"29508","updated":1701343186864},{"exchangeId":"binance","rank":"4","baseSymbol":"SOL","baseId":"solana","quoteSymbol":"USDT","quoteId":"tether","priceQuote":"60.0300000000000000","priceUsd":"60.0599310968638932","volumeUsd24Hr":"349332564.6132205086598603","percentExchangeVolume":"7.0199553798178684","tradesCount24Hr":"160686","updated":1701343190120},{"exchangeId":"binance","rank":"5","baseSymbol":"IOTA","baseId":"iota","quoteSymbol":"USDT","quoteId":"tether","priceQuote":"0.2408000000000000","priceUsd":"0.2409200634370286","volumeUsd24Hr":"185231736.9756905806517936","percentExchangeVolume":"3.7222940550509927","tradesCount24Hr":"41204","updated":1701343185925},{"exchangeId":"binance","rank":"6","baseSymbol":"XRP","baseId":"xrp","quoteSymbol":"USDT","quoteId":"tether","priceQuote":"0.6036000000000000","priceUsd":"0.6039009563562726","volumeUsd24Hr":"153482477.6378088360553345","percentExchangeVolume":"3.0842820101648664","tradesCount24Hr":"479488","updated":1701343185640},{"exchangeId":"binance","rank":"7","baseSymbol":"DOGE","baseId":"dogecoin","quoteSymbol":"USDT","quoteId":"tether","priceQuote":"0.0817700000000000","priceUsd":"0.0818107707111538","volumeUsd24Hr":"129224554.2540631349094490","percentExchangeVolume":"2.5968108809001809","tradesCount24Hr":"1137852","updated":1701343188118},{"exchangeId":"binance","rank":"8","baseSymbol":"RUNE","baseId":"thorchain","quoteSymbol":"USDT","quoteId":"tether","priceQuote":"6.4460000000000000","priceUsd":"6.4492139905111554","volumeUsd24Hr":"125503301.7256525327942371","percentExchangeVolume":"2.5220310597420815","tradesCount24Hr":"170262","updated":1701343192114},{"exchangeId":"binance","rank":"9","baseSymbol":"BNB","baseId":"binance-coin","quoteSymbol":"USDT","quoteId":"tether","priceQuote":"228.1000000000000000","priceUsd":"228.2137311876504090","volumeUsd24Hr":"94762124.8748420669926904","percentExchangeVolume":"1.9042767714903860","tradesCount24Hr":"604459","updated":1701343183593},{"exchangeId":"binance","rank":"10","baseSymbol":"LINK","baseId":"chainlink","quoteSymbol":"USDT","quoteId":"tether","priceQuote":"14.6070000000000000","priceUsd":"14.6142830839895201","volumeUsd24Hr":"69461428.5331059405090583","percentExchangeVolume":"1.3958507689104160","tradesCount24Hr":"257321","updated":1701343186932}],"timestamp":1701343278556}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-14
+
+	Request: 1 (Remaining candidate combinations: 3)
+	Request hash: be33ad0aceffcd9c0b42b66c5657f93b31302b9a
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'rates'
+		- restler_static_string: '/'
+		- restler_static_string: ':interval'
+		- restler_static_string: '?'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:18.675: Sending: 'GET /v2/rates/:interval?ids=bitcoin%2Cethereum HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 7434a2e7-9bb5-41fd-930a-01ba605a5fca\r\n\r\n'
+
+2023-11-30 12:21:18.738: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:18 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 27\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"1b-OCVKMgg7TWc9AWunJKrUUrpNzs8"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 190\r\nX-Ratelimit-Reset: 1701343324\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4c3cd772e50-BRU\r\n\r\n{"timestamp":1701343278711}'
+
+
+Generation-1: Rendering Sequence-15
+
+	Request: 1 (Remaining candidate combinations: 5)
+	Request hash: c59ac9fc2fb648d000a00f2576b7d795b27e8550
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '/'
+		- restler_static_string: 'ethereum'
+		- restler_static_string: '/'
+		- restler_static_string: 'markets'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:18.816: Sending: 'GET /v2/assets/ethereum/markets?limit=10&convert=USD HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: c3a9ceb8-f2c6-4c29-9a8a-ba2df95cc6db\r\n\r\n'
+
+2023-11-30 12:21:18.879: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:18 GMT\r\nContent-Type: application/json; charset=utf-8\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"8ed-ZcyUCUXwIzTOSbWpK6/8UpSf8FA"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 187\r\nX-Ratelimit-Reset: 1701343331\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4c4bf112e50-BRU\r\n\r\n8ed\r\n{"data":[{"exchangeId":"Binance","baseId":"ethereum","quoteId":"tether","baseSymbol":"ETH","quoteSymbol":"USDT","volumeUsd24Hr":"503930570.3181761439473677","priceUsd":"2033.6660571493783433","volumePercent":"17.8667569607324835"},{"exchangeId":"Uniswap (V3)","baseId":"usd-coin","quoteId":"ethereum","baseSymbol":"USDC","quoteSymbol":"ETH","volumeUsd24Hr":"212466048.1061148850180327","priceUsd":"2034.1327991336892310","volumePercent":"7.5336015692366731"},{"exchangeId":"DigiFinex","baseId":"ethereum","quoteId":"tether","baseSymbol":"ETH","quoteSymbol":"USDT","volumeUsd24Hr":"182694942.7754240017455039","priceUsd":"2034.2062686094621973","volumePercent":"6.4774124309673680"},{"exchangeId":"LBank","baseId":"ethereum","quoteId":"tether","baseSymbol":"ETH","quoteSymbol":"USDT","volumeUsd24Hr":"175400843.9142675551056643","priceUsd":"2032.7857125477602108","volumePercent":"6.2188016236937509"},{"exchangeId":"WhiteBIT","baseId":"ethereum","quoteId":"tether","baseSymbol":"ETH","quoteSymbol":"USDT","volumeUsd24Hr":"175018623.6183079482434695","priceUsd":"2033.2158809326417983","volumePercent":"6.2052500800176890"},{"exchangeId":"Uniswap (V3)","baseId":"tether","quoteId":"ethereum","baseSymbol":"USDT","quoteSymbol":"ETH","volumeUsd24Hr":"167648851.6313691072328510","priceUsd":"2033.1040227690375239","volumePercent":"5.9414710839784041"},{"exchangeId":"Coinbase Pro","baseId":"ethereum","quoteId":"united-states-dollar","baseSymbol":"ETH","quoteSymbol":"USD","volumeUsd24Hr":"143154514.9764387712000000","priceUsd":"2033.3200000000000000","volumePercent":"5.0755145203845489"},{"exchangeId":"Gate","baseId":"ethereum","quoteId":"tether","baseSymbol":"ETH","quoteSymbol":"USDT","volumeUsd24Hr":"134261587.0683346821565457","priceUsd":"2033.6860649812333008","volumePercent":"4.7602175509963037"},{"exchangeId":"Crypto.com Exchange","baseId":"ethereum","quoteId":"tether","baseSymbol":"ETH","quoteSymbol":"USDT","volumeUsd24Hr":"109821759.3794867306047785","priceUsd":"2035.3667228570497355","volumePercent":"3.8937083785062838"},{"exchangeId":"YoBit","baseId":"ethereum","quoteId":"bitcoin","baseSymbol":"ETH","quoteSymbol":"BTC","volumeUsd24Hr":"108288617.6986793339976477","priceUsd":"2038.0592999472033386","volumePercent":"3.8393511487393747"}],"timestamp":1701343278855}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-16
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: c7356633af8a923b01c1c5f44cc40fef292a1834
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '/'
+		- restler_static_string: 'litecoin'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [20, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'symbol='
+		+ restler_fuzzable_string: [LTC, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'minCap='
+		+ restler_fuzzable_int: [1000000, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'maxSupply='
+		+ restler_fuzzable_int: [1000000000, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'start='
+		+ restler_fuzzable_string: [01/01/2019 00:00:00, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'end='
+		+ restler_fuzzable_string: [01/02/2019 00:00:00, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:18.974: Sending: 'GET /v2/assets/litecoin?limit=10&convert=USD&interval=d1&offset=20&sort=rank&search=bitcoin&ids=bitcoin%2Cethereum&symbol=LTC&minCap=1000000&maxSupply=1000000000&start=01/01/2019+00%3A00%3A00&end=01/02/2019+00%3A00%3A00 HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 34aa4b82-d62e-4de7-b3b5-fac8c88298f4\r\n\r\n'
+
+2023-11-30 12:21:19.021: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:19 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 428\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"1ac-XSqFP+bHmrxy9Q+ea9+z/lZvIgM"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 175\r\nX-Ratelimit-Reset: 1701343295\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4c5a8da2e50-BRU\r\n\r\n{"data":{"id":"litecoin","rank":"17","symbol":"LTC","name":"Litecoin","supply":"73891457.9735888800000000","maxSupply":"84000000.0000000000000000","marketCapUsd":"5143962471.9767530653052500","volumeUsd24Hr":"84068763.8524720706498283","priceUsd":"69.6151167272320742","changePercent24Hr":"-0.4447983134507691","vwap24Hr":"69.7869811081559912","explorer":"http://explorer.litecoin.net/chain/Litecoin"},"timestamp":1701343279006}'
+
+
+Generation-1: Rendering Sequence-17
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: ca8490c04dfda4de50bb1159b6a7615d51a7fedf
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '/'
+		- restler_static_string: 'tron'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin,ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [20, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'start='
+		+ restler_fuzzable_string: [2021-01-01, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'end='
+		+ restler_fuzzable_string: [2021-12-31, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:19.131: Sending: 'GET /v2/assets/tron?limit=10&convert=USD&interval=d1&sort=rank&search=bitcoin&ids=bitcoin%2Cethereum&offset=20&start=2021-01-01&end=2021-12-31 HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 9465cb0b-ee43-423f-9ee1-3dcc6269d3eb\r\n\r\n'
+
+2023-11-30 12:21:19.178: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:19 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 377\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"179-O5ApYFOtFh9jxMFmRBcWguC3fS4"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 190\r\nX-Ratelimit-Reset: 1701343334\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4c69a772e50-BRU\r\n\r\n{"data":{"id":"tron","rank":"10","symbol":"TRX","name":"TRON","supply":"88628129776.1845100000000000","maxSupply":null,"marketCapUsd":"9202106989.8460591145846343","volumeUsd24Hr":"91061730.3045595150429891","priceUsd":"0.1038282880738253","changePercent24Hr":"0.3157625290605858","vwap24Hr":"0.1036327990053357","explorer":"https://tronscan.org/#/"},"timestamp":1701343279156}'
+
+
+Generation-1: Rendering Sequence-18
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: df441cf777907b32df2ec8990dfd5157df3745d0
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '/'
+		- restler_static_string: 'bitcoin'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [rank, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [cardano, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:19.273: Sending: 'GET /v2/assets/bitcoin?limit=10&convert=USD&interval=d1&ids=ethereum&sort=rank&search=cardano HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 492de24c-79b5-4016-8a70-338ef5e7e678\r\n\r\n'
+
+2023-11-30 12:21:19.320: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:19 GMT\r\nContent-Type: application/json; charset=utf-8\r\nContent-Length: 416\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"1a0-lgMoaL1HiRSjQXfW9QVzyF8Cy/Y"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 189\r\nX-Ratelimit-Reset: 1701343334\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4c78c002e50-BRU\r\n\r\n{"data":{"id":"bitcoin","rank":"1","symbol":"BTC","name":"Bitcoin","supply":"19547062.0000000000000000","maxSupply":"21000000.0000000000000000","marketCapUsd":"737681229504.1304848679445190","volumeUsd24Hr":"4509191639.2554315549667429","priceUsd":"37738.7266436321982745","changePercent24Hr":"-0.8831902438420349","vwap24Hr":"37922.3981817624567351","explorer":"https://blockchain.info/"},"timestamp":1701343279302}'
+
+
+Generation-1: Rendering Sequence-19
+
+	Request: 1 (Remaining candidate combinations: 20)
+	Request hash: e7ff69ebf83146ff5e0db9e3c1271ba05defca2b
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'rates'
+		- restler_static_string: '?'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'start='
+		+ restler_fuzzable_int: [0, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: [asc, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'filter='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'symbol='
+		+ restler_fuzzable_string: [BTC, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'ids='
+		+ restler_fuzzable_string: [bitcoin, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'rank='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'offset='
+		+ restler_fuzzable_int: [5, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'search='
+		+ restler_fuzzable_string: [ethereum, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'exchangeId='
+		+ restler_fuzzable_string: [binance, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:19.430: Sending: 'GET /v2/rates?limit=10&convert=USD&interval=d1&start=0&sort=asc&filter=USD&symbol=BTC&ids=bitcoin&rank=10&offset=5&search=ethereum&exchangeId=binance HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: d66fc3c7-e666-4a6d-8151-a09005f008f2\r\n\r\n'
+
+2023-11-30 12:21:19.477: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:19 GMT\r\nContent-Type: application/json; charset=utf-8\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"4cab-fGi3/S2DTx/zmikjuetkRj3rfs4"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 189\r\nX-Ratelimit-Reset: 1701343324\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4c87dbe2e50-BRU\r\n\r\n4cab\r\n{"data":[{"id":"guatemalan-quetzal","symbol":"GTQ","currencySymbol":"Q","type":"fiat","rateUsd":"0.1276041128336816"},{"id":"venezuelan-bolívar-soberano","symbol":"VES","currencySymbol":null,"type":"fiat","rateUsd":"0.0282136934484023"},{"id":"ethereum","symbol":"ETH","currencySymbol":null,"type":"crypto","rateUsd":"2034.0020613664357801"},{"id":"chilean-peso","symbol":"CLP","currencySymbol":"$","type":"fiat","rateUsd":"0.0011506817789540"},{"id":"special-drawing-rights","symbol":"XDR","currencySymbol":null,"type":"fiat","rateUsd":"1.3288701016186966"},{"id":"nicaraguan-córdoba","symbol":"NIO","currencySymbol":"C$","type":"fiat","rateUsd":"0.0272848243716782"},{"id":"mozambican-metical","symbol":"MZN","currencySymbol":"MT","type":"fiat","rateUsd":"0.0156494544733191"},{"id":"guyanaese-dollar","symbol":"GYD","currencySymbol":"$","type":"fiat","rateUsd":"0.0047726916131280"},{"id":"iranian-rial","symbol":"IRR","currencySymbol":"﷼","type":"fiat","rateUsd":"0.0000236686390533"},{"id":"lebanese-pound","symbol":"LBP","currencySymbol":"£","type":"fiat","rateUsd":"0.0000665225345086"},{"id":"new-zealand-dollar","symbol":"NZD","currencySymbol":"$","type":"fiat","rateUsd":"0.6146776415310637"},{"id":"belize-dollar","symbol":"BZD","currencySymbol":"BZ$","type":"fiat","rateUsd":"0.4953707602455058"},{"id":"ethiopian-birr","symbol":"ETB","currencySymbol":"Br","type":"fiat","rateUsd":"0.0179318797297350"},{"id":"palladium-ounce","symbol":"XPD","currencySymbol":null,"type":"fiat","rateUsd":"1021.3252716725223000"},{"id":"nigerian-naira","symbol":"NGN","currencySymbol":"₦","type":"fiat","rateUsd":"0.0012666244458518"},{"id":"congolese-franc","symbol":"CDF","currencySymbol":null,"type":"fiat","rateUsd":"0.0003667693883072"},{"id":"guernsey-pound","symbol":"GGP","currencySymbol":"£","type":"fiat","rateUsd":"1.2643807505617013"},{"id":"sentinel","symbol":"DVPN","currencySymbol":null,"type":"crypto","rateUsd":"0.0005273583497576"},{"id":"nepalese-rupee","symbol":"NPR","currencySymbol":"₨","type":"fiat","rateUsd":"0.0074943609243302"},{"id":"singapore-dollar","symbol":"SGD","currencySymbol":"$","type":"fiat","rateUsd":"0.7480914317347866"},{"id":"egyptian-pound","symbol":"EGP","currencySymbol":"£","type":"fiat","rateUsd":"0.0323642401038245"},{"id":"serbian-dinar","symbol":"RSD","currencySymbol":"Дин.","type":"fiat","rateUsd":"0.0093587087108278"},{"id":"namibian-dollar","symbol":"NAD","currencySymbol":"$","type":"fiat","rateUsd":"0.0534473543559594"},{"id":"omani-rial","symbol":"OMR","currencySymbol":"﷼","type":"fiat","rateUsd":"2.5976050081824558"},{"id":"polish-zloty","symbol":"PLN","currencySymbol":"zł","type":"fiat","rateUsd":"0.2507106393071160"},{"id":"botswanan-pula","symbol":"BWP","currencySymbol":"P","type":"fiat","rateUsd":"0.0742921959614168"},{"id":"uruguayan-peso","symbol":"UYU","currencySymbol":"$U","type":"fiat","rateUsd":"0.0255708696652773"},{"id":"burundian-franc","symbol":"BIF","currencySymbol":null,"type":"fiat","rateUsd":"0.0003511079952399"},{"id":"saudi-riyal","symbol":"SAR","currencySymbol":"﷼","type":"fiat","rateUsd":"0.2665595452707405"},{"id":"iraqi-dinar","symbol":"IQD","currencySymbol":"د.ع","type":"fiat","rateUsd":"0.0007633587786260"},{"id":"croatian-kuna","symbol":"HRK","currencySymbol":"kn","type":"fiat","rateUsd":"0.1449246167359817"},{"id":"ugandan-shilling","symbol":"UGX","currencySymbol":"UGX","type":"fiat","rateUsd":"0.0002617188985960"},{"id":"mongolian-tugrik","symbol":"MNT","currencySymbol":"₮","type":"fiat","rateUsd":"0.0002898550724638"},{"id":"guinean-franc","symbol":"GNF","currencySymbol":null,"type":"fiat","rateUsd":"0.0001161777519605"},{"id":"icelandic-króna","symbol":"ISK","currencySymbol":"kr","type":"fiat","rateUsd":"0.0072547881601857"},{"id":"israeli-new-sheqel","symbol":"ILS","currencySymbol":"₪","type":"fiat","rateUsd":"0.2698414411691690"},{"id":"chinese-yuan-(offshore)","symbol":"CNH","currencySymbol":null,"type":"fiat","rateUsd":"0.1398790382029236"},{"id":"south-african-rand","symbol":"ZAR","currencySymbol":"R","type":"fiat","rateUsd":"0.0530258315868834"},{"id":"indian-rupee","symbol":"INR","currencySymbol":"₹","type":"fiat","rateUsd":"0.0119948656217603"},{"id":"multi-collateral-dai","symbol":"DAI","currencySymbol":null,"type":"crypto","rateUsd":"0.9973628816465772"},{"id":"paraguayan-guarani","symbol":"PYG","currencySymbol":"Gs","type":"fiat","rateUsd":"0.0001343672088148"},{"id":"sri-lankan-rupee","symbol":"LKR","currencySymbol":"₨","type":"fiat","rateUsd":"0.0030312349329626"},{"id":"philippine-peso","symbol":"PHP","currencySymbol":"₱","type":"fiat","rateUsd":"0.0180198021407705"},{"id":"costa-rican-colón","symbol":"CRC","currencySymbol":"₡","type":"fiat","rateUsd":"0.0018849884797327"},{"id":"bahraini-dinar","symbol":"BHD","currencySymbol":"BD","type":"fiat","rateUsd":"2.6528787713987834"},{"id":"dominican-peso","symbol":"DOP","currencySymbol":"RD$","type":"fiat","rateUsd":"0.0175901495162709"},{"id":"hungarian-forint","symbol":"HUF","currencySymbol":"Ft","type":"fiat","rateUsd":"0.0028737037738849"},{"id":"papua-new-guinean-kina","symbol":"PGK","currencySymbol":"K","type":"fiat","rateUsd":"0.2677856536513913"},{"id":"salvadoran-colón","symbol":"SVC","currencySymbol":"$","type":"fiat","rateUsd":"0.1141146466491318"},{"id":"haitian-gourde","symbol":"HTG","currencySymbol":"G","type":"fiat","rateUsd":"0.0075380734332128"},{"id":"euro","symbol":"EUR","currencySymbol":"€","type":"fiat","rateUsd":"1.0918329801253643"},{"id":"djiboutian-franc","symbol":"DJF","currencySymbol":"$","type":"fiat","rateUsd":"0.0056081927755249"},{"id":"barbadian-dollar","symbol":"BBD","currencySymbol":"$","type":"fiat","rateUsd":"0.5000000000000000"},{"id":"mexican-peso","symbol":"MXN","currencySymbol":"$","type":"fiat","rateUsd":"0.0572865645820086"},{"id":"samoan-tala","symbol":"WST","currencySymbol":"$","type":"fiat","rateUsd":"0.3571428571428572"},{"id":"kenyan-shilling","symbol":"KES","currencySymbol":"KSh","type":"fiat","rateUsd":"0.0065252854812398"},{"id":"pakistani-rupee","symbol":"PKR","currencySymbol":"₨","type":"fiat","rateUsd":"0.0034974447738431"},{"id":"cambodian-riel","symbol":"KHR","currencySymbol":"៛","type":"fiat","rateUsd":"0.0002426692471791"},{"id":"tanzanian-shilling","symbol":"TZS","currencySymbol":null,"type":"fiat","rateUsd":"0.0003976143141153"},{"id":"bosnia-herzegovina-convertible-mark","symbol":"BAM","currencySymbol":"KM","type":"fiat","rateUsd":"0.5608191548903991"},{"id":"kazakhstani-tenge","symbol":"KZT","currencySymbol":"лв","type":"fiat","rateUsd":"0.0021740872020420"},{"id":"turkish-lira","symbol":"TRY","currencySymbol":"Kr","type":"fiat","rateUsd":"0.0346591569978016"},{"id":"colombian-peso","symbol":"COP","currencySymbol":"$","type":"fiat","rateUsd":"0.0002513567763092"},{"id":"cuban-convertible-peso","symbol":"CUC","currencySymbol":"$","type":"fiat","rateUsd":"1.0000000000000000"},{"id":"comorian-franc","symbol":"KMF","currencySymbol":null,"type":"fiat","rateUsd":"0.0022290332959887"},{"id":"dash","symbol":"DASH","currencySymbol":null,"type":"crypto","rateUsd":"30.2061639222481699"},{"id":"chilean-unit-of-account-(uf)","symbol":"CLF","currencySymbol":null,"type":"fiat","rateUsd":"31.7510715986664530"},{"id":"angolan-kwanza","symbol":"AOA","currencySymbol":"Kz","type":"fiat","rateUsd":"0.0012080314764682"},{"id":"hong-kong-dollar","symbol":"HKD","currencySymbol":"$","type":"fiat","rateUsd":"0.1280363664252285"},{"id":"bitcoin-cash","symbol":"BCH","currencySymbol":null,"type":"crypto","rateUsd":"222.7213862987290823"},{"id":"tajikistani-somoni","symbol":"TJS","currencySymbol":null,"type":"fiat","rateUsd":"0.0913172874857237"},{"id":"seychellois-rupee","symbol":"SCR","currencySymbol":"₨","type":"fiat","rateUsd":"0.0767029512534336"},{"id":"bhutanese-ngultrum","symbol":"BTN","currencySymbol":null,"type":"fiat","rateUsd":"0.0119910910510284"},{"id":"mauritanian-ouguiya","symbol":"MRU","currencySymbol":null,"type":"fiat","rateUsd":"0.0251889168765743"},{"id":"japanese-yen","symbol":"JPY","currencySymbol":"¥","type":"fiat","rateUsd":"0.0067764698031980"},{"id":"trinidad-and-tobago-dollar","symbol":"TTD","currencySymbol":"TT$","type":"fiat","rateUsd":"0.1471913606913990"},{"id":"georgian-lari","symbol":"GEL","currencySymbol":null,"type":"fiat","rateUsd":"0.3696857670979667"},{"id":"kyrgystani-som","symbol":"KGS","currencySymbol":"лв","type":"fiat","rateUsd":"0.0112152509468476"},{"id":"litecoin","symbol":"LTC","currencySymbol":null,"type":"crypto","rateUsd":"69.5989735549015636"},{"id":"afghan-afghani","symbol":"AFN","currencySymbol":"؋ ","type":"fiat","rateUsd":"0.0142856212250960"},{"id":"libyan-dinar","symbol":"LYD","currencySymbol":"LD","type":"fiat","rateUsd":"0.2081165452653486"},{"id":"malawian-kwacha","symbol":"MWK","currencySymbol":"MK","type":"fiat","rateUsd":"0.0005941770647653"},{"id":"honduran-lempira","symbol":"HNL","currencySymbol":"L","type":"fiat","rateUsd":"0.0404637174389477"},{"id":"zambian-kwacha","symbol":"ZMW","currencySymbol":"ZK","type":"fiat","rateUsd":"0.0420426223059823"},{"id":"united-states-dollar","symbol":"USD","currencySymbol":"$","type":"fiat","rateUsd":"1.0000000000000000"},{"id":"fijian-dollar","symbol":"FJD","currencySymbol":"$","type":"fiat","rateUsd":"0.4480788618796909"},{"id":"maldivian-rufiyaa","symbol":"MVR","currencySymbol":null,"type":"fiat","rateUsd":"0.0651465798045603"},{"id":"russian-ruble","symbol":"RUB","currencySymbol":"₽","type":"fiat","rateUsd":"0.0112756732986418"},{"id":"jordanian-dinar","symbol":"JOD","currencySymbol":null,"type":"fiat","rateUsd":"1.4096419509444600"},{"id":"chinese-yuan-renminbi","symbol":"CNY","currencySymbol":"¥","type":"fiat","rateUsd":"0.1410317885651426"},{"id":"romanian-leu","symbol":"RON","currencySymbol":"lei","type":"fiat","rateUsd":"0.2195678903917091"},{"id":"são-tomé-and-príncipe-dobra","symbol":"STN","currencySymbol":null,"type":"fiat","rateUsd":"0.0447693886260951"},{"id":"netherlands-antillean-guilder","symbol":"ANG","currencySymbol":"ƒ","type":"fiat","rateUsd":"0.5540485435171888"},{"id":"ukrainian-hryvnia","symbol":"UAH","currencySymbol":"₴","type":"fiat","rateUsd":"0.0274419688800389"},{"id":"platinum-ounce","symbol":"XPT","currencySymbol":null,"type":"fiat","rateUsd":"937.5761780644679000"},{"id":"kuwaiti-dinar","symbol":"KWD","currencySymbol":"ك","type":"fiat","rateUsd":"3.2393909944930357"},{"id":"mauritian-rupee","symbol":"MUR","currencySymbol":"₨","type":"fiat","rateUsd":"0.0226757369614512"},{"id":"cfp-franc","symbol":"XPF","currencySymbol":null,"type":"fiat","rateUsd":"0.0091495607698455"},{"id":"swazi-lilangeni","symbol":"SZL","currencySymbol":null,"type":"fiat","rateUsd":"0.0534473543559594"},{"id":"macanese-pataca","symbol":"MOP","currencySymbol":"MOP$","type":"fiat","rateUsd":"0.1242438982268532"},{"id":"czech-republic-koruna","symbol":"CZK","currencySymbol":"Kč","type":"fiat","rateUsd":"0.0449052763609914"},{"id":"dogecoin","symbol":"DOGE","currencySymbol":null,"type":"crypto","rateUsd":"0.0816722543018998"},{"id":"thai-baht","symbol":"THB","currencySymbol":"฿","type":"fiat","rateUsd":"0.0283708064401731"},{"id":"eos","symbol":"EOS","currencySymbol":null,"type":"crypto","rateUsd":"0.6765647858988716"},{"id":"north-korean-won","symbol":"KPW","currencySymbol":"₩","type":"fiat","rateUsd":"0.0011111111111111"},{"id":"panamanian-balboa","symbol":"PAB","currencySymbol":"B/.","type":"fiat","rateUsd":"1.0000000000000000"},{"id":"sudanese-pound","symbol":"SDG","currencySymbol":null,"type":"fiat","rateUsd":"0.0016638935108153"},{"id":"tunisian-dinar","symbol":"TND","currencySymbol":null,"type":"fiat","rateUsd":"0.3228149463320152"},{"id":"norwegian-krone","symbol":"NOK","currencySymbol":"kr","type":"fiat","rateUsd":"0.0934774693592540"},{"id":"crypto-com-coin","symbol":"CRO","currencySymbol":null,"type":"crypto","rateUsd":"0.0904776140249776"},{"id":"azerbaijani-manat","symbol":"AZN","currencySymbol":"₼","type":"fiat","rateUsd":"0.5882352941176471"},{"id":"laotian-kip","symbol":"LAK","currencySymbol":"₭","type":"fiat","rateUsd":"0.0000482940192280"},{"id":"vanuatu-vatu","symbol":"VUV","currencySymbol":"VT","type":"fiat","rateUsd":"0.0084230386954398"},{"id":"bitcoin","symbol":"BTC","currencySymbol":"₿","type":"crypto","rateUsd":"37731.1093141678604157"},{"id":"swedish-krona","symbol":"SEK","currencySymbol":"kr","type":"fiat","rateUsd":"0.0956914448499104"},{"id":"qtum","symbol":"QTUM","currencySymbol":null,"type":"crypto","rateUsd":"3.0231155202074158"},{"id":"cuban-peso","symbol":"CUP","currencySymbol":"₱","type":"fiat","rateUsd":"0.0388349514563107"},{"id":"bulgarian-lev","symbol":"BGN","currencySymbol":"лв","type":"fiat","rateUsd":"0.5606355364441130"},{"id":"silver-ounce","symbol":"XAG","currencySymbol":null,"type":"fiat","rateUsd":"24.9900477134981000"},{"id":"eritrean-nakfa","symbol":"ERN","currencySymbol":null,"type":"fiat","rateUsd":"0.0666666666666667"},{"id":"zimbabwean-dollar","symbol":"ZWL","currencySymbol":"$","type":"fiat","rateUsd":"0.0031055900621118"},{"id":"saint-helena-pound","symbol":"SHP","currencySymbol":"£","type":"fiat","rateUsd":"1.2643807505617013"},{"id":"cfa-franc-beac","symbol":"XAF","currencySymbol":null,"type":"fiat","rateUsd":"0.0016644887275530"},{"id":"indonesian-rupiah","symbol":"IDR","currencySymbol":"Rp","type":"fiat","rateUsd":"0.0000643283351450"},{"id":"new-taiwan-dollar","symbol":"TWD","currencySymbol":"NT$","type":"fiat","rateUsd":"0.0319045405935987"},{"id":"yemeni-rial","symbol":"YER","currencySymbol":"﷼","type":"fiat","rateUsd":"0.0039946741725636"},{"id":"lesotho-loti","symbol":"LSL","currencySymbol":null,"type":"fiat","rateUsd":"0.0534473543559594"},{"id":"gibraltar-pound","symbol":"GIP","currencySymbol":"£","type":"fiat","rateUsd":"1.2643807505617013"},{"id":"manx-pound","symbol":"IMP","currencySymbol":"£","type":"fiat","rateUsd":"1.2643807505617013"},{"id":"australian-dollar","symbol":"AUD","currencySymbol":"$","type":"fiat","rateUsd":"0.6601779971916029"},{"id":"falkland-islands-pound","symbol":"FKP","currencySymbol":"£","type":"fiat","rateUsd":"1.2643807505617013"},{"id":"armenian-dram","symbol":"AMD","currencySymbol":"֏","type":"fiat","rateUsd":"0.0024822017816877"},{"id":"malaysian-ringgit","symbol":"MYR","currencySymbol":"RM","type":"fiat","rateUsd":"0.2146153020710377"},{"id":"aruban-florin","symbol":"AWG","currencySymbol":"ƒ","type":"fiat","rateUsd":"0.5547850208044383"},{"id":"brazilian-real","symbol":"BRL","currencySymbol":"R$","type":"fiat","rateUsd":"0.2038361972319044"},{"id":"east-caribbean-dollar","symbol":"XCD","currencySymbol":"$","type":"fiat","rateUsd":"0.3700209061811993"},{"id":"cape-verdean-escudo","symbol":"CVE","currencySymbol":"$","type":"fiat","rateUsd":"0.0099477184723651"},{"id":"cfa-franc-bceao","symbol":"XOF","currencySymbol":null,"type":"fiat","rateUsd":"0.0016644887275530"},{"id":"waves","symbol":"WAVES","currencySymbol":null,"type":"crypto","rateUsd":"2.0494613073195150"},{"id":"macedonian-denar","symbol":"MKD","currencySymbol":"ден","type":"fiat","rateUsd":"0.0178165322988342"},{"id":"cayman-islands-dollar","symbol":"KYD","currencySymbol":"$","type":"fiat","rateUsd":"1.1982405036444486"},{"id":"danish-krone","symbol":"DKK","currencySymbol":"kr","type":"fiat","rateUsd":"0.1464616906014362"},{"id":"ghanaian-cedi","symbol":"GHS","currencySymbol":"¢","type":"fiat","rateUsd":"0.0832639467110741"},{"id":"belarusian-ruble","symbol":"BYN","currencySymbol":"Br","type":"fiat","rateUsd":"0.3031311630354585"},{"id":"persistence","symbol":"XPRT","currencySymbol":null,"type":"crypto","rateUsd":"0.2159969064673085"},{"id":"gold-ounce","symbol":"XAU","currencySymbol":null,"type":"fiat","rateUsd":"2038.6112979838135000"},{"id":"south-sudanese-pound","symbol":"SSP","currencySymbol":null,"type":"fiat","rateUsd":"0.0076769537847382"},{"id":"zcash","symbol":"ZEC","currencySymbol":null,"type":"crypto","rateUsd":"29.4998425629528487"},{"id":"syrian-pound","symbol":"SYP","currencySymbol":"£","type":"fiat","rateUsd":"0.0003980051979479"},{"id":"gambian-dalasi","symbol":"GMD","currencySymbol":null,"type":"fiat","rateUsd":"0.0148533234311177"},{"id":"qatari-rial","symbol":"QAR","currencySymbol":"﷼","type":"fiat","rateUsd":"0.2746875429199286"},{"id":"united-arab-emirates-dirham","symbol":"AED","currencySymbol":"فلس","type":"fiat","rateUsd":"0.2723163226403790"},{"id":"solomon-islands-dollar","symbol":"SBD","currencySymbol":"$","type":"fiat","rateUsd":"0.1179915246687830"},{"id":"malagasy-ariary","symbol":"MGA","currencySymbol":"Ar","type":"fiat","rateUsd":"0.0002199423734310"},{"id":"liberian-dollar","symbol":"LRD","currencySymbol":"$","type":"fiat","rateUsd":"0.0053177346450412"},{"id":"são-tomé-and-príncipe-dobra-(pre-2018)","symbol":"STD","currencySymbol":null,"type":"fiat","rateUsd":"0.0000448796775844"},{"id":"argentine-peso","symbol":"ARS","currencySymbol":"$","type":"fiat","rateUsd":"0.0027780339742443"},{"id":"south-korean-won","symbol":"KRW","currencySymbol":null,"type":"fiat","rateUsd":"0.0007695367275624"},{"id":"myanma-kyat","symbol":"MMK","currencySymbol":"K","type":"fiat","rateUsd":"0.0004754836369332"},{"id":"rwandan-franc","symbol":"RWF","currencySymbol":null,"type":"fiat","rateUsd":"0.0008032128514056"},{"id":"jersey-pound","symbol":"JEP","currencySymbol":"£","type":"fiat","rateUsd":"1.2643807505617013"},{"id":"moldovan-leu","symbol":"MDL","currencySymbol":null,"type":"fiat","rateUsd":"0.0563397009026691"},{"id":"algerian-dinar","symbol":"DZD","currencySymbol":null,"type":"fiat","rateUsd":"0.0074454619909165"},{"id":"canadian-dollar","symbol":"CAD","currencySymbol":"$","type":"fiat","rateUsd":"0.7349374568224244"},{"id":"bolivian-boliviano","symbol":"BOB","currencySymbol":"$b","type":"fiat","rateUsd":"0.1445138287450433"},{"id":"vietnamese-dong","symbol":"VND","currencySymbol":"₫","type":"fiat","rateUsd":"0.0000412199902951"},{"id":"brunei-dollar","symbol":"BND","currencySymbol":"$","type":"fiat","rateUsd":"0.7495830444315350"},{"id":"peruvian-nuevo-sol","symbol":"PEN","currencySymbol":"S/.","type":"fiat","rateUsd":"0.2685067614030123"},{"id":"uzbekistan-som","symbol":"UZS","currencySymbol":"лв","type":"fiat","rateUsd":"0.0000811917377371"},{"id":"tether","symbol":"USDT","currencySymbol":null,"type":"crypto","rateUsd":"1.0004295874204900"},{"id":"sierra-leonean-leone","symbol":"SLL","currencySymbol":"Le","type":"fiat","rateUsd":"0.0000476883092110"},{"id":"bangladeshi-taka","symbol":"BDT","currencySymbol":"Tk","type":"fiat","rateUsd":"0.0090566433630780"},{"id":"british-pound-sterling","symbol":"GBP","currencySymbol":"£","type":"fiat","rateUsd":"1.2643807505617013"},{"id":"thorchain","symbol":"RUNE","currencySymbol":null,"type":"crypto","rateUsd":"6.4356226045339502"},{"id":"surinamese-dollar","symbol":"SRD","currencySymbol":"$","type":"fiat","rateUsd":"0.0263779164083829"},{"id":"binance-coin","symbol":"BNB","currencySymbol":null,"type":"crypto","rateUsd":"228.1449742389995485"},{"id":"bermudan-dollar","symbol":"BMD","currencySymbol":"$","type":"fiat","rateUsd":"1.0000000000000000"},{"id":"somali-shilling","symbol":"SOS","currencySymbol":"S","type":"fiat","rateUsd":"0.0017497812773403"},{"id":"turkmenistani-manat","symbol":"TMT","currencySymbol":null,"type":"fiat","rateUsd":"0.2857142857142857"},{"id":"swiss-franc","symbol":"CHF","currencySymbol":"CHF","type":"fiat","rateUsd":"1.1425228733079236"},{"id":"jamaican-dollar","symbol":"JMD","currencySymbol":"J$","type":"fiat","rateUsd":"0.0064154508692262"},{"id":"moroccan-dirham","symbol":"MAD","currencySymbol":null,"type":"fiat","rateUsd":"0.0996065541112605"}],"timestamp":1701343279454}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-20
+
+	Request: 1 (Remaining candidate combinations: 9)
+	Request hash: fbd5b136be359fc16836433575b5a43f8a738b3d
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'v2'
+		- restler_static_string: '/'
+		- restler_static_string: 'assets'
+		- restler_static_string: '/'
+		- restler_static_string: 'ethereum'
+		- restler_static_string: '/'
+		- restler_static_string: 'history'
+		- restler_static_string: '?'
+		- restler_static_string: 'interval='
+		+ restler_fuzzable_string: [d1, fuzzstring, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'limit='
+		+ restler_fuzzable_int: [10, 1, ...]
+		- restler_static_string: '&'
+		- restler_static_string: 'convert='
+		+ restler_fuzzable_string: [USD, fuzzstring, ...]
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.coincap.io\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:21:19.571: Sending: 'GET /v2/assets/ethereum/history?interval=d1&limit=10&convert=USD HTTP/1.1\r\nAccept: application/json\r\nHost: api.coincap.io\r\nContent-Length: 0\r\nUser-Agent: restler/9.2.3\r\nx-restler-sequence-id: 66c3c9e4-cfc7-46ca-b5ad-734caa1365a1\r\n\r\n'
+
+2023-11-30 12:21:19.681: Received: 'HTTP/1.1 200 OK\r\nDate: Thu, 30 Nov 2023 11:21:19 GMT\r\nContent-Type: application/json; charset=utf-8\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nAccess-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Accept-Encoding, Authorization\r\nAccess-Control-Allow-Origin: *\r\nEtag: W/"8298-aLrivt/5cw0iwg68wJ1v1LvhcAw"\r\nVary: Accept-Encoding\r\nX-Powered-By: Express\r\nX-Ratelimit-Limit: 200\r\nX-Ratelimit-Remaining: 172\r\nX-Ratelimit-Reset: 1701343303\r\nCF-Cache-Status: DYNAMIC\r\nServer: cloudflare\r\nCF-RAY: 82e2b4c96f6d2e50-BRU\r\n\r\n7d7f\r\n{"data":[{"priceUsd":"1281.3406385687809627","time":1669852800000,"date":"2022-12-01T00:00:00.000Z"},{"priceUsd":"1281.6324144447453707","time":1669939200000,"date":"2022-12-02T00:00:00.000Z"},{"priceUsd":"1274.9508398169405515","time":1670025600000,"date":"2022-12-03T00:00:00.000Z"},{"priceUsd":"1263.6427422865011820","time":1670112000000,"date":"2022-12-04T00:00:00.000Z"},{"priceUsd":"1281.8335487885397042","time":1670198400000,"date":"2022-12-05T00:00:00.000Z"},{"priceUsd":"1258.2194151010585890","time":1670284800000,"date":"2022-12-06T00:00:00.000Z"},{"priceUsd":"1240.8597719786892100","time":1670371200000,"date":"2022-12-07T00:00:00.000Z"},{"priceUsd":"1247.0008718750408217","time":1670457600000,"date":"2022-12-08T00:00:00.000Z"},{"priceUsd":"1277.0681203575649088","time":1670544000000,"date":"2022-12-09T00:00:00.000Z"},{"priceUsd":"1268.7790457237097662","time":1670630400000,"date":"2022-12-10T00:00:00.000Z"},{"priceUsd":"1273.1454847868097605","time":1670716800000,"date":"2022-12-11T00:00:00.000Z"},{"priceUsd":"1254.4882134790086365","time":1670803200000,"date":"2022-12-12T00:00:00.000Z"},{"priceUsd":"1295.1805012621024610","time":1670889600000,"date":"2022-12-13T00:00:00.000Z"},{"priceUsd":"1323.6630886871784211","time":1670976000000,"date":"2022-12-14T00:00:00.000Z"},{"priceUsd":"1282.4641062046952401","time":1671062400000,"date":"2022-12-15T00:00:00.000Z"},{"priceUsd":"1228.4042501821168851","time":1671148800000,"date":"2022-12-16T00:00:00.000Z"},{"priceUsd":"1179.1671115445162053","time":1671235200000,"date":"2022-12-17T00:00:00.000Z"},{"priceUsd":"1184.3993437729040283","time":1671321600000,"date":"2022-12-18T00:00:00.000Z"},{"priceUsd":"1180.7569441477524357","time":1671408000000,"date":"2022-12-19T00:00:00.000Z"},{"priceUsd":"1207.0260104828408180","time":1671494400000,"date":"2022-12-20T00:00:00.000Z"},{"priceUsd":"1212.4362353245871255","time":1671580800000,"date":"2022-12-21T00:00:00.000Z"},{"priceUsd":"1209.2269038496379780","time":1671667200000,"date":"2022-12-22T00:00:00.000Z"},{"priceUsd":"1220.5191325558144124","time":1671753600000,"date":"2022-12-23T00:00:00.000Z"},{"priceUsd":"1220.3595129788625933","time":1671840000000,"date":"2022-12-24T00:00:00.000Z"},{"priceUsd":"1217.7786570709072996","time":1671926400000,"date":"2022-12-25T00:00:00.000Z"},{"priceUsd":"1218.6695582718795064","time":1672012800000,"date":"2022-12-26T00:00:00.000Z"},{"priceUsd":"1216.8518273981642076","time":1672099200000,"date":"2022-12-27T00:00:00.000Z"},{"priceUsd":"1196.2517731638523644","time":1672185600000,"date":"2022-12-28T00:00:00.000Z"},{"priceUsd":"1196.4113566970793453","time":1672272000000,"date":"2022-12-29T00:00:00.000Z"},{"priceUsd":"1194.9049954564881403","time":1672358400000,"date":"2022-12-30T00:00:00.000Z"},{"priceUsd":"1198.5914145479067178","time":1672444800000,"date":"2022-12-31T00:00:00.000Z"},{"priceUsd":"1215.9214894329862890","time":1672617600000,"date":"2023-01-02T00:00:00.000Z"},{"priceUsd":"1213.0989639750526112","time":1672704000000,"date":"2023-01-03T00:00:00.000Z"},{"priceUsd":"1247.7521404063059514","time":1672790400000,"date":"2023-01-04T00:00:00.000Z"},{"priceUsd":"1251.1378142533355871","time":1672876800000,"date":"2023-01-05T00:00:00.000Z"},{"priceUsd":"1254.4388737417578893","time":1672963200000,"date":"2023-01-06T00:00:00.000Z"},{"priceUsd":"1265.4242150600329278","time":1673049600000,"date":"2023-01-07T00:00:00.000Z"},{"priceUsd":"1266.1085947195318691","time":1673136000000,"date":"2023-01-08T00:00:00.000Z"},{"priceUsd":"1317.9524952563995967","time":1673222400000,"date":"2023-01-09T00:00:00.000Z"},{"priceUsd":"1330.6151763010826118","time":1673308800000,"date":"2023-01-10T00:00:00.000Z"},{"priceUsd":"1336.1358838947955486","time":1673395200000,"date":"2023-01-11T00:00:00.000Z"},{"priceUsd":"1405.1307610127584758","time":1673481600000,"date":"2023-01-12T00:00:00.000Z"},{"priceUsd":"1416.8064211992166036","time":1673568000000,"date":"2023-01-13T00:00:00.000Z"},{"priceUsd":"1537.9400141866657407","time":1673654400000,"date":"2023-01-14T00:00:00.000Z"},{"priceUsd":"1537.0054126831590091","time":1673740800000,"date":"2023-01-15T00:00:00.000Z"},{"priceUsd":"1562.2680570793841118","time":1673827200000,"date":"2023-01-16T00:00:00.000Z"},{"priceUsd":"1571.6675612505561961","time":1673913600000,"date":"2023-01-17T00:00:00.000Z"},{"priceUsd":"1566.4853176280863664","time":1674000000000,"date":"2023-01-18T00:00:00.000Z"},{"priceUsd":"1532.5969913798911942","time":1674086400000,"date":"2023-01-19T00:00:00.000Z"},{"priceUsd":"1574.0860029586043891","time":1674172800000,"date":"2023-01-20T00:00:00.000Z"},{"priceUsd":"1654.8670926478089802","time":1674259200000,"date":"2023-01-21T00:00:00.000Z"},{"priceUsd":"1632.6597786102253822","time":1674345600000,"date":"2023-01-22T00:00:00.000Z"},{"priceUsd":"1632.6532389266845771","time":1674432000000,"date":"2023-01-23T00:00:00.000Z"},{"priceUsd":"1623.4767445015429124","time":1674518400000,"date":"2023-01-24T00:00:00.000Z"},{"priceUsd":"1558.7557907096186851","time":1674604800000,"date":"2023-01-25T00:00:00.000Z"},{"priceUsd":"1609.5318585559082341","time":1674691200000,"date":"2023-01-26T00:00:00.000Z"},{"priceUsd":"1586.5378439115126418","time":1674777600000,"date":"2023-01-27T00:00:00.000Z"},{"priceUsd":"1586.8916045456866777","time":1674864000000,"date":"2023-01-28T00:00:00.000Z"},{"priceUsd":"1614.4992822236397960","time":1674950400000,"date":"2023-01-29T00:00:00.000Z"},{"priceUsd":"1600.0398306004970480","time":1675036800000,"date":"2023-01-30T00:00:00.000Z"},{"priceUsd":"1579.0946960430725564","time":1675123200000,"date":"2023-01-31T00:00:00.000Z"},{"priceUsd":"1590.8598224458527123","time":1675209600000,"date":"2023-02-01T00:00:00.000Z"},{"priceUsd":"1672.3196970017573534","time":1675296000000,"date":"2023-02-02T00:00:00.000Z"},{"priceUsd":"1650.7829688100817108","time":1675382400000,"date":"2023-02-03T00:00:00.000Z"},{"priceUsd":"1668.6486632123180131","time":1675468800000,"date":"2023-02-04T00:00:00.000Z"},{"priceUsd":"1653.8369945977611333","time":1675555200000,"date":"2023-02-05T00:00:00.000Z"},{"priceUsd":"1634.8084592035198736","time":1675641600000,"date":"2023-02-06T00:00:00.000Z"},{"priceUsd":"1642.0022487970396038","time":1675728000000,"date":"2023-02-07T00:00:00.000Z"},{"priceUsd":"1667.1311080774803709","time":1675814400000,"date":"2023-02-08T00:00:00.000Z"},{"priceUsd":"1619.9249671492237989","time":1675900800000,"date":"2023-02-09T00:00:00.000Z"},{"priceUsd":"1538.1842500199916307","time":1675987200000,"date":"2023-02-10T00:00:00.000Z"},{"priceUsd":"1523.0421763943895267","time":1676073600000,"date":"2023-02-11T00:00:00.000Z"},{"priceUsd":"1535.1394807889618086","time":1676160000000,"date":"2023-02-12T00:00:00.000Z"},{"priceUsd":"1498.8405608078743899","time":1676246400000,"date":"2023-02-13T00:00:00.000Z"},{"priceUsd":"1523.6067953004812909","time":1676332800000,"date":"2023-02-14T00:00:00.000Z"},{"priceUsd":"1580.7589125629545774","time":1676419200000,"date":"2023-02-15T00:00:00.000Z"},{"priceUsd":"1688.1375871060196681","time":1676505600000,"date":"2023-02-16T00:00:00.000Z"},{"priceUsd":"1672.3741296508044980","time":1676592000000,"date":"2023-02-17T00:00:00.000Z"},{"priceUsd":"1696.2131397949649819","time":1676678400000,"date":"2023-02-18T00:00:00.000Z"},{"priceUsd":"1696.6488743589694657","time":1676764800000,"date":"2023-02-19T00:00:00.000Z"},{"priceUsd":"1698.3218016156230885","time":1676851200000,"date":"2023-02-20T00:00:00.000Z"},{"priceUsd":"1683.8034969948872259","time":1676937600000,"date":"2023-02-21T00:00:00.000Z"},{"priceUsd":"1635.8549532540012511","time":1677024000000,"date":"2023-02-22T00:00:00.000Z"},{"priceUsd":"1656.8818491157603556","time":1677110400000,"date":"2023-02-23T00:00:00.000Z"},{"priceUsd":"1632.3503789010110793","time":1677196800000,"date":"2023-02-24T00:00:00.000Z"},{"priceUsd":"1598.0051031424334199","time":1677283200000,"date":"2023-02-25T00:00:00.000Z"},{"priceUsd":"1609.5722472938745571","time":1677369600000,"date":"2023-02-26T00:00:00.000Z"},{"priceUsd":"1637.2983697642505589","time":1677456000000,"date":"2023-02-27T00:00:00.000Z"},{"priceUsd":"1629.5431706769623961","time":1677542400000,"date":"2023-02-28T00:00:00.000Z"},{"priceUsd":"1647.2878950021072255","time":1677628800000,"date":"2023-03-01T00:00:00.000Z"},{"priceUsd":"1643.5485722554751873","time":1677715200000,"date":"2023-03-02T00:00:00.000Z"},{"priceUsd":"1573.1183213045229530","time":1677801600000,"date":"2023-03-03T00:00:00.000Z"},{"priceUsd":"1568.7296969585081998","time":1677888000000,"date":"2023-03-04T00:00:00.000Z"},{"priceUsd":"1573.3678644998140232","time":1677974400000,"date":"2023-03-05T00:00:00.000Z"},{"priceUsd":"1567.7650253110913639","time":1678060800000,"date":"2023-03-06T00:00:00.000Z"},{"priceUsd":"1564.4478912219411449","time":1678147200000,"date":"2023-03-07T00:00:00.000Z"},{"priceUsd":"1555.7802679653733676","time":1678233600000,"date":"2023-03-08T00:00:00.000Z"},{"priceUsd":"1518.7031445880418735","time":1678320000000,"date":"2023-03-09T00:00:00.000Z"},{"priceUsd":"1413.3081942621419322","time":1678406400000,"date":"2023-03-10T00:00:00.000Z"},{"priceUsd":"1453.2281911198906384","time":1678492800000,"date":"2023-03-11T00:00:00.000Z"},{"priceUsd":"1494.6652627767542187","time":1678579200000,"date":"2023-03-12T00:00:00.000Z"},{"priceUsd":"1626.9919991972065095","time":1678665600000,"date":"2023-03-13T00:00:00.000Z"},{"priceUsd":"1703.8408123109236081","time":1678752000000,"date":"2023-03-14T00:00:00.000Z"},{"priceUsd":"1678.9311875078192918","time":1678838400000,"date":"2023-03-15T00:00:00.000Z"},{"priceUsd":"1660.9411714396219101","time":1678924800000,"date":"2023-03-16T00:00:00.000Z"},{"priceUsd":"1728.1786889638414063","time":1679011200000,"date":"2023-03-17T00:00:00.000Z"},{"priceUsd":"1808.3839098493504201","time":1679097600000,"date":"2023-03-18T00:00:00.000Z"},{"priceUsd":"1796.6632872940544198","time":1679184000000,"date":"2023-03-19T00:00:00.000Z"},{"priceUsd":"1770.6953851650980235","time":1679270400000,"date":"2023-03-20T00:00:00.000Z"},{"priceUsd":"1776.8631103168927892","time":1679356800000,"date":"2023-03-21T00:00:00.000Z"},{"priceUsd":"1787.3517405251334737","time":1679443200000,"date":"2023-03-22T00:00:00.000Z"},{"priceUsd":"1778.4248014243805803","time":1679529600000,"date":"2023-03-23T00:00:00.000Z"},{"priceUsd":"1785.4958634731637551","time":1679616000000,"date":"2023-03-24T00:00:00.000Z"},{"priceUsd":"1750.1472288451702556","time":1679702400000,"date":"2023-03-25T00:00:00.000Z"},{"priceUsd":"1766.6158232081954534","time":1679788800000,"date":"2023-03-26T00:00:00.000Z"},{"priceUsd":"1745.1620296887311594","time":1679875200000,"date":"2023-03-27T00:00:00.000Z"},{"priceUsd":"1739.0292368627287862","time":1679961600000,"date":"2023-03-28T00:00:00.000Z"},{"priceUsd":"1801.4126833820127581","time":1680048000000,"date":"2023-03-29T00:00:00.000Z"},{"priceUsd":"1795.6295143492993633","time":1680134400000,"date":"2023-03-30T00:00:00.000Z"},{"priceUsd":"1813.3800169359037036","time":1680220800000,"date":"2023-03-31T00:00:00.000Z"},{"priceUsd":"1826.4093262631563085","time":1680307200000,"date":"2023-04-01T00:00:00.000Z"},{"priceUsd":"1813.3803523619956354","time":1680393600000,"date":"2023-04-02T00:00:00.000Z"},{"priceUsd":"1799.8278944210114659","time":1680480000000,"date":"2023-04-03T00:00:00.000Z"},{"priceUsd":"1844.6351117584264935","time":1680566400000,"date":"2023-04-04T00:00:00.000Z"},{"priceUsd":"1909.3637122089973658","time":1680652800000,"date":"2023-04-05T00:00:00.000Z"},{"priceUsd":"1883.0029043363879558","time":1680739200000,"date":"2023-04-06T00:00:00.000Z"},{"priceUsd":"1864.3147715706444864","time":1680825600000,"date":"2023-04-07T00:00:00.000Z"},{"priceUsd":"1871.1709465024336919","time":1680912000000,"date":"2023-04-08T00:00:00.000Z"},{"priceUsd":"1855.4693679750871446","time":1680998400000,"date":"2023-04-09T00:00:00.000Z"},{"priceUsd":"1872.6094098846512924","time":1681084800000,"date":"2023-04-10T00:00:00.000Z"},{"priceUsd":"1915.2031319132980911","time":1681171200000,"date":"2023-04-11T00:00:00.000Z"},{"priceUsd":"1892.7650310384502757","time":1681257600000,"date":"2023-04-12T00:00:00.000Z"},{"priceUsd":"1973.0155014673751272","time":1681344000000,"date":"2023-04-13T00:00:00.000Z"},{"priceUsd":"2102.3958949872107670","time":1681430400000,"date":"2023-04-14T00:00:00.000Z"},{"priceUsd":"2099.5548081990952191","time":1681516800000,"date":"2023-04-15T00:00:00.000Z"},{"priceUsd":"2104.4203469552620133","time":1681603200000,"date":"2023-04-16T00:00:00.000Z"},{"priceUsd":"2087.7714705588959574","time":1681689600000,"date":"2023-04-17T00:00:00.000Z"},{"priceUsd":"2094.6853319285168467","time":1681776000000,"date":"2023-04-18T00:00:00.000Z"},{"priceUsd":"2018.8880047853670607","time":1681862400000,"date":"2023-04-19T00:00:00.000Z"},{"priceUsd":"1951.1183442681617544","time":1681948800000,"date":"2023-04-20T00:00:00.000Z"},{"priceUsd":"1908.0371167508400435","time":1682035200000,"date":"2023-04-21T00:00:00.000Z"},{"priceUsd":"1867.3634721678428330","time":1682121600000,"date":"2023-04-22T00:00:00.000Z"},{"priceUsd":"1871.4709294888531777","time":1682208000000,"date":"2023-04-23T00:00:00.000Z"},{"priceUsd":"1853.7025668046331557","time":1682294400000,"date":"2023-04-24T00:00:00.000Z"},{"priceUsd":"1836.8765246287271971","time":1682380800000,"date":"2023-04-25T00:00:00.000Z"},{"priceUsd":"1896.8817768763241019","time":1682467200000,"date":"2023-04-26T00:00:00.000Z"},{"priceUsd":"1901.9856790753967730","time":1682553600000,"date":"2023-04-27T00:00:00.000Z"},{"priceUsd":"1904.5389588378680260","time":1682640000000,"date":"2023-04-28T00:00:00.000Z"},{"priceUsd":"1908.0858916638441139","time":1682726400000,"date":"2023-04-29T00:00:00.000Z"},{"priceUsd":"1912.9861494052913291","time":1682812800000,"date":"2023-04-30T00:00:00.000Z"},{"priceUsd":"1844.5901915230792037","time":1682899200000,"date":"2023-05-01T00:00:00.000Z"},{"priceUsd":"1846.8133873147544362","time":1682985600000,"date":"2023-05-02T00:00:00.000Z"},{"priceUsd":"1871.2044703645875846","time":1683072000000,"date":"2023-05-03T00:00:00.000Z"},{"priceUsd":"1894.8513197873123166","time":1683158400000,"date":"2023-05-04T00:00:00.000Z"},{"priceUsd":"1935.0435008747383781","time":1683244800000,"date":"2023-05-05T00:00:00.000Z"},{"priceUsd":"1939.1546344312664934","time":1683331200000,"date":"2023-05-06T00:00:00.000Z"},{"priceUsd":"1918.0811894082925476","time":1683417600000,"date":"2023-05-07T00:00:00.000Z"},{"priceUsd":"1860.8325594812602218","time":1683504000000,"date":"2023-05-08T00:00:00.000Z"},{"priceUsd":"1848.7736458639193076","time":1683590400000,"date":"2023-05-09T00:00:00.000Z"},{"priceUsd":"1851.7264448897572712","time":1683676800000,"date":"2023-05-10T00:00:00.000Z"},{"priceUsd":"1815.6584270655884945","time":1683763200000,"date":"2023-05-11T00:00:00.000Z"},{"priceUsd":"1776.8383230177825648","time":1683849600000,"date":"2023-05-12T00:00:00.000Z"},{"priceUsd":"1807.1719020684577578","time":1683936000000,"date":"2023-05-13T00:00:00.000Z"},{"priceUsd":"1807.5777802671143291","time":1684022400000,"date":"2023-05-14T00:00:00.000Z"},{"priceUsd":"1826.6802519038181112","time":1684108800000,"date":"2023-05-15T00:00:00.000Z"},{"priceUsd":"1818.7775379781473747","time":1684195200000,"date":"2023-05-16T00:00:00.000Z"},{"priceUsd":"1814.6529561966166071","time":1684281600000,"date":"2023-05-17T00:00:00.000Z"},{"priceUsd":"1816.0017134988873063","time":1684368000000,"date":"2023-05-18T00:00:00.000Z"},{"priceUsd":"1809.9837139545703708","time":1684454400000,"date":"2023-05-19T00:00:00.000Z"},{"priceUsd":"1817.1652086189159504","time":1684540800000,"date":"2023-05-20T00:00:00.000Z"},{"priceUsd":"1814.5867780938738041","time":1684627200000,"date":"2023-05-21T00:00:00.000Z"},{"priceUsd":"1813.0076507444340464","time":1684713600000,"date":"2023-05-22T00:00:00.000Z"},{"priceUsd":"1851.8387617202241068","time":1684800000000,"date":"2023-05-23T00:00:00.000Z"},{"priceUsd":"1813.5340286904377356","time":1684886400000,"date":"2023-05-24T00:00:00.000Z"},{"priceUsd":"1793.8380859849790688","time":1684972800000,"date":"2023-05-25T00:00:00.000Z"},{"priceUsd":"1819.0013396457260510","time":1685059200000,"date":"2023-05-26T00:00:00.000Z"},{"priceUsd":"1828.6004194763698787","time":1685145600000,"date":"2023-05-27T00:00:00.000Z"},{"priceUsd":"1851.6086380836350908","time":1685232000000,"date":"2023-05-28T00:00:00.000Z"},{"priceUsd":"1898.6567769366947937","time":1685318400000,"date":"2023-05-29T00:00:00.000Z"},{"priceUsd":"1904.0622623475753399","time":1685404800000,"date":"2023-05-30T00:00:00.000Z"},{"priceUsd":"1874.4477258780699346","time":1685491200000,"date":"2023-05-31T00:00:00.000Z"},{"priceUsd":"1865.8893160073103625","time":1685577600000,"date":"2023-06-01T00:00:00.000Z"},{"priceUsd":"1891.0288723674763130","time":1685664000000,"date":"2023-06-02T00:00:00.000Z"},{"priceUsd":"1900.6522499510397829","time":1685750400000,"date":"2023-06-03T00:00:00.000Z"},{"priceUsd":"1901.3326151072273861","time":1685836800000,"date":"2023-06-04T00:00:00.000Z"},{"priceUsd":"1851.2790787657058775","time":1685923200000,"date":"2023-06-05T00:00:00.000Z"},{"priceUsd":"1837.1353309001279180","time":1686009600000,"date":"2023-06-06T00:00:00.000Z"},{"priceUsd":"1863.0533265967782234","time":1686096000000,"date":"2023-06-07T00:00:00.000Z"},{"priceUsd":"1845.7834105749962719","time":1686182400000,"date":"2023-06-08T00:00:00.000Z"},{"priceUsd":"1842.3462512966601290","time":1686268800000,"date":"2023-06-09T00:00:00.000Z"},{"priceUsd":"1767.0148563074502771","time":1686355200000,"date":"2023-06-10T00:00:00.000Z"},{"priceUsd":"1757.4526798360223060","time":1686441600000,"date":"2023-06-11T00:00:00.000Z"},{"priceUsd":"1743.1904185986224128","time":1686528000000,"date":"2023-06-12T00:00:00.000Z"},{"priceUsd":"1745.2788090881249550","time":1686614400000,"date":"2023-06-13T00:00:00.000Z"},{"priceUsd":"1729.6270177766078178","time":1686700800000,"date":"2023-06-14T00:00:00.000Z"},{"priceUsd":"1649.1085940432420020","time":1686787200000,"date":"2023-06-15T00:00:00.000Z"},{"priceUsd":"1682.4787519716404301","time":1686873600000,"date":"2023-06-16T00:00:00.000Z"},{"priceUsd":"1734.1309685194033095","time":1686960000000,"date":"2023-06-17T00:00:00.000Z"},{"priceUsd":"1736.9023543271979895","time":1687046400000,"date":"2023-06-18T00:00:00.000Z"},{"priceUsd":"1728.1005558109675985","time":1687132800000,"date":"2023-06-19T00:00:00.000Z"},{"priceUsd":"1745.0515291036210693","time":1687219200000,"date":"2023-06-20T00:00:00.000Z"},{"priceUsd":"1836.0453832900728917","time":1687305600000,"date":"2023-06-21T00:00:00.000Z"},{"priceUsd":"1896.3923371430190719","time":1687392000000,"date":"2023-06-22T00:00:00.000Z"},{"priceUsd":"1887.9931813815210475","time":1687478400000,"date":"2023-06-23T00:00:00.000Z"},{"priceUsd":"1888.9438144596726436","time":1687564800000,"date":"2023-06-24T00:00:00.000Z"},{"priceUsd":"1902.0141533016295734","time":1687651200000,"date":"2023-06-25T00:00:00.000Z"},{"priceUsd":"1876.4191453247122094","time":1687737600000,"date":"2023-06-26T00:00:00.000Z"},{"priceUsd":"1882.1259833335194898","time":1687824000000,"date":"2023-06-27T00:00:00.000Z"},{"priceUsd":"1856.9682837369781660","time":1687910400000,"date":"2023-06-28T00:00:00.000Z"},{"priceUsd":"1851.3119913568972838","time":1687996800000,"date":"2023-06-29T00:00:00.000Z"},{"priceUsd":"1890.3794508308650275","time":1688083200000,"date":"2023-06-30T00:00:00.000Z"},{"priceUsd":"1923.0497523880010856","time":1688169600000,"date":"2023-07-01T00:00:00.000Z"},{"priceUsd":"1920.8139023779937823","time":1688256000000,"date":"2023-07-02T00:00:00.000Z"},{"priceUsd":"1957.7291497110457507","time":1688342400000,"date":"2023-07-03T00:00:00.000Z"},{"priceUsd":"1952.7665268413434814","time":1688428800000,"date":"2023-07-04T00:00:00.000Z"},{"priceUsd":"1922.5756898932496544","time":1688515200000,"date":"2023-07-05T00:00:00.000Z"},{"priceUsd":"1904.6056165570622832","time":1688601600000,"date":"2023-07-06T00:00:00.000Z"},{"priceUsd":"1862.8416196826020620","time":1688688000000,"date":"2023-07-07T00:00:00.000Z"},{"priceUsd":"1863.9382099128854111","time":1688774400000,"date":"2023-07-08T00:00:00.000Z"},{"priceUsd":"1869.8487482969013019","time":1688860800000,"date":"2023-07-09T00:00:00.000Z"},{"priceUsd":"1868.8078987012132187","time":1688947200000,"date":"2023-07-10T00:00:00.000Z"},{"priceUsd":"1876.7448360296334797","time":1689033600000,"date":"2023-07-11T00:00:00.000Z"},{"priceUsd":"1884.4607394328417709","time":1689120000000,"date":"2023-07-12T00:00:00.000Z"},{"priceUsd":"1913.2219044564658249","time":1689206400000,"date":"2023-07-13T00:00:00.000Z"},{"priceUsd":"1982.1070600545060156","time":1689292800000,"date":"2023-07-14T00:00:00.000Z"},{"priceUsd":"1937.0715109221278022","time":1689379200000,"date":"2023-07-15T00:00:00.000Z"},{"priceUsd":"1934.2269072251817864","time":1689465600000,"date":"2023-07-16T00:00:00.000Z"},{"priceUsd":"1916.8413781568407828","time":1689552000000,"date":"2023-07-17T00:00:00.000Z"},{"priceUsd":"1902.6850856843009706","time":1689638400000,"date":"2023-07-18T00:00:00.000Z"},{"priceUsd":"1907.8316865088395761","time":1689724800000,"date":"2023-07-19T00:00:00.000Z"},{"priceUsd":"1902.8895644388096310","time":1689811200000,"date":"2023-07-20T00:00:00.000Z"},{"priceUsd":"1894.9530453498668073","time":1689897600000,"date":"2023-07-21T00:00:00.000Z"},{"priceUsd":"1891.6930558571713167","time":1689984000000,"date":"2023-07-22T00:00:00.000Z"},{"priceUsd":"1881.1011422926537523","time":1690070400000,"date":"2023-07-23T00:00:00.000Z"},{"priceUsd":"1861.3071818569558812","time":1690156800000,"date":"2023-07-24T00:00:00.000Z"},{"priceUsd":"1856.8689040394298456","time":1690243200000,"date":"2023-07-25T00:00:00.000Z"},{"priceUsd":"1861.8777802602285858","time":1690329600000,"date":"2023-07-26T00:00:00.000Z"},{"priceUsd":"1871.9237490898582672","time":1690416000000,"date":"2023-07-27T00:00:00.000Z"},{"priceUsd":"1868.8742262810436668","time":1690502400000,"date":"2023-07-28T00:00:00.000Z"},{"priceUsd":"1876.6972881322992337","time":1690588800000,"date":"2023-07-29T00:00:00.000Z"},{"priceUsd":"1877.1252119095288780","time":1690675200000,"date":"2023-07-30T00:00:00.000Z"},{"priceUsd":"1865.5005630594424044","time":1690761600000,"date":"2023-07-31T00:00:00.000Z"},{"priceUsd":"1839.1991196664027427","time":1690848000000,"date":"2023-08-01T00:00:00.000Z"},{"priceUsd":"1852.4314240405612492","time":1690934400000,"date":"2023-08-02T00:00:00.000Z"},{"priceUsd":"1839.1777111974998484","time":1691020800000,"date":"2023-08-03T00:00:00.000Z"},{"priceUsd":"1836.3070996321848318","time":1691107200000,"date":"2023-08-04T00:00:00.000Z"},{"priceUsd":"1833.6126733440977900","time":1691193600000,"date":"2023-08-05T00:00:00.000Z"},{"priceUsd":"1834.4869129898507151","time":1691280000000,"date":"2023-08-06T00:00:00.000Z"},{"priceUsd":"1830.3071045547151817","time":1691366400000,"date":"2023-08-07T00:00:00.000Z"},{"priceUsd":"1841.7331397283893595","time":1691452800000,"date":"2023-08-08T00:00:00.000Z"},{"priceUsd":"1856.8470223176516642","time":1691539200000,"date":"2023-08-09T00:00:00.000Z"},{"priceUsd":"1852.3731363163021009","time":1691625600000,"date":"2023-08-10T00:00:00.000Z"},{"priceUsd":"1847.5725745991118278","time":1691712000000,"date":"2023-08-11T00:00:00.000Z"},{"priceUsd":"1850.7277361048406829","time":1691798400000,"date":"2023-08-12T00:00:00.000Z"},{"priceUsd":"1851.3148380294426266","time":1691884800000,"date":"2023-08-13T00:00:00.000Z"},{"priceUsd":"1846.8313880893903359","time":1691971200000,"date":"2023-08-14T00:00:00.000Z"},{"priceUsd":"1839.7611950868966948","time":1692057600000,"date":"2023-08-15T00:00:00.000Z"},{"priceUsd":"1822.9187497286690217","time":1692144000000,"date":"2023-08-16T00:00:00.000Z"},{"priceUsd":"1766.1722535736010603","time":1692230400000,"date":"2023-08-17T00:00:00.000Z"},{"priceUsd":"1676.5092530049616446","time":1692316800000,"date":"2023-08-18T00:00:00.000Z"},{"priceUsd":"1668.6009989485663908","time":1692403200000,"date":"2023-08-19T00:00:00.000Z"},{"priceUsd":"1676.1292977296112407","time":1692489600000,"date":"2023-08-20T00:00:00.000Z"},{"priceUsd":"1673.4495450542337752","time":1692576000000,"date":"2023-08-21T00:00:00.000Z"},{"priceUsd":"1653.0455674818479397","time":1692662400000,"date":"2023-08-22T00:00:00.000Z"},{"priceUsd":"1654.5545609999500705","time":1692748800000,"date":"2023-08-23T00:00:00.000Z"},{"priceUsd":"1664.8384795215454654","time":1692835200000,"date":"2023-08-24T00:00:00.000Z"},{"priceUsd":"1653.7079632519171206","time":1692921600000,"date":"2023-08-25T00:00:00.000Z"},{"priceUsd":"1652.1650204149560017","time":1693008000000,"date":"2023-08-26T00:00:00.000Z"},{"priceUsd":"1655.3994953336383773","time":1693094400000,"date":"2023-08-27T00:00:00.000Z"},{"priceUsd":"1649.0432577087359745","time":1693180800000,"date":"2023-08-28T00:00:00.000Z"},{"priceUsd":"1681.7703202917705661","time":1693267200000,"date":"2023-08-29T00:00:00.000Z"},{"priceUsd":"1713.1439698759697658","time":1693353600000,"date":"2023-08-30T00:00:00.000Z"},{"priceUsd":"1688.3544298797161514","time":1693440000000,"date":"2023-08-31T00:00:00.000Z"},{"priceUsd":"1638.7937538957987531","time":1693526400000,"date":"2023-09-01T00:00:00.000Z"},{"priceUsd":"1635.6243430645081821","time":1693612800000,"date":"2023-09-02T00:00:00.000Z"},{"priceUsd":"1638.5950896264082638","time":1693699200000,"date":"2023-09-03T00:00:00.000Z"},{"priceUsd":"1633.4329514642704727","time":1693785600000,"date":"2023-09-04T00:00:00.000Z"},{"priceUsd":"1628.9987905703287527","time":1693872000000,"date":"2023-09-05T00:00:00.000Z"},{"priceUsd":"1631.5570384594044969","time":1693958400000,"date":"2023-09-06T00:00:00.000Z"},{"priceUsd":"1636.5132786675354283","time":1694044800000,"date":"2023-09-07T00:00:00.000Z"},{"priceUsd":"1638.8145859054133943","time":1694131200000,"date":"2023-09-08T00:00:00.000Z"},{"priceUsd":"1636.6898325704515248","time":1694217600000,"date":"2023-09-09T00:00:00.000Z"},{"priceUsd":"1626.1348760045735443","time":1694304000000,"date":"2023-09-10T00:00:00.000Z"},{"priceUsd":"1585.3340604758051225","time":1694390400000,"date":"2023-09-11T00:00:00.000Z"},{"priceUsd":"1590.0889944236767909","time":1694476800000,"date":"2023-09-12T00:00:00.000Z"},{"priceUsd":"1600.1108508339959778","time":1694563200000,"date":"2023-09-13T00:00:00.000Z"},{"priceUsd":"1626.1519554301137629","time":1694649600000,"date":"2023-09-14T00:00:00.000Z"},{"priceUsd":"1628.4666145666096167","time":1694736000000,"date":"2023-09-15T00:00:00.000Z"},{"priceUsd":"1639.2808403604311446","time":1694822400000,"date":"2023-09-16T00:00:00.000Z"},{"priceUsd":"1631.7616338424057052","time":1694908800000,"date":"2023-09-17T00:00:00.000Z"},{"priceUsd":"1641.5127051406060117","time":1694995200000,"date":"2023-09-18T00:00:00.000Z"},{"priceUsd":"1643.6193157348023359","time":1695081600000,"date":"2023-09-19T00:00:00.000Z"},{"priceUsd":"1633.8252856048348233","time":1695168000000,"date":"2023-09-20T00:00:00.000Z"},{"priceUsd":"1603.1953949767661426","time":1695254400000,"date":"2023-09-21T00:00:00.000Z"},{"priceUsd":"1595.6552696025538384","time":1695340800000,"date":"2023-09-22T00:00:00.000Z"},{"priceUsd":"1597.5658809520539178","time":1695427200000,"date":"2023-09-23T00:00:00.000Z"},{"priceUsd":"1597.4349151852433376","time":1695513600000,"date":"2023-09-24T00:00:00.000Z"},{"priceUsd":"1582.5497860498886471","time":1695600000000,"date":"2023-09-25T00:00:00.000Z"},{"priceUsd":"1589.6279589193582874","time":1695686400000,"date":"2023-09-26T00:00:00.000Z"},{"priceUsd":"1600.0281489935508764","time":1695772800000,"date":"2023-09-27T00:00:00.000Z"},{"priceUsd":"1630.1534716917551782","time":1695859200000,"date":"2023-09-28T00:00:00.000Z"},{"priceUsd":"1665.2678600183462153","time":1695945600000,"date":"2023-09-29T00:00:00.000Z"},{"priceUsd":"1676.8651787528912896","time":1696032000000,"date":"2023-09-30T00:00:00.000Z"},{"priceUsd":"1685.1682658065893802","time":1696118400000,"date":"2023-10-01T00:00:00.000Z"},{"priceUsd":"1708.4563149010870162","time":1696204800000,"date":"2023-10-02T00:00:00.000Z"},{"priceUsd":"1659.7386502174366360","time":1696291200000,"date":"2023-10-03T00:00:00.000Z"},{"priceUsd":"1644.5614963291293422","time":1696377600000,"date":"2023-10-04T00:00:00.000Z"},{"priceUsd":"1634.1502476692465477","time":1696464000000,"date":"2023-10-05T00:00:00.000Z"},{"priceUsd":"1635.1399292589483540","time":1696550400000,"date":"2023-10-06T00:00:00.000Z"},{"priceUsd":"1642.8118618229826530","time":1696636800000,"date":"2023-10-07T00:00:00.000Z"},{"priceUsd":"1636.1934422090563073","time":1696723200000,"date":"2023-10-08T00:00:00.000Z"},{"priceUsd":"1604.8082499904579692","time":1696809600000,"date":"2023-10-09T00:00:00.000Z"},{"priceUsd":"1579.0455911652582244","time":1696896000000,"date":"2023-10-10T00:00:00.000Z"},{"priceUsd":"1565.1422133358521845","time":1696982400000,"date":"2023-10-11T00:00:00.000Z"},{"priceUsd":"1549.9842708554157621","time":1697068800000,"date":"2023-10-12T00:00:00.000Z"},{"priceUsd":"1547.1465309141711377","time":1697155200000,"date":"2023-10-13T00:00:00.000Z"},{"priceUsd":"1553.7919671619616394","time":1697241600000,"date":"2023-10-14T00:00:00.000Z"},{"priceUsd":"1558.7487293163308313","time":1697328000000,"date":"2023-10-15T00:00:00.000Z"},{"priceUsd":"1581.8293632719423945","time":1697414400000,"date":"2023-10-16T00:00:00.000Z"},{"priceUsd":"1581.2440321772149245","time":1697500800000,"date":"2023-10-17T00:00:00.000Z"},{"priceUsd":"1572.4748293666089164","time":1697587200000,"date":"2023-10-18T00:00:00.000Z"},{"priceUsd":"1559.9731794563154640","time":1697673600000,"date":"2023-10-19T00:00:00.000Z"},{"priceUsd":"1599.5583221194111060","time":1697760000000,"date":"2023-10-20T00:00:00.000Z"},{"priceUsd":"1614.3873565721047008","time":1697846400000,"date":"2023-10-21T00:00:00.000Z"},{"priceUsd":"1635.6248240925478919","time":1697932800000,"date":"2023-10-22T00:00:00.000Z"},{"priceUsd":"1690.0615290961234740","time":1698019200000,"date":"2023-10-23T00:00:00.000Z"},{"priceUsd":"1803.7436171451721088","time":1698105600000,"date":"2023-10-24T00:00:00.000Z"},{"priceUsd":"1789.5693637764443324","time":1698192000000,"date":"2023-10-25T00:00:00.000Z"},{"priceUsd":"1805.8361421280434776","time":1698278400000,"date":"2023-10-26T00:00:00.000Z"},{"priceUsd":"1784.6201554702123418","time":1698364800000,"date":"2023-10-27T00:00:00.000Z"},{"priceUsd":"1788.0622255959847182","time":1698451200000,"date":"2023-10-28T00:00:00.000Z"},{"priceUsd":"1791.8593855739585031","time":1698537600000,"date":"2023-10-29T00:00:00.000Z"},{"priceUsd":"1804.0195782396389757","time":1698624000000,"date":"2023-10-30T00:00:00.000Z"},{"priceUsd":"1804.9241300449436976","time":1698710400000,"date":"2023-10-31T00:00:00.000Z"},{"priceUsd":"1814.1532215049560994","time":1698796800000,"date":"2023-11-01T00:00:00.000Z"},{"priceUsd":"1828.7077244158950642","time":1698883200000,"date":"2023-11-02T00:00:00.000Z"},{"priceUsd":"1805.7247549687920210","time":1698969600000,"date":"2023-11-03T00:00:00.000Z"},{"priceUsd":"1840.2426655254526457","time":1699056000000,"date":"2023-11-04T00:00:00.000Z"},{"priceUsd":"1884.2120219367926039","time":1699142400000,"date":"2023-11-05T00:00:00.000Z"},{"priceUsd":"1893.9350529860347335","time":1699228800000,"date":"2023-11-06T00:00:00.000Z"},{"priceUsd":"1885.6112596367917761","time":1699315200000,"date":"2023-11-07T00:00:00.000Z"},{"priceUsd":"1888.4178317155497357","time":1699401600000,"date":"2023-11-08T00:00:00.000Z"},{"priceUsd":"1961.6928989872832473","time":1699488000000,"date":"2023-11-09T00:00:00.000Z"},{"priceUsd":"2099.7100562041855848","time":1699574400000,"date":"2023-11-10T00:00:00.000Z"},{"priceUsd":"2063.2463742060089577","time":1699660800000,"date":"2023-11-11T00:00:00.000Z"},{"priceUsd":"2052.6633417585860787","time":1699747200000,"date":"2023-11-12T00:00:00.000Z"},{"priceUsd":"2064.3893410982395438","time":1699833600000,"date":"2023-11-13T00:00:00.000Z"},{"priceUsd":"2034.1275980189281724","time":1699920000000,"date":"2023-11-14T00:00:00.000Z"},{"priceUsd":"2007.9486169114759227","time":1700006400000,"date":"2023-11-15T00:00:00.000Z"},{"priceUsd\r\n519\r\n":"2026.8828398286461496","time":1700092800000,"date":"2023-11-16T00:00:00.000Z"},{"priceUsd":"1962.5009699630525323","time":1700179200000,"date":"2023-11-17T00:00:00.000Z"},{"priceUsd":"1952.8346214259483877","time":1700265600000,"date":"2023-11-18T00:00:00.000Z"},{"priceUsd":"1969.6695812159470014","time":1700352000000,"date":"2023-11-19T00:00:00.000Z"},{"priceUsd":"2023.3246080176296406","time":1700438400000,"date":"2023-11-20T00:00:00.000Z"},{"priceUsd":"2002.3578956151607180","time":1700524800000,"date":"2023-11-21T00:00:00.000Z"},{"priceUsd":"2018.6719121633958439","time":1700611200000,"date":"2023-11-22T00:00:00.000Z"},{"priceUsd":"2063.6867850373505749","time":1700697600000,"date":"2023-11-23T00:00:00.000Z"},{"priceUsd":"2088.3137903846062027","time":1700784000000,"date":"2023-11-24T00:00:00.000Z"},{"priceUsd":"2082.9304861907228486","time":1700870400000,"date":"2023-11-25T00:00:00.000Z"},{"priceUsd":"2076.0961385109469224","time":1700956800000,"date":"2023-11-26T00:00:00.000Z"},{"priceUsd":"2033.7577896273010937","time":1701043200000,"date":"2023-11-27T00:00:00.000Z"},{"priceUsd":"2034.9944348474848408","time":1701129600000,"date":"2023-11-28T00:00:00.000Z"},{"priceUsd":"2047.2807384558564118","time":1701216000000,"date":"2023-11-29T00:00:00.000Z"}],"timestamp":1701343279646}\r\n0\r\n\r\n'
+

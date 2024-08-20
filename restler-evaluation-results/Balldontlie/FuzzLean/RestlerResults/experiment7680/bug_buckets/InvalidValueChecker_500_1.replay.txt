@@ -1,0 +1,21 @@
+################################################################################
+ InvalidValueChecker_500
+
+ Hash: InvalidValueChecker_500_f05c664e8a96f4d2e99b5e4612f28119bc528fab
+
+ To attempt to reproduce this bug using restler, run restler with the command
+ line option of --replay_log <path_to_this_log>.
+ If an authentication token is required, you must also specify the token_refresh_cmd.
+
+ This log may contain specific values for IDs or names that were generated
+ during fuzzing, using the fuzzing dictionary. Such names will be re-played
+ without modification. You must update the replay log manually with any changes
+ required to execute the requests in your environment (for example, replacing
+ pre-created account, subscription, or other resource IDs, as needed).
+################################################################################
+
+-> GET /api/v1/games?search=Stephen%2520Curry&team_ids[]=5&seasons[]=2021&start_date=&end_date=2022-01-31&seasons=2020&dates=2021-01-01&teams[]=1&players[]=23&per_page=50&page=2&sort=desc&team_ids=1%2C2%2C3&player_ids=12345&postseason=true&venue=home HTTP/1.1\r\nAccept: application/json\r\nHost: www.balldontlie.io\r\n\r\n
+! producer_timing_delay 0
+! max_async_wait_time 20
+PREVIOUS RESPONSE: 'HTTP/1.1 500 Internal Server Error\r\nServer: Cowboy\r\nDate: Wed, 29 Nov 2023 12:54:06 GMT\r\nReport-To: {"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1701262446&sid=af571f24-03ee-46d1-9f90-ab9030c2c74c&s=hjwhudn%2FyBJuIja8LKhmOeN5Ash2XlWkz1GnAVW%2F0bE%3D"}]}\r\nReporting-Endpoints: heroku-nel=https://nel.heroku.com/reports?ts=1701262446&sid=af571f24-03ee-46d1-9f90-ab9030c2c74c&s=hjwhudn%2FyBJuIja8LKhmOeN5Ash2XlWkz1GnAVW%2F0bE%3D\r\nNel: {"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}\r\nConnection: keep-alive\r\nContent-Type: application/json; charset=UTF-8\r\nX-Request-Id: 6eb61a42-e0b0-427b-b8f9-30d96b59c76d\r\nX-Runtime: 0.013559\r\nVary: Origin\r\nContent-Length: 46\r\nVia: 1.1 vegur\r\n\r\n{"status":500,"error":"Internal Server Error"}'
+

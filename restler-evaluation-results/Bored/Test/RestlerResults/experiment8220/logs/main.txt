@@ -1,0 +1,113 @@
+Random seed: 12345
+Setting fuzzing schemes: directed-smoke-test
+2023-11-30 11:29:30.483: Going to fuzz a set with 2 requests
+2023-11-30 11:29:30.483: Request-0: Value Combinations: 20
+2023-11-30 11:29:30.483: Request-1: Value Combinations: 5
+2023-11-30 11:29:30.483: Avg. Value Combinations per Request: 12.5
+2023-11-30 11:29:30.483: Median Value Combinations per Request: 12.5
+2023-11-30 11:29:30.483: Min Value Combinations per Request: 5
+2023-11-30 11:29:30.483: Max Value Combinations per Request: 20
+2023-11-30 11:29:30.483: Total dependencies: 0
+
+2023-11-30 11:29:30.483: Generation: 1 / Sequences Collection Size: 2 
+(After directed-smoke-test Extend)
+
+Rendering request 0 from scratch
+
+2023-11-30 11:29:31.111: Request 0
+2023-11-30 11:29:31.111: Endpoint - /api/activity
+2023-11-30 11:29:31.111: Hex Def - 573fb2006315310272e5238ea22e7ea1d2f70fdb
+2023-11-30 11:29:31.111: Sequence length that satisfies dependencies: 1
+2023-11-30 11:29:31.111: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '/'
+		- restler_static_string: 'activity'
+		- restler_static_string: '?'
+		- restler_static_string: 'participants='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'type='
+		+ restler_fuzzable_string: ['education', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'price='
+		+ restler_fuzzable_number: ['0.5', '1.23']
+		- restler_static_string: '&'
+		- restler_static_string: 'accessibility='
+		+ restler_fuzzable_number: ['0.1', '1.23']
+		- restler_static_string: '&'
+		- restler_static_string: 'minaccessibility='
+		+ restler_fuzzable_number: ['0.2', '1.23']
+		- restler_static_string: '&'
+		- restler_static_string: 'maxparticipants='
+		+ restler_fuzzable_int: ['5', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'minprice='
+		+ restler_fuzzable_int: ['0', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'maxprice='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'minparticipants='
+		+ restler_fuzzable_int: ['5', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'maxaccessibility='
+		+ restler_fuzzable_number: ['0.5', '1.23']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: www.boredapi.com\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 1 from scratch
+
+2023-11-30 11:29:31.315: Request 1
+2023-11-30 11:29:31.315: Endpoint - /api
+2023-11-30 11:29:31.315: Hex Def - d6110a0f32ffe0a3e75c193d28b8bd29a8331d63
+2023-11-30 11:29:31.315: Sequence length that satisfies dependencies: 1
+2023-11-30 11:29:31.315: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '?'
+		- restler_static_string: 'participants='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'accessibility='
+		+ restler_fuzzable_number: ['0.1', '1.23']
+		- restler_static_string: '&'
+		- restler_static_string: 'type='
+		+ restler_fuzzable_string: ['diy', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: www.boredapi.com\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+2023-11-30 11:29:31.340: Generation: 1 / Sequences Collection Size: 2 
+(After directed-smoke-test Render)
+
+2023-11-30 11:29:31.340: Final Swagger spec coverage: 2 / 2
+2023-11-30 11:29:31.340: Rendered requests: 2 / 2
+2023-11-30 11:29:31.340: Rendered requests with "valid" status codes: 2 / 2
+2023-11-30 11:29:31.340: Num fully valid requests (no resource creation failures): 2
+2023-11-30 11:29:31.340: Num requests not rendered due to invalid sequence re-renders: 0
+2023-11-30 11:29:31.340: Num invalid requests caused by failed resource creations: 0
+2023-11-30 11:29:31.340: Total Creations of Dyn Objects: 0
+2023-11-30 11:29:31.340: Total Requests Sent: {'gc': 0, 'main_driver': 2}
+2023-11-30 11:29:31.340: Bug Buckets: {}
+
+Testing completed -- below are the final stats:
+
+2023-11-30 11:29:31.363: Final Swagger spec coverage: 2 / 2
+2023-11-30 11:29:31.363: Rendered requests: 2 / 2
+2023-11-30 11:29:31.363: Rendered requests with "valid" status codes: 2 / 2
+2023-11-30 11:29:31.363: Num fully valid requests (no resource creation failures): 2
+2023-11-30 11:29:31.363: Num requests not rendered due to invalid sequence re-renders: 0
+2023-11-30 11:29:31.363: Num invalid requests caused by failed resource creations: 0
+2023-11-30 11:29:31.363: Total Creations of Dyn Objects: 0
+2023-11-30 11:29:31.363: Total Requests Sent: {'gc': 0, 'main_driver': 2}
+2023-11-30 11:29:31.363: Bug Buckets: {}

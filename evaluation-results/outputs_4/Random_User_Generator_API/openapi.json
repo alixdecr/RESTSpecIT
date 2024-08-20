@@ -1,0 +1,580 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Random User Generator API",
+        "description": "**API Description** - The Random User Generator API is a tool that generates random user data for testing and development purposes.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "https://randomuser.me/documentation",
+        "contact": {
+            "name": "Random User Generator API Contact",
+            "url": "https://randomuser.me/documentation#contact",
+            "email": "support@randomuser.me"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://randomuser.me",
+            "description": "Production Server of the Random User Generator API.",
+            "x-base-routes": 1
+        }
+    ],
+    "externalDocs": {
+        "url": "https://randomuser.me/documentation",
+        "description": "Find more about the Random User Generator API here:"
+    },
+    "paths": {
+        "/api": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "results",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            },
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nat",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "us": {
+                                "value": "us"
+                            },
+                            "gb": {
+                                "value": "gb"
+                            },
+                            "ca": {
+                                "value": "ca"
+                            },
+                            "fr": {
+                                "value": "fr"
+                            },
+                            "br": {
+                                "value": "br"
+                            }
+                        }
+                    },
+                    {
+                        "name": "gender",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "male": {
+                                "value": "male"
+                            },
+                            "female": {
+                                "value": "female"
+                            }
+                        }
+                    },
+                    {
+                        "name": "inc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name": {
+                                "value": "name"
+                            },
+                            "location": {
+                                "value": "location"
+                            },
+                            "email": {
+                                "value": "email"
+                            },
+                            "dob": {
+                                "value": "dob"
+                            },
+                            "name,email": {
+                                "value": "name,email"
+                            },
+                            "phone": {
+                                "value": "phone"
+                            },
+                            "picture": {
+                                "value": "picture"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "login": {
+                                "value": "login"
+                            },
+                            "login,location": {
+                                "value": "login,location"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "abc123": {
+                                "value": "abc123"
+                            },
+                            "123": {
+                                "value": "123"
+                            },
+                            "xyz789": {
+                                "value": "xyz789"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            },
+                            "3": {
+                                "value": "3"
+                            }
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "csv": {
+                                "value": "csv"
+                            },
+                            "xml": {
+                                "value": "xml"
+                            }
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "upper": {
+                                "value": "upper"
+                            }
+                        }
+                    },
+                    {
+                        "name": "registered",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "before": {
+                                "value": "before"
+                            }
+                        }
+                    },
+                    {
+                        "name": "city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "London": {
+                                "value": "London"
+                            }
+                        }
+                    },
+                    {
+                        "name": "dob",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1980-01-01": {
+                                "value": "1980-01-01"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api"
+                                },
+                                "example": {
+                                    "results": [
+                                        {
+                                            "gender": "male",
+                                            "name": {
+                                                "title": "Mr",
+                                                "first": "Jackson",
+                                                "last": "Pierce"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 8663,
+                                                    "name": "Robinson Rd"
+                                                },
+                                                "city": "Pasadena",
+                                                "state": "Hawaii",
+                                                "country": "United States",
+                                                "postcode": 42883,
+                                                "coordinates": {
+                                                    "latitude": "8.8611",
+                                                    "longitude": "-22.7316"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+7:00",
+                                                    "description": "Bangkok, Hanoi, Jakarta"
+                                                }
+                                            },
+                                            "email": "jackson.pierce@example.com",
+                                            "login": {
+                                                "uuid": "7bddba35-fe61-4b24-95c4-53919b9b8162",
+                                                "username": "silverfish386",
+                                                "password": "erika",
+                                                "salt": "06zeSkpw",
+                                                "md5": "4b30b6fcdc1878b0b57067478f84a58e",
+                                                "sha1": "655908775240e307fb139179661dbf3bdb296e23",
+                                                "sha256": "5dbc87ebd5f6fec346a3a27856c3aa52eb75be1c54d4e4aecd288c1313ff88c7"
+                                            },
+                                            "dob": {
+                                                "date": "1958-02-02T00:15:23.602Z",
+                                                "age": 65
+                                            },
+                                            "registered": {
+                                                "date": "2014-07-22T21:42:53.442Z",
+                                                "age": 9
+                                            },
+                                            "phone": "(675) 750-4152",
+                                            "cell": "(658) 784-3874",
+                                            "id": {
+                                                "name": "SSN",
+                                                "value": "036-38-9135"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/men/8.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/men/8.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/8.jpg"
+                                            },
+                                            "nat": "US"
+                                        },
+                                        {
+                                            "gender": "male",
+                                            "name": {
+                                                "title": "Mr",
+                                                "first": "Clyde",
+                                                "last": "Walters"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 5207,
+                                                    "name": "Plum St"
+                                                },
+                                                "city": "Simi Valley",
+                                                "state": "Rhode Island",
+                                                "country": "United States",
+                                                "postcode": 74529,
+                                                "coordinates": {
+                                                    "latitude": "2.8647",
+                                                    "longitude": "-88.0159"
+                                                },
+                                                "timezone": {
+                                                    "offset": "0:00",
+                                                    "description": "Western Europe Time, London, Lisbon, Casablanca"
+                                                }
+                                            },
+                                            "email": "clyde.walters@example.com",
+                                            "login": {
+                                                "uuid": "99dbd65d-c7fd-4027-9f33-04a5df258273",
+                                                "username": "crazyleopard415",
+                                                "password": "pokemon",
+                                                "salt": "EXIuybLk",
+                                                "md5": "82ef07b75d48699e1703109a4f0f369c",
+                                                "sha1": "f0acc137911139f362578a45061417085b72eb6b",
+                                                "sha256": "d0e169742b550a11dcd9a3ea4dd1a502ab35b286fab0fd3022d0e9b6a2f59b90"
+                                            },
+                                            "dob": {
+                                                "date": "1994-01-16T12:24:25.972Z",
+                                                "age": 29
+                                            },
+                                            "registered": {
+                                                "date": "2006-02-20T10:56:08.618Z",
+                                                "age": 17
+                                            },
+                                            "phone": "(407) 998-7319",
+                                            "cell": "(590) 774-4149",
+                                            "id": {
+                                                "name": "SSN",
+                                                "value": "818-72-9485"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/men/20.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/men/20.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/20.jpg"
+                                            },
+                                            "nat": "US"
+                                        },
+                                        {
+                                            "gender": "male",
+                                            "name": {
+                                                "title": "Mr",
+                                                "first": "Tommy",
+                                                "last": "Larson"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 7531,
+                                                    "name": "Railroad St"
+                                                },
+                                                "city": "Burkburnett",
+                                                "state": "Tennessee",
+                                                "country": "United States",
+                                                "postcode": 14201,
+                                                "coordinates": {
+                                                    "latitude": "77.3889",
+                                                    "longitude": "-18.3756"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+5:45",
+                                                    "description": "Kathmandu"
+                                                }
+                                            },
+                                            "email": "tommy.larson@example.com",
+                                            "login": {
+                                                "uuid": "89dcb7c8-5609-42b4-85d3-340bffec53f7",
+                                                "username": "blackcat458",
+                                                "password": "cristina",
+                                                "salt": "0OMAU4z2",
+                                                "md5": "5465be0b54ca73c404bc8c0087429f70",
+                                                "sha1": "136a3efcfb8037da1ef7906fc4164522938781d9",
+                                                "sha256": "02bfd2328aa7590eb762ad4b31839da5cb58acb0fdb7ca677f5a2e83bdabc54d"
+                                            },
+                                            "dob": {
+                                                "date": "1998-02-19T17:17:26.013Z",
+                                                "age": 25
+                                            },
+                                            "registered": {
+                                                "date": "2011-09-08T01:25:37.576Z",
+                                                "age": 12
+                                            },
+                                            "phone": "(884) 732-5667",
+                                            "cell": "(837) 453-7775",
+                                            "id": {
+                                                "name": "SSN",
+                                                "value": "117-72-5313"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/men/43.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/men/43.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/43.jpg"
+                                            },
+                                            "nat": "US"
+                                        },
+                                        {
+                                            "gender": "male",
+                                            "name": {
+                                                "title": "Mr",
+                                                "first": "Jorge",
+                                                "last": "Steward"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 1798,
+                                                    "name": "Marsh Ln"
+                                                },
+                                                "city": "Norfolk",
+                                                "state": "Wisconsin",
+                                                "country": "United States",
+                                                "postcode": 88120,
+                                                "coordinates": {
+                                                    "latitude": "79.3275",
+                                                    "longitude": "-178.0057"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+5:00",
+                                                    "description": "Ekaterinburg, Islamabad, Karachi, Tashkent"
+                                                }
+                                            },
+                                            "email": "jorge.steward@example.com",
+                                            "login": {
+                                                "uuid": "bc6727fd-1dc4-4e7e-983e-8bca1d0fa96b",
+                                                "username": "goldenswan861",
+                                                "password": "212121",
+                                                "salt": "vPcP6bya",
+                                                "md5": "5edd6de7535fb2a34756950a513acd7c",
+                                                "sha1": "fa7d357232e87ea25ef78591714a2615be05b427",
+                                                "sha256": "4d30e075874f1b7815f809ddc0477e21b9a94d15fd5767b88ba5db3ef6ccd4e1"
+                                            },
+                                            "dob": {
+                                                "date": "1947-01-24T05:58:32.813Z",
+                                                "age": 76
+                                            },
+                                            "registered": {
+                                                "date": "2012-11-04T21:37:45.149Z",
+                                                "age": 11
+                                            },
+                                            "phone": "(549) 459-9316",
+                                            "cell": "(983) 983-9377",
+                                            "id": {
+                                                "name": "SSN",
+                                                "value": "318-95-0674"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/men/24.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/men/24.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/24.jpg"
+                                            },
+                                            "nat": "US"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Mrs",
+                                                "first": "Addison",
+                                                "last": "Lambert"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 4230,
+                                                    "name": "Taylor St"
+                                                },
+                                                "city": "Dallas",
+                                                "state": "Connecticut",
+                                                "country": "United States",
+                                                "postcode": 30931,
+                                                "coordinates": {
+                                                    "latitude": "70.2309",
+                                                    "longitude": "-31.1124"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+5:45",
+                                                    "description": "Kathmandu"
+                                                }
+                                            },
+                                            "email": "addison.lambert@example.com",
+                                            "login": {
+                                                "uuid": "d4226f76-ce7a-4648-b9cd-5c485bcc922c",
+                                                "username": "goldengorilla542",
+                                                "password": "gone",
+                                                "salt": "K1Z4K1uA",
+                                                "md5": "e708e2c82b455ed64da8c6c06a5e5e73",
+                                                "sha1": "7329a50d8080a59b27a153b03187658671f8c5e6",
+                                                "sha256": "55376214f8789226162ac97ae4e882a0dff6b021f5db6ad82d8269d42b364e4c"
+                                            },
+                                            "dob": {
+                                                "date": "2000-05-23T09:05:40.927Z",
+                                                "age": 23
+                                            },
+                                            "registered": {
+                                                "date": "2002-07-14T05:14:28.020Z",
+                                                "age": 21
+                                            },
+                                            "phone": "(821) 539-3116",
+                                            "cell": "(269) 690-0148",
+                                            "id": {
+                                                "name": "SSN",
+                                                "value": "433-76-3157"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/1.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/1.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/1.jpg"
+                                            },
+                                            "nat": "US"
+                                        }
+                                    ],
+                                    "info": {
+                                        "seed": "1ed82d94b1bd4032",
+                                        "results": 5,
+                                        "page": 1,
+                                        "version": "1.4"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/plain; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "Not Found"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema_api": {}
+        }
+    }
+}

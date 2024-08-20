@@ -1,0 +1,557 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Random User Generator API",
+        "description": "**API Description** - The Random User Generator API is an online service that generates random user data, including names, addresses, and profile pictures, for various applications and testing purposes.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "",
+        "contact": {
+            "name": "Random User Generator API Contact",
+            "url": "https://randomuser.me/documentation",
+            "email": "support@randomuser.me"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://randomuser.me",
+            "description": "Production Server of the Random User Generator API.",
+            "x-base-routes": 1
+        }
+    ],
+    "externalDocs": {
+        "url": "https://randomuser.me/documentation",
+        "description": "Find more about the Random User Generator API here:"
+    },
+    "paths": {
+        "/api": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "results",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            },
+                            "10": {
+                                "value": "10"
+                            },
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "gender",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "male": {
+                                "value": "male"
+                            },
+                            "female": {
+                                "value": "female"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nat",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "us": {
+                                "value": "us"
+                            },
+                            "gb": {
+                                "value": "gb"
+                            },
+                            "ca": {
+                                "value": "ca"
+                            },
+                            "fr": {
+                                "value": "fr"
+                            },
+                            "br": {
+                                "value": "br"
+                            },
+                            "au": {
+                                "value": "au"
+                            }
+                        }
+                    },
+                    {
+                        "name": "inc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name": {
+                                "value": "name"
+                            },
+                            "email": {
+                                "value": "email"
+                            },
+                            "name,email": {
+                                "value": "name,email"
+                            },
+                            "picture": {
+                                "value": "picture"
+                            },
+                            "location": {
+                                "value": "location"
+                            },
+                            "name,email,phone": {
+                                "value": "name,email,phone"
+                            },
+                            "dob": {
+                                "value": "dob"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "login": {
+                                "value": "login"
+                            },
+                            "email": {
+                                "value": "email"
+                            },
+                            "login,id": {
+                                "value": "login,id"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "12345": {
+                                "value": "12345"
+                            },
+                            "abc123": {
+                                "value": "abc123"
+                            },
+                            "1234": {
+                                "value": "1234"
+                            },
+                            "randomseed": {
+                                "value": "randomseed"
+                            },
+                            "myseed": {
+                                "value": "myseed"
+                            },
+                            "xyz987": {
+                                "value": "xyz987"
+                            },
+                            "random": {
+                                "value": "random"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "dob",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1980-01-01": {
+                                "value": "1980-01-01"
+                            },
+                            "1950-01-01": {
+                                "value": "1950-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "age",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "30-40": {
+                                "value": "30-40"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api"
+                                },
+                                "example": {
+                                    "results": [
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Ms",
+                                                "first": "Judith",
+                                                "last": "Hale"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 8241,
+                                                    "name": "The Drive"
+                                                },
+                                                "city": "Cambridge",
+                                                "state": "Cornwall",
+                                                "country": "United Kingdom",
+                                                "postcode": "VB6V 3AN",
+                                                "coordinates": {
+                                                    "latitude": "-5.5356",
+                                                    "longitude": "122.8507"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+5:45",
+                                                    "description": "Kathmandu"
+                                                }
+                                            },
+                                            "email": "judith.hale@example.com",
+                                            "login": {
+                                                "uuid": "75dbdd22-937c-4102-b92b-adebeb9707b5",
+                                                "username": "sadmouse835",
+                                                "password": "buddha",
+                                                "salt": "nBUdakRJ",
+                                                "md5": "800733a97192ddde4faa300e98ec3db8",
+                                                "sha1": "97d36396db475cfcf77806d4a104a9bdc0fe5d84",
+                                                "sha256": "7a35bf6001a71ad6df80e00bc1803424984da612d3151a1bac679fd1142ece51"
+                                            },
+                                            "dob": {
+                                                "date": "1996-10-12T17:04:27.112Z",
+                                                "age": 27
+                                            },
+                                            "registered": {
+                                                "date": "2016-09-11T16:46:06.846Z",
+                                                "age": 7
+                                            },
+                                            "phone": "01754 04738",
+                                            "cell": "07729 705155",
+                                            "id": {
+                                                "name": "NINO",
+                                                "value": "XW 48 59 63 J"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/88.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/88.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/88.jpg"
+                                            },
+                                            "nat": "GB"
+                                        },
+                                        {
+                                            "gender": "male",
+                                            "name": {
+                                                "title": "Mr",
+                                                "first": "Aaron",
+                                                "last": "Le Gall"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 3696,
+                                                    "name": "Rue de L'Abb\u00e9-Soulange-Bodin"
+                                                },
+                                                "city": "Orl\u00e9ans",
+                                                "state": "Ari\u00e8ge",
+                                                "country": "France",
+                                                "postcode": 22138,
+                                                "coordinates": {
+                                                    "latitude": "55.5005",
+                                                    "longitude": "96.8172"
+                                                },
+                                                "timezone": {
+                                                    "offset": "-7:00",
+                                                    "description": "Mountain Time (US & Canada)"
+                                                }
+                                            },
+                                            "email": "aaron.legall@example.com",
+                                            "login": {
+                                                "uuid": "6c131932-7015-4ad3-b9b9-e8d9d03cb83c",
+                                                "username": "sadpanda480",
+                                                "password": "commando",
+                                                "salt": "PvkHNhbc",
+                                                "md5": "173471123e6875a1df915d5a7c01d117",
+                                                "sha1": "8d8f63cca0b817a661e8dc7962073d530d0124f1",
+                                                "sha256": "b47809f20b4106122fa6c4d0cb20ddf0edac2ccafb5701cb90aafdcc76990dd4"
+                                            },
+                                            "dob": {
+                                                "date": "1951-04-18T11:22:27.333Z",
+                                                "age": 72
+                                            },
+                                            "registered": {
+                                                "date": "2008-10-20T00:32:30.053Z",
+                                                "age": 15
+                                            },
+                                            "phone": "01-42-62-72-11",
+                                            "cell": "06-76-97-15-94",
+                                            "id": {
+                                                "name": "INSEE",
+                                                "value": "1510379859835 92"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/men/43.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/men/43.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/43.jpg"
+                                            },
+                                            "nat": "FR"
+                                        },
+                                        {
+                                            "gender": "male",
+                                            "name": {
+                                                "title": "Mr",
+                                                "first": "Gabriel",
+                                                "last": "Rend\u00f3n"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 930,
+                                                    "name": "Perif\u00e9rico Coronado"
+                                                },
+                                                "city": "Otumba",
+                                                "state": "Hidalgo",
+                                                "country": "Mexico",
+                                                "postcode": 78434,
+                                                "coordinates": {
+                                                    "latitude": "82.4396",
+                                                    "longitude": "-46.8368"
+                                                },
+                                                "timezone": {
+                                                    "offset": "-6:00",
+                                                    "description": "Central Time (US & Canada), Mexico City"
+                                                }
+                                            },
+                                            "email": "gabriel.rendon@example.com",
+                                            "login": {
+                                                "uuid": "15957d47-e579-49cc-856c-2101161d00e8",
+                                                "username": "ticklishfrog375",
+                                                "password": "lala",
+                                                "salt": "Cs7kmdTZ",
+                                                "md5": "4d8c39ea3ca7a7bc975334ee093a2a14",
+                                                "sha1": "de648b36eda2ee593d8e8832d33613ada89ea987",
+                                                "sha256": "052dc9d217d22f0c67493f525a3a0f50732e28b5289018c8bb6d40156445c6db"
+                                            },
+                                            "dob": {
+                                                "date": "1944-12-12T11:35:55.370Z",
+                                                "age": 78
+                                            },
+                                            "registered": {
+                                                "date": "2006-10-06T23:02:18.957Z",
+                                                "age": 17
+                                            },
+                                            "phone": "(662) 399 6463",
+                                            "cell": "(652) 637 5326",
+                                            "id": {
+                                                "name": "NSS",
+                                                "value": "01 76 92 8523 5"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/men/94.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/men/94.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/94.jpg"
+                                            },
+                                            "nat": "MX"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Mrs",
+                                                "first": "Celi",
+                                                "last": "Arag\u00e3o"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 7802,
+                                                    "name": "Rua da Paz "
+                                                },
+                                                "city": "Bauru",
+                                                "state": "Tocantins",
+                                                "country": "Brazil",
+                                                "postcode": 53370,
+                                                "coordinates": {
+                                                    "latitude": "-53.2271",
+                                                    "longitude": "-104.9709"
+                                                },
+                                                "timezone": {
+                                                    "offset": "-3:00",
+                                                    "description": "Brazil, Buenos Aires, Georgetown"
+                                                }
+                                            },
+                                            "email": "celi.aragao@example.com",
+                                            "login": {
+                                                "uuid": "cf40101e-4b76-4405-aa18-049afe27e044",
+                                                "username": "tinyladybug621",
+                                                "password": "11223344",
+                                                "salt": "X2YdaSca",
+                                                "md5": "f93cda36de1413a44116102edb154923",
+                                                "sha1": "656d6ce6b27ceb08ae6ba76617ce7b7d5b14d181",
+                                                "sha256": "0f92a5c5df4f2638a380a5ff610d646bc0928d775276ee412a68a337f33395b8"
+                                            },
+                                            "dob": {
+                                                "date": "1987-03-11T00:10:56.464Z",
+                                                "age": 36
+                                            },
+                                            "registered": {
+                                                "date": "2008-06-26T20:43:50.581Z",
+                                                "age": 15
+                                            },
+                                            "phone": "(62) 1475-1416",
+                                            "cell": "(08) 1666-5150",
+                                            "id": {
+                                                "name": "CPF",
+                                                "value": "741.342.622-21"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/39.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/39.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/39.jpg"
+                                            },
+                                            "nat": "BR"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Mrs",
+                                                "first": "Georgia",
+                                                "last": "Petri"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 2627,
+                                                    "name": "Talstra\u00dfe"
+                                                },
+                                                "city": "Reinfeld (Holstein)",
+                                                "state": "Sachsen",
+                                                "country": "Germany",
+                                                "postcode": 65739,
+                                                "coordinates": {
+                                                    "latitude": "1.0389",
+                                                    "longitude": "78.4833"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+3:30",
+                                                    "description": "Tehran"
+                                                }
+                                            },
+                                            "email": "georgia.petri@example.com",
+                                            "login": {
+                                                "uuid": "70b3fc18-1899-48da-8576-c025b54ac78f",
+                                                "username": "angryleopard966",
+                                                "password": "barcelon",
+                                                "salt": "XkWQ8qL0",
+                                                "md5": "d49fb952f2f20b1596ce2185f1a99d20",
+                                                "sha1": "831a2e37d338ce517236746ad28e47f79c9fd3b0",
+                                                "sha256": "21e9de8f4d5173a1162f94c95cd5de5f38165ca364c3ee918e230d30d277641d"
+                                            },
+                                            "dob": {
+                                                "date": "1977-04-11T19:47:27.491Z",
+                                                "age": 46
+                                            },
+                                            "registered": {
+                                                "date": "2016-10-10T08:16:28.615Z",
+                                                "age": 7
+                                            },
+                                            "phone": "0676-9931884",
+                                            "cell": "0176-0486210",
+                                            "id": {
+                                                "name": "SVNR",
+                                                "value": "65 110477 P 964"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/31.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/31.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/31.jpg"
+                                            },
+                                            "nat": "DE"
+                                        }
+                                    ],
+                                    "info": {
+                                        "seed": "a979697891e8c053",
+                                        "results": 5,
+                                        "page": 1,
+                                        "version": "1.4"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/plain; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "Not Found"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema_api": {}
+        }
+    }
+}

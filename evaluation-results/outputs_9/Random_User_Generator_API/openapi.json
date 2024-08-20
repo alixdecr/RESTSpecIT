@@ -1,0 +1,597 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Random User Generator API",
+        "description": "**API Description** - The Random User Generator API is an API that generates random user data for testing and prototyping purposes.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "https://randomuser.me/documentation#terms",
+        "contact": {
+            "name": "Random User Generator API Contact",
+            "url": "https://randomuser.me/documentation#contact",
+            "email": "support@randomuser.me"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://randomuser.me",
+            "description": "Production Server of the Random User Generator API.",
+            "x-base-routes": 1
+        }
+    ],
+    "externalDocs": {
+        "url": "https://randomuser.me/documentation",
+        "description": "Find more about the Random User Generator API here:"
+    },
+    "paths": {
+        "/api": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "results",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            },
+                            "10": {
+                                "value": "10"
+                            },
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "gender",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "male": {
+                                "value": "male"
+                            },
+                            "female": {
+                                "value": "female"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nat",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "us": {
+                                "value": "us"
+                            },
+                            "gb": {
+                                "value": "gb"
+                            },
+                            "fr": {
+                                "value": "fr"
+                            },
+                            "au": {
+                                "value": "au"
+                            },
+                            "ca": {
+                                "value": "ca"
+                            }
+                        }
+                    },
+                    {
+                        "name": "inc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "gender,name": {
+                                "value": "gender,name"
+                            },
+                            "gender,name,email": {
+                                "value": "gender,name,email"
+                            },
+                            "name,email": {
+                                "value": "name,email"
+                            },
+                            "gender,location": {
+                                "value": "gender,location"
+                            },
+                            "dob,phone": {
+                                "value": "dob,phone"
+                            },
+                            "name": {
+                                "value": "name"
+                            },
+                            "email": {
+                                "value": "email"
+                            },
+                            "location": {
+                                "value": "location"
+                            },
+                            "login": {
+                                "value": "login"
+                            },
+                            "dob": {
+                                "value": "dob"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "dob,phone": {
+                                "value": "dob,phone"
+                            },
+                            "login,registered": {
+                                "value": "login,registered"
+                            },
+                            "login": {
+                                "value": "login"
+                            },
+                            "login,location": {
+                                "value": "login,location"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "12345": {
+                                "value": "12345"
+                            },
+                            "abc123": {
+                                "value": "abc123"
+                            },
+                            "123": {
+                                "value": "123"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "timezone",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "America": {
+                                "value": "America"
+                            }
+                        }
+                    },
+                    {
+                        "name": "noinfo",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "json": {
+                                "value": "json"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lego",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "dob",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2000-01-01": {
+                                "value": "2000-01-01"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api"
+                                },
+                                "example": {
+                                    "results": [
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Ms",
+                                                "first": "Akshita",
+                                                "last": "Shayana"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 4889,
+                                                    "name": "Mirza Ismail Rd"
+                                                },
+                                                "city": "Nizamabad",
+                                                "state": "Haryana",
+                                                "country": "India",
+                                                "postcode": 10348,
+                                                "coordinates": {
+                                                    "latitude": "8.1164",
+                                                    "longitude": "90.8083"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+5:00",
+                                                    "description": "Ekaterinburg, Islamabad, Karachi, Tashkent"
+                                                }
+                                            },
+                                            "email": "akshita.shayana@example.com",
+                                            "login": {
+                                                "uuid": "0dba79a5-0a1a-4dc0-9471-ff36a1c61ffa",
+                                                "username": "beautifulwolf949",
+                                                "password": "jersey",
+                                                "salt": "NgM1Xdwr",
+                                                "md5": "20a6500465b4aa1365979a3e0597b235",
+                                                "sha1": "d32d14d0b0012a52abd5b508f28172efa6e992fd",
+                                                "sha256": "4e5b5b846b1beff2abe61cbe811d2dca533bcd984196b535d09ca6db0745ad6b"
+                                            },
+                                            "dob": {
+                                                "date": "1958-08-16T00:09:27.430Z",
+                                                "age": 65
+                                            },
+                                            "registered": {
+                                                "date": "2010-07-19T22:24:32.885Z",
+                                                "age": 13
+                                            },
+                                            "phone": "7730996938",
+                                            "cell": "9055431795",
+                                            "id": {
+                                                "name": "UIDAI",
+                                                "value": "592161418326"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/60.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/60.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/60.jpg"
+                                            },
+                                            "nat": "IN"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Miss",
+                                                "first": "Minea",
+                                                "last": "Jarvinen"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 6230,
+                                                    "name": "H\u00e4meentie"
+                                                },
+                                                "city": "Siikajoki",
+                                                "state": "Central Finland",
+                                                "country": "Finland",
+                                                "postcode": 99223,
+                                                "coordinates": {
+                                                    "latitude": "76.5579",
+                                                    "longitude": "-48.2607"
+                                                },
+                                                "timezone": {
+                                                    "offset": "0:00",
+                                                    "description": "Western Europe Time, London, Lisbon, Casablanca"
+                                                }
+                                            },
+                                            "email": "minea.jarvinen@example.com",
+                                            "login": {
+                                                "uuid": "db089762-be88-4e32-9261-d54a69934794",
+                                                "username": "blacklion134",
+                                                "password": "2003",
+                                                "salt": "Ga57W4AJ",
+                                                "md5": "c939ad8fc53cedc5c5e1e110283c695b",
+                                                "sha1": "2fe8416f93d24004bb0311e567e0da60bd6579aa",
+                                                "sha256": "44dc788a94c6b1eae2b3a85c65bf8be152e1e7e6ddef8d5bce411c96daa7f500"
+                                            },
+                                            "dob": {
+                                                "date": "1948-11-23T04:52:33.998Z",
+                                                "age": 75
+                                            },
+                                            "registered": {
+                                                "date": "2008-08-26T22:28:57.173Z",
+                                                "age": 15
+                                            },
+                                            "phone": "04-180-691",
+                                            "cell": "046-013-73-94",
+                                            "id": {
+                                                "name": "HETU",
+                                                "value": "NaNNA450undefined"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/46.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/46.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/46.jpg"
+                                            },
+                                            "nat": "FI"
+                                        },
+                                        {
+                                            "gender": "male",
+                                            "name": {
+                                                "title": "Mr",
+                                                "first": "Bogdan",
+                                                "last": "Ivan\u010devi\u0107"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 3798,
+                                                    "name": "Dragutina Toma\u0161evi\u0107a"
+                                                },
+                                                "city": "Ose\u010dina",
+                                                "state": "Rasina",
+                                                "country": "Serbia",
+                                                "postcode": 10549,
+                                                "coordinates": {
+                                                    "latitude": "52.6254",
+                                                    "longitude": "-176.5135"
+                                                },
+                                                "timezone": {
+                                                    "offset": "-5:00",
+                                                    "description": "Eastern Time (US & Canada), Bogota, Lima"
+                                                }
+                                            },
+                                            "email": "bogdan.ivancevic@example.com",
+                                            "login": {
+                                                "uuid": "f80efce6-9028-4015-b42e-0ae1a126c6f6",
+                                                "username": "greenleopard644",
+                                                "password": "redfox",
+                                                "salt": "6grD0Fwg",
+                                                "md5": "6462fb9aaf2f95944a2a259348e1af6f",
+                                                "sha1": "d5707f2458d4849ed5d62821face28b6bd9726f9",
+                                                "sha256": "6fd26290f7b8936b6e6270ecb15af1fbe54a77b17f4a1971f16a6a6e564fb867"
+                                            },
+                                            "dob": {
+                                                "date": "1969-11-17T07:23:07.385Z",
+                                                "age": 54
+                                            },
+                                            "registered": {
+                                                "date": "2008-02-17T08:57:01.306Z",
+                                                "age": 15
+                                            },
+                                            "phone": "026-6603-562",
+                                            "cell": "068-9661-825",
+                                            "id": {
+                                                "name": "SID",
+                                                "value": "294053849"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/men/67.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/men/67.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/67.jpg"
+                                            },
+                                            "nat": "RS"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Ms",
+                                                "first": "Pihla",
+                                                "last": "Maijala"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 8536,
+                                                    "name": "H\u00e4meenkatu"
+                                                },
+                                                "city": "Padasjoki",
+                                                "state": "P\u00e4ij\u00e4t-H\u00e4me",
+                                                "country": "Finland",
+                                                "postcode": 67619,
+                                                "coordinates": {
+                                                    "latitude": "-15.9044",
+                                                    "longitude": "26.2792"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+2:00",
+                                                    "description": "Kaliningrad, South Africa"
+                                                }
+                                            },
+                                            "email": "pihla.maijala@example.com",
+                                            "login": {
+                                                "uuid": "2d503363-9a0e-4147-b851-b58974a69ab0",
+                                                "username": "beautifulbutterfly697",
+                                                "password": "pauline",
+                                                "salt": "XPkT62hs",
+                                                "md5": "c55eedaaacb0b0573e0c7dfdbb7ae260",
+                                                "sha1": "4684d39dd77561e2fc2f4dc9c2492725bcb3bc10",
+                                                "sha256": "b183edbd555069710eea1896b2c898aab48693fbe68d77882dec8d98b55ff8e8"
+                                            },
+                                            "dob": {
+                                                "date": "1987-02-19T21:29:51.524Z",
+                                                "age": 36
+                                            },
+                                            "registered": {
+                                                "date": "2009-10-19T15:03:00.007Z",
+                                                "age": 14
+                                            },
+                                            "phone": "08-419-610",
+                                            "cell": "044-878-23-12",
+                                            "id": {
+                                                "name": "HETU",
+                                                "value": "NaNNA158undefined"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/9.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/9.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/9.jpg"
+                                            },
+                                            "nat": "FI"
+                                        },
+                                        {
+                                            "gender": "male",
+                                            "name": {
+                                                "title": "Mr",
+                                                "first": "Meinrad",
+                                                "last": "Bachmeier"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 7634,
+                                                    "name": "Berliner Stra\u00dfe"
+                                                },
+                                                "city": "Bobingen",
+                                                "state": "Bayern",
+                                                "country": "Germany",
+                                                "postcode": 10581,
+                                                "coordinates": {
+                                                    "latitude": "-19.9915",
+                                                    "longitude": "25.0601"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+4:30",
+                                                    "description": "Kabul"
+                                                }
+                                            },
+                                            "email": "meinrad.bachmeier@example.com",
+                                            "login": {
+                                                "uuid": "93efbb3d-484e-4718-ad6e-68c8b8d399ac",
+                                                "username": "orangemouse914",
+                                                "password": "reason",
+                                                "salt": "lIWNgds5",
+                                                "md5": "37b3fe2946cacef37d41f9f977fde582",
+                                                "sha1": "93490f7718a5830174d8ca72e8b494ed2f0a3bc0",
+                                                "sha256": "7df059c1f640374679163509fdefcbc4a2f3bbac902312fa315670f22d4ab809"
+                                            },
+                                            "dob": {
+                                                "date": "1958-11-22T01:01:04.788Z",
+                                                "age": 65
+                                            },
+                                            "registered": {
+                                                "date": "2020-10-04T15:21:33.460Z",
+                                                "age": 3
+                                            },
+                                            "phone": "0506-9733234",
+                                            "cell": "0173-6581911",
+                                            "id": {
+                                                "name": "SVNR",
+                                                "value": "61 211158 B 147"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/men/11.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/men/11.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/11.jpg"
+                                            },
+                                            "nat": "DE"
+                                        }
+                                    ],
+                                    "info": {
+                                        "seed": "ea2d83ccca9229f4",
+                                        "results": 5,
+                                        "page": 1,
+                                        "version": "1.4"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/plain; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "Not Found"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema_api": {}
+        }
+    }
+}

@@ -1,0 +1,1958 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "CheapShark API",
+        "description": "**API Description** - The CheapShark API is an interface that provides access to data and information about deals and prices for video games and software products.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "https://apidocs.cheapshark.com/#terms-of-service",
+        "contact": {
+            "name": "CheapShark API Contact",
+            "url": "https://www.cheapshark.com/api",
+            "email": ""
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://www.cheapshark.com",
+            "description": "Production Server of the CheapShark API.",
+            "x-base-routes": 1
+        }
+    ],
+    "externalDocs": {
+        "url": "https://apidocs.cheapshark.com",
+        "description": "Find more about the CheapShark API here:"
+    },
+    "paths": {
+        "/api/1.0/games": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "red%20dead%20redemption": {
+                                "value": "red%20dead%20redemption"
+                            },
+                            "grand%20theft%20auto": {
+                                "value": "grand%20theft%20auto"
+                            },
+                            "minecraft": {
+                                "value": "minecraft"
+                            },
+                            "Assassin's+Creed": {
+                                "value": "Assassin's+Creed"
+                            },
+                            "the+witcher+3": {
+                                "value": "the+witcher+3"
+                            },
+                            "Call+of+Duty": {
+                                "value": "Call+of+Duty"
+                            },
+                            "fortnite": {
+                                "value": "fortnite"
+                            },
+                            "Assassin's+Creed+Valhalla": {
+                                "value": "Assassin's+Creed+Valhalla"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "5": {
+                                "value": "5"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "storeID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamAppID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "570": {
+                                "value": "570"
+                            },
+                            "730": {
+                                "value": "730"
+                            },
+                            "12345": {
+                                "value": "12345"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exact",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "0": {
+                                "value": "0"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lowerPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "upperPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "50": {
+                                "value": "50"
+                            },
+                            "20": {
+                                "value": "20"
+                            },
+                            "40": {
+                                "value": "40"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "price": {
+                                "value": "price"
+                            },
+                            "name": {
+                                "value": "name"
+                            }
+                        }
+                    },
+                    {
+                        "name": "desc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "0": {
+                                "value": "0"
+                            },
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "AAA",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamworks",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "456": {
+                                "value": "456"
+                            },
+                            "789": {
+                                "value": "789"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "price": {
+                                "value": "price"
+                            }
+                        }
+                    },
+                    {
+                        "name": "metacritic",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "80": {
+                                "value": "80"
+                            },
+                            "75": {
+                                "value": "75"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamRating",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "positive": {
+                                "value": "positive"
+                            }
+                        }
+                    },
+                    {
+                        "name": "releaseDate",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2019-01-01": {
+                                "value": "2019-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "gameID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "12345": {
+                                "value": "12345"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_1.0_games"
+                                },
+                                "example": [
+                                    {
+                                        "gameID": "206516",
+                                        "steamAppID": "1174180",
+                                        "cheapest": "17.21",
+                                        "cheapestDealID": "kZsu5wC0oIzToXYWmjh7WNag3qgqRnAUEfZSUC5hX30%3D",
+                                        "external": "Red Dead Redemption 2",
+                                        "internalName": "REDDEADREDEMPTION2",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_sm_120.jpg?t=1695140956"
+                                    },
+                                    {
+                                        "gameID": "206514",
+                                        "steamAppID": null,
+                                        "cheapest": "26.09",
+                                        "cheapestDealID": "tqs8J2eRX%2FQPkIgxlYk1txM%2B1kv%2FvJQuawkWlbuO%2F3k%3D",
+                                        "external": "Red Dead Redemption 2: Ultimate Edition",
+                                        "internalName": "REDDEADREDEMPTION2ULTIMATEEDITION",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/red-dead-redemption-2-ultimate-edition/cover-180.jpg"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<title>Not Found | CheapShark</title>\n<meta name=\"description\" content=\"404 Page Not Found!\" />\n<meta name=\"robots\" content=\"noindex\">\n\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n<meta name=\"keywords\" content=\"game,deals,steam,digital,downloads,pc,sales,compare,prices,search,gamersgate,greenmangaming,gog\">\n<meta property=\"og:title\" ..."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/1.0/deals": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "red%20dead%20redemption": {
+                                "value": "red%20dead%20redemption"
+                            },
+                            "fallout": {
+                                "value": "fallout"
+                            },
+                            "game": {
+                                "value": "game"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "storeID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lowerPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            },
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "upperPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "price": {
+                                "value": "price"
+                            },
+                            "name": {
+                                "value": "name"
+                            }
+                        }
+                    },
+                    {
+                        "name": "desc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exact",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "gameID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "12345": {
+                                "value": "12345"
+                            }
+                        }
+                    },
+                    {
+                        "name": "storeId",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "12345": {
+                                "value": "12345"
+                            }
+                        }
+                    },
+                    {
+                        "name": "onSale",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamRating",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "80": {
+                                "value": "80"
+                            }
+                        }
+                    },
+                    {
+                        "name": "metacritic",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "80": {
+                                "value": "80"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamAppID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "123": {
+                                "value": "123"
+                            }
+                        }
+                    },
+                    {
+                        "name": "AAA",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "0": {
+                                "value": "0"
+                            },
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageNumber",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_1.0_deals"
+                                },
+                                "example": [
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2ULTIMATEEDITION",
+                                        "title": "Red Dead Redemption 2: Ultimate Edition",
+                                        "metacriticLink": null,
+                                        "dealID": "tqs8J2eRX%2FQPkIgxlYk1txM%2B1kv%2FvJQuawkWlbuO%2F3k%3D",
+                                        "storeID": "23",
+                                        "gameID": "206514",
+                                        "salePrice": "26.09",
+                                        "normalPrice": "99.99",
+                                        "isOnSale": "1",
+                                        "savings": "73.907391",
+                                        "metacriticScore": "0",
+                                        "steamRatingText": null,
+                                        "steamRatingPercent": "0",
+                                        "steamRatingCount": "0",
+                                        "steamAppID": null,
+                                        "releaseDate": 0,
+                                        "lastChange": 1700679377,
+                                        "dealRating": "9.2",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/red-dead-redemption-2-ultimate-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2ULTIMATEEDITION",
+                                        "title": "Red Dead Redemption 2: Ultimate Edition",
+                                        "metacriticLink": null,
+                                        "dealID": "eRYTVKLZOQRcVlOG3nPa2mZDMPxvYaBk9wNP5sWEUkI%3D",
+                                        "storeID": "35",
+                                        "gameID": "206514",
+                                        "salePrice": "29.10",
+                                        "normalPrice": "99.99",
+                                        "isOnSale": "1",
+                                        "savings": "70.897090",
+                                        "metacriticScore": "0",
+                                        "steamRatingText": null,
+                                        "steamRatingPercent": "0",
+                                        "steamRatingCount": "0",
+                                        "steamAppID": null,
+                                        "releaseDate": 0,
+                                        "lastChange": 1700618704,
+                                        "dealRating": "8.8",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/red-dead-redemption-2-ultimate-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2ULTIMATEEDITION",
+                                        "title": "Red Dead Redemption 2: Ultimate Edition",
+                                        "metacriticLink": null,
+                                        "dealID": "xAn40f6Xdv1Bss0zSL9zBPoZBsEDTzNdmCqhP8kRSL0%3D",
+                                        "storeID": "2",
+                                        "gameID": "206514",
+                                        "salePrice": "29.99",
+                                        "normalPrice": "99.99",
+                                        "isOnSale": "1",
+                                        "savings": "70.007001",
+                                        "metacriticScore": "0",
+                                        "steamRatingText": null,
+                                        "steamRatingPercent": "0",
+                                        "steamRatingCount": "0",
+                                        "steamAppID": null,
+                                        "releaseDate": 0,
+                                        "lastChange": 1700618534,
+                                        "dealRating": "8.7",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/red-dead-redemption-2-ultimate-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2",
+                                        "title": "Red Dead Redemption 2",
+                                        "metacriticLink": "/game/red-dead-redemption-2/",
+                                        "dealID": "kZsu5wC0oIzToXYWmjh7WNag3qgqRnAUEfZSUC5hX30%3D",
+                                        "storeID": "23",
+                                        "gameID": "206516",
+                                        "salePrice": "17.21",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "71.311885",
+                                        "metacriticScore": "93",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "442937",
+                                        "steamAppID": "1174180",
+                                        "releaseDate": 1572912000,
+                                        "lastChange": 1700679377,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_sm_120.jpg?t=1695140956"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2ULTIMATEEDITION",
+                                        "title": "Red Dead Redemption 2: Ultimate Edition",
+                                        "metacriticLink": null,
+                                        "dealID": "e%2Fce8Lip8Dierf4oXniUfl6GnOYsPJT64WFE9ovZjTs%3D",
+                                        "storeID": "3",
+                                        "gameID": "206514",
+                                        "salePrice": "26.10",
+                                        "normalPrice": "99.99",
+                                        "isOnSale": "1",
+                                        "savings": "73.897390",
+                                        "metacriticScore": "0",
+                                        "steamRatingText": null,
+                                        "steamRatingPercent": "0",
+                                        "steamRatingCount": "0",
+                                        "steamAppID": null,
+                                        "releaseDate": 0,
+                                        "lastChange": 1700182610,
+                                        "dealRating": "8.5",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/red-dead-redemption-2-ultimate-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2",
+                                        "title": "Red Dead Redemption 2",
+                                        "metacriticLink": "/game/red-dead-redemption-2/",
+                                        "dealID": "vRipmlfXyzLEFZN3L1vD0CqlPlumbxzPAooThDLznDU%3D",
+                                        "storeID": "3",
+                                        "gameID": "206516",
+                                        "salePrice": "17.23",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "71.278546",
+                                        "metacriticScore": "93",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "442937",
+                                        "steamAppID": "1174180",
+                                        "releaseDate": 1572912000,
+                                        "lastChange": 1700476857,
+                                        "dealRating": "8.2",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_sm_120.jpg?t=1695140956"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2",
+                                        "title": "Red Dead Redemption 2",
+                                        "metacriticLink": "/game/red-dead-redemption-2/",
+                                        "dealID": "4DK3yRtj5%2FEcP7a%2BDR7UDLMzO7%2BvV4oi1TJy6U8q%2BGQ%3D",
+                                        "storeID": "35",
+                                        "gameID": "206516",
+                                        "salePrice": "19.20",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "67.994666",
+                                        "metacriticScore": "93",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "442937",
+                                        "steamAppID": "1174180",
+                                        "releaseDate": 1572912000,
+                                        "lastChange": 1700618704,
+                                        "dealRating": "8.2",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_sm_120.jpg?t=1695140956"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2",
+                                        "title": "Red Dead Redemption 2",
+                                        "metacriticLink": "/game/red-dead-redemption-2/",
+                                        "dealID": "KFVOXDTDHBT%2F9VlSw1Z6pqapRYDSv3aE%2BSUMS1lzG6I%3D",
+                                        "storeID": "2",
+                                        "gameID": "206516",
+                                        "salePrice": "19.79",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "67.011169",
+                                        "metacriticScore": "93",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "442937",
+                                        "steamAppID": "1174180",
+                                        "releaseDate": 1572912000,
+                                        "lastChange": 1700618534,
+                                        "dealRating": "8.1",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_sm_120.jpg?t=1695140956"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2",
+                                        "title": "Red Dead Redemption 2",
+                                        "metacriticLink": "/game/red-dead-redemption-2/",
+                                        "dealID": "nsycQBLuHRinMP9IUsBMRa5DjdGQZKUacfiVToqJpYE%3D",
+                                        "storeID": "33",
+                                        "gameID": "206516",
+                                        "salePrice": "19.80",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "66.994499",
+                                        "metacriticScore": "93",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "442937",
+                                        "steamAppID": "1174180",
+                                        "releaseDate": 1572912000,
+                                        "lastChange": 1700619000,
+                                        "dealRating": "8.1",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_sm_120.jpg?t=1695140956"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2ULTIMATEEDITION",
+                                        "title": "Red Dead Redemption 2: Ultimate Edition",
+                                        "metacriticLink": null,
+                                        "dealID": "hAeYvMc6F4MopnQH2%2FKdRMe%2B%2BBE6iMdLPsrOSPTd9ik%3D",
+                                        "storeID": "29",
+                                        "gameID": "206514",
+                                        "salePrice": "29.40",
+                                        "normalPrice": "99.99",
+                                        "isOnSale": "1",
+                                        "savings": "70.597060",
+                                        "metacriticScore": "0",
+                                        "steamRatingText": null,
+                                        "steamRatingPercent": "0",
+                                        "steamRatingCount": "0",
+                                        "steamAppID": null,
+                                        "releaseDate": 0,
+                                        "lastChange": 1700189579,
+                                        "dealRating": "8.1",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/red-dead-redemption-2-ultimate-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2ULTIMATEEDITION",
+                                        "title": "Red Dead Redemption 2: Ultimate Edition",
+                                        "metacriticLink": null,
+                                        "dealID": "6MPf5EEX5fZsrZ7sBkeOEOVf2IiNuqLm0rHrOQLllfw%3D",
+                                        "storeID": "11",
+                                        "gameID": "206514",
+                                        "salePrice": "29.99",
+                                        "normalPrice": "99.98",
+                                        "isOnSale": "1",
+                                        "savings": "70.004001",
+                                        "metacriticScore": "0",
+                                        "steamRatingText": null,
+                                        "steamRatingPercent": "0",
+                                        "steamRatingCount": "0",
+                                        "steamAppID": null,
+                                        "releaseDate": 0,
+                                        "lastChange": 1700247374,
+                                        "dealRating": "8.0",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/red-dead-redemption-2-ultimate-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2",
+                                        "title": "Red Dead Redemption 2",
+                                        "metacriticLink": "/game/red-dead-redemption-2/",
+                                        "dealID": "cQN5SQRQu7X7qpiZ6H%2Fp4aRdfn6cj3A9vp%2BdJmvABjk%3D",
+                                        "storeID": "1",
+                                        "gameID": "206516",
+                                        "salePrice": "19.79",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "67.011169",
+                                        "metacriticScore": "93",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "442937",
+                                        "steamAppID": "1174180",
+                                        "releaseDate": 1572912000,
+                                        "lastChange": 1700592189,
+                                        "dealRating": "7.9",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_sm_120.jpg?t=1695140956"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2ULTIMATEEDITION",
+                                        "title": "Red Dead Redemption 2: Ultimate Edition",
+                                        "metacriticLink": null,
+                                        "dealID": "hD1z4c%2FiZOQKMTwst%2BGamClv4x9IQr2EHjaLUbdpFxY%3D",
+                                        "storeID": "27",
+                                        "gameID": "206514",
+                                        "salePrice": "29.99",
+                                        "normalPrice": "99.99",
+                                        "isOnSale": "1",
+                                        "savings": "70.007001",
+                                        "metacriticScore": "0",
+                                        "steamRatingText": null,
+                                        "steamRatingPercent": "0",
+                                        "steamRatingCount": "0",
+                                        "steamAppID": null,
+                                        "releaseDate": 0,
+                                        "lastChange": 1700178692,
+                                        "dealRating": "7.8",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/red-dead-redemption-2-ultimate-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2",
+                                        "title": "Red Dead Redemption 2",
+                                        "metacriticLink": "/game/red-dead-redemption-2/",
+                                        "dealID": "iifNeCvsuxbF8lR%2FZvRpR8hPkNFQglKcNAafggwQHHk%3D",
+                                        "storeID": "29",
+                                        "gameID": "206516",
+                                        "salePrice": "19.40",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "67.661277",
+                                        "metacriticScore": "93",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "442937",
+                                        "steamAppID": "1174180",
+                                        "releaseDate": 1572912000,
+                                        "lastChange": 1700189579,
+                                        "dealRating": "7.4",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_sm_120.jpg?t=1695140956"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2",
+                                        "title": "Red Dead Redemption 2",
+                                        "metacriticLink": "/game/red-dead-redemption-2/",
+                                        "dealID": "mR742Y4c1gIWmd6swzFlwkJkE8gYHgTwTf2J91%2FJ5fs%3D",
+                                        "storeID": "11",
+                                        "gameID": "206516",
+                                        "salePrice": "19.79",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "67.011169",
+                                        "metacriticScore": "93",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "442937",
+                                        "steamAppID": "1174180",
+                                        "releaseDate": 1572912000,
+                                        "lastChange": 1700247368,
+                                        "dealRating": "7.4",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_sm_120.jpg?t=1695140956"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2",
+                                        "title": "Red Dead Redemption 2",
+                                        "metacriticLink": "/game/red-dead-redemption-2/",
+                                        "dealID": "ArUMxTeRYeQ53wsFlJquty0jAF%2B8nb4ELYKIsGKw8Rk%3D",
+                                        "storeID": "27",
+                                        "gameID": "206516",
+                                        "salePrice": "19.80",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "66.994499",
+                                        "metacriticScore": "93",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "442937",
+                                        "steamAppID": "1174180",
+                                        "releaseDate": 1572912000,
+                                        "lastChange": 1700178692,
+                                        "dealRating": "7.2",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_sm_120.jpg?t=1695140956"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2",
+                                        "title": "Red Dead Redemption 2",
+                                        "metacriticLink": "/game/red-dead-redemption-2/",
+                                        "dealID": "6N%2BgRtAkLdwLWpQAdt1pEpaPqNFmRwNHwPpZKWAWky4%3D",
+                                        "storeID": "15",
+                                        "gameID": "206516",
+                                        "salePrice": "19.19",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "68.011335",
+                                        "metacriticScore": "93",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "442937",
+                                        "steamAppID": "1174180",
+                                        "releaseDate": 1572912000,
+                                        "lastChange": 1700494867,
+                                        "dealRating": "6.9",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_sm_120.jpg?t=1695140956"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2ULTIMATEEDITION",
+                                        "title": "Red Dead Redemption 2: Ultimate Edition",
+                                        "metacriticLink": null,
+                                        "dealID": "6hPfXG02T%2BRJfcOxrXjRQ8JC9H7sis2ZMQPBl4AEfqI%3D",
+                                        "storeID": "15",
+                                        "gameID": "206514",
+                                        "salePrice": "28.99",
+                                        "normalPrice": "99.99",
+                                        "isOnSale": "1",
+                                        "savings": "71.007101",
+                                        "metacriticScore": "0",
+                                        "steamRatingText": null,
+                                        "steamRatingPercent": "0",
+                                        "steamRatingCount": "0",
+                                        "steamAppID": null,
+                                        "releaseDate": 0,
+                                        "lastChange": 1700181051,
+                                        "dealRating": "3.1",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/red-dead-redemption-2-ultimate-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2",
+                                        "title": "Red Dead Redemption 2",
+                                        "metacriticLink": "/game/red-dead-redemption-2/",
+                                        "dealID": "d8G5coVb1Ys%2F5pVNvXzFV9mnRGVNCi2mH1wQmnbMvpE%3D",
+                                        "storeID": "21",
+                                        "gameID": "206516",
+                                        "salePrice": "56.99",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "1",
+                                        "savings": "5.000833",
+                                        "metacriticScore": "93",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "442937",
+                                        "steamAppID": "1174180",
+                                        "releaseDate": 1572912000,
+                                        "lastChange": 1699902710,
+                                        "dealRating": "0.5",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_sm_120.jpg?t=1695140956"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2",
+                                        "title": "Red Dead Redemption 2",
+                                        "metacriticLink": "/game/red-dead-redemption-2/",
+                                        "dealID": "H6BWwktFICoMeZlufOTb%2FZH0ObxVdPl0C%2BWmngg%2Bq4g%3D",
+                                        "storeID": "28",
+                                        "gameID": "206516",
+                                        "salePrice": "59.99",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "0",
+                                        "savings": "0.000000",
+                                        "metacriticScore": "93",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "442937",
+                                        "steamAppID": "1174180",
+                                        "releaseDate": 1572912000,
+                                        "lastChange": 1674519334,
+                                        "dealRating": "0.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_sm_120.jpg?t=1695140956"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2ULTIMATEEDITION",
+                                        "title": "Red Dead Redemption 2: Ultimate Edition",
+                                        "metacriticLink": null,
+                                        "dealID": "HPmpqd8N82VXnSditK9e8vu0FxTQ02cmbnQSP0goKlU%3D",
+                                        "storeID": "28",
+                                        "gameID": "206514",
+                                        "salePrice": "99.99",
+                                        "normalPrice": "99.99",
+                                        "isOnSale": "0",
+                                        "savings": "0.000000",
+                                        "metacriticScore": "0",
+                                        "steamRatingText": null,
+                                        "steamRatingPercent": "0",
+                                        "steamRatingCount": "0",
+                                        "steamAppID": null,
+                                        "releaseDate": 0,
+                                        "lastChange": 1674519334,
+                                        "dealRating": "0.0",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/red-dead-redemption-2-ultimate-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2",
+                                        "title": "Red Dead Redemption 2",
+                                        "metacriticLink": "/game/red-dead-redemption-2/",
+                                        "dealID": "ghJkFV1cQluoqNan%2BwfUTkgOM9UjGOyYoODQTTIJYaU%3D",
+                                        "storeID": "25",
+                                        "gameID": "206516",
+                                        "salePrice": "59.99",
+                                        "normalPrice": "59.99",
+                                        "isOnSale": "0",
+                                        "savings": "0.000000",
+                                        "metacriticScore": "93",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "90",
+                                        "steamRatingCount": "442937",
+                                        "steamAppID": "1174180",
+                                        "releaseDate": 1572912000,
+                                        "lastChange": 1695915007,
+                                        "dealRating": "0.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1174180/capsule_sm_120.jpg?t=1695140956"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2ULTIMATEEDITION",
+                                        "title": "Red Dead Redemption 2: Ultimate Edition",
+                                        "metacriticLink": null,
+                                        "dealID": "UUgi4nZIqh6CuWFNG6oAdUKzB2bJcPtJx44bKZbRWrA%3D",
+                                        "storeID": "25",
+                                        "gameID": "206514",
+                                        "salePrice": "99.99",
+                                        "normalPrice": "99.99",
+                                        "isOnSale": "0",
+                                        "savings": "0.000000",
+                                        "metacriticScore": "0",
+                                        "steamRatingText": null,
+                                        "steamRatingPercent": "0",
+                                        "steamRatingCount": "0",
+                                        "steamAppID": null,
+                                        "releaseDate": 0,
+                                        "lastChange": 1699370804,
+                                        "dealRating": "0.0",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/red-dead-redemption-2-ultimate-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2ULTIMATEEDITION",
+                                        "title": "Red Dead Redemption 2: Ultimate Edition",
+                                        "metacriticLink": null,
+                                        "dealID": "x2%2F5wQBE9QPKnxk8D6ZUJoB9B2750HYTI%2BJM%2FI7tChs%3D",
+                                        "storeID": "33",
+                                        "gameID": "206514",
+                                        "salePrice": "99.99",
+                                        "normalPrice": "99.99",
+                                        "isOnSale": "0",
+                                        "savings": "0.000000",
+                                        "metacriticScore": "0",
+                                        "steamRatingText": null,
+                                        "steamRatingPercent": "0",
+                                        "steamRatingCount": "0",
+                                        "steamAppID": null,
+                                        "releaseDate": 0,
+                                        "lastChange": 1689852780,
+                                        "dealRating": "0.0",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/red-dead-redemption-2-ultimate-edition/cover-180.jpg"
+                                    },
+                                    {
+                                        "internalName": "REDDEADREDEMPTION2ULTIMATEEDITION",
+                                        "title": "Red Dead Redemption 2: Ultimate Edition",
+                                        "metacriticLink": null,
+                                        "dealID": "Y01ave0GO7Eh%2FouL3O%2Fk7YljD4hrDU1EK7SfReCDkUY%3D",
+                                        "storeID": "21",
+                                        "gameID": "206514",
+                                        "salePrice": "85.99",
+                                        "normalPrice": "99.99",
+                                        "isOnSale": "1",
+                                        "savings": "14.001400",
+                                        "metacriticScore": "0",
+                                        "steamRatingText": null,
+                                        "steamRatingPercent": "0",
+                                        "steamRatingCount": "0",
+                                        "steamAppID": null,
+                                        "releaseDate": 0,
+                                        "lastChange": 1699902710,
+                                        "dealRating": "0.0",
+                                        "thumb": "https://sttc.gamersgate.com/images/product/red-dead-redemption-2-ultimate-edition/cover-180.jpg"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<title>Not Found | CheapShark</title>\n<meta name=\"description\" content=\"404 Page Not Found!\" />\n<meta name=\"robots\" content=\"noindex\">\n\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n<meta name=\"keywords\" content=\"game,deals,steam,digital,downloads,pc,sales,compare,prices,search,gamersgate,greenmangaming,gog\">\n<meta property=\"og:title\" ..."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/1.0/stores": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "red%20dead%20redemption": {
+                                "value": "red%20dead%20redemption"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name": {
+                                "value": "name"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamAppID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "123456": {
+                                "value": "123456"
+                            },
+                            "67890": {
+                                "value": "67890"
+                            },
+                            "12345": {
+                                "value": "12345"
+                            },
+                            "54321": {
+                                "value": "54321"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lowerPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "upperPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamRating",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "80": {
+                                "value": "80"
+                            },
+                            "positive": {
+                                "value": "positive"
+                            }
+                        }
+                    },
+                    {
+                        "name": "metacritic",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "90": {
+                                "value": "90"
+                            },
+                            "75": {
+                                "value": "75"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageNumber",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "25": {
+                                "value": "25"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exact",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "AAA",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "0": {
+                                "value": "0"
+                            }
+                        }
+                    },
+                    {
+                        "name": "freeGames",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "3": {
+                                "value": "3"
+                            },
+                            "456": {
+                                "value": "456"
+                            }
+                        }
+                    },
+                    {
+                        "name": "onSale",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "gameID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "12345": {
+                                "value": "12345"
+                            },
+                            "67890": {
+                                "value": "67890"
+                            }
+                        }
+                    },
+                    {
+                        "name": "dealRating",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "90": {
+                                "value": "90"
+                            }
+                        }
+                    },
+                    {
+                        "name": "dealID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "12345": {
+                                "value": "12345"
+                            }
+                        }
+                    },
+                    {
+                        "name": "desc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "storeID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "2": {
+                                "value": "2"
+                            },
+                            "3": {
+                                "value": "3"
+                            },
+                            "4": {
+                                "value": "4"
+                            },
+                            "5": {
+                                "value": "5"
+                            },
+                            "6": {
+                                "value": "6"
+                            },
+                            "7": {
+                                "value": "7"
+                            },
+                            "8": {
+                                "value": "8"
+                            },
+                            "9": {
+                                "value": "9"
+                            },
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_1.0_stores"
+                                },
+                                "example": [
+                                    {
+                                        "storeID": "1",
+                                        "storeName": "Steam",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/0.png",
+                                            "logo": "/img/stores/logos/0.png",
+                                            "icon": "/img/stores/icons/0.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "2",
+                                        "storeName": "GamersGate",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/1.png",
+                                            "logo": "/img/stores/logos/1.png",
+                                            "icon": "/img/stores/icons/1.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "3",
+                                        "storeName": "GreenManGaming",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/2.png",
+                                            "logo": "/img/stores/logos/2.png",
+                                            "icon": "/img/stores/icons/2.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "4",
+                                        "storeName": "Amazon",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/3.png",
+                                            "logo": "/img/stores/logos/3.png",
+                                            "icon": "/img/stores/icons/3.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "5",
+                                        "storeName": "GameStop",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/4.png",
+                                            "logo": "/img/stores/logos/4.png",
+                                            "icon": "/img/stores/icons/4.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "6",
+                                        "storeName": "Direct2Drive",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/5.png",
+                                            "logo": "/img/stores/logos/5.png",
+                                            "icon": "/img/stores/icons/5.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "7",
+                                        "storeName": "GOG",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/6.png",
+                                            "logo": "/img/stores/logos/6.png",
+                                            "icon": "/img/stores/icons/6.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "8",
+                                        "storeName": "Origin",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/7.png",
+                                            "logo": "/img/stores/logos/7.png",
+                                            "icon": "/img/stores/icons/7.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "9",
+                                        "storeName": "Get Games",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/8.png",
+                                            "logo": "/img/stores/logos/8.png",
+                                            "icon": "/img/stores/icons/8.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "10",
+                                        "storeName": "Shiny Loot",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/9.png",
+                                            "logo": "/img/stores/logos/9.png",
+                                            "icon": "/img/stores/icons/9.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "11",
+                                        "storeName": "Humble Store",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/10.png",
+                                            "logo": "/img/stores/logos/10.png",
+                                            "icon": "/img/stores/icons/10.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "12",
+                                        "storeName": "Desura",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/11.png",
+                                            "logo": "/img/stores/logos/11.png",
+                                            "icon": "/img/stores/icons/11.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "13",
+                                        "storeName": "Uplay",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/12.png",
+                                            "logo": "/img/stores/logos/12.png",
+                                            "icon": "/img/stores/icons/12.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "14",
+                                        "storeName": "IndieGameStand",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/13.png",
+                                            "logo": "/img/stores/logos/13.png",
+                                            "icon": "/img/stores/icons/13.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "15",
+                                        "storeName": "Fanatical",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/14.png",
+                                            "logo": "/img/stores/logos/14.png",
+                                            "icon": "/img/stores/icons/14.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "16",
+                                        "storeName": "Gamesrocket",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/15.png",
+                                            "logo": "/img/stores/logos/15.png",
+                                            "icon": "/img/stores/icons/15.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "17",
+                                        "storeName": "Games Republic",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/16.png",
+                                            "logo": "/img/stores/logos/16.png",
+                                            "icon": "/img/stores/icons/16.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "18",
+                                        "storeName": "SilaGames",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/17.png",
+                                            "logo": "/img/stores/logos/17.png",
+                                            "icon": "/img/stores/icons/17.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "19",
+                                        "storeName": "Playfield",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/18.png",
+                                            "logo": "/img/stores/logos/18.png",
+                                            "icon": "/img/stores/icons/18.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "20",
+                                        "storeName": "ImperialGames",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/19.png",
+                                            "logo": "/img/stores/logos/19.png",
+                                            "icon": "/img/stores/icons/19.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "21",
+                                        "storeName": "WinGameStore",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/20.png",
+                                            "logo": "/img/stores/logos/20.png",
+                                            "icon": "/img/stores/icons/20.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "22",
+                                        "storeName": "FunStockDigital",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/21.png",
+                                            "logo": "/img/stores/logos/21.png",
+                                            "icon": "/img/stores/icons/21.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "23",
+                                        "storeName": "GameBillet",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/22.png",
+                                            "logo": "/img/stores/logos/22.png",
+                                            "icon": "/img/stores/icons/22.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "24",
+                                        "storeName": "Voidu",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/23.png",
+                                            "logo": "/img/stores/logos/23.png",
+                                            "icon": "/img/stores/icons/23.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "25",
+                                        "storeName": "Epic Games Store",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/24.png",
+                                            "logo": "/img/stores/logos/24.png",
+                                            "icon": "/img/stores/icons/24.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "26",
+                                        "storeName": "Razer Game Store",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/25.png",
+                                            "logo": "/img/stores/logos/25.png",
+                                            "icon": "/img/stores/icons/25.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "27",
+                                        "storeName": "Gamesplanet",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/26.png",
+                                            "logo": "/img/stores/logos/26.png",
+                                            "icon": "/img/stores/icons/26.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "28",
+                                        "storeName": "Gamesload",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/27.png",
+                                            "logo": "/img/stores/logos/27.png",
+                                            "icon": "/img/stores/icons/27.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "29",
+                                        "storeName": "2Game",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/28.png",
+                                            "logo": "/img/stores/logos/28.png",
+                                            "icon": "/img/stores/icons/28.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "30",
+                                        "storeName": "IndieGala",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/29.png",
+                                            "logo": "/img/stores/logos/29.png",
+                                            "icon": "/img/stores/icons/29.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "31",
+                                        "storeName": "Blizzard Shop",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/30.png",
+                                            "logo": "/img/stores/logos/30.png",
+                                            "icon": "/img/stores/icons/30.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "32",
+                                        "storeName": "AllYouPlay",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/31.png",
+                                            "logo": "/img/stores/logos/31.png",
+                                            "icon": "/img/stores/icons/31.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "33",
+                                        "storeName": "DLGamer",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/32.png",
+                                            "logo": "/img/stores/logos/32.png",
+                                            "icon": "/img/stores/icons/32.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "34",
+                                        "storeName": "Noctre",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/33.png",
+                                            "logo": "/img/stores/logos/33.png",
+                                            "icon": "/img/stores/icons/33.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "35",
+                                        "storeName": "DreamGame",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/34.png",
+                                            "logo": "/img/stores/logos/34.png",
+                                            "icon": "/img/stores/icons/34.png"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<title>Not Found | CheapShark</title>\n<meta name=\"description\" content=\"404 Page Not Found!\" />\n<meta name=\"robots\" content=\"noindex\">\n\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n<meta name=\"keywords\" content=\"game,deals,steam,digital,downloads,pc,sales,compare,prices,search,gamersgate,greenmangaming,gog\">\n<meta property=\"og:title\" ..."
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema_api_1.0_games": {},
+            "ResponseSchema_api_1.0_deals": {},
+            "ResponseSchema_api_1.0_stores": {}
+        }
+    }
+}

@@ -1,0 +1,81 @@
+Random seed: 12345
+Setting fuzzing schemes: directed-smoke-test
+2023-11-30 12:05:28.645: Going to fuzz a set with 1 requests
+2023-11-30 12:05:28.645: Request-0: Value Combinations: 20
+2023-11-30 12:05:28.645: Avg. Value Combinations per Request: 20
+2023-11-30 12:05:28.645: Median Value Combinations per Request: 20
+2023-11-30 12:05:28.645: Min Value Combinations per Request: 20
+2023-11-30 12:05:28.645: Max Value Combinations per Request: 20
+2023-11-30 12:05:28.645: Total dependencies: 0
+
+2023-11-30 12:05:28.645: Generation: 1 / Sequences Collection Size: 1 
+(After directed-smoke-test Extend)
+
+Rendering request 0 from scratch
+
+2023-11-30 12:05:29.666: Request 0
+2023-11-30 12:05:29.666: Endpoint - /api
+2023-11-30 12:05:29.666: Hex Def - d6110a0f32ffe0a3e75c193d28b8bd29a8331d63
+2023-11-30 12:05:29.666: Sequence length that satisfies dependencies: 1
+2023-11-30 12:05:29.682: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'api'
+		- restler_static_string: '?'
+		- restler_static_string: 'results='
+		+ restler_fuzzable_int: ['5', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'gender='
+		+ restler_fuzzable_string: ['male', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'nat='
+		+ restler_fuzzable_string: ['us', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'inc='
+		+ restler_fuzzable_string: ['name,email', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'exc='
+		+ restler_fuzzable_string: ['login', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'seed='
+		+ restler_fuzzable_string: ['abc123', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'page='
+		+ restler_fuzzable_int: ['2', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'password='
+		+ restler_fuzzable_string: ['upper', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'format='
+		+ restler_fuzzable_string: ['json', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: randomuser.me\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:05:29.682: Generation: 1 / Sequences Collection Size: 1 
+(After directed-smoke-test Render)
+
+2023-11-30 12:05:29.698: Final Swagger spec coverage: 1 / 1
+2023-11-30 12:05:29.698: Rendered requests: 1 / 1
+2023-11-30 12:05:29.698: Rendered requests with "valid" status codes: 1 / 1
+2023-11-30 12:05:29.698: Num fully valid requests (no resource creation failures): 1
+2023-11-30 12:05:29.698: Num requests not rendered due to invalid sequence re-renders: 0
+2023-11-30 12:05:29.698: Num invalid requests caused by failed resource creations: 0
+2023-11-30 12:05:29.698: Total Creations of Dyn Objects: 0
+2023-11-30 12:05:29.698: Total Requests Sent: {'gc': 0, 'main_driver': 1}
+2023-11-30 12:05:29.698: Bug Buckets: {}
+
+Testing completed -- below are the final stats:
+
+2023-11-30 12:05:29.713: Final Swagger spec coverage: 1 / 1
+2023-11-30 12:05:29.713: Rendered requests: 1 / 1
+2023-11-30 12:05:29.713: Rendered requests with "valid" status codes: 1 / 1
+2023-11-30 12:05:29.713: Num fully valid requests (no resource creation failures): 1
+2023-11-30 12:05:29.713: Num requests not rendered due to invalid sequence re-renders: 0
+2023-11-30 12:05:29.713: Num invalid requests caused by failed resource creations: 0
+2023-11-30 12:05:29.713: Total Creations of Dyn Objects: 0
+2023-11-30 12:05:29.713: Total Requests Sent: {'gc': 0, 'main_driver': 1}
+2023-11-30 12:05:29.713: Bug Buckets: {}

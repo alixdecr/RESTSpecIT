@@ -1,0 +1,838 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Random User Generator API",
+        "description": "**API Description** - The Random User Generator API is an API that generates random user information for testing and mockup purposes.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "https://randomuser.me/documentation",
+        "contact": {
+            "name": "Random User Generator API Contact",
+            "url": "https://randomuser.me/documentation#contact",
+            "email": "support@randomuser.me"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://randomuser.me",
+            "description": "Production Server of the Random User Generator API.",
+            "x-base-routes": 1
+        }
+    ],
+    "externalDocs": {
+        "url": "https://randomuser.me/documentation",
+        "description": "Find more about the Random User Generator API here:"
+    },
+    "paths": {
+        "/api": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "results",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "5": {
+                                "value": "5"
+                            },
+                            "3": {
+                                "value": "3"
+                            },
+                            "7": {
+                                "value": "7"
+                            },
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "gender",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "female": {
+                                "value": "female"
+                            },
+                            "male": {
+                                "value": "male"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nat",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "us": {
+                                "value": "us"
+                            },
+                            "gb": {
+                                "value": "gb"
+                            },
+                            "es": {
+                                "value": "es"
+                            },
+                            "fr": {
+                                "value": "fr"
+                            },
+                            "ca": {
+                                "value": "ca"
+                            },
+                            "au": {
+                                "value": "au"
+                            },
+                            "au,br,ca": {
+                                "value": "au,br,ca"
+                            }
+                        }
+                    },
+                    {
+                        "name": "inc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name,email": {
+                                "value": "name,email"
+                            },
+                            "location": {
+                                "value": "location"
+                            },
+                            "dob": {
+                                "value": "dob"
+                            },
+                            "name,email,phone": {
+                                "value": "name,email,phone"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "login": {
+                                "value": "login"
+                            },
+                            "login,registered": {
+                                "value": "login,registered"
+                            },
+                            "id": {
+                                "value": "id"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "abc123": {
+                                "value": "abc123"
+                            },
+                            "12345": {
+                                "value": "12345"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "json": {
+                                "value": "json"
+                            },
+                            "xml": {
+                                "value": "xml"
+                            }
+                        }
+                    },
+                    {
+                        "name": "dob",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1970-01-01": {
+                                "value": "1970-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "upper,lower,12": {
+                                "value": "upper,lower,12"
+                            },
+                            "upper,lower,number": {
+                                "value": "upper,lower,number"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api"
+                                },
+                                "example": {
+                                    "results": [
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Mrs",
+                                                "first": "Amanda",
+                                                "last": "Williamson"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 7179,
+                                                    "name": "Fairview Road"
+                                                },
+                                                "city": "Gloucester",
+                                                "state": "Devon",
+                                                "country": "United Kingdom",
+                                                "postcode": "F6W 4QY",
+                                                "coordinates": {
+                                                    "latitude": "-5.1591",
+                                                    "longitude": "-158.9411"
+                                                },
+                                                "timezone": {
+                                                    "offset": "-4:00",
+                                                    "description": "Atlantic Time (Canada), Caracas, La Paz"
+                                                }
+                                            },
+                                            "email": "amanda.williamson@example.com",
+                                            "login": {
+                                                "uuid": "fa4b264e-f2f8-44d0-a28f-0e9d5101c92c",
+                                                "username": "lazywolf128",
+                                                "password": "brown1",
+                                                "salt": "7j0Is1by",
+                                                "md5": "4c798081fee3cf43c302bb06d6e78ceb",
+                                                "sha1": "e072659312928ffcea03797cc753699d1bccc418",
+                                                "sha256": "eedb7764c9d0a966b1fed78319e464ab0c7fb406ac4cb00410bd7a984a0f4cd9"
+                                            },
+                                            "dob": {
+                                                "date": "1995-03-08T00:42:31.356Z",
+                                                "age": 28
+                                            },
+                                            "registered": {
+                                                "date": "2013-09-16T00:15:17.761Z",
+                                                "age": 10
+                                            },
+                                            "phone": "016977 9540",
+                                            "cell": "07875 252964",
+                                            "id": {
+                                                "name": "NINO",
+                                                "value": "AZ 48 48 76 I"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/84.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/84.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/84.jpg"
+                                            },
+                                            "nat": "GB"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Miss",
+                                                "first": "Iya",
+                                                "last": "Zhuravskiy"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 9462,
+                                                    "name": "Stepana Kovnira"
+                                                },
+                                                "city": "Bokovo-Hrustalne",
+                                                "state": "Avtonomna Respublika Krim",
+                                                "country": "Ukraine",
+                                                "postcode": 59606,
+                                                "coordinates": {
+                                                    "latitude": "-27.3920",
+                                                    "longitude": "95.1478"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+2:00",
+                                                    "description": "Kaliningrad, South Africa"
+                                                }
+                                            },
+                                            "email": "iya.zhuravskiy@example.com",
+                                            "login": {
+                                                "uuid": "5e676bde-dab8-451c-978f-442c3ac5bc32",
+                                                "username": "whitekoala447",
+                                                "password": "blue1",
+                                                "salt": "dckniyzQ",
+                                                "md5": "90a614a268463311865cf7b65d1f5d9e",
+                                                "sha1": "da47c255561cc082db69fcf55810016829371e68",
+                                                "sha256": "10191520e917cfc1bfb0ae929903e3797c551c307fe7a105d05750762dad5dff"
+                                            },
+                                            "dob": {
+                                                "date": "1980-05-27T19:51:54.836Z",
+                                                "age": 43
+                                            },
+                                            "registered": {
+                                                "date": "2009-08-14T15:40:42.102Z",
+                                                "age": 14
+                                            },
+                                            "phone": "(067) T04-0492",
+                                            "cell": "(067) O97-9748",
+                                            "id": {
+                                                "name": "",
+                                                "value": null
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/73.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/73.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/73.jpg"
+                                            },
+                                            "nat": "UA"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Mrs",
+                                                "first": "Barbara",
+                                                "last": "Grant"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 3254,
+                                                    "name": "Manor Road"
+                                                },
+                                                "city": "Mountmellick",
+                                                "state": "Galway City",
+                                                "country": "Ireland",
+                                                "postcode": 69801,
+                                                "coordinates": {
+                                                    "latitude": "28.7826",
+                                                    "longitude": "-86.6026"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+9:00",
+                                                    "description": "Tokyo, Seoul, Osaka, Sapporo, Yakutsk"
+                                                }
+                                            },
+                                            "email": "barbara.grant@example.com",
+                                            "login": {
+                                                "uuid": "2c6c3f08-ad27-4ae6-a9ee-fb4c2cfb2f87",
+                                                "username": "redpeacock127",
+                                                "password": "january",
+                                                "salt": "Fj3xGfLU",
+                                                "md5": "7f067ec36dfe9044ece2b53aa248f938",
+                                                "sha1": "cab1f673d54732a59882d841d2abcce062149ef8",
+                                                "sha256": "3066273ff4c28093b84f3fbd8a7c6efe757775353648d4e8db189b0c4eb6cb67"
+                                            },
+                                            "dob": {
+                                                "date": "1982-02-09T23:44:32.136Z",
+                                                "age": 41
+                                            },
+                                            "registered": {
+                                                "date": "2016-08-20T09:09:56.342Z",
+                                                "age": 7
+                                            },
+                                            "phone": "061-753-2899",
+                                            "cell": "081-989-7940",
+                                            "id": {
+                                                "name": "PPS",
+                                                "value": "5095463T"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/53.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/53.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/53.jpg"
+                                            },
+                                            "nat": "IE"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Miss",
+                                                "first": "Nade\u017eda",
+                                                "last": "Mitrovi\u0107"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 898,
+                                                    "name": "Javorova"
+                                                },
+                                                "city": "Prijepolje",
+                                                "state": "Moravica",
+                                                "country": "Serbia",
+                                                "postcode": 65415,
+                                                "coordinates": {
+                                                    "latitude": "-87.6613",
+                                                    "longitude": "97.9767"
+                                                },
+                                                "timezone": {
+                                                    "offset": "0:00",
+                                                    "description": "Western Europe Time, London, Lisbon, Casablanca"
+                                                }
+                                            },
+                                            "email": "nadezda.mitrovic@example.com",
+                                            "login": {
+                                                "uuid": "57a7b2d8-a8ee-4520-bb65-903a4f34811f",
+                                                "username": "silverpanda785",
+                                                "password": "screamer",
+                                                "salt": "l5bMqlRt",
+                                                "md5": "7e1b947be16c01a6a6faaffe944756b4",
+                                                "sha1": "58c7dbe4b1489b2d0339459e680cb44a8c151806",
+                                                "sha256": "6021e54060dd39995cda2b09e02378445254476e898f6903cc0f35823bb54c48"
+                                            },
+                                            "dob": {
+                                                "date": "2000-04-06T03:17:37.981Z",
+                                                "age": 23
+                                            },
+                                            "registered": {
+                                                "date": "2020-12-25T21:28:35.045Z",
+                                                "age": 2
+                                            },
+                                            "phone": "032-5318-770",
+                                            "cell": "068-5914-741",
+                                            "id": {
+                                                "name": "SID",
+                                                "value": "829025864"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/10.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/10.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/10.jpg"
+                                            },
+                                            "nat": "RS"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Miss",
+                                                "first": "Clara",
+                                                "last": "Baumert"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 556,
+                                                    "name": "Ahornweg"
+                                                },
+                                                "city": "Hofheim In Unterfranken",
+                                                "state": "Rheinland-Pfalz",
+                                                "country": "Germany",
+                                                "postcode": 21786,
+                                                "coordinates": {
+                                                    "latitude": "-58.4278",
+                                                    "longitude": "144.2058"
+                                                },
+                                                "timezone": {
+                                                    "offset": "-5:00",
+                                                    "description": "Eastern Time (US & Canada), Bogota, Lima"
+                                                }
+                                            },
+                                            "email": "clara.baumert@example.com",
+                                            "login": {
+                                                "uuid": "adc9484e-a7e5-4d0d-b2f9-df44115ed647",
+                                                "username": "orangepanda724",
+                                                "password": "bombay",
+                                                "salt": "Ef0P4uzg",
+                                                "md5": "852cf2211b599a5b2abf8777a02631b2",
+                                                "sha1": "ccbeb9cc22ff92e4524af9b2e7303a8709dbd2d1",
+                                                "sha256": "1bfb9c8941e887e1032d4d79d2dae8058a702852bc99475968c2e07412c671ab"
+                                            },
+                                            "dob": {
+                                                "date": "1954-04-11T15:44:23.036Z",
+                                                "age": 69
+                                            },
+                                            "registered": {
+                                                "date": "2019-11-19T00:59:08.582Z",
+                                                "age": 4
+                                            },
+                                            "phone": "0889-5842920",
+                                            "cell": "0170-3526357",
+                                            "id": {
+                                                "name": "SVNR",
+                                                "value": "82 110454 B 516"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/44.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/44.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/44.jpg"
+                                            },
+                                            "nat": "DE"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Mrs",
+                                                "first": "Sol\u00e8ne",
+                                                "last": "Carpentier"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 5212,
+                                                    "name": "Mont\u00e9e Saint-Barth\u00e9l\u00e9my"
+                                                },
+                                                "city": "Amiens",
+                                                "state": "Yonne",
+                                                "country": "France",
+                                                "postcode": 35281,
+                                                "coordinates": {
+                                                    "latitude": "-62.6947",
+                                                    "longitude": "-15.2378"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+5:45",
+                                                    "description": "Kathmandu"
+                                                }
+                                            },
+                                            "email": "solene.carpentier@example.com",
+                                            "login": {
+                                                "uuid": "c72ab783-3ad7-49ef-8f6e-6db94f5538f6",
+                                                "username": "redelephant979",
+                                                "password": "191919",
+                                                "salt": "PYocshDe",
+                                                "md5": "1105fee7203277eefa945e42fd11f751",
+                                                "sha1": "03af7ddccfbdc4cd6372b20b147f4e4d7b642c31",
+                                                "sha256": "d041dee040d2f9b96511c5b762a3c5bdc0336419c24bc1e3fad92cd1fb586713"
+                                            },
+                                            "dob": {
+                                                "date": "1952-02-27T21:16:30.826Z",
+                                                "age": 71
+                                            },
+                                            "registered": {
+                                                "date": "2010-09-11T23:34:03.020Z",
+                                                "age": 13
+                                            },
+                                            "phone": "05-03-85-16-14",
+                                            "cell": "06-26-62-36-92",
+                                            "id": {
+                                                "name": "INSEE",
+                                                "value": "2520155508938 75"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/70.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/70.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/70.jpg"
+                                            },
+                                            "nat": "FR"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Ms",
+                                                "first": "Annette",
+                                                "last": "Buch"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 6847,
+                                                    "name": "Fliederweg"
+                                                },
+                                                "city": "Delitzsch",
+                                                "state": "Bremen",
+                                                "country": "Germany",
+                                                "postcode": 53857,
+                                                "coordinates": {
+                                                    "latitude": "-71.8282",
+                                                    "longitude": "-172.3603"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+11:00",
+                                                    "description": "Magadan, Solomon Islands, New Caledonia"
+                                                }
+                                            },
+                                            "email": "annette.buch@example.com",
+                                            "login": {
+                                                "uuid": "80023266-b2f6-46a5-83b0-606f328fcfb6",
+                                                "username": "sadladybug648",
+                                                "password": "jedi",
+                                                "salt": "5unH3H8y",
+                                                "md5": "a0ec6cd0d883904d221bbdfa42b9f076",
+                                                "sha1": "cedc5dfcd59ec92edf3ef464f08d167d57204043",
+                                                "sha256": "9366914a6d106cc18c1bd319c358c3ebf3f35be355ed3e1853abb3fdf59b9d5d"
+                                            },
+                                            "dob": {
+                                                "date": "1953-10-29T22:10:55.980Z",
+                                                "age": 70
+                                            },
+                                            "registered": {
+                                                "date": "2009-09-08T06:07:26.462Z",
+                                                "age": 14
+                                            },
+                                            "phone": "0848-2872898",
+                                            "cell": "0170-6917409",
+                                            "id": {
+                                                "name": "SVNR",
+                                                "value": "02 291053 B 967"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/54.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/54.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/54.jpg"
+                                            },
+                                            "nat": "DE"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Ms",
+                                                "first": "\u06cc\u0627\u0633\u0645\u06cc\u0646",
+                                                "last": "\u06a9\u0627\u0645\u0631\u0648\u0627"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 8648,
+                                                    "name": "\u0633\u062a\u0627\u0631\u062e\u0627\u0646"
+                                                },
+                                                "city": "\u0631\u0634\u062a",
+                                                "state": "\u06af\u0644\u0633\u062a\u0627\u0646",
+                                                "country": "Iran",
+                                                "postcode": 24955,
+                                                "coordinates": {
+                                                    "latitude": "55.2932",
+                                                    "longitude": "0.5055"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+4:30",
+                                                    "description": "Kabul"
+                                                }
+                                            },
+                                            "email": "ysmyn.khmrw@example.com",
+                                            "login": {
+                                                "uuid": "25ae56a5-a82e-4681-9c7a-c0ab8bb853ce",
+                                                "username": "bigpanda358",
+                                                "password": "customer",
+                                                "salt": "rIuRNNRw",
+                                                "md5": "38a3c1b35ef7531bd5c714bd12d6e51b",
+                                                "sha1": "45bfc14883183387e0365df7119fa64ebce25afb",
+                                                "sha256": "79e07d7ee33bf82ca49ee6d919ca8a925fc72d0a94119539bb3c6df1bf3f9932"
+                                            },
+                                            "dob": {
+                                                "date": "1948-09-05T21:34:58.670Z",
+                                                "age": 75
+                                            },
+                                            "registered": {
+                                                "date": "2018-11-19T05:17:10.602Z",
+                                                "age": 5
+                                            },
+                                            "phone": "074-74110457",
+                                            "cell": "0939-265-9425",
+                                            "id": {
+                                                "name": "",
+                                                "value": null
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/70.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/70.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/70.jpg"
+                                            },
+                                            "nat": "IR"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Miss",
+                                                "first": "Pinja",
+                                                "last": "Kallio"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 6649,
+                                                    "name": "Aleksanterinkatu"
+                                                },
+                                                "city": "Porvoo",
+                                                "state": "Kainuu",
+                                                "country": "Finland",
+                                                "postcode": 39270,
+                                                "coordinates": {
+                                                    "latitude": "88.2341",
+                                                    "longitude": "158.5675"
+                                                },
+                                                "timezone": {
+                                                    "offset": "-4:00",
+                                                    "description": "Atlantic Time (Canada), Caracas, La Paz"
+                                                }
+                                            },
+                                            "email": "pinja.kallio@example.com",
+                                            "login": {
+                                                "uuid": "dece6181-f96a-46d9-a071-5a593e0942b5",
+                                                "username": "yellowsnake919",
+                                                "password": "swords",
+                                                "salt": "5hIPfAUI",
+                                                "md5": "2259f3f19185b912325afae8add88f17",
+                                                "sha1": "43ed26455aab5d1bad8fa420a04e023999dc98b8",
+                                                "sha256": "f01aa1dcb90c9e5fc82df3031043f43a0e56b101e829a465c34b4d9ba1fefd8f"
+                                            },
+                                            "dob": {
+                                                "date": "1982-07-24T03:39:41.233Z",
+                                                "age": 41
+                                            },
+                                            "registered": {
+                                                "date": "2008-09-13T19:59:42.781Z",
+                                                "age": 15
+                                            },
+                                            "phone": "05-473-221",
+                                            "cell": "047-748-84-66",
+                                            "id": {
+                                                "name": "HETU",
+                                                "value": "NaNNA030undefined"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/89.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/89.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/89.jpg"
+                                            },
+                                            "nat": "FI"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Miss",
+                                                "first": "Emma",
+                                                "last": "Poulsen"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 9398,
+                                                    "name": "Bakkekammen"
+                                                },
+                                                "city": "Horsens",
+                                                "state": "Danmark",
+                                                "country": "Denmark",
+                                                "postcode": 84915,
+                                                "coordinates": {
+                                                    "latitude": "51.8977",
+                                                    "longitude": "92.7910"
+                                                },
+                                                "timezone": {
+                                                    "offset": "-2:00",
+                                                    "description": "Mid-Atlantic"
+                                                }
+                                            },
+                                            "email": "emma.poulsen@example.com",
+                                            "login": {
+                                                "uuid": "bcfe1a49-52dc-4b0d-8e27-b62e4e048ea7",
+                                                "username": "yellowmeercat241",
+                                                "password": "lloyd",
+                                                "salt": "WpOVEiaq",
+                                                "md5": "f665fefd538fc5eda07044467411448b",
+                                                "sha1": "2257b411aedf074ce6612e98b76dd20390d0b949",
+                                                "sha256": "23cbc82a54a2fd9e8c175974841032de3ce7100bd5e9e6c22a0018a01352cedd"
+                                            },
+                                            "dob": {
+                                                "date": "1979-03-30T04:47:55.932Z",
+                                                "age": 44
+                                            },
+                                            "registered": {
+                                                "date": "2006-07-11T11:58:56.760Z",
+                                                "age": 17
+                                            },
+                                            "phone": "27944083",
+                                            "cell": "85398671",
+                                            "id": {
+                                                "name": "CPR",
+                                                "value": "290379-6743"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/90.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/90.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/90.jpg"
+                                            },
+                                            "nat": "DK"
+                                        }
+                                    ],
+                                    "info": {
+                                        "seed": "2017be2590858c21",
+                                        "results": 10,
+                                        "page": 1,
+                                        "version": "1.4"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/plain; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "Not Found"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema_api": {}
+        }
+    }
+}

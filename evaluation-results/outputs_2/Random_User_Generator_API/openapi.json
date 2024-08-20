@@ -1,0 +1,587 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Random User Generator API",
+        "description": "**API Description** - The Random User Generator API is an API that generates random user data for testing and prototyping purposes.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "https://randomuser.me/documentation",
+        "contact": {
+            "name": "Random User Generator API Contact",
+            "url": "",
+            "email": "support@randomuser.me"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://randomuser.me",
+            "description": "Production Server of the Random User Generator API.",
+            "x-base-routes": 1
+        }
+    ],
+    "externalDocs": {
+        "url": "https://randomuser.me/documentation",
+        "description": "Find more about the Random User Generator API here:"
+    },
+    "paths": {
+        "": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "gender",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "female": {
+                                "value": "female"
+                            },
+                            "male": {
+                                "value": "male"
+                            },
+                            "men": {
+                                "value": "men"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nat",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "us": {
+                                "value": "us"
+                            },
+                            "gb": {
+                                "value": "gb"
+                            },
+                            "fr": {
+                                "value": "fr"
+                            },
+                            "es": {
+                                "value": "es"
+                            },
+                            "au": {
+                                "value": "au"
+                            }
+                        }
+                    },
+                    {
+                        "name": "results",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            },
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "inc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name,email": {
+                                "value": "name,email"
+                            },
+                            "gender,name,email": {
+                                "value": "gender,name,email"
+                            },
+                            "name,dob": {
+                                "value": "name,dob"
+                            },
+                            "login,dob": {
+                                "value": "login,dob"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "login": {
+                                "value": "login"
+                            },
+                            "login,registered": {
+                                "value": "login,registered"
+                            }
+                        }
+                    },
+                    {
+                        "name": "seed",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "123": {
+                                "value": "123"
+                            },
+                            "random": {
+                                "value": "random"
+                            },
+                            "abc123": {
+                                "value": "abc123"
+                            },
+                            "12345": {
+                                "value": "12345"
+                            },
+                            "xyz789": {
+                                "value": "xyz789"
+                            },
+                            "abcdef": {
+                                "value": "abcdef"
+                            },
+                            "myseed": {
+                                "value": "myseed"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "noinfo",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "json": {
+                                "value": "json"
+                            },
+                            "csv": {
+                                "value": "csv"
+                            }
+                        }
+                    },
+                    {
+                        "name": "dob",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "1980-01-01": {
+                                "value": "1980-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nationality",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "us": {
+                                "value": "us"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lego",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "yes": {
+                                "value": "yes"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema"
+                                },
+                                "example": {
+                                    "results": [
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Miss",
+                                                "first": "Avery",
+                                                "last": "Lopez"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 1875,
+                                                    "name": "Green Rd"
+                                                },
+                                                "city": "Saint Paul",
+                                                "state": "Ohio",
+                                                "country": "United States",
+                                                "postcode": 14604,
+                                                "coordinates": {
+                                                    "latitude": "-74.3288",
+                                                    "longitude": "140.7604"
+                                                },
+                                                "timezone": {
+                                                    "offset": "-1:00",
+                                                    "description": "Azores, Cape Verde Islands"
+                                                }
+                                            },
+                                            "email": "avery.lopez@example.com",
+                                            "login": {
+                                                "uuid": "181625ca-0551-4333-8928-388fc3d00fad",
+                                                "username": "orangeelephant569",
+                                                "password": "beverly",
+                                                "salt": "vwglpoaL",
+                                                "md5": "436c921d83361c950e07f6eebb714432",
+                                                "sha1": "01a1d76a2f1e11e2468444633a64c4448eaf28c6",
+                                                "sha256": "a807ec7261de4dc022b7ef595fb0752e051c80c97a443aaf5b56adbf8b6a40b1"
+                                            },
+                                            "dob": {
+                                                "date": "1976-01-16T22:11:43.330Z",
+                                                "age": 47
+                                            },
+                                            "registered": {
+                                                "date": "2022-04-08T20:29:24.274Z",
+                                                "age": 1
+                                            },
+                                            "phone": "(380) 296-8208",
+                                            "cell": "(541) 642-7413",
+                                            "id": {
+                                                "name": "SSN",
+                                                "value": "372-14-7267"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/77.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/77.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/77.jpg"
+                                            },
+                                            "nat": "US"
+                                        },
+                                        {
+                                            "gender": "male",
+                                            "name": {
+                                                "title": "Mr",
+                                                "first": "Ethan",
+                                                "last": "Rhodes"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 7829,
+                                                    "name": "Northaven Rd"
+                                                },
+                                                "city": "Gresham",
+                                                "state": "Pennsylvania",
+                                                "country": "United States",
+                                                "postcode": 18049,
+                                                "coordinates": {
+                                                    "latitude": "-38.2405",
+                                                    "longitude": "-165.8114"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+5:45",
+                                                    "description": "Kathmandu"
+                                                }
+                                            },
+                                            "email": "ethan.rhodes@example.com",
+                                            "login": {
+                                                "uuid": "e671964c-7255-4b43-bb4a-c875bcc86b1e",
+                                                "username": "blueduck545",
+                                                "password": "biggles",
+                                                "salt": "3P6pWESo",
+                                                "md5": "79cf97adfeccca9f6fc591a3acef2be9",
+                                                "sha1": "de074822957f1736f50b1ca1435b7fbe8319299e",
+                                                "sha256": "4516a5d780ada84977458e390d76b4ec624813796569c21708d437e5661d9ce3"
+                                            },
+                                            "dob": {
+                                                "date": "1973-04-06T05:23:57.675Z",
+                                                "age": 50
+                                            },
+                                            "registered": {
+                                                "date": "2018-04-05T14:45:19.363Z",
+                                                "age": 5
+                                            },
+                                            "phone": "(892) 500-6024",
+                                            "cell": "(903) 353-2206",
+                                            "id": {
+                                                "name": "SSN",
+                                                "value": "369-92-0490"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/men/75.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/men/75.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+                                            },
+                                            "nat": "US"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Mrs",
+                                                "first": "Arianna",
+                                                "last": "Turner"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 639,
+                                                    "name": "Groveland Terrace"
+                                                },
+                                                "city": "Pasadena",
+                                                "state": "Tennessee",
+                                                "country": "United States",
+                                                "postcode": 77215,
+                                                "coordinates": {
+                                                    "latitude": "31.5243",
+                                                    "longitude": "154.0326"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+9:30",
+                                                    "description": "Adelaide, Darwin"
+                                                }
+                                            },
+                                            "email": "arianna.turner@example.com",
+                                            "login": {
+                                                "uuid": "3c7b3233-78cc-4de3-b00a-147e16395441",
+                                                "username": "organicgorilla246",
+                                                "password": "mother1",
+                                                "salt": "n0ytBoMG",
+                                                "md5": "b54f20ce15a93471411258c00ed3100b",
+                                                "sha1": "6d54a60f9523dcd1aebaa68285b9ed10ab3693b8",
+                                                "sha256": "a30ec4de805c863c6b5979f1dd4b85159baa0dce643ab2d5c62107a1f21d966e"
+                                            },
+                                            "dob": {
+                                                "date": "1989-07-22T00:21:54.026Z",
+                                                "age": 34
+                                            },
+                                            "registered": {
+                                                "date": "2009-07-28T01:55:36.629Z",
+                                                "age": 14
+                                            },
+                                            "phone": "(216) 707-8052",
+                                            "cell": "(911) 218-6990",
+                                            "id": {
+                                                "name": "SSN",
+                                                "value": "428-26-9227"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/39.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/39.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/39.jpg"
+                                            },
+                                            "nat": "US"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Mrs",
+                                                "first": "Krin",
+                                                "last": "Cook"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 5735,
+                                                    "name": "Crockett St"
+                                                },
+                                                "city": "Miami Gardens",
+                                                "state": "Idaho",
+                                                "country": "United States",
+                                                "postcode": 66497,
+                                                "coordinates": {
+                                                    "latitude": "19.1647",
+                                                    "longitude": "-41.5966"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+1:00",
+                                                    "description": "Brussels, Copenhagen, Madrid, Paris"
+                                                }
+                                            },
+                                            "email": "krin.cook@example.com",
+                                            "login": {
+                                                "uuid": "9ee316e0-b91e-46e1-9adb-3f6473989962",
+                                                "username": "silvergoose563",
+                                                "password": "huai",
+                                                "salt": "KhFomypa",
+                                                "md5": "1dd16dab7aedfef2a77e7e4f8f55f2e4",
+                                                "sha1": "72497c182cece69278956f6a5afa809c883fe101",
+                                                "sha256": "101fd8094b09ca5e7d6dac2cc065dfa989d0fbcfe7f967393f4f68c4a828ad9c"
+                                            },
+                                            "dob": {
+                                                "date": "1946-03-02T00:01:27.044Z",
+                                                "age": 77
+                                            },
+                                            "registered": {
+                                                "date": "2020-06-01T08:37:14.637Z",
+                                                "age": 3
+                                            },
+                                            "phone": "(381) 767-3756",
+                                            "cell": "(742) 875-0445",
+                                            "id": {
+                                                "name": "SSN",
+                                                "value": "140-82-9579"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/68.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/68.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/68.jpg"
+                                            },
+                                            "nat": "US"
+                                        },
+                                        {
+                                            "gender": "female",
+                                            "name": {
+                                                "title": "Mrs",
+                                                "first": "Christine",
+                                                "last": "Peck"
+                                            },
+                                            "location": {
+                                                "street": {
+                                                    "number": 2145,
+                                                    "name": "Mcclellan Rd"
+                                                },
+                                                "city": "Ann Arbor",
+                                                "state": "Illinois",
+                                                "country": "United States",
+                                                "postcode": 21318,
+                                                "coordinates": {
+                                                    "latitude": "52.4121",
+                                                    "longitude": "-48.7819"
+                                                },
+                                                "timezone": {
+                                                    "offset": "+11:00",
+                                                    "description": "Magadan, Solomon Islands, New Caledonia"
+                                                }
+                                            },
+                                            "email": "christine.peck@example.com",
+                                            "login": {
+                                                "uuid": "611ab0bd-093f-4131-aeaf-f073d3af33c1",
+                                                "username": "yellowfrog228",
+                                                "password": "lilith",
+                                                "salt": "K3YOtkdJ",
+                                                "md5": "00bfb5e06d7a64d705bf6ea5b0feba5f",
+                                                "sha1": "c573334e5ee5cd0a32e4edda91d6187f7e91c3b7",
+                                                "sha256": "70017c6ae794e15f374708f629f7d056c951019b41c0b227b366b3cf4cc1c800"
+                                            },
+                                            "dob": {
+                                                "date": "1982-03-03T17:21:06.627Z",
+                                                "age": 41
+                                            },
+                                            "registered": {
+                                                "date": "2008-12-20T15:49:07.616Z",
+                                                "age": 14
+                                            },
+                                            "phone": "(979) 215-4792",
+                                            "cell": "(849) 572-0162",
+                                            "id": {
+                                                "name": "SSN",
+                                                "value": "670-83-0694"
+                                            },
+                                            "picture": {
+                                                "large": "https://randomuser.me/api/portraits/women/79.jpg",
+                                                "medium": "https://randomuser.me/api/portraits/med/women/79.jpg",
+                                                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/79.jpg"
+                                            },
+                                            "nat": "US"
+                                        }
+                                    ],
+                                    "info": {
+                                        "seed": "bfcebfc0afb7d9e3",
+                                        "results": 5,
+                                        "page": 1,
+                                        "version": "1.4"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/plain; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "Not Found"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema": {}
+        }
+    }
+}

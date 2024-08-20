@@ -1,0 +1,1619 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "CheapShark API",
+        "description": "**API Description** - CheapShark API is an application programming interface that provides access to data related to video game prices, deals, and stores from CheapShark, a price comparison website.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "https://apidocs.cheapshark.com",
+        "contact": {
+            "name": "CheapShark API Contact",
+            "url": "",
+            "email": "The e-mail address used to contact the 'CheapShark API' is contact@cheapshark.com"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://www.cheapshark.com",
+            "description": "Production Server of the CheapShark API.",
+            "x-base-routes": 1
+        }
+    ],
+    "externalDocs": {
+        "url": "https://apidocs.cheapshark.com",
+        "description": "Find more about the CheapShark API here:"
+    },
+    "paths": {
+        "/api/1.0/deals": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "storeID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "50": {
+                                "value": "50"
+                            },
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Assassin's+Creed": {
+                                "value": "Assassin's+Creed"
+                            },
+                            "game": {
+                                "value": "game"
+                            },
+                            "fallout": {
+                                "value": "fallout"
+                            },
+                            "example": {
+                                "value": "example"
+                            }
+                        }
+                    },
+                    {
+                        "name": "category",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "action": {
+                                "value": "action"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "price": {
+                                "value": "price"
+                            },
+                            "savings": {
+                                "value": "savings"
+                            }
+                        }
+                    },
+                    {
+                        "name": "desc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "0": {
+                                "value": "0"
+                            }
+                        }
+                    },
+                    {
+                        "name": "onSale",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exact",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "0": {
+                                "value": "0"
+                            },
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "AAA",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "0": {
+                                "value": "0"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamworks",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamRating",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "9": {
+                                "value": "9"
+                            }
+                        }
+                    },
+                    {
+                        "name": "metacritic",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "80": {
+                                "value": "80"
+                            },
+                            "90": {
+                                "value": "90"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "upperPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "30": {
+                                "value": "30"
+                            },
+                            "20": {
+                                "value": "20"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lowerPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamAppID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "105600": {
+                                "value": "105600"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageNumber",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_1.0_deals"
+                                },
+                                "example": [
+                                    {
+                                        "internalName": "THETALOSPRINCIPLE2",
+                                        "title": "The Talos Principle 2",
+                                        "metacriticLink": "/game/the-talos-principle-2/",
+                                        "dealID": "4W2IDqAbHg4yctS9Us4GlOqtb0fVPszTyd4D96iNHi8%3D",
+                                        "storeID": "1",
+                                        "gameID": "274143",
+                                        "salePrice": "29.68",
+                                        "normalPrice": "59.98",
+                                        "isOnSale": "1",
+                                        "savings": "50.516839",
+                                        "metacriticScore": "88",
+                                        "steamRatingText": "Overwhelmingly Positive",
+                                        "steamRatingPercent": "95",
+                                        "steamRatingCount": "3660",
+                                        "steamAppID": "835960",
+                                        "releaseDate": 1698883200,
+                                        "lastChange": 1700592203,
+                                        "dealRating": "10.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/835960/capsule_sm_120.jpg?t=1700476673"
+                                    },
+                                    {
+                                        "internalName": "BLOODWEST",
+                                        "title": "Blood West",
+                                        "metacriticLink": "/game/blood-west/",
+                                        "dealID": "vdBk5DpXsJ2M5zPLRfd%2Fz7j0Jrom4ZaSFeAYmaK5cPY%3D",
+                                        "storeID": "1",
+                                        "gameID": "240552",
+                                        "salePrice": "22.38",
+                                        "normalPrice": "39.98",
+                                        "isOnSale": "1",
+                                        "savings": "44.022011",
+                                        "metacriticScore": "0",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "92",
+                                        "steamRatingCount": "1709",
+                                        "steamAppID": "1587130",
+                                        "releaseDate": 1701734400,
+                                        "lastChange": 1700592383,
+                                        "dealRating": "10.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/1587130/capsule_sm_120.jpg?t=1700577576"
+                                    },
+                                    {
+                                        "internalName": "HALFLIFE",
+                                        "title": "Half-Life",
+                                        "metacriticLink": "/game/half-life/",
+                                        "dealID": "G%2BXAA0GGjaN4wXzRSpEpKtspbGp%2Bz3TJoNnhJI72Bug%3D",
+                                        "storeID": "1",
+                                        "gameID": "75",
+                                        "salePrice": "0.99",
+                                        "normalPrice": "9.99",
+                                        "isOnSale": "1",
+                                        "savings": "90.090090",
+                                        "metacriticScore": "96",
+                                        "steamRatingText": "Overwhelmingly Positive",
+                                        "steamRatingPercent": "96",
+                                        "steamRatingCount": "82587",
+                                        "steamAppID": "70",
+                                        "releaseDate": 911433600,
+                                        "lastChange": 1700515369,
+                                        "dealRating": "10.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/70/capsule_sm_120.jpg?t=1700269108"
+                                    },
+                                    {
+                                        "internalName": "PORTAL2",
+                                        "title": "Portal 2",
+                                        "metacriticLink": "/game/portal-2/",
+                                        "dealID": "rwQ2JCEr5NOySyBsAj6fyPuZg4qMlh9w67U%2BmM6b2VE%3D",
+                                        "storeID": "1",
+                                        "gameID": "36",
+                                        "salePrice": "0.99",
+                                        "normalPrice": "9.99",
+                                        "isOnSale": "1",
+                                        "savings": "90.090090",
+                                        "metacriticScore": "95",
+                                        "steamRatingText": "Overwhelmingly Positive",
+                                        "steamRatingPercent": "98",
+                                        "steamRatingCount": "300507",
+                                        "steamAppID": "620",
+                                        "releaseDate": 1303084800,
+                                        "lastChange": 1700592224,
+                                        "dealRating": "10.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/620/capsule_sm_120.jpg?t=1698805825"
+                                    },
+                                    {
+                                        "internalName": "HALFLIFE2",
+                                        "title": "Half-Life 2",
+                                        "metacriticLink": "/game/half-life-2/",
+                                        "dealID": "Vz5eZMF1sKvs02I4cuEgrGnmM1r%2BkWHig0YMa0lJ0vM%3D",
+                                        "storeID": "1",
+                                        "gameID": "59",
+                                        "salePrice": "0.99",
+                                        "normalPrice": "9.99",
+                                        "isOnSale": "1",
+                                        "savings": "90.090090",
+                                        "metacriticScore": "96",
+                                        "steamRatingText": "Overwhelmingly Positive",
+                                        "steamRatingPercent": "97",
+                                        "steamRatingCount": "138024",
+                                        "steamAppID": "220",
+                                        "releaseDate": 1100563200,
+                                        "lastChange": 1700246140,
+                                        "dealRating": "10.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/220/capsule_sm_120.jpg?t=1699003213"
+                                    },
+                                    {
+                                        "internalName": "PORTAL",
+                                        "title": "Portal",
+                                        "metacriticLink": "/game/portal/",
+                                        "dealID": "rPSCN3%2FJpoZ0SjQ%2FgDXvmCifMHiePHA9JjbUPcGPS3w%3D",
+                                        "storeID": "1",
+                                        "gameID": "82",
+                                        "salePrice": "0.99",
+                                        "normalPrice": "9.99",
+                                        "isOnSale": "1",
+                                        "savings": "90.090090",
+                                        "metacriticScore": "90",
+                                        "steamRatingText": "Overwhelmingly Positive",
+                                        "steamRatingPercent": "98",
+                                        "steamRatingCount": "121615",
+                                        "steamAppID": "400",
+                                        "releaseDate": 1191974400,
+                                        "lastChange": 1700592249,
+                                        "dealRating": "10.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/400/capsule_sm_120.jpg?t=1699003695"
+                                    },
+                                    {
+                                        "internalName": "METRO2033REDUX",
+                                        "title": "Metro 2033 Redux",
+                                        "metacriticLink": "/game/metro-2033-redux/",
+                                        "dealID": "o35o2DS12hd%2BlYrHgmxPiMry13keOtIO83Cziy6I2l8%3D",
+                                        "storeID": "1",
+                                        "gameID": "109746",
+                                        "salePrice": "1.99",
+                                        "normalPrice": "19.99",
+                                        "isOnSale": "1",
+                                        "savings": "90.045023",
+                                        "metacriticScore": "90",
+                                        "steamRatingText": "Very Positive",
+                                        "steamRatingPercent": "89",
+                                        "steamRatingCount": "67249",
+                                        "steamAppID": "286690",
+                                        "releaseDate": 1408924800,
+                                        "lastChange": 1700592343,
+                                        "dealRating": "10.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/286690/capsule_sm_120.jpg?t=1669390794"
+                                    },
+                                    {
+                                        "internalName": "LEFT4DEAD2",
+                                        "title": "Left 4 Dead 2",
+                                        "metacriticLink": "/game/left-4-dead-2/",
+                                        "dealID": "hz73JxyUB2xNG3rNqBY7V2XKj9UTE2dWUIZAfmTdvMk%3D",
+                                        "storeID": "1",
+                                        "gameID": "43",
+                                        "salePrice": "0.99",
+                                        "normalPrice": "9.99",
+                                        "isOnSale": "1",
+                                        "savings": "90.090090",
+                                        "metacriticScore": "89",
+                                        "steamRatingText": "Overwhelmingly Positive",
+                                        "steamRatingPercent": "97",
+                                        "steamRatingCount": "592645",
+                                        "steamAppID": "550",
+                                        "releaseDate": 1258329600,
+                                        "lastChange": 1700592208,
+                                        "dealRating": "10.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/550/capsule_sm_120.jpg?t=1675801903"
+                                    },
+                                    {
+                                        "internalName": "LEFT4DEAD",
+                                        "title": "Left 4 Dead",
+                                        "metacriticLink": "/game/left-4-dead/",
+                                        "dealID": "xxeBJdYG2vuyKEIu7s6tKMIYsElCCXpQq9sFQuBQsKU%3D",
+                                        "storeID": "1",
+                                        "gameID": "107",
+                                        "salePrice": "0.99",
+                                        "normalPrice": "9.99",
+                                        "isOnSale": "1",
+                                        "savings": "90.090090",
+                                        "metacriticScore": "89",
+                                        "steamRatingText": "Overwhelmingly Positive",
+                                        "steamRatingPercent": "96",
+                                        "steamRatingCount": "42808",
+                                        "steamAppID": "500",
+                                        "releaseDate": 1226880000,
+                                        "lastChange": 1700592258,
+                                        "dealRating": "10.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/500/capsule_sm_120.jpg?t=1699003822"
+                                    },
+                                    {
+                                        "internalName": "COUNTERSTRIKESOURCE",
+                                        "title": "Counter-Strike: Source",
+                                        "metacriticLink": "/game/counter-strike-source/",
+                                        "dealID": "FMLp0LRsw1NIWESWgZ8Qlk%2B7qR14NQIeUAETjoU3yDI%3D",
+                                        "storeID": "1",
+                                        "gameID": "47",
+                                        "salePrice": "0.99",
+                                        "normalPrice": "9.99",
+                                        "isOnSale": "1",
+                                        "savings": "90.090090",
+                                        "metacriticScore": "88",
+                                        "steamRatingText": "Overwhelmingly Positive",
+                                        "steamRatingPercent": "96",
+                                        "steamRatingCount": "109571",
+                                        "steamAppID": "240",
+                                        "releaseDate": 1097107200,
+                                        "lastChange": 1700592261,
+                                        "dealRating": "10.0",
+                                        "thumb": "https://cdn.cloudflare.steamstatic.com/steam/apps/240/capsule_sm_120.jpg?t=1666823740"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<title>Not Found | CheapShark</title>\n<meta name=\"description\" content=\"404 Page Not Found!\" />\n<meta name=\"robots\" content=\"noindex\">\n\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n<meta name=\"keywords\" content=\"game,deals,steam,digital,downloads,pc,sales,compare,prices,search,gamersgate,greenmangaming,gog\">\n<meta property=\"og:title\" ..."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/1.0/stores": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "storeID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "2": {
+                                "value": "2"
+                            },
+                            "3": {
+                                "value": "3"
+                            },
+                            "4": {
+                                "value": "4"
+                            },
+                            "5": {
+                                "value": "5"
+                            },
+                            "6": {
+                                "value": "6"
+                            },
+                            "7": {
+                                "value": "7"
+                            },
+                            "8": {
+                                "value": "8"
+                            },
+                            "9": {
+                                "value": "9"
+                            },
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name": {
+                                "value": "name"
+                            },
+                            "rating": {
+                                "value": "rating"
+                            },
+                            "price": {
+                                "value": "price"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageNumber",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "2": {
+                                "value": "2"
+                            },
+                            "3": {
+                                "value": "3"
+                            }
+                        }
+                    },
+                    {
+                        "name": "resultsPerPage",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "US": {
+                                "value": "US"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "desc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "0": {
+                                "value": "0"
+                            },
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "game": {
+                                "value": "game"
+                            },
+                            "example": {
+                                "value": "example"
+                            },
+                            "fallout": {
+                                "value": "fallout"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exact",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "0": {
+                                "value": "0"
+                            }
+                        }
+                    },
+                    {
+                        "name": "onSale",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "metacritic",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "80": {
+                                "value": "80"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamRating",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "90": {
+                                "value": "90"
+                            },
+                            "positive": {
+                                "value": "positive"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "AAA",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "upperPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lowerPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_1.0_stores"
+                                },
+                                "example": [
+                                    {
+                                        "storeID": "1",
+                                        "storeName": "Steam",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/0.png",
+                                            "logo": "/img/stores/logos/0.png",
+                                            "icon": "/img/stores/icons/0.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "2",
+                                        "storeName": "GamersGate",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/1.png",
+                                            "logo": "/img/stores/logos/1.png",
+                                            "icon": "/img/stores/icons/1.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "3",
+                                        "storeName": "GreenManGaming",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/2.png",
+                                            "logo": "/img/stores/logos/2.png",
+                                            "icon": "/img/stores/icons/2.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "4",
+                                        "storeName": "Amazon",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/3.png",
+                                            "logo": "/img/stores/logos/3.png",
+                                            "icon": "/img/stores/icons/3.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "5",
+                                        "storeName": "GameStop",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/4.png",
+                                            "logo": "/img/stores/logos/4.png",
+                                            "icon": "/img/stores/icons/4.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "6",
+                                        "storeName": "Direct2Drive",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/5.png",
+                                            "logo": "/img/stores/logos/5.png",
+                                            "icon": "/img/stores/icons/5.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "7",
+                                        "storeName": "GOG",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/6.png",
+                                            "logo": "/img/stores/logos/6.png",
+                                            "icon": "/img/stores/icons/6.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "8",
+                                        "storeName": "Origin",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/7.png",
+                                            "logo": "/img/stores/logos/7.png",
+                                            "icon": "/img/stores/icons/7.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "9",
+                                        "storeName": "Get Games",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/8.png",
+                                            "logo": "/img/stores/logos/8.png",
+                                            "icon": "/img/stores/icons/8.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "10",
+                                        "storeName": "Shiny Loot",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/9.png",
+                                            "logo": "/img/stores/logos/9.png",
+                                            "icon": "/img/stores/icons/9.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "11",
+                                        "storeName": "Humble Store",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/10.png",
+                                            "logo": "/img/stores/logos/10.png",
+                                            "icon": "/img/stores/icons/10.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "12",
+                                        "storeName": "Desura",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/11.png",
+                                            "logo": "/img/stores/logos/11.png",
+                                            "icon": "/img/stores/icons/11.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "13",
+                                        "storeName": "Uplay",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/12.png",
+                                            "logo": "/img/stores/logos/12.png",
+                                            "icon": "/img/stores/icons/12.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "14",
+                                        "storeName": "IndieGameStand",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/13.png",
+                                            "logo": "/img/stores/logos/13.png",
+                                            "icon": "/img/stores/icons/13.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "15",
+                                        "storeName": "Fanatical",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/14.png",
+                                            "logo": "/img/stores/logos/14.png",
+                                            "icon": "/img/stores/icons/14.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "16",
+                                        "storeName": "Gamesrocket",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/15.png",
+                                            "logo": "/img/stores/logos/15.png",
+                                            "icon": "/img/stores/icons/15.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "17",
+                                        "storeName": "Games Republic",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/16.png",
+                                            "logo": "/img/stores/logos/16.png",
+                                            "icon": "/img/stores/icons/16.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "18",
+                                        "storeName": "SilaGames",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/17.png",
+                                            "logo": "/img/stores/logos/17.png",
+                                            "icon": "/img/stores/icons/17.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "19",
+                                        "storeName": "Playfield",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/18.png",
+                                            "logo": "/img/stores/logos/18.png",
+                                            "icon": "/img/stores/icons/18.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "20",
+                                        "storeName": "ImperialGames",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/19.png",
+                                            "logo": "/img/stores/logos/19.png",
+                                            "icon": "/img/stores/icons/19.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "21",
+                                        "storeName": "WinGameStore",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/20.png",
+                                            "logo": "/img/stores/logos/20.png",
+                                            "icon": "/img/stores/icons/20.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "22",
+                                        "storeName": "FunStockDigital",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/21.png",
+                                            "logo": "/img/stores/logos/21.png",
+                                            "icon": "/img/stores/icons/21.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "23",
+                                        "storeName": "GameBillet",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/22.png",
+                                            "logo": "/img/stores/logos/22.png",
+                                            "icon": "/img/stores/icons/22.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "24",
+                                        "storeName": "Voidu",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/23.png",
+                                            "logo": "/img/stores/logos/23.png",
+                                            "icon": "/img/stores/icons/23.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "25",
+                                        "storeName": "Epic Games Store",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/24.png",
+                                            "logo": "/img/stores/logos/24.png",
+                                            "icon": "/img/stores/icons/24.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "26",
+                                        "storeName": "Razer Game Store",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/25.png",
+                                            "logo": "/img/stores/logos/25.png",
+                                            "icon": "/img/stores/icons/25.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "27",
+                                        "storeName": "Gamesplanet",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/26.png",
+                                            "logo": "/img/stores/logos/26.png",
+                                            "icon": "/img/stores/icons/26.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "28",
+                                        "storeName": "Gamesload",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/27.png",
+                                            "logo": "/img/stores/logos/27.png",
+                                            "icon": "/img/stores/icons/27.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "29",
+                                        "storeName": "2Game",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/28.png",
+                                            "logo": "/img/stores/logos/28.png",
+                                            "icon": "/img/stores/icons/28.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "30",
+                                        "storeName": "IndieGala",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/29.png",
+                                            "logo": "/img/stores/logos/29.png",
+                                            "icon": "/img/stores/icons/29.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "31",
+                                        "storeName": "Blizzard Shop",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/30.png",
+                                            "logo": "/img/stores/logos/30.png",
+                                            "icon": "/img/stores/icons/30.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "32",
+                                        "storeName": "AllYouPlay",
+                                        "isActive": 0,
+                                        "images": {
+                                            "banner": "/img/stores/banners/31.png",
+                                            "logo": "/img/stores/logos/31.png",
+                                            "icon": "/img/stores/icons/31.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "33",
+                                        "storeName": "DLGamer",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/32.png",
+                                            "logo": "/img/stores/logos/32.png",
+                                            "icon": "/img/stores/icons/32.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "34",
+                                        "storeName": "Noctre",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/33.png",
+                                            "logo": "/img/stores/logos/33.png",
+                                            "icon": "/img/stores/icons/33.png"
+                                        }
+                                    },
+                                    {
+                                        "storeID": "35",
+                                        "storeName": "DreamGame",
+                                        "isActive": 1,
+                                        "images": {
+                                            "banner": "/img/stores/banners/34.png",
+                                            "logo": "/img/stores/logos/34.png",
+                                            "icon": "/img/stores/icons/34.png"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<title>Not Found | CheapShark</title>\n<meta name=\"description\" content=\"404 Page Not Found!\" />\n<meta name=\"robots\" content=\"noindex\">\n\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n<meta name=\"keywords\" content=\"game,deals,steam,digital,downloads,pc,sales,compare,prices,search,gamersgate,greenmangaming,gog\">\n<meta property=\"og:title\" ..."
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/1.0/games": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            },
+                            "Call+of+Duty": {
+                                "value": "Call+of+Duty"
+                            },
+                            "fallout": {
+                                "value": "fallout"
+                            },
+                            "Assassin's+Creed": {
+                                "value": "Assassin's+Creed"
+                            },
+                            "Assassin%27s%20Creed": {
+                                "value": "Assassin%27s%20Creed"
+                            },
+                            "Assassin's+Creed+Odyssey": {
+                                "value": "Assassin's+Creed+Odyssey"
+                            }
+                        }
+                    },
+                    {
+                        "name": "storeID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageSize",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            },
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamAppID",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "12345": {
+                                "value": "12345"
+                            },
+                            "1085660": {
+                                "value": "1085660"
+                            },
+                            "1020": {
+                                "value": "1020"
+                            },
+                            "115800": {
+                                "value": "115800"
+                            },
+                            "33230": {
+                                "value": "33230"
+                            },
+                            "271590": {
+                                "value": "271590"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lowerPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "upperPrice",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "price": {
+                                "value": "price"
+                            }
+                        }
+                    },
+                    {
+                        "name": "desc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "0": {
+                                "value": "0"
+                            }
+                        }
+                    },
+                    {
+                        "name": "onSale",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "AAA",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "metacritic",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "80": {
+                                "value": "80"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamRating",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "positive": {
+                                "value": "positive"
+                            }
+                        }
+                    },
+                    {
+                        "name": "steamWorks",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "price",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    },
+                    {
+                        "name": "release",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2020": {
+                                "value": "2020"
+                            }
+                        }
+                    },
+                    {
+                        "name": "pageNumber",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "id",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            },
+                            "2": {
+                                "value": "2"
+                            }
+                        }
+                    },
+                    {
+                        "name": "exact",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "0": {
+                                "value": "0"
+                            }
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_api_1.0_games"
+                                },
+                                "example": []
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "\n<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<title>Not Found | CheapShark</title>\n<meta name=\"description\" content=\"404 Page Not Found!\" />\n<meta name=\"robots\" content=\"noindex\">\n\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n<meta name=\"keywords\" content=\"game,deals,steam,digital,downloads,pc,sales,compare,prices,search,gamersgate,greenmangaming,gog\">\n<meta property=\"og:title\" ..."
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema_api_1.0_deals": {},
+            "ResponseSchema_api_1.0_stores": {},
+            "ResponseSchema_api_1.0_games": {}
+        }
+    }
+}

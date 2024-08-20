@@ -1,0 +1,282 @@
+Random seed: 12345
+Setting fuzzing schemes: directed-smoke-test
+2023-11-30 12:04:13.815: Going to fuzz a set with 4 requests
+2023-11-30 12:04:13.815: Request-0: Value Combinations: 20
+2023-11-30 12:04:13.815: Request-1: Value Combinations: 20
+2023-11-30 12:04:13.815: Request-2: Value Combinations: 20
+2023-11-30 12:04:13.815: Request-3: Value Combinations: 20
+2023-11-30 12:04:13.815: Avg. Value Combinations per Request: 20
+2023-11-30 12:04:13.815: Median Value Combinations per Request: 20.0
+2023-11-30 12:04:13.815: Min Value Combinations per Request: 20
+2023-11-30 12:04:13.815: Max Value Combinations per Request: 20
+2023-11-30 12:04:13.815: Total dependencies: 0
+
+2023-11-30 12:04:13.815: Generation: 1 / Sequences Collection Size: 4 
+(After directed-smoke-test Extend)
+
+Rendering request 0 from scratch
+
+2023-11-30 12:04:14.317: Request 0
+2023-11-30 12:04:14.317: Endpoint - /breweries
+2023-11-30 12:04:14.317: Hex Def - 0dfdf687ec6142b419522923ee9473ff6c3beec4
+2023-11-30 12:04:14.317: Sequence length that satisfies dependencies: 1
+2023-11-30 12:04:14.317: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'breweries'
+		- restler_static_string: '?'
+		- restler_static_string: 'by_city='
+		+ restler_fuzzable_string: ['Chicago', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_state='
+		+ restler_fuzzable_string: ['Illinois', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'per_page='
+		+ restler_fuzzable_int: ['10', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_name='
+		+ restler_fuzzable_string: ['ABC', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_tag='
+		+ restler_fuzzable_string: ['craft', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_type='
+		+ restler_fuzzable_string: ['micro', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_postal='
+		+ restler_fuzzable_int: ['94107', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: ['name', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'page='
+		+ restler_fuzzable_int: ['2', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'query='
+		+ restler_fuzzable_string: ['IPA', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_tagged='
+		+ restler_fuzzable_string: ['dog-friendly', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.openbrewerydb.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 1 from scratch
+
+2023-11-30 12:04:14.740: Request 1
+2023-11-30 12:04:14.740: Endpoint - /breweries/search
+2023-11-30 12:04:14.740: Hex Def - 1ae4f867643d39e4faa266dc1e7b599fc661bebb
+2023-11-30 12:04:14.740: Sequence length that satisfies dependencies: 1
+2023-11-30 12:04:14.756: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'breweries'
+		- restler_static_string: '/'
+		- restler_static_string: 'search'
+		- restler_static_string: '?'
+		- restler_static_string: 'by_city='
+		+ restler_fuzzable_string: ['Chicago', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_state='
+		+ restler_fuzzable_string: ['Illinois', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'query='
+		+ restler_fuzzable_string: ['IPA', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_name='
+		+ restler_fuzzable_string: ['BreweryName', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_tag='
+		+ restler_fuzzable_string: ['craft', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_postal='
+		+ restler_fuzzable_int: ['90210', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_distance='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'by_tags='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'per_page='
+		+ restler_fuzzable_int: ['20', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: ['example', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'page='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'q='
+		+ restler_fuzzable_string: ['California', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_type='
+		+ restler_fuzzable_string: ['micro', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_country='
+		+ restler_fuzzable_string: ['United+States', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_tagged='
+		+ restler_fuzzable_string: ['dog-friendly', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_street='
+		+ restler_fuzzable_string: ['Main+St', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_phone='
+		+ restler_fuzzable_string: ['555-123-4567', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_website='
+		+ restler_fuzzable_string: ['www.example.com', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'name='
+		+ restler_fuzzable_string: ['example', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'city='
+		+ restler_fuzzable_string: ['example', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'state='
+		+ restler_fuzzable_string: ['example', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'country='
+		+ restler_fuzzable_string: ['example', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'type='
+		+ restler_fuzzable_string: ['example', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'tag='
+		+ restler_fuzzable_string: ['example', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'phone='
+		+ restler_fuzzable_string: ['example', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'postal='
+		+ restler_fuzzable_string: ['example', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'website='
+		+ restler_fuzzable_string: ['example', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.openbrewerydb.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 2 from scratch
+
+2023-11-30 12:04:15.197: Request 2
+2023-11-30 12:04:15.197: Endpoint - /breweries/autocomplete
+2023-11-30 12:04:15.197: Hex Def - bd4a5d52ebf022aa754e944af08a6ab1bca7830c
+2023-11-30 12:04:15.197: Sequence length that satisfies dependencies: 1
+2023-11-30 12:04:15.211: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'breweries'
+		- restler_static_string: '/'
+		- restler_static_string: 'autocomplete'
+		- restler_static_string: '?'
+		- restler_static_string: 'by_city='
+		+ restler_fuzzable_string: ['Chicago', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_state='
+		+ restler_fuzzable_string: ['Illinois', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_name='
+		+ restler_fuzzable_string: ['BreweryName', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_type='
+		+ restler_fuzzable_string: ['micro', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_tag='
+		+ restler_fuzzable_string: ['dog-friendly', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_postal='
+		+ restler_fuzzable_int: ['90210', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_country='
+		+ restler_fuzzable_string: ['United+States', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_phone='
+		+ restler_fuzzable_string: ['555-1234', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_website='
+		+ restler_fuzzable_string: ['www.example.com', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'per_page='
+		+ restler_fuzzable_int: ['25', '1']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_tags='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'page='
+		- restler_fuzzable_object: '{ "fuzz": false }'
+		- restler_static_string: '&'
+		- restler_static_string: 'sort='
+		+ restler_fuzzable_string: ['state', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.openbrewerydb.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+Rendering request 3 from scratch
+
+2023-11-30 12:04:15.619: Request 3
+2023-11-30 12:04:15.619: Endpoint - /breweries/random
+2023-11-30 12:04:15.619: Hex Def - bd8e98af74db5a27ccbf017323aa46adfebc201d
+2023-11-30 12:04:15.619: Sequence length that satisfies dependencies: 1
+2023-11-30 12:04:15.619: Rendering VALID
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'breweries'
+		- restler_static_string: '/'
+		- restler_static_string: 'random'
+		- restler_static_string: '?'
+		- restler_static_string: 'by_city='
+		+ restler_fuzzable_string: ['Chicago', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_state='
+		+ restler_fuzzable_string: ['Illinois', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_name='
+		+ restler_fuzzable_string: ['BreweryName', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_tag='
+		+ restler_fuzzable_string: ['craft', 'fuzzstring']
+		- restler_static_string: '&'
+		- restler_static_string: 'by_type='
+		+ restler_fuzzable_string: ['micro', 'fuzzstring']
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: api.openbrewerydb.org\r\n'
+		+ restler_refreshable_authentication_token: ['token_auth_method', 'token_refresh_interval']
+		- restler_static_string: '\r\n'
+
+2023-11-30 12:04:15.635: Generation: 1 / Sequences Collection Size: 4 
+(After directed-smoke-test Render)
+
+2023-11-30 12:04:15.635: Final Swagger spec coverage: 4 / 4
+2023-11-30 12:04:15.635: Rendered requests: 4 / 4
+2023-11-30 12:04:15.635: Rendered requests with "valid" status codes: 4 / 4
+2023-11-30 12:04:15.635: Num fully valid requests (no resource creation failures): 4
+2023-11-30 12:04:15.635: Num requests not rendered due to invalid sequence re-renders: 0
+2023-11-30 12:04:15.635: Num invalid requests caused by failed resource creations: 0
+2023-11-30 12:04:15.635: Total Creations of Dyn Objects: 0
+2023-11-30 12:04:15.635: Total Requests Sent: {'gc': 0, 'main_driver': 4}
+2023-11-30 12:04:15.635: Bug Buckets: {}
+
+Testing completed -- below are the final stats:
+
+2023-11-30 12:04:15.667: Final Swagger spec coverage: 4 / 4
+2023-11-30 12:04:15.667: Rendered requests: 4 / 4
+2023-11-30 12:04:15.667: Rendered requests with "valid" status codes: 4 / 4
+2023-11-30 12:04:15.667: Num fully valid requests (no resource creation failures): 4
+2023-11-30 12:04:15.667: Num requests not rendered due to invalid sequence re-renders: 0
+2023-11-30 12:04:15.667: Num invalid requests caused by failed resource creations: 0
+2023-11-30 12:04:15.667: Total Creations of Dyn Objects: 0
+2023-11-30 12:04:15.667: Total Requests Sent: {'gc': 0, 'main_driver': 4}
+2023-11-30 12:04:15.667: Bug Buckets: {}

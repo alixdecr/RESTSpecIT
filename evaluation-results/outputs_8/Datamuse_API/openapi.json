@@ -1,0 +1,1335 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Datamuse API",
+        "description": "**API Description** - The Datamuse API is a word-finding and linguistic search engine that provides access to a vast database of words and related information.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "",
+        "contact": {
+            "name": "Datamuse API Contact",
+            "url": "https://www.datamuse.com/api",
+            "email": "support@datamuse.com"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://api.datamuse.com",
+            "description": "Production Server of the Datamuse API.",
+            "x-base-routes": 0
+        }
+    ],
+    "externalDocs": {
+        "url": "https://www.datamuse.com/api",
+        "description": "Find more about the Datamuse API here:"
+    },
+    "paths": {
+        "/words": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "rel_rhy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "moon": {
+                                "value": "moon"
+                            },
+                            "cat": {
+                                "value": "cat"
+                            },
+                            "hello": {
+                                "value": "hello"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sp",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "moon": {
+                                "value": "moon"
+                            },
+                            "adjective": {
+                                "value": "adjective"
+                            },
+                            "hello": {
+                                "value": "hello"
+                            }
+                        }
+                    },
+                    {
+                        "name": "max",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            },
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "md",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "d": {
+                                "value": "d"
+                            }
+                        }
+                    },
+                    {
+                        "name": "v",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "es": {
+                                "value": "es"
+                            },
+                            "1": {
+                                "value": "1"
+                            },
+                            "blue": {
+                                "value": "blue"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_syn",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "computer": {
+                                "value": "computer"
+                            },
+                            "moon": {
+                                "value": "moon"
+                            },
+                            "world": {
+                                "value": "world"
+                            },
+                            "beautiful": {
+                                "value": "beautiful"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_ant",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "moon": {
+                                "value": "moon"
+                            },
+                            "hot": {
+                                "value": "hot"
+                            },
+                            "good": {
+                                "value": "good"
+                            },
+                            "goodbye": {
+                                "value": "goodbye"
+                            },
+                            "big": {
+                                "value": "big"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_jja",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "moon": {
+                                "value": "moon"
+                            },
+                            "dog": {
+                                "value": "dog"
+                            },
+                            "big": {
+                                "value": "big"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_jjb",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "moon": {
+                                "value": "moon"
+                            },
+                            "tree": {
+                                "value": "tree"
+                            },
+                            "small": {
+                                "value": "small"
+                            },
+                            "funny": {
+                                "value": "funny"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_trg",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "moon": {
+                                "value": "moon"
+                            },
+                            "book": {
+                                "value": "book"
+                            },
+                            "cat": {
+                                "value": "cat"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_bga",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "moon": {
+                                "value": "moon"
+                            },
+                            "sky": {
+                                "value": "sky"
+                            },
+                            "red": {
+                                "value": "red"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_bgb",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "moon": {
+                                "value": "moon"
+                            },
+                            "game": {
+                                "value": "game"
+                            },
+                            "blue": {
+                                "value": "blue"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_hom",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "moon": {
+                                "value": "moon"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_cns",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "moon": {
+                                "value": "moon"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_spc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "moon": {
+                                "value": "moon"
+                            },
+                            "car": {
+                                "value": "car"
+                            }
+                        }
+                    },
+                    {
+                        "name": "ml",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "hello": {
+                                "value": "hello"
+                            },
+                            "dog": {
+                                "value": "dog"
+                            },
+                            "moon": {
+                                "value": "moon"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sl",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "computer": {
+                                "value": "computer"
+                            },
+                            "fr": {
+                                "value": "fr"
+                            },
+                            "moon": {
+                                "value": "moon"
+                            }
+                        }
+                    },
+                    {
+                        "name": "topics",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "science": {
+                                "value": "science"
+                            },
+                            "business": {
+                                "value": "business"
+                            },
+                            "moon": {
+                                "value": "moon"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en": {
+                                "value": "en"
+                            }
+                        }
+                    },
+                    {
+                        "name": "ipa",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_gen",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "flower": {
+                                "value": "flower"
+                            },
+                            "moon": {
+                                "value": "moon"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_com",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "food": {
+                                "value": "food"
+                            },
+                            "moon": {
+                                "value": "moon"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_par",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "computer": {
+                                "value": "computer"
+                            },
+                            "moon": {
+                                "value": "moon"
+                            }
+                        }
+                    },
+                    {
+                        "name": "ry",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "ring": {
+                                "value": "ring"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_words"
+                                },
+                                "example": [
+                                    {
+                                        "word": "boon",
+                                        "score": 1894,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "tune",
+                                        "score": 1872,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "impugn",
+                                        "score": 1794,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "balloon",
+                                        "score": 1613,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "troon",
+                                        "score": 1612,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "spoon",
+                                        "score": 1447,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "swoon",
+                                        "score": 1357,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "maroon",
+                                        "score": 1225,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "prune",
+                                        "score": 1222,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "goon",
+                                        "score": 1011,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "soon",
+                                        "score": 1005,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "buffoon",
+                                        "score": 1001,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "rune",
+                                        "score": 986,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "immune",
+                                        "score": 966,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "loon",
+                                        "score": 955,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "monsoon",
+                                        "score": 944,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "lampoon",
+                                        "score": 908,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "cocoon",
+                                        "score": 906,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "lagoon",
+                                        "score": 845,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "commune",
+                                        "score": 844,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "cartoon",
+                                        "score": 837,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "strewn",
+                                        "score": 779,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "tycoon",
+                                        "score": 771,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "picayune",
+                                        "score": 751,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "noon",
+                                        "score": 749,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "dune",
+                                        "score": 744,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "coon",
+                                        "score": 738,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "festoon",
+                                        "score": 715,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "attune",
+                                        "score": 690,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "typhoon",
+                                        "score": 677,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "opportune",
+                                        "score": 649,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "croon",
+                                        "score": 647,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "afternoon",
+                                        "score": 627,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "saloon",
+                                        "score": 619,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "hewn",
+                                        "score": 603,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "raccoon",
+                                        "score": 584,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "noone",
+                                        "score": 539,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "pontoon",
+                                        "score": 539,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "harpoon",
+                                        "score": 520,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "poon",
+                                        "score": 508,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "platoon",
+                                        "score": 507,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "honeymoon",
+                                        "score": 453,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "baboon",
+                                        "score": 451,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "toon",
+                                        "score": 436,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "june",
+                                        "score": 384,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "bassoon",
+                                        "score": 371,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "boone",
+                                        "score": 353,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "pantaloon",
+                                        "score": 340,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "shoon",
+                                        "score": 306,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "midafternoon",
+                                        "score": 304,
+                                        "numSyllables": 4
+                                    },
+                                    {
+                                        "word": "cameroon",
+                                        "score": 282,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "inopportune",
+                                        "score": 270,
+                                        "numSyllables": 4
+                                    },
+                                    {
+                                        "word": "sassoon",
+                                        "score": 259,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "hoon",
+                                        "score": 248,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "galloon",
+                                        "score": 230,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "muldoon",
+                                        "score": 225,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "cardoon",
+                                        "score": 223,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "shewn",
+                                        "score": 221,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "calhoun",
+                                        "score": 216,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "rangoon",
+                                        "score": 198,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "koon",
+                                        "score": 194,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "kuhn",
+                                        "score": 186,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "contrabassoon",
+                                        "score": 158,
+                                        "numSyllables": 4
+                                    },
+                                    {
+                                        "word": "tablespoon",
+                                        "score": 157,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "teaspoon",
+                                        "score": 155,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "bethune",
+                                        "score": 143,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "clune",
+                                        "score": 135,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "saskatoon",
+                                        "score": 131,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "kroon",
+                                        "score": 125,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "suine",
+                                        "score": 122,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "witherspoon",
+                                        "score": 119,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "cancun",
+                                        "score": 116,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "trial balloon",
+                                        "score": 115,
+                                        "numSyllables": 4
+                                    },
+                                    {
+                                        "word": "jeune",
+                                        "score": 99,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "laffoon",
+                                        "score": 97,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "high noon",
+                                        "score": 95,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "daniel boone",
+                                        "score": 93,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "yoon",
+                                        "score": 91,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "kite balloon",
+                                        "score": 89,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "good afternoon",
+                                        "score": 87,
+                                        "numSyllables": 4
+                                    },
+                                    {
+                                        "word": "brune",
+                                        "score": 83,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "suen",
+                                        "score": 79,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "silver spoon",
+                                        "score": 75,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "gruen",
+                                        "score": 69,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "greasy spoon",
+                                        "score": 68,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "magoon",
+                                        "score": 66,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "shoen",
+                                        "score": 64,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "mattoon",
+                                        "score": 58,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "signature tune",
+                                        "score": 58,
+                                        "numSyllables": 4
+                                    },
+                                    {
+                                        "word": "moone",
+                                        "score": 57,
+                                        "numSyllables": 1
+                                    },
+                                    {
+                                        "word": "calhoon",
+                                        "score": 52,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "barrage balloon",
+                                        "score": 51,
+                                        "numSyllables": 4
+                                    },
+                                    {
+                                        "word": "sand dune",
+                                        "score": 50,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "animated cartoon",
+                                        "score": 48,
+                                        "numSyllables": 6
+                                    },
+                                    {
+                                        "word": "cahoon",
+                                        "score": 47,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "terhune",
+                                        "score": 47,
+                                        "numSyllables": 2
+                                    },
+                                    {
+                                        "word": "ducommun",
+                                        "score": 43,
+                                        "numSyllables": 3
+                                    },
+                                    {
+                                        "word": "pilot balloon",
+                                        "score": 40,
+                                        "numSyllables": 4
+                                    },
+                                    {
+                                        "word": "sausage balloon",
+                                        "score": 40,
+                                        "numSyllables": 4
+                                    },
+                                    {
+                                        "word": "karun",
+                                        "score": 39,
+                                        "numSyllables": 2
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "code": 404,
+                                    "message": "HTTP 404 Not Found"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sug": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "rel_rhy",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "moon": {
+                                "value": "moon"
+                            }
+                        }
+                    },
+                    {
+                        "name": "s",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "mo": {
+                                "value": "mo"
+                            },
+                            "moon": {
+                                "value": "moon"
+                            },
+                            "sun": {
+                                "value": "sun"
+                            }
+                        }
+                    },
+                    {
+                        "name": "md",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "d": {
+                                "value": "d"
+                            },
+                            "f": {
+                                "value": "f"
+                            },
+                            "p": {
+                                "value": "p"
+                            }
+                        }
+                    },
+                    {
+                        "name": "max",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            },
+                            "10": {
+                                "value": "10"
+                            },
+                            "3": {
+                                "value": "3"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sp",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "apples": {
+                                "value": "apples"
+                            },
+                            "star": {
+                                "value": "star"
+                            },
+                            "moon": {
+                                "value": "moon"
+                            },
+                            "apple": {
+                                "value": "apple"
+                            },
+                            "hello": {
+                                "value": "hello"
+                            }
+                        }
+                    },
+                    {
+                        "name": "ml",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "moon": {
+                                "value": "moon"
+                            },
+                            "apple": {
+                                "value": "apple"
+                            },
+                            "house": {
+                                "value": "house"
+                            },
+                            "beautiful": {
+                                "value": "beautiful"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_jjb",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "blue": {
+                                "value": "blue"
+                            }
+                        }
+                    },
+                    {
+                        "name": "topics",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "politics": {
+                                "value": "politics"
+                            },
+                            "art": {
+                                "value": "art"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "eng": {
+                                "value": "eng"
+                            },
+                            "en": {
+                                "value": "en"
+                            }
+                        }
+                    },
+                    {
+                        "name": "v",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "enwiki": {
+                                "value": "enwiki"
+                            }
+                        }
+                    },
+                    {
+                        "name": "ipa",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rel_nry",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "rel_syn",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "rel_trg",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "rel_jja",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "x-null"
+                        },
+                        "examples": {}
+                    },
+                    {
+                        "name": "rc",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "rd",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "hello": {
+                                "value": "hello"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json;charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_sug"
+                                },
+                                "example": []
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "code": 404,
+                                    "message": "HTTP 404 Not Found"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "code",
+                    "message"
+                ]
+            },
+            "ResponseSchema_words": {},
+            "ResponseSchema_sug": {}
+        }
+    }
+}

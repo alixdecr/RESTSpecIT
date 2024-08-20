@@ -1,0 +1,2059 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Open Brewery DB API",
+        "description": "**API Description** - The Open Brewery DB API is a public RESTful API that provides information about breweries worldwide.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "termsOfService": "",
+        "contact": {
+            "name": "Open Brewery DB API Contact",
+            "url": "",
+            "email": "info@openbrewerydb.org"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://api.openbrewerydb.org",
+            "description": "Production Server of the Open Brewery DB API.",
+            "x-base-routes": 0
+        }
+    ],
+    "externalDocs": {
+        "url": "https://www.openbrewerydb.org",
+        "description": "Find more about the Open Brewery DB API here:"
+    },
+    "paths": {
+        "/breweries": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "by_city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "San+Diego": {
+                                "value": "San+Diego"
+                            },
+                            "Portland": {
+                                "value": "Portland"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_state",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "California": {
+                                "value": "California"
+                            },
+                            "Oregon": {
+                                "value": "Oregon"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            },
+                            "10": {
+                                "value": "10"
+                            },
+                            "20": {
+                                "value": "20"
+                            },
+                            "50": {
+                                "value": "50"
+                            },
+                            "example": {
+                                "value": "example"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "micro": {
+                                "value": "micro"
+                            },
+                            "regional": {
+                                "value": "regional"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "United+States": {
+                                "value": "United+States"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_phone",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "555-1234": {
+                                "value": "555-1234"
+                            },
+                            "123-456-7890": {
+                                "value": "123-456-7890"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_tag",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "IPA": {
+                                "value": "IPA"
+                            },
+                            "dog-friendly": {
+                                "value": "dog-friendly"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Stone+Brewery": {
+                                "value": "Stone+Brewery"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_postal",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "97201": {
+                                "value": "97201"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_street",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "123+Main+St": {
+                                "value": "123+Main+St"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_website",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "www.example.com": {
+                                "value": "www.example.com"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_order",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "brewery_name": {
+                                "value": "brewery_name"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_breweries"
+                                },
+                                "example": [
+                                    {
+                                        "id": "ef970757-fe42-416f-931d-722451f1f59c",
+                                        "name": "10 Barrel Brewing Co",
+                                        "brewery_type": "large",
+                                        "address_1": "1501 E St",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92101-6618",
+                                        "country": "United States",
+                                        "longitude": "-117.129593",
+                                        "latitude": "32.714813",
+                                        "phone": "6195782311",
+                                        "website_url": "http://10barrel.com",
+                                        "state": "California",
+                                        "street": "1501 E St"
+                                    },
+                                    {
+                                        "id": "5fdcc498-f9df-4fa5-b35d-487a59f0fecc",
+                                        "name": "2Kids Brewing Company",
+                                        "brewery_type": "micro",
+                                        "address_1": "8680 Miralani Dr Ste 123",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92126-6391",
+                                        "country": "United States",
+                                        "longitude": "-117.137429",
+                                        "latitude": "32.896584",
+                                        "phone": "8584805437",
+                                        "website_url": "http://www.2kidsBrewing.com",
+                                        "state": "California",
+                                        "street": "8680 Miralani Dr Ste 123"
+                                    },
+                                    {
+                                        "id": "3b0b5b9b-f6d8-49e3-8ebd-0bcef6939bcd",
+                                        "name": "32 North Brewing Co",
+                                        "brewery_type": "closed",
+                                        "address_1": "8655 Production Ave Ste A",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92121-2258",
+                                        "country": "United States",
+                                        "longitude": "-117.1649842",
+                                        "latitude": "32.88313237",
+                                        "phone": null,
+                                        "website_url": null,
+                                        "state": "California",
+                                        "street": "8655 Production Ave Ste A"
+                                    },
+                                    {
+                                        "id": "4db32843-26ff-4e73-9e24-1cb874109b24",
+                                        "name": "Abnormal Beer Company",
+                                        "brewery_type": "micro",
+                                        "address_1": "16990 Via Tazon Ste 123",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92127-1649",
+                                        "country": "United States",
+                                        "longitude": "-117.08575",
+                                        "latitude": "33.02391",
+                                        "phone": "8586182463",
+                                        "website_url": "http://abnormalbeer.co",
+                                        "state": "California",
+                                        "street": "16990 Via Tazon Ste 123"
+                                    },
+                                    {
+                                        "id": "2fe1e670-d832-4ba5-b957-f86a09ee062d",
+                                        "name": "Acoustic Ales Brewing Experiment",
+                                        "brewery_type": "closed",
+                                        "address_1": "1795 Hancock St Ste P1",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92110-2006",
+                                        "country": "United States",
+                                        "longitude": "-117.1840465",
+                                        "latitude": "32.74219079",
+                                        "phone": "6192992537",
+                                        "website_url": "http://www.acousticales.com",
+                                        "state": "California",
+                                        "street": "1795 Hancock St Ste P1"
+                                    },
+                                    {
+                                        "id": "f8097dbc-c8e6-4068-9540-5c4bd4ac0bcf",
+                                        "name": "AleSmith Brewing Co",
+                                        "brewery_type": "regional",
+                                        "address_1": "9990 Alesmith Ct",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92126-4200",
+                                        "country": "United States",
+                                        "longitude": "-117.1495496",
+                                        "latitude": "32.88858458",
+                                        "phone": "8585499888",
+                                        "website_url": "http://www.alesmith.com",
+                                        "state": "California",
+                                        "street": "9990 Alesmith Ct"
+                                    },
+                                    {
+                                        "id": "68b447a3-c65c-459f-8d02-334757bc6f71",
+                                        "name": "Align Brewing Co",
+                                        "brewery_type": "micro",
+                                        "address_1": "8680 Miralani Dr",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92126-6300",
+                                        "country": "United States",
+                                        "longitude": "-117.137429",
+                                        "latitude": "32.896584",
+                                        "phone": null,
+                                        "website_url": "http://www.facebook.com/alignbrewing",
+                                        "state": "California",
+                                        "street": "8680 Miralani Dr"
+                                    },
+                                    {
+                                        "id": "1d7c2273-8031-40d2-bb50-7f518722e291",
+                                        "name": "Alpine Beer Company",
+                                        "brewery_type": "brewpub",
+                                        "address_1": "6550 Mira Mesa Blvd",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92121-4100",
+                                        "country": "United States",
+                                        "longitude": "-117.113975",
+                                        "latitude": "32.9167796",
+                                        "phone": "6194452337",
+                                        "website_url": "http://www.alpinebrewing.com",
+                                        "state": "California",
+                                        "street": "6550 Mira Mesa Blvd"
+                                    },
+                                    {
+                                        "id": "728f9750-1c56-48be-9f96-b26d04215958",
+                                        "name": "Alta Brewing Company",
+                                        "brewery_type": "micro",
+                                        "address_1": "1983 Julian Avenue",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92113-1125",
+                                        "country": "United States",
+                                        "longitude": "-117.1414712",
+                                        "latitude": "32.7018758",
+                                        "phone": "6197957300",
+                                        "website_url": "http://www.altabrewing.com",
+                                        "state": "California",
+                                        "street": "1983 Julian Avenue"
+                                    },
+                                    {
+                                        "id": "fd0d376e-1c1d-48ce-ba6f-897298c20b85",
+                                        "name": "Amplified Ale Works",
+                                        "brewery_type": "brewpub",
+                                        "address_1": "4150 Mission Blvd Ste 208",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92109-5054",
+                                        "country": "United States",
+                                        "longitude": "-117.2511178",
+                                        "latitude": "32.7719729",
+                                        "phone": "6195871400",
+                                        "website_url": "http://www.amplifiedales.com",
+                                        "state": "California",
+                                        "street": "4150 Mission Blvd Ste 208"
+                                    },
+                                    {
+                                        "id": "c3f5bb6a-c7f4-45a9-829c-3978625f111e",
+                                        "name": "Amplified Ale Works Miramar Studio",
+                                        "brewery_type": "brewpub",
+                                        "address_1": "9030 Kenamar Dr Ste 309",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92121-2432",
+                                        "country": "United States",
+                                        "longitude": "-117.1570695",
+                                        "latitude": "32.88687598",
+                                        "phone": "6503804220",
+                                        "website_url": "https://amplifiedales.com/",
+                                        "state": "California",
+                                        "street": "9030 Kenamar Dr Ste 309"
+                                    },
+                                    {
+                                        "id": "322a5eb4-e725-4c03-b532-a64153037076",
+                                        "name": "Automatic Brewing Co. / Blind Lady Alehouse",
+                                        "brewery_type": "brewpub",
+                                        "address_1": "3416 Adams Ave",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92116-2428",
+                                        "country": "United States",
+                                        "longitude": "-117.120151",
+                                        "latitude": "32.763588",
+                                        "phone": "6192007522",
+                                        "website_url": "http://www.blindlady.blogspot.com",
+                                        "state": "California",
+                                        "street": "3416 Adams Ave"
+                                    },
+                                    {
+                                        "id": "3c4eab56-1643-4204-ab89-2ce01f6b5bf7",
+                                        "name": "Ballast Point Brewing Co / Home Brew Mart",
+                                        "brewery_type": "large",
+                                        "address_1": "5401 Linda Vista Rd Ste 406",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92110-2402",
+                                        "country": "United States",
+                                        "longitude": "-117.1953344",
+                                        "latitude": "32.76692137",
+                                        "phone": "6198517681",
+                                        "website_url": "http://www.ballastpoint.com",
+                                        "state": "California",
+                                        "street": "5401 Linda Vista Rd Ste 406"
+                                    },
+                                    {
+                                        "id": "0cbb2117-5968-4d0d-a0fd-9ee7c7f53e31",
+                                        "name": "Ballast Point Brewing Company",
+                                        "brewery_type": "large",
+                                        "address_1": "9045 Carroll Way",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92121-2405",
+                                        "country": "United States",
+                                        "longitude": "-117.1587251",
+                                        "latitude": "32.88798083",
+                                        "phone": "8586952739",
+                                        "website_url": "http://www.ballastpoint.com",
+                                        "state": "California",
+                                        "street": "9045 Carroll Way"
+                                    },
+                                    {
+                                        "id": "94fe77de-a7d7-42d4-a076-687e1fdaeec4",
+                                        "name": "Ballast Point Brewing Company",
+                                        "brewery_type": "large",
+                                        "address_1": "7606 Trade St",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92121-2405",
+                                        "country": "United States",
+                                        "longitude": "-117.157081",
+                                        "latitude": "32.889641",
+                                        "phone": "8586952739",
+                                        "website_url": null,
+                                        "state": "California",
+                                        "street": "7606 Trade St"
+                                    },
+                                    {
+                                        "id": "786c56e4-c533-4181-8aec-ec976a7bde9f",
+                                        "name": "Ballast Point Brewing Company - Little Italy",
+                                        "brewery_type": "large",
+                                        "address_1": "2215 India St",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92101-1725",
+                                        "country": "United States",
+                                        "longitude": "-117.169738",
+                                        "latitude": "32.727777",
+                                        "phone": "6192557213",
+                                        "website_url": "http://www.ballastpoint.com",
+                                        "state": "California",
+                                        "street": "2215 India St"
+                                    },
+                                    {
+                                        "id": "bfb84336-c1e4-48e9-9d05-4a412b60e967",
+                                        "name": "Barn Brewery",
+                                        "brewery_type": "micro",
+                                        "address_1": "2850 El Cajon Blvd Ste 3",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92104-1389",
+                                        "country": "United States",
+                                        "longitude": "-117.1324165",
+                                        "latitude": "32.75568723",
+                                        "phone": "6199558228",
+                                        "website_url": "http://www.thebarnbrew.com",
+                                        "state": "California",
+                                        "street": "2850 El Cajon Blvd Ste 3"
+                                    },
+                                    {
+                                        "id": "ee153c57-00c1-4321-8ae7-473a3cb65fa2",
+                                        "name": "Bay City Brewing Co.",
+                                        "brewery_type": "micro",
+                                        "address_1": "3760 Hancock St",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92110",
+                                        "country": "United States",
+                                        "longitude": "-117.2117833",
+                                        "latitude": "32.7580759",
+                                        "phone": "6197274926",
+                                        "website_url": "http://www.baycitybrewingco.com",
+                                        "state": "California",
+                                        "street": "3760 Hancock St"
+                                    },
+                                    {
+                                        "id": "ef1075c7-0384-4bfe-8034-2ba2e99a5a0c",
+                                        "name": "Benchmark Brewing Co",
+                                        "brewery_type": "closed",
+                                        "address_1": "6190 Fairmount Ave Ste G",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92120-3428",
+                                        "country": "United States",
+                                        "longitude": "-117.1020694",
+                                        "latitude": "32.78737066",
+                                        "phone": "6197952911",
+                                        "website_url": "http://www.benchmarkbrewing.com",
+                                        "state": "California",
+                                        "street": "6190 Fairmount Ave Ste G"
+                                    },
+                                    {
+                                        "id": "3169d94b-9531-4639-8eea-54f94d72eace",
+                                        "name": "Bitter Brothers Brewing Co.",
+                                        "brewery_type": "micro",
+                                        "address_1": "4170 Morena Blvd Ste F",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92117-5252",
+                                        "country": "United States",
+                                        "longitude": "-117.2202906",
+                                        "latitude": "32.81614831",
+                                        "phone": "6199616690",
+                                        "website_url": "http://www.bitterbrothers.com",
+                                        "state": "California",
+                                        "street": "4170 Morena Blvd Ste F"
+                                    },
+                                    {
+                                        "id": "b28d3c64-b98d-4c97-a1bd-ab2465b0dbdb",
+                                        "name": "Border X Brewing",
+                                        "brewery_type": "micro",
+                                        "address_1": "2181 Logan Ave",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92113-2203",
+                                        "country": "United States",
+                                        "longitude": "-117.1397541",
+                                        "latitude": "32.6982174",
+                                        "phone": "6195010503",
+                                        "website_url": "http://www.borderxbrewing.com",
+                                        "state": "California",
+                                        "street": "2181 Logan Ave"
+                                    },
+                                    {
+                                        "id": "e61f3a16-9521-40a6-9f86-3918b7081a6f",
+                                        "name": "Border X Logan",
+                                        "brewery_type": "brewpub",
+                                        "address_1": "2181 Logan Ave",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92113-2203",
+                                        "country": "United States",
+                                        "longitude": "-117.1397541",
+                                        "latitude": "32.6982174",
+                                        "phone": "8584050528",
+                                        "website_url": "http://www.borderxbrewing.com",
+                                        "state": "California",
+                                        "street": "2181 Logan Ave"
+                                    },
+                                    {
+                                        "id": "23905042-9078-410a-a3f5-0ede37924815",
+                                        "name": "California Wild Ales",
+                                        "brewery_type": "contract",
+                                        "address_1": "4204 Sorrento Valley Blvd",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92121-1446",
+                                        "country": "United States",
+                                        "longitude": "-117.2146488",
+                                        "latitude": "32.905002",
+                                        "phone": null,
+                                        "website_url": null,
+                                        "state": "California",
+                                        "street": "4204 Sorrento Valley Blvd"
+                                    },
+                                    {
+                                        "id": "1e40495c-ca51-455d-a24b-6769efc04060",
+                                        "name": "Circle 9 Brewing",
+                                        "brewery_type": "micro",
+                                        "address_1": "7292 Opportunity Rd Ste C",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92111-2223",
+                                        "country": "United States",
+                                        "longitude": "-117.160822",
+                                        "latitude": "32.82600737",
+                                        "phone": "8582569462",
+                                        "website_url": "https://ataraxiaaleworks.com/",
+                                        "state": "California",
+                                        "street": "7292 Opportunity Rd Ste C"
+                                    },
+                                    {
+                                        "id": "acb378f5-15e7-4a1a-b73b-c1e49f17d8a1",
+                                        "name": "Circle 9 Brewing",
+                                        "brewery_type": "closed",
+                                        "address_1": "7292 Opportunity Rd Ste C",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92111-2223",
+                                        "country": "United States",
+                                        "longitude": "-117.160822",
+                                        "latitude": "32.82600737",
+                                        "phone": "8586342537",
+                                        "website_url": "http://www.circle9brewing.com",
+                                        "state": "California",
+                                        "street": "7292 Opportunity Rd Ste C"
+                                    },
+                                    {
+                                        "id": "151d81b1-6d9b-4c31-80da-c8005d5e6205",
+                                        "name": "Citizen Brewers",
+                                        "brewery_type": "micro",
+                                        "address_1": "5837 Mission Gorge Rd Ste A",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92120-4060",
+                                        "country": "United States",
+                                        "longitude": "-117.1003579",
+                                        "latitude": "32.78109987",
+                                        "phone": "7605877989",
+                                        "website_url": "http://www.citizenbrewers.com",
+                                        "state": "California",
+                                        "street": "5837 Mission Gorge Rd Ste A"
+                                    },
+                                    {
+                                        "id": "9e9d2ed9-ee58-44ce-8694-374196db165e",
+                                        "name": "Constellation Brands",
+                                        "brewery_type": "closed",
+                                        "address_1": "9045 Caroll Way",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92121",
+                                        "country": "United States",
+                                        "longitude": "-117.1578979",
+                                        "latitude": "32.88808261",
+                                        "phone": null,
+                                        "website_url": null,
+                                        "state": "California",
+                                        "street": "9045 Caroll Way"
+                                    },
+                                    {
+                                        "id": "8e3d6cd2-c95c-432e-963d-2f0c4beb5dfd",
+                                        "name": "Coronado Brewing Co - Production Facility",
+                                        "brewery_type": "regional",
+                                        "address_1": "170 Orange Ave",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92118-1409",
+                                        "country": "United States",
+                                        "longitude": "-117.094383",
+                                        "latitude": "32.753124",
+                                        "phone": "6192752215",
+                                        "website_url": null,
+                                        "state": "California",
+                                        "street": "170 Orange Ave"
+                                    },
+                                    {
+                                        "id": "f17f30c2-ad58-4d64-adee-493df68df07d",
+                                        "name": "Council Brewing - Magic Factory",
+                                        "brewery_type": "micro",
+                                        "address_1": "7705 Convoy Ct",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92111-1113",
+                                        "country": "United States",
+                                        "longitude": "-117.1544092",
+                                        "latitude": "32.83466296",
+                                        "phone": "8582560038",
+                                        "website_url": null,
+                                        "state": "California",
+                                        "street": "7705 Convoy Ct"
+                                    },
+                                    {
+                                        "id": "4c805f48-4d8e-4ec5-81f5-7585daa8a34f",
+                                        "name": "Council Brewing Company",
+                                        "brewery_type": "micro",
+                                        "address_1": "7705 Convoy Ct",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92111-1105",
+                                        "country": "United States",
+                                        "longitude": "-117.1544092",
+                                        "latitude": "32.83466296",
+                                        "phone": "8582560038",
+                                        "website_url": "http://www.councilbrew.com",
+                                        "state": "California",
+                                        "street": "7705 Convoy Ct"
+                                    },
+                                    {
+                                        "id": "0338af09-60df-4e16-9fd6-89d3033c9cc2",
+                                        "name": "Deft Brewing",
+                                        "brewery_type": "micro",
+                                        "address_1": "5328 Banks St",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92110-4008",
+                                        "country": "United States",
+                                        "longitude": "-117.1993433",
+                                        "latitude": "32.76435432",
+                                        "phone": "8589995728",
+                                        "website_url": "http://www.deftbrewing.com",
+                                        "state": "California",
+                                        "street": "5328 Banks St"
+                                    },
+                                    {
+                                        "id": "887c1eb4-f403-4081-9dff-e8d0867b04ed",
+                                        "name": "Division 23 Brewing",
+                                        "brewery_type": "micro",
+                                        "address_1": "7408 Trade St",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92121-3415",
+                                        "country": "United States",
+                                        "longitude": "-117.162908",
+                                        "latitude": "32.890353",
+                                        "phone": "8587521924",
+                                        "website_url": "http://www.division23brewing.com",
+                                        "state": "California",
+                                        "street": "7408 Trade St"
+                                    },
+                                    {
+                                        "id": "420b93d8-d15a-4db9-a072-28e22de5f1a9",
+                                        "name": "Duck Foot Brewing Co.",
+                                        "brewery_type": "micro",
+                                        "address_1": "8920 Kenamar Dr Ste 210",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92121-2454",
+                                        "country": "United States",
+                                        "longitude": "-117.1562181",
+                                        "latitude": "32.88474835",
+                                        "phone": "8584337916",
+                                        "website_url": "http://www.duckfootbeer.com",
+                                        "state": "California",
+                                        "street": "8920 Kenamar Dr Ste 210"
+                                    },
+                                    {
+                                        "id": "c4a5b92c-1d16-44f2-99ac-f7fecb759dc9",
+                                        "name": "Eppig Brewing",
+                                        "brewery_type": "micro",
+                                        "address_1": "3052 El Cajon Blvd Ste 103",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92104-1399",
+                                        "country": "United States",
+                                        "longitude": "-117.128732",
+                                        "latitude": "32.755723",
+                                        "phone": "6195011840",
+                                        "website_url": "http://www.eppigbrewing.com",
+                                        "state": "California",
+                                        "street": "3052 El Cajon Blvd Ste 103"
+                                    },
+                                    {
+                                        "id": "ce39a577-ce79-4328-9251-faa66bd7ffa7",
+                                        "name": "Fall Brewing Company",
+                                        "brewery_type": "micro",
+                                        "address_1": "4542 30th St",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92116-4247",
+                                        "country": "United States",
+                                        "longitude": "-117.1302802",
+                                        "latitude": "32.75997514",
+                                        "phone": "6195010903",
+                                        "website_url": "http://www.fallbrewing.com",
+                                        "state": "California",
+                                        "street": "4542 30th St"
+                                    },
+                                    {
+                                        "id": "01b395ba-7b97-4214-a98c-365ad281d9dd",
+                                        "name": "G8 Development, Inc.",
+                                        "brewery_type": "planning",
+                                        "address_1": null,
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92109-2802",
+                                        "country": "United States",
+                                        "longitude": "-117.1627714",
+                                        "latitude": "32.7174209",
+                                        "phone": "6198233402",
+                                        "website_url": null,
+                                        "state": "California",
+                                        "street": null
+                                    },
+                                    {
+                                        "id": "f7e064d7-a23d-4078-85a4-5407d2ce4909",
+                                        "name": "Globier",
+                                        "brewery_type": "planning",
+                                        "address_1": null,
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92117-1604",
+                                        "country": "United States",
+                                        "longitude": "-117.1627714",
+                                        "latitude": "32.7174209",
+                                        "phone": "7757623818",
+                                        "website_url": "http://www.drinkglobier.com",
+                                        "state": "California",
+                                        "street": null
+                                    },
+                                    {
+                                        "id": "28945428-2326-41b3-b2d9-97f6e8154783",
+                                        "name": "Gordon Biersch Brewery Restaurant - San Diego",
+                                        "brewery_type": "brewpub",
+                                        "address_1": "5010 Mission Center Rd",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92108-3211",
+                                        "country": "United States",
+                                        "longitude": "-117.1539235",
+                                        "latitude": "32.7740128",
+                                        "phone": "6196881120",
+                                        "website_url": "http://www.craftworksrestaurants.com",
+                                        "state": "California",
+                                        "street": "5010 Mission Center Rd"
+                                    },
+                                    {
+                                        "id": "f2a06d1e-b89f-40c2-9a52-938dc502ac9b",
+                                        "name": "Green Flash Brewing Co",
+                                        "brewery_type": "regional",
+                                        "address_1": "6550 Mira Mesa Blvd",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92121-4100",
+                                        "country": "United States",
+                                        "longitude": "-117.113975",
+                                        "latitude": "32.9167796",
+                                        "phone": "8586220085",
+                                        "website_url": "http://www.greenflashbrew.com",
+                                        "state": "California",
+                                        "street": "6550 Mira Mesa Blvd"
+                                    },
+                                    {
+                                        "id": "7c4882e0-4366-41f3-b207-7be79d078c52",
+                                        "name": "Half Door Brewing Company",
+                                        "brewery_type": "brewpub",
+                                        "address_1": "903 Island Ave",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92101-7227",
+                                        "country": "United States",
+                                        "longitude": "-117.156268",
+                                        "latitude": "32.710248",
+                                        "phone": null,
+                                        "website_url": "http://www.halfdoorbrewing.com",
+                                        "state": "California",
+                                        "street": "903 Island Ave"
+                                    },
+                                    {
+                                        "id": "11f16c8a-e029-4f1c-8535-d8c736df682c",
+                                        "name": "Helm's Brewing Company, LLC",
+                                        "brewery_type": "closed",
+                                        "address_1": "5640 Kearny Mesa Rd Ste C",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92111-1312",
+                                        "country": "United States",
+                                        "longitude": "-117.1389741",
+                                        "latitude": "32.8373435",
+                                        "phone": "2092024308",
+                                        "website_url": "http://www.helmsbrewingco.com",
+                                        "state": "California",
+                                        "street": "5640 Kearny Mesa Rd Ste C"
+                                    },
+                                    {
+                                        "id": "37b5c3ff-b1cb-468e-8bfc-d6c95004d215",
+                                        "name": "Hillcrest Brewing Company",
+                                        "brewery_type": "brewpub",
+                                        "address_1": "1458 University Ave",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92103-3405",
+                                        "country": "United States",
+                                        "longitude": "-117.1260866",
+                                        "latitude": "32.7484921",
+                                        "phone": "6192694323",
+                                        "website_url": "http://www.hillcrestbrewingcompany.com",
+                                        "state": "California",
+                                        "street": "1458 University Ave"
+                                    },
+                                    {
+                                        "id": "71ac4b9f-1452-42e4-957d-c0075671f9ac",
+                                        "name": "Hodad's Brewing Company",
+                                        "brewery_type": "planning",
+                                        "address_1": null,
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92123",
+                                        "country": "United States",
+                                        "longitude": "-117.1627714",
+                                        "latitude": "32.7174209",
+                                        "phone": "8582782770",
+                                        "website_url": null,
+                                        "state": "California",
+                                        "street": null
+                                    },
+                                    {
+                                        "id": "fff96f3c-0248-4381-bc2a-9cdae3190fc3",
+                                        "name": "Home Brewing Co.",
+                                        "brewery_type": "micro",
+                                        "address_1": "2911 El Cajon Blvd # 2",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92104-1204",
+                                        "country": "United States",
+                                        "longitude": "-117.131109",
+                                        "latitude": "32.755029",
+                                        "phone": "6194506165",
+                                        "website_url": "http://www.thehomebrewerssd.com",
+                                        "state": "California",
+                                        "street": "2911 El Cajon Blvd # 2"
+                                    },
+                                    {
+                                        "id": "e3867dfa-d22e-4091-996a-725df25409d3",
+                                        "name": "Intergalactic Brewing Co",
+                                        "brewery_type": "micro",
+                                        "address_1": "9715 Carroll Centre Rd #107",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92126-6507",
+                                        "country": "United States",
+                                        "longitude": "-117.1223493",
+                                        "latitude": "32.89873279",
+                                        "phone": "8587500601",
+                                        "website_url": "http://www.intergalacticbrew.com",
+                                        "state": "California",
+                                        "street": "9715 Carroll Centre Rd #107"
+                                    },
+                                    {
+                                        "id": "4e3b6909-1ec5-4ffe-b86a-d4ddaa7ef86f",
+                                        "name": "Karl Strauss Brewing Co",
+                                        "brewery_type": "regional",
+                                        "address_1": "5985 Santa Fe St",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92109-1623",
+                                        "country": "United States",
+                                        "longitude": "-117.231429",
+                                        "latitude": "32.832579",
+                                        "phone": "8582732739",
+                                        "website_url": "http://www.karlstrauss.com",
+                                        "state": "California",
+                                        "street": "5985 Santa Fe St"
+                                    },
+                                    {
+                                        "id": "44dfe5e3-7687-4e3e-a660-9daefbb60cea",
+                                        "name": "Karl Strauss Brewing Co - 4S Ranch",
+                                        "brewery_type": "brewpub",
+                                        "address_1": "10448 Reserve Dr",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92127-3510",
+                                        "country": "United States",
+                                        "longitude": "-117.113249",
+                                        "latitude": "33.021301",
+                                        "phone": "8582732739",
+                                        "website_url": "http://www.karlstrauss.com",
+                                        "state": "California",
+                                        "street": "10448 Reserve Dr"
+                                    },
+                                    {
+                                        "id": "e5ad3941-dc5d-4283-bb52-cea08d3da6c3",
+                                        "name": "Karl Strauss Brewing Co - Downtown",
+                                        "brewery_type": "brewpub",
+                                        "address_1": "1157 Columbia St",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92101-3511",
+                                        "country": "United States",
+                                        "longitude": "-117.1672838",
+                                        "latitude": "32.71730086",
+                                        "phone": "6192342739",
+                                        "website_url": "http://www.karlstrauss.com",
+                                        "state": "California",
+                                        "street": "1157 Columbia St"
+                                    },
+                                    {
+                                        "id": "b779fc08-50bb-4a3f-8ac0-314c10c686b7",
+                                        "name": "Karl Strauss Brewing Co - Sorrento Mesa",
+                                        "brewery_type": "brewpub",
+                                        "address_1": "9675 Scranton Rd",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92121-1761",
+                                        "country": "United States",
+                                        "longitude": "-117.2027066",
+                                        "latitude": "32.89634566",
+                                        "phone": "8585872739",
+                                        "website_url": "http://www.karlstrauss.com",
+                                        "state": "California",
+                                        "street": "9675 Scranton Rd"
+                                    },
+                                    {
+                                        "id": "bebd0907-2a5a-4bb5-9a9a-1ff1cbb8bd0d",
+                                        "name": "Kilowatt Brewing",
+                                        "brewery_type": "micro",
+                                        "address_1": "7576 Clairemont Mesa Blvd",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "San Diego",
+                                        "state_province": "California",
+                                        "postal_code": "92111-1504",
+                                        "country": "United States",
+                                        "longitude": "-117.208801",
+                                        "latitude": "32.8276353",
+                                        "phone": "8587153998",
+                                        "website_url": "http://www.kilowatt.beer",
+                                        "state": "California",
+                                        "street": "7576 Clairemont Mesa Blvd"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/breweries/search": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "by_city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "San+Diego": {
+                                "value": "San+Diego"
+                            },
+                            "Los+Angeles": {
+                                "value": "Los+Angeles"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_state",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "California": {
+                                "value": "California"
+                            }
+                        }
+                    },
+                    {
+                        "name": "query",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "IPA": {
+                                "value": "IPA"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "micro": {
+                                "value": "micro"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_tag",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "dog-friendly": {
+                                "value": "dog-friendly"
+                            },
+                            "IPA": {
+                                "value": "IPA"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Stone": {
+                                "value": "Stone"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_postal",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "92101": {
+                                "value": "92101"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_street",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Main": {
+                                "value": "Main"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_phone",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "555-1234": {
+                                "value": "555-1234"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_website",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "www.example.com": {
+                                "value": "www.example.com"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "United+States": {
+                                "value": "United+States"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name": {
+                                "value": "name"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_breweries_search"
+                                },
+                                "example": []
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/breweries/random": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "by_city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "San+Diego": {
+                                "value": "San+Diego"
+                            },
+                            "San+Francisco": {
+                                "value": "San+Francisco"
+                            },
+                            "Denver": {
+                                "value": "Denver"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_state",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "California": {
+                                "value": "California"
+                            },
+                            "Texas": {
+                                "value": "Texas"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_tag",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "IPA": {
+                                "value": "IPA"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Anchor+Brewing": {
+                                "value": "Anchor+Brewing"
+                            },
+                            "Chicago": {
+                                "value": "Chicago"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "micro": {
+                                "value": "micro"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5": {
+                                "value": "5"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name": {
+                                "value": "name"
+                            },
+                            "city": {
+                                "value": "city"
+                            },
+                            "state": {
+                                "value": "state"
+                            },
+                            "postal_code": {
+                                "value": "postal_code"
+                            },
+                            "-name": {
+                                "value": "-name"
+                            }
+                        }
+                    },
+                    {
+                        "name": "state",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "California": {
+                                "value": "California"
+                            }
+                        }
+                    },
+                    {
+                        "name": "city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "San+Francisco": {
+                                "value": "San+Francisco"
+                            }
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Stone+Brewing": {
+                                "value": "Stone+Brewing"
+                            }
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "micro": {
+                                "value": "micro"
+                            }
+                        }
+                    },
+                    {
+                        "name": "tag",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "dog-friendly": {
+                                "value": "dog-friendly"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_breweries_random"
+                                },
+                                "example": [
+                                    {
+                                        "id": "ef663619-6faa-4478-b754-c54f6f5cc823",
+                                        "name": "Beaver Creek Brewery",
+                                        "brewery_type": "micro",
+                                        "address_1": "104 W Oregon Ave",
+                                        "address_2": null,
+                                        "address_3": null,
+                                        "city": "Wibaux",
+                                        "state_province": "Montana",
+                                        "postal_code": "59353-8001",
+                                        "country": "United States",
+                                        "longitude": null,
+                                        "latitude": null,
+                                        "phone": "4067952337",
+                                        "website_url": "http://www.beavercreekbrewery.com",
+                                        "state": "Montana",
+                                        "street": "104 W Oregon Ave"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/breweries/autocomplete": {
+            "get": {
+                "description": "No description.",
+                "parameters": [
+                    {
+                        "name": "by_city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "San+Diego": {
+                                "value": "San+Diego"
+                            },
+                            "Chicago": {
+                                "value": "Chicago"
+                            },
+                            "Los+Angeles": {
+                                "value": "Los+Angeles"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_state",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "California": {
+                                "value": "California"
+                            },
+                            "New+York": {
+                                "value": "New+York"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_name",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "BreweryName": {
+                                "value": "BreweryName"
+                            },
+                            "Stone": {
+                                "value": "Stone"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "micro": {
+                                "value": "micro"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_postal",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "12345": {
+                                "value": "12345"
+                            },
+                            "92101": {
+                                "value": "92101"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_tag",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "IPA": {
+                                "value": "IPA"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "United+States": {
+                                "value": "United+States"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_phone",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "123-456-7890": {
+                                "value": "123-456-7890"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_street",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Main+Street": {
+                                "value": "Main+Street"
+                            },
+                            "Main": {
+                                "value": "Main"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_website",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "www.example.com": {
+                                "value": "www.example.com"
+                            }
+                        }
+                    },
+                    {
+                        "name": "query",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            }
+                        }
+                    },
+                    {
+                        "name": "city",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            },
+                            "Los+Angeles": {
+                                "value": "Los+Angeles"
+                            }
+                        }
+                    },
+                    {
+                        "name": "state",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            },
+                            "California": {
+                                "value": "California"
+                            }
+                        }
+                    },
+                    {
+                        "name": "postal",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            },
+                            "90210": {
+                                "value": "90210"
+                            }
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            },
+                            "micro": {
+                                "value": "micro"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            },
+                            "United+States": {
+                                "value": "United+States"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            },
+                            "20": {
+                                "value": "20"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            },
+                            "name": {
+                                "value": "name"
+                            }
+                        }
+                    },
+                    {
+                        "name": "order",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example": {
+                                "value": "example"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_longitude",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "-117.161084": {
+                                "value": "-117.161084"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_latitude",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "number",
+                            "format": "float"
+                        },
+                        "examples": {
+                            "32.7157": {
+                                "value": "32.7157"
+                            }
+                        }
+                    },
+                    {
+                        "name": "phone",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1234567890": {
+                                "value": "1234567890"
+                            }
+                        }
+                    },
+                    {
+                        "name": "tag",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "dog-friendly": {
+                                "value": "dog-friendly"
+                            }
+                        }
+                    },
+                    {
+                        "name": "brewery_type",
+                        "description": "No description.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "bar": {
+                                "value": "bar"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "No description.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_breweries_autocomplete"
+                                },
+                                "example": []
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "string"
+            },
+            "ResponseSchema_breweries": {},
+            "ResponseSchema_breweries_search": {},
+            "ResponseSchema_breweries_random": {},
+            "ResponseSchema_breweries_autocomplete": {}
+        }
+    }
+}
