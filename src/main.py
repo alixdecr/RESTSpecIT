@@ -4,8 +4,8 @@ from classes.api_tester import ApiTester
 
 
 """
-RESTSpecIT: RESTful API Specification Inference Tool, powered with GPT
------------------------------------------------------------------------
+RESTSpecIT: RESTful API Specification Inference Tool, powered with a LLM
+------------------------------------------------------------------------
 """
 
 def main():
