@@ -1,4 +1,4 @@
-import openai
+from openai import OpenAI
 from utils.find_regex import findUrl
 from utils.make_request import makeHTTPRequest
 
@@ -23,7 +23,9 @@ class ApiLLM():
         self.tokens = {"input": 0, "output": 0}
 
         # setup OpenAI key
-        openai.api_key = self.openaiKey
+        self.client = OpenAI(
+            api_key=self.openaiKey
+        )
 
 
     """
@@ -32,27 +34,27 @@ class ApiLLM():
     """
     def makeLLMRequest(self, text, retries=10):
 
-        promptData = {"prompt": text, "response": ""}
+        promptData = {"prompt": text, "response": "", "object": None}
         retryIndex = 0
 
         while retryIndex < retries:
             retryIndex += 1
 
             try:
-                request = openai.ChatCompletion.create(
+                request = self.client.chat.completions.create(
                     model = self.model,
                     temperature = self.temperature,
                     max_tokens = 1000,
-                    request_timeout = 15, # to return timeout error after x seconds of no response
                     messages = [
                         {"role": "user", "content": text}
                     ]
                 )
 
+                promptData["object"] = request
                 promptData["response"] = request.choices[0].message.content
                 retryIndex = retries
                 # add tokens
-                self.addTokens(request)
+                self.addTokens(request.usage)
             
             # in case of a timeout error, set response as empty string
             except Exception as e:
@@ -99,7 +101,7 @@ class ApiLLM():
     """
     Function which adds the input and output tokens of an OpenAI API prompt to a dictionary.
     """
-    def addTokens(self, response):
+    def addTokens(self, tokens):
 
-        self.tokens["input"] += response["usage"]["prompt_tokens"]
-        self.tokens["output"] += response["usage"]["completion_tokens"]
+        self.tokens["input"] += tokens.prompt_tokens
+        self.tokens["output"] += tokens.completion_tokens

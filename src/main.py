@@ -23,6 +23,7 @@ def main():
             tester = ApiTester(config)
 
             # TEST EXECUTION FOR ONLINE APIS
+            tester.execute(["REST Countries API"])
             """
             tester.execute(["An API of Ice and Fire API",
                             "Balldontlie API",
@@ -37,9 +38,11 @@ def main():
             """
 
             # TEST EXECUTION FOR LOCAL APIS
+            """
             tester.execute(["Soccer API",
                             "Weather API",
                             "Currency Exchange API"])
+            """
 
         # EXECUTION FOR INFERER MODE
         else:

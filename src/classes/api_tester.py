@@ -112,9 +112,22 @@ class ApiTester:
                                 apiDict[api]["doc"]["doc-routes"]["names"][route] = True
                                 apiDict[api]["doc"]["doc-routes"]["found"] += 1
                                 foundData = True
+
                         elif route not in apiDict[api]["doc"]["other-routes"]["list"]:
                             apiDict[api]["doc"]["other-routes"]["list"].append(route)
                             apiDict[api]["doc"]["other-routes"]["total"] += 1
+
+                        # check if the doc contains an {id} field that might not necessarily be an integer
+                        # find the position of the last "/"
+                        lastPath = route.rfind("/")
+                        # replace the substring after the last "/" with "{id}"
+                        newRoute = route[:lastPath + 1] + "{id}"
+                        # check
+                        if newRoute in apiDict[api]["doc"]["doc-routes"]["names"]:
+                            if apiDict[api]["doc"]["doc-routes"]["names"][newRoute] == False:
+                                apiDict[api]["doc"]["doc-routes"]["names"][newRoute] = True
+                                apiDict[api]["doc"]["doc-routes"]["found"] += 1
+                                foundData = True
 
                     # parameters
                     for param in execData["parameters"]["list"]:

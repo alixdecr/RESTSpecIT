@@ -70,7 +70,7 @@ class Logger:
         t = time.localtime()
         currentTime = time.strftime("%H:%M:%S", t)
 
-        data = f"TIME: {currentTime}\nPROMPT: {promptData['prompt']}\nRESPONSE: {promptData['response']}\n\n"
+        data = f"TIME: {currentTime}\nPROMPT: {promptData['prompt']}\nRESPONSE: {promptData['response']}\nOBJECT: {promptData['object']}\n\n"
 
         # add prompt data to log file
         with open(f"{self.outPath}/logs/prompt_logs.txt", "a", encoding="utf-8") as outfile:
