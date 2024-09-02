@@ -32,6 +32,7 @@ class ApiInferer:
         self.local = config["api"]["local"]
         self.localUrl = config["api"]["local-url"]
         self.requestVerif = config["api"]["request-verif"]
+        self.acceptHtml = config["api"]["accept-html"]
 
         # if the "outputs" folder does not exist yet, create the folder and its sub-folders
         folderList = [self.outPath, f"{self.outPath}/seeds", f"{self.outPath}/logs", f"{self.outPath}/executions"]
@@ -244,15 +245,10 @@ class ApiInferer:
         if len(self.seedList) <= 0:
             # seed URL
             seedPrompt = f"Return an example of a complete and valid HTTP request URL that can be made to the '{self.apiName}'. If the request allows query parameters, add some to the end of the URL. You must only reply with the URL."
-            seedUrl = self.llm.promptUrl(seedPrompt, True)
+
+            seedUrl = self.llm.promptUrl(seedPrompt, True, self.apiKeyParam, self.apiKey)
 
             if seedUrl != "":
-                # if the API requires a key, add it
-                if self.apiKey != "" and f"{self.apiKeyParam}={self.apiKey}" not in seedUrl:
-                    if "?" in seedUrl:
-                        seedUrl = seedUrl + f"&{self.apiKeyParam}={self.apiKey}"
-                    else:
-                        seedUrl = seedUrl + f"?{self.apiKeyParam}={self.apiKey}"
 
                 responseData = makeHTTPRequest(seedUrl, self.logger)
 
@@ -362,8 +358,8 @@ class ApiInferer:
 
                     # if the request is valid
                     if responseData["valid"]:
-                        # flag out HTML as it indicates a web page and not data as response (json, text, image, etc.)
-                        if "html" not in responseData["contentType"]:
+                        # flag out HTML (or not if accept-html parameter is true) as it indicates a web page and not data as response (json, text, image, etc.)
+                        if "html" not in responseData["contentType"] or self.acceptHtml:
                             self.logger.logMessage("Valid Request", "arrow", "green", True)
                             self.inferRequest(request, responseData)
                             self.executionData["requests"]["valid"] += 1

@@ -1,3 +1,4 @@
+import re
 from openai import OpenAI
 from utils.find_regex import findUrl
 from utils.make_request import makeHTTPRequest
@@ -70,7 +71,7 @@ class ApiLLM():
     """
     Function which prompts the LLM for a URL and verifies its validity. If the URL is invalid, will re-prompt the model a certain amount of times for a valid one.
     """
-    def promptUrl(self, prompt, apiRequest=False, retries=3):
+    def promptUrl(self, prompt, apiRequest=False, apiKeyParam="", apiKey="", retries=3):
 
         retryIndex = 0
         oldPrompt = prompt
@@ -81,6 +82,16 @@ class ApiLLM():
             url = findUrl(response)
 
             if url != "":
+
+                if apiKey != "":
+                    if apiKeyParam not in url:
+                        if "?" in url:
+                            url = url + f"&{apiKeyParam}={apiKey}"
+                        else:
+                            url = url + f"?{apiKeyParam}={apiKey}"
+                    else:
+                        pattern = rf"{apiKeyParam}=[^&]*"
+                        url = re.sub(pattern, f"{apiKeyParam}={apiKey}", url)
 
                 validityData = makeHTTPRequest(url, self.logger)
 

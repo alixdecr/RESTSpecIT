@@ -55,6 +55,8 @@ The tool was designed by Alix Decrop, for the research paper "You Can REST Now: 
 
 - `api.request-verif: boolean` - If the generated requests should be verified w.r.t. the API server responses.
 
+- `api.accept-html: boolean` - If a HTML response returned by the API should be considered as a valid response.
+
 - `llm.openai-key: string` - The authentication key used to access the utilized Large Language Model API. For now, only OpenAI keys are supported.
 
 - `llm.model: string` - The name of the Large Language Model used by the tool (`gpt-3.5-turbo` by default). For now, only GPT-3.5 and GPT-4 models are supported.
