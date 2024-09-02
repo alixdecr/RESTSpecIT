@@ -23,7 +23,7 @@ def main():
             tester = ApiTester(config)
 
             # TEST EXECUTION FOR ONLINE APIS
-            tester.execute(["REST Countries API"])
+            tester.execute(["Spring Petclinic API"])
             """
             tester.execute(["An API of Ice and Fire API",
                             "Balldontlie API",

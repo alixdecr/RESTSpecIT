@@ -49,6 +49,12 @@ The tool was designed by Alix Decrop, for the research paper "You Can REST Now: 
 
 - `api.exclude-routes: list[string]` - The names of the routes that will be excluded during the mutation process of the tool. This is used to avoid mutating base routes of the API. By default, `api, v1, v2, v3` are excluded as they are frequently API base route names.
 
+- `api.local: boolean` - If the API is local (i.e. running on localhost).
+
+- `api.local-url: string` - The URL of the local API. If the API is not local, insert an empty string.
+
+- `api.request-verif: boolean` - If the generated requests should be verified w.r.t. the API server responses.
+
 - `llm.openai-key: string` - The authentication key used to access the utilized Large Language Model API. For now, only OpenAI keys are supported.
 
 - `llm.model: string` - The name of the Large Language Model used by the tool (`gpt-3.5-turbo` by default). For now, only GPT-3.5 and GPT-4 models are supported.

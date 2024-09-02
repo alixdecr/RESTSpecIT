@@ -30,6 +30,8 @@ class ApiInferer:
         self.prompts = config["execution"]["prompts"]
         self.seedChoice = config["execution"]["seed-choice"] # random-route or random-seed
         self.local = config["api"]["local"]
+        self.localUrl = config["api"]["local-url"]
+        self.requestVerif = config["api"]["request-verif"]
 
         # if the "outputs" folder does not exist yet, create the folder and its sub-folders
         folderList = [self.outPath, f"{self.outPath}/seeds", f"{self.outPath}/logs", f"{self.outPath}/executions"]
@@ -218,8 +220,14 @@ class ApiInferer:
 
         # for local APIs
         if self.local:
-            baseName = self.apiName.replace(" ", "").lower()
-            self.seedList = [f"https://{baseName}local.io"]
+
+            self.apiData["servers"] = [{
+                "url": self.localUrl,
+                "description": f"Local Production Server of the {self.apiName}.",
+                "x-base-routes": self.localUrl.count("/")
+            }]
+
+            self.seedList = [self.localUrl]
             responseData = {
                             "request": self.seedList[0],
                             "code": 200,
@@ -333,8 +341,8 @@ class ApiInferer:
                         else:
                             request = request + f"?{self.apiKeyParam}={self.apiKey}"
 
-                    # for local APIs, response is considered valid
-                    if self.local:
+                    # if there is not request verification
+                    if not self.requestVerif:
                         responseData = {
                             "request": request,
                             "code": 200,
