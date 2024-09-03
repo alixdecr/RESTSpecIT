@@ -23,7 +23,6 @@ class ApiInferer:
         # parameters
         self.apiName = config["api"]["name"]
         self.apiKey = config["api"]["key"]
-        self.apiKeyParam = config["api"]["key-param"]
         self.rateLimit = config["api"]["rate-limit"]
         self.excludeRoutes = config["api"]["exclude-routes"]
         self.outPath = config["execution"]["out-path"]
@@ -246,11 +245,11 @@ class ApiInferer:
             # seed URL
             seedPrompt = f"Return an example of a complete and valid HTTP request URL that can be made to the '{self.apiName}'. If the request allows query parameters, add some to the end of the URL. You must only reply with the URL."
 
-            seedUrl = self.llm.promptUrl(seedPrompt, True, self.apiKeyParam, self.apiKey)
+            seedUrl = self.llm.promptUrl(seedPrompt, True, apiKey=self.apiKey)
 
             if seedUrl != "":
 
-                responseData = makeHTTPRequest(seedUrl, self.logger)
+                responseData = makeHTTPRequest(seedUrl, self.logger, apiKey=self.apiKey)
 
                 if responseData["valid"]:
 
@@ -330,13 +329,6 @@ class ApiInferer:
 
                     self.logger.logMessage("Request", "bullet", "purple", True, request)
 
-                    # if the API requires a key, add it
-                    if self.apiKey != "" and f"{self.apiKeyParam}={self.apiKey}" not in request:
-                        if "?" in request:
-                            request = request + f"&{self.apiKeyParam}={self.apiKey}"
-                        else:
-                            request = request + f"?{self.apiKeyParam}={self.apiKey}"
-
                     # if there is not request verification
                     if not self.requestVerif:
                         responseData = {
@@ -352,7 +344,7 @@ class ApiInferer:
                         self.logger.logRequest(responseData)
 
                     else:
-                        responseData = makeHTTPRequest(request, self.logger)
+                        responseData = makeHTTPRequest(request, self.logger, apiKey=self.apiKey)
 
                     self.executionData["requests"]["total"] += 1
 

@@ -1,4 +1,4 @@
-import json, os
+import copy, json, os
 from classes.api_inferer import ApiInferer
 
 
@@ -34,13 +34,15 @@ class ApiTester:
         - If no new doc found, reduce retries by 1
         - If no more retries, remove API from queue as no more features were discovered
     """
-    def execute(self, apiList):
+    def execute(self):
 
         apiDict = {}
 
-        for api in apiList:
+        for api, configDict in self.config["test-config"].items():
 
-            apiName = api.replace(" ", "_") # replace API name spaces with underscores
+            # replace API name spaces with underscores
+            apiName = api.replace(" ", "_")
+
             # open the API doc
             with open(f"./inputs/docs/{apiName}_doc.json", "r") as openfile:
                 doc = json.load(openfile)
@@ -67,6 +69,18 @@ class ApiTester:
             # save it to outputs
             self.saveDoc(docDict, apiOutPath)
 
+            # create a deep copy of the config file for the current API, and then insert its specific config elements specified in test-config
+            currentConfig = copy.deepcopy(self.config)
+
+            currentConfig["api"]["name"] = api
+
+            for configKey, configData in configDict.items():
+                currentConfig["api"][configKey] = configData
+
+            currentConfig["execution"]["out-path"] = apiOutPath
+
+            currentConfig.pop("test-config")
+
             # create api dict
             apiDict[apiName] = {
                 "name": api,
@@ -74,8 +88,10 @@ class ApiTester:
                 "execId": 0,
                 "retries": 2,
                 "outPath": apiOutPath,
-                "strategy": "focusAll"
+                "strategy": "focusAll",
+                "config": currentConfig
             }
+
 
         remainsExec = True
 
@@ -92,12 +108,10 @@ class ApiTester:
                     # update API exec ID
                     apiDict[api]["execId"] += 1
 
-                    # set API related config
-                    self.config["api"]["name"] = apiDict[api]["name"]
-                    self.config["execution"]["out-path"] = apiDict[api]["outPath"]
+                    apiConfig = apiDict[api]["config"]
 
                     # execute inferer for API
-                    inferer = ApiInferer(self.config)
+                    inferer = ApiInferer(apiConfig)
                     execData = inferer.execute(apiDict[api]["execId"], apiDict[api]["strategy"])
 
                     foundData = False

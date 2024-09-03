@@ -41,9 +41,7 @@ The tool was designed by Alix Decrop, for the research paper "You Can REST Now: 
 
 - `api.name: string` - The name of the RESTful API to execute. The name should be followed by `API`, such as `PetStore API`.
 
-- `api.key: string` - The authentication key used to access the API. If the API does not require a key, leave the value as an empty string.
-
-- `api.key-param: string` - The name of the query parameter for the API key. Usually, the name is `key` or `apiKey`.
+- `api.key: string` - The authentication string with the key used to access the API. If the API does not require a key, leave the value as an empty string. If the API requires the key in a query parameter, write it (e.g. `apiKey=XXXXX`). If the API requires the key in a header field, write the header field (e.g. `Authorization: XXXXX`). The tool will automatically detect if the string should go in the request URL or in the request headers.
 
 - `api.rate-limit: integer >= 0` - The amount of seconds to wait between requests sent to the API. This is useful if the API has a strict rate limiting. If no rate limiting is required, leave the value to 0.
 

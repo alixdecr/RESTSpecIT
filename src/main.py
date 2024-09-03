@@ -23,26 +23,8 @@ def main():
             tester = ApiTester(config)
 
             # TEST EXECUTION FOR ONLINE APIS
-            tester.execute(["Genome Nexus API"])
-            """
-            tester.execute(["An API of Ice and Fire API",
-                            "Balldontlie API",
-                            "Bored API",
-                            "CheapShark API",
-                            "CoinCap API",
-                            "Datamuse API",
-                            "GBIF Species API",
-                            "Open Brewery DB API",
-                            "Random User Generator API",
-                            "ReqRes API"])
-            """
-
-            # TEST EXECUTION FOR LOCAL APIS
-            """
-            tester.execute(["Soccer API",
-                            "Weather API",
-                            "Currency Exchange API"])
-            """
+            tester.execute()
+            
 
         # EXECUTION FOR INFERER MODE
         else:

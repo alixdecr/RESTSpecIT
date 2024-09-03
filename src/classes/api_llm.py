@@ -71,7 +71,7 @@ class ApiLLM():
     """
     Function which prompts the LLM for a URL and verifies its validity. If the URL is invalid, will re-prompt the model a certain amount of times for a valid one.
     """
-    def promptUrl(self, prompt, apiRequest=False, apiKeyParam="", apiKey="", retries=3):
+    def promptUrl(self, prompt, apiRequest=False, apiKey="", retries=3):
 
         retryIndex = 0
         oldPrompt = prompt
@@ -83,17 +83,7 @@ class ApiLLM():
 
             if url != "":
 
-                if apiKey != "":
-                    if apiKeyParam not in url:
-                        if "?" in url:
-                            url = url + f"&{apiKeyParam}={apiKey}"
-                        else:
-                            url = url + f"?{apiKeyParam}={apiKey}"
-                    else:
-                        pattern = rf"{apiKeyParam}=[^&]*"
-                        url = re.sub(pattern, f"{apiKeyParam}={apiKey}", url)
-
-                validityData = makeHTTPRequest(url, self.logger)
+                validityData = makeHTTPRequest(url, self.logger, apiKey=apiKey)
 
                 # if the url is valid, set the retry index to the number of retries to exit the while loop
                 # if API request, response data has to be valid
