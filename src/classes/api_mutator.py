@@ -1,4 +1,4 @@
-import ast, random, re
+import ast, random, re, time
 from utils.request_format import dictToRequest, requestToDict
 
 
@@ -73,7 +73,8 @@ class ApiMutator:
     """
     def applyMutationOperator(self, request, mutationOperator):
 
-        self.logger.logMessage("Mutation Operator", "bullet", "purple", True, mutationOperator)
+        self.logger.logText(f"Mutation Operator: {mutationOperator}", "section")
+        self.logger.logText(f"Chosen Seed: {request}", "info")
 
         mutatedRequests = []
         requestDict = requestToDict(request)
@@ -84,7 +85,7 @@ class ApiMutator:
             # mask request based on the operator
             maskedRequest = self.maskRequest(request, mutationOperator)
 
-            self.logger.logMessage("Masked Request", "bullet", "purple", True, maskedRequest)
+            self.logger.logText(f"Masked Request: {maskedRequest}", "info")
 
             # check if operator is not of type remove and if the masked request contains a placeholder token, starting with '<'
             if "remove" not in mutationOperator and "<" in maskedRequest:
@@ -104,7 +105,9 @@ class ApiMutator:
                     valueList = ast.literal_eval(response)
                 except:
                     valueList = []
-                    self.logger.logMessage("Invalid Prompt Response", "arrow", "red", True)
+
+                    self.logger.logText(f"Could Not Extract a List from the Prompt Response: {response}", "error")
+                    time.sleep(5)
 
                 # parse the values of the list
                 if len(valueList) > 0:
@@ -136,7 +139,7 @@ class ApiMutator:
                     randId = str(random.randint(1, 100))
                     valueList.append(randId)
 
-                self.logger.logMessage("Found Values", "bullet", "purple", True, valueList)
+                self.logger.logText(f"Found Values: {valueList}", "success")
 
                 # for each value, find the corresponding mutated request by replacing the mask with the value
                 for value in valueList:
@@ -157,7 +160,7 @@ class ApiMutator:
                 mutatedRequests.append(maskedRequest)
 
         else:
-            self.logger.logMessage("Cannot Apply Mutation Operator", "arrow", "red", True)
+            self.logger.logText("Cannot Apply Mutation Operator", "error")
 
         return mutatedRequests
 
@@ -329,7 +332,5 @@ class ApiMutator:
         # random-seed case
         else:
             seed = random.choice(seedList)
-
-        self.logger.logMessage("Chosen Seed", "bullet", "purple", True, seed)
 
         return seed

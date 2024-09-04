@@ -6,6 +6,8 @@ Function which makes a HTTP request and returns data related to the obtained res
 """
 def makeHTTPRequest(request, logger, apiKey="", method="get"):
 
+    logger.logText(f"{request}", "request")
+
     # empty response by default
     responseData = {"request": request, "code": 0, "valid": True, "reason": "valid-req", "contentType": "", "text": "", "json": {}}
 
@@ -72,5 +74,15 @@ def makeHTTPRequest(request, logger, apiKey="", method="get"):
 
     # log response data
     logger.logRequest(responseData)
+
+    if responseData["valid"]:
+        logger.logText(f"Valid Request | Status Code: {responseData['code']}", "success")
+    else:
+        logger.logText(f"Invalid Request | Status Code: {responseData['code']} | Reason: {responseData['reason']}", "error")
+
+    # if the responde status code is 429 (too many requests), sleep for 60 seconds
+    if responseData["code"] == 429:
+        logger.logText("Invalid Request | Status Code: 429 (Too Many Requests) - PAUSING EXECUTION FOR 30s", "error")
+        time.sleep(30)
 
     return responseData

@@ -17,7 +17,7 @@ class Logger:
         init()
 
         # define colors
-        self.colorDict = {"red": Fore.RED, "blue": Fore.BLUE, "green": Fore.GREEN, "white": Fore.WHITE, "purple": Fore.MAGENTA, "yellow": Fore.YELLOW}
+        self.colorDict = {"red": Fore.RED, "blue": Fore.BLUE, "green": Fore.GREEN, "white": Fore.WHITE, "purple": Fore.MAGENTA, "yellow": Fore.YELLOW, "cyan": Fore.CYAN}
 
         self.outPath = config["execution"]["out-path"]
 
@@ -59,6 +59,33 @@ class Logger:
 
         else:
             print(f"{line}{coloredMessage}")
+
+
+    """
+    Function which prints a command prompt text of a certain category.
+    """
+    def logText(self, text, category):
+
+        # get current time
+        t = time.localtime()
+        timeString = time.strftime("%H:%M:%S", t)
+
+        categoryString = "[INFO]   "
+
+        if category == "title":
+            categoryString = self.colorDict["blue"] + "[TITLE]  " + Style.RESET_ALL
+        elif category == "section":
+            categoryString = self.colorDict["purple"] + "[SECTION]" + Style.RESET_ALL
+        elif category == "warning":
+            categoryString = self.colorDict["yellow"] + "[WARNING]" + Style.RESET_ALL
+        elif category == "error":
+            categoryString = self.colorDict["red"] + "[ERROR]  " + Style.RESET_ALL
+        elif category == "success":
+            categoryString = self.colorDict["green"] + "[SUCCESS]" + Style.RESET_ALL
+        elif category == "request":
+            categoryString = self.colorDict["cyan"] + "[REQUEST]" + Style.RESET_ALL
+
+        print(timeString + "  " + categoryString + " " + text)
 
 
     """

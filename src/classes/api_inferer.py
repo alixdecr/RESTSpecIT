@@ -67,8 +67,8 @@ class ApiInferer:
         executionPath = f"{self.outPath}/executions/{execId}.json"
 
         # print tool and api name
-        self.logger.logMessage("RESTSpecIT: The RESTful API Specification Inference Tool, powered with GPT", "title", "blue", True)
-        self.logger.logMessage(f"Executing for: {self.apiName}", "title", "blue", True)
+        self.logger.logText("Launching RESTSpecIT", "title")
+        self.logger.logText(f"Executing: {self.apiName}", "title")
 
         # start time
         startTime = time.time()
@@ -93,8 +93,8 @@ class ApiInferer:
         endTime = time.time()
 
         # results
-        self.logger.logMessage("Execution Results", "title", "blue", True)
-        self.logger.logMessage("Saved to", "bullet", "purple", True, executionPath)
+        self.logger.logText("Execution Results", "title")
+        self.logger.logText(f"Saved to: {executionPath}", "info")
 
         # add time to exec data
         self.executionData["time"] = f"{str(round(endTime - startTime, 2))}s"
@@ -114,10 +114,10 @@ class ApiInferer:
     """
     def findBaseData(self):
 
-        self.logger.logMessage("Inferring Base API Data", "title", "blue", True)
+        self.logger.logText("Inferring Base API Data", "title")
 
         # INFO DATA
-        self.logger.logMessage("Info Data...", "arrow", "blue", True)
+        self.logger.logText("Inferring Info Data", "section")
 
         if self.apiData["info"]["title"] == "":
             # API description
@@ -163,14 +163,15 @@ class ApiInferer:
                 },
                 "version": "v1"
             }
-            self.logger.logMessage("Info Data Found", "arrow", "green")
+
+            self.logger.logText("Info Data Found", "success")
             self.saveApiData()
 
         else:
-            self.logger.logMessage("Info Data Already Exists", "arrow", "yellow")
+            self.logger.logText("Info Data Already Exists", "warning")
 
         # EXTERNAL DOC DATA
-        self.logger.logMessage("External Doc Data...", "arrow", "blue", True)
+        self.logger.logText("Inferring Online Documentation Data", "section")
 
         if self.apiData["externalDocs"]["url"] == "":
             # documentation
@@ -181,14 +182,15 @@ class ApiInferer:
                 "url": docUrl,
                 "description": f"Find more about the {self.apiName} here:"
             }
-            self.logger.logMessage("External Doc Data Found", "arrow", "green")
+
+            self.logger.logText("Online Documentation Data Found", "success")
             self.saveApiData()
 
         else:
-            self.logger.logMessage("External Doc Data Already Exists", "arrow", "yellow")
+            self.logger.logText("Online Documentation Data Already Exists", "warning")
 
         # SERVER DATA
-        self.logger.logMessage("Server Data...", "arrow", "blue", True)
+        self.logger.logText("Inferring Server Data", "section")
 
         if self.apiData["servers"][0]["url"] == "":
             # base URL
@@ -209,14 +211,14 @@ class ApiInferer:
                 "x-base-routes": nbBase
             }]
 
-            self.logger.logMessage("Server Data Found", "arrow", "green")
+            self.logger.logText("Server Data Found", "success")
             self.saveApiData()
 
         else:
-            self.logger.logMessage("Server Data Already Exists", "arrow", "yellow")
+            self.logger.logText("Server Data Already Exists", "warning")
 
         # VALID REQUEST SEED
-        self.logger.logMessage("Valid Request Seed...", "arrow", "blue", True)
+        self.logger.logText("Inferring Request Seed", "section")
 
         # for local APIs
         if self.local:
@@ -269,21 +271,21 @@ class ApiInferer:
 
                         self.apiData["servers"][0]["x-base-routes"] = nbBase
 
-                    self.logger.logMessage("Valid Request Seed Found", "arrow", "green")
+                    self.logger.logText("Request Seed Found", "success")
                     self.inferRequest(seedUrl, responseData)
                 else:
-                    self.logger.logMessage("Valid Request Seed Not Found", "arrow", "red")
+                    self.logger.logText("Request Seed Not Found", "error")
             else:
-                self.logger.logMessage("Valid Request Seed Not Found", "arrow", "red")
+                self.logger.logText("Request Seed Not Found", "error")
         
         else:
-            self.logger.logMessage("Valid Request Seed Already Exists", "arrow", "yellow")
+            self.logger.logText("Request Seed Already Exists", "warning")
 
          # set nb base routes for the mutator
         self.mutator.apiNbBase = self.apiData["servers"][0]["x-base-routes"]
 
         # ERROR SCHEMA
-        self.logger.logMessage("Error Schema...", "arrow", "blue", True)
+        self.logger.logText("Inferring Error Schema", "section")
 
         # if server url exists, use it as a base
         if self.apiData["servers"][0]["url"] != "":
@@ -294,7 +296,8 @@ class ApiInferer:
             self.verifier.inferErrorSchema(self.seedList[0])
 
         self.apiData["components"]["schemas"]["ErrorSchema"] = self.verifier.errorSchema
-        self.logger.logMessage("Error Schema Found", "arrow", "green")
+
+        self.logger.logText("Error Schema Found", "success")
 
         self.saveApiData()
 
@@ -307,27 +310,25 @@ class ApiInferer:
         # add strategy to recap
         self.executionData["strategies"].append(strategy)
 
-        self.logger.logMessage(f"Mutation Process - Strategy: {strategy}", "title", "blue", True)
+        self.logger.logText(f"Mutation Process: {strategy}", "title")
 
         if len(self.seedList) == 0:
-            self.logger.logMessage(f"Cannot mutate as no seeds exist", "arrow", "red", True)
+            self.logger.logText("Cannot Mutate: No Seeds Exist", "error")
 
         else:
             # for each iteration, chose a seed and apply all mutation operators onto it in order to find mutated requests
             for i in range(iterations):
-                self.logger.logMessage(f"Mutating Request ({i + 1}/{iterations})", "title", "blue", True)
+                self.logger.logText(f"Mutating Request ({i + 1}/{iterations})", "title")
 
                 # apply mutation strategy
                 mutatedList = self.mutator.applyStrategy(strategy, self.seedList, list(self.apiData["paths"].keys()))
 
-                self.logger.logMessage("Mutated Request Verification", "title", "blue", True)
+                self.logger.logText("Mutated Request Verification", "title")
 
                 for request in mutatedList:
                     # if API request rate limiting, sleep x seconds
                     if self.rateLimit > 0:
                         time.sleep(self.rateLimit)
-
-                    self.logger.logMessage("Request", "bullet", "purple", True, request)
 
                     # if there is not request verification
                     if not self.requestVerif:
@@ -352,16 +353,14 @@ class ApiInferer:
                     if responseData["valid"]:
                         # flag out HTML (or not if accept-html parameter is true) as it indicates a web page and not data as response (json, text, image, etc.)
                         if "html" not in responseData["contentType"] or self.acceptHtml:
-                            self.logger.logMessage("Valid Request", "arrow", "green", True)
+                            self.logger.logText("Valid Request", "success")
                             self.inferRequest(request, responseData)
                             self.executionData["requests"]["valid"] += 1
                         else:
-                            self.logger.logMessage("Invalid Request - Response is of HTML format", "arrow", "yellow", True)
-                    else:
-                        self.logger.logMessage(f"Invalid Request due to '{responseData['reason']}'", "arrow", "red", True)
+                            self.logger.logText("Valid request invalidated: HTML is not accepted", "warning")
 
-                        if request not in self.invalidSeedList:
-                            self.saveApiSeed(request, "invalid")
+                    elif request not in self.invalidSeedList:
+                        self.saveApiSeed(request, "invalid")
         
 
     """
@@ -378,7 +377,7 @@ class ApiInferer:
             self.saveApiSeed(request)
 
         else:
-            self.logger.logMessage(f"Request already exists in seeds", "arrow", "yellow", True)
+            self.logger.logText("Request Already in Seeds", "warning")
 
         if requestDict != {}:
 
@@ -550,12 +549,12 @@ class ApiInferer:
         # if the file already exists, load it
         if os.path.isfile(self.openapiPath):
             filePath = self.openapiPath
-            self.logger.logMessage("Loaded API Data", "arrow", "green", True)
+            self.logger.logText("Loaded API Data", "success")
 
         else:
             # by default, the file to load is the default openapi data
             filePath = "./src/utils/default_openapi.json"
-            self.logger.logMessage("Created New API Data File", "arrow", "green", True)
+            self.logger.logText("Created New API Data File", "success")
 
         # load file data
         with open(filePath, "r", encoding="utf-8") as openfile:
@@ -571,7 +570,7 @@ class ApiInferer:
         # save data to file
         with open(self.openapiPath, "w", encoding="utf-8") as outfile:
             json.dump(self.apiData, outfile, indent=4)
-            self.logger.logMessage("Saved API Data", "arrow", "green", True)
+            self.logger.logText("Saved API Data", "success")
 
 
     """
@@ -592,10 +591,10 @@ class ApiInferer:
                 else:
                     self.invalidSeedList = openfile.read().splitlines()
 
-                self.logger.logMessage("Loaded API Seeds", "arrow", "green", True)
+                self.logger.logText("Loaded API Seeds", "success")
 
         else:
-            self.logger.logMessage("Created New API Seed File", "arrow", "green", True)
+            self.logger.logText("Created New API Seed File", "success")
 
 
     """
@@ -613,4 +612,4 @@ class ApiInferer:
             outfile.write(f"{seed}\n")
 
             if seedType == "valid":
-                self.logger.logMessage("Saved API Seed", "arrow", "green", True)
+                self.logger.logText("Saved API Seed", "success")

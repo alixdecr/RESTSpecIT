@@ -1,4 +1,4 @@
-import re
+import time
 from openai import OpenAI
 from utils.find_regex import findUrl
 from utils.make_request import makeHTTPRequest
@@ -59,8 +59,9 @@ class ApiLLM():
             
             # in case of a timeout error, set response as empty string
             except Exception as e:
-                print(e)
+                self.logger.logText(f"Invalid LLM Prompt Request: {e} - PAUSING EXECUTION FOR 30s", "error")
                 promptData["response"] = ""
+                time.sleep(30)
 
             # log prompt data
             self.logger.logPrompt(promptData)
