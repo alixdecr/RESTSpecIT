@@ -243,7 +243,7 @@ class ApiMutator:
         element = self.mutationOperators[mutationOperator]["element"]
         token = self.mutationOperators[mutationOperator]["token"]
 
-        prompt = f"Return a Python list containing up to 10 different examples of distinct {element}s that can replace '{token}' in the following HTTP request to the '{self.apiName}': '{maskedRequest}'. You must only reply with the Python list containing {element}s." # To add with GPT4: The response should only contain the list without formatted Python code.
+        prompt = f"Return a Python list containing up to 10 different examples of distinct {element}s that can replace '{token}' in the following HTTP request to the '{self.apiName}': '{maskedRequest}'. You must only reply with the Python list containing {element}s."
 
         return prompt
     

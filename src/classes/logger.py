@@ -85,7 +85,7 @@ class Logger:
         elif category == "request":
             categoryString = self.colorDict["cyan"] + "[REQUEST]" + Style.RESET_ALL
 
-        print(timeString + "  " + categoryString + " " + text)
+        print(timeString + " " + categoryString + " " + text)
 
 
     """

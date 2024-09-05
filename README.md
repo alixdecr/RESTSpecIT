@@ -73,6 +73,10 @@ The tool was designed by Alix Decrop, for the research paper "You Can REST Now: 
 
 - `execution.max-route-query: integer >= 0 and <= 10` - The number of routes in each mutation where the tool will also prompt the model for additional query parameters related to the routes (`3` by default). This is useful for APIs that contain routes with mandatory query parameters.
 
+- `execution.seed-init: string` - The strategy that the tool will employ to initialize the seed list (`all-routes-request` by default).
+    - `single-seed`: Will only generate a single request seed.
+    - `all-routes-seed`: Will generate a request seed for each route of the API found by the LLM.
+
 - `execution.seed-choice: string` - The strategy that the tool will employ to select seeds (`random-route` by default).
     - `random-seed` (not recommended): Selects a random seed from the list of seeds.
     - `random-route` (recommended): Selects a random route from the list of routes that were found by the tool, and then selects a random seed that contains the randomly chosen route. This allows all discovered routes to be selected more evenly.

@@ -31,7 +31,6 @@ class ApiLLM():
 
     """
     Function which makes a request to the OpenAI API. Retries 10 times by default in case of a model error.
-    Models: gpt-3.5-turbo and gpt-4-1106-preview
     """
     def makeLLMRequest(self, text, retries=10):
 
@@ -48,7 +47,8 @@ class ApiLLM():
                     max_tokens = 1000,
                     messages = [
                         {"role": "user", "content": text}
-                    ]
+                    ],
+                    timeout = 10 # 10 second timeout in case the LLM request freezes
                 )
 
                 promptData["object"] = request
@@ -59,9 +59,9 @@ class ApiLLM():
             
             # in case of a timeout error, set response as empty string
             except Exception as e:
-                self.logger.logText(f"Invalid LLM Prompt Request: {e} - PAUSING EXECUTION FOR 30s", "error")
+                self.logger.logText(f"Invalid LLM Prompt Request: {e} - PAUSING EXECUTION FOR 5s", "error")
                 promptData["response"] = ""
-                time.sleep(30)
+                time.sleep(5)
 
             # log prompt data
             self.logger.logPrompt(promptData)

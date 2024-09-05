@@ -1,4 +1,4 @@
-import json, os, random, re, time
+import ast, json, os, re, time
 from classes.api_llm import ApiLLM
 from classes.api_mutator import ApiMutator
 from classes.api_verifier import ApiVerifier
@@ -27,6 +27,7 @@ class ApiInferer:
         self.excludeRoutes = config["api"]["exclude-routes"]
         self.outPath = config["execution"]["out-path"]
         self.prompts = config["execution"]["prompts"]
+        self.seedInit = config["execution"]["seed-init"] # all-routes-seed or single-seed
         self.seedChoice = config["execution"]["seed-choice"] # random-route or random-seed
         self.local = config["api"]["local"]
         self.localUrl = config["api"]["local-url"]
@@ -218,7 +219,7 @@ class ApiInferer:
             self.logger.logText("Server Data Already Exists", "warning")
 
         # VALID REQUEST SEED
-        self.logger.logText("Inferring Request Seed", "section")
+        self.logger.logText("Inferring Request Seeds", "section")
 
         # for local APIs
         if self.local:
@@ -244,42 +245,52 @@ class ApiInferer:
             self.inferRequest(self.seedList[0], responseData)
 
         if len(self.seedList) <= 0:
-            # seed URL
-            seedPrompt = f"Return an example of a complete and valid HTTP request URL that can be made to the '{self.apiName}'. If the request allows query parameters, add some to the end of the URL. You must only reply with the URL."
 
-            seedUrl = self.llm.promptUrl(seedPrompt, True, apiKey=self.apiKey)
+            seeds = []
 
-            if seedUrl != "":
+            # SINGLE SEED INIT STRATEGY
+            if self.seedInit == "single-seed":
+                # seed URL
+                seedPrompt = f"Return an example of a complete and valid HTTP request URL that can be made to the '{self.apiName}'. If the request allows query parameters, add some to the end of the URL. You must only reply with the URL."
 
-                responseData = makeHTTPRequest(seedUrl, self.logger, apiKey=self.apiKey)
+                seedUrl = self.llm.promptUrl(seedPrompt, True, apiKey=self.apiKey)
 
-                if responseData["valid"]:
+                seeds = [seedUrl]
 
-                    # find nb of base routes based on exclude-routes config
-                    if self.apiData["servers"][0]["x-base-routes"] == 0:
-                        requestDict = requestToDict(seedUrl)
-                        nbBase = 0
-                        for i in requestDict["routes"]["parsed"]:
-                            # lowercase to match patterns such as api, Api, v1, V1, etc.
-                            i = i.lower()
-                            if i in self.excludeRoutes:
-                                # add 1 to the nb of base routes and add path to server URL
-                                nbBase += 1
-                            # break to prevent base routes discontinuity
-                            else:
-                                break
-
-                        self.apiData["servers"][0]["x-base-routes"] = nbBase
-
-                    self.logger.logText("Request Seed Found", "success")
-                    self.inferRequest(seedUrl, responseData)
-                else:
-                    self.logger.logText("Request Seed Not Found", "error")
+            # ALL ROUTES SEED INIT STRATEGY  (BY DEFAULT)
             else:
-                self.logger.logText("Request Seed Not Found", "error")
+                seeds = self.inferAllRouteExamples()
+
+            # VERIFY THE SEEDS
+            if len(seeds) > 0:
+                for seed in seeds:
+                    if seed != "":
+                        responseData = makeHTTPRequest(seed, self.logger, apiKey=self.apiKey)
+
+                        if responseData["valid"]:
+                            # find nb of base routes based on exclude-routes config
+                            if self.apiData["servers"][0]["x-base-routes"] == 0:
+                                requestDict = requestToDict(seed)
+                                nbBase = 0
+                                for i in requestDict["routes"]["parsed"]:
+                                    # lowercase to match patterns such as api, Api, v1, V1, etc.
+                                    i = i.lower()
+                                    if i in self.excludeRoutes:
+                                        # add 1 to the nb of base routes and add path to server URL
+                                        nbBase += 1
+                                    # break to prevent base routes discontinuity
+                                    else:
+                                        break
+
+                                self.apiData["servers"][0]["x-base-routes"] = nbBase
+
+                            self.inferRequest(seed, responseData)
+
+            else:
+                self.logger.logText("Request Seeds Not Found", "error")
         
         else:
-            self.logger.logText("Request Seed Already Exists", "warning")
+            self.logger.logText("Request Seeds Already Exists", "warning")
 
          # set nb base routes for the mutator
         self.mutator.apiNbBase = self.apiData["servers"][0]["x-base-routes"]
@@ -353,7 +364,6 @@ class ApiInferer:
                     if responseData["valid"]:
                         # flag out HTML (or not if accept-html parameter is true) as it indicates a web page and not data as response (json, text, image, etc.)
                         if "html" not in responseData["contentType"] or self.acceptHtml:
-                            self.logger.logText("Valid Request", "success")
                             self.inferRequest(request, responseData)
                             self.executionData["requests"]["valid"] += 1
                         else:
@@ -461,6 +471,9 @@ class ApiInferer:
                 for index in range(len(parameters)):
 
                     parameter = parameters[index]
+
+                    # remove "[]" from list query parameters as they only appear in requests
+                    parameter["name"] = parameter["name"].replace("[", "").replace("]", "")
 
                     # add parameter to execution recap
                     if parameter["name"] not in self.executionData["parameters"]["list"]:
@@ -613,3 +626,30 @@ class ApiInferer:
 
             if seedType == "valid":
                 self.logger.logText("Saved API Seed", "success")
+
+    """
+    Function which prompts the LLM for a list of API seeds, based on known routes, and returns them in a list.
+    """
+    def inferAllRouteExamples(self):
+
+        # prompt
+        prompt = f"First, I need you to exhaustively find all routes that exist in the '{self.apiName}'. If a route has subroutes (e.g. /user/123), also include such routes. Second, for each route you found, I need you to create an example of a complete and valid HTTP request URL that uses the route. The examples need to contain various query parameters that exist in the '{self.apiName}'. Third, I need you to return a Python list containing all generated requests. You must only reply with the Python list."
+
+        # response
+        response = self.llm.makeLLMRequest(prompt)
+
+        # check if response is a list
+        try:
+            # remove line breaks and multiple spaces
+            response = " ".join(response.split())
+            # find the list in the response if not returned directly by the model
+            response = re.findall(r"\[.+\]", response)[0]
+            # parse the string list
+            valueList = ast.literal_eval(response)
+        except:
+            valueList = []
+
+            self.logger.logText(f"Could Not Extract a List from the Prompt Response: {response}", "error")
+            time.sleep(5)
+
+        return valueList
