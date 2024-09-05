@@ -70,22 +70,36 @@ class Logger:
         t = time.localtime()
         timeString = time.strftime("%H:%M:%S", t)
 
-        categoryString = "[INFO]   "
+        logCat = "[INFO]   "
+        printCat = "[INFO]   "
 
         if category == "title":
-            categoryString = self.colorDict["blue"] + "[TITLE]  " + Style.RESET_ALL
+            logCat = "[TITLE]  "
+            printCat = self.colorDict["blue"] + "[TITLE]  " + Style.RESET_ALL
         elif category == "section":
-            categoryString = self.colorDict["purple"] + "[SECTION]" + Style.RESET_ALL
+            logCat = "[SECTION]"
+            printCat = self.colorDict["purple"] + "[SECTION]" + Style.RESET_ALL
         elif category == "warning":
-            categoryString = self.colorDict["yellow"] + "[WARNING]" + Style.RESET_ALL
+            logCat = "[WARNING]"
+            printCat = self.colorDict["yellow"] + "[WARNING]" + Style.RESET_ALL
         elif category == "error":
-            categoryString = self.colorDict["red"] + "[ERROR]  " + Style.RESET_ALL
+            logCat = "[ERROR]  "
+            printCat = self.colorDict["red"] + "[ERROR]  " + Style.RESET_ALL
         elif category == "success":
-            categoryString = self.colorDict["green"] + "[SUCCESS]" + Style.RESET_ALL
+            logCat = "[SUCCESS]"
+            printCat = self.colorDict["green"] + "[SUCCESS]" + Style.RESET_ALL
         elif category == "request":
-            categoryString = self.colorDict["cyan"] + "[REQUEST]" + Style.RESET_ALL
+            logCat = "[REQUEST]"
+            printCat = self.colorDict["cyan"] + "[REQUEST]" + Style.RESET_ALL
 
-        print(timeString + " " + categoryString + " " + text)
+        logText = timeString + " " + logCat + " " + text + "\n"
+        printText = timeString + " " + printCat + " " + text
+
+        print(printText)
+
+        # add prompt data to log file
+        with open(f"{self.outPath}/logs/execution_logs.txt", "a", encoding="utf-8") as outfile:
+            outfile.write(logText)
 
 
     """

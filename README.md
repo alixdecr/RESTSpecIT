@@ -65,11 +65,11 @@ The tool was designed by Alix Decrop, for the research paper "You Can REST Now: 
 
 - `execution.out-path: string` - The path where the outputs of the tool will be saved (`./outputs` by default).
 
-- `execution.prompts.extraBaseData: boolean` - `true` if the tool should attempt to infer base API data (external documentation URL, API license, contact page, etc.), `false` otherwise.
+- `execution.prompts.extra-base-data: boolean` - `true` if the tool should attempt to infer base API data (external documentation URL, API license, contact page, etc.), `false` otherwise.
 
-- `execution.prompts.routeDesc: boolean` - `true` if the tool should generate OpenAPI human-readable descriptions for routes, `false` otherwise.
+- `execution.prompts.route-desc: boolean` - `true` if the tool should generate OpenAPI human-readable descriptions for routes, `false` otherwise.
 
-- `execution.prompts.parameterDesc: boolean` - `true` if the tool should generate OpenAPI human-readable descriptions for query parameters, `false` otherwise.
+- `execution.prompts.parameter-desc: boolean` - `true` if the tool should generate OpenAPI human-readable descriptions for query parameters, `false` otherwise.
 
 - `execution.max-route-query: integer >= 0 and <= 10` - The number of routes in each mutation where the tool will also prompt the model for additional query parameters related to the routes (`3` by default). This is useful for APIs that contain routes with mandatory query parameters.
 
@@ -80,3 +80,5 @@ The tool was designed by Alix Decrop, for the research paper "You Can REST Now: 
 - `execution.seed-choice: string` - The strategy that the tool will employ to select seeds (`random-route` by default).
     - `random-seed` (not recommended): Selects a random seed from the list of seeds.
     - `random-route` (recommended): Selects a random route from the list of routes that were found by the tool, and then selects a random seed that contains the randomly chosen route. This allows all discovered routes to be selected more evenly.
+
+- `execution.save-response-examples: boolean` - `true` if the tool should save HTTP response examples in the OpenAPI file, `false` otherwise. Setting this to `true` can result in very large OpenAPI files!

@@ -33,6 +33,7 @@ class ApiInferer:
         self.localUrl = config["api"]["local-url"]
         self.requestVerif = config["api"]["request-verif"]
         self.acceptHtml = config["api"]["accept-html"]
+        self.saveResponseExamples = config["execution"]["save-response-examples"]
 
         # if the "outputs" folder does not exist yet, create the folder and its sub-folders
         folderList = [self.outPath, f"{self.outPath}/seeds", f"{self.outPath}/logs", f"{self.outPath}/executions"]
@@ -230,20 +231,6 @@ class ApiInferer:
                 "x-base-routes": self.localUrl.count("/")
             }]
 
-            self.seedList = [self.localUrl]
-            responseData = {
-                            "request": self.seedList[0],
-                            "code": 200,
-                            "valid": True,
-                            "reason": "valid-req",
-                            "contentType": "application/json",
-                            "text": "Valid request",
-                            "json": {"valid": "true", "response": "this is a valid request"}
-                        }
-            # log response data
-            self.logger.logRequest(responseData)
-            self.inferRequest(self.seedList[0], responseData)
-
         if len(self.seedList) <= 0:
 
             seeds = []
@@ -252,6 +239,9 @@ class ApiInferer:
             if self.seedInit == "single-seed":
                 # seed URL
                 seedPrompt = f"Return an example of a complete and valid HTTP request URL that can be made to the '{self.apiName}'. If the request allows query parameters, add some to the end of the URL. You must only reply with the URL."
+
+                if self.local:
+                    seedPrompt += f"The API is local, so you must use the following base URL: '{self.localUrl}'."
 
                 seedUrl = self.llm.promptUrl(seedPrompt, True, apiKey=self.apiKey)
 
@@ -410,7 +400,7 @@ class ApiInferer:
             # if the route is not in the data yet, create a new object for it
             if route not in self.apiData["paths"]:
 
-                if self.prompts["routeDesc"]:
+                if self.prompts["route-desc"]:
                     # route description
                     routePrompt = f"Return a very short description of the '{route}' route from the '{self.apiName}' API."
                     routeResponse = self.llm.makeLLMRequest(routePrompt)
@@ -420,8 +410,8 @@ class ApiInferer:
                     routeRespResponse = self.llm.makeLLMRequest(routeRespPrompt)
 
                 else:
-                    routeResponse = "No description."
-                    routeRespResponse = "No description."
+                    routeResponse = "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions."
+                    routeRespResponse = "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions."
 
                 # replace '/' with '_' for schema ID and remove semicolons as they are not standard
                 routeSchema = "ResponseSchema" + route.replace("/", "_").replace("{","").replace("}", "")
@@ -441,6 +431,16 @@ class ApiInferer:
                     }
                     defaultParams.append(data)
 
+                exampleResponse = "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+
+                if self.saveResponseExamples:
+                    if responseData["json"] != {}:
+                        exampleResponse = responseData["json"]
+                    elif len(responseData["text"]) < 400:
+                        exampleResponse = responseData["text"]
+                    else:
+                        exampleResponse = responseData["text"][:400] + "..."
+
                 # create a new route data in the OpenAPI format
                 self.apiData["paths"][route] = {
                     "get": {
@@ -454,7 +454,7 @@ class ApiInferer:
                                         "schema": {
                                             "$ref": f"#/components/schemas/{routeSchema}"
                                         },
-                                        "example": responseData["json"] if responseData["json"] != {} else (responseData["text"] if len(responseData["text"]) < 400 else responseData["text"][:400] + "...")
+                                        "example": exampleResponse
                                     }
                                 }
                             },
@@ -516,11 +516,11 @@ class ApiInferer:
                         # get parameter description
                         name = parameter["name"]
 
-                        if self.prompts["parameterDesc"]:
+                        if self.prompts["parameter-desc"]:
                             paramPrompt = f"Return a very short description of the '{name}' parameter from the '{self.apiName}' API."
                             paramResponse = self.llm.makeLLMRequest(paramPrompt)
                         else:
-                            paramResponse = "No description."
+                            paramResponse = "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions."
 
                         # add parameter to data
                         parameterData = {
@@ -634,6 +634,9 @@ class ApiInferer:
 
         # prompt
         prompt = f"First, I need you to exhaustively find all routes that exist in the '{self.apiName}'. If a route has subroutes (e.g. /user/123), also include such routes. Second, for each route you found, I need you to create an example of a complete and valid HTTP request URL that uses the route. The examples need to contain various query parameters that exist in the '{self.apiName}'. Third, I need you to return a Python list containing all generated requests. You must only reply with the Python list."
+
+        if self.local:
+            prompt += f"The API is local, so you must use the following base URL: '{self.localUrl}'."
 
         # response
         response = self.llm.makeLLMRequest(prompt)
