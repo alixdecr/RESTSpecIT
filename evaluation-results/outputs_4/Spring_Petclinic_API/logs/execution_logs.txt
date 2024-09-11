@@ -1,0 +1,605 @@
+13:24:11 [TITLE]   Launching RESTSpecIT
+13:24:11 [TITLE]   Executing: Spring Petclinic API
+13:24:11 [SUCCESS] Created New API Data File
+13:24:11 [SUCCESS] Created New API Seed File
+13:24:11 [SUCCESS] Created New API Seed File
+13:24:11 [TITLE]   Inferring Base API Data
+13:24:11 [SECTION] Inferring Info Data
+13:24:12 [REQUEST] https://github.com/spring-projects/spring-petclinic/blob/main/LICENSE
+13:24:13 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+13:24:14 [REQUEST] https://github.com/spring-projects/spring-petclinic#terms-of-service
+13:24:15 [SUCCESS] Valid Request | Status Code: 200
+13:24:16 [REQUEST] https://github.com/spring-projects/spring-petclinic#contact-us
+13:24:16 [SUCCESS] Valid Request | Status Code: 200
+13:24:18 [REQUEST] https://www.apache.org/licenses/LICENSE-2.0
+13:24:18 [SUCCESS] Valid Request | Status Code: 200
+13:24:18 [SUCCESS] Info Data Found
+13:24:18 [SUCCESS] Saved API Data
+13:24:18 [SECTION] Inferring Online Documentation Data
+13:24:19 [REQUEST] https://github.com/spring-projects/spring-petclinic-api
+13:24:19 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+13:24:20 [REQUEST] https://spring-petclinic.github.io
+13:24:20 [SUCCESS] Valid Request | Status Code: 200
+13:24:20 [SUCCESS] Online Documentation Data Found
+13:24:20 [SUCCESS] Saved API Data
+13:24:20 [SECTION] Inferring Server Data
+13:24:21 [SUCCESS] Server Data Found
+13:24:21 [SUCCESS] Saved API Data
+13:24:21 [SECTION] Inferring Request Seeds
+13:24:24 [REQUEST] http://localhost:9966/petclinic/api/owners
+13:24:24 [SUCCESS] Valid Request | Status Code: 200
+13:24:24 [SUCCESS] Saved API Seed
+13:24:24 [SUCCESS] Saved API Data
+13:24:24 [REQUEST] http://localhost:9966/petclinic/api/owners?lastName=Smith
+13:24:24 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+13:24:24 [REQUEST] http://localhost:9966/petclinic/api/owners/1
+13:24:24 [SUCCESS] Valid Request | Status Code: 200
+13:24:24 [SUCCESS] Saved API Seed
+13:24:24 [SUCCESS] Saved API Data
+13:24:24 [REQUEST] http://localhost:9966/petclinic/api/owners/1/pets
+13:24:24 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:24 [REQUEST] http://localhost:9966/petclinic/api/vets
+13:24:24 [SUCCESS] Valid Request | Status Code: 200
+13:24:24 [SUCCESS] Saved API Seed
+13:24:24 [SUCCESS] Saved API Data
+13:24:24 [REQUEST] http://localhost:9966/petclinic/api/pets
+13:24:24 [SUCCESS] Valid Request | Status Code: 200
+13:24:24 [SUCCESS] Saved API Seed
+13:24:24 [SUCCESS] Saved API Data
+13:24:24 [REQUEST] http://localhost:9966/petclinic/api/pets/1
+13:24:24 [SUCCESS] Valid Request | Status Code: 200
+13:24:24 [SUCCESS] Saved API Seed
+13:24:24 [SUCCESS] Saved API Data
+13:24:24 [REQUEST] http://localhost:9966/petclinic/api/pets/1/visits
+13:24:24 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:24 [REQUEST] http://localhost:9966/petclinic/api/pets/1/visits?date=2022-01-01
+13:24:24 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:24 [REQUEST] http://localhost:9966/petclinic/api/specialties
+13:24:24 [SUCCESS] Valid Request | Status Code: 200
+13:24:24 [SUCCESS] Saved API Seed
+13:24:24 [SUCCESS] Saved API Data
+13:24:24 [REQUEST] http://localhost:9966/petclinic/api/specialties/1
+13:24:24 [SUCCESS] Valid Request | Status Code: 200
+13:24:24 [SUCCESS] Saved API Seed
+13:24:24 [SUCCESS] Saved API Data
+13:24:24 [REQUEST] http://localhost:9966/petclinic/api/visits
+13:24:24 [SUCCESS] Valid Request | Status Code: 200
+13:24:24 [SUCCESS] Saved API Seed
+13:24:24 [SUCCESS] Saved API Data
+13:24:24 [REQUEST] http://localhost:9966/petclinic/api/visits/1
+13:24:25 [SUCCESS] Valid Request | Status Code: 200
+13:24:25 [SUCCESS] Saved API Seed
+13:24:25 [SUCCESS] Saved API Data
+13:24:25 [SECTION] Inferring Error Schema
+13:24:25 [REQUEST] http://localhost:9966/petclinic/api/invalidRoute/?invalidParam=invalidValue
+13:24:25 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:25 [SUCCESS] Error Schema Found
+13:24:25 [SUCCESS] Saved API Data
+13:24:25 [TITLE]   Mutation Process: focusRoutes
+13:24:25 [TITLE]   Mutating Request (1/1)
+13:24:25 [SECTION] Mutation Operator: addRoute
+13:24:25 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/owners/1
+13:24:25 [INFO]    Masked Request: http://localhost:9966/petclinic/api/owners/1/<route>
+13:24:27 [SUCCESS] Found Values: ['pets', 'visits', 'vet', 'address', 'telephone', 'email', 'city', 'pets/*/visits', 'owners/*/pets', 'owners/*/pets/*/visits', 'pets?species=dog', 'visits?date=2022-05-15&description=Annual+check-up', 'vet?specialty=Dentistry', '17']
+13:24:27 [SECTION] Mutation Operator: removeRoute
+13:24:27 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/specialties
+13:24:27 [ERROR]   Cannot Apply Mutation Operator
+13:24:27 [SECTION] Mutation Operator: modifyRoute
+13:24:27 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/owners
+13:24:27 [ERROR]   Cannot Apply Mutation Operator
+13:24:27 [SECTION] Mutation Operator: resetRoutes
+13:24:27 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/pets/1
+13:24:27 [ERROR]   Cannot Apply Mutation Operator
+13:24:27 [TITLE]   Mutated Request Verification
+13:24:27 [REQUEST] http://localhost:9966/petclinic/api/owners/1/pets
+13:24:27 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:27 [REQUEST] http://localhost:9966/petclinic/api/owners/1/visits
+13:24:27 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:27 [REQUEST] http://localhost:9966/petclinic/api/owners/1/vet
+13:24:27 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:27 [REQUEST] http://localhost:9966/petclinic/api/owners/1/address
+13:24:27 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:27 [REQUEST] http://localhost:9966/petclinic/api/owners/1/telephone
+13:24:27 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:27 [REQUEST] http://localhost:9966/petclinic/api/owners/1/email
+13:24:27 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:27 [REQUEST] http://localhost:9966/petclinic/api/owners/1/city
+13:24:27 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:27 [REQUEST] http://localhost:9966/petclinic/api/owners/1/pets/*/visits
+13:24:27 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:27 [REQUEST] http://localhost:9966/petclinic/api/owners/1/owners/*/pets
+13:24:27 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:27 [REQUEST] http://localhost:9966/petclinic/api/owners/1/owners/*/pets/*/visits
+13:24:27 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:27 [REQUEST] http://localhost:9966/petclinic/api/owners/1/pets?species=dog
+13:24:27 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:27 [REQUEST] http://localhost:9966/petclinic/api/owners/1/visits?date=2022-05-15&description=Annual+check-up
+13:24:27 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:27 [REQUEST] http://localhost:9966/petclinic/api/owners/1/vet?specialty=Dentistry
+13:24:27 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:27 [REQUEST] http://localhost:9966/petclinic/api/owners/1/17
+13:24:27 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:24:27 [TITLE]   Mutation Process: focusParameters
+13:24:27 [TITLE]   Mutating Request (1/1)
+13:24:27 [SECTION] Mutation Operator: addParameter
+13:24:27 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/specialties/1
+13:24:27 [INFO]    Masked Request: http://localhost:9966/petclinic/api/specialties/1?<parameter=value>
+13:24:29 [SUCCESS] Found Values: ['name=Dentistry', 'type=Medical', 'description=Specialized+in+dental+care', 'location=Main+Building', 'status=Active', 'startDate=2022-01-01', 'endDate=2022-12-31', 'price=100.00', 'duration=60', 'capacity=20']
+13:24:29 [SECTION] Mutation Operator: removeParameter
+13:24:29 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/vets
+13:24:29 [INFO]    Masked Request: http://localhost:9966/petclinic/api/vets
+13:24:29 [SECTION] Mutation Operator: modifyParameter
+13:24:29 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/owners
+13:24:29 [INFO]    Masked Request: http://localhost:9966/petclinic/api/owners
+13:24:29 [SECTION] Mutation Operator: resetParameters
+13:24:29 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/visits/1
+13:24:29 [INFO]    Masked Request: http://localhost:9966/petclinic/api/visits/1?<parameter=value>
+13:24:30 [SUCCESS] Found Values: ['date=2022-10-05', 'vetId=3', 'type=checkup', 'description=Annual+checkup', 'petId=5', 'status=completed', 'page=1', 'size=10', 'sort=asc', 'filter=upcoming']
+13:24:30 [TITLE]   Mutated Request Verification
+13:24:30 [REQUEST] http://localhost:9966/petclinic/api/specialties/1?name=Dentistry
+13:24:30 [SUCCESS] Valid Request | Status Code: 200
+13:24:30 [SUCCESS] Saved API Seed
+13:24:30 [SUCCESS] Saved API Data
+13:24:30 [REQUEST] http://localhost:9966/petclinic/api/specialties/1?type=Medical
+13:24:30 [SUCCESS] Valid Request | Status Code: 200
+13:24:30 [SUCCESS] Saved API Seed
+13:24:30 [SUCCESS] Saved API Data
+13:24:30 [REQUEST] http://localhost:9966/petclinic/api/specialties/1?description=Specialized+in+dental+care
+13:24:30 [SUCCESS] Valid Request | Status Code: 200
+13:24:30 [SUCCESS] Saved API Seed
+13:24:30 [SUCCESS] Saved API Data
+13:24:30 [REQUEST] http://localhost:9966/petclinic/api/specialties/1?location=Main+Building
+13:24:30 [SUCCESS] Valid Request | Status Code: 200
+13:24:30 [SUCCESS] Saved API Seed
+13:24:30 [SUCCESS] Saved API Data
+13:24:30 [REQUEST] http://localhost:9966/petclinic/api/specialties/1?status=Active
+13:24:30 [SUCCESS] Valid Request | Status Code: 200
+13:24:30 [SUCCESS] Saved API Seed
+13:24:30 [SUCCESS] Saved API Data
+13:24:30 [REQUEST] http://localhost:9966/petclinic/api/specialties/1?startDate=2022-01-01
+13:24:30 [SUCCESS] Valid Request | Status Code: 200
+13:24:30 [SUCCESS] Saved API Seed
+13:24:30 [SUCCESS] Saved API Data
+13:24:30 [REQUEST] http://localhost:9966/petclinic/api/specialties/1?endDate=2022-12-31
+13:24:30 [SUCCESS] Valid Request | Status Code: 200
+13:24:30 [SUCCESS] Saved API Seed
+13:24:30 [SUCCESS] Saved API Data
+13:24:30 [REQUEST] http://localhost:9966/petclinic/api/specialties/1?price=100.00
+13:24:30 [SUCCESS] Valid Request | Status Code: 200
+13:24:30 [SUCCESS] Saved API Seed
+13:24:30 [SUCCESS] Saved API Data
+13:24:30 [REQUEST] http://localhost:9966/petclinic/api/specialties/1?duration=60
+13:24:31 [SUCCESS] Valid Request | Status Code: 200
+13:24:31 [SUCCESS] Saved API Seed
+13:24:31 [SUCCESS] Saved API Data
+13:24:31 [REQUEST] http://localhost:9966/petclinic/api/specialties/1?capacity=20
+13:24:31 [SUCCESS] Valid Request | Status Code: 200
+13:24:31 [SUCCESS] Saved API Seed
+13:24:31 [SUCCESS] Saved API Data
+13:24:31 [REQUEST] http://localhost:9966/petclinic/api/vets
+13:24:31 [SUCCESS] Valid Request | Status Code: 200
+13:24:31 [WARNING] Request Already in Seeds
+13:24:31 [SUCCESS] Saved API Data
+13:24:31 [REQUEST] http://localhost:9966/petclinic/api/owners
+13:24:31 [SUCCESS] Valid Request | Status Code: 200
+13:24:31 [WARNING] Request Already in Seeds
+13:24:31 [SUCCESS] Saved API Data
+13:24:31 [REQUEST] http://localhost:9966/petclinic/api/visits/1?date=2022-10-05
+13:24:31 [SUCCESS] Valid Request | Status Code: 200
+13:24:31 [SUCCESS] Saved API Seed
+13:24:31 [SUCCESS] Saved API Data
+13:24:31 [REQUEST] http://localhost:9966/petclinic/api/visits/1?vetId=3
+13:24:31 [SUCCESS] Valid Request | Status Code: 200
+13:24:31 [SUCCESS] Saved API Seed
+13:24:31 [SUCCESS] Saved API Data
+13:24:31 [REQUEST] http://localhost:9966/petclinic/api/visits/1?type=checkup
+13:24:31 [SUCCESS] Valid Request | Status Code: 200
+13:24:31 [SUCCESS] Saved API Seed
+13:24:31 [SUCCESS] Saved API Data
+13:24:31 [REQUEST] http://localhost:9966/petclinic/api/visits/1?description=Annual+checkup
+13:24:31 [SUCCESS] Valid Request | Status Code: 200
+13:24:31 [SUCCESS] Saved API Seed
+13:24:31 [SUCCESS] Saved API Data
+13:24:31 [REQUEST] http://localhost:9966/petclinic/api/visits/1?petId=5
+13:24:31 [SUCCESS] Valid Request | Status Code: 200
+13:24:31 [SUCCESS] Saved API Seed
+13:24:31 [SUCCESS] Saved API Data
+13:24:31 [REQUEST] http://localhost:9966/petclinic/api/visits/1?status=completed
+13:24:31 [SUCCESS] Valid Request | Status Code: 200
+13:24:31 [SUCCESS] Saved API Seed
+13:24:31 [SUCCESS] Saved API Data
+13:24:31 [REQUEST] http://localhost:9966/petclinic/api/visits/1?page=1
+13:24:31 [SUCCESS] Valid Request | Status Code: 200
+13:24:31 [SUCCESS] Saved API Seed
+13:24:31 [SUCCESS] Saved API Data
+13:24:31 [REQUEST] http://localhost:9966/petclinic/api/visits/1?size=10
+13:24:31 [SUCCESS] Valid Request | Status Code: 200
+13:24:31 [SUCCESS] Saved API Seed
+13:24:31 [SUCCESS] Saved API Data
+13:24:31 [REQUEST] http://localhost:9966/petclinic/api/visits/1?sort=asc
+13:24:31 [SUCCESS] Valid Request | Status Code: 200
+13:24:31 [SUCCESS] Saved API Seed
+13:24:31 [SUCCESS] Saved API Data
+13:24:31 [REQUEST] http://localhost:9966/petclinic/api/visits/1?filter=upcoming
+13:24:31 [SUCCESS] Valid Request | Status Code: 200
+13:24:31 [SUCCESS] Saved API Seed
+13:24:31 [SUCCESS] Saved API Data
+13:24:31 [TITLE]   Execution Results
+13:24:31 [INFO]    Saved to: ./outputs/Spring_Petclinic_API/executions/1.json
+13:25:34 [TITLE]   Launching RESTSpecIT
+13:25:34 [TITLE]   Executing: Spring Petclinic API
+13:25:34 [SUCCESS] Loaded API Data
+13:25:34 [SUCCESS] Loaded API Seeds
+13:25:34 [SUCCESS] Loaded API Seeds
+13:25:34 [TITLE]   Inferring Base API Data
+13:25:34 [SECTION] Inferring Info Data
+13:25:34 [WARNING] Info Data Already Exists
+13:25:34 [SECTION] Inferring Online Documentation Data
+13:25:34 [WARNING] Online Documentation Data Already Exists
+13:25:34 [SECTION] Inferring Server Data
+13:25:34 [WARNING] Server Data Already Exists
+13:25:34 [SECTION] Inferring Request Seeds
+13:25:34 [WARNING] Request Seeds Already Exists
+13:25:34 [SECTION] Inferring Error Schema
+13:25:34 [REQUEST] http://localhost:9966/petclinic/api/invalidRoute/?invalidParam=invalidValue
+13:25:34 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:25:34 [SUCCESS] Error Schema Found
+13:25:34 [SUCCESS] Saved API Data
+13:25:34 [TITLE]   Mutation Process: focusRoutes
+13:25:34 [TITLE]   Mutating Request (1/1)
+13:25:34 [SECTION] Mutation Operator: addRoute
+13:25:34 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/pets/1
+13:25:34 [INFO]    Masked Request: http://localhost:9966/petclinic/api/pets/1/<route>
+13:25:37 [SUCCESS] Found Values: ['find', 'update', 'delete', 'vaccinations', 'appointments', 'owners', 'visits', 'medicalHistory', 'surgery', 'diet', 'find?name=fluffy', 'update?name=Max&age=5&breed=Labrador&type=dog', 'delete?confirm=true', '63']
+13:25:37 [SECTION] Mutation Operator: removeRoute
+13:25:37 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/specialties/1?type=Medical
+13:25:37 [ERROR]   Cannot Apply Mutation Operator
+13:25:37 [SECTION] Mutation Operator: modifyRoute
+13:25:37 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/pets
+13:25:37 [ERROR]   Cannot Apply Mutation Operator
+13:25:37 [SECTION] Mutation Operator: resetRoutes
+13:25:37 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/owners/1
+13:25:37 [ERROR]   Cannot Apply Mutation Operator
+13:25:37 [TITLE]   Mutated Request Verification
+13:25:37 [REQUEST] http://localhost:9966/petclinic/api/pets/1/find
+13:25:37 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:25:37 [REQUEST] http://localhost:9966/petclinic/api/pets/1/update
+13:25:37 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:25:37 [REQUEST] http://localhost:9966/petclinic/api/pets/1/delete
+13:25:37 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:25:37 [REQUEST] http://localhost:9966/petclinic/api/pets/1/vaccinations
+13:25:37 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:25:37 [REQUEST] http://localhost:9966/petclinic/api/pets/1/appointments
+13:25:37 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:25:37 [REQUEST] http://localhost:9966/petclinic/api/pets/1/owners
+13:25:37 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:25:37 [REQUEST] http://localhost:9966/petclinic/api/pets/1/visits
+13:25:37 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:25:37 [REQUEST] http://localhost:9966/petclinic/api/pets/1/medicalHistory
+13:25:37 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:25:37 [REQUEST] http://localhost:9966/petclinic/api/pets/1/surgery
+13:25:37 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:25:37 [REQUEST] http://localhost:9966/petclinic/api/pets/1/diet
+13:25:37 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:25:37 [REQUEST] http://localhost:9966/petclinic/api/pets/1/find?name=fluffy
+13:25:37 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:25:37 [REQUEST] http://localhost:9966/petclinic/api/pets/1/update?name=Max&age=5&breed=Labrador&type=dog
+13:25:37 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:25:37 [REQUEST] http://localhost:9966/petclinic/api/pets/1/delete?confirm=true
+13:25:37 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:25:37 [REQUEST] http://localhost:9966/petclinic/api/pets/1/63
+13:25:37 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:25:37 [TITLE]   Mutation Process: focusParameters
+13:25:37 [TITLE]   Mutating Request (1/1)
+13:25:37 [SECTION] Mutation Operator: addParameter
+13:25:37 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/vets
+13:25:37 [INFO]    Masked Request: http://localhost:9966/petclinic/api/vets?<parameter=value>
+13:25:39 [SUCCESS] Found Values: ['specialty=cardiology', 'name=Dr.Smith', 'city=New+York', 'rating=5', 'availability=Monday', 'language=Spanish', 'type=dog', 'experience=5years', 'gender=female', 'age=50']
+13:25:39 [SECTION] Mutation Operator: removeParameter
+13:25:39 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/vets
+13:25:39 [INFO]    Masked Request: http://localhost:9966/petclinic/api/vets
+13:25:39 [SECTION] Mutation Operator: modifyParameter
+13:25:39 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/owners/1
+13:25:39 [INFO]    Masked Request: http://localhost:9966/petclinic/api/owners/1
+13:25:39 [SECTION] Mutation Operator: resetParameters
+13:25:39 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/pets/1
+13:25:39 [INFO]    Masked Request: http://localhost:9966/petclinic/api/pets/1?<parameter=value>
+13:25:40 [SUCCESS] Found Values: ['name=Fluffy', 'type=dog', 'age=3', 'breed=Labrador', 'color=brown', 'weight=20', 'gender=female', 'vaccinated=true', 'neutered=false', 'microchipped=true']
+13:25:40 [TITLE]   Mutated Request Verification
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/vets?specialty=cardiology
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/vets?name=Dr.Smith
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/vets?city=New+York
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/vets?rating=5
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/vets?availability=Monday
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/vets?language=Spanish
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/vets?type=dog
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/vets?experience=5years
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/vets?gender=female
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/vets?age=50
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/vets
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [WARNING] Request Already in Seeds
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/owners/1
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [WARNING] Request Already in Seeds
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/pets/1?name=Fluffy
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/pets/1?type=dog
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/pets/1?age=3
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/pets/1?breed=Labrador
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/pets/1?color=brown
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/pets/1?weight=20
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/pets/1?gender=female
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/pets/1?vaccinated=true
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/pets/1?neutered=false
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [REQUEST] http://localhost:9966/petclinic/api/pets/1?microchipped=true
+13:25:40 [SUCCESS] Valid Request | Status Code: 200
+13:25:40 [SUCCESS] Saved API Seed
+13:25:40 [SUCCESS] Saved API Data
+13:25:40 [TITLE]   Execution Results
+13:25:40 [INFO]    Saved to: ./outputs/Spring_Petclinic_API/executions/2.json
+13:26:39 [TITLE]   Launching RESTSpecIT
+13:26:39 [TITLE]   Executing: Spring Petclinic API
+13:26:39 [SUCCESS] Loaded API Data
+13:26:39 [SUCCESS] Loaded API Seeds
+13:26:39 [SUCCESS] Loaded API Seeds
+13:26:39 [TITLE]   Inferring Base API Data
+13:26:39 [SECTION] Inferring Info Data
+13:26:39 [WARNING] Info Data Already Exists
+13:26:39 [SECTION] Inferring Online Documentation Data
+13:26:39 [WARNING] Online Documentation Data Already Exists
+13:26:39 [SECTION] Inferring Server Data
+13:26:39 [WARNING] Server Data Already Exists
+13:26:39 [SECTION] Inferring Request Seeds
+13:26:39 [WARNING] Request Seeds Already Exists
+13:26:39 [SECTION] Inferring Error Schema
+13:26:39 [REQUEST] http://localhost:9966/petclinic/api/invalidRoute/?invalidParam=invalidValue
+13:26:39 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:26:39 [SUCCESS] Error Schema Found
+13:26:39 [SUCCESS] Saved API Data
+13:26:39 [TITLE]   Mutation Process: focusRoutes
+13:26:39 [TITLE]   Mutating Request (1/1)
+13:26:39 [SECTION] Mutation Operator: addRoute
+13:26:39 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/vets?experience=5years
+13:26:39 [INFO]    Masked Request: http://localhost:9966/petclinic/api/vets/<route>?experience=5years
+13:26:42 [SUCCESS] Found Values: ['all', 'specialties', 'by-id', 'by-name', 'by-type', 'availability', 'schedule', 'upcoming-appointments', 'recent-appointments', 'medical-history', 'all?specialty=Dentistry', 'specialties?name=Dentistry', 'by-id?id=1', '43']
+13:26:42 [SECTION] Mutation Operator: removeRoute
+13:26:42 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/specialties/1
+13:26:42 [ERROR]   Cannot Apply Mutation Operator
+13:26:42 [SECTION] Mutation Operator: modifyRoute
+13:26:42 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/visits/1?page=1
+13:26:42 [ERROR]   Cannot Apply Mutation Operator
+13:26:42 [SECTION] Mutation Operator: resetRoutes
+13:26:42 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/specialties/1?type=Medical
+13:26:42 [ERROR]   Cannot Apply Mutation Operator
+13:26:42 [TITLE]   Mutated Request Verification
+13:26:42 [REQUEST] http://localhost:9966/petclinic/api/vets/all?experience=5years
+13:26:42 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:26:42 [REQUEST] http://localhost:9966/petclinic/api/vets/specialties?experience=5years
+13:26:42 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:26:42 [REQUEST] http://localhost:9966/petclinic/api/vets/by-id?experience=5years
+13:26:42 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:26:42 [REQUEST] http://localhost:9966/petclinic/api/vets/by-name?experience=5years
+13:26:42 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:26:42 [REQUEST] http://localhost:9966/petclinic/api/vets/by-type?experience=5years
+13:26:42 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:26:42 [REQUEST] http://localhost:9966/petclinic/api/vets/availability?experience=5years
+13:26:42 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:26:42 [REQUEST] http://localhost:9966/petclinic/api/vets/schedule?experience=5years
+13:26:42 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:26:42 [REQUEST] http://localhost:9966/petclinic/api/vets/upcoming-appointments?experience=5years
+13:26:42 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:26:42 [REQUEST] http://localhost:9966/petclinic/api/vets/recent-appointments?experience=5years
+13:26:42 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:26:42 [REQUEST] http://localhost:9966/petclinic/api/vets/medical-history?experience=5years
+13:26:42 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:26:42 [REQUEST] http://localhost:9966/petclinic/api/vets/all?specialty=Dentistry&experience=5years
+13:26:42 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:26:42 [REQUEST] http://localhost:9966/petclinic/api/vets/specialties?name=Dentistry&experience=5years
+13:26:42 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:26:42 [REQUEST] http://localhost:9966/petclinic/api/vets/by-id?id=1&experience=5years
+13:26:42 [ERROR]   Invalid Request | Status Code: 500 | Reason: status-code
+13:26:42 [REQUEST] http://localhost:9966/petclinic/api/vets/43?experience=5years
+13:26:42 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+13:26:42 [TITLE]   Mutation Process: focusParameters
+13:26:42 [TITLE]   Mutating Request (1/1)
+13:26:42 [SECTION] Mutation Operator: addParameter
+13:26:42 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/pets
+13:26:42 [INFO]    Masked Request: http://localhost:9966/petclinic/api/pets?<parameter=value>
+13:26:43 [SUCCESS] Found Values: ['name=Fluffy', 'type=dog', 'owner=John', 'birthdate=2010-05-20', 'gender=female', 'species=cat', 'color=brown', 'weight=10', 'status=available', 'vaccinated=true']
+13:26:43 [SECTION] Mutation Operator: removeParameter
+13:26:43 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/visits/1?type=checkup
+13:26:43 [INFO]    Masked Request: http://localhost:9966/petclinic/api/visits/1
+13:26:43 [SECTION] Mutation Operator: modifyParameter
+13:26:43 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/vets?gender=female
+13:26:43 [INFO]    Masked Request: http://localhost:9966/petclinic/api/vets?<parameter=value>
+13:26:44 [SUCCESS] Found Values: ['specialty=cardiology', 'name=DrSmith', 'city=NewYork', 'availability=Monday', 'rating=5', 'experience=10years', 'language=Spanish', 'service=DentalCare', 'priceRange=$$$', 'petType=dog']
+13:26:44 [SECTION] Mutation Operator: resetParameters
+13:26:44 [INFO]    Chosen Seed: http://localhost:9966/petclinic/api/vets?specialty=cardiology
+13:26:44 [INFO]    Masked Request: http://localhost:9966/petclinic/api/vets?<parameter=value>
+13:26:46 [SUCCESS] Found Values: ['specialty=Dentistry', 'name=John', 'city=New+York', 'type=Dog', 'gender=Female', 'rating=5', 'availability=Monday', 'experience=5_years', 'language=Spanish', 'age=3']
+13:26:46 [TITLE]   Mutated Request Verification
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/pets?name=Fluffy
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/pets?type=dog
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/pets?owner=John
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/pets?birthdate=2010-05-20
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/pets?gender=female
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/pets?species=cat
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/pets?color=brown
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/pets?weight=10
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/pets?status=available
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/pets?vaccinated=true
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/visits/1
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [WARNING] Request Already in Seeds
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?specialty=cardiology
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [WARNING] Request Already in Seeds
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?name=DrSmith
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?city=NewYork
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?availability=Monday
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [WARNING] Request Already in Seeds
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?rating=5
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [WARNING] Request Already in Seeds
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?experience=10years
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?language=Spanish
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [WARNING] Request Already in Seeds
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?service=DentalCare
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?priceRange=$$$
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?petType=dog
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?specialty=Dentistry
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?name=John
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?city=New+York
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [WARNING] Request Already in Seeds
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?type=Dog
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?gender=Female
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [SUCCESS] Saved API Seed
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?rating=5
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [WARNING] Request Already in Seeds
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?availability=Monday
+13:26:46 [SUCCESS] Valid Request | Status Code: 200
+13:26:46 [WARNING] Request Already in Seeds
+13:26:46 [SUCCESS] Saved API Data
+13:26:46 [REQUEST] http://localhost:9966/petclinic/api/vets?experience=5_years
+13:26:47 [SUCCESS] Valid Request | Status Code: 200
+13:26:47 [SUCCESS] Saved API Seed
+13:26:47 [SUCCESS] Saved API Data
+13:26:47 [REQUEST] http://localhost:9966/petclinic/api/vets?language=Spanish
+13:26:47 [SUCCESS] Valid Request | Status Code: 200
+13:26:47 [WARNING] Request Already in Seeds
+13:26:47 [SUCCESS] Saved API Data
+13:26:47 [REQUEST] http://localhost:9966/petclinic/api/vets?age=3
+13:26:47 [SUCCESS] Valid Request | Status Code: 200
+13:26:47 [SUCCESS] Saved API Seed
+13:26:47 [SUCCESS] Saved API Data
+13:26:47 [TITLE]   Execution Results
+13:26:47 [INFO]    Saved to: ./outputs/Spring_Petclinic_API/executions/3.json

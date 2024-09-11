@@ -1,0 +1,1363 @@
+11:30:42 [TITLE]   Launching RESTSpecIT
+11:30:42 [TITLE]   Executing: REST Countries API
+11:30:42 [SUCCESS] Created New API Data File
+11:30:42 [SUCCESS] Created New API Seed File
+11:30:42 [SUCCESS] Created New API Seed File
+11:30:42 [TITLE]   Inferring Base API Data
+11:30:42 [SECTION] Inferring Info Data
+11:30:44 [REQUEST] https://restcountries.com/terms
+11:30:44 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:30:45 [REQUEST] https://restcountries.com/terms-of-service
+11:30:46 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:30:47 [REQUEST] https://restcountries.com/contact
+11:30:47 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:30:48 [REQUEST] https://restcountries.com/contact-us
+11:30:49 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:30:49 [REQUEST] https://restcountries.com/contact-us
+11:30:50 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:30:51 [REQUEST] https://opensource.org/licenses/MIT
+11:30:52 [SUCCESS] Valid Request | Status Code: 200
+11:30:52 [SUCCESS] Info Data Found
+11:30:52 [SUCCESS] Saved API Data
+11:30:52 [SECTION] Inferring Online Documentation Data
+11:30:52 [REQUEST] https://restcountries.com
+11:30:53 [SUCCESS] Valid Request | Status Code: 200
+11:30:53 [SUCCESS] Online Documentation Data Found
+11:30:53 [SUCCESS] Saved API Data
+11:30:53 [SECTION] Inferring Server Data
+11:30:53 [SUCCESS] Server Data Found
+11:30:53 [SUCCESS] Saved API Data
+11:30:53 [SECTION] Inferring Request Seeds
+11:30:55 [REQUEST] https://restcountries.com/v3.1/all
+11:30:56 [SUCCESS] Valid Request | Status Code: 200
+11:30:56 [SUCCESS] Saved API Seed
+11:30:56 [SUCCESS] Saved API Data
+11:30:56 [REQUEST] https://restcountries.com/v3.1/name/Italy
+11:30:56 [SUCCESS] Valid Request | Status Code: 200
+11:30:56 [SUCCESS] Saved API Seed
+11:30:56 [SUCCESS] Saved API Data
+11:30:56 [REQUEST] https://restcountries.com/v3.1/alpha/ITA
+11:30:57 [SUCCESS] Valid Request | Status Code: 200
+11:30:57 [SUCCESS] Saved API Seed
+11:30:57 [SUCCESS] Saved API Data
+11:30:57 [REQUEST] https://restcountries.com/v3.1/region/Europe
+11:30:58 [SUCCESS] Valid Request | Status Code: 200
+11:30:58 [SUCCESS] Saved API Seed
+11:30:58 [SUCCESS] Saved API Data
+11:30:58 [REQUEST] https://restcountries.com/v3.1/capital/Tokyo
+11:30:59 [SUCCESS] Valid Request | Status Code: 200
+11:30:59 [SUCCESS] Saved API Seed
+11:30:59 [SUCCESS] Saved API Data
+11:30:59 [REQUEST] https://restcountries.com/v3.1/lang/es
+11:30:59 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:30:59 [REQUEST] https://restcountries.com/v3.1/currency/USD
+11:31:00 [SUCCESS] Valid Request | Status Code: 200
+11:31:00 [SUCCESS] Saved API Seed
+11:31:00 [SUCCESS] Saved API Data
+11:31:00 [REQUEST] https://restcountries.com/v3.1/callingcode/1
+11:31:00 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:00 [SECTION] Inferring Error Schema
+11:31:00 [REQUEST] https://restcountries.com/invalidRoute/?invalidParam=invalidValue
+11:31:01 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:01 [SUCCESS] Error Schema Found
+11:31:01 [SUCCESS] Saved API Data
+11:31:01 [TITLE]   Mutation Process: focusRoutes
+11:31:01 [TITLE]   Mutating Request (1/1)
+11:31:01 [SECTION] Mutation Operator: addRoute
+11:31:01 [INFO]    Chosen Seed: https://restcountries.com/v3.1/name/Italy
+11:31:01 [INFO]    Masked Request: https://restcountries.com/v3.1/name/Italy/<route>
+11:31:04 [SUCCESS] Found Values: ['alpha', 'region', 'callingcode', 'currency', 'language', 'timezones', 'area', 'population', 'flag', 'capital', 'alpha?fields=name,capital,population,area,region,subregion,flags', 'region?fields=name,capital,population,area', 'callingcode?fields=name,capital,callingCodes', '62']
+11:31:04 [SECTION] Mutation Operator: removeRoute
+11:31:04 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/ITA
+11:31:04 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha
+11:31:04 [SECTION] Mutation Operator: modifyRoute
+11:31:04 [INFO]    Chosen Seed: https://restcountries.com/v3.1/all
+11:31:04 [INFO]    Masked Request: https://restcountries.com/v3.1/<route>
+11:31:07 [SUCCESS] Found Values: ['all', 'alpha', 'callingcode', 'currency', 'lang', 'name', 'region', 'capital', 'callingcode/1', 'alpha/USA', 'all?fields=name,capital,population', 'alpha?codes=usa,can,mex', 'callingcode?code=1', '91']
+11:31:07 [SECTION] Mutation Operator: resetRoutes
+11:31:07 [INFO]    Chosen Seed: https://restcountries.com/v3.1/currency/USD
+11:31:07 [INFO]    Masked Request: https://restcountries.com/v3.1/<route>
+11:31:09 [SUCCESS] Found Values: ['all', 'alpha', 'name', 'currency', 'lang', 'callingcode', 'capital', 'region', 'subregion', 'demonym', 'all?fields=name,capital,population', 'alpha?codes=usa,can,mex', 'name?name=Canada', '29']
+11:31:09 [TITLE]   Mutated Request Verification
+11:31:09 [REQUEST] https://restcountries.com/v3.1/name/Italy/alpha
+11:31:10 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:10 [REQUEST] https://restcountries.com/v3.1/name/Italy/region
+11:31:10 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:10 [REQUEST] https://restcountries.com/v3.1/name/Italy/callingcode
+11:31:11 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:11 [REQUEST] https://restcountries.com/v3.1/name/Italy/currency
+11:31:11 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:11 [REQUEST] https://restcountries.com/v3.1/name/Italy/language
+11:31:12 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:12 [REQUEST] https://restcountries.com/v3.1/name/Italy/timezones
+11:31:12 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:12 [REQUEST] https://restcountries.com/v3.1/name/Italy/area
+11:31:13 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:13 [REQUEST] https://restcountries.com/v3.1/name/Italy/population
+11:31:13 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:13 [REQUEST] https://restcountries.com/v3.1/name/Italy/flag
+11:31:14 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:14 [REQUEST] https://restcountries.com/v3.1/name/Italy/capital
+11:31:15 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:15 [REQUEST] https://restcountries.com/v3.1/name/Italy/alpha?fields=name,capital,population,area,region,subregion,flags
+11:31:15 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:15 [REQUEST] https://restcountries.com/v3.1/name/Italy/region?fields=name,capital,population,area
+11:31:16 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:16 [REQUEST] https://restcountries.com/v3.1/name/Italy/callingcode?fields=name,capital,callingCodes
+11:31:16 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:16 [REQUEST] https://restcountries.com/v3.1/name/Italy/62
+11:31:17 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:17 [REQUEST] https://restcountries.com/v3.1/alpha
+11:31:18 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+11:31:18 [REQUEST] https://restcountries.com/v3.1/all
+11:31:19 [SUCCESS] Valid Request | Status Code: 200
+11:31:19 [WARNING] Request Already in Seeds
+11:31:19 [SUCCESS] Saved API Data
+11:31:19 [REQUEST] https://restcountries.com/v3.1/alpha
+11:31:20 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+11:31:20 [REQUEST] https://restcountries.com/v3.1/callingcode
+11:31:20 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:20 [REQUEST] https://restcountries.com/v3.1/currency
+11:31:21 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:21 [REQUEST] https://restcountries.com/v3.1/lang
+11:31:22 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:22 [REQUEST] https://restcountries.com/v3.1/name
+11:31:23 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:23 [REQUEST] https://restcountries.com/v3.1/region
+11:31:23 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:23 [REQUEST] https://restcountries.com/v3.1/capital
+11:31:24 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:24 [REQUEST] https://restcountries.com/v3.1/callingcode/1
+11:31:25 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:25 [REQUEST] https://restcountries.com/v3.1/alpha/USA
+11:31:26 [SUCCESS] Valid Request | Status Code: 200
+11:31:26 [SUCCESS] Saved API Seed
+11:31:26 [SUCCESS] Saved API Data
+11:31:26 [REQUEST] https://restcountries.com/v3.1/all?fields=name,capital,population
+11:31:26 [SUCCESS] Valid Request | Status Code: 200
+11:31:26 [SUCCESS] Saved API Seed
+11:31:27 [SUCCESS] Saved API Data
+11:31:27 [REQUEST] https://restcountries.com/v3.1/alpha?codes=usa,can,mex
+11:31:27 [SUCCESS] Valid Request | Status Code: 200
+11:31:27 [SUCCESS] Saved API Seed
+11:31:27 [SUCCESS] Saved API Data
+11:31:27 [REQUEST] https://restcountries.com/v3.1/callingcode?code=1
+11:31:28 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:28 [REQUEST] https://restcountries.com/v3.1/91
+11:31:29 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:29 [REQUEST] https://restcountries.com/v3.1/all
+11:31:30 [SUCCESS] Valid Request | Status Code: 200
+11:31:30 [WARNING] Request Already in Seeds
+11:31:30 [SUCCESS] Saved API Data
+11:31:30 [REQUEST] https://restcountries.com/v3.1/alpha
+11:31:31 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+11:31:31 [REQUEST] https://restcountries.com/v3.1/name
+11:31:32 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:32 [REQUEST] https://restcountries.com/v3.1/currency
+11:31:32 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:32 [REQUEST] https://restcountries.com/v3.1/lang
+11:31:33 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:33 [REQUEST] https://restcountries.com/v3.1/callingcode
+11:31:34 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:34 [REQUEST] https://restcountries.com/v3.1/capital
+11:31:34 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:34 [REQUEST] https://restcountries.com/v3.1/region
+11:31:35 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:35 [REQUEST] https://restcountries.com/v3.1/subregion
+11:31:36 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:36 [REQUEST] https://restcountries.com/v3.1/demonym
+11:31:37 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:37 [REQUEST] https://restcountries.com/v3.1/all?fields=name,capital,population
+11:31:37 [SUCCESS] Valid Request | Status Code: 200
+11:31:37 [WARNING] Request Already in Seeds
+11:31:37 [SUCCESS] Saved API Data
+11:31:37 [REQUEST] https://restcountries.com/v3.1/alpha?codes=usa,can,mex
+11:31:38 [SUCCESS] Valid Request | Status Code: 200
+11:31:38 [WARNING] Request Already in Seeds
+11:31:38 [SUCCESS] Saved API Data
+11:31:38 [REQUEST] https://restcountries.com/v3.1/name?name=Canada
+11:31:39 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:39 [REQUEST] https://restcountries.com/v3.1/29
+11:31:40 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:31:40 [TITLE]   Mutation Process: focusParameters
+11:31:40 [TITLE]   Mutating Request (1/1)
+11:31:40 [SECTION] Mutation Operator: addParameter
+11:31:40 [INFO]    Chosen Seed: https://restcountries.com/v3.1/currency/USD
+11:31:40 [INFO]    Masked Request: https://restcountries.com/v3.1/currency/USD?<parameter=value>
+11:31:41 [SUCCESS] Found Values: ['fields=name,capital,population', 'lang=fr', 'region=Europe', 'area=100000', 'callingcode=1', 'currencies=EUR', 'demonym=American', 'borders=USA', 'alpha2Code=CA', 'alpha3Code=CAN']
+11:31:41 [SECTION] Mutation Operator: removeParameter
+11:31:41 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/ITA
+11:31:41 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha/ITA
+11:31:41 [SECTION] Mutation Operator: modifyParameter
+11:31:41 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/USA
+11:31:41 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha/USA
+11:31:41 [SECTION] Mutation Operator: resetParameters
+11:31:41 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/ITA
+11:31:41 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha/ITA?<parameter=value>
+11:31:43 [SUCCESS] Found Values: ['fields=name;capital;population', 'fields=flag', 'fields=languages', 'fields=currency', 'fields=region', 'fields=callingCodes', 'fields=borders', 'fields=timezones', 'fields=demonym', 'fields=area']
+11:31:43 [TITLE]   Mutated Request Verification
+11:31:43 [REQUEST] https://restcountries.com/v3.1/currency/USD?fields=name,capital,population
+11:31:43 [SUCCESS] Valid Request | Status Code: 200
+11:31:43 [SUCCESS] Saved API Seed
+11:31:43 [SUCCESS] Saved API Data
+11:31:43 [REQUEST] https://restcountries.com/v3.1/currency/USD?lang=fr
+11:31:44 [SUCCESS] Valid Request | Status Code: 200
+11:31:44 [SUCCESS] Saved API Seed
+11:31:44 [SUCCESS] Saved API Data
+11:31:44 [REQUEST] https://restcountries.com/v3.1/currency/USD?region=Europe
+11:31:45 [SUCCESS] Valid Request | Status Code: 200
+11:31:45 [SUCCESS] Saved API Seed
+11:31:45 [SUCCESS] Saved API Data
+11:31:45 [REQUEST] https://restcountries.com/v3.1/currency/USD?area=100000
+11:31:46 [SUCCESS] Valid Request | Status Code: 200
+11:31:46 [SUCCESS] Saved API Seed
+11:31:46 [SUCCESS] Saved API Data
+11:31:46 [REQUEST] https://restcountries.com/v3.1/currency/USD?callingcode=1
+11:31:47 [SUCCESS] Valid Request | Status Code: 200
+11:31:47 [SUCCESS] Saved API Seed
+11:31:47 [SUCCESS] Saved API Data
+11:31:47 [REQUEST] https://restcountries.com/v3.1/currency/USD?currencies=EUR
+11:31:48 [SUCCESS] Valid Request | Status Code: 200
+11:31:48 [SUCCESS] Saved API Seed
+11:31:48 [SUCCESS] Saved API Data
+11:31:48 [REQUEST] https://restcountries.com/v3.1/currency/USD?demonym=American
+11:31:49 [SUCCESS] Valid Request | Status Code: 200
+11:31:49 [SUCCESS] Saved API Seed
+11:31:49 [SUCCESS] Saved API Data
+11:31:49 [REQUEST] https://restcountries.com/v3.1/currency/USD?borders=USA
+11:31:49 [SUCCESS] Valid Request | Status Code: 200
+11:31:49 [SUCCESS] Saved API Seed
+11:31:49 [SUCCESS] Saved API Data
+11:31:49 [REQUEST] https://restcountries.com/v3.1/currency/USD?alpha2Code=CA
+11:31:50 [SUCCESS] Valid Request | Status Code: 200
+11:31:50 [SUCCESS] Saved API Seed
+11:31:50 [SUCCESS] Saved API Data
+11:31:50 [REQUEST] https://restcountries.com/v3.1/currency/USD?alpha3Code=CAN
+11:31:51 [SUCCESS] Valid Request | Status Code: 200
+11:31:51 [SUCCESS] Saved API Seed
+11:31:51 [SUCCESS] Saved API Data
+11:31:51 [REQUEST] https://restcountries.com/v3.1/alpha/ITA
+11:31:52 [SUCCESS] Valid Request | Status Code: 200
+11:31:52 [WARNING] Request Already in Seeds
+11:31:52 [SUCCESS] Saved API Data
+11:31:52 [REQUEST] https://restcountries.com/v3.1/alpha/USA
+11:31:53 [SUCCESS] Valid Request | Status Code: 200
+11:31:53 [WARNING] Request Already in Seeds
+11:31:53 [SUCCESS] Saved API Data
+11:31:53 [REQUEST] https://restcountries.com/v3.1/alpha/ITA?fields=name;capital;population
+11:31:53 [SUCCESS] Valid Request | Status Code: 200
+11:31:53 [SUCCESS] Saved API Seed
+11:31:53 [SUCCESS] Saved API Data
+11:31:53 [REQUEST] https://restcountries.com/v3.1/alpha/ITA?fields=flag
+11:31:54 [SUCCESS] Valid Request | Status Code: 200
+11:31:54 [SUCCESS] Saved API Seed
+11:31:54 [SUCCESS] Saved API Data
+11:31:54 [REQUEST] https://restcountries.com/v3.1/alpha/ITA?fields=languages
+11:31:55 [SUCCESS] Valid Request | Status Code: 200
+11:31:55 [SUCCESS] Saved API Seed
+11:31:55 [SUCCESS] Saved API Data
+11:31:55 [REQUEST] https://restcountries.com/v3.1/alpha/ITA?fields=currency
+11:31:56 [SUCCESS] Valid Request | Status Code: 200
+11:31:56 [SUCCESS] Saved API Seed
+11:31:56 [SUCCESS] Saved API Data
+11:31:56 [REQUEST] https://restcountries.com/v3.1/alpha/ITA?fields=region
+11:31:56 [SUCCESS] Valid Request | Status Code: 200
+11:31:56 [SUCCESS] Saved API Seed
+11:31:56 [SUCCESS] Saved API Data
+11:31:56 [REQUEST] https://restcountries.com/v3.1/alpha/ITA?fields=callingCodes
+11:31:57 [SUCCESS] Valid Request | Status Code: 200
+11:31:57 [SUCCESS] Saved API Seed
+11:31:57 [SUCCESS] Saved API Data
+11:31:57 [REQUEST] https://restcountries.com/v3.1/alpha/ITA?fields=borders
+11:31:58 [SUCCESS] Valid Request | Status Code: 200
+11:31:58 [SUCCESS] Saved API Seed
+11:31:58 [SUCCESS] Saved API Data
+11:31:58 [REQUEST] https://restcountries.com/v3.1/alpha/ITA?fields=timezones
+11:31:59 [SUCCESS] Valid Request | Status Code: 200
+11:31:59 [SUCCESS] Saved API Seed
+11:31:59 [SUCCESS] Saved API Data
+11:31:59 [REQUEST] https://restcountries.com/v3.1/alpha/ITA?fields=demonym
+11:32:00 [SUCCESS] Valid Request | Status Code: 200
+11:32:00 [SUCCESS] Saved API Seed
+11:32:00 [SUCCESS] Saved API Data
+11:32:00 [REQUEST] https://restcountries.com/v3.1/alpha/ITA?fields=area
+11:32:00 [SUCCESS] Valid Request | Status Code: 200
+11:32:00 [SUCCESS] Saved API Seed
+11:32:00 [SUCCESS] Saved API Data
+11:32:00 [TITLE]   Execution Results
+11:32:00 [INFO]    Saved to: ./outputs/REST_Countries_API/executions/1.json
+11:32:35 [TITLE]   Launching RESTSpecIT
+11:32:35 [TITLE]   Executing: REST Countries API
+11:32:35 [SUCCESS] Loaded API Data
+11:32:35 [SUCCESS] Loaded API Seeds
+11:32:35 [SUCCESS] Loaded API Seeds
+11:32:35 [TITLE]   Inferring Base API Data
+11:32:35 [SECTION] Inferring Info Data
+11:32:35 [WARNING] Info Data Already Exists
+11:32:35 [SECTION] Inferring Online Documentation Data
+11:32:35 [WARNING] Online Documentation Data Already Exists
+11:32:35 [SECTION] Inferring Server Data
+11:32:35 [WARNING] Server Data Already Exists
+11:32:35 [SECTION] Inferring Request Seeds
+11:32:35 [WARNING] Request Seeds Already Exists
+11:32:35 [SECTION] Inferring Error Schema
+11:32:35 [REQUEST] https://restcountries.com/invalidRoute/?invalidParam=invalidValue
+11:32:36 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:32:36 [SUCCESS] Error Schema Found
+11:32:36 [SUCCESS] Saved API Data
+11:32:36 [TITLE]   Mutation Process: focusRoutes
+11:32:36 [TITLE]   Mutating Request (1/1)
+11:32:36 [SECTION] Mutation Operator: addRoute
+11:32:36 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/USA
+11:32:36 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha/USA/<route>
+11:32:38 [SUCCESS] Found Values: ['name', 'capital', 'population', 'area', 'borders', 'languages', 'currencies', 'flag', 'timezones', 'callingCodes', 'name?fullText=true', 'capital?format=json', 'population?format=json', '78']
+11:32:38 [SECTION] Mutation Operator: removeRoute
+11:32:38 [INFO]    Chosen Seed: https://restcountries.com/v3.1/region/Europe
+11:32:38 [INFO]    Masked Request: https://restcountries.com/v3.1/region
+11:32:38 [SECTION] Mutation Operator: modifyRoute
+11:32:38 [INFO]    Chosen Seed: https://restcountries.com/v3.1/currency/USD?demonym=American
+11:32:38 [INFO]    Masked Request: https://restcountries.com/v3.1/currency/<route>?demonym=American
+11:32:41 [SUCCESS] Found Values: ['usd', 'eur', 'gbp', 'jpy', 'aud', 'cad', 'chf', 'cny', 'inr', 'krw', 'usd?fields=name,capital,population', 'eur?fields=name,capital,population', 'gbp?fields=name,currencies', '28']
+11:32:41 [SECTION] Mutation Operator: resetRoutes
+11:32:41 [INFO]    Chosen Seed: https://restcountries.com/v3.1/currency/USD?currencies=EUR
+11:32:41 [INFO]    Masked Request: https://restcountries.com/v3.1/<route>?currencies=EUR
+11:32:44 [SUCCESS] Found Values: ['all', 'name', 'alpha', 'callingcode', 'lang', 'capital', 'region', 'subregion', 'area', 'population', 'all?fields=name,capital,population', 'name?name=Canada', 'alpha?codes=USA,GBR,ITA', '5']
+11:32:44 [TITLE]   Mutated Request Verification
+11:32:44 [REQUEST] https://restcountries.com/v3.1/alpha/USA/name
+11:32:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:32:45 [REQUEST] https://restcountries.com/v3.1/alpha/USA/capital
+11:32:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:32:45 [REQUEST] https://restcountries.com/v3.1/alpha/USA/population
+11:32:46 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:32:46 [REQUEST] https://restcountries.com/v3.1/alpha/USA/area
+11:32:47 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:32:47 [REQUEST] https://restcountries.com/v3.1/alpha/USA/borders
+11:32:48 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:32:48 [REQUEST] https://restcountries.com/v3.1/alpha/USA/languages
+11:32:49 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:32:49 [REQUEST] https://restcountries.com/v3.1/alpha/USA/currencies
+11:32:49 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:32:49 [REQUEST] https://restcountries.com/v3.1/alpha/USA/flag
+11:32:50 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:32:50 [REQUEST] https://restcountries.com/v3.1/alpha/USA/timezones
+11:32:52 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:32:52 [REQUEST] https://restcountries.com/v3.1/alpha/USA/callingCodes
+11:32:53 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:32:53 [REQUEST] https://restcountries.com/v3.1/alpha/USA/name?fullText=true
+11:32:55 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:32:55 [REQUEST] https://restcountries.com/v3.1/alpha/USA/capital?format=json
+11:32:56 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:32:56 [REQUEST] https://restcountries.com/v3.1/alpha/USA/population?format=json
+11:32:58 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:32:58 [REQUEST] https://restcountries.com/v3.1/alpha/USA/78
+11:32:59 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:32:59 [REQUEST] https://restcountries.com/v3.1/region
+11:33:01 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:33:01 [REQUEST] https://restcountries.com/v3.1/currency/usd?demonym=American
+11:33:03 [SUCCESS] Valid Request | Status Code: 200
+11:33:03 [SUCCESS] Saved API Seed
+11:33:03 [SUCCESS] Saved API Data
+11:33:03 [REQUEST] https://restcountries.com/v3.1/currency/eur?demonym=American
+11:33:04 [SUCCESS] Valid Request | Status Code: 200
+11:33:04 [SUCCESS] Saved API Seed
+11:33:04 [SUCCESS] Saved API Data
+11:33:04 [REQUEST] https://restcountries.com/v3.1/currency/gbp?demonym=American
+11:33:06 [SUCCESS] Valid Request | Status Code: 200
+11:33:06 [SUCCESS] Saved API Seed
+11:33:06 [SUCCESS] Saved API Data
+11:33:06 [REQUEST] https://restcountries.com/v3.1/currency/jpy?demonym=American
+11:33:08 [SUCCESS] Valid Request | Status Code: 200
+11:33:08 [SUCCESS] Saved API Seed
+11:33:08 [SUCCESS] Saved API Data
+11:33:08 [REQUEST] https://restcountries.com/v3.1/currency/aud?demonym=American
+11:33:10 [SUCCESS] Valid Request | Status Code: 200
+11:33:10 [SUCCESS] Saved API Seed
+11:33:10 [SUCCESS] Saved API Data
+11:33:10 [REQUEST] https://restcountries.com/v3.1/currency/cad?demonym=American
+11:33:11 [SUCCESS] Valid Request | Status Code: 200
+11:33:11 [SUCCESS] Saved API Seed
+11:33:11 [SUCCESS] Saved API Data
+11:33:11 [REQUEST] https://restcountries.com/v3.1/currency/chf?demonym=American
+11:33:13 [SUCCESS] Valid Request | Status Code: 200
+11:33:13 [SUCCESS] Saved API Seed
+11:33:13 [SUCCESS] Saved API Data
+11:33:13 [REQUEST] https://restcountries.com/v3.1/currency/cny?demonym=American
+11:33:14 [SUCCESS] Valid Request | Status Code: 200
+11:33:14 [SUCCESS] Saved API Seed
+11:33:14 [SUCCESS] Saved API Data
+11:33:14 [REQUEST] https://restcountries.com/v3.1/currency/inr?demonym=American
+11:33:16 [SUCCESS] Valid Request | Status Code: 200
+11:33:16 [SUCCESS] Saved API Seed
+11:33:16 [SUCCESS] Saved API Data
+11:33:16 [REQUEST] https://restcountries.com/v3.1/currency/krw?demonym=American
+11:33:18 [SUCCESS] Valid Request | Status Code: 200
+11:33:18 [SUCCESS] Saved API Seed
+11:33:18 [SUCCESS] Saved API Data
+11:33:18 [REQUEST] https://restcountries.com/v3.1/currency/usd?fields=name,capital,population&demonym=American
+11:33:19 [SUCCESS] Valid Request | Status Code: 200
+11:33:19 [SUCCESS] Saved API Seed
+11:33:19 [SUCCESS] Saved API Data
+11:33:19 [REQUEST] https://restcountries.com/v3.1/currency/eur?fields=name,capital,population&demonym=American
+11:33:20 [SUCCESS] Valid Request | Status Code: 200
+11:33:20 [SUCCESS] Saved API Seed
+11:33:20 [SUCCESS] Saved API Data
+11:33:20 [REQUEST] https://restcountries.com/v3.1/currency/gbp?fields=name,currencies&demonym=American
+11:33:22 [SUCCESS] Valid Request | Status Code: 200
+11:33:22 [SUCCESS] Saved API Seed
+11:33:22 [SUCCESS] Saved API Data
+11:33:22 [REQUEST] https://restcountries.com/v3.1/currency/28?demonym=American
+11:33:24 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:33:24 [REQUEST] https://restcountries.com/v3.1/all?currencies=EUR
+11:33:25 [SUCCESS] Valid Request | Status Code: 200
+11:33:25 [SUCCESS] Saved API Seed
+11:33:25 [SUCCESS] Saved API Data
+11:33:25 [REQUEST] https://restcountries.com/v3.1/name?currencies=EUR
+11:33:27 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:33:27 [REQUEST] https://restcountries.com/v3.1/alpha?currencies=EUR
+11:33:29 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+11:33:29 [REQUEST] https://restcountries.com/v3.1/callingcode?currencies=EUR
+11:33:30 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:33:30 [REQUEST] https://restcountries.com/v3.1/lang?currencies=EUR
+11:33:32 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:33:32 [REQUEST] https://restcountries.com/v3.1/capital?currencies=EUR
+11:33:33 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:33:33 [REQUEST] https://restcountries.com/v3.1/region?currencies=EUR
+11:33:34 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:33:34 [REQUEST] https://restcountries.com/v3.1/subregion?currencies=EUR
+11:33:36 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:33:36 [REQUEST] https://restcountries.com/v3.1/area?currencies=EUR
+11:33:37 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:33:37 [REQUEST] https://restcountries.com/v3.1/population?currencies=EUR
+11:33:39 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:33:39 [REQUEST] https://restcountries.com/v3.1/all?fields=name,capital,population&currencies=EUR
+11:33:40 [SUCCESS] Valid Request | Status Code: 200
+11:33:40 [SUCCESS] Saved API Seed
+11:33:40 [SUCCESS] Saved API Data
+11:33:40 [REQUEST] https://restcountries.com/v3.1/name?name=Canada&currencies=EUR
+11:33:42 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:33:42 [REQUEST] https://restcountries.com/v3.1/alpha?codes=USA,GBR,ITA&currencies=EUR
+11:33:43 [SUCCESS] Valid Request | Status Code: 200
+11:33:43 [SUCCESS] Saved API Seed
+11:33:43 [SUCCESS] Saved API Data
+11:33:43 [REQUEST] https://restcountries.com/v3.1/5?currencies=EUR
+11:33:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:33:45 [TITLE]   Mutation Process: focusParameters
+11:33:45 [TITLE]   Mutating Request (1/1)
+11:33:45 [SECTION] Mutation Operator: addParameter
+11:33:45 [INFO]    Chosen Seed: https://restcountries.com/v3.1/region/Europe
+11:33:45 [INFO]    Masked Request: https://restcountries.com/v3.1/region/Europe?<parameter=value>
+11:33:46 [SUCCESS] Found Values: ['name=France', 'language=Spanish', 'currency=USD', 'callingcode=49', 'population=1000000', 'area=50000', 'capital=Berlin', 'subregion=Northern+Europe', 'demonym=German', 'timezones=Europe']
+11:33:46 [SECTION] Mutation Operator: removeParameter
+11:33:46 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/ITA?fields=area
+11:33:46 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha/ITA
+11:33:46 [SECTION] Mutation Operator: modifyParameter
+11:33:46 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/ITA
+11:33:46 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha/ITA
+11:33:46 [SECTION] Mutation Operator: resetParameters
+11:33:46 [INFO]    Chosen Seed: https://restcountries.com/v3.1/capital/Tokyo
+11:33:46 [INFO]    Masked Request: https://restcountries.com/v3.1/capital/Tokyo?<parameter=value>
+11:33:47 [SUCCESS] Found Values: ['fields=name;population', 'lang=ja', 'region=Asia', 'currency=JPY', 'callingCode=81', 'subregion=Eastern+Asia', 'demonym=Japanese', 'area=377975', 'timezones=Asia', 'borders=KOR']
+11:33:47 [TITLE]   Mutated Request Verification
+11:33:47 [REQUEST] https://restcountries.com/v3.1/region/Europe?name=France
+11:33:49 [SUCCESS] Valid Request | Status Code: 200
+11:33:49 [SUCCESS] Saved API Seed
+11:33:49 [SUCCESS] Saved API Data
+11:33:49 [REQUEST] https://restcountries.com/v3.1/region/Europe?language=Spanish
+11:33:50 [SUCCESS] Valid Request | Status Code: 200
+11:33:50 [SUCCESS] Saved API Seed
+11:33:50 [SUCCESS] Saved API Data
+11:33:50 [REQUEST] https://restcountries.com/v3.1/region/Europe?currency=USD
+11:33:51 [SUCCESS] Valid Request | Status Code: 200
+11:33:51 [SUCCESS] Saved API Seed
+11:33:51 [SUCCESS] Saved API Data
+11:33:51 [REQUEST] https://restcountries.com/v3.1/region/Europe?callingcode=49
+11:33:52 [SUCCESS] Valid Request | Status Code: 200
+11:33:52 [SUCCESS] Saved API Seed
+11:33:52 [SUCCESS] Saved API Data
+11:33:52 [REQUEST] https://restcountries.com/v3.1/region/Europe?population=1000000
+11:33:54 [SUCCESS] Valid Request | Status Code: 200
+11:33:54 [SUCCESS] Saved API Seed
+11:33:54 [SUCCESS] Saved API Data
+11:33:54 [REQUEST] https://restcountries.com/v3.1/region/Europe?area=50000
+11:33:55 [SUCCESS] Valid Request | Status Code: 200
+11:33:55 [SUCCESS] Saved API Seed
+11:33:55 [SUCCESS] Saved API Data
+11:33:55 [REQUEST] https://restcountries.com/v3.1/region/Europe?capital=Berlin
+11:33:57 [SUCCESS] Valid Request | Status Code: 200
+11:33:57 [SUCCESS] Saved API Seed
+11:33:57 [SUCCESS] Saved API Data
+11:33:57 [REQUEST] https://restcountries.com/v3.1/region/Europe?subregion=Northern+Europe
+11:33:58 [SUCCESS] Valid Request | Status Code: 200
+11:33:58 [SUCCESS] Saved API Seed
+11:33:58 [SUCCESS] Saved API Data
+11:33:58 [REQUEST] https://restcountries.com/v3.1/region/Europe?demonym=German
+11:33:59 [SUCCESS] Valid Request | Status Code: 200
+11:33:59 [SUCCESS] Saved API Seed
+11:33:59 [SUCCESS] Saved API Data
+11:33:59 [REQUEST] https://restcountries.com/v3.1/region/Europe?timezones=Europe
+11:34:00 [SUCCESS] Valid Request | Status Code: 200
+11:34:00 [SUCCESS] Saved API Seed
+11:34:00 [SUCCESS] Saved API Data
+11:34:00 [REQUEST] https://restcountries.com/v3.1/alpha/ITA
+11:34:01 [SUCCESS] Valid Request | Status Code: 200
+11:34:01 [WARNING] Request Already in Seeds
+11:34:01 [SUCCESS] Saved API Data
+11:34:01 [REQUEST] https://restcountries.com/v3.1/alpha/ITA
+11:34:01 [SUCCESS] Valid Request | Status Code: 200
+11:34:01 [WARNING] Request Already in Seeds
+11:34:01 [SUCCESS] Saved API Data
+11:34:01 [REQUEST] https://restcountries.com/v3.1/capital/Tokyo?fields=name;population
+11:34:02 [SUCCESS] Valid Request | Status Code: 200
+11:34:02 [SUCCESS] Saved API Seed
+11:34:02 [SUCCESS] Saved API Data
+11:34:02 [REQUEST] https://restcountries.com/v3.1/capital/Tokyo?lang=ja
+11:34:03 [SUCCESS] Valid Request | Status Code: 200
+11:34:03 [SUCCESS] Saved API Seed
+11:34:03 [SUCCESS] Saved API Data
+11:34:03 [REQUEST] https://restcountries.com/v3.1/capital/Tokyo?region=Asia
+11:34:04 [SUCCESS] Valid Request | Status Code: 200
+11:34:04 [SUCCESS] Saved API Seed
+11:34:04 [SUCCESS] Saved API Data
+11:34:04 [REQUEST] https://restcountries.com/v3.1/capital/Tokyo?currency=JPY
+11:34:05 [SUCCESS] Valid Request | Status Code: 200
+11:34:05 [SUCCESS] Saved API Seed
+11:34:05 [SUCCESS] Saved API Data
+11:34:05 [REQUEST] https://restcountries.com/v3.1/capital/Tokyo?callingCode=81
+11:34:06 [SUCCESS] Valid Request | Status Code: 200
+11:34:06 [SUCCESS] Saved API Seed
+11:34:06 [SUCCESS] Saved API Data
+11:34:06 [REQUEST] https://restcountries.com/v3.1/capital/Tokyo?subregion=Eastern+Asia
+11:34:07 [SUCCESS] Valid Request | Status Code: 200
+11:34:07 [SUCCESS] Saved API Seed
+11:34:07 [SUCCESS] Saved API Data
+11:34:07 [REQUEST] https://restcountries.com/v3.1/capital/Tokyo?demonym=Japanese
+11:34:09 [SUCCESS] Valid Request | Status Code: 200
+11:34:09 [SUCCESS] Saved API Seed
+11:34:09 [SUCCESS] Saved API Data
+11:34:09 [REQUEST] https://restcountries.com/v3.1/capital/Tokyo?area=377975
+11:34:10 [SUCCESS] Valid Request | Status Code: 200
+11:34:10 [SUCCESS] Saved API Seed
+11:34:10 [SUCCESS] Saved API Data
+11:34:10 [REQUEST] https://restcountries.com/v3.1/capital/Tokyo?timezones=Asia
+11:34:11 [SUCCESS] Valid Request | Status Code: 200
+11:34:11 [SUCCESS] Saved API Seed
+11:34:11 [SUCCESS] Saved API Data
+11:34:11 [REQUEST] https://restcountries.com/v3.1/capital/Tokyo?borders=KOR
+11:34:12 [SUCCESS] Valid Request | Status Code: 200
+11:34:12 [SUCCESS] Saved API Seed
+11:34:12 [SUCCESS] Saved API Data
+11:34:12 [TITLE]   Execution Results
+11:34:12 [INFO]    Saved to: ./outputs/REST_Countries_API/executions/2.json
+11:34:25 [TITLE]   Launching RESTSpecIT
+11:34:25 [TITLE]   Executing: REST Countries API
+11:34:25 [SUCCESS] Loaded API Data
+11:34:25 [SUCCESS] Loaded API Seeds
+11:34:25 [SUCCESS] Loaded API Seeds
+11:34:25 [TITLE]   Inferring Base API Data
+11:34:25 [SECTION] Inferring Info Data
+11:34:25 [WARNING] Info Data Already Exists
+11:34:25 [SECTION] Inferring Online Documentation Data
+11:34:25 [WARNING] Online Documentation Data Already Exists
+11:34:25 [SECTION] Inferring Server Data
+11:34:25 [WARNING] Server Data Already Exists
+11:34:25 [SECTION] Inferring Request Seeds
+11:34:25 [WARNING] Request Seeds Already Exists
+11:34:25 [SECTION] Inferring Error Schema
+11:34:25 [REQUEST] https://restcountries.com/invalidRoute/?invalidParam=invalidValue
+11:34:26 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:26 [SUCCESS] Error Schema Found
+11:34:26 [SUCCESS] Saved API Data
+11:34:26 [TITLE]   Mutation Process: focusRoutes
+11:34:26 [TITLE]   Mutating Request (1/1)
+11:34:26 [SECTION] Mutation Operator: addRoute
+11:34:26 [INFO]    Chosen Seed: https://restcountries.com/v3.1/currency/krw?demonym=American
+11:34:26 [INFO]    Masked Request: https://restcountries.com/v3.1/currency/krw/<route>?demonym=American
+11:34:28 [SUCCESS] Found Values: ['name', 'area', 'population', 'languages', 'timezones', 'borders', 'flag', 'capital', 'region', 'subregion', 'name?fullText=true', 'area?filter=populationGreaterThan=10000000', 'population?sort=desc', '26']
+11:34:28 [SECTION] Mutation Operator: removeRoute
+11:34:28 [INFO]    Chosen Seed: https://restcountries.com/v3.1/currency/gbp?fields=name,currencies&demonym=American
+11:34:28 [INFO]    Masked Request: https://restcountries.com/v3.1/currency?fields=name,currencies&demonym=American
+11:34:28 [SECTION] Mutation Operator: modifyRoute
+11:34:28 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/ITA?fields=timezones
+11:34:28 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha/<route>?fields=timezones
+11:34:31 [SUCCESS] Found Values: ['usa', 'jpn', 'fra', 'can', 'aus', 'bra', 'ita', 'esp', 'rus', 'chn', 'usa?fields=name,capital,population,area,flag,languages', 'jpn?fields=name,capital,population,area,flag', 'fra?fields=name,capital,population,area,region,subregion,languages,currencies', '10']
+11:34:31 [SECTION] Mutation Operator: resetRoutes
+11:34:31 [INFO]    Chosen Seed: https://restcountries.com/v3.1/currency/jpy?demonym=American
+11:34:31 [INFO]    Masked Request: https://restcountries.com/v3.1/<route>?demonym=American
+11:34:33 [SUCCESS] Found Values: ['all', 'name', 'alpha', 'lang', 'currency', 'region', 'callingcode', 'capital', 'subregion', 'demonym', 'all?fields=name,capital,population', 'name?name=Canada', 'alpha?codes=USA', '47']
+11:34:33 [TITLE]   Mutated Request Verification
+11:34:33 [REQUEST] https://restcountries.com/v3.1/currency/krw/name?demonym=American
+11:34:34 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:34 [REQUEST] https://restcountries.com/v3.1/currency/krw/area?demonym=American
+11:34:35 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:35 [REQUEST] https://restcountries.com/v3.1/currency/krw/population?demonym=American
+11:34:35 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:35 [REQUEST] https://restcountries.com/v3.1/currency/krw/languages?demonym=American
+11:34:36 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:36 [REQUEST] https://restcountries.com/v3.1/currency/krw/timezones?demonym=American
+11:34:37 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:37 [REQUEST] https://restcountries.com/v3.1/currency/krw/borders?demonym=American
+11:34:38 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:38 [REQUEST] https://restcountries.com/v3.1/currency/krw/flag?demonym=American
+11:34:38 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:38 [REQUEST] https://restcountries.com/v3.1/currency/krw/capital?demonym=American
+11:34:39 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:39 [REQUEST] https://restcountries.com/v3.1/currency/krw/region?demonym=American
+11:34:40 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:40 [REQUEST] https://restcountries.com/v3.1/currency/krw/subregion?demonym=American
+11:34:41 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:41 [REQUEST] https://restcountries.com/v3.1/currency/krw/name?fullText=true&demonym=American
+11:34:41 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:41 [REQUEST] https://restcountries.com/v3.1/currency/krw/area?filter=populationGreaterThan=10000000&demonym=American
+11:34:42 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:42 [REQUEST] https://restcountries.com/v3.1/currency/krw/population?sort=desc&demonym=American
+11:34:43 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:43 [REQUEST] https://restcountries.com/v3.1/currency/krw/26?demonym=American
+11:34:44 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:44 [REQUEST] https://restcountries.com/v3.1/currency?fields=name,currencies&demonym=American
+11:34:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:45 [REQUEST] https://restcountries.com/v3.1/alpha/usa?fields=timezones
+11:34:45 [SUCCESS] Valid Request | Status Code: 200
+11:34:45 [SUCCESS] Saved API Seed
+11:34:45 [SUCCESS] Saved API Data
+11:34:45 [REQUEST] https://restcountries.com/v3.1/alpha/jpn?fields=timezones
+11:34:46 [SUCCESS] Valid Request | Status Code: 200
+11:34:46 [SUCCESS] Saved API Seed
+11:34:46 [SUCCESS] Saved API Data
+11:34:46 [REQUEST] https://restcountries.com/v3.1/alpha/fra?fields=timezones
+11:34:47 [SUCCESS] Valid Request | Status Code: 200
+11:34:47 [SUCCESS] Saved API Seed
+11:34:47 [SUCCESS] Saved API Data
+11:34:47 [REQUEST] https://restcountries.com/v3.1/alpha/can?fields=timezones
+11:34:48 [SUCCESS] Valid Request | Status Code: 200
+11:34:48 [SUCCESS] Saved API Seed
+11:34:48 [SUCCESS] Saved API Data
+11:34:48 [REQUEST] https://restcountries.com/v3.1/alpha/aus?fields=timezones
+11:34:48 [SUCCESS] Valid Request | Status Code: 200
+11:34:48 [SUCCESS] Saved API Seed
+11:34:48 [SUCCESS] Saved API Data
+11:34:48 [REQUEST] https://restcountries.com/v3.1/alpha/bra?fields=timezones
+11:34:49 [SUCCESS] Valid Request | Status Code: 200
+11:34:49 [SUCCESS] Saved API Seed
+11:34:49 [SUCCESS] Saved API Data
+11:34:49 [REQUEST] https://restcountries.com/v3.1/alpha/ita?fields=timezones
+11:34:50 [SUCCESS] Valid Request | Status Code: 200
+11:34:50 [SUCCESS] Saved API Seed
+11:34:50 [SUCCESS] Saved API Data
+11:34:50 [REQUEST] https://restcountries.com/v3.1/alpha/esp?fields=timezones
+11:34:51 [SUCCESS] Valid Request | Status Code: 200
+11:34:51 [SUCCESS] Saved API Seed
+11:34:51 [SUCCESS] Saved API Data
+11:34:51 [REQUEST] https://restcountries.com/v3.1/alpha/rus?fields=timezones
+11:34:52 [SUCCESS] Valid Request | Status Code: 200
+11:34:52 [SUCCESS] Saved API Seed
+11:34:52 [SUCCESS] Saved API Data
+11:34:52 [REQUEST] https://restcountries.com/v3.1/alpha/chn?fields=timezones
+11:34:52 [SUCCESS] Valid Request | Status Code: 200
+11:34:52 [SUCCESS] Saved API Seed
+11:34:52 [SUCCESS] Saved API Data
+11:34:52 [REQUEST] https://restcountries.com/v3.1/alpha/usa?fields=name,capital,population,area,flag,languages&fields=timezones
+11:34:53 [SUCCESS] Valid Request | Status Code: 200
+11:34:53 [SUCCESS] Saved API Seed
+11:34:53 [SUCCESS] Saved API Data
+11:34:53 [REQUEST] https://restcountries.com/v3.1/alpha/jpn?fields=name,capital,population,area,flag&fields=timezones
+11:34:54 [SUCCESS] Valid Request | Status Code: 200
+11:34:54 [SUCCESS] Saved API Seed
+11:34:54 [SUCCESS] Saved API Data
+11:34:54 [REQUEST] https://restcountries.com/v3.1/alpha/fra?fields=name,capital,population,area,region,subregion,languages,currencies&fields=timezones
+11:34:55 [SUCCESS] Valid Request | Status Code: 200
+11:34:55 [SUCCESS] Saved API Seed
+11:34:55 [SUCCESS] Saved API Data
+11:34:55 [REQUEST] https://restcountries.com/v3.1/alpha/10?fields=timezones
+11:34:56 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:56 [REQUEST] https://restcountries.com/v3.1/all?demonym=American
+11:34:57 [SUCCESS] Valid Request | Status Code: 200
+11:34:57 [SUCCESS] Saved API Seed
+11:34:57 [SUCCESS] Saved API Data
+11:34:57 [REQUEST] https://restcountries.com/v3.1/name?demonym=American
+11:34:58 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:58 [REQUEST] https://restcountries.com/v3.1/alpha?demonym=American
+11:34:58 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+11:34:58 [REQUEST] https://restcountries.com/v3.1/lang?demonym=American
+11:34:59 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:34:59 [REQUEST] https://restcountries.com/v3.1/currency?demonym=American
+11:35:00 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:35:00 [REQUEST] https://restcountries.com/v3.1/region?demonym=American
+11:35:01 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:35:01 [REQUEST] https://restcountries.com/v3.1/callingcode?demonym=American
+11:35:01 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:35:01 [REQUEST] https://restcountries.com/v3.1/capital?demonym=American
+11:35:02 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:35:02 [REQUEST] https://restcountries.com/v3.1/subregion?demonym=American
+11:35:03 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:35:03 [REQUEST] https://restcountries.com/v3.1/demonym?demonym=American
+11:35:04 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:35:04 [REQUEST] https://restcountries.com/v3.1/all?fields=name,capital,population&demonym=American
+11:35:05 [SUCCESS] Valid Request | Status Code: 200
+11:35:05 [SUCCESS] Saved API Seed
+11:35:05 [SUCCESS] Saved API Data
+11:35:05 [REQUEST] https://restcountries.com/v3.1/name?name=Canada&demonym=American
+11:35:05 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:35:05 [REQUEST] https://restcountries.com/v3.1/alpha?codes=USA&demonym=American
+11:35:06 [SUCCESS] Valid Request | Status Code: 200
+11:35:06 [SUCCESS] Saved API Seed
+11:35:06 [SUCCESS] Saved API Data
+11:35:06 [REQUEST] https://restcountries.com/v3.1/47?demonym=American
+11:35:07 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:35:07 [TITLE]   Mutation Process: focusParameters
+11:35:07 [TITLE]   Mutating Request (1/1)
+11:35:07 [SECTION] Mutation Operator: addParameter
+11:35:07 [INFO]    Chosen Seed: https://restcountries.com/v3.1/currency/krw?demonym=American
+11:35:07 [INFO]    Masked Request: https://restcountries.com/v3.1/currency/krw?demonym=American&<parameter=value>
+11:35:08 [SUCCESS] Found Values: ['area=greater', 'population=100000', 'language=english', 'region=europe', 'callingCode=1', 'capital=london', 'subregion=northern', 'border=china', 'currencies=usd', 'timezones=GMT']
+11:35:08 [SECTION] Mutation Operator: removeParameter
+11:35:08 [INFO]    Chosen Seed: https://restcountries.com/v3.1/currency/eur?demonym=American
+11:35:08 [INFO]    Masked Request: https://restcountries.com/v3.1/currency/eur
+11:35:08 [SECTION] Mutation Operator: modifyParameter
+11:35:08 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/usa?fields=timezones
+11:35:08 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha/usa?<parameter=value>
+11:35:09 [SUCCESS] Found Values: ['fields=name;capital', 'fullText=true', 'lang=es', 'population=gte.10000000', 'currency=USD', 'callingCode=1', 'region=europe', 'subregion=caribbean', 'demonym=American', 'area=lt.5000']
+11:35:09 [SECTION] Mutation Operator: resetParameters
+11:35:09 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/aus?fields=timezones
+11:35:09 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha/aus?<parameter=value>
+11:35:11 [SUCCESS] Found Values: ['fields=name;population', 'fullText=true', 'currency=USD', 'lang=en', 'region=Europe', 'capital=Paris', 'callingCode=1', 'borders=DEU', 'subregion=Southeast+Asia', 'demonym=Russian']
+11:35:11 [TITLE]   Mutated Request Verification
+11:35:11 [REQUEST] https://restcountries.com/v3.1/currency/krw?demonym=American&area=greater
+11:35:11 [SUCCESS] Valid Request | Status Code: 200
+11:35:11 [SUCCESS] Saved API Seed
+11:35:11 [SUCCESS] Saved API Data
+11:35:11 [REQUEST] https://restcountries.com/v3.1/currency/krw?demonym=American&population=100000
+11:35:12 [SUCCESS] Valid Request | Status Code: 200
+11:35:12 [SUCCESS] Saved API Seed
+11:35:12 [SUCCESS] Saved API Data
+11:35:12 [REQUEST] https://restcountries.com/v3.1/currency/krw?demonym=American&language=english
+11:35:13 [SUCCESS] Valid Request | Status Code: 200
+11:35:13 [SUCCESS] Saved API Seed
+11:35:13 [SUCCESS] Saved API Data
+11:35:13 [REQUEST] https://restcountries.com/v3.1/currency/krw?demonym=American&region=europe
+11:35:14 [SUCCESS] Valid Request | Status Code: 200
+11:35:14 [SUCCESS] Saved API Seed
+11:35:14 [SUCCESS] Saved API Data
+11:35:14 [REQUEST] https://restcountries.com/v3.1/currency/krw?demonym=American&callingCode=1
+11:35:14 [SUCCESS] Valid Request | Status Code: 200
+11:35:14 [SUCCESS] Saved API Seed
+11:35:14 [SUCCESS] Saved API Data
+11:35:14 [REQUEST] https://restcountries.com/v3.1/currency/krw?demonym=American&capital=london
+11:35:15 [SUCCESS] Valid Request | Status Code: 200
+11:35:15 [SUCCESS] Saved API Seed
+11:35:15 [SUCCESS] Saved API Data
+11:35:15 [REQUEST] https://restcountries.com/v3.1/currency/krw?demonym=American&subregion=northern
+11:35:16 [SUCCESS] Valid Request | Status Code: 200
+11:35:16 [SUCCESS] Saved API Seed
+11:35:16 [SUCCESS] Saved API Data
+11:35:16 [REQUEST] https://restcountries.com/v3.1/currency/krw?demonym=American&border=china
+11:35:17 [SUCCESS] Valid Request | Status Code: 200
+11:35:17 [SUCCESS] Saved API Seed
+11:35:17 [SUCCESS] Saved API Data
+11:35:17 [REQUEST] https://restcountries.com/v3.1/currency/krw?demonym=American&currencies=usd
+11:35:17 [SUCCESS] Valid Request | Status Code: 200
+11:35:17 [SUCCESS] Saved API Seed
+11:35:17 [SUCCESS] Saved API Data
+11:35:17 [REQUEST] https://restcountries.com/v3.1/currency/krw?demonym=American&timezones=GMT
+11:35:18 [SUCCESS] Valid Request | Status Code: 200
+11:35:18 [SUCCESS] Saved API Seed
+11:35:18 [SUCCESS] Saved API Data
+11:35:18 [REQUEST] https://restcountries.com/v3.1/currency/eur
+11:35:19 [SUCCESS] Valid Request | Status Code: 200
+11:35:19 [SUCCESS] Saved API Seed
+11:35:19 [SUCCESS] Saved API Data
+11:35:19 [REQUEST] https://restcountries.com/v3.1/alpha/usa?fields=name;capital
+11:35:20 [SUCCESS] Valid Request | Status Code: 200
+11:35:20 [SUCCESS] Saved API Seed
+11:35:20 [SUCCESS] Saved API Data
+11:35:20 [REQUEST] https://restcountries.com/v3.1/alpha/usa?fullText=true
+11:35:20 [SUCCESS] Valid Request | Status Code: 200
+11:35:20 [SUCCESS] Saved API Seed
+11:35:20 [SUCCESS] Saved API Data
+11:35:20 [REQUEST] https://restcountries.com/v3.1/alpha/usa?lang=es
+11:35:21 [SUCCESS] Valid Request | Status Code: 200
+11:35:21 [SUCCESS] Saved API Seed
+11:35:21 [SUCCESS] Saved API Data
+11:35:21 [REQUEST] https://restcountries.com/v3.1/alpha/usa?population=gte.10000000
+11:35:22 [SUCCESS] Valid Request | Status Code: 200
+11:35:22 [SUCCESS] Saved API Seed
+11:35:22 [SUCCESS] Saved API Data
+11:35:22 [REQUEST] https://restcountries.com/v3.1/alpha/usa?currency=USD
+11:35:23 [SUCCESS] Valid Request | Status Code: 200
+11:35:23 [SUCCESS] Saved API Seed
+11:35:23 [SUCCESS] Saved API Data
+11:35:23 [REQUEST] https://restcountries.com/v3.1/alpha/usa?callingCode=1
+11:35:23 [SUCCESS] Valid Request | Status Code: 200
+11:35:23 [SUCCESS] Saved API Seed
+11:35:23 [SUCCESS] Saved API Data
+11:35:23 [REQUEST] https://restcountries.com/v3.1/alpha/usa?region=europe
+11:35:24 [SUCCESS] Valid Request | Status Code: 200
+11:35:24 [SUCCESS] Saved API Seed
+11:35:24 [SUCCESS] Saved API Data
+11:35:24 [REQUEST] https://restcountries.com/v3.1/alpha/usa?subregion=caribbean
+11:35:25 [SUCCESS] Valid Request | Status Code: 200
+11:35:25 [SUCCESS] Saved API Seed
+11:35:25 [SUCCESS] Saved API Data
+11:35:25 [REQUEST] https://restcountries.com/v3.1/alpha/usa?demonym=American
+11:35:25 [SUCCESS] Valid Request | Status Code: 200
+11:35:26 [SUCCESS] Saved API Seed
+11:35:26 [SUCCESS] Saved API Data
+11:35:26 [REQUEST] https://restcountries.com/v3.1/alpha/usa?area=lt.5000
+11:35:26 [SUCCESS] Valid Request | Status Code: 200
+11:35:26 [SUCCESS] Saved API Seed
+11:35:26 [SUCCESS] Saved API Data
+11:35:26 [REQUEST] https://restcountries.com/v3.1/alpha/aus?fields=name;population
+11:35:27 [SUCCESS] Valid Request | Status Code: 200
+11:35:27 [SUCCESS] Saved API Seed
+11:35:27 [SUCCESS] Saved API Data
+11:35:27 [REQUEST] https://restcountries.com/v3.1/alpha/aus?fullText=true
+11:35:28 [SUCCESS] Valid Request | Status Code: 200
+11:35:28 [SUCCESS] Saved API Seed
+11:35:28 [SUCCESS] Saved API Data
+11:35:28 [REQUEST] https://restcountries.com/v3.1/alpha/aus?currency=USD
+11:35:29 [SUCCESS] Valid Request | Status Code: 200
+11:35:29 [SUCCESS] Saved API Seed
+11:35:29 [SUCCESS] Saved API Data
+11:35:29 [REQUEST] https://restcountries.com/v3.1/alpha/aus?lang=en
+11:35:29 [SUCCESS] Valid Request | Status Code: 200
+11:35:29 [SUCCESS] Saved API Seed
+11:35:29 [SUCCESS] Saved API Data
+11:35:29 [REQUEST] https://restcountries.com/v3.1/alpha/aus?region=Europe
+11:35:30 [SUCCESS] Valid Request | Status Code: 200
+11:35:30 [SUCCESS] Saved API Seed
+11:35:30 [SUCCESS] Saved API Data
+11:35:30 [REQUEST] https://restcountries.com/v3.1/alpha/aus?capital=Paris
+11:35:31 [SUCCESS] Valid Request | Status Code: 200
+11:35:31 [SUCCESS] Saved API Seed
+11:35:31 [SUCCESS] Saved API Data
+11:35:31 [REQUEST] https://restcountries.com/v3.1/alpha/aus?callingCode=1
+11:35:32 [SUCCESS] Valid Request | Status Code: 200
+11:35:32 [SUCCESS] Saved API Seed
+11:35:32 [SUCCESS] Saved API Data
+11:35:32 [REQUEST] https://restcountries.com/v3.1/alpha/aus?borders=DEU
+11:35:32 [SUCCESS] Valid Request | Status Code: 200
+11:35:32 [SUCCESS] Saved API Seed
+11:35:32 [SUCCESS] Saved API Data
+11:35:32 [REQUEST] https://restcountries.com/v3.1/alpha/aus?subregion=Southeast+Asia
+11:35:33 [SUCCESS] Valid Request | Status Code: 200
+11:35:33 [SUCCESS] Saved API Seed
+11:35:33 [SUCCESS] Saved API Data
+11:35:33 [REQUEST] https://restcountries.com/v3.1/alpha/aus?demonym=Russian
+11:35:34 [SUCCESS] Valid Request | Status Code: 200
+11:35:34 [SUCCESS] Saved API Seed
+11:35:34 [SUCCESS] Saved API Data
+11:35:34 [TITLE]   Execution Results
+11:35:34 [INFO]    Saved to: ./outputs/REST_Countries_API/executions/3.json
+11:35:38 [TITLE]   Launching RESTSpecIT
+11:35:38 [TITLE]   Executing: REST Countries API
+11:35:38 [SUCCESS] Loaded API Data
+11:35:38 [SUCCESS] Loaded API Seeds
+11:35:38 [SUCCESS] Loaded API Seeds
+11:35:38 [TITLE]   Inferring Base API Data
+11:35:38 [SECTION] Inferring Info Data
+11:35:38 [WARNING] Info Data Already Exists
+11:35:38 [SECTION] Inferring Online Documentation Data
+11:35:38 [WARNING] Online Documentation Data Already Exists
+11:35:38 [SECTION] Inferring Server Data
+11:35:38 [WARNING] Server Data Already Exists
+11:35:38 [SECTION] Inferring Request Seeds
+11:35:38 [WARNING] Request Seeds Already Exists
+11:35:38 [SECTION] Inferring Error Schema
+11:35:38 [REQUEST] https://restcountries.com/invalidRoute/?invalidParam=invalidValue
+11:35:38 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:35:38 [SUCCESS] Error Schema Found
+11:35:38 [SUCCESS] Saved API Data
+11:35:38 [TITLE]   Mutation Process: focusRoutes
+11:35:38 [TITLE]   Mutating Request (1/1)
+11:35:38 [SECTION] Mutation Operator: addRoute
+11:35:38 [INFO]    Chosen Seed: https://restcountries.com/v3.1/name/Italy
+11:35:38 [INFO]    Masked Request: https://restcountries.com/v3.1/name/Italy/<route>
+11:35:39 [ERROR]   Could Not Extract a List from the Prompt Response: 1. capital 2. languages 3. area 4. population 5. currencies 6. region 7. subregion 8. callingCodes 9. topLevelDomain 10. demonym
+11:35:44 [SUCCESS] Found Values: ['98']
+11:35:44 [SECTION] Mutation Operator: removeRoute
+11:35:44 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/ITA
+11:35:44 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha
+11:35:44 [SECTION] Mutation Operator: modifyRoute
+11:35:44 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/USA
+11:35:44 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha/<route>
+11:35:47 [SUCCESS] Found Values: ['USA', 'GBR', 'FRA', 'JPN', 'AUS', 'CAN', 'DEU', 'BRA', 'CHN', 'IND', 'USA?fields=name,capital,population,area,flag,region,subregion,languages,currencies', 'GBR?fields=name,capital,population', 'FRA?fields=name,capital,region,population', '22']
+11:35:47 [SECTION] Mutation Operator: resetRoutes
+11:35:47 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/chn?fields=timezones
+11:35:47 [INFO]    Masked Request: https://restcountries.com/v3.1/<route>?fields=timezones
+11:35:49 [SUCCESS] Found Values: ['all', 'name', 'alpha', 'callingcode', 'currency', 'lang', 'region', 'subregion', 'capital', 'population', 'all?fields=name,capital,population', 'name?name=Canada', 'alpha?codes=usa,can,mex', '74']
+11:35:49 [TITLE]   Mutated Request Verification
+11:35:49 [REQUEST] https://restcountries.com/v3.1/name/Italy/98
+11:35:50 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:35:50 [REQUEST] https://restcountries.com/v3.1/alpha
+11:35:51 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+11:35:51 [REQUEST] https://restcountries.com/v3.1/alpha/USA
+11:35:52 [SUCCESS] Valid Request | Status Code: 200
+11:35:52 [WARNING] Request Already in Seeds
+11:35:52 [SUCCESS] Saved API Data
+11:35:52 [REQUEST] https://restcountries.com/v3.1/alpha/GBR
+11:35:53 [SUCCESS] Valid Request | Status Code: 200
+11:35:53 [SUCCESS] Saved API Seed
+11:35:53 [SUCCESS] Saved API Data
+11:35:53 [REQUEST] https://restcountries.com/v3.1/alpha/FRA
+11:35:53 [SUCCESS] Valid Request | Status Code: 200
+11:35:53 [SUCCESS] Saved API Seed
+11:35:53 [SUCCESS] Saved API Data
+11:35:53 [REQUEST] https://restcountries.com/v3.1/alpha/JPN
+11:35:54 [SUCCESS] Valid Request | Status Code: 200
+11:35:54 [SUCCESS] Saved API Seed
+11:35:54 [SUCCESS] Saved API Data
+11:35:54 [REQUEST] https://restcountries.com/v3.1/alpha/AUS
+11:35:55 [SUCCESS] Valid Request | Status Code: 200
+11:35:55 [SUCCESS] Saved API Seed
+11:35:55 [SUCCESS] Saved API Data
+11:35:55 [REQUEST] https://restcountries.com/v3.1/alpha/CAN
+11:35:55 [SUCCESS] Valid Request | Status Code: 200
+11:35:55 [SUCCESS] Saved API Seed
+11:35:55 [SUCCESS] Saved API Data
+11:35:55 [REQUEST] https://restcountries.com/v3.1/alpha/DEU
+11:35:56 [SUCCESS] Valid Request | Status Code: 200
+11:35:56 [SUCCESS] Saved API Seed
+11:35:56 [SUCCESS] Saved API Data
+11:35:56 [REQUEST] https://restcountries.com/v3.1/alpha/BRA
+11:35:57 [SUCCESS] Valid Request | Status Code: 200
+11:35:57 [SUCCESS] Saved API Seed
+11:35:57 [SUCCESS] Saved API Data
+11:35:57 [REQUEST] https://restcountries.com/v3.1/alpha/CHN
+11:35:58 [SUCCESS] Valid Request | Status Code: 200
+11:35:58 [SUCCESS] Saved API Seed
+11:35:58 [SUCCESS] Saved API Data
+11:35:58 [REQUEST] https://restcountries.com/v3.1/alpha/IND
+11:35:59 [SUCCESS] Valid Request | Status Code: 200
+11:35:59 [SUCCESS] Saved API Seed
+11:35:59 [SUCCESS] Saved API Data
+11:35:59 [REQUEST] https://restcountries.com/v3.1/alpha/USA?fields=name,capital,population,area,flag,region,subregion,languages,currencies
+11:35:59 [SUCCESS] Valid Request | Status Code: 200
+11:35:59 [SUCCESS] Saved API Seed
+11:35:59 [SUCCESS] Saved API Data
+11:35:59 [REQUEST] https://restcountries.com/v3.1/alpha/GBR?fields=name,capital,population
+11:36:00 [SUCCESS] Valid Request | Status Code: 200
+11:36:00 [SUCCESS] Saved API Seed
+11:36:00 [SUCCESS] Saved API Data
+11:36:00 [REQUEST] https://restcountries.com/v3.1/alpha/FRA?fields=name,capital,region,population
+11:36:01 [SUCCESS] Valid Request | Status Code: 200
+11:36:01 [SUCCESS] Saved API Seed
+11:36:01 [SUCCESS] Saved API Data
+11:36:01 [REQUEST] https://restcountries.com/v3.1/alpha/22
+11:36:02 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:02 [REQUEST] https://restcountries.com/v3.1/all?fields=timezones
+11:36:03 [SUCCESS] Valid Request | Status Code: 200
+11:36:03 [SUCCESS] Saved API Seed
+11:36:03 [SUCCESS] Saved API Data
+11:36:03 [REQUEST] https://restcountries.com/v3.1/name?fields=timezones
+11:36:03 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:03 [REQUEST] https://restcountries.com/v3.1/alpha?fields=timezones
+11:36:04 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+11:36:04 [REQUEST] https://restcountries.com/v3.1/callingcode?fields=timezones
+11:36:05 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:05 [REQUEST] https://restcountries.com/v3.1/currency?fields=timezones
+11:36:05 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:05 [REQUEST] https://restcountries.com/v3.1/lang?fields=timezones
+11:36:06 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:06 [REQUEST] https://restcountries.com/v3.1/region?fields=timezones
+11:36:07 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:07 [REQUEST] https://restcountries.com/v3.1/subregion?fields=timezones
+11:36:08 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:08 [REQUEST] https://restcountries.com/v3.1/capital?fields=timezones
+11:36:08 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:08 [REQUEST] https://restcountries.com/v3.1/population?fields=timezones
+11:36:09 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:09 [REQUEST] https://restcountries.com/v3.1/all?fields=name,capital,population&fields=timezones
+11:36:10 [SUCCESS] Valid Request | Status Code: 200
+11:36:10 [SUCCESS] Saved API Seed
+11:36:10 [SUCCESS] Saved API Data
+11:36:10 [REQUEST] https://restcountries.com/v3.1/name?name=Canada&fields=timezones
+11:36:11 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:11 [REQUEST] https://restcountries.com/v3.1/alpha?codes=usa,can,mex&fields=timezones
+11:36:11 [SUCCESS] Valid Request | Status Code: 200
+11:36:11 [SUCCESS] Saved API Seed
+11:36:11 [SUCCESS] Saved API Data
+11:36:11 [REQUEST] https://restcountries.com/v3.1/74?fields=timezones
+11:36:12 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:12 [TITLE]   Mutation Process: focusParameters
+11:36:12 [TITLE]   Mutating Request (1/1)
+11:36:12 [SECTION] Mutation Operator: addParameter
+11:36:12 [INFO]    Chosen Seed: https://restcountries.com/v3.1/region/Europe?population=1000000
+11:36:12 [INFO]    Masked Request: https://restcountries.com/v3.1/region/Europe?population=1000000&<parameter=value>
+11:36:13 [SUCCESS] Found Values: ['area=1000', 'currency=USD', 'language=English', 'callingcode=1', 'capital=Paris', 'demonym=French', 'native=Francais', 'subregion=Western+Europe', 'timezones=GMT+1', 'flag=true']
+11:36:13 [SECTION] Mutation Operator: removeParameter
+11:36:13 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/IND
+11:36:13 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha/IND
+11:36:13 [SECTION] Mutation Operator: modifyParameter
+11:36:13 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/can?fields=timezones
+11:36:13 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha/can?<parameter=value>
+11:36:15 [SUCCESS] Found Values: ['fields=name;capital;population', 'fields=flag', 'fields=currency', 'fields=languages', 'fields=region', 'fields=subregion', 'fields=callingCodes', 'fields=timezones', 'fields=area', 'fields=demonym']
+11:36:15 [SECTION] Mutation Operator: resetParameters
+11:36:15 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/JPN
+11:36:15 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha/JPN?<parameter=value>
+11:36:16 [SUCCESS] Found Values: ['fields=name;capital;population', 'fullText=true', 'region=Asia', 'currency=USD', 'lang=ja', 'callingCodes=81', 'demonym=Japanese', 'borders=KOR', 'timezones=Asia', 'currencies=JPY']
+11:36:16 [TITLE]   Mutated Request Verification
+11:36:16 [REQUEST] https://restcountries.com/v3.1/region/Europe?population=1000000&area=1000
+11:36:17 [SUCCESS] Valid Request | Status Code: 200
+11:36:17 [SUCCESS] Saved API Seed
+11:36:17 [SUCCESS] Saved API Data
+11:36:17 [REQUEST] https://restcountries.com/v3.1/region/Europe?population=1000000&currency=USD
+11:36:18 [SUCCESS] Valid Request | Status Code: 200
+11:36:18 [SUCCESS] Saved API Seed
+11:36:18 [SUCCESS] Saved API Data
+11:36:18 [REQUEST] https://restcountries.com/v3.1/region/Europe?population=1000000&language=English
+11:36:19 [SUCCESS] Valid Request | Status Code: 200
+11:36:19 [SUCCESS] Saved API Seed
+11:36:19 [SUCCESS] Saved API Data
+11:36:19 [REQUEST] https://restcountries.com/v3.1/region/Europe?population=1000000&callingcode=1
+11:36:20 [SUCCESS] Valid Request | Status Code: 200
+11:36:20 [SUCCESS] Saved API Seed
+11:36:20 [SUCCESS] Saved API Data
+11:36:20 [REQUEST] https://restcountries.com/v3.1/region/Europe?population=1000000&capital=Paris
+11:36:20 [SUCCESS] Valid Request | Status Code: 200
+11:36:20 [SUCCESS] Saved API Seed
+11:36:20 [SUCCESS] Saved API Data
+11:36:20 [REQUEST] https://restcountries.com/v3.1/region/Europe?population=1000000&demonym=French
+11:36:21 [SUCCESS] Valid Request | Status Code: 200
+11:36:21 [SUCCESS] Saved API Seed
+11:36:21 [SUCCESS] Saved API Data
+11:36:21 [REQUEST] https://restcountries.com/v3.1/region/Europe?population=1000000&native=Francais
+11:36:22 [SUCCESS] Valid Request | Status Code: 200
+11:36:22 [SUCCESS] Saved API Seed
+11:36:22 [SUCCESS] Saved API Data
+11:36:22 [REQUEST] https://restcountries.com/v3.1/region/Europe?population=1000000&subregion=Western+Europe
+11:36:23 [SUCCESS] Valid Request | Status Code: 200
+11:36:23 [SUCCESS] Saved API Seed
+11:36:23 [SUCCESS] Saved API Data
+11:36:23 [REQUEST] https://restcountries.com/v3.1/region/Europe?population=1000000&timezones=GMT+1
+11:36:24 [SUCCESS] Valid Request | Status Code: 200
+11:36:24 [SUCCESS] Saved API Seed
+11:36:24 [SUCCESS] Saved API Data
+11:36:24 [REQUEST] https://restcountries.com/v3.1/region/Europe?population=1000000&flag=true
+11:36:25 [SUCCESS] Valid Request | Status Code: 200
+11:36:25 [SUCCESS] Saved API Seed
+11:36:25 [SUCCESS] Saved API Data
+11:36:25 [REQUEST] https://restcountries.com/v3.1/alpha/IND
+11:36:25 [SUCCESS] Valid Request | Status Code: 200
+11:36:25 [WARNING] Request Already in Seeds
+11:36:25 [SUCCESS] Saved API Data
+11:36:25 [REQUEST] https://restcountries.com/v3.1/alpha/can?fields=name;capital;population
+11:36:26 [SUCCESS] Valid Request | Status Code: 200
+11:36:26 [SUCCESS] Saved API Seed
+11:36:26 [SUCCESS] Saved API Data
+11:36:26 [REQUEST] https://restcountries.com/v3.1/alpha/can?fields=flag
+11:36:27 [SUCCESS] Valid Request | Status Code: 200
+11:36:27 [SUCCESS] Saved API Seed
+11:36:27 [SUCCESS] Saved API Data
+11:36:27 [REQUEST] https://restcountries.com/v3.1/alpha/can?fields=currency
+11:36:28 [SUCCESS] Valid Request | Status Code: 200
+11:36:28 [SUCCESS] Saved API Seed
+11:36:28 [SUCCESS] Saved API Data
+11:36:28 [REQUEST] https://restcountries.com/v3.1/alpha/can?fields=languages
+11:36:28 [SUCCESS] Valid Request | Status Code: 200
+11:36:28 [SUCCESS] Saved API Seed
+11:36:28 [SUCCESS] Saved API Data
+11:36:28 [REQUEST] https://restcountries.com/v3.1/alpha/can?fields=region
+11:36:29 [SUCCESS] Valid Request | Status Code: 200
+11:36:29 [SUCCESS] Saved API Seed
+11:36:29 [SUCCESS] Saved API Data
+11:36:29 [REQUEST] https://restcountries.com/v3.1/alpha/can?fields=subregion
+11:36:30 [SUCCESS] Valid Request | Status Code: 200
+11:36:30 [SUCCESS] Saved API Seed
+11:36:30 [SUCCESS] Saved API Data
+11:36:30 [REQUEST] https://restcountries.com/v3.1/alpha/can?fields=callingCodes
+11:36:31 [SUCCESS] Valid Request | Status Code: 200
+11:36:31 [SUCCESS] Saved API Seed
+11:36:31 [SUCCESS] Saved API Data
+11:36:31 [REQUEST] https://restcountries.com/v3.1/alpha/can?fields=timezones
+11:36:31 [SUCCESS] Valid Request | Status Code: 200
+11:36:31 [WARNING] Request Already in Seeds
+11:36:31 [SUCCESS] Saved API Data
+11:36:31 [REQUEST] https://restcountries.com/v3.1/alpha/can?fields=area
+11:36:32 [SUCCESS] Valid Request | Status Code: 200
+11:36:32 [SUCCESS] Saved API Seed
+11:36:32 [SUCCESS] Saved API Data
+11:36:32 [REQUEST] https://restcountries.com/v3.1/alpha/can?fields=demonym
+11:36:33 [SUCCESS] Valid Request | Status Code: 200
+11:36:33 [SUCCESS] Saved API Seed
+11:36:33 [SUCCESS] Saved API Data
+11:36:33 [REQUEST] https://restcountries.com/v3.1/alpha/JPN?fields=name;capital;population
+11:36:34 [SUCCESS] Valid Request | Status Code: 200
+11:36:34 [SUCCESS] Saved API Seed
+11:36:34 [SUCCESS] Saved API Data
+11:36:34 [REQUEST] https://restcountries.com/v3.1/alpha/JPN?fullText=true
+11:36:35 [SUCCESS] Valid Request | Status Code: 200
+11:36:35 [SUCCESS] Saved API Seed
+11:36:35 [SUCCESS] Saved API Data
+11:36:35 [REQUEST] https://restcountries.com/v3.1/alpha/JPN?region=Asia
+11:36:35 [SUCCESS] Valid Request | Status Code: 200
+11:36:35 [SUCCESS] Saved API Seed
+11:36:35 [SUCCESS] Saved API Data
+11:36:35 [REQUEST] https://restcountries.com/v3.1/alpha/JPN?currency=USD
+11:36:36 [SUCCESS] Valid Request | Status Code: 200
+11:36:36 [SUCCESS] Saved API Seed
+11:36:36 [SUCCESS] Saved API Data
+11:36:36 [REQUEST] https://restcountries.com/v3.1/alpha/JPN?lang=ja
+11:36:37 [SUCCESS] Valid Request | Status Code: 200
+11:36:37 [SUCCESS] Saved API Seed
+11:36:37 [SUCCESS] Saved API Data
+11:36:37 [REQUEST] https://restcountries.com/v3.1/alpha/JPN?callingCodes=81
+11:36:38 [SUCCESS] Valid Request | Status Code: 200
+11:36:38 [SUCCESS] Saved API Seed
+11:36:38 [SUCCESS] Saved API Data
+11:36:38 [REQUEST] https://restcountries.com/v3.1/alpha/JPN?demonym=Japanese
+11:36:38 [SUCCESS] Valid Request | Status Code: 200
+11:36:38 [SUCCESS] Saved API Seed
+11:36:38 [SUCCESS] Saved API Data
+11:36:38 [REQUEST] https://restcountries.com/v3.1/alpha/JPN?borders=KOR
+11:36:39 [SUCCESS] Valid Request | Status Code: 200
+11:36:39 [SUCCESS] Saved API Seed
+11:36:39 [SUCCESS] Saved API Data
+11:36:39 [REQUEST] https://restcountries.com/v3.1/alpha/JPN?timezones=Asia
+11:36:40 [SUCCESS] Valid Request | Status Code: 200
+11:36:40 [SUCCESS] Saved API Seed
+11:36:40 [SUCCESS] Saved API Data
+11:36:40 [REQUEST] https://restcountries.com/v3.1/alpha/JPN?currencies=JPY
+11:36:41 [SUCCESS] Valid Request | Status Code: 200
+11:36:41 [SUCCESS] Saved API Seed
+11:36:41 [SUCCESS] Saved API Data
+11:36:41 [TITLE]   Execution Results
+11:36:41 [INFO]    Saved to: ./outputs/REST_Countries_API/executions/4.json
+11:36:41 [TITLE]   Launching RESTSpecIT
+11:36:41 [TITLE]   Executing: REST Countries API
+11:36:41 [SUCCESS] Loaded API Data
+11:36:41 [SUCCESS] Loaded API Seeds
+11:36:41 [SUCCESS] Loaded API Seeds
+11:36:41 [TITLE]   Inferring Base API Data
+11:36:41 [SECTION] Inferring Info Data
+11:36:41 [WARNING] Info Data Already Exists
+11:36:41 [SECTION] Inferring Online Documentation Data
+11:36:41 [WARNING] Online Documentation Data Already Exists
+11:36:41 [SECTION] Inferring Server Data
+11:36:41 [WARNING] Server Data Already Exists
+11:36:41 [SECTION] Inferring Request Seeds
+11:36:41 [WARNING] Request Seeds Already Exists
+11:36:41 [SECTION] Inferring Error Schema
+11:36:41 [REQUEST] https://restcountries.com/invalidRoute/?invalidParam=invalidValue
+11:36:42 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:42 [SUCCESS] Error Schema Found
+11:36:42 [SUCCESS] Saved API Data
+11:36:42 [TITLE]   Mutation Process: focusRoutes
+11:36:42 [TITLE]   Mutating Request (1/1)
+11:36:42 [SECTION] Mutation Operator: addRoute
+11:36:42 [INFO]    Chosen Seed: https://restcountries.com/v3.1/currency/chf?demonym=American
+11:36:42 [INFO]    Masked Request: https://restcountries.com/v3.1/currency/chf/<route>?demonym=American
+11:36:44 [SUCCESS] Found Values: ['name', 'capital', 'population', 'area', 'languages', 'borders', 'currencies', 'flag', 'region', 'subregion', 'capital?format=json', 'population?sort=desc', '28']
+11:36:44 [SECTION] Mutation Operator: removeRoute
+11:36:44 [INFO]    Chosen Seed: https://restcountries.com/v3.1/currency/usd?fields=name,capital,population&demonym=American
+11:36:44 [INFO]    Masked Request: https://restcountries.com/v3.1/currency?fields=name,capital,population&demonym=American
+11:36:44 [SECTION] Mutation Operator: modifyRoute
+11:36:44 [INFO]    Chosen Seed: https://restcountries.com/v3.1/name/Italy
+11:36:44 [INFO]    Masked Request: https://restcountries.com/v3.1/name/<route>
+11:36:46 [SUCCESS] Found Values: ['name', 'alpha', 'callingcode', 'capital', 'region', 'subregion', 'population', 'area', 'lang', 'currency', 'name?full=true', 'alpha?codes=usa,can,fra', 'callingcode?code=1', '46']
+11:36:46 [SECTION] Mutation Operator: resetRoutes
+11:36:46 [INFO]    Chosen Seed: https://restcountries.com/v3.1/currency/krw?demonym=American&callingCode=1
+11:36:46 [INFO]    Masked Request: https://restcountries.com/v3.1/<route>?demonym=American&callingCode=1
+11:36:48 [SUCCESS] Found Values: ['all', 'name', 'alpha', 'capital', 'currency', 'region', 'lang', 'subregion', 'population', 'area', 'all?fields=name,capital,population', 'name?name=USA', 'alpha?codes=usa,can,mex', '40']
+11:36:48 [TITLE]   Mutated Request Verification
+11:36:48 [REQUEST] https://restcountries.com/v3.1/currency/chf/name?demonym=American
+11:36:49 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:49 [REQUEST] https://restcountries.com/v3.1/currency/chf/capital?demonym=American
+11:36:50 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:50 [REQUEST] https://restcountries.com/v3.1/currency/chf/population?demonym=American
+11:36:51 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:51 [REQUEST] https://restcountries.com/v3.1/currency/chf/area?demonym=American
+11:36:52 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:52 [REQUEST] https://restcountries.com/v3.1/currency/chf/languages?demonym=American
+11:36:52 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:52 [REQUEST] https://restcountries.com/v3.1/currency/chf/borders?demonym=American
+11:36:53 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:53 [REQUEST] https://restcountries.com/v3.1/currency/chf/currencies?demonym=American
+11:36:54 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:54 [REQUEST] https://restcountries.com/v3.1/currency/chf/flag?demonym=American
+11:36:55 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:55 [REQUEST] https://restcountries.com/v3.1/currency/chf/region?demonym=American
+11:36:55 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:55 [REQUEST] https://restcountries.com/v3.1/currency/chf/subregion?demonym=American
+11:36:56 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:56 [REQUEST] https://restcountries.com/v3.1/currency/chf/capital?format=json&demonym=American
+11:36:57 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:57 [REQUEST] https://restcountries.com/v3.1/currency/chf/population?sort=desc&demonym=American
+11:36:58 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:58 [REQUEST] https://restcountries.com/v3.1/currency/chf/28?demonym=American
+11:36:58 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:58 [REQUEST] https://restcountries.com/v3.1/currency?fields=name,capital,population&demonym=American
+11:36:59 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:36:59 [REQUEST] https://restcountries.com/v3.1/name/name
+11:37:00 [SUCCESS] Valid Request | Status Code: 200
+11:37:00 [SUCCESS] Saved API Seed
+11:37:00 [SUCCESS] Saved API Data
+11:37:00 [REQUEST] https://restcountries.com/v3.1/name/alpha
+11:37:00 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:00 [REQUEST] https://restcountries.com/v3.1/name/callingcode
+11:37:01 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:01 [REQUEST] https://restcountries.com/v3.1/name/capital
+11:37:02 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:02 [REQUEST] https://restcountries.com/v3.1/name/region
+11:37:03 [SUCCESS] Valid Request | Status Code: 200
+11:37:03 [SUCCESS] Saved API Seed
+11:37:03 [SUCCESS] Saved API Data
+11:37:03 [REQUEST] https://restcountries.com/v3.1/name/subregion
+11:37:04 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:04 [REQUEST] https://restcountries.com/v3.1/name/population
+11:37:04 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:04 [REQUEST] https://restcountries.com/v3.1/name/area
+11:37:05 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:05 [REQUEST] https://restcountries.com/v3.1/name/lang
+11:37:06 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:06 [REQUEST] https://restcountries.com/v3.1/name/currency
+11:37:07 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:07 [REQUEST] https://restcountries.com/v3.1/name/name?full=true
+11:37:07 [SUCCESS] Valid Request | Status Code: 200
+11:37:07 [SUCCESS] Saved API Seed
+11:37:07 [SUCCESS] Saved API Data
+11:37:07 [REQUEST] https://restcountries.com/v3.1/name/alpha?codes=usa,can,fra
+11:37:08 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:08 [REQUEST] https://restcountries.com/v3.1/name/callingcode?code=1
+11:37:09 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:09 [REQUEST] https://restcountries.com/v3.1/name/46
+11:37:10 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:10 [REQUEST] https://restcountries.com/v3.1/all?demonym=American&callingCode=1
+11:37:11 [SUCCESS] Valid Request | Status Code: 200
+11:37:11 [SUCCESS] Saved API Seed
+11:37:11 [SUCCESS] Saved API Data
+11:37:11 [REQUEST] https://restcountries.com/v3.1/name?demonym=American&callingCode=1
+11:37:11 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:11 [REQUEST] https://restcountries.com/v3.1/alpha?demonym=American&callingCode=1
+11:37:12 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+11:37:12 [REQUEST] https://restcountries.com/v3.1/capital?demonym=American&callingCode=1
+11:37:13 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:13 [REQUEST] https://restcountries.com/v3.1/currency?demonym=American&callingCode=1
+11:37:14 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:14 [REQUEST] https://restcountries.com/v3.1/region?demonym=American&callingCode=1
+11:37:14 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:14 [REQUEST] https://restcountries.com/v3.1/lang?demonym=American&callingCode=1
+11:37:15 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:15 [REQUEST] https://restcountries.com/v3.1/subregion?demonym=American&callingCode=1
+11:37:16 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:16 [REQUEST] https://restcountries.com/v3.1/population?demonym=American&callingCode=1
+11:37:17 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:17 [REQUEST] https://restcountries.com/v3.1/area?demonym=American&callingCode=1
+11:37:17 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:17 [REQUEST] https://restcountries.com/v3.1/all?fields=name,capital,population&demonym=American&callingCode=1
+11:37:18 [SUCCESS] Valid Request | Status Code: 200
+11:37:18 [SUCCESS] Saved API Seed
+11:37:18 [SUCCESS] Saved API Data
+11:37:18 [REQUEST] https://restcountries.com/v3.1/name?name=USA&demonym=American&callingCode=1
+11:37:19 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:19 [REQUEST] https://restcountries.com/v3.1/alpha?codes=usa,can,mex&demonym=American&callingCode=1
+11:37:20 [SUCCESS] Valid Request | Status Code: 200
+11:37:20 [SUCCESS] Saved API Seed
+11:37:20 [SUCCESS] Saved API Data
+11:37:20 [REQUEST] https://restcountries.com/v3.1/40?demonym=American&callingCode=1
+11:37:21 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:37:21 [TITLE]   Mutation Process: focusParameters
+11:37:21 [TITLE]   Mutating Request (1/1)
+11:37:21 [SECTION] Mutation Operator: addParameter
+11:37:21 [INFO]    Chosen Seed: https://restcountries.com/v3.1/currency/cad?demonym=American
+11:37:21 [INFO]    Masked Request: https://restcountries.com/v3.1/currency/cad?demonym=American&<parameter=value>
+11:37:22 [SUCCESS] Found Values: ['region=Africa', 'langCode=en', 'callingCode=1', 'capitalCity=Tokyo', 'subregion=Northern+America', 'population=1000000', 'area=200000', 'nativeName=Español', 'timezones=GMT+2', 'borders=ARG']
+11:37:22 [SECTION] Mutation Operator: removeParameter
+11:37:22 [INFO]    Chosen Seed: https://restcountries.com/v3.1/capital/Tokyo?fields=name;population
+11:37:22 [INFO]    Masked Request: https://restcountries.com/v3.1/capital/Tokyo
+11:37:22 [SECTION] Mutation Operator: modifyParameter
+11:37:22 [INFO]    Chosen Seed: https://restcountries.com/v3.1/alpha/CHN
+11:37:22 [INFO]    Masked Request: https://restcountries.com/v3.1/alpha/CHN
+11:37:22 [SECTION] Mutation Operator: resetParameters
+11:37:22 [INFO]    Chosen Seed: https://restcountries.com/v3.1/name/Italy
+11:37:22 [INFO]    Masked Request: https://restcountries.com/v3.1/name/Italy?<parameter=value>
+11:37:23 [SUCCESS] Found Values: ['fields=capital', 'fullText=true', 'currency=EUR', 'langCode=it', 'region=Europe', 'callingCode=39', 'population=60000000', 'demonym=Italian', 'timezones=CET', 'borders=FRA']
+11:37:23 [TITLE]   Mutated Request Verification
+11:37:23 [REQUEST] https://restcountries.com/v3.1/currency/cad?demonym=American&region=Africa
+11:37:24 [SUCCESS] Valid Request | Status Code: 200
+11:37:24 [SUCCESS] Saved API Seed
+11:37:24 [SUCCESS] Saved API Data
+11:37:24 [REQUEST] https://restcountries.com/v3.1/currency/cad?demonym=American&langCode=en
+11:37:24 [SUCCESS] Valid Request | Status Code: 200
+11:37:24 [SUCCESS] Saved API Seed
+11:37:25 [SUCCESS] Saved API Data
+11:37:25 [REQUEST] https://restcountries.com/v3.1/currency/cad?demonym=American&callingCode=1
+11:37:25 [SUCCESS] Valid Request | Status Code: 200
+11:37:25 [SUCCESS] Saved API Seed
+11:37:25 [SUCCESS] Saved API Data
+11:37:25 [REQUEST] https://restcountries.com/v3.1/currency/cad?demonym=American&capitalCity=Tokyo
+11:37:26 [SUCCESS] Valid Request | Status Code: 200
+11:37:26 [SUCCESS] Saved API Seed
+11:37:26 [SUCCESS] Saved API Data
+11:37:26 [REQUEST] https://restcountries.com/v3.1/currency/cad?demonym=American&subregion=Northern+America
+11:37:26 [SUCCESS] Valid Request | Status Code: 200
+11:37:26 [SUCCESS] Saved API Seed
+11:37:26 [SUCCESS] Saved API Data
+11:37:26 [REQUEST] https://restcountries.com/v3.1/currency/cad?demonym=American&population=1000000
+11:37:27 [SUCCESS] Valid Request | Status Code: 200
+11:37:27 [SUCCESS] Saved API Seed
+11:37:27 [SUCCESS] Saved API Data
+11:37:27 [REQUEST] https://restcountries.com/v3.1/currency/cad?demonym=American&area=200000
+11:37:27 [SUCCESS] Valid Request | Status Code: 200
+11:37:27 [SUCCESS] Saved API Seed
+11:37:27 [SUCCESS] Saved API Data
+11:37:27 [REQUEST] https://restcountries.com/v3.1/currency/cad?demonym=American&nativeName=Español
+11:37:28 [SUCCESS] Valid Request | Status Code: 200
+11:37:28 [SUCCESS] Saved API Seed
+11:37:28 [SUCCESS] Saved API Data
+11:37:28 [REQUEST] https://restcountries.com/v3.1/currency/cad?demonym=American&timezones=GMT+2
+11:37:28 [SUCCESS] Valid Request | Status Code: 200
+11:37:28 [SUCCESS] Saved API Seed
+11:37:28 [SUCCESS] Saved API Data
+11:37:28 [REQUEST] https://restcountries.com/v3.1/currency/cad?demonym=American&borders=ARG
+11:37:29 [SUCCESS] Valid Request | Status Code: 200
+11:37:29 [SUCCESS] Saved API Seed
+11:37:29 [SUCCESS] Saved API Data
+11:37:29 [REQUEST] https://restcountries.com/v3.1/capital/Tokyo
+11:37:30 [SUCCESS] Valid Request | Status Code: 200
+11:37:30 [WARNING] Request Already in Seeds
+11:37:30 [SUCCESS] Saved API Data
+11:37:30 [REQUEST] https://restcountries.com/v3.1/alpha/CHN
+11:37:30 [SUCCESS] Valid Request | Status Code: 200
+11:37:30 [WARNING] Request Already in Seeds
+11:37:30 [SUCCESS] Saved API Data
+11:37:30 [REQUEST] https://restcountries.com/v3.1/name/Italy?fields=capital
+11:37:31 [SUCCESS] Valid Request | Status Code: 200
+11:37:31 [SUCCESS] Saved API Seed
+11:37:31 [SUCCESS] Saved API Data
+11:37:31 [REQUEST] https://restcountries.com/v3.1/name/Italy?fullText=true
+11:37:31 [SUCCESS] Valid Request | Status Code: 200
+11:37:31 [SUCCESS] Saved API Seed
+11:37:31 [SUCCESS] Saved API Data
+11:37:31 [REQUEST] https://restcountries.com/v3.1/name/Italy?currency=EUR
+11:37:32 [SUCCESS] Valid Request | Status Code: 200
+11:37:32 [SUCCESS] Saved API Seed
+11:37:32 [SUCCESS] Saved API Data
+11:37:32 [REQUEST] https://restcountries.com/v3.1/name/Italy?langCode=it
+11:37:32 [SUCCESS] Valid Request | Status Code: 200
+11:37:32 [SUCCESS] Saved API Seed
+11:37:32 [SUCCESS] Saved API Data
+11:37:32 [REQUEST] https://restcountries.com/v3.1/name/Italy?region=Europe
+11:37:33 [SUCCESS] Valid Request | Status Code: 200
+11:37:33 [SUCCESS] Saved API Seed
+11:37:33 [SUCCESS] Saved API Data
+11:37:33 [REQUEST] https://restcountries.com/v3.1/name/Italy?callingCode=39
+11:37:33 [SUCCESS] Valid Request | Status Code: 200
+11:37:33 [SUCCESS] Saved API Seed
+11:37:33 [SUCCESS] Saved API Data
+11:37:33 [REQUEST] https://restcountries.com/v3.1/name/Italy?population=60000000
+11:37:34 [SUCCESS] Valid Request | Status Code: 200
+11:37:34 [SUCCESS] Saved API Seed
+11:37:34 [SUCCESS] Saved API Data
+11:37:34 [REQUEST] https://restcountries.com/v3.1/name/Italy?demonym=Italian
+11:37:35 [SUCCESS] Valid Request | Status Code: 200
+11:37:35 [SUCCESS] Saved API Seed
+11:37:35 [SUCCESS] Saved API Data
+11:37:35 [REQUEST] https://restcountries.com/v3.1/name/Italy?timezones=CET
+11:37:35 [SUCCESS] Valid Request | Status Code: 200
+11:37:35 [SUCCESS] Saved API Seed
+11:37:35 [SUCCESS] Saved API Data
+11:37:35 [REQUEST] https://restcountries.com/v3.1/name/Italy?borders=FRA
+11:37:36 [SUCCESS] Valid Request | Status Code: 200
+11:37:36 [SUCCESS] Saved API Seed
+11:37:36 [SUCCESS] Saved API Data
+11:37:36 [TITLE]   Execution Results
+11:37:36 [INFO]    Saved to: ./outputs/REST_Countries_API/executions/5.json

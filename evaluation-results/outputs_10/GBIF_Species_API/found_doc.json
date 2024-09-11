@@ -10,14 +10,14 @@
             "/v1/species/{id}/name": true,
             "/v1/species/{id}/parents": true,
             "/v1/species/{id}/children": true,
-            "/v1/species/{id}/related": false,
+            "/v1/species/{id}/related": true,
             "/v1/species/{id}/synonyms": true,
             "/v1/species/{id}/combinations": false,
             "/v1/species/{id}/descriptions": true,
             "/v1/species/{id}/distributions": true,
             "/v1/species/{id}/media": true,
             "/v1/species/{id}/references": true,
-            "/v1/species/{id}/speciesProfiles": true,
+            "/v1/species/{id}/speciesProfiles": false,
             "/v1/species/{id}/vernacularNames": true,
             "/v1/species/{id}/typeSpecimens": false,
             "/v1/species/match": true,
@@ -40,7 +40,7 @@
             "highertaxonKey": true,
             "hl": false,
             "isExtinct": true,
-            "issue": true,
+            "issue": false,
             "kingdom": true,
             "language": true,
             "nameType": true,
@@ -53,7 +53,7 @@
             "status": true,
             "strict": true,
             "threat": false,
-            "verbose": false,
+            "verbose": true,
             "name": true,
             "limit": true,
             "offset": true
@@ -68,226 +68,244 @@
         "list": []
     },
     "other-routes": {
-        "total": 0,
-        "list": []
+        "total": 2,
+        "list": [
+            "/v1/species/lookup",
+            "/v1/species/{id}/metrics"
+        ]
     },
     "other-parameters": {
-        "total": 23,
+        "total": 25,
         "list": [
-            "taxonKey",
-            "country",
-            "year",
-            "mediaType",
-            "continent",
-            "nameUsage",
-            "highlight",
-            "countryCode",
-            "isMarine",
-            "higherTaxonKey",
-            "locale",
-            "verbatimKey",
-            "author",
-            "publisher",
-            "hasGeospatialIssue",
-            "geometry",
-            "basisOfRecord",
-            "sourceTaxonKey",
-            "sourceDatasetKey",
-            "authorship",
-            "sort",
+            "fields",
             "source",
-            "copyright"
+            "type",
+            "creator",
+            "year",
+            "taxonKey",
+            "mediaType",
+            "basisOfRecord",
+            "country",
+            "fuzzy",
+            "highertaxon_key",
+            "region",
+            "is_marine",
+            "higherClassification",
+            "origin",
+            "citationType",
+            "taxonomicStatus",
+            "author",
+            "highlight",
+            "kingdomKey",
+            "locale",
+            "publishingCountry",
+            "license",
+            "citation",
+            "sourceTaxonKey"
         ]
     },
     "parameter-values": {
-        "name": [
+        "q": [
+            "Plantae",
+            "Panthera",
+            "Primates",
+            "Elephantidae",
             "Panthera%20leo",
+            "mammals",
+            "plantae",
+            "Panthera+tigris",
             "Canis+lupus",
-            "Elephas+maximus",
-            "Panthera+leo"
+            "elephant",
+            "Pumaconcolor",
+            "Canislupus",
+            "Primates+AND+familyKey:358",
+            "flowering",
+            "flower"
+        ],
+        "name": [
+            "Homo+sapiens",
+            "Canis+lupus",
+            "Panthera+tigris",
+            "Ailuropodamelanoleuca",
+            "Ursus%20arctos",
+            "Panthera+leo",
+            "Panthera%20leo",
+            "mammalia",
+            "Pantheraleo",
+            "Panthera%20leo%20leo",
+            "Drosophila%20melanogaster"
         ],
         "kingdom": [
             "Animalia",
+            "animalia",
             "Plantae"
-        ],
-        "taxonKey": [
-            "123456",
-            "2435098",
-            "12345",
-            "248",
-            "2435097",
-            "33"
-        ],
-        "datasetKey": [
-            "50c9509d-22c7-4a22-a47d-8c48425ef4a7",
-            "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
-            "8a8635d2-f431-4a05-9dc0-8a8e2a375f2d",
-            "7ddf754f-d193-4cc9-b351-99906754a03b",
-            "7fdb4800-f762-11e1-a439-00145eb45e9a",
-            "abc123",
-            "abcd-1234",
-            "12345678-1234-1234-1234-123456789012",
-            "7fdfa395-aa6d-4b6a-9dfe-4c0e35f61b75",
-            "7b5d6a3b-f0ff-48cc-aa4e-2cfc47ac184c"
-        ],
-        "q": [
-            "Elephantidae",
-            "Panthera%20leo",
-            "cat",
-            "orchid",
-            "big%20cat",
-            "lepidoptera",
-            "tree",
-            "genus_key:12345",
-            "taxonomy",
-            "butterfly",
-            "Panthera"
-        ],
-        "rank": [
-            "species",
-            "genus",
-            "kingdom",
-            "class",
-            "GENUS",
-            "SPECIES"
-        ],
-        "country": [
-            "US",
-            "BR",
-            "GB",
-            "FR",
-            "DE",
-            "USA"
-        ],
-        "limit": [
-            "10",
-            "5",
-            "50",
-            "100"
-        ],
-        "offset": [
-            "20",
-            "10",
-            "50",
-            "0"
-        ],
-        "year": [
-            "2010",
-            "2022",
-            "2020",
-            "2010,2015",
-            "1999"
-        ],
-        "isExtinct": [
-            "true",
-            "false"
-        ],
-        "mediaType": [
-            "image",
-            "StillImage",
-            "STILL_IMAGE"
-        ],
-        "strict": [
-            "true"
-        ],
-        "highertaxonKey": [
-            "2"
-        ],
-        "language": [
-            "en",
-            "fr"
         ],
         "phylum": [
             "Chordata"
         ],
         "class": [
-            "Mammalia"
+            "Mammalia",
+            "Aves"
         ],
         "order": [
+            "Primates",
             "Carnivora",
-            "asc"
+            "Passeriformes"
         ],
         "family": [
-            "Canidae",
+            "Hominidae",
             "Felidae"
         ],
         "genus": [
-            "Canis"
+            "Pan",
+            "Homo",
+            "Panthera"
         ],
-        "continent": [
-            "EU"
+        "rank": [
+            "SPECIES",
+            "species",
+            "GENUS",
+            "genus",
+            "kingdom"
+        ],
+        "status": [
+            "ACCEPTED",
+            "accepted",
+            "extinct",
+            "endangered"
+        ],
+        "limit": [
+            "10",
+            "100",
+            "20",
+            "5",
+            "50"
+        ],
+        "offset": [
+            "50",
+            "10",
+            "5",
+            "0"
         ],
         "nameType": [
             "SCIENTIFIC",
-            "OFFICIAL"
+            "VERNACULAR"
         ],
-        "nameUsage": [
+        "language": [
+            "en",
+            "fr",
+            "eng",
+            "es"
+        ],
+        "datasetKey": [
+            "7ddf754f-d193-4cc9-b351-99906754a03b",
+            "7ce8aef0-9e92-11dc-8738-b8a03c50a862",
+            "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
+        ],
+        "strict": [
+            "true",
+            "false"
+        ],
+        "verbose": [
+            "false",
+            "true"
+        ],
+        "fields": [
+            "vernacularNames"
+        ],
+        "source": [
+            "ITIS",
+            "IUCN",
+            "NCBI",
+            "GBIF"
+        ],
+        "type": [
+            "StillImage"
+        ],
+        "creator": [
+            "Smith",
+            "John+Doe"
+        ],
+        "year": [
+            "2021",
+            "2000",
+            "1750",
+            "2010",
+            "2020"
+        ],
+        "taxonKey": [
+            "56789",
+            "23456",
+            "456"
+        ],
+        "mediaType": [
+            "Sound",
+            "StillImage"
+        ],
+        "basisOfRecord": [
+            "PreservedSpecimen"
+        ],
+        "country": [
+            "United+States",
+            "UK",
+            "US",
+            "Canada"
+        ],
+        "fuzzy": [
+            "true"
+        ],
+        "highertaxon_key": [
+            "1"
+        ],
+        "region": [
+            "Europe"
+        ],
+        "is_marine": [
+            "true"
+        ],
+        "higherClassification": [
+            "Animalia"
+        ],
+        "origin": [
+            "INTRODUCED"
+        ],
+        "citationType": [
+            "journal"
+        ],
+        "taxonomicStatus": [
             "accepted",
-            "preferred"
-        ],
-        "highlight": [
-            "true"
-        ],
-        "issue": [
-            "ACCEPTED",
-            "SYNONYM"
-        ],
-        "status": [
-            "SYNONYM",
-            "accepted"
-        ],
-        "countryCode": [
-            "US"
-        ],
-        "isMarine": [
-            "true"
-        ],
-        "higherTaxonKey": [
-            "1234",
-            "6"
-        ],
-        "locale": [
-            "en"
-        ],
-        "verbatimKey": [
-            "9876-xyzw"
+            "ACCEPTED"
         ],
         "author": [
             "Smith"
         ],
-        "publisher": [
-            "National+Geographic",
-            "Smithsonian+Institution"
+        "isExtinct": [
+            "true",
+            "false"
         ],
-        "hasGeospatialIssue": [
+        "highlight": [
             "true"
         ],
-        "geometry": [
-            "POLYGON((-180+-90,+-180+90,+180+90,+180+-90,+-180+-90))"
+        "highertaxonKey": [
+            "332"
         ],
-        "basisOfRecord": [
-            "OBSERVATION",
-            "FOSSIL_SPECIMEN",
-            "PreservedSpecimen"
+        "kingdomKey": [
+            "1"
+        ],
+        "locale": [
+            "en"
+        ],
+        "publishingCountry": [
+            "DE"
+        ],
+        "license": [
+            "CC-BY"
+        ],
+        "citation": [
+            "Smith+et+al."
         ],
         "sourceTaxonKey": [
-            "12345"
-        ],
-        "sourceDatasetKey": [
-            "67890"
-        ],
-        "authorship": [
-            "Linnaeus"
-        ],
-        "sort": [
-            "popularity"
-        ],
-        "source": [
-            "IUCN",
-            "EBird"
-        ],
-        "copyright": [
-            "CC-BY"
+            "2435090"
         ]
     }
 }

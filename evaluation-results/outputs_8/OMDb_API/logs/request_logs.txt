@@ -1,0 +1,161 @@
+TIME     | VALID | REASON      | COD | RESPONSE DATA                     | REQUEST
+==================================================================================
+14:03:52 | False | status-code | 404 | <!DOCTYPE html PUBLIC "-//W3C/... | https://www.omdbapi.com/terms 
+14:03:53 | False | status-code | 404 | <!DOCTYPE html PUBLIC "-//W3C/... | https://www.omdbapi.com/terms 
+14:03:54 | False | status-code | 404 | <!DOCTYPE html PUBLIC "-//W3C/... | https://www.omdbapi.com/terms 
+14:03:55 | True  | valid-req   | 200 | <!DOCTYPE html><html lang="en"... | http://www.omdbapi.com/#contact 
+14:03:57 | True  | valid-req   | 200 | <!DOCTYPE html><html dir="ltr"... | https://creativecommons.org/licenses/by-nc-sa/3.0 
+14:03:57 | True  | valid-req   | 200 | <!DOCTYPE html><html lang="en"... | http://www.omdbapi.com 
+14:04:01 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com/?apikey=your_api_key&s=movie_title 
+14:04:01 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com/?apikey=your_api_key&i=movie_id 
+14:04:01 | True  | valid-req   | 200 | {"Title":"The Movie Title","Ye... | http://www.omdbapi.com/?apikey=your_api_key&t=movie_title 
+14:04:02 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com/?apikey=your_api_key&plot=full&i=movie_id 
+14:04:02 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com/?apikey=your_api_key&y=year&plot=short&s=movie_title 
+14:04:02 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com/?apikey=your_api_key&i=movie_id&plot=full&tomatoes=true 
+14:04:02 | False | status-code | 404 | <!DOCTYPE html PUBLIC "-//W3C/... | http://www.omdbapi.com/invalidRoute/?invalidParam=invalidValue 
+14:04:06 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com/?t=movie_title&apikey=your_api_key&s=movie_title 
+14:04:06 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com/?i=movie_id&apikey=your_api_key&s=movie_title 
+14:04:06 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com/?type=movie&apikey=your_api_key&s=movie_title 
+14:04:07 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com/?y=year&apikey=your_api_key&s=movie_title 
+14:04:07 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com/?plot=full&apikey=your_api_key&s=movie_title 
+14:04:07 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com/?r=json&apikey=your_api_key&s=movie_title 
+14:04:07 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com/?page=1&apikey=your_api_key&s=movie_title 
+14:04:08 | False | status-code | 401 | {"Response":"False","Error":"I... | http://www.omdbapi.com/?apikey=your_api_key&apikey=your_api_key&s=movie_title 
+14:04:08 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com/?t=movie_title&y=year&apikey=your_api_key&s=movie_title 
+14:04:08 | False | error-msg   | 200 | {"Response":"False","Error":"M... | http://www.omdbapi.com/?s=search_query&apikey=your_api_key&s=movie_title 
+14:04:09 | False | error-msg   | 200 | {"Response":"False","Error":"M... | http://www.omdbapi.com/?t=movie&s=Star%20Wars&apikey=your_api_key&s=movie_title 
+14:04:09 | False | error-msg   | 200 | {"Response":"False","Error":"M... | http://www.omdbapi.com/?t=movie&s=Star+Wars&apikey=your_api_key&s=movie_title 
+14:04:09 | False | error-msg   | 200 | {"Response":"False","Error":"M... | http://www.omdbapi.com/?t=movie&s=Harry%20Potter&apikey=your_api_key&s=movie_title 
+14:04:10 | False | status-code | 404 | <!DOCTYPE html PUBLIC "-//W3C/... | http://www.omdbapi.com/4?apikey=your_api_key&s=movie_title 
+14:04:13 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=short 
+14:04:17 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&type=movie 
+14:04:17 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&r=json 
+14:04:17 | False | error-msg   | 200 | {"Response":"False","Error":"M... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&page=2 
+14:04:17 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full 
+14:04:18 | False | error-msg   | 200 | {"Response":"False","Error":"S... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&type=series 
+14:04:18 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&y=2020 
+14:04:18 | False | error-msg   | 200 | {"Response":"False","Error":"M... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&s=action 
+14:04:19 | True  | valid-req   | 200 | <root totalResults="1" respons... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&r=xml 
+14:04:19 | False | error-msg   | 200 | {"Response":"False","Error":"M... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&page=3 
+14:04:19 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?apikey=your_api_key&y=year&plot=short 
+14:04:20 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?i=movie_id&apikey=your_api_key&plot 
+14:04:20 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?i=movie_id&apikey=your_api_key&type 
+14:04:20 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?i=movie_id&apikey=your_api_key&page 
+14:04:20 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?i=movie_id&apikey=your_api_key&callback 
+14:04:21 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?i=movie_id&apikey=your_api_key&season 
+14:04:21 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?i=movie_id&apikey=your_api_key&episode 
+14:04:21 | True  | valid-req   | 200 | {"Search":[{"Title":"Harry Pot... | http://www.omdbapi.com?s=Harry+Potter 
+14:04:21 | True  | valid-req   | 200 | {"Title":"The Lion King","Year... | http://www.omdbapi.com?t=The+Lion+King 
+14:04:21 | True  | valid-req   | 200 | {"Title":"Guardians of the Gal... | http://www.omdbapi.com?i=tt3896198 
+14:04:21 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?y=2010 
+14:04:21 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?plot=full 
+14:04:21 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?r=json 
+14:04:21 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?type=movie 
+14:04:21 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page=2 
+14:04:22 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?apikey=abc123 
+14:04:22 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?plot=short 
+14:06:05 | False | status-code | 404 | <!DOCTYPE html PUBLIC "-//W3C/... | http://www.omdbapi.com/invalidRoute/?invalidParam=invalidValue 
+14:06:09 | True  | valid-req   | 200 | {"Title":"The Lego Movie","Yea... | http://www.omdbapi.com?i=tt3896198&t=movie 
+14:06:09 | True  | valid-req   | 200 | {"Title":"Guardians of the Gal... | http://www.omdbapi.com?i=tt3896198&y=2010 
+14:06:10 | True  | valid-req   | 200 | {"Title":"Guardians of the Gal... | http://www.omdbapi.com?i=tt3896198&plot=full 
+14:06:10 | True  | valid-req   | 200 | {"Title":"Guardians of the Gal... | http://www.omdbapi.com?i=tt3896198&r=json 
+14:06:10 | True  | valid-req   | 200 | {"Title":"Guardians of the Gal... | http://www.omdbapi.com?i=tt3896198&type=series 
+14:06:10 | True  | valid-req   | 200 | {"Search":[{"Title":"Batman Be... | http://www.omdbapi.com?i=tt3896198&s=batman 
+14:06:11 | True  | valid-req   | 200 | {"Title":"Guardians of the Gal... | http://www.omdbapi.com?i=tt3896198&page=2 
+14:06:11 | True  | valid-req   | 200 | {"Title":"Guardians of the Gal... | http://www.omdbapi.com?i=tt3896198&apikey=yourapikey 
+14:06:11 | False | error-msg   | 200 | {"Response":"False","Error":"S... | http://www.omdbapi.com?i=tt3896198&season=1 
+14:06:11 | True  | valid-req   | 200 | {"Title":"Guardians of the Gal... | http://www.omdbapi.com?i=tt3896198&episode=3 
+14:06:11 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?y=year&apikey=your_api_key 
+14:06:12 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page=1&apikey=your_api_key&type=movie 
+14:06:12 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page=1&apikey=your_api_key&y=2021 
+14:06:12 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page=1&apikey=your_api_key&plot=full 
+14:06:13 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page=1&apikey=your_api_key&r=json 
+14:06:13 | True  | valid-req   | 200 | {"Title":"Beverly Hills Blonde... | http://www.omdbapi.com?page=1&apikey=your_api_key&i=tt0123456 
+14:06:13 | True  | valid-req   | 200 | {"Title":"The Movie Title","Ye... | http://www.omdbapi.com?page=1&apikey=your_api_key&t=movie_title 
+14:06:13 | True  | valid-req   | 200 | <application/json DATA>           | http://www.omdbapi.com?page=1&apikey=your_api_key&season=1 
+14:06:14 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page=1&apikey=your_api_key&episode=1 
+14:06:14 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page=1&apikey=your_api_key&id=tt1234567 
+14:06:14 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?type 
+14:06:14 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?plot 
+14:06:14 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page 
+14:06:14 | False | status-code | 401 | {"Response":"False","Error":"N... | http://www.omdbapi.com?apikey 
+14:07:19 | False | status-code | 404 | <!DOCTYPE html PUBLIC "-//W3C/... | http://www.omdbapi.com/invalidRoute/?invalidParam=invalidValue 
+14:07:22 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&type=movie 
+14:07:22 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&r=json 
+14:07:23 | False | error-msg   | 200 | {"Response":"False","Error":"M... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&page=2 
+14:07:23 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&genre=action 
+14:07:23 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&plot=short 
+14:07:23 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&tomatoes=true 
+14:07:24 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&language=english 
+14:07:24 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&rating=G 
+14:07:24 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&country=USA 
+14:07:25 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&awards=true 
+14:07:25 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title 
+14:07:25 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page=1&apikey=your_api_key&plot 
+14:07:25 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page=1&apikey=your_api_key&type 
+14:07:26 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page=1&apikey=your_api_key&season 
+14:07:26 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page=1&apikey=your_api_key&episode 
+14:07:26 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?apikey=your_api_key 
+14:07:26 | True  | valid-req   | 200 | {"Title":"The Movie Title","Ye... | http://www.omdbapi.com?t=movie_title 
+14:07:26 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?i=imdb_id 
+14:07:26 | False | error-msg   | 200 | {"Response":"False","Error":"M... | http://www.omdbapi.com?s=search_query 
+14:07:26 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?plot=short 
+14:07:26 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?type=movie 
+14:07:26 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?y=year 
+14:07:26 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?r=json 
+14:07:27 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page=1 
+14:07:27 | True  | valid-req   | 200 | <application/javascript; chars... | http://www.omdbapi.com?callback=callback_function 
+14:08:25 | False | status-code | 404 | <!DOCTYPE html PUBLIC "-//W3C/... | http://www.omdbapi.com/invalidRoute/?invalidParam=invalidValue 
+14:08:29 | True  | valid-req   | 200 | <root totalResults="1" respons... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&tomatoes=true&r=xml 
+14:08:29 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&tomatoes=true&type=movie 
+14:08:29 | False | error-msg   | 200 | {"Response":"False","Error":"M... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&tomatoes=true&page=2 
+14:08:30 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&tomatoes=true&i=movie_id 
+14:08:30 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&tomatoes=true&plot=short 
+14:08:30 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&tomatoes=true&y=2010 
+14:08:31 | False | error-msg   | 200 | {"Response":"False","Error":"S... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&tomatoes=true&type=series 
+14:08:31 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&tomatoes=true&season=1 
+14:08:31 | False | status-code | 401 | {"Response":"False","Error":"I... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full&tomatoes=true&apikey=your_api_key 
+14:08:31 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full 
+14:08:31 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?type=movie&apikey=your_api_key&plot 
+14:08:32 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?type=movie&apikey=your_api_key&year 
+14:08:32 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?type=movie&apikey=your_api_key&genre 
+14:08:32 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?type=movie&apikey=your_api_key&page 
+14:08:32 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?type=movie&apikey=your_api_key&id 
+14:08:32 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?type=movie&apikey=your_api_key&tomatoes 
+14:08:33 | True  | valid-req   | 200 | {"Title":"The Avengers","Year"... | http://www.omdbapi.com?t=avengers 
+14:08:33 | True  | valid-req   | 200 | {"Title":"Avengers: Infinity W... | http://www.omdbapi.com?i=tt4154756 
+14:08:33 | True  | valid-req   | 200 | {"Search":[{"Title":"Batman Be... | http://www.omdbapi.com?s=batman 
+14:08:33 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?y=2010 
+14:08:33 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?plot=short 
+14:08:33 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?r=json 
+14:08:33 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?apikey=abcdef1234 
+14:08:33 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?type=movie 
+14:08:33 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page=2 
+14:08:34 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?plot=full 
+14:08:37 | False | status-code | 404 | <!DOCTYPE html PUBLIC "-//W3C/... | http://www.omdbapi.com/invalidRoute/?invalidParam=invalidValue 
+14:08:40 | True  | valid-req   | 200 | {"Title":"The Lion King","Year... | http://www.omdbapi.com?t=The+Lion+King&apikey=12345 
+14:08:40 | True  | valid-req   | 200 | {"Title":"The Lion King","Year... | http://www.omdbapi.com?t=The+Lion+King&plot=short 
+14:08:41 | True  | valid-req   | 200 | {"Title":"The Lion King","Year... | http://www.omdbapi.com?t=The+Lion+King&type=movie 
+14:08:41 | True  | valid-req   | 200 | {"Title":"The Lion King","Year... | http://www.omdbapi.com?t=The+Lion+King&year=2019 
+14:08:41 | True  | valid-req   | 200 | {"Title":"The Lion King","Year... | http://www.omdbapi.com?t=The+Lion+King&r=json 
+14:08:42 | True  | valid-req   | 200 | {"Title":"The Lion King","Year... | http://www.omdbapi.com?t=The+Lion+King&page=2 
+14:08:42 | True  | valid-req   | 200 | {"Search":[{"Title":"Last Acti... | http://www.omdbapi.com?t=The+Lion+King&s=action 
+14:08:42 | True  | valid-req   | 200 | {"Title":"The Lion King","Year... | http://www.omdbapi.com?t=The+Lion+King&i=tt3896198 
+14:08:42 | True  | valid-req   | 200 | {"Title":"The Lion King","Year... | http://www.omdbapi.com?t=The+Lion+King&y=1994 
+14:08:43 | True  | valid-req   | 200 | {"Title":"The Lion King","Year... | http://www.omdbapi.com?t=The+Lion+King&plot=full 
+14:08:43 | True  | valid-req   | 200 | {"Search":[{"Title":"The Movie... | http://www.omdbapi.com?t=movie_title&y=year&apikey=your_api_key&s=movie_title&plot=full 
+14:08:43 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?plot 
+14:08:43 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?type 
+14:08:43 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page 
+14:08:43 | False | status-code | 401 | {"Response":"False","Error":"N... | http://www.omdbapi.com?apikey 
+14:08:43 | True  | valid-req   | 200 | {"Title":"The Shawshank Redemp... | http://www.omdbapi.com?t=shawshank+redemption 
+14:08:43 | True  | valid-req   | 200 | {"Title":"The Shawshank Redemp... | http://www.omdbapi.com?i=tt0111161 
+14:08:44 | True  | valid-req   | 200 | {"Search":[{"Title":"Confessio... | http://www.omdbapi.com?s=drama 
+14:08:44 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?y=1994 
+14:08:44 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?type=movie 
+14:08:44 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?plot=full 
+14:08:44 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?r=json 
+14:08:44 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?page=1 
+14:08:44 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?apikey=your_api_key 
+14:08:44 | True  | valid-req   | 200 | <application/json DATA>           | http://www.omdbapi.com?season=1 
+14:08:44 | False | error-msg   | 200 | {"Response":"False","Error":"I... | http://www.omdbapi.com?episode=1 

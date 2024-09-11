@@ -1,16 +1,24 @@
 {
     "requests": {
-        "valid": 39,
-        "total": 71
+        "valid": 51,
+        "total": 75
     },
     "routes": {
-        "amount": 6,
+        "amount": 14,
         "list": [
-            "/v1/species",
             "/v1/species/search",
-            "/v1/species/suggest",
             "/v1/species/{id}",
-            "/v1/species/match",
+            "/v1/species/{id}/descriptions",
+            "/v1/species/{id}/vernacularNames",
+            "/v1/species",
+            "/v1/species/{id}/children",
+            "/v1/species/{id}/parents",
+            "/v1/species/{id}/synonyms",
+            "/v1/species/{id}/related",
+            "/v1/species/{id}/media",
+            "/v1/species/{id}/references",
+            "/v1/species/{id}/distributions",
+            "/v1/species/suggest",
             "/v1/species/lookup"
         ]
     },
@@ -18,98 +26,79 @@
         "amount": 22,
         "list": [
             "q",
-            "rank",
-            "offset",
-            "name",
-            "kingdom",
-            "taxonKey",
-            "datasetKey",
             "limit",
-            "family",
-            "year",
-            "country",
-            "mediaType",
-            "isExtinct",
-            "nameType",
-            "nameUsage",
+            "offset",
+            "rank",
+            "highlight",
             "verbose",
-            "parent",
-            "strict",
-            "language",
+            "status",
+            "datasetKey",
+            "nameType",
+            "kingdom",
             "phylum",
             "class",
-            "order"
+            "order",
+            "family",
+            "genus",
+            "higherTaxonKey",
+            "issue",
+            "language",
+            "nameClass",
+            "locale",
+            "isExtinct",
+            "taxonomicStatus"
         ]
     },
     "parameter-values": {
         "q": [
-            "orchid",
-            "leopard"
-        ],
-        "rank": [
-            "species",
-            "family"
-        ],
-        "offset": [
-            "20",
-            "10",
-            "0",
-            "50"
-        ],
-        "name": [
+            "Plantae",
+            "Primates",
             "Panthera%20leo",
-            "cat"
-        ],
-        "kingdom": [
-            "Animalia"
-        ],
-        "taxonKey": [
-            "2488"
-        ],
-        "datasetKey": [
-            "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
-            "7c5c6e5e-8e5d-4a4b-b5f9-9e5b1a270f0d",
-            "7ddf754f-d193-4cc9-b351-99906754a03b"
+            "Prunus+avium",
+            "plants"
         ],
         "limit": [
             "10",
-            "100"
+            "50"
         ],
-        "family": [
-            "Felidae"
+        "offset": [
+            "0",
+            "20",
+            "10"
         ],
-        "year": [
-            "2020",
-            "2015"
+        "rank": [
+            "family",
+            "FAMILY",
+            "kingdom",
+            "GENUS",
+            "SPECIES",
+            "species"
         ],
-        "country": [
-            "United+States"
-        ],
-        "mediaType": [
-            "StillImage"
-        ],
-        "isExtinct": [
+        "highlight": [
             "true"
+        ],
+        "verbose": [
+            "true"
+        ],
+        "status": [
+            "accepted",
+            "ACCEPTED"
+        ],
+        "datasetKey": [
+            "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+            "50c9509d-22c7-4a22-a47d-8c48425ef4a7"
         ],
         "nameType": [
             "SCIENTIFIC"
         ],
-        "nameUsage": [
-            "ACCEPTED"
-        ],
-        "verbose": [
-            "false"
-        ],
-        "parent": [
-            "2488"
-        ],
-        "strict": [
-            "false"
-        ],
-        "language": [
-            "en"
+        "kingdom": [
+            "Plantae",
+            "Fungi",
+            "Animalia"
         ],
         "phylum": [
+            "Mollusca",
+            "Arthropoda",
             "Chordata"
         ],
         "class": [
@@ -117,15 +106,42 @@
         ],
         "order": [
             "Carnivora"
+        ],
+        "family": [
+            "Felidae"
+        ],
+        "genus": [
+            "Panthera"
+        ],
+        "higherTaxonKey": [
+            "212"
+        ],
+        "issue": [
+            "MISSING_NAME"
+        ],
+        "language": [
+            "en"
+        ],
+        "nameClass": [
+            "INFORMAL"
+        ],
+        "locale": [
+            "en"
+        ],
+        "isExtinct": [
+            "true"
+        ],
+        "taxonomicStatus": [
+            "ACCEPTED"
         ]
     },
     "strategies": [
         "focusRoutes",
         "focusParameters"
     ],
-    "time": "120.92s",
+    "time": "73.24s",
     "tokens": {
-        "input": 1092,
-        "output": 394
+        "input": 1134,
+        "output": 727
     }
 }

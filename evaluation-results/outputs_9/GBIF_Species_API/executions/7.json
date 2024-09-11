@@ -1,77 +1,85 @@
 {
     "requests": {
         "valid": 45,
-        "total": 73
+        "total": 74
     },
     "routes": {
-        "amount": 12,
+        "amount": 14,
         "list": [
-            "/v1/species",
-            "/v1/species/{id}/name",
-            "/v1/species/{id}/parents",
-            "/v1/species/{id}/children",
-            "/v1/species/{id}/synonyms",
-            "/v1/species/{id}/vernacularNames",
-            "/v1/species/{id}/references",
-            "/v1/species/{id}/media",
-            "/v1/species/{id}/descriptions",
+            "/v1/species/lookup",
+            "/v1/species/match",
             "/v1/species/search",
             "/v1/species/suggest",
-            "/v1/species/{id}"
+            "/v1/species/{id}",
+            "/v1/species/{id}/children",
+            "/v1/species/{id}/parents",
+            "/v1/species/{id}/synonyms",
+            "/v1/species/{id}/related",
+            "/v1/species/{id}/name",
+            "/v1/species/{id}/vernacularNames",
+            "/v1/species/{id}/descriptions",
+            "/v1/species/{id}/media",
+            "/v1/species/{id}/references"
         ]
     },
     "parameters": {
-        "amount": 23,
+        "amount": 22,
         "list": [
             "name",
+            "kingdom",
+            "q",
             "limit",
             "rank",
-            "sort",
-            "q",
-            "kingdom",
+            "basisOfRecord",
+            "language",
             "phylum",
             "class",
             "order",
             "family",
             "genus",
-            "highertaxon",
-            "datasetKey",
-            "country",
-            "year",
-            "taxonKey",
-            "nameUsage",
-            "strict",
             "offset",
-            "mediaType",
-            "source",
-            "createdBy",
-            "locale"
+            "strict",
+            "verbose",
+            "nameType",
+            "taxonKey",
+            "type",
+            "creator",
+            "license",
+            "country",
+            "mediaType"
         ]
     },
     "parameter-values": {
         "name": [
-            null
-        ],
-        "limit": [
-            "5",
-            "50"
-        ],
-        "rank": [
-            "genus",
-            "kingdom",
-            "species",
-            "class"
-        ],
-        "sort": [
-            null
-        ],
-        "q": [
-            "cat",
-            "orchid"
+            "Panthera%20leo",
+            "Panthera%20tigris"
         ],
         "kingdom": [
-            "Animalia",
-            "Fungi"
+            "Animalia"
+        ],
+        "q": [
+            "Prunus%20avium",
+            "Ailuropoda%20melanoleuca",
+            "wolf",
+            "plant",
+            "flower"
+        ],
+        "limit": [
+            "10",
+            "50",
+            "5",
+            "20"
+        ],
+        "rank": [
+            "SPECIES",
+            "genus",
+            "species"
+        ],
+        "basisOfRecord": [
+            "PRESERVED_SPECIMEN"
+        ],
+        "language": [
+            "eng"
         ],
         "phylum": [
             "Chordata"
@@ -83,57 +91,51 @@
             "Carnivora"
         ],
         "family": [
-            "Felidae"
+            "Felidae",
+            "Canidae"
         ],
         "genus": [
-            "Panthera"
-        ],
-        "highertaxon": [
-            "Primates"
-        ],
-        "datasetKey": [
-            "50c9509d-22c7-4a22-a47d-8c48425ef4a7"
-        ],
-        "country": [
-            "US",
-            "GB"
-        ],
-        "year": [
-            "2022",
-            "2020"
-        ],
-        "taxonKey": [
-            "249"
-        ],
-        "nameUsage": [
-            "accepted"
-        ],
-        "strict": [
-            "true"
+            "Panthera",
+            "Canis"
         ],
         "offset": [
             "10"
         ],
+        "strict": [
+            "true"
+        ],
+        "verbose": [
+            "false"
+        ],
+        "nameType": [
+            "SCIENTIFIC"
+        ],
+        "taxonKey": [
+            "456"
+        ],
+        "type": [
+            "StillImage"
+        ],
+        "creator": [
+            "John+Doe"
+        ],
+        "license": [
+            "CC-BY"
+        ],
+        "country": [
+            "US"
+        ],
         "mediaType": [
-            "image"
-        ],
-        "source": [
-            "INaturalist"
-        ],
-        "createdBy": [
-            "John"
-        ],
-        "locale": [
-            "es"
+            "Sound"
         ]
     },
     "strategies": [
         "focusRoutes",
         "focusParameters"
     ],
-    "time": "118.42s",
+    "time": "56.38s",
     "tokens": {
-        "input": 1017,
-        "output": 425
+        "input": 1161,
+        "output": 486
     }
 }

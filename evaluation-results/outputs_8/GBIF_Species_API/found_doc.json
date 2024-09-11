@@ -1,25 +1,25 @@
 {
     "doc-routes": {
         "total": 20,
-        "found": 16,
+        "found": 12,
         "names": {
             "/v1/species": true,
             "/v1/species/root/{id}": false,
             "/v1/species/{id}": true,
             "/v1/species/{id}/verbatim": false,
             "/v1/species/{id}/name": true,
-            "/v1/species/{id}/parents": true,
+            "/v1/species/{id}/parents": false,
             "/v1/species/{id}/children": true,
-            "/v1/species/{id}/related": true,
+            "/v1/species/{id}/related": false,
             "/v1/species/{id}/synonyms": true,
             "/v1/species/{id}/combinations": false,
             "/v1/species/{id}/descriptions": true,
             "/v1/species/{id}/distributions": true,
             "/v1/species/{id}/media": true,
             "/v1/species/{id}/references": true,
-            "/v1/species/{id}/speciesProfiles": true,
+            "/v1/species/{id}/speciesProfiles": false,
             "/v1/species/{id}/vernacularNames": true,
-            "/v1/species/{id}/typeSpecimens": true,
+            "/v1/species/{id}/typeSpecimens": false,
             "/v1/species/match": false,
             "/v1/species/search": true,
             "/v1/species/suggest": true
@@ -27,7 +27,7 @@
     },
     "doc-parameters": {
         "total": 28,
-        "found": 19,
+        "found": 20,
         "names": {
             "class": true,
             "datasetKey": true,
@@ -37,10 +37,10 @@
             "family": true,
             "genus": true,
             "habitat": false,
-            "highertaxonKey": false,
-            "hl": false,
+            "highertaxonKey": true,
+            "hl": true,
             "isExtinct": true,
-            "issue": true,
+            "issue": false,
             "kingdom": true,
             "language": true,
             "nameType": true,
@@ -49,11 +49,11 @@
             "phylum": true,
             "q": true,
             "rank": true,
-            "sourceId": true,
+            "sourceId": false,
             "status": true,
             "strict": true,
             "threat": false,
-            "verbose": false,
+            "verbose": true,
             "name": true,
             "limit": true,
             "offset": true
@@ -68,299 +68,179 @@
         "list": []
     },
     "other-routes": {
-        "total": 1,
+        "total": 2,
         "list": [
-            "/v1/species/{id}/metrics"
+            "/v1/species/{id}/metrics",
+            "/v1/species/lookup"
         ]
     },
     "other-parameters": {
-        "total": 32,
+        "total": 14,
         "list": [
-            "country",
-            "year",
-            "mediaType",
-            "taxonKey",
-            "parent",
-            "nameStatus",
-            "locale",
-            "source",
-            "sort",
+            "dataset_key",
+            "format",
+            "nameUsage",
+            "page",
             "highlight",
-            "publishingCountry",
-            "authorship",
-            "basisOfRecord",
-            "orderKey",
-            "field",
-            "ranking",
-            "speciesKey",
-            "creator",
-            "tag",
-            "license",
-            "typeStatus",
-            "publisherKey",
-            "isPreferredName",
-            "name_status",
-            "name_type",
-            "rank_status",
+            "taxonomicStatus",
+            "sourceTaxonKey",
+            "nomStatus",
+            "year",
+            "response",
             "fields",
-            "type",
-            "institutionCode",
-            "nameUsageKey",
-            "identifier",
-            "nameUsage"
+            "lang",
+            "isMarine",
+            "fuzzy"
         ]
     },
     "parameter-values": {
-        "rank": [
-            "species",
-            "kingdom",
-            "SPECIES",
-            "genus",
-            "family",
-            "order",
-            "class",
-            "phylum"
+        "dataset_key": [
+            "7fbd2ba2-13d4-4d51-8c3b-9a5d24a373e0"
         ],
-        "name": [
-            "Panthera%20leo",
-            "Canis+lupus",
-            "Panthera+leo",
-            "Ailurus+fulgens",
-            "Canis%20lupus"
+        "rank": [
+            "GENUS",
+            "SPECIES",
+            "FAMILY",
+            "ORDER",
+            "CLASS",
+            "PHYLUM",
+            "KINGDOM",
+            "genus",
+            "species",
+            "family"
         ],
         "limit": [
-            "100",
-            "10",
             "5",
-            "50"
+            "10",
+            "100",
+            "20"
+        ],
+        "language": [
+            "eng",
+            "spa",
+            "en"
+        ],
+        "format": [
+            "json",
+            "xml"
         ],
         "offset": [
+            "2",
             "50",
-            "100",
             "10",
-            "20",
-            "0"
+            "5",
+            "0",
+            "20"
+        ],
+        "q": [
+            "primate",
+            "mammals",
+            "Panthera%20leo%20persica",
+            "plantae",
+            "Primates",
+            "mammalia",
+            "cat",
+            "plant"
+        ],
+        "kingdom": [
+            "Plantae",
+            "Animalia"
         ],
         "nameType": [
             "SCIENTIFIC",
-            "VERNACULAR",
-            "SYNONYM",
-            "BASIONYM",
-            "HOMOTYPIC_SYNONYM",
-            "MISAPPLIED",
-            "PROPARTE_SYNONYM",
-            "INVALID",
-            "ALTERNATIVE",
-            "BRIEF",
-            "HOMONYM"
+            "scientific",
+            "wildcard",
+            "VERNACULAR"
         ],
-        "datasetKey": [
-            "50c9509d-22c7-4a22-a47d-8c48425ef4a7",
-            "7e380b4e-4e85-4438-8a86-44f7bcbf8f2b",
-            "abc123",
-            "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
-            "4fa7b334-ce0d-4e88-aaae-2e0c138d049e",
-            "abcdefg",
-            "7e380d3e-6e73-4f4d-bc6f-1716bf8c11ac",
-            "7ce8aef0-9e92-11dc-8738-b8a03c50a862",
-            "abcd1234",
-            "abcd-1234",
-            "7ddf754f-d193-4cc9-b351-99906754a03b"
-        ],
-        "country": [
-            "US",
-            "United+States",
-            "BR",
-            "United+Kingdom",
-            "ES",
-            "CA"
-        ],
-        "year": [
-            "2021",
-            "2022",
-            "2000",
-            "2020",
-            "2010"
-        ],
-        "mediaType": [
-            "StillImage",
-            "stillImage",
-            "STILL_IMAGE"
-        ],
-        "taxonKey": [
-            "2481709",
-            "1",
-            "12345",
-            "123456",
-            "1234",
-            "987"
-        ],
-        "parent": [
-            "123456"
-        ],
-        "nameStatus": [
-            "synonym",
+        "status": [
+            "accepted",
             "ACCEPTED"
         ],
-        "issue": [
-            "NAME_MATCH_NONE",
-            "MISSING_LANGUAGE",
-            "NATIVE",
-            "NAME_MATCH_HIGHERRANK"
+        "nameUsage": [
+            "HIGHER",
+            "classify"
+        ],
+        "hl": [
+            "true"
+        ],
+        "strict": [
+            "true",
+            "false"
         ],
         "order": [
             "ASC",
-            "asc",
-            "Primates",
-            "Carnivora",
-            "Aves"
+            "Coleoptera",
+            "Carnivora"
         ],
-        "locale": [
-            "en",
-            "fr",
-            "es"
+        "page": [
+            "2"
         ],
-        "source": [
-            "GBIF",
-            "Smithsonian"
+        "verbose": [
+            "true",
+            "false"
         ],
-        "sort": [
-            "scientificName",
-            "created",
-            "popularity",
-            "NAME"
+        "phylum": [
+            "Mollusca",
+            "Chordata"
         ],
-        "q": [
-            "flower",
-            "plant",
-            "orchid",
-            "dog",
-            "plantae",
-            "biology",
-            "plants",
-            "tree",
-            "animal",
-            "insect",
-            "genus",
-            "cat"
+        "class": [
+            "Insecta",
+            "Mammalia"
+        ],
+        "family": [
+            "Felidae"
+        ],
+        "genus": [
+            "Canis",
+            "Panthera"
+        ],
+        "name": [
+            "Panthera+leo",
+            "rose"
+        ],
+        "datasetKey": [
+            "7ddf754f-d193-4cc9-b351-99906754a03b",
+            "7ce8aef0-9e92-11dc-8738-b8a03c50a862",
+            "7e3800a9-f762-11e1-a439-00145eb45e9a",
+            "7ce8aef0-9e92-4562-b3a4-b71f5787ee71"
         ],
         "highlight": [
             "true"
         ],
-        "language": [
-            "fr",
-            "en",
-            "English",
-            "es"
-        ],
-        "publishingCountry": [
-            "US"
-        ],
-        "authorship": [
-            "Linnaeus"
-        ],
-        "basisOfRecord": [
-            "PreservedSpecimen",
-            "FOSSIL_SPECIMEN",
-            "preservedSpecimen",
-            "PRESERVED_SPECIMEN"
-        ],
-        "orderKey": [
-            "def456"
-        ],
-        "strict": [
-            "false",
-            "true"
-        ],
-        "field": [
-            "vernacularName"
-        ],
-        "status": [
-            "present",
+        "taxonomicStatus": [
+            "accepted",
             "ACCEPTED"
         ],
-        "ranking": [
-            "SPECIES"
+        "sourceTaxonKey": [
+            "248"
         ],
-        "speciesKey": [
-            "123456"
+        "highertaxonKey": [
+            "212"
         ],
-        "sourceId": [
-            "5b3e570e-3ce7-4e16-8e7b-4ea9c3f1699b",
-            "123",
-            "1234"
+        "nomStatus": [
+            "available"
         ],
-        "creator": [
-            "John+Doe"
+        "year": [
+            "1800",
+            "1999"
         ],
-        "tag": [
-            "flower"
-        ],
-        "license": [
-            "CC-BY"
-        ],
-        "kingdom": [
-            "Animalia"
-        ],
-        "family": [
-            "Felidae",
-            "Hominidae",
-            "Acanthaceae"
-        ],
-        "typeStatus": [
-            "holotype"
-        ],
-        "publisherKey": [
-            "xyz789"
-        ],
-        "isPreferredName": [
-            "true",
-            "false"
-        ],
-        "name_status": [
-            "synonym",
-            "provisionally+accepted"
-        ],
-        "name_type": [
-            "scientific"
-        ],
-        "rank_status": [
-            "accepted"
+        "response": [
+            "full"
         ],
         "fields": [
-            "kingdom,phylum,class",
-            "title,body"
-        ],
-        "type": [
-            "Text"
-        ],
-        "institutionCode": [
-            "NMNH"
-        ],
-        "phylum": [
-            "Chordata"
-        ],
-        "class": [
-            "Mammalia"
-        ],
-        "genus": [
-            "Homo",
-            "Heliconia",
-            "Panthera"
-        ],
-        "nameUsageKey": [
-            "12345"
-        ],
-        "identifier": [
-            "JohnDoe"
+            "vernacularNames"
         ],
         "isExtinct": [
-            "false",
             "true"
         ],
-        "nameUsage": [
-            "FOSSIL",
-            "accepted"
+        "lang": [
+            "fr"
+        ],
+        "isMarine": [
+            "false"
+        ],
+        "fuzzy": [
+            "true"
         ]
     }
 }

@@ -1,0 +1,2633 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "REST Countries API",
+        "description": "**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid query parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.<br><br>**Be Reassured** - The tool *RESTSpecIT* has been thouroughly tested on various APIs. Additionally, the tool is capable of discovering undocumented and valid routes and query parameters of APIs.<br><br>**API Description** - The REST Countries API is a web service that provides information about countries around the world.",
+        "termsOfService": "",
+        "contact": {
+            "name": "REST Countries API Contact",
+            "url": "https://restcountries.com/#contact",
+            "email": "contact@apilayer.com"
+        },
+        "license": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "v1"
+    },
+    "servers": [
+        {
+            "url": "https://restcountries.com",
+            "description": "Production Server of the REST Countries API.",
+            "x-base-routes": 1
+        }
+    ],
+    "externalDocs": {
+        "url": "https://restcountries.com",
+        "description": "Find more about the REST Countries API here:"
+    },
+    "paths": {
+        "/v3.1/all": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name,capital,population": {
+                                "value": "name,capital,population"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "region",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Africa": {
+                                "value": "Africa"
+                            }
+                        }
+                    },
+                    {
+                        "name": "currency",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Spanish": {
+                                "value": "Spanish"
+                            }
+                        }
+                    },
+                    {
+                        "name": "callingCode",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "demonym",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Canadian": {
+                                "value": "Canadian"
+                            }
+                        }
+                    },
+                    {
+                        "name": "area",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "50000": {
+                                "value": "50000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "timezones",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "GMT": {
+                                "value": "GMT"
+                            }
+                        }
+                    },
+                    {
+                        "name": "subregion",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Caribbean": {
+                                "value": "Caribbean"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nativeName",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Deutschland": {
+                                "value": "Deutschland"
+                            }
+                        }
+                    },
+                    {
+                        "name": "alpha2Code",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "US": {
+                                "value": "US"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_all"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/name/germany": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_name_germany"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/usa": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_usa"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/region/europe": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name;capital;population": {
+                                "value": "name;capital;population"
+                            },
+                            "name,capital,population,area;limit": {
+                                "value": "name,capital,population,area;limit"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_region_europe"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/capital/paris": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "France": {
+                                "value": "France"
+                            }
+                        }
+                    },
+                    {
+                        "name": "region",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Europe": {
+                                "value": "Europe"
+                            }
+                        }
+                    },
+                    {
+                        "name": "subregion",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Western+Europe": {
+                                "value": "Western+Europe"
+                            }
+                        }
+                    },
+                    {
+                        "name": "population",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1000000": {
+                                "value": "1000000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "area",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "5000": {
+                                "value": "5000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "currency",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en": {
+                                "value": "en"
+                            }
+                        }
+                    },
+                    {
+                        "name": "callingcode",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "33": {
+                                "value": "33"
+                            }
+                        }
+                    },
+                    {
+                        "name": "demonym",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "French": {
+                                "value": "French"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nativeName",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "France": {
+                                "value": "France"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_capital_paris"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/currency/eur": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_currency_eur"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/aus": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name;population": {
+                                "value": "name;population"
+                            },
+                            "name;region;capital": {
+                                "value": "name;region;capital"
+                            },
+                            "population;area": {
+                                "value": "population;area"
+                            },
+                            "currency;languages": {
+                                "value": "currency;languages"
+                            },
+                            "flag": {
+                                "value": "flag"
+                            },
+                            "callingCodes": {
+                                "value": "callingCodes"
+                            },
+                            "subregion;timezones": {
+                                "value": "subregion;timezones"
+                            },
+                            "demonym": {
+                                "value": "demonym"
+                            },
+                            "borders": {
+                                "value": "borders"
+                            },
+                            "latlng": {
+                                "value": "latlng"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_aus"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/region/americas": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name;capital": {
+                                "value": "name;capital"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_region_americas"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/can": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_can"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/ita": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name;capital;population": {
+                                "value": "name;capital;population"
+                            }
+                        }
+                    },
+                    {
+                        "name": "region",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Africa": {
+                                "value": "Africa"
+                            }
+                        }
+                    },
+                    {
+                        "name": "subregion",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Southern+Europe": {
+                                "value": "Southern+Europe"
+                            }
+                        }
+                    },
+                    {
+                        "name": "currency",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USD": {
+                                "value": "USD"
+                            }
+                        }
+                    },
+                    {
+                        "name": "demonym",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Italian": {
+                                "value": "Italian"
+                            }
+                        }
+                    },
+                    {
+                        "name": "callingCode",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "39": {
+                                "value": "39"
+                            }
+                        }
+                    },
+                    {
+                        "name": "languageCode",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "it": {
+                                "value": "it"
+                            }
+                        }
+                    },
+                    {
+                        "name": "area",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "301336": {
+                                "value": "301336"
+                            }
+                        }
+                    },
+                    {
+                        "name": "timezones",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "UTC+01:00": {
+                                "value": "UTC+01:00"
+                            }
+                        }
+                    },
+                    {
+                        "name": "borders",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "FRA": {
+                                "value": "FRA"
+                            }
+                        }
+                    },
+                    {
+                        "name": "nativeName",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Italia": {
+                                "value": "Italia"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_ita"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/currency/usd": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name;capital;population": {
+                                "value": "name;capital;population"
+                            }
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "United+States": {
+                                "value": "United+States"
+                            }
+                        }
+                    },
+                    {
+                        "name": "region",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Americas": {
+                                "value": "Americas"
+                            }
+                        }
+                    },
+                    {
+                        "name": "subregion",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Northern+America": {
+                                "value": "Northern+America"
+                            }
+                        }
+                    },
+                    {
+                        "name": "capital",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Washington,+D.C.": {
+                                "value": "Washington,+D.C."
+                            }
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "en": {
+                                "value": "en"
+                            }
+                        }
+                    },
+                    {
+                        "name": "callingcode",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1": {
+                                "value": "1"
+                            }
+                        }
+                    },
+                    {
+                        "name": "population",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "300000000": {
+                                "value": "300000000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "area",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "9833520": {
+                                "value": "9833520"
+                            }
+                        }
+                    },
+                    {
+                        "name": "demonym",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "American": {
+                                "value": "American"
+                            }
+                        }
+                    },
+                    {
+                        "name": "native",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "United+States": {
+                                "value": "United+States"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_currency_usd"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/capital/tokyo": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name;capital;population": {
+                                "value": "name;capital;population"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_capital_tokyo"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/region/africa": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name,capital,population": {
+                                "value": "name,capital,population"
+                            }
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Algeria": {
+                                "value": "Algeria"
+                            }
+                        }
+                    },
+                    {
+                        "name": "capital",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Cairo": {
+                                "value": "Cairo"
+                            }
+                        }
+                    },
+                    {
+                        "name": "population",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10000000": {
+                                "value": "10000000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "currency",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "EUR": {
+                                "value": "EUR"
+                            }
+                        }
+                    },
+                    {
+                        "name": "language",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "French": {
+                                "value": "French"
+                            }
+                        }
+                    },
+                    {
+                        "name": "callingcode",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "123": {
+                                "value": "123"
+                            }
+                        }
+                    },
+                    {
+                        "name": "area",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "50000": {
+                                "value": "50000"
+                            }
+                        }
+                    },
+                    {
+                        "name": "demonym",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Egyptian": {
+                                "value": "Egyptian"
+                            }
+                        }
+                    },
+                    {
+                        "name": "subregion",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Northern+Africa": {
+                                "value": "Northern+Africa"
+                            }
+                        }
+                    },
+                    {
+                        "name": "timezones",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Africa": {
+                                "value": "Africa"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_region_africa"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/region/asia": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name,capital,population": {
+                                "value": "name,capital,population"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_region_asia"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/region/oceania": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_region_oceania"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/region/caribbean": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_region_caribbean"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "codes",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "USA": {
+                                "value": "USA"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/USA": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "callingCodes": {
+                                "value": "callingCodes"
+                            },
+                            "name,capital,population,area,flag": {
+                                "value": "name,capital,population,area,flag"
+                            },
+                            "name,capital,population,area,flag,language": {
+                                "value": "name,capital,population,area,flag,language"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_USA"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/ESP": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "callingCodes": {
+                                "value": "callingCodes"
+                            },
+                            "name,capital,population,area,flag": {
+                                "value": "name,capital,population,area,flag"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_ESP"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/FRA": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "callingCodes": {
+                                "value": "callingCodes"
+                            },
+                            "name,capital,population,area,flag,region,subregion,languages,+currencies": {
+                                "value": "name,capital,population,area,flag,region,subregion,languages,+currencies"
+                            },
+                            "name,capital,population,area,flag,language,currencies": {
+                                "value": "name,capital,population,area,flag,language,currencies"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_FRA"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/JPN": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "callingCodes": {
+                                "value": "callingCodes"
+                            },
+                            "name,capital,population,area,region,subregion,languages": {
+                                "value": "name,capital,population,area,region,subregion,languages"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_JPN"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/BRA": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "callingCodes": {
+                                "value": "callingCodes"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_BRA"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/DEU": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "callingCodes": {
+                                "value": "callingCodes"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_DEU"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/CHN": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "callingCodes": {
+                                "value": "callingCodes"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_CHN"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/IND": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "callingCodes": {
+                                "value": "callingCodes"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_IND"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/CAN": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "callingCodes": {
+                                "value": "callingCodes"
+                            },
+                            "name;capital;population": {
+                                "value": "name;capital;population"
+                            },
+                            "name;languages;currency": {
+                                "value": "name;languages;currency"
+                            },
+                            "name;timezones;area": {
+                                "value": "name;timezones;area"
+                            },
+                            "name;region;subregion": {
+                                "value": "name;region;subregion"
+                            },
+                            "name;population;area": {
+                                "value": "name;population;area"
+                            },
+                            "name;flag;alpha2Code": {
+                                "value": "name;flag;alpha2Code"
+                            },
+                            "name;borders;timezones": {
+                                "value": "name;borders;timezones"
+                            },
+                            "name;callingCodes;area": {
+                                "value": "name;callingCodes;area"
+                            },
+                            "name;population;capital": {
+                                "value": "name;population;capital"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_CAN"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/GBR": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "callingCodes": {
+                                "value": "callingCodes"
+                            },
+                            "name;population;capital": {
+                                "value": "name;population;capital"
+                            },
+                            "name;population;area": {
+                                "value": "name;population;area"
+                            },
+                            "name;population;borders": {
+                                "value": "name;population;borders"
+                            },
+                            "name;population;currencies": {
+                                "value": "name;population;currencies"
+                            },
+                            "name;population;languages": {
+                                "value": "name;population;languages"
+                            }
+                        }
+                    },
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "format",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "json": {
+                                "value": "json"
+                            }
+                        }
+                    },
+                    {
+                        "name": "lang",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "fr": {
+                                "value": "fr"
+                            }
+                        }
+                    },
+                    {
+                        "name": "region",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "europe": {
+                                "value": "europe"
+                            }
+                        }
+                    },
+                    {
+                        "name": "subregion",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "northern_europe": {
+                                "value": "northern_europe"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_GBR"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/RUS": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_RUS"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v3.1/alpha/AUS": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "fullText",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_v3.1_alpha_AUS"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": {
+                                    "message": "Page Not Found",
+                                    "_links": {
+                                        "self": {
+                                            "href": "/invalidRoute/?invalidParam=invalidValue",
+                                            "templated": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorSchema": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "_links": {
+                        "type": "object"
+                    }
+                },
+                "required": [
+                    "message",
+                    "_links"
+                ]
+            },
+            "ResponseSchema_v3.1_all": {},
+            "ResponseSchema_v3.1_name_germany": {},
+            "ResponseSchema_v3.1_alpha_usa": {},
+            "ResponseSchema_v3.1_region_europe": {},
+            "ResponseSchema_v3.1_capital_paris": {},
+            "ResponseSchema_v3.1_currency_eur": {},
+            "ResponseSchema_v3.1_alpha_aus": {},
+            "ResponseSchema_v3.1_region_americas": {},
+            "ResponseSchema_v3.1_alpha_can": {},
+            "ResponseSchema_v3.1_alpha_ita": {},
+            "ResponseSchema_v3.1_currency_usd": {},
+            "ResponseSchema_v3.1_capital_tokyo": {},
+            "ResponseSchema_v3.1_region_africa": {},
+            "ResponseSchema_v3.1_region_asia": {},
+            "ResponseSchema_v3.1_region_oceania": {},
+            "ResponseSchema_v3.1_region_caribbean": {},
+            "ResponseSchema_v3.1_alpha": {},
+            "ResponseSchema_v3.1_alpha_USA": {},
+            "ResponseSchema_v3.1_alpha_ESP": {},
+            "ResponseSchema_v3.1_alpha_FRA": {},
+            "ResponseSchema_v3.1_alpha_JPN": {},
+            "ResponseSchema_v3.1_alpha_BRA": {},
+            "ResponseSchema_v3.1_alpha_DEU": {},
+            "ResponseSchema_v3.1_alpha_CHN": {},
+            "ResponseSchema_v3.1_alpha_IND": {},
+            "ResponseSchema_v3.1_alpha_CAN": {},
+            "ResponseSchema_v3.1_alpha_GBR": {},
+            "ResponseSchema_v3.1_alpha_RUS": {},
+            "ResponseSchema_v3.1_alpha_AUS": {}
+        }
+    }
+}

@@ -53,8 +53,8 @@ def makeHTTPRequest(request, logger, apiKey="", method="get"):
             if ("text" in responseData["contentType"] or "json" in responseData["contentType"]) and response.text:
                 responseData["text"] = response.text
                 # search in the response data string if the "error" substring is present (case insensitive)
-                # only check for "error", "not found" and "status" strings in small responses, as text or json error messages tend to be short
-                if re.search(r"error|not found|status|invalid", response.text, re.IGNORECASE) and len(responseData["text"]) < 200:
+                # only check for "error", "not found", "invalid", "incorrect" strings in small responses, as text or json error messages tend to be short
+                if re.search(r"error|not found|invalid|incorrect", response.text, re.IGNORECASE) and len(responseData["text"]) < 200:
                     responseData["valid"] = False
                     responseData["reason"] = "error-msg"
 

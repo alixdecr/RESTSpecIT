@@ -1,128 +1,139 @@
 {
     "requests": {
-        "valid": 44,
+        "valid": 46,
         "total": 74
     },
     "routes": {
-        "amount": 11,
+        "amount": 15,
         "list": [
-            "/v1/species/search",
-            "/v1/species/suggest",
             "/v1/species/{id}",
+            "/v1/species/{id}/parents",
+            "/v1/species/{id}/children",
+            "/v1/species/suggest",
+            "/v1/species/match",
+            "/v1/species/search",
+            "/v1/species/{id}/related",
+            "/v1/species/{id}/descriptions",
             "/v1/species",
-            "/v1/dataset",
-            "/v1/network",
-            "/v1/installation",
-            "/v1/organization",
-            "/v1/grscicoll/institution",
-            "/v1/grscicoll/collection",
-            "/v1/dataset/search"
+            "/v1/species/{id}/synonyms",
+            "/v1/species/{id}/media",
+            "/v1/species/{id}/distributions",
+            "/v1/species/{id}/vernacularNames",
+            "/v1/species/{id}/speciesProfiles",
+            "/v1/species/lookup"
         ]
     },
     "parameters": {
-        "amount": 18,
+        "amount": 21,
         "list": [
+            "offset",
+            "limit",
             "q",
+            "rank",
             "name",
             "kingdom",
-            "year",
-            "rank",
-            "limit",
-            "offset",
-            "publishingCountry",
-            "country",
-            "datasetKey",
-            "tag",
-            "type",
-            "publishingOrgKey",
-            "basisOfRecord",
-            "taxonKey",
-            "nameType",
+            "strict",
+            "genus",
+            "extinct",
+            "phylum",
+            "class",
+            "order",
+            "family",
             "language",
-            "publishing_country"
+            "datasetKey",
+            "higherTaxonKey",
+            "nameType",
+            "nameUsage",
+            "isExtinct",
+            "isMarine",
+            "isTerrestrial"
         ]
     },
     "parameter-values": {
+        "offset": [
+            "0",
+            "50",
+            "20"
+        ],
+        "limit": [
+            "10",
+            "5",
+            "3",
+            "20",
+            "100"
+        ],
         "q": [
-            "parus+major",
-            "orchid",
-            "taxonKey"
+            "Panthera%20leo",
+            "Primates",
+            "elephant"
+        ],
+        "rank": [
+            "SPECIES",
+            "species",
+            "GENUS"
         ],
         "name": [
-            "Panthera%20leo"
+            "Puma%20concolor"
         ],
         "kingdom": [
             "Animalia"
         ],
-        "year": [
-            "2000",
-            "2022"
+        "strict": [
+            "true"
         ],
-        "rank": [
-            "species",
-            "SPECIES",
-            "KINGDOM"
+        "genus": [
+            "Pan",
+            "Homo"
         ],
-        "limit": [
-            "10",
-            "50"
+        "extinct": [
+            "false"
         ],
-        "offset": [
-            "10",
-            "0"
+        "phylum": [
+            "Chordata"
         ],
-        "publishingCountry": [
-            "US"
+        "class": [
+            "Mammalia"
         ],
-        "country": [
-            "GB",
-            "US"
+        "order": [
+            "Primates"
+        ],
+        "family": [
+            "Hominidae"
+        ],
+        "language": [
+            "es",
+            "en"
         ],
         "datasetKey": [
-            "1a2b3c4d",
-            "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
+            "7b5cc48f-f762-11e1-a439-00145eb45e9a"
         ],
-        "tag": [
-            "threatened"
-        ],
-        "type": [
-            "RESEARCH"
-        ],
-        "publishingOrgKey": [
-            "xyz123"
-        ],
-        "basisOfRecord": [
-            "OBSERVATION"
-        ],
-        "taxonKey": [
-            "2481410"
+        "higherTaxonKey": [
+            "1",
+            "212"
         ],
         "nameType": [
             "SCIENTIFIC"
         ],
-        "language": [
-            "en"
+        "nameUsage": [
+            "accepted"
         ],
-        "publishing_country": [
-            "US",
-            "GB",
-            "BR",
-            "AU",
-            "CA",
-            "DE",
-            "FR",
-            "IT",
-            "ES",
-            "JP"
+        "isExtinct": [
+            "true"
+        ],
+        "isMarine": [
+            "false"
+        ],
+        "isTerrestrial": [
+            "true"
         ]
     },
     "strategies": [
         "focusRoutes",
         "focusParameters"
     ],
-    "time": "170.4s",
+    "time": "51.53s",
     "tokens": {
-        "input": 1031,
-        "output": 466
+        "input": 1166,
+        "output": 607
     }
 }

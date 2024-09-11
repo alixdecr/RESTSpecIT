@@ -1,24 +1,24 @@
 {
     "doc-routes": {
         "total": 20,
-        "found": 5,
+        "found": 15,
         "names": {
             "/v1/species": true,
             "/v1/species/root/{id}": false,
             "/v1/species/{id}": true,
             "/v1/species/{id}/verbatim": false,
-            "/v1/species/{id}/name": false,
-            "/v1/species/{id}/parents": false,
-            "/v1/species/{id}/children": false,
-            "/v1/species/{id}/related": false,
-            "/v1/species/{id}/synonyms": false,
+            "/v1/species/{id}/name": true,
+            "/v1/species/{id}/parents": true,
+            "/v1/species/{id}/children": true,
+            "/v1/species/{id}/related": true,
+            "/v1/species/{id}/synonyms": true,
             "/v1/species/{id}/combinations": false,
-            "/v1/species/{id}/descriptions": false,
-            "/v1/species/{id}/distributions": false,
-            "/v1/species/{id}/media": false,
-            "/v1/species/{id}/references": false,
+            "/v1/species/{id}/descriptions": true,
+            "/v1/species/{id}/distributions": true,
+            "/v1/species/{id}/media": true,
+            "/v1/species/{id}/references": true,
             "/v1/species/{id}/speciesProfiles": false,
-            "/v1/species/{id}/vernacularNames": false,
+            "/v1/species/{id}/vernacularNames": true,
             "/v1/species/{id}/typeSpecimens": false,
             "/v1/species/match": true,
             "/v1/species/search": true,
@@ -49,8 +49,8 @@
             "phylum": true,
             "q": true,
             "rank": true,
-            "sourceId": true,
-            "status": false,
+            "sourceId": false,
+            "status": true,
             "strict": true,
             "threat": false,
             "verbose": true,
@@ -68,206 +68,260 @@
         "list": []
     },
     "other-routes": {
-        "total": 1,
+        "total": 2,
         "list": [
+            "/v1/species/{id}/metrics",
             "/v1/species/lookup"
         ]
     },
     "other-parameters": {
-        "total": 14,
+        "total": 27,
         "list": [
+            "highlight",
+            "fields",
+            "reverse",
+            "highertaxon_key",
+            "isMarine",
             "year",
-            "country",
-            "mediaType",
-            "taxonKey",
-            "nameStatus",
-            "locale",
-            "hasCoordinate",
-            "kingdomKey",
-            "phylumKey",
-            "classKey",
+            "type",
             "nameUsage",
-            "nameUsageGroup",
-            "hasImage",
-            "parent"
+            "country",
+            "isTerrestrial",
+            "mediaType",
+            "metadataType",
+            "license",
+            "hasCoordinate",
+            "higherTaxonKey",
+            "nameClass",
+            "locale",
+            "taxonomicStatus",
+            "isPreferredName",
+            "isSynonym",
+            "source",
+            "sort",
+            "geometry",
+            "basisOfRecord",
+            "higherClassification",
+            "kingdomKey",
+            "hasGeospatialIssue"
         ]
     },
     "parameter-values": {
-        "q": [
-            "leopard",
-            "orchid",
-            "dog",
-            "cat",
-            "flower",
-            "Elephant",
-            "tree"
-        ],
         "limit": [
             "10",
             "5",
-            "100",
             "50",
-            null
+            "100"
+        ],
+        "offset": [
+            "20",
+            "10",
+            "0",
+            "3",
+            "50"
+        ],
+        "language": [
+            "spanish",
+            "en",
+            "es",
+            "fr",
+            "eng"
+        ],
+        "strict": [
+            "false",
+            "true"
+        ],
+        "q": [
+            "Primates",
+            "Lepidoptera",
+            "mammals",
+            "orchid",
+            "Ursus%20arctos",
+            "Plantae",
+            "Prunus%20avium",
+            "Panthera+tigris",
+            "Panthera%20leo",
+            "plant",
+            "Elephas%20maximus",
+            "example",
+            "Panthera%2520tigris",
+            "Homo%20sapiens",
+            "Prunus+avium",
+            "plants",
+            "Prunus",
+            "plantae",
+            "rose",
+            "Ailuropoda",
+            "puma"
+        ],
+        "rank": [
+            "GENUS",
+            "species",
+            "genus",
+            "family",
+            "order",
+            "FAMILY",
+            "KINGDOM",
+            "SPECIES",
+            "kingdom"
+        ],
+        "nameType": [
+            "SCIENTIFIC",
+            "WELL_FORMED",
+            "VERNACULAR",
+            "WELLFORMED"
+        ],
+        "status": [
+            "ACCEPTED",
+            "SYNONYM",
+            "accepted"
+        ],
+        "isExtinct": [
+            "true",
+            "false"
+        ],
+        "highlight": [
+            "true",
+            "false"
         ],
         "kingdom": [
             "Animalia",
-            "Plantae"
-        ],
-        "rank": [
-            "species",
-            "kingsdom",
-            "phylum",
-            "class",
-            "order",
-            "family",
-            "genus",
-            null
-        ],
-        "offset": [
-            "0",
-            "10",
-            "20",
-            null,
-            "50"
-        ],
-        "nameType": [
-            "scientific",
-            "vernacular",
-            "SCIENTIFIC",
-            "VERNACULAR",
-            "BOTH",
-            "WELLFORMED",
-            "MISAPPLIED",
-            "SYNONYM",
-            "wildcard"
-        ],
-        "year": [
-            "2020",
-            "2010",
-            "2022",
-            null,
-            "2015"
-        ],
-        "country": [
-            "United+Kingdom",
-            "US",
-            "GB",
-            "United+States",
-            null
-        ],
-        "mediaType": [
-            "image",
-            "StillImage",
-            null
-        ],
-        "datasetKey": [
-            "2a68b2a5-1457-453e-a9b3-894f2b5b9e57",
-            "6eaf5d1e-df6f-4d59-8da2-09c8c7a0e3f8",
-            "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
-            "7ddf754f-d193-4cc9-b351-99906754a03b",
-            null,
-            "7c5c6e5e-8e5d-4a4b-b5f9-9e5b1a270f0d",
-            "50c9509d-22c7-4a22-a47d-8c48425ef4a7"
-        ],
-        "issue": [
-            "MISSING_COORDINATE"
-        ],
-        "taxonKey": [
-            "248",
-            "2488",
-            "123456"
-        ],
-        "isExtinct": [
-            "true"
-        ],
-        "family": [
-            "Canidae",
-            "Felidae",
-            "Acanthaceae",
-            "Asteraceae"
-        ],
-        "nameStatus": [
-            "ACCEPTED",
-            "SYNONYM"
-        ],
-        "locale": [
-            "en",
-            "fr"
+            "Plantae",
+            "Fungi"
         ],
         "phylum": [
-            "Chordata"
+            "Chordata",
+            "Mollusca",
+            "Arthropoda"
         ],
         "class": [
             "Mammalia"
         ],
         "order": [
             "Carnivora",
-            "Lepidoptera",
-            "Coleoptera",
-            "Passeriformes"
+            "Rodentia"
         ],
-        "genus": [
-            "Panthera",
-            "Rosa"
+        "verbose": [
+            "false",
+            "true"
         ],
-        "highertaxonKey": [
-            "1"
+        "fields": [
+            "kingdom",
+            "kingdom,phylum"
         ],
-        "strict": [
-            "false"
+        "reverse": [
+            "true"
         ],
         "name": [
-            "Panthera+leo",
             "Panthera%20leo",
-            null,
-            "Homo+sapiens",
-            "Panthera+tigris",
-            "Bubo+scandiacus",
-            "Ailurus+fulgens",
-            "Ara+macao",
-            "Delphinus+delphis",
-            "cat",
-            "Pan+troglodytes",
-            "Pongo+abelii"
+            "Panthera%20tigris",
+            "Canis%20lupus",
+            "Canis+lupus",
+            "Panthera%2520leo",
+            "sparrow",
+            "puma%20concolor",
+            "Panthera"
+        ],
+        "highertaxon_key": [
+            "1"
+        ],
+        "isMarine": [
+            "false",
+            "true"
+        ],
+        "year": [
+            "1800",
+            "1758",
+            "2020"
+        ],
+        "type": [
+            "ACCEPTED",
+            "SYNONYM"
+        ],
+        "nameUsage": [
+            "ALL",
+            "TAXONOMIC"
+        ],
+        "country": [
+            "US"
+        ],
+        "isTerrestrial": [
+            "true"
+        ],
+        "datasetKey": [
+            "50c9509d-22c7-4a22-a47d-8c48425ef4a7",
+            "7ce8aef0-9e92-11dc-8738-b8a03c50a862",
+            "5ff13cf0-6c0f-11d9-b9a5-000d569dbb3a",
+            "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c",
+            "7ddf754f-d193-4cc9-b351-99906754a03b"
+        ],
+        "mediaType": [
+            "audio",
+            "StillImage"
+        ],
+        "metadataType": [
+            "eml"
+        ],
+        "license": [
+            "CC-BY"
         ],
         "hasCoordinate": [
             "true"
         ],
+        "family": [
+            "Canidae",
+            "Felidae"
+        ],
+        "genus": [
+            "Canis",
+            "Panthera"
+        ],
+        "higherTaxonKey": [
+            "248",
+            "212"
+        ],
+        "issue": [
+            "MISSING_NAME",
+            "taxonomicStatus"
+        ],
+        "nameClass": [
+            "INFORMAL"
+        ],
+        "locale": [
+            "en"
+        ],
+        "taxonomicStatus": [
+            "ACCEPTED"
+        ],
+        "isPreferredName": [
+            "true"
+        ],
+        "isSynonym": [
+            "false"
+        ],
+        "source": [
+            "ITIS"
+        ],
+        "sort": [
+            "NAME"
+        ],
+        "highertaxonKey": [
+            "1"
+        ],
+        "geometry": [
+            "true"
+        ],
+        "basisOfRecord": [
+            "HUMAN_OBSERVATION"
+        ],
+        "higherClassification": [
+            "Animalia"
+        ],
         "kingdomKey": [
             "1"
         ],
-        "phylumKey": [
-            "54"
-        ],
-        "classKey": [
-            "212"
-        ],
-        "nameUsage": [
-            "ACCEPTED",
-            "exact"
-        ],
-        "nameUsageGroup": [
-            "LIVING",
-            "FOSSIL",
-            "EXTINCT",
-            "EXCLUDED",
-            "AMBIGUOUS"
-        ],
-        "hasImage": [
-            null
-        ],
-        "verbose": [
-            "true",
-            "false"
-        ],
-        "language": [
-            "en"
-        ],
-        "sourceId": [
-            "6f0442ff-8f4a-4ae5-8e5d-7fba77c078c8"
-        ],
-        "parent": [
-            "2488"
+        "hasGeospatialIssue": [
+            "true"
         ]
     }
 }

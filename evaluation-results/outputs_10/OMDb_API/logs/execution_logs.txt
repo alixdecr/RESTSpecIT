@@ -1,0 +1,515 @@
+14:15:31 [TITLE]   Launching RESTSpecIT
+14:15:31 [TITLE]   Executing: OMDb API
+14:15:31 [SUCCESS] Created New API Data File
+14:15:31 [SUCCESS] Created New API Seed File
+14:15:31 [SUCCESS] Created New API Seed File
+14:15:31 [TITLE]   Inferring Base API Data
+14:15:31 [SECTION] Inferring Info Data
+14:15:32 [REQUEST] http://www.omdbapi.com/terms
+14:15:32 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+14:15:33 [REQUEST] http://www.omdbapi.com/terms
+14:15:33 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+14:15:33 [REQUEST] http://www.omdbapi.com/apikey.aspx
+14:15:34 [SUCCESS] Valid Request | Status Code: 200
+14:15:34 [REQUEST] http://www.omdbapi.com/#contact
+14:15:34 [SUCCESS] Valid Request | Status Code: 200
+14:15:36 [REQUEST] https://creativecommons.org/licenses/by-nc-sa/3.0
+14:15:37 [SUCCESS] Valid Request | Status Code: 200
+14:15:37 [SUCCESS] Info Data Found
+14:15:37 [SUCCESS] Saved API Data
+14:15:37 [SECTION] Inferring Online Documentation Data
+14:15:37 [REQUEST] http://www.omdbapi.com
+14:15:37 [SUCCESS] Valid Request | Status Code: 200
+14:15:37 [SUCCESS] Online Documentation Data Found
+14:15:37 [SUCCESS] Saved API Data
+14:15:37 [SECTION] Inferring Server Data
+14:15:38 [SUCCESS] Server Data Found
+14:15:38 [SUCCESS] Saved API Data
+14:15:38 [SECTION] Inferring Request Seeds
+14:15:40 [REQUEST] http://www.omdbapi.com/?apikey=yourkey&s=Avengers&type=movie
+14:15:40 [SUCCESS] Valid Request | Status Code: 200
+14:15:40 [SUCCESS] Saved API Seed
+14:15:40 [SUCCESS] Saved API Data
+14:15:40 [REQUEST] http://www.omdbapi.com/?apikey=yourkey&i=tt4154756
+14:15:41 [SUCCESS] Valid Request | Status Code: 200
+14:15:41 [SUCCESS] Saved API Seed
+14:15:41 [SUCCESS] Saved API Data
+14:15:41 [REQUEST] http://www.omdbapi.com/?apikey=yourkey&t=Interstellar
+14:15:41 [SUCCESS] Valid Request | Status Code: 200
+14:15:41 [SUCCESS] Saved API Seed
+14:15:41 [SUCCESS] Saved API Data
+14:15:41 [REQUEST] http://www.omdbapi.com/?apikey=yourkey&r=json&plot=full
+14:15:41 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:41 [REQUEST] http://www.omdbapi.com/?apikey=yourkey&y=2010&plot=short
+14:15:41 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:41 [SECTION] Inferring Error Schema
+14:15:41 [REQUEST] http://www.omdbapi.com/invalidRoute/?invalidParam=invalidValue
+14:15:41 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+14:15:41 [SUCCESS] Error Schema Found
+14:15:41 [SUCCESS] Saved API Data
+14:15:41 [TITLE]   Mutation Process: focusRoutes
+14:15:41 [TITLE]   Mutating Request (1/1)
+14:15:41 [SECTION] Mutation Operator: addRoute
+14:15:41 [INFO]    Chosen Seed: http://www.omdbapi.com/?apikey=yourkey&s=Avengers&type=movie
+14:15:41 [INFO]    Masked Request: http://www.omdbapi.com/<route>?apikey=yourkey&s=Avengers&type=movie
+14:15:44 [SUCCESS] Found Values: ['?t=Avengers', '?s=Captain+America', '?i=tt0848228', '?y=2012', '?plot=full', '?r=json', '?page=2', '?apikey=yourkey&i=tt4154796', '?t=Iron+Man', '?s=Thor+Ragnarok', '?t=movie&s=Harry+Potter', '?t=titanic', '?t=movie&s=Harry%20Potter', '25']
+14:15:44 [SECTION] Mutation Operator: removeRoute
+14:15:44 [INFO]    Chosen Seed: http://www.omdbapi.com/?apikey=yourkey&s=Avengers&type=movie
+14:15:44 [ERROR]   Cannot Apply Mutation Operator
+14:15:44 [SECTION] Mutation Operator: modifyRoute
+14:15:44 [INFO]    Chosen Seed: http://www.omdbapi.com/?apikey=yourkey&t=Interstellar
+14:15:44 [ERROR]   Cannot Apply Mutation Operator
+14:15:44 [SECTION] Mutation Operator: resetRoutes
+14:15:44 [INFO]    Chosen Seed: http://www.omdbapi.com/?apikey=yourkey&s=Avengers&type=movie
+14:15:44 [ERROR]   Cannot Apply Mutation Operator
+14:15:44 [TITLE]   Mutated Request Verification
+14:15:44 [REQUEST] http://www.omdbapi.com/?t=Avengers&apikey=yourkey&s=Avengers&type=movie
+14:15:45 [SUCCESS] Valid Request | Status Code: 200
+14:15:45 [SUCCESS] Saved API Seed
+14:15:45 [SUCCESS] Saved API Data
+14:15:45 [REQUEST] http://www.omdbapi.com/?s=Captain+America&apikey=yourkey&s=Avengers&type=movie
+14:15:45 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:45 [REQUEST] http://www.omdbapi.com/?i=tt0848228&apikey=yourkey&s=Avengers&type=movie
+14:15:45 [SUCCESS] Valid Request | Status Code: 200
+14:15:45 [SUCCESS] Saved API Seed
+14:15:45 [SUCCESS] Saved API Data
+14:15:45 [REQUEST] http://www.omdbapi.com/?y=2012&apikey=yourkey&s=Avengers&type=movie
+14:15:45 [SUCCESS] Valid Request | Status Code: 200
+14:15:45 [SUCCESS] Saved API Seed
+14:15:45 [SUCCESS] Saved API Data
+14:15:45 [REQUEST] http://www.omdbapi.com/?plot=full&apikey=yourkey&s=Avengers&type=movie
+14:15:46 [SUCCESS] Valid Request | Status Code: 200
+14:15:46 [SUCCESS] Saved API Seed
+14:15:46 [SUCCESS] Saved API Data
+14:15:46 [REQUEST] http://www.omdbapi.com/?r=json&apikey=yourkey&s=Avengers&type=movie
+14:15:46 [SUCCESS] Valid Request | Status Code: 200
+14:15:46 [SUCCESS] Saved API Seed
+14:15:46 [SUCCESS] Saved API Data
+14:15:46 [REQUEST] http://www.omdbapi.com/?page=2&apikey=yourkey&s=Avengers&type=movie
+14:15:46 [SUCCESS] Valid Request | Status Code: 200
+14:15:46 [SUCCESS] Saved API Seed
+14:15:46 [SUCCESS] Saved API Data
+14:15:46 [REQUEST] http://www.omdbapi.com/?apikey=yourkey&i=tt4154796&apikey=yourkey&s=Avengers&type=movie
+14:15:47 [ERROR]   Invalid Request | Status Code: 401 | Reason: status-code
+14:15:47 [REQUEST] http://www.omdbapi.com/?t=Iron+Man&apikey=yourkey&s=Avengers&type=movie
+14:15:47 [SUCCESS] Valid Request | Status Code: 200
+14:15:47 [SUCCESS] Saved API Seed
+14:15:47 [SUCCESS] Saved API Data
+14:15:47 [REQUEST] http://www.omdbapi.com/?s=Thor+Ragnarok&apikey=yourkey&s=Avengers&type=movie
+14:15:47 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:47 [REQUEST] http://www.omdbapi.com/?t=movie&s=Harry+Potter&apikey=yourkey&s=Avengers&type=movie
+14:15:47 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:47 [REQUEST] http://www.omdbapi.com/?t=titanic&apikey=yourkey&s=Avengers&type=movie
+14:15:48 [SUCCESS] Valid Request | Status Code: 200
+14:15:48 [SUCCESS] Saved API Seed
+14:15:48 [SUCCESS] Saved API Data
+14:15:48 [REQUEST] http://www.omdbapi.com/?t=movie&s=Harry%20Potter&apikey=yourkey&s=Avengers&type=movie
+14:15:48 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:48 [REQUEST] http://www.omdbapi.com/25?apikey=yourkey&s=Avengers&type=movie
+14:15:48 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+14:15:48 [TITLE]   Mutation Process: focusParameters
+14:15:48 [TITLE]   Mutating Request (1/1)
+14:15:48 [SECTION] Mutation Operator: addParameter
+14:15:48 [INFO]    Chosen Seed: http://www.omdbapi.com/?y=2012&apikey=yourkey&s=Avengers&type=movie
+14:15:48 [INFO]    Masked Request: http://www.omdbapi.com?y=2012&apikey=yourkey&s=Avengers&type=movie&<parameter=value>
+14:15:49 [SUCCESS] Found Values: ['plot=full', 'r=json', 'page=2', 'i=tt1234567', 't=Iron+Man', 'plot=short', 'r=xml', 'y=1998', 'type=series']
+14:15:49 [SECTION] Mutation Operator: removeParameter
+14:15:49 [INFO]    Chosen Seed: http://www.omdbapi.com/?y=2012&apikey=yourkey&s=Avengers&type=movie
+14:15:49 [INFO]    Masked Request: http://www.omdbapi.com?y=2012&apikey=yourkey&s=Avengers
+14:15:49 [SECTION] Mutation Operator: modifyParameter
+14:15:49 [INFO]    Chosen Seed: http://www.omdbapi.com/?t=titanic&apikey=yourkey&s=Avengers&type=movie
+14:15:49 [INFO]    Masked Request: http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&<parameter=value>
+14:15:50 [SUCCESS] Found Values: ['plot=full', 'type=movie', 'y=1997', 'r=json', 'page=2', 'i=tt0120338', 'apikey=yourkey2', 'plot=short', 'y=2012', 'type=series']
+14:15:50 [SECTION] Mutation Operator: resetParameters
+14:15:50 [INFO]    Chosen Seed: http://www.omdbapi.com/?t=Iron+Man&apikey=yourkey&s=Avengers&type=movie
+14:15:50 [INFO]    Masked Request: http://www.omdbapi.com?<parameter=value>
+14:15:52 [SUCCESS] Found Values: ['apikey=12345', 't=Inception', 'type=movie', 'y=2010', 'plot=short', 'r=json', 'page=2', 's=Avengers', 'i=tt4154756', 'plot=full', 'id=tt0133093']
+14:15:52 [TITLE]   Mutated Request Verification
+14:15:52 [REQUEST] http://www.omdbapi.com?y=2012&apikey=yourkey&s=Avengers&type=movie&plot=full
+14:15:52 [SUCCESS] Valid Request | Status Code: 200
+14:15:52 [SUCCESS] Saved API Seed
+14:15:52 [SUCCESS] Saved API Data
+14:15:52 [REQUEST] http://www.omdbapi.com?y=2012&apikey=yourkey&s=Avengers&type=movie&r=json
+14:15:52 [SUCCESS] Valid Request | Status Code: 200
+14:15:52 [SUCCESS] Saved API Seed
+14:15:52 [SUCCESS] Saved API Data
+14:15:52 [REQUEST] http://www.omdbapi.com?y=2012&apikey=yourkey&s=Avengers&type=movie&page=2
+14:15:53 [SUCCESS] Valid Request | Status Code: 200
+14:15:53 [SUCCESS] Saved API Seed
+14:15:53 [SUCCESS] Saved API Data
+14:15:53 [REQUEST] http://www.omdbapi.com?y=2012&apikey=yourkey&s=Avengers&type=movie&i=tt1234567
+14:15:53 [SUCCESS] Valid Request | Status Code: 200
+14:15:53 [SUCCESS] Saved API Seed
+14:15:53 [SUCCESS] Saved API Data
+14:15:53 [REQUEST] http://www.omdbapi.com?y=2012&apikey=yourkey&s=Avengers&type=movie&t=Iron+Man
+14:15:53 [SUCCESS] Valid Request | Status Code: 200
+14:15:53 [SUCCESS] Saved API Seed
+14:15:53 [SUCCESS] Saved API Data
+14:15:53 [REQUEST] http://www.omdbapi.com?y=2012&apikey=yourkey&s=Avengers&type=movie&plot=short
+14:15:54 [SUCCESS] Valid Request | Status Code: 200
+14:15:54 [SUCCESS] Saved API Seed
+14:15:54 [SUCCESS] Saved API Data
+14:15:54 [REQUEST] http://www.omdbapi.com?y=2012&apikey=yourkey&s=Avengers&type=movie&r=xml
+14:15:54 [SUCCESS] Valid Request | Status Code: 200
+14:15:54 [SUCCESS] Saved API Seed
+14:15:54 [SUCCESS] Saved API Data
+14:15:54 [REQUEST] http://www.omdbapi.com?y=2012&apikey=yourkey&s=Avengers&type=movie&y=1998
+14:15:54 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:54 [REQUEST] http://www.omdbapi.com?y=2012&apikey=yourkey&s=Avengers&type=movie&type=series
+14:15:54 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:54 [REQUEST] http://www.omdbapi.com?y=2012&apikey=yourkey&s=Avengers
+14:15:54 [SUCCESS] Valid Request | Status Code: 200
+14:15:54 [SUCCESS] Saved API Seed
+14:15:54 [SUCCESS] Saved API Data
+14:15:54 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&plot=full
+14:15:55 [SUCCESS] Valid Request | Status Code: 200
+14:15:55 [SUCCESS] Saved API Seed
+14:15:55 [SUCCESS] Saved API Data
+14:15:55 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&type=movie
+14:15:55 [SUCCESS] Valid Request | Status Code: 200
+14:15:55 [SUCCESS] Saved API Seed
+14:15:55 [SUCCESS] Saved API Data
+14:15:55 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=1997
+14:15:55 [SUCCESS] Valid Request | Status Code: 200
+14:15:55 [SUCCESS] Saved API Seed
+14:15:55 [SUCCESS] Saved API Data
+14:15:55 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&r=json
+14:15:55 [SUCCESS] Valid Request | Status Code: 200
+14:15:55 [SUCCESS] Saved API Seed
+14:15:55 [SUCCESS] Saved API Data
+14:15:55 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&page=2
+14:15:56 [SUCCESS] Valid Request | Status Code: 200
+14:15:56 [SUCCESS] Saved API Seed
+14:15:56 [SUCCESS] Saved API Data
+14:15:56 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&i=tt0120338
+14:15:56 [SUCCESS] Valid Request | Status Code: 200
+14:15:56 [SUCCESS] Saved API Seed
+14:15:56 [SUCCESS] Saved API Data
+14:15:56 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&apikey=yourkey2
+14:15:56 [ERROR]   Invalid Request | Status Code: 401 | Reason: status-code
+14:15:56 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&plot=short
+14:15:56 [SUCCESS] Valid Request | Status Code: 200
+14:15:56 [SUCCESS] Saved API Seed
+14:15:56 [SUCCESS] Saved API Data
+14:15:56 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=2012
+14:15:57 [SUCCESS] Valid Request | Status Code: 200
+14:15:57 [SUCCESS] Saved API Seed
+14:15:57 [SUCCESS] Saved API Data
+14:15:57 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&type=series
+14:15:57 [SUCCESS] Valid Request | Status Code: 200
+14:15:57 [SUCCESS] Saved API Seed
+14:15:57 [SUCCESS] Saved API Data
+14:15:57 [REQUEST] http://www.omdbapi.com?apikey=12345
+14:15:57 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:57 [REQUEST] http://www.omdbapi.com?t=Inception
+14:15:57 [SUCCESS] Valid Request | Status Code: 200
+14:15:57 [SUCCESS] Saved API Seed
+14:15:57 [SUCCESS] Saved API Data
+14:15:57 [REQUEST] http://www.omdbapi.com?type=movie
+14:15:57 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:57 [REQUEST] http://www.omdbapi.com?y=2010
+14:15:57 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:57 [REQUEST] http://www.omdbapi.com?plot=short
+14:15:57 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:57 [REQUEST] http://www.omdbapi.com?r=json
+14:15:57 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:57 [REQUEST] http://www.omdbapi.com?page=2
+14:15:57 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:57 [REQUEST] http://www.omdbapi.com?s=Avengers
+14:15:57 [SUCCESS] Valid Request | Status Code: 200
+14:15:57 [SUCCESS] Saved API Seed
+14:15:57 [SUCCESS] Saved API Data
+14:15:57 [REQUEST] http://www.omdbapi.com?i=tt4154756
+14:15:58 [SUCCESS] Valid Request | Status Code: 200
+14:15:58 [SUCCESS] Saved API Seed
+14:15:58 [SUCCESS] Saved API Data
+14:15:58 [REQUEST] http://www.omdbapi.com?plot=full
+14:15:58 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:58 [REQUEST] http://www.omdbapi.com?id=tt0133093
+14:15:58 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:15:58 [TITLE]   Execution Results
+14:15:58 [INFO]    Saved to: ./outputs/OMDb_API/executions/1.json
+14:17:50 [TITLE]   Launching RESTSpecIT
+14:17:50 [TITLE]   Executing: OMDb API
+14:17:50 [SUCCESS] Loaded API Data
+14:17:50 [SUCCESS] Loaded API Seeds
+14:17:50 [SUCCESS] Loaded API Seeds
+14:17:50 [TITLE]   Inferring Base API Data
+14:17:50 [SECTION] Inferring Info Data
+14:17:50 [WARNING] Info Data Already Exists
+14:17:50 [SECTION] Inferring Online Documentation Data
+14:17:50 [WARNING] Online Documentation Data Already Exists
+14:17:50 [SECTION] Inferring Server Data
+14:17:50 [WARNING] Server Data Already Exists
+14:17:50 [SECTION] Inferring Request Seeds
+14:17:50 [WARNING] Request Seeds Already Exists
+14:17:50 [SECTION] Inferring Error Schema
+14:17:50 [REQUEST] http://www.omdbapi.com/invalidRoute/?invalidParam=invalidValue
+14:17:50 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+14:17:50 [SUCCESS] Error Schema Found
+14:17:50 [SUCCESS] Saved API Data
+14:17:50 [TITLE]   Mutation Process: focusParameters
+14:17:50 [TITLE]   Mutating Request (1/1)
+14:17:50 [SECTION] Mutation Operator: addParameter
+14:17:50 [INFO]    Chosen Seed: http://www.omdbapi.com/?t=Avengers&apikey=yourkey&s=Avengers&type=movie
+14:17:50 [INFO]    Masked Request: http://www.omdbapi.com?t=Avengers&apikey=yourkey&s=Avengers&type=movie&<parameter=value>
+14:17:51 [SUCCESS] Found Values: ['plot=full', 'year=2012', 'r=xml', 'page=2', 'genre=action', 'plot=short', 'y=2019', 'tomatoes=true', 'i=tt4154756']
+14:17:51 [SECTION] Mutation Operator: removeParameter
+14:17:51 [INFO]    Chosen Seed: http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&plot=short
+14:17:51 [INFO]    Masked Request: http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers
+14:17:51 [SECTION] Mutation Operator: modifyParameter
+14:17:51 [INFO]    Chosen Seed: http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&page=2
+14:17:51 [INFO]    Masked Request: http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&<parameter=value>
+14:17:52 [SUCCESS] Found Values: ['plot=full', 'type=movie', 'y=1997', 'r=json', 'page=2', 'i=tt0120338', 'plot=short', 's=Harry+Potter', 'y=2008', 'type=series']
+14:17:52 [SECTION] Mutation Operator: resetParameters
+14:17:52 [INFO]    Chosen Seed: http://www.omdbapi.com/?r=json&apikey=yourkey&s=Avengers&type=movie
+14:17:52 [INFO]    Masked Request: http://www.omdbapi.com?<parameter=value>
+14:17:54 [SUCCESS] Found Values: ['s=Harry+Potter', 't=The+Lion+King', 'i=tt3896198', 'plot=short', 'r=json', 'y=2001', 'type=movie', 'page=2', 'apikey=your_api_key', 'plot=full']
+14:17:54 [TITLE]   Mutated Request Verification
+14:17:54 [REQUEST] http://www.omdbapi.com?t=Avengers&apikey=yourkey&s=Avengers&type=movie&plot=full
+14:17:54 [SUCCESS] Valid Request | Status Code: 200
+14:17:54 [SUCCESS] Saved API Seed
+14:17:54 [SUCCESS] Saved API Data
+14:17:54 [REQUEST] http://www.omdbapi.com?t=Avengers&apikey=yourkey&s=Avengers&type=movie&year=2012
+14:17:54 [SUCCESS] Valid Request | Status Code: 200
+14:17:54 [SUCCESS] Saved API Seed
+14:17:54 [SUCCESS] Saved API Data
+14:17:54 [REQUEST] http://www.omdbapi.com?t=Avengers&apikey=yourkey&s=Avengers&type=movie&r=xml
+14:17:55 [SUCCESS] Valid Request | Status Code: 200
+14:17:55 [SUCCESS] Saved API Seed
+14:17:55 [SUCCESS] Saved API Data
+14:17:55 [REQUEST] http://www.omdbapi.com?t=Avengers&apikey=yourkey&s=Avengers&type=movie&page=2
+14:17:55 [SUCCESS] Valid Request | Status Code: 200
+14:17:55 [SUCCESS] Saved API Seed
+14:17:55 [SUCCESS] Saved API Data
+14:17:55 [REQUEST] http://www.omdbapi.com?t=Avengers&apikey=yourkey&s=Avengers&type=movie&genre=action
+14:17:55 [SUCCESS] Valid Request | Status Code: 200
+14:17:55 [SUCCESS] Saved API Seed
+14:17:55 [SUCCESS] Saved API Data
+14:17:55 [REQUEST] http://www.omdbapi.com?t=Avengers&apikey=yourkey&s=Avengers&type=movie&plot=short
+14:17:55 [SUCCESS] Valid Request | Status Code: 200
+14:17:55 [SUCCESS] Saved API Seed
+14:17:55 [SUCCESS] Saved API Data
+14:17:55 [REQUEST] http://www.omdbapi.com?t=Avengers&apikey=yourkey&s=Avengers&type=movie&y=2019
+14:17:56 [SUCCESS] Valid Request | Status Code: 200
+14:17:56 [SUCCESS] Saved API Seed
+14:17:56 [SUCCESS] Saved API Data
+14:17:56 [REQUEST] http://www.omdbapi.com?t=Avengers&apikey=yourkey&s=Avengers&type=movie&tomatoes=true
+14:17:56 [SUCCESS] Valid Request | Status Code: 200
+14:17:56 [SUCCESS] Saved API Seed
+14:17:56 [SUCCESS] Saved API Data
+14:17:56 [REQUEST] http://www.omdbapi.com?t=Avengers&apikey=yourkey&s=Avengers&type=movie&i=tt4154756
+14:17:56 [SUCCESS] Valid Request | Status Code: 200
+14:17:56 [SUCCESS] Saved API Seed
+14:17:56 [SUCCESS] Saved API Data
+14:17:56 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers
+14:17:57 [SUCCESS] Valid Request | Status Code: 200
+14:17:57 [SUCCESS] Saved API Seed
+14:17:57 [SUCCESS] Saved API Data
+14:17:57 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&plot=full
+14:17:57 [SUCCESS] Valid Request | Status Code: 200
+14:17:57 [WARNING] Request Already in Seeds
+14:17:57 [SUCCESS] Saved API Data
+14:17:57 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&type=movie
+14:17:57 [SUCCESS] Valid Request | Status Code: 200
+14:17:57 [WARNING] Request Already in Seeds
+14:17:57 [SUCCESS] Saved API Data
+14:17:57 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=1997
+14:17:57 [SUCCESS] Valid Request | Status Code: 200
+14:17:57 [WARNING] Request Already in Seeds
+14:17:57 [SUCCESS] Saved API Data
+14:17:57 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&r=json
+14:17:57 [SUCCESS] Valid Request | Status Code: 200
+14:17:57 [WARNING] Request Already in Seeds
+14:17:57 [SUCCESS] Saved API Data
+14:17:57 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&page=2
+14:17:57 [SUCCESS] Valid Request | Status Code: 200
+14:17:57 [WARNING] Request Already in Seeds
+14:17:57 [SUCCESS] Saved API Data
+14:17:57 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&i=tt0120338
+14:17:57 [SUCCESS] Valid Request | Status Code: 200
+14:17:57 [WARNING] Request Already in Seeds
+14:17:57 [SUCCESS] Saved API Data
+14:17:57 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&plot=short
+14:17:57 [SUCCESS] Valid Request | Status Code: 200
+14:17:57 [WARNING] Request Already in Seeds
+14:17:57 [SUCCESS] Saved API Data
+14:17:57 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&s=Harry+Potter
+14:17:57 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:17:57 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=2008
+14:17:58 [SUCCESS] Valid Request | Status Code: 200
+14:17:58 [SUCCESS] Saved API Seed
+14:17:58 [SUCCESS] Saved API Data
+14:17:58 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&type=series
+14:17:58 [SUCCESS] Valid Request | Status Code: 200
+14:17:58 [WARNING] Request Already in Seeds
+14:17:58 [SUCCESS] Saved API Data
+14:17:58 [REQUEST] http://www.omdbapi.com?s=Harry+Potter
+14:17:58 [SUCCESS] Valid Request | Status Code: 200
+14:17:58 [SUCCESS] Saved API Seed
+14:17:58 [SUCCESS] Saved API Data
+14:17:58 [REQUEST] http://www.omdbapi.com?t=The+Lion+King
+14:17:58 [SUCCESS] Valid Request | Status Code: 200
+14:17:58 [SUCCESS] Saved API Seed
+14:17:58 [SUCCESS] Saved API Data
+14:17:58 [REQUEST] http://www.omdbapi.com?i=tt3896198
+14:17:58 [SUCCESS] Valid Request | Status Code: 200
+14:17:58 [SUCCESS] Saved API Seed
+14:17:58 [SUCCESS] Saved API Data
+14:17:58 [REQUEST] http://www.omdbapi.com?plot=short
+14:17:58 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:17:58 [REQUEST] http://www.omdbapi.com?r=json
+14:17:58 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:17:58 [REQUEST] http://www.omdbapi.com?y=2001
+14:17:58 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:17:58 [REQUEST] http://www.omdbapi.com?type=movie
+14:17:58 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:17:58 [REQUEST] http://www.omdbapi.com?page=2
+14:17:58 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:17:58 [REQUEST] http://www.omdbapi.com?apikey=your_api_key
+14:17:58 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:17:58 [REQUEST] http://www.omdbapi.com?plot=full
+14:17:58 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:17:58 [TITLE]   Execution Results
+14:17:58 [INFO]    Saved to: ./outputs/OMDb_API/executions/2.json
+14:19:00 [TITLE]   Launching RESTSpecIT
+14:19:00 [TITLE]   Executing: OMDb API
+14:19:00 [SUCCESS] Loaded API Data
+14:19:00 [SUCCESS] Loaded API Seeds
+14:19:00 [SUCCESS] Loaded API Seeds
+14:19:00 [TITLE]   Inferring Base API Data
+14:19:00 [SECTION] Inferring Info Data
+14:19:00 [WARNING] Info Data Already Exists
+14:19:00 [SECTION] Inferring Online Documentation Data
+14:19:00 [WARNING] Online Documentation Data Already Exists
+14:19:00 [SECTION] Inferring Server Data
+14:19:00 [WARNING] Server Data Already Exists
+14:19:00 [SECTION] Inferring Request Seeds
+14:19:00 [WARNING] Request Seeds Already Exists
+14:19:00 [SECTION] Inferring Error Schema
+14:19:00 [REQUEST] http://www.omdbapi.com/invalidRoute/?invalidParam=invalidValue
+14:19:00 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+14:19:00 [SUCCESS] Error Schema Found
+14:19:00 [SUCCESS] Saved API Data
+14:19:00 [TITLE]   Mutation Process: focusParameters
+14:19:00 [TITLE]   Mutating Request (1/1)
+14:19:00 [SECTION] Mutation Operator: addParameter
+14:19:00 [INFO]    Chosen Seed: http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=2008
+14:19:00 [INFO]    Masked Request: http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=2008&<parameter=value>
+14:19:01 [SUCCESS] Found Values: ['plot=short', 'type=movie', 'r=json', 'page=2', 'plot=full', 'type=series', 'y=2010', 'plot=none', 'type=episode', 'r=xml']
+14:19:01 [SECTION] Mutation Operator: removeParameter
+14:19:01 [INFO]    Chosen Seed: http://www.omdbapi.com?y=2012&apikey=yourkey&s=Avengers&type=movie&i=tt1234567
+14:19:01 [INFO]    Masked Request: http://www.omdbapi.com?y=2012&apikey=yourkey&s=Avengers&type=movie
+14:19:01 [SECTION] Mutation Operator: modifyParameter
+14:19:01 [INFO]    Chosen Seed: http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=2008
+14:19:01 [INFO]    Masked Request: http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&<parameter=value>
+14:19:03 [SUCCESS] Found Values: ['plot=full', 'type=movie', 'y=1997', 'r=json', 'page=2', 'i=tt0120338', 'tomatoes=true', 'plot=short', 'v=1', 'apikey=yourkey']
+14:19:03 [SECTION] Mutation Operator: resetParameters
+14:19:03 [INFO]    Chosen Seed: http://www.omdbapi.com?t=Avengers&apikey=yourkey&s=Avengers&type=movie&i=tt4154756
+14:19:03 [INFO]    Masked Request: http://www.omdbapi.com?<parameter=value>
+14:19:04 [SUCCESS] Found Values: ['s=Harry+Potter', 't=Star+Wars', 'y=2001', 'plot=full', 'type=movie', 'r=json', 'apikey=123456', 'i=tt0123456', 'page=2', 'callback=myFunction']
+14:19:04 [TITLE]   Mutated Request Verification
+14:19:04 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=2008&plot=short
+14:19:04 [SUCCESS] Valid Request | Status Code: 200
+14:19:04 [SUCCESS] Saved API Seed
+14:19:04 [SUCCESS] Saved API Data
+14:19:04 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=2008&type=movie
+14:19:05 [SUCCESS] Valid Request | Status Code: 200
+14:19:05 [SUCCESS] Saved API Seed
+14:19:05 [SUCCESS] Saved API Data
+14:19:05 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=2008&r=json
+14:19:05 [SUCCESS] Valid Request | Status Code: 200
+14:19:05 [SUCCESS] Saved API Seed
+14:19:05 [SUCCESS] Saved API Data
+14:19:05 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=2008&page=2
+14:19:05 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:19:05 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=2008&plot=full
+14:19:05 [SUCCESS] Valid Request | Status Code: 200
+14:19:05 [SUCCESS] Saved API Seed
+14:19:05 [SUCCESS] Saved API Data
+14:19:05 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=2008&type=series
+14:19:06 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:19:06 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=2008&y=2010
+14:19:06 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:19:06 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=2008&plot=none
+14:19:06 [SUCCESS] Valid Request | Status Code: 200
+14:19:06 [SUCCESS] Saved API Seed
+14:19:06 [SUCCESS] Saved API Data
+14:19:06 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=2008&type=episode
+14:19:06 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:19:06 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=2008&r=xml
+14:19:07 [SUCCESS] Valid Request | Status Code: 200
+14:19:07 [SUCCESS] Saved API Seed
+14:19:07 [SUCCESS] Saved API Data
+14:19:07 [REQUEST] http://www.omdbapi.com?y=2012&apikey=yourkey&s=Avengers&type=movie
+14:19:07 [SUCCESS] Valid Request | Status Code: 200
+14:19:07 [SUCCESS] Saved API Seed
+14:19:07 [SUCCESS] Saved API Data
+14:19:07 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&plot=full
+14:19:07 [SUCCESS] Valid Request | Status Code: 200
+14:19:07 [WARNING] Request Already in Seeds
+14:19:07 [SUCCESS] Saved API Data
+14:19:07 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&type=movie
+14:19:07 [SUCCESS] Valid Request | Status Code: 200
+14:19:07 [WARNING] Request Already in Seeds
+14:19:07 [SUCCESS] Saved API Data
+14:19:07 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&y=1997
+14:19:07 [SUCCESS] Valid Request | Status Code: 200
+14:19:07 [WARNING] Request Already in Seeds
+14:19:07 [SUCCESS] Saved API Data
+14:19:07 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&r=json
+14:19:07 [SUCCESS] Valid Request | Status Code: 200
+14:19:07 [WARNING] Request Already in Seeds
+14:19:07 [SUCCESS] Saved API Data
+14:19:07 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&page=2
+14:19:07 [SUCCESS] Valid Request | Status Code: 200
+14:19:07 [WARNING] Request Already in Seeds
+14:19:07 [SUCCESS] Saved API Data
+14:19:07 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&i=tt0120338
+14:19:07 [SUCCESS] Valid Request | Status Code: 200
+14:19:07 [WARNING] Request Already in Seeds
+14:19:07 [SUCCESS] Saved API Data
+14:19:07 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&tomatoes=true
+14:19:07 [SUCCESS] Valid Request | Status Code: 200
+14:19:07 [SUCCESS] Saved API Seed
+14:19:07 [SUCCESS] Saved API Data
+14:19:07 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&plot=short
+14:19:07 [SUCCESS] Valid Request | Status Code: 200
+14:19:07 [WARNING] Request Already in Seeds
+14:19:07 [SUCCESS] Saved API Data
+14:19:07 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&v=1
+14:19:07 [SUCCESS] Valid Request | Status Code: 200
+14:19:07 [SUCCESS] Saved API Seed
+14:19:07 [SUCCESS] Saved API Data
+14:19:07 [REQUEST] http://www.omdbapi.com?t=titanic&apikey=yourkey&s=Avengers&apikey=yourkey
+14:19:08 [ERROR]   Invalid Request | Status Code: 401 | Reason: status-code
+14:19:08 [REQUEST] http://www.omdbapi.com?s=Harry+Potter
+14:19:08 [SUCCESS] Valid Request | Status Code: 200
+14:19:08 [WARNING] Request Already in Seeds
+14:19:08 [SUCCESS] Saved API Data
+14:19:08 [REQUEST] http://www.omdbapi.com?t=Star+Wars
+14:19:08 [SUCCESS] Valid Request | Status Code: 200
+14:19:08 [SUCCESS] Saved API Seed
+14:19:08 [SUCCESS] Saved API Data
+14:19:08 [REQUEST] http://www.omdbapi.com?y=2001
+14:19:08 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:19:08 [REQUEST] http://www.omdbapi.com?plot=full
+14:19:08 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:19:08 [REQUEST] http://www.omdbapi.com?type=movie
+14:19:08 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:19:08 [REQUEST] http://www.omdbapi.com?r=json
+14:19:08 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:19:08 [REQUEST] http://www.omdbapi.com?apikey=123456
+14:19:08 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:19:08 [REQUEST] http://www.omdbapi.com?i=tt0123456
+14:19:08 [SUCCESS] Valid Request | Status Code: 200
+14:19:08 [SUCCESS] Saved API Seed
+14:19:08 [SUCCESS] Saved API Data
+14:19:08 [REQUEST] http://www.omdbapi.com?page=2
+14:19:08 [ERROR]   Invalid Request | Status Code: 200 | Reason: error-msg
+14:19:08 [REQUEST] http://www.omdbapi.com?callback=myFunction
+14:19:09 [SUCCESS] Valid Request | Status Code: 200
+14:19:09 [SUCCESS] Saved API Seed
+14:19:09 [SUCCESS] Saved API Data
+14:19:09 [TITLE]   Execution Results
+14:19:09 [INFO]    Saved to: ./outputs/OMDb_API/executions/3.json

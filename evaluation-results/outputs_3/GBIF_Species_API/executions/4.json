@@ -1,91 +1,102 @@
 {
     "requests": {
-        "valid": 34,
-        "total": 73
+        "valid": 37,
+        "total": 72
     },
     "routes": {
-        "amount": 6,
+        "amount": 8,
         "list": [
-            "/v1/occurrence/search",
-            "/v1/species",
-            "/v1/dataset",
             "/v1/species/search",
-            "/v1/species/match",
-            "/v1/grscicoll/collection"
+            "/v1/species/{id}/children",
+            "/v1/species/{id}/synonyms",
+            "/v1/species/{id}/vernacularNames",
+            "/v1/species",
+            "/v1/species/{id}/media",
+            "/v1/species/{id}",
+            "/v1/species/suggest"
         ]
     },
     "parameters": {
-        "amount": 23,
+        "amount": 20,
         "list": [
-            "kingdom",
+            "q",
             "rank",
-            "institutionCode",
-            "limit",
-            "offset",
             "name",
-            "year",
-            "country",
-            "order",
-            "isExtinct",
-            "mediaType",
+            "limit",
+            "kingdom",
+            "higherTaxonKey",
+            "language",
+            "datasetKey",
+            "strict",
+            "verbose",
+            "nameBackbone",
+            "offset",
+            "phylum",
             "class",
+            "order",
             "family",
             "genus",
-            "strict",
+            "nameType",
             "highertaxonKey",
-            "catalogNumber",
-            "basisOfRecord",
-            "recordedBy",
-            "decimalLatitude",
-            "decimalLongitude",
-            "taxonKey",
-            "recordNumber"
+            "nameUsage"
         ]
     },
     "parameter-values": {
+        "q": [
+            "Plantae",
+            "plantae",
+            "Panthera",
+            "Elephantidae"
+        ],
+        "rank": [
+            "GENUS",
+            "FAMILY",
+            "genus"
+        ],
+        "name": [
+            "Panthera%20leo%20leo",
+            "Aves"
+        ],
+        "limit": [
+            "10",
+            "20",
+            "100"
+        ],
         "kingdom": [
             "Animalia"
         ],
-        "rank": [
-            "species",
-            "genus"
+        "higherTaxonKey": [
+            "212"
         ],
-        "institutionCode": [
-            "KUNHM",
-            "K"
+        "language": [
+            "fr",
+            "en"
         ],
-        "limit": [
-            "10"
+        "datasetKey": [
+            "7ce8aef0-9e92-11dc-8738-b8a03c50a862"
+        ],
+        "strict": [
+            "true"
+        ],
+        "verbose": [
+            "false",
+            "true"
+        ],
+        "nameBackbone": [
+            "true"
         ],
         "offset": [
             "20",
-            "0"
+            "50"
         ],
-        "name": [
-            "Canis",
-            "Panthera+tigris"
-        ],
-        "year": [
-            "2000",
-            "1758",
-            "2021"
-        ],
-        "country": [
-            "US",
-            "GB"
-        ],
-        "order": [
-            "asc",
-            "Carnivora"
-        ],
-        "isExtinct": [
-            "true"
-        ],
-        "mediaType": [
-            "image"
+        "phylum": [
+            "Chordata"
         ],
         "class": [
             "Mammalia"
+        ],
+        "order": [
+            "Carnivora"
         ],
         "family": [
             "Felidae"
@@ -93,41 +104,23 @@
         "genus": [
             "Panthera"
         ],
-        "strict": [
-            "true"
+        "nameType": [
+            "SCIENTIFIC"
         ],
         "highertaxonKey": [
-            "2"
+            "1"
         ],
-        "catalogNumber": [
-            "1234"
-        ],
-        "basisOfRecord": [
-            "PreservedSpecimen"
-        ],
-        "recordedBy": [
-            "John+Doe"
-        ],
-        "decimalLatitude": [
-            "51.5074"
-        ],
-        "decimalLongitude": [
-            "-0.1278"
-        ],
-        "taxonKey": [
-            "12345"
-        ],
-        "recordNumber": [
-            "ABCD"
+        "nameUsage": [
+            "ACCEPTED"
         ]
     },
     "strategies": [
         "focusRoutes",
         "focusParameters"
     ],
-    "time": "134.77s",
+    "time": "50.45s",
     "tokens": {
-        "input": 1046,
-        "output": 390
+        "input": 1136,
+        "output": 490
     }
 }

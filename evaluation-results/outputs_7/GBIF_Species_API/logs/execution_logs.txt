@@ -1,0 +1,2155 @@
+16:58:28 [TITLE]   Launching RESTSpecIT
+16:58:28 [TITLE]   Executing: GBIF Species API
+16:58:28 [SUCCESS] Created New API Data File
+16:58:28 [SUCCESS] Created New API Seed File
+16:58:28 [SUCCESS] Created New API Seed File
+16:58:28 [TITLE]   Inferring Base API Data
+16:58:28 [SECTION] Inferring Info Data
+16:58:29 [REQUEST] https://www.gbif.org/terms
+16:58:30 [SUCCESS] Valid Request | Status Code: 200
+16:58:30 [REQUEST] https://www.gbif.org/contact
+16:58:31 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:58:31 [REQUEST] https://www.gbif.org/contact-us
+16:58:32 [SUCCESS] Valid Request | Status Code: 200
+16:58:33 [REQUEST] https://creativecommons.org/licenses/by/4.0
+16:58:34 [SUCCESS] Valid Request | Status Code: 200
+16:58:34 [SUCCESS] Info Data Found
+16:58:34 [SUCCESS] Saved API Data
+16:58:34 [SECTION] Inferring Online Documentation Data
+16:58:34 [REQUEST] https://www.gbif.org/developer/species
+16:58:35 [SUCCESS] Valid Request | Status Code: 200
+16:58:35 [SUCCESS] Online Documentation Data Found
+16:58:35 [SUCCESS] Saved API Data
+16:58:35 [SECTION] Inferring Server Data
+16:58:36 [SUCCESS] Server Data Found
+16:58:36 [SUCCESS] Saved API Data
+16:58:36 [SECTION] Inferring Request Seeds
+16:58:38 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo
+16:58:39 [SUCCESS] Valid Request | Status Code: 200
+16:58:39 [SUCCESS] Saved API Seed
+16:58:39 [SUCCESS] Saved API Data
+16:58:39 [REQUEST] https://api.gbif.org/v1/species/match?name=Panthera%20tigris
+16:58:39 [SUCCESS] Valid Request | Status Code: 200
+16:58:39 [SUCCESS] Saved API Seed
+16:58:39 [SUCCESS] Saved API Data
+16:58:39 [REQUEST] https://api.gbif.org/v1/species/search?q=Mammalia&rank=kingdom
+16:58:40 [SUCCESS] Valid Request | Status Code: 200
+16:58:40 [SUCCESS] Saved API Seed
+16:58:40 [SUCCESS] Saved API Data
+16:58:40 [REQUEST] https://api.gbif.org/v1/species/autocomplete?name=Pan
+16:58:40 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:58:40 [REQUEST] https://api.gbif.org/v1/species/suggest?q=Panthera&rank=genus
+16:58:41 [SUCCESS] Valid Request | Status Code: 200
+16:58:41 [SUCCESS] Saved API Seed
+16:58:41 [SUCCESS] Saved API Data
+16:58:41 [SECTION] Inferring Error Schema
+16:58:41 [REQUEST] https://api.gbif.org/invalidRoute/?invalidParam=invalidValue
+16:58:41 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:58:41 [SUCCESS] Error Schema Found
+16:58:41 [SUCCESS] Saved API Data
+16:58:41 [TITLE]   Mutation Process: focusRoutes
+16:58:41 [TITLE]   Mutating Request (1/1)
+16:58:41 [SECTION] Mutation Operator: addRoute
+16:58:41 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/suggest?q=Panthera&rank=genus
+16:58:41 [INFO]    Masked Request: https://api.gbif.org/v1/species/suggest/<route>?q=Panthera&rank=genus
+16:58:44 [SUCCESS] Found Values: ['search', 'lookup', 'details', 'synonyms', 'children', 'parents', 'images', 'media', 'vernacularNames', 'distribution', 'search?q=Panthera+tigris', 'lookup?q=Panthera+tigris', 'details?q=Cyanocitta+stelleri', '7']
+16:58:44 [SECTION] Mutation Operator: removeRoute
+16:58:44 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/match?name=Panthera%20tigris
+16:58:44 [INFO]    Masked Request: https://api.gbif.org/v1/species?name=Panthera%20tigris
+16:58:45 [SECTION] Mutation Operator: modifyRoute
+16:58:45 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/lookup?name=Panthera%20leo
+16:58:45 [INFO]    Masked Request: https://api.gbif.org/v1/species/<route>?name=Panthera%20leo
+16:58:47 [SUCCESS] Found Values: ['search', 'classification', 'suggest', 'lookup', 'tree', 'children', 'parents', 'synonyms', 'metrics', 'related', 'search?q=mammals', 'classification?name=Panthera%20leo', 'suggest?q=Panthera+tigris', '58']
+16:58:47 [SECTION] Mutation Operator: resetRoutes
+16:58:47 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/lookup?name=Panthera%20leo
+16:58:47 [INFO]    Masked Request: https://api.gbif.org/v1/species/<route>?name=Panthera%20leo
+16:58:50 [SUCCESS] Found Values: ['search', 'classification', 'suggest', 'lookup', 'children', 'parents', 'synonyms', 'vernacularNames', 'images', 'references', 'search?q=Primates&rank=genus', 'classification?name=Panthera%20leo', 'suggest?q=Panthera+tigris', '30']
+16:58:50 [TITLE]   Mutated Request Verification
+16:58:50 [REQUEST] https://api.gbif.org/v1/species/suggest/search?q=Panthera&rank=genus
+16:58:51 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:58:51 [REQUEST] https://api.gbif.org/v1/species/suggest/lookup?q=Panthera&rank=genus
+16:58:51 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:58:51 [REQUEST] https://api.gbif.org/v1/species/suggest/details?q=Panthera&rank=genus
+16:58:52 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:58:52 [REQUEST] https://api.gbif.org/v1/species/suggest/synonyms?q=Panthera&rank=genus
+16:58:52 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:58:52 [REQUEST] https://api.gbif.org/v1/species/suggest/children?q=Panthera&rank=genus
+16:58:53 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:58:53 [REQUEST] https://api.gbif.org/v1/species/suggest/parents?q=Panthera&rank=genus
+16:58:53 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:58:53 [REQUEST] https://api.gbif.org/v1/species/suggest/images?q=Panthera&rank=genus
+16:58:54 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:58:54 [REQUEST] https://api.gbif.org/v1/species/suggest/media?q=Panthera&rank=genus
+16:58:55 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:58:55 [REQUEST] https://api.gbif.org/v1/species/suggest/vernacularNames?q=Panthera&rank=genus
+16:58:55 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:58:55 [REQUEST] https://api.gbif.org/v1/species/suggest/distribution?q=Panthera&rank=genus
+16:58:56 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:58:56 [REQUEST] https://api.gbif.org/v1/species/suggest/search?q=Panthera+tigris&q=Panthera&rank=genus
+16:58:56 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:58:56 [REQUEST] https://api.gbif.org/v1/species/suggest/lookup?q=Panthera+tigris&q=Panthera&rank=genus
+16:58:57 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:58:57 [REQUEST] https://api.gbif.org/v1/species/suggest/details?q=Cyanocitta+stelleri&q=Panthera&rank=genus
+16:58:57 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:58:57 [REQUEST] https://api.gbif.org/v1/species/suggest/7?q=Panthera&rank=genus
+16:58:58 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:58:58 [REQUEST] https://api.gbif.org/v1/species?name=Panthera%20tigris
+16:58:58 [SUCCESS] Valid Request | Status Code: 200
+16:58:58 [SUCCESS] Saved API Seed
+16:58:58 [SUCCESS] Saved API Data
+16:58:58 [REQUEST] https://api.gbif.org/v1/species/search?name=Panthera%20leo
+16:58:59 [SUCCESS] Valid Request | Status Code: 200
+16:58:59 [SUCCESS] Saved API Seed
+16:58:59 [SUCCESS] Saved API Data
+16:58:59 [REQUEST] https://api.gbif.org/v1/species/classification?name=Panthera%20leo
+16:59:00 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:00 [REQUEST] https://api.gbif.org/v1/species/suggest?name=Panthera%20leo
+16:59:00 [SUCCESS] Valid Request | Status Code: 200
+16:59:00 [SUCCESS] Saved API Seed
+16:59:00 [SUCCESS] Saved API Data
+16:59:00 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo
+16:59:01 [SUCCESS] Valid Request | Status Code: 200
+16:59:01 [WARNING] Request Already in Seeds
+16:59:01 [SUCCESS] Saved API Data
+16:59:01 [REQUEST] https://api.gbif.org/v1/species/tree?name=Panthera%20leo
+16:59:01 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:01 [REQUEST] https://api.gbif.org/v1/species/children?name=Panthera%20leo
+16:59:02 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:02 [REQUEST] https://api.gbif.org/v1/species/parents?name=Panthera%20leo
+16:59:02 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:02 [REQUEST] https://api.gbif.org/v1/species/synonyms?name=Panthera%20leo
+16:59:03 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:03 [REQUEST] https://api.gbif.org/v1/species/metrics?name=Panthera%20leo
+16:59:03 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:03 [REQUEST] https://api.gbif.org/v1/species/related?name=Panthera%20leo
+16:59:04 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:04 [REQUEST] https://api.gbif.org/v1/species/search?q=mammals&name=Panthera%20leo
+16:59:05 [SUCCESS] Valid Request | Status Code: 200
+16:59:05 [SUCCESS] Saved API Seed
+16:59:05 [SUCCESS] Saved API Data
+16:59:05 [REQUEST] https://api.gbif.org/v1/species/classification?name=Panthera%20leo&name=Panthera%20leo
+16:59:05 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:05 [REQUEST] https://api.gbif.org/v1/species/suggest?q=Panthera+tigris&name=Panthera%20leo
+16:59:06 [SUCCESS] Valid Request | Status Code: 200
+16:59:06 [SUCCESS] Saved API Seed
+16:59:06 [SUCCESS] Saved API Data
+16:59:06 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo
+16:59:07 [SUCCESS] Valid Request | Status Code: 200
+16:59:07 [SUCCESS] Saved API Seed
+16:59:07 [SUCCESS] Saved API Data
+16:59:07 [REQUEST] https://api.gbif.org/v1/species/search?name=Panthera%20leo
+16:59:07 [SUCCESS] Valid Request | Status Code: 200
+16:59:07 [WARNING] Request Already in Seeds
+16:59:07 [SUCCESS] Saved API Data
+16:59:07 [REQUEST] https://api.gbif.org/v1/species/classification?name=Panthera%20leo
+16:59:08 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:08 [REQUEST] https://api.gbif.org/v1/species/suggest?name=Panthera%20leo
+16:59:08 [SUCCESS] Valid Request | Status Code: 200
+16:59:08 [WARNING] Request Already in Seeds
+16:59:08 [SUCCESS] Saved API Data
+16:59:08 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo
+16:59:09 [SUCCESS] Valid Request | Status Code: 200
+16:59:09 [WARNING] Request Already in Seeds
+16:59:09 [SUCCESS] Saved API Data
+16:59:09 [REQUEST] https://api.gbif.org/v1/species/children?name=Panthera%20leo
+16:59:09 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:09 [REQUEST] https://api.gbif.org/v1/species/parents?name=Panthera%20leo
+16:59:10 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:10 [REQUEST] https://api.gbif.org/v1/species/synonyms?name=Panthera%20leo
+16:59:10 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:10 [REQUEST] https://api.gbif.org/v1/species/vernacularNames?name=Panthera%20leo
+16:59:11 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:11 [REQUEST] https://api.gbif.org/v1/species/images?name=Panthera%20leo
+16:59:11 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:11 [REQUEST] https://api.gbif.org/v1/species/references?name=Panthera%20leo
+16:59:12 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:12 [REQUEST] https://api.gbif.org/v1/species/search?q=Primates&rank=genus&name=Panthera%20leo
+16:59:12 [SUCCESS] Valid Request | Status Code: 200
+16:59:12 [SUCCESS] Saved API Seed
+16:59:12 [SUCCESS] Saved API Data
+16:59:12 [REQUEST] https://api.gbif.org/v1/species/classification?name=Panthera%20leo&name=Panthera%20leo
+16:59:13 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:13 [REQUEST] https://api.gbif.org/v1/species/suggest?q=Panthera+tigris&name=Panthera%20leo
+16:59:14 [SUCCESS] Valid Request | Status Code: 200
+16:59:14 [WARNING] Request Already in Seeds
+16:59:14 [SUCCESS] Saved API Data
+16:59:14 [REQUEST] https://api.gbif.org/v1/species/30?name=Panthera%20leo
+16:59:14 [SUCCESS] Valid Request | Status Code: 200
+16:59:14 [SUCCESS] Saved API Seed
+16:59:14 [SUCCESS] Saved API Data
+16:59:14 [TITLE]   Mutation Process: focusParameters
+16:59:14 [TITLE]   Mutating Request (1/1)
+16:59:14 [SECTION] Mutation Operator: addParameter
+16:59:14 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/58?name=Panthera%20leo
+16:59:14 [INFO]    Masked Request: https://api.gbif.org/v1/species/58?name=Panthera%20leo&<parameter=value>
+16:59:16 [SUCCESS] Found Values: ['rank=genus', 'language=eng', 'datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7', 'limit=100', 'offset=10', 'hierarchy=false', 'strict=false', 'verbose=true', 'q=Panthera', 'isExtinct=true']
+16:59:16 [SECTION] Mutation Operator: removeParameter
+16:59:16 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/match?name=Panthera%20tigris
+16:59:16 [INFO]    Masked Request: https://api.gbif.org/v1/species/match
+16:59:16 [SECTION] Mutation Operator: modifyParameter
+16:59:16 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/30?name=Panthera%20leo
+16:59:16 [INFO]    Masked Request: https://api.gbif.org/v1/species/30?<parameter=value>
+16:59:17 [SUCCESS] Found Values: ['rank=genus', 'name=Panthera+leo', 'kingdom=Animalia', 'limit=100', 'offset=50', 'class=Mammalia', 'order=Carnivora', 'phylum=Chordata', 'status=accepted', 'higherTaxonKey=7708752']
+16:59:17 [SECTION] Mutation Operator: resetParameters
+16:59:17 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/lookup?name=Panthera%20leo
+16:59:17 [INFO]    Masked Request: https://api.gbif.org/v1/species/lookup?<parameter=value>
+16:59:18 [SUCCESS] Found Values: ['name=Ailuropoda+melanoleuca', 'rank=genus', 'kingdom=Animalia', 'phylum=Chordata', 'class=Mammalia', 'order=Carnivora', 'family=Ursidae', 'limit=100', 'offset=50', 'language=eng']
+16:59:18 [TITLE]   Mutated Request Verification
+16:59:18 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&rank=genus
+16:59:19 [SUCCESS] Valid Request | Status Code: 200
+16:59:19 [SUCCESS] Saved API Seed
+16:59:19 [SUCCESS] Saved API Data
+16:59:19 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&language=eng
+16:59:20 [SUCCESS] Valid Request | Status Code: 200
+16:59:20 [SUCCESS] Saved API Seed
+16:59:20 [SUCCESS] Saved API Data
+16:59:20 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7
+16:59:20 [SUCCESS] Valid Request | Status Code: 200
+16:59:20 [SUCCESS] Saved API Seed
+16:59:20 [SUCCESS] Saved API Data
+16:59:20 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&limit=100
+16:59:21 [SUCCESS] Valid Request | Status Code: 200
+16:59:21 [SUCCESS] Saved API Seed
+16:59:21 [SUCCESS] Saved API Data
+16:59:21 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&offset=10
+16:59:21 [SUCCESS] Valid Request | Status Code: 200
+16:59:21 [SUCCESS] Saved API Seed
+16:59:21 [SUCCESS] Saved API Data
+16:59:21 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&hierarchy=false
+16:59:22 [SUCCESS] Valid Request | Status Code: 200
+16:59:22 [SUCCESS] Saved API Seed
+16:59:22 [SUCCESS] Saved API Data
+16:59:22 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&strict=false
+16:59:23 [SUCCESS] Valid Request | Status Code: 200
+16:59:23 [SUCCESS] Saved API Seed
+16:59:23 [SUCCESS] Saved API Data
+16:59:23 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&verbose=true
+16:59:23 [SUCCESS] Valid Request | Status Code: 200
+16:59:23 [SUCCESS] Saved API Seed
+16:59:23 [SUCCESS] Saved API Data
+16:59:23 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&q=Panthera
+16:59:24 [SUCCESS] Valid Request | Status Code: 200
+16:59:24 [SUCCESS] Saved API Seed
+16:59:24 [SUCCESS] Saved API Data
+16:59:24 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&isExtinct=true
+16:59:24 [SUCCESS] Valid Request | Status Code: 200
+16:59:24 [SUCCESS] Saved API Seed
+16:59:24 [SUCCESS] Saved API Data
+16:59:24 [REQUEST] https://api.gbif.org/v1/species/match
+16:59:25 [SUCCESS] Valid Request | Status Code: 200
+16:59:25 [SUCCESS] Saved API Seed
+16:59:25 [SUCCESS] Saved API Data
+16:59:25 [REQUEST] https://api.gbif.org/v1/species/30?rank=genus
+16:59:25 [SUCCESS] Valid Request | Status Code: 200
+16:59:25 [SUCCESS] Saved API Seed
+16:59:25 [SUCCESS] Saved API Data
+16:59:25 [REQUEST] https://api.gbif.org/v1/species/30?name=Panthera+leo
+16:59:26 [SUCCESS] Valid Request | Status Code: 200
+16:59:26 [SUCCESS] Saved API Seed
+16:59:26 [SUCCESS] Saved API Data
+16:59:26 [REQUEST] https://api.gbif.org/v1/species/30?kingdom=Animalia
+16:59:27 [SUCCESS] Valid Request | Status Code: 200
+16:59:27 [SUCCESS] Saved API Seed
+16:59:27 [SUCCESS] Saved API Data
+16:59:27 [REQUEST] https://api.gbif.org/v1/species/30?limit=100
+16:59:27 [SUCCESS] Valid Request | Status Code: 200
+16:59:27 [SUCCESS] Saved API Seed
+16:59:27 [SUCCESS] Saved API Data
+16:59:27 [REQUEST] https://api.gbif.org/v1/species/30?offset=50
+16:59:28 [SUCCESS] Valid Request | Status Code: 200
+16:59:28 [SUCCESS] Saved API Seed
+16:59:28 [SUCCESS] Saved API Data
+16:59:28 [REQUEST] https://api.gbif.org/v1/species/30?class=Mammalia
+16:59:28 [SUCCESS] Valid Request | Status Code: 200
+16:59:28 [SUCCESS] Saved API Seed
+16:59:28 [SUCCESS] Saved API Data
+16:59:28 [REQUEST] https://api.gbif.org/v1/species/30?order=Carnivora
+16:59:29 [SUCCESS] Valid Request | Status Code: 200
+16:59:29 [SUCCESS] Saved API Seed
+16:59:29 [SUCCESS] Saved API Data
+16:59:29 [REQUEST] https://api.gbif.org/v1/species/30?phylum=Chordata
+16:59:30 [SUCCESS] Valid Request | Status Code: 200
+16:59:30 [SUCCESS] Saved API Seed
+16:59:30 [SUCCESS] Saved API Data
+16:59:30 [REQUEST] https://api.gbif.org/v1/species/30?status=accepted
+16:59:30 [SUCCESS] Valid Request | Status Code: 200
+16:59:30 [SUCCESS] Saved API Seed
+16:59:30 [SUCCESS] Saved API Data
+16:59:30 [REQUEST] https://api.gbif.org/v1/species/30?higherTaxonKey=7708752
+16:59:31 [SUCCESS] Valid Request | Status Code: 200
+16:59:31 [SUCCESS] Saved API Seed
+16:59:31 [SUCCESS] Saved API Data
+16:59:31 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Ailuropoda+melanoleuca
+16:59:31 [SUCCESS] Valid Request | Status Code: 200
+16:59:31 [SUCCESS] Saved API Seed
+16:59:31 [SUCCESS] Saved API Data
+16:59:31 [REQUEST] https://api.gbif.org/v1/species/lookup?rank=genus
+16:59:32 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:59:32 [REQUEST] https://api.gbif.org/v1/species/lookup?kingdom=Animalia
+16:59:33 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:59:33 [REQUEST] https://api.gbif.org/v1/species/lookup?phylum=Chordata
+16:59:33 [SUCCESS] Valid Request | Status Code: 204
+16:59:33 [SUCCESS] Saved API Seed
+16:59:33 [SUCCESS] Saved API Data
+16:59:33 [REQUEST] https://api.gbif.org/v1/species/lookup?class=Mammalia
+16:59:34 [SUCCESS] Valid Request | Status Code: 204
+16:59:34 [SUCCESS] Saved API Seed
+16:59:34 [SUCCESS] Saved API Data
+16:59:34 [REQUEST] https://api.gbif.org/v1/species/lookup?order=Carnivora
+16:59:34 [SUCCESS] Valid Request | Status Code: 204
+16:59:34 [SUCCESS] Saved API Seed
+16:59:34 [SUCCESS] Saved API Data
+16:59:34 [REQUEST] https://api.gbif.org/v1/species/lookup?family=Ursidae
+16:59:35 [SUCCESS] Valid Request | Status Code: 204
+16:59:35 [SUCCESS] Saved API Seed
+16:59:35 [SUCCESS] Saved API Data
+16:59:35 [REQUEST] https://api.gbif.org/v1/species/lookup?limit=100
+16:59:35 [SUCCESS] Valid Request | Status Code: 204
+16:59:35 [SUCCESS] Saved API Seed
+16:59:35 [SUCCESS] Saved API Data
+16:59:35 [REQUEST] https://api.gbif.org/v1/species/lookup?offset=50
+16:59:36 [SUCCESS] Valid Request | Status Code: 204
+16:59:36 [SUCCESS] Saved API Seed
+16:59:36 [SUCCESS] Saved API Data
+16:59:36 [REQUEST] https://api.gbif.org/v1/species/lookup?language=eng
+16:59:36 [SUCCESS] Valid Request | Status Code: 204
+16:59:36 [SUCCESS] Saved API Seed
+16:59:36 [SUCCESS] Saved API Data
+16:59:36 [TITLE]   Execution Results
+16:59:36 [INFO]    Saved to: ./outputs/GBIF_Species_API/executions/1.json
+16:59:37 [TITLE]   Launching RESTSpecIT
+16:59:37 [TITLE]   Executing: GBIF Species API
+16:59:37 [SUCCESS] Loaded API Data
+16:59:37 [SUCCESS] Loaded API Seeds
+16:59:37 [SUCCESS] Loaded API Seeds
+16:59:37 [TITLE]   Inferring Base API Data
+16:59:37 [SECTION] Inferring Info Data
+16:59:37 [WARNING] Info Data Already Exists
+16:59:37 [SECTION] Inferring Online Documentation Data
+16:59:37 [WARNING] Online Documentation Data Already Exists
+16:59:37 [SECTION] Inferring Server Data
+16:59:37 [WARNING] Server Data Already Exists
+16:59:37 [SECTION] Inferring Request Seeds
+16:59:39 [REQUEST] https://api.gbif.org/v1/species/search?q=Plantae&rank=KINGDOM
+16:59:40 [SUCCESS] Valid Request | Status Code: 200
+16:59:40 [SUCCESS] Saved API Seed
+16:59:40 [SUCCESS] Saved API Data
+16:59:40 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&rank=SPECIES
+16:59:41 [SUCCESS] Valid Request | Status Code: 200
+16:59:41 [SUCCESS] Saved API Seed
+16:59:41 [SUCCESS] Saved API Data
+16:59:41 [REQUEST] https://api.gbif.org/v1/species/suggest?q=Panthera%20leo&rank=SPECIES
+16:59:41 [SUCCESS] Valid Request | Status Code: 200
+16:59:41 [SUCCESS] Saved API Seed
+16:59:41 [SUCCESS] Saved API Data
+16:59:41 [REQUEST] https://api.gbif.org/v1/species/hierarchy/2435099
+16:59:42 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:59:42 [REQUEST] https://api.gbif.org/v1/species/match?name=Panthera%20leo&rank=SPECIES
+16:59:42 [SUCCESS] Valid Request | Status Code: 200
+16:59:42 [SUCCESS] Saved API Seed
+16:59:42 [SUCCESS] Saved API Data
+16:59:42 [REQUEST] https://api.gbif.org/v1/species/autoComplete?q=Pant&rank=GENUS
+16:59:43 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+16:59:43 [SECTION] Inferring Error Schema
+16:59:43 [REQUEST] https://api.gbif.org/invalidRoute/?invalidParam=invalidValue
+16:59:44 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:59:44 [SUCCESS] Error Schema Found
+16:59:44 [SUCCESS] Saved API Data
+16:59:44 [TITLE]   Mutation Process: focusRoutes
+16:59:44 [TITLE]   Mutating Request (1/1)
+16:59:44 [SECTION] Mutation Operator: addRoute
+16:59:44 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/search?q=Primates&rank=genus&name=Panthera%20leo
+16:59:44 [INFO]    Masked Request: https://api.gbif.org/v1/species/search/<route>?q=Primates&rank=genus&name=Panthera%20leo
+16:59:47 [SUCCESS] Found Values: ['byKey', 'byName', 'byNameUsage', 'byNameClassification', 'byNameLike', 'byNameFuzzy', 'byCanonicalName', 'byCanonicalNameLike', 'byNameBackbone', 'byNameBackboneLike', 'byKey?q=speciesKey:2483112', 'byName?q=Prunus+avium', 'byNameUsage?name=Panthera%20leo', '75']
+16:59:47 [SECTION] Mutation Operator: removeRoute
+16:59:47 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/suggest?q=Panthera%20leo&rank=SPECIES
+16:59:47 [INFO]    Masked Request: https://api.gbif.org/v1/species?q=Panthera%20leo&rank=SPECIES
+16:59:47 [SECTION] Mutation Operator: modifyRoute
+16:59:47 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/search?q=Plantae&rank=KINGDOM
+16:59:47 [INFO]    Masked Request: https://api.gbif.org/v1/species/<route>?q=Plantae&rank=KINGDOM
+16:59:50 [SUCCESS] Found Values: ['search', 'classification', 'suggest', 'lookup', 'node', 'parent', 'children', 'synonyms', 'related', 'ancestors', 'search?q=Primates', 'classification?name=Panthera%20leo', '3']
+16:59:50 [SECTION] Mutation Operator: resetRoutes
+16:59:50 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/search?q=Primates&rank=genus&name=Panthera%20leo
+16:59:50 [INFO]    Masked Request: https://api.gbif.org/v1/species/<route>?q=Primates&rank=genus&name=Panthera%20leo
+16:59:52 [SUCCESS] Found Values: ['search', 'classification', 'suggest', 'parents', 'synonyms', 'lookup', 'metrics', 'tree', 'related', 'references', 'search?q=Primates&limit=10', 'classification?name=Panthera%20leo', 'suggest?q=Panthera+tigris', '39']
+16:59:52 [TITLE]   Mutated Request Verification
+16:59:52 [REQUEST] https://api.gbif.org/v1/species/search/byKey?q=Primates&rank=genus&name=Panthera%20leo
+16:59:53 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:59:53 [REQUEST] https://api.gbif.org/v1/species/search/byName?q=Primates&rank=genus&name=Panthera%20leo
+16:59:54 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:59:54 [REQUEST] https://api.gbif.org/v1/species/search/byNameUsage?q=Primates&rank=genus&name=Panthera%20leo
+16:59:54 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:59:54 [REQUEST] https://api.gbif.org/v1/species/search/byNameClassification?q=Primates&rank=genus&name=Panthera%20leo
+16:59:55 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:59:55 [REQUEST] https://api.gbif.org/v1/species/search/byNameLike?q=Primates&rank=genus&name=Panthera%20leo
+16:59:56 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:59:56 [REQUEST] https://api.gbif.org/v1/species/search/byNameFuzzy?q=Primates&rank=genus&name=Panthera%20leo
+16:59:56 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:59:56 [REQUEST] https://api.gbif.org/v1/species/search/byCanonicalName?q=Primates&rank=genus&name=Panthera%20leo
+16:59:57 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:59:57 [REQUEST] https://api.gbif.org/v1/species/search/byCanonicalNameLike?q=Primates&rank=genus&name=Panthera%20leo
+16:59:57 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:59:57 [REQUEST] https://api.gbif.org/v1/species/search/byNameBackbone?q=Primates&rank=genus&name=Panthera%20leo
+16:59:58 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:59:58 [REQUEST] https://api.gbif.org/v1/species/search/byNameBackboneLike?q=Primates&rank=genus&name=Panthera%20leo
+16:59:59 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:59:59 [REQUEST] https://api.gbif.org/v1/species/search/byKey?q=speciesKey:2483112&q=Primates&rank=genus&name=Panthera%20leo
+16:59:59 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+16:59:59 [REQUEST] https://api.gbif.org/v1/species/search/byName?q=Prunus+avium&q=Primates&rank=genus&name=Panthera%20leo
+17:00:00 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:00:00 [REQUEST] https://api.gbif.org/v1/species/search/byNameUsage?name=Panthera%20leo&q=Primates&rank=genus&name=Panthera%20leo
+17:00:01 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:00:01 [REQUEST] https://api.gbif.org/v1/species/search/75?q=Primates&rank=genus&name=Panthera%20leo
+17:00:01 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:00:01 [REQUEST] https://api.gbif.org/v1/species?q=Panthera%20leo&rank=SPECIES
+17:00:02 [SUCCESS] Valid Request | Status Code: 200
+17:00:02 [SUCCESS] Saved API Seed
+17:00:02 [SUCCESS] Saved API Data
+17:00:02 [REQUEST] https://api.gbif.org/v1/species/search?q=Plantae&rank=KINGDOM
+17:00:03 [SUCCESS] Valid Request | Status Code: 200
+17:00:03 [WARNING] Request Already in Seeds
+17:00:03 [SUCCESS] Saved API Data
+17:00:03 [REQUEST] https://api.gbif.org/v1/species/classification?q=Plantae&rank=KINGDOM
+17:00:03 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:03 [REQUEST] https://api.gbif.org/v1/species/suggest?q=Plantae&rank=KINGDOM
+17:00:04 [SUCCESS] Valid Request | Status Code: 200
+17:00:04 [SUCCESS] Saved API Seed
+17:00:04 [SUCCESS] Saved API Data
+17:00:04 [REQUEST] https://api.gbif.org/v1/species/lookup?q=Plantae&rank=KINGDOM
+17:00:04 [SUCCESS] Valid Request | Status Code: 204
+17:00:04 [SUCCESS] Saved API Seed
+17:00:05 [SUCCESS] Saved API Data
+17:00:05 [REQUEST] https://api.gbif.org/v1/species/node?q=Plantae&rank=KINGDOM
+17:00:05 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:05 [REQUEST] https://api.gbif.org/v1/species/parent?q=Plantae&rank=KINGDOM
+17:00:06 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:06 [REQUEST] https://api.gbif.org/v1/species/children?q=Plantae&rank=KINGDOM
+17:00:06 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:06 [REQUEST] https://api.gbif.org/v1/species/synonyms?q=Plantae&rank=KINGDOM
+17:00:07 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:07 [REQUEST] https://api.gbif.org/v1/species/related?q=Plantae&rank=KINGDOM
+17:00:07 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:07 [REQUEST] https://api.gbif.org/v1/species/ancestors?q=Plantae&rank=KINGDOM
+17:00:08 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:08 [REQUEST] https://api.gbif.org/v1/species/search?q=Primates&q=Plantae&rank=KINGDOM
+17:00:08 [SUCCESS] Valid Request | Status Code: 200
+17:00:08 [SUCCESS] Saved API Seed
+17:00:08 [SUCCESS] Saved API Data
+17:00:08 [REQUEST] https://api.gbif.org/v1/species/classification?name=Panthera%20leo&q=Plantae&rank=KINGDOM
+17:00:09 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:09 [REQUEST] https://api.gbif.org/v1/species/3?q=Plantae&rank=KINGDOM
+17:00:10 [SUCCESS] Valid Request | Status Code: 200
+17:00:10 [SUCCESS] Saved API Seed
+17:00:10 [SUCCESS] Saved API Data
+17:00:10 [REQUEST] https://api.gbif.org/v1/species/search?q=Primates&rank=genus&name=Panthera%20leo
+17:00:10 [SUCCESS] Valid Request | Status Code: 200
+17:00:10 [WARNING] Request Already in Seeds
+17:00:10 [SUCCESS] Saved API Data
+17:00:10 [REQUEST] https://api.gbif.org/v1/species/classification?q=Primates&rank=genus&name=Panthera%20leo
+17:00:11 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:11 [REQUEST] https://api.gbif.org/v1/species/suggest?q=Primates&rank=genus&name=Panthera%20leo
+17:00:12 [SUCCESS] Valid Request | Status Code: 200
+17:00:12 [SUCCESS] Saved API Seed
+17:00:12 [SUCCESS] Saved API Data
+17:00:12 [REQUEST] https://api.gbif.org/v1/species/parents?q=Primates&rank=genus&name=Panthera%20leo
+17:00:12 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:12 [REQUEST] https://api.gbif.org/v1/species/synonyms?q=Primates&rank=genus&name=Panthera%20leo
+17:00:13 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:13 [REQUEST] https://api.gbif.org/v1/species/lookup?q=Primates&rank=genus&name=Panthera%20leo
+17:00:13 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:00:13 [REQUEST] https://api.gbif.org/v1/species/metrics?q=Primates&rank=genus&name=Panthera%20leo
+17:00:14 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:14 [REQUEST] https://api.gbif.org/v1/species/tree?q=Primates&rank=genus&name=Panthera%20leo
+17:00:14 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:14 [REQUEST] https://api.gbif.org/v1/species/related?q=Primates&rank=genus&name=Panthera%20leo
+17:00:15 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:15 [REQUEST] https://api.gbif.org/v1/species/references?q=Primates&rank=genus&name=Panthera%20leo
+17:00:16 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:16 [REQUEST] https://api.gbif.org/v1/species/search?q=Primates&limit=10&q=Primates&rank=genus&name=Panthera%20leo
+17:00:16 [SUCCESS] Valid Request | Status Code: 200
+17:00:16 [SUCCESS] Saved API Seed
+17:00:16 [SUCCESS] Saved API Data
+17:00:16 [REQUEST] https://api.gbif.org/v1/species/classification?name=Panthera%20leo&q=Primates&rank=genus&name=Panthera%20leo
+17:00:17 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:00:17 [REQUEST] https://api.gbif.org/v1/species/suggest?q=Panthera+tigris&q=Primates&rank=genus&name=Panthera%20leo
+17:00:17 [SUCCESS] Valid Request | Status Code: 200
+17:00:17 [SUCCESS] Saved API Seed
+17:00:17 [SUCCESS] Saved API Data
+17:00:17 [REQUEST] https://api.gbif.org/v1/species/39?q=Primates&rank=genus&name=Panthera%20leo
+17:00:18 [SUCCESS] Valid Request | Status Code: 200
+17:00:18 [SUCCESS] Saved API Seed
+17:00:18 [SUCCESS] Saved API Data
+17:00:18 [TITLE]   Mutation Process: focusParameters
+17:00:18 [TITLE]   Mutating Request (1/1)
+17:00:18 [SECTION] Mutation Operator: addParameter
+17:00:18 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/30?phylum=Chordata
+17:00:18 [INFO]    Masked Request: https://api.gbif.org/v1/species/30?phylum=Chordata&<parameter=value>
+17:00:19 [SUCCESS] Found Values: ['order=Carnivora', 'class=Mammalia', 'kingdom=Animalia', 'genus=Panthera', 'family=Felidae', 'vernacularName=Lion', 'year=2020', 'limit=100', 'rank=species', 'highertaxon=Vertebrata']
+17:00:19 [SECTION] Mutation Operator: removeParameter
+17:00:19 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&rank=SPECIES
+17:00:19 [INFO]    Masked Request: https://api.gbif.org/v1/species/lookup?name=Panthera%20leo
+17:00:19 [SECTION] Mutation Operator: modifyParameter
+17:00:19 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/58?name=Panthera%20leo&strict=false
+17:00:19 [INFO]    Masked Request: https://api.gbif.org/v1/species/58?name=Panthera%20leo&<parameter=value>
+17:00:21 [SUCCESS] Found Values: ['rank=species', 'language=en', 'limit=100', 'offset=50', 'status=accepted', 'dataset_key=7e3800f3-77dc-4fa9-85e5-1f2f8b82281e', 'source_id=10', 'kingdom=Animalia', 'year=2005', 'class=Mammalia']
+17:00:21 [SECTION] Mutation Operator: resetParameters
+17:00:21 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/suggest?q=Panthera+tigris&q=Primates&rank=genus&name=Panthera%20leo
+17:00:21 [INFO]    Masked Request: https://api.gbif.org/v1/species/suggest?<parameter=value>
+17:00:23 [SUCCESS] Found Values: ['q=cat', 'rank=species', 'kingdom=Animalia', 'limit=20', 'offset=10', 'datasetKey=7ddf754f-d193-4cc9-b351-99906754a03b', 'highertaxonKey=1', 'nameType=SCIENTIFIC', 'language=en', 'verbose=true', 'rank=GENUS']
+17:00:23 [TITLE]   Mutated Request Verification
+17:00:23 [REQUEST] https://api.gbif.org/v1/species/30?phylum=Chordata&order=Carnivora
+17:00:23 [SUCCESS] Valid Request | Status Code: 200
+17:00:23 [SUCCESS] Saved API Seed
+17:00:23 [SUCCESS] Saved API Data
+17:00:23 [REQUEST] https://api.gbif.org/v1/species/30?phylum=Chordata&class=Mammalia
+17:00:24 [SUCCESS] Valid Request | Status Code: 200
+17:00:24 [SUCCESS] Saved API Seed
+17:00:24 [SUCCESS] Saved API Data
+17:00:24 [REQUEST] https://api.gbif.org/v1/species/30?phylum=Chordata&kingdom=Animalia
+17:00:24 [SUCCESS] Valid Request | Status Code: 200
+17:00:24 [SUCCESS] Saved API Seed
+17:00:24 [SUCCESS] Saved API Data
+17:00:24 [REQUEST] https://api.gbif.org/v1/species/30?phylum=Chordata&genus=Panthera
+17:00:25 [SUCCESS] Valid Request | Status Code: 200
+17:00:25 [SUCCESS] Saved API Seed
+17:00:25 [SUCCESS] Saved API Data
+17:00:25 [REQUEST] https://api.gbif.org/v1/species/30?phylum=Chordata&family=Felidae
+17:00:26 [SUCCESS] Valid Request | Status Code: 200
+17:00:26 [SUCCESS] Saved API Seed
+17:00:26 [SUCCESS] Saved API Data
+17:00:26 [REQUEST] https://api.gbif.org/v1/species/30?phylum=Chordata&vernacularName=Lion
+17:00:26 [SUCCESS] Valid Request | Status Code: 200
+17:00:26 [SUCCESS] Saved API Seed
+17:00:26 [SUCCESS] Saved API Data
+17:00:26 [REQUEST] https://api.gbif.org/v1/species/30?phylum=Chordata&year=2020
+17:00:27 [SUCCESS] Valid Request | Status Code: 200
+17:00:27 [SUCCESS] Saved API Seed
+17:00:27 [SUCCESS] Saved API Data
+17:00:27 [REQUEST] https://api.gbif.org/v1/species/30?phylum=Chordata&limit=100
+17:00:27 [SUCCESS] Valid Request | Status Code: 200
+17:00:27 [SUCCESS] Saved API Seed
+17:00:27 [SUCCESS] Saved API Data
+17:00:27 [REQUEST] https://api.gbif.org/v1/species/30?phylum=Chordata&rank=species
+17:00:28 [SUCCESS] Valid Request | Status Code: 200
+17:00:28 [SUCCESS] Saved API Seed
+17:00:28 [SUCCESS] Saved API Data
+17:00:28 [REQUEST] https://api.gbif.org/v1/species/30?phylum=Chordata&highertaxon=Vertebrata
+17:00:28 [SUCCESS] Valid Request | Status Code: 200
+17:00:28 [SUCCESS] Saved API Seed
+17:00:28 [SUCCESS] Saved API Data
+17:00:28 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo
+17:00:29 [SUCCESS] Valid Request | Status Code: 200
+17:00:29 [WARNING] Request Already in Seeds
+17:00:29 [SUCCESS] Saved API Data
+17:00:29 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&rank=species
+17:00:30 [SUCCESS] Valid Request | Status Code: 200
+17:00:30 [SUCCESS] Saved API Seed
+17:00:30 [SUCCESS] Saved API Data
+17:00:30 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&language=en
+17:00:30 [SUCCESS] Valid Request | Status Code: 200
+17:00:30 [SUCCESS] Saved API Seed
+17:00:30 [SUCCESS] Saved API Data
+17:00:30 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&limit=100
+17:00:31 [SUCCESS] Valid Request | Status Code: 200
+17:00:31 [WARNING] Request Already in Seeds
+17:00:31 [SUCCESS] Saved API Data
+17:00:31 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&offset=50
+17:00:31 [SUCCESS] Valid Request | Status Code: 200
+17:00:31 [SUCCESS] Saved API Seed
+17:00:31 [SUCCESS] Saved API Data
+17:00:31 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&status=accepted
+17:00:32 [SUCCESS] Valid Request | Status Code: 200
+17:00:32 [SUCCESS] Saved API Seed
+17:00:32 [SUCCESS] Saved API Data
+17:00:32 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&dataset_key=7e3800f3-77dc-4fa9-85e5-1f2f8b82281e
+17:00:33 [SUCCESS] Valid Request | Status Code: 200
+17:00:33 [SUCCESS] Saved API Seed
+17:00:33 [SUCCESS] Saved API Data
+17:00:33 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&source_id=10
+17:00:33 [SUCCESS] Valid Request | Status Code: 200
+17:00:33 [SUCCESS] Saved API Seed
+17:00:33 [SUCCESS] Saved API Data
+17:00:33 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&kingdom=Animalia
+17:00:34 [SUCCESS] Valid Request | Status Code: 200
+17:00:34 [SUCCESS] Saved API Seed
+17:00:34 [SUCCESS] Saved API Data
+17:00:34 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&year=2005
+17:00:34 [SUCCESS] Valid Request | Status Code: 200
+17:00:34 [SUCCESS] Saved API Seed
+17:00:34 [SUCCESS] Saved API Data
+17:00:34 [REQUEST] https://api.gbif.org/v1/species/58?name=Panthera%20leo&class=Mammalia
+17:00:35 [SUCCESS] Valid Request | Status Code: 200
+17:00:35 [SUCCESS] Saved API Seed
+17:00:35 [SUCCESS] Saved API Data
+17:00:35 [REQUEST] https://api.gbif.org/v1/species/suggest?q=cat
+17:00:35 [SUCCESS] Valid Request | Status Code: 200
+17:00:35 [SUCCESS] Saved API Seed
+17:00:35 [SUCCESS] Saved API Data
+17:00:35 [REQUEST] https://api.gbif.org/v1/species/suggest?rank=species
+17:00:36 [SUCCESS] Valid Request | Status Code: 200
+17:00:36 [SUCCESS] Saved API Seed
+17:00:36 [SUCCESS] Saved API Data
+17:00:36 [REQUEST] https://api.gbif.org/v1/species/suggest?kingdom=Animalia
+17:00:37 [SUCCESS] Valid Request | Status Code: 200
+17:00:37 [SUCCESS] Saved API Seed
+17:00:37 [SUCCESS] Saved API Data
+17:00:37 [REQUEST] https://api.gbif.org/v1/species/suggest?limit=20
+17:00:37 [SUCCESS] Valid Request | Status Code: 200
+17:00:37 [SUCCESS] Saved API Seed
+17:00:37 [SUCCESS] Saved API Data
+17:00:37 [REQUEST] https://api.gbif.org/v1/species/suggest?offset=10
+17:00:38 [SUCCESS] Valid Request | Status Code: 200
+17:00:38 [SUCCESS] Saved API Seed
+17:00:38 [SUCCESS] Saved API Data
+17:00:38 [REQUEST] https://api.gbif.org/v1/species/suggest?datasetKey=7ddf754f-d193-4cc9-b351-99906754a03b
+17:00:39 [SUCCESS] Valid Request | Status Code: 200
+17:00:39 [SUCCESS] Saved API Seed
+17:00:39 [SUCCESS] Saved API Data
+17:00:39 [REQUEST] https://api.gbif.org/v1/species/suggest?highertaxonKey=1
+17:00:40 [SUCCESS] Valid Request | Status Code: 200
+17:00:40 [SUCCESS] Saved API Seed
+17:00:40 [SUCCESS] Saved API Data
+17:00:40 [REQUEST] https://api.gbif.org/v1/species/suggest?nameType=SCIENTIFIC
+17:00:40 [SUCCESS] Valid Request | Status Code: 200
+17:00:40 [SUCCESS] Saved API Seed
+17:00:40 [SUCCESS] Saved API Data
+17:00:40 [REQUEST] https://api.gbif.org/v1/species/suggest?language=en
+17:00:41 [SUCCESS] Valid Request | Status Code: 200
+17:00:41 [SUCCESS] Saved API Seed
+17:00:41 [SUCCESS] Saved API Data
+17:00:41 [REQUEST] https://api.gbif.org/v1/species/suggest?verbose=true
+17:00:41 [SUCCESS] Valid Request | Status Code: 200
+17:00:41 [SUCCESS] Saved API Seed
+17:00:41 [SUCCESS] Saved API Data
+17:00:41 [REQUEST] https://api.gbif.org/v1/species/suggest?rank=GENUS
+17:00:42 [SUCCESS] Valid Request | Status Code: 200
+17:00:42 [SUCCESS] Saved API Seed
+17:00:42 [SUCCESS] Saved API Data
+17:00:42 [TITLE]   Execution Results
+17:00:42 [INFO]    Saved to: ./outputs/GBIF_Species_API/executions/2.json
+17:00:42 [TITLE]   Launching RESTSpecIT
+17:00:42 [TITLE]   Executing: GBIF Species API
+17:00:42 [SUCCESS] Loaded API Data
+17:00:42 [SUCCESS] Loaded API Seeds
+17:00:42 [SUCCESS] Loaded API Seeds
+17:00:42 [TITLE]   Inferring Base API Data
+17:00:42 [SECTION] Inferring Info Data
+17:00:42 [WARNING] Info Data Already Exists
+17:00:42 [SECTION] Inferring Online Documentation Data
+17:00:42 [WARNING] Online Documentation Data Already Exists
+17:00:42 [SECTION] Inferring Server Data
+17:00:42 [WARNING] Server Data Already Exists
+17:00:42 [SECTION] Inferring Request Seeds
+17:00:45 [REQUEST] https://api.gbif.org/v1/species/search?q=mammals&limit=10
+17:00:46 [SUCCESS] Valid Request | Status Code: 200
+17:00:46 [SUCCESS] Saved API Seed
+17:00:46 [SUCCESS] Saved API Data
+17:00:46 [REQUEST] https://api.gbif.org/v1/species/8730599
+17:00:46 [SUCCESS] Valid Request | Status Code: 200
+17:00:46 [SUCCESS] Saved API Seed
+17:00:46 [SUCCESS] Saved API Data
+17:00:46 [REQUEST] https://api.gbif.org/v1/species/8730599/children
+17:00:47 [SUCCESS] Valid Request | Status Code: 200
+17:00:47 [SUCCESS] Saved API Seed
+17:00:47 [SUCCESS] Saved API Data
+17:00:47 [REQUEST] https://api.gbif.org/v1/species/8730599/distributions
+17:00:48 [SUCCESS] Valid Request | Status Code: 200
+17:00:48 [SUCCESS] Saved API Seed
+17:00:48 [SUCCESS] Saved API Data
+17:00:48 [REQUEST] https://api.gbif.org/v1/species/8730599/media
+17:00:48 [SUCCESS] Valid Request | Status Code: 200
+17:00:48 [SUCCESS] Saved API Seed
+17:00:48 [SUCCESS] Saved API Data
+17:00:48 [REQUEST] https://api.gbif.org/v1/species/8730599/descriptions
+17:00:49 [SUCCESS] Valid Request | Status Code: 200
+17:00:49 [SUCCESS] Saved API Seed
+17:00:49 [SUCCESS] Saved API Data
+17:00:49 [REQUEST] https://api.gbif.org/v1/species/8730599/maps
+17:00:50 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:00:50 [SECTION] Inferring Error Schema
+17:00:50 [REQUEST] https://api.gbif.org/invalidRoute/?invalidParam=invalidValue
+17:00:50 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:00:50 [SUCCESS] Error Schema Found
+17:00:50 [SUCCESS] Saved API Data
+17:00:50 [TITLE]   Mutation Process: focusRoutes
+17:00:50 [TITLE]   Mutating Request (1/1)
+17:00:50 [SECTION] Mutation Operator: addRoute
+17:00:50 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/suggest?q=cat
+17:00:50 [INFO]    Masked Request: https://api.gbif.org/v1/species/suggest/<route>?q=cat
+17:00:53 [SUCCESS] Found Values: ['scientificName', 'vernacularName', 'kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'higherTaxon', 'rank', 'scientificName?q=Panthera%20leo', 'vernacularName?q=wren', 'kingdom?q=mammalia', '3']
+17:00:53 [SECTION] Mutation Operator: removeRoute
+17:00:53 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/8730599/descriptions
+17:00:53 [INFO]    Masked Request: https://api.gbif.org/v1/species/8730599
+17:00:53 [SECTION] Mutation Operator: modifyRoute
+17:00:53 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/suggest?offset=10
+17:00:53 [INFO]    Masked Request: https://api.gbif.org/v1/species/<route>?offset=10
+17:00:56 [SUCCESS] Found Values: ['search', 'classification', 'hierarchy', 'children', 'parents', 'synonyms', 'metrics', 'suggest', 'autocomplete', 'description', 'search?q=Primates&rank=class', 'classification?name=Panthera%20leo', 'hierarchy?name=Panthera%20leo', '15']
+17:00:56 [SECTION] Mutation Operator: resetRoutes
+17:00:56 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/8730599/descriptions
+17:00:56 [INFO]    Masked Request: https://api.gbif.org/v1/species/<route>
+17:00:59 [SUCCESS] Found Values: ['search', 'classification', 'hierarchy', 'suggest', 'name', 'parent', 'synonyms', 'media', 'descriptions', 'metrics', 'classification?name=Panthera%20leo', 'hierarchy?name=Panthera%20leo', '3']
+17:00:59 [TITLE]   Mutated Request Verification
+17:00:59 [REQUEST] https://api.gbif.org/v1/species/suggest/scientificName?q=cat
+17:01:00 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:00 [REQUEST] https://api.gbif.org/v1/species/suggest/vernacularName?q=cat
+17:01:00 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:00 [REQUEST] https://api.gbif.org/v1/species/suggest/kingdom?q=cat
+17:01:01 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:01 [REQUEST] https://api.gbif.org/v1/species/suggest/phylum?q=cat
+17:01:01 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:01 [REQUEST] https://api.gbif.org/v1/species/suggest/class?q=cat
+17:01:02 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:02 [REQUEST] https://api.gbif.org/v1/species/suggest/order?q=cat
+17:01:02 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:02 [REQUEST] https://api.gbif.org/v1/species/suggest/family?q=cat
+17:01:03 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:03 [REQUEST] https://api.gbif.org/v1/species/suggest/genus?q=cat
+17:01:04 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:04 [REQUEST] https://api.gbif.org/v1/species/suggest/higherTaxon?q=cat
+17:01:04 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:04 [REQUEST] https://api.gbif.org/v1/species/suggest/rank?q=cat
+17:01:05 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:05 [REQUEST] https://api.gbif.org/v1/species/suggest/scientificName?q=Panthera%20leo&q=cat
+17:01:05 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:05 [REQUEST] https://api.gbif.org/v1/species/suggest/vernacularName?q=wren&q=cat
+17:01:06 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:06 [REQUEST] https://api.gbif.org/v1/species/suggest/kingdom?q=mammalia&q=cat
+17:01:07 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:07 [REQUEST] https://api.gbif.org/v1/species/suggest/3?q=cat
+17:01:07 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:07 [REQUEST] https://api.gbif.org/v1/species/8730599
+17:01:08 [SUCCESS] Valid Request | Status Code: 200
+17:01:08 [WARNING] Request Already in Seeds
+17:01:08 [SUCCESS] Saved API Data
+17:01:08 [REQUEST] https://api.gbif.org/v1/species/search?offset=10
+17:01:09 [SUCCESS] Valid Request | Status Code: 200
+17:01:09 [SUCCESS] Saved API Seed
+17:01:09 [SUCCESS] Saved API Data
+17:01:09 [REQUEST] https://api.gbif.org/v1/species/classification?offset=10
+17:01:09 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:09 [REQUEST] https://api.gbif.org/v1/species/hierarchy?offset=10
+17:01:10 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:10 [REQUEST] https://api.gbif.org/v1/species/children?offset=10
+17:01:11 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:11 [REQUEST] https://api.gbif.org/v1/species/parents?offset=10
+17:01:11 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:11 [REQUEST] https://api.gbif.org/v1/species/synonyms?offset=10
+17:01:12 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:12 [REQUEST] https://api.gbif.org/v1/species/metrics?offset=10
+17:01:12 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:12 [REQUEST] https://api.gbif.org/v1/species/suggest?offset=10
+17:01:13 [SUCCESS] Valid Request | Status Code: 200
+17:01:13 [WARNING] Request Already in Seeds
+17:01:13 [SUCCESS] Saved API Data
+17:01:13 [REQUEST] https://api.gbif.org/v1/species/autocomplete?offset=10
+17:01:13 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:13 [REQUEST] https://api.gbif.org/v1/species/description?offset=10
+17:01:14 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:14 [REQUEST] https://api.gbif.org/v1/species/search?q=Primates&rank=class&offset=10
+17:01:14 [SUCCESS] Valid Request | Status Code: 200
+17:01:14 [SUCCESS] Saved API Seed
+17:01:14 [SUCCESS] Saved API Data
+17:01:14 [REQUEST] https://api.gbif.org/v1/species/classification?name=Panthera%20leo&offset=10
+17:01:15 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:15 [REQUEST] https://api.gbif.org/v1/species/hierarchy?name=Panthera%20leo&offset=10
+17:01:16 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:16 [REQUEST] https://api.gbif.org/v1/species/15?offset=10
+17:01:16 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:16 [REQUEST] https://api.gbif.org/v1/species/search
+17:01:17 [SUCCESS] Valid Request | Status Code: 200
+17:01:17 [SUCCESS] Saved API Seed
+17:01:17 [SUCCESS] Saved API Data
+17:01:17 [REQUEST] https://api.gbif.org/v1/species/classification
+17:01:18 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:18 [REQUEST] https://api.gbif.org/v1/species/hierarchy
+17:01:19 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:19 [REQUEST] https://api.gbif.org/v1/species/suggest
+17:01:19 [SUCCESS] Valid Request | Status Code: 200
+17:01:19 [SUCCESS] Saved API Seed
+17:01:19 [SUCCESS] Saved API Data
+17:01:19 [REQUEST] https://api.gbif.org/v1/species/name
+17:01:20 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:20 [REQUEST] https://api.gbif.org/v1/species/parent
+17:01:20 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:20 [REQUEST] https://api.gbif.org/v1/species/synonyms
+17:01:21 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:21 [REQUEST] https://api.gbif.org/v1/species/media
+17:01:21 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:21 [REQUEST] https://api.gbif.org/v1/species/descriptions
+17:01:22 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:22 [REQUEST] https://api.gbif.org/v1/species/metrics
+17:01:23 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:23 [REQUEST] https://api.gbif.org/v1/species/classification?name=Panthera%20leo
+17:01:23 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:23 [REQUEST] https://api.gbif.org/v1/species/hierarchy?name=Panthera%20leo
+17:01:24 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:01:24 [REQUEST] https://api.gbif.org/v1/species/3
+17:01:24 [SUCCESS] Valid Request | Status Code: 200
+17:01:24 [SUCCESS] Saved API Seed
+17:01:24 [SUCCESS] Saved API Data
+17:01:24 [TITLE]   Mutation Process: focusParameters
+17:01:24 [TITLE]   Mutating Request (1/1)
+17:01:24 [SECTION] Mutation Operator: addParameter
+17:01:24 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/8730599/children
+17:01:24 [INFO]    Masked Request: https://api.gbif.org/v1/species/8730599/children?<parameter=value>
+17:01:26 [SUCCESS] Found Values: ['limit=10', 'offset=5', 'rank=species', 'q=plantae', 'nameType=SCIENTIFIC', 'nameType=CANONICAL', 'strict=false', 'verbose=true', 'language=en', 'datasetKey=7ce8aef0-9e92-11dc-8738-b8a03c50a862']
+17:01:26 [SECTION] Mutation Operator: removeParameter
+17:01:26 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/8730599/distributions
+17:01:26 [INFO]    Masked Request: https://api.gbif.org/v1/species/8730599/distributions
+17:01:26 [SECTION] Mutation Operator: modifyParameter
+17:01:26 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/8730599/media
+17:01:26 [INFO]    Masked Request: https://api.gbif.org/v1/species/8730599/media
+17:01:26 [SECTION] Mutation Operator: resetParameters
+17:01:26 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/8730599/media
+17:01:26 [INFO]    Masked Request: https://api.gbif.org/v1/species/8730599/media?<parameter=value>
+17:01:30 [SUCCESS] Found Values: ['taxonKey=8730599', 'limit=10', 'offset=0', 'mediaType=StillImage', 'creator=John+Doe', 'year=2021', 'license=CC-BY', 'q=flower', 'locale=en', 'basisOfRecord=HUMAN_OBSERVATION']
+17:01:30 [TITLE]   Mutated Request Verification
+17:01:30 [REQUEST] https://api.gbif.org/v1/species/8730599/children?limit=10
+17:01:31 [SUCCESS] Valid Request | Status Code: 200
+17:01:31 [SUCCESS] Saved API Seed
+17:01:31 [SUCCESS] Saved API Data
+17:01:31 [REQUEST] https://api.gbif.org/v1/species/8730599/children?offset=5
+17:01:31 [SUCCESS] Valid Request | Status Code: 200
+17:01:31 [SUCCESS] Saved API Seed
+17:01:31 [SUCCESS] Saved API Data
+17:01:31 [REQUEST] https://api.gbif.org/v1/species/8730599/children?rank=species
+17:01:32 [SUCCESS] Valid Request | Status Code: 200
+17:01:32 [SUCCESS] Saved API Seed
+17:01:32 [SUCCESS] Saved API Data
+17:01:32 [REQUEST] https://api.gbif.org/v1/species/8730599/children?q=plantae
+17:01:33 [SUCCESS] Valid Request | Status Code: 200
+17:01:33 [SUCCESS] Saved API Seed
+17:01:33 [SUCCESS] Saved API Data
+17:01:33 [REQUEST] https://api.gbif.org/v1/species/8730599/children?nameType=SCIENTIFIC
+17:01:33 [SUCCESS] Valid Request | Status Code: 200
+17:01:33 [SUCCESS] Saved API Seed
+17:01:33 [SUCCESS] Saved API Data
+17:01:33 [REQUEST] https://api.gbif.org/v1/species/8730599/children?nameType=CANONICAL
+17:01:34 [SUCCESS] Valid Request | Status Code: 200
+17:01:34 [SUCCESS] Saved API Seed
+17:01:34 [SUCCESS] Saved API Data
+17:01:34 [REQUEST] https://api.gbif.org/v1/species/8730599/children?strict=false
+17:01:34 [SUCCESS] Valid Request | Status Code: 200
+17:01:34 [SUCCESS] Saved API Seed
+17:01:34 [SUCCESS] Saved API Data
+17:01:34 [REQUEST] https://api.gbif.org/v1/species/8730599/children?verbose=true
+17:01:35 [SUCCESS] Valid Request | Status Code: 200
+17:01:35 [SUCCESS] Saved API Seed
+17:01:35 [SUCCESS] Saved API Data
+17:01:35 [REQUEST] https://api.gbif.org/v1/species/8730599/children?language=en
+17:01:35 [SUCCESS] Valid Request | Status Code: 200
+17:01:35 [SUCCESS] Saved API Seed
+17:01:35 [SUCCESS] Saved API Data
+17:01:35 [REQUEST] https://api.gbif.org/v1/species/8730599/children?datasetKey=7ce8aef0-9e92-11dc-8738-b8a03c50a862
+17:01:36 [SUCCESS] Valid Request | Status Code: 200
+17:01:36 [SUCCESS] Saved API Seed
+17:01:36 [SUCCESS] Saved API Data
+17:01:36 [REQUEST] https://api.gbif.org/v1/species/8730599/distributions
+17:01:36 [SUCCESS] Valid Request | Status Code: 200
+17:01:36 [WARNING] Request Already in Seeds
+17:01:36 [SUCCESS] Saved API Data
+17:01:36 [REQUEST] https://api.gbif.org/v1/species/8730599/media
+17:01:37 [SUCCESS] Valid Request | Status Code: 200
+17:01:37 [WARNING] Request Already in Seeds
+17:01:37 [SUCCESS] Saved API Data
+17:01:37 [REQUEST] https://api.gbif.org/v1/species/8730599/media?taxonKey=8730599
+17:01:38 [SUCCESS] Valid Request | Status Code: 200
+17:01:38 [SUCCESS] Saved API Seed
+17:01:38 [SUCCESS] Saved API Data
+17:01:38 [REQUEST] https://api.gbif.org/v1/species/8730599/media?limit=10
+17:01:38 [SUCCESS] Valid Request | Status Code: 200
+17:01:38 [SUCCESS] Saved API Seed
+17:01:38 [SUCCESS] Saved API Data
+17:01:38 [REQUEST] https://api.gbif.org/v1/species/8730599/media?offset=0
+17:01:39 [SUCCESS] Valid Request | Status Code: 200
+17:01:39 [SUCCESS] Saved API Seed
+17:01:39 [SUCCESS] Saved API Data
+17:01:39 [REQUEST] https://api.gbif.org/v1/species/8730599/media?mediaType=StillImage
+17:01:39 [SUCCESS] Valid Request | Status Code: 200
+17:01:39 [SUCCESS] Saved API Seed
+17:01:39 [SUCCESS] Saved API Data
+17:01:39 [REQUEST] https://api.gbif.org/v1/species/8730599/media?creator=John+Doe
+17:01:40 [SUCCESS] Valid Request | Status Code: 200
+17:01:40 [SUCCESS] Saved API Seed
+17:01:40 [SUCCESS] Saved API Data
+17:01:40 [REQUEST] https://api.gbif.org/v1/species/8730599/media?year=2021
+17:01:40 [SUCCESS] Valid Request | Status Code: 200
+17:01:40 [SUCCESS] Saved API Seed
+17:01:40 [SUCCESS] Saved API Data
+17:01:40 [REQUEST] https://api.gbif.org/v1/species/8730599/media?license=CC-BY
+17:01:41 [SUCCESS] Valid Request | Status Code: 200
+17:01:41 [SUCCESS] Saved API Seed
+17:01:41 [SUCCESS] Saved API Data
+17:01:41 [REQUEST] https://api.gbif.org/v1/species/8730599/media?q=flower
+17:01:41 [SUCCESS] Valid Request | Status Code: 200
+17:01:41 [SUCCESS] Saved API Seed
+17:01:41 [SUCCESS] Saved API Data
+17:01:41 [REQUEST] https://api.gbif.org/v1/species/8730599/media?locale=en
+17:01:42 [SUCCESS] Valid Request | Status Code: 200
+17:01:42 [SUCCESS] Saved API Seed
+17:01:42 [SUCCESS] Saved API Data
+17:01:42 [REQUEST] https://api.gbif.org/v1/species/8730599/media?basisOfRecord=HUMAN_OBSERVATION
+17:01:42 [SUCCESS] Valid Request | Status Code: 200
+17:01:42 [SUCCESS] Saved API Seed
+17:01:42 [SUCCESS] Saved API Data
+17:01:42 [TITLE]   Execution Results
+17:01:42 [INFO]    Saved to: ./outputs/GBIF_Species_API/executions/3.json
+17:01:43 [TITLE]   Launching RESTSpecIT
+17:01:43 [TITLE]   Executing: GBIF Species API
+17:01:43 [SUCCESS] Loaded API Data
+17:01:43 [SUCCESS] Loaded API Seeds
+17:01:43 [SUCCESS] Loaded API Seeds
+17:01:43 [TITLE]   Inferring Base API Data
+17:01:43 [SECTION] Inferring Info Data
+17:01:43 [WARNING] Info Data Already Exists
+17:01:43 [SECTION] Inferring Online Documentation Data
+17:01:43 [WARNING] Online Documentation Data Already Exists
+17:01:43 [SECTION] Inferring Server Data
+17:01:43 [WARNING] Server Data Already Exists
+17:01:43 [SECTION] Inferring Request Seeds
+17:01:47 [REQUEST] https://api.gbif.org/v1/species/search?q=Primates&rank=GENUS
+17:01:48 [SUCCESS] Valid Request | Status Code: 200
+17:01:48 [SUCCESS] Saved API Seed
+17:01:48 [SUCCESS] Saved API Data
+17:01:48 [REQUEST] https://api.gbif.org/v1/species/1234
+17:01:49 [SUCCESS] Valid Request | Status Code: 200
+17:01:49 [SUCCESS] Saved API Seed
+17:01:49 [SUCCESS] Saved API Data
+17:01:49 [REQUEST] https://api.gbif.org/v1/species/1234/datasets
+17:01:49 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:49 [REQUEST] https://api.gbif.org/v1/species/1234/datasets?key=API_KEY
+17:01:50 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:50 [REQUEST] https://api.gbif.org/v1/species/1234/descriptions
+17:01:50 [SUCCESS] Valid Request | Status Code: 200
+17:01:50 [SUCCESS] Saved API Seed
+17:01:50 [SUCCESS] Saved API Data
+17:01:50 [REQUEST] https://api.gbif.org/v1/species/1234/descriptions?language=en
+17:01:51 [SUCCESS] Valid Request | Status Code: 200
+17:01:51 [SUCCESS] Saved API Seed
+17:01:51 [SUCCESS] Saved API Data
+17:01:51 [REQUEST] https://api.gbif.org/v1/species/1234/media
+17:01:52 [SUCCESS] Valid Request | Status Code: 200
+17:01:52 [SUCCESS] Saved API Seed
+17:01:52 [SUCCESS] Saved API Data
+17:01:52 [REQUEST] https://api.gbif.org/v1/species/1234/media?limit=10
+17:01:52 [SUCCESS] Valid Request | Status Code: 200
+17:01:52 [SUCCESS] Saved API Seed
+17:01:52 [SUCCESS] Saved API Data
+17:01:52 [REQUEST] https://api.gbif.org/v1/species/1234/vernacularNames
+17:01:53 [SUCCESS] Valid Request | Status Code: 200
+17:01:53 [SUCCESS] Saved API Seed
+17:01:53 [SUCCESS] Saved API Data
+17:01:53 [REQUEST] https://api.gbif.org/v1/species/1234/vernacularNames?language=es
+17:01:54 [SUCCESS] Valid Request | Status Code: 200
+17:01:54 [SUCCESS] Saved API Seed
+17:01:54 [SUCCESS] Saved API Data
+17:01:54 [SECTION] Inferring Error Schema
+17:01:54 [REQUEST] https://api.gbif.org/invalidRoute/?invalidParam=invalidValue
+17:01:54 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:01:54 [SUCCESS] Error Schema Found
+17:01:54 [SUCCESS] Saved API Data
+17:01:54 [TITLE]   Mutation Process: focusRoutes
+17:01:54 [TITLE]   Mutating Request (1/1)
+17:01:54 [SECTION] Mutation Operator: addRoute
+17:01:54 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/suggest?rank=GENUS
+17:01:54 [INFO]    Masked Request: https://api.gbif.org/v1/species/suggest/<route>?rank=GENUS
+17:01:57 [SUCCESS] Found Values: ['plants', 'mammals', 'birds', 'reptiles', 'insects', 'fish', 'amphibians', 'fungi', 'bacteria', 'algae', 'plants?q=oak', 'mammals?q=tiger', 'birds?q=parrot', '85']
+17:01:57 [SECTION] Mutation Operator: removeRoute
+17:01:57 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/3
+17:01:57 [INFO]    Masked Request: https://api.gbif.org/v1/species
+17:01:57 [SECTION] Mutation Operator: modifyRoute
+17:01:57 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/lookup?language=eng
+17:01:57 [INFO]    Masked Request: https://api.gbif.org/v1/species/<route>?language=eng
+17:01:59 [SUCCESS] Found Values: ['search', 'lookup', 'suggest', 'classification', 'metrics', 'synonyms', 'parents', 'children', 'descendants', 'ancestors', 'search?q=bear', 'lookup?name=Panthera%20leo', '69']
+17:01:59 [SECTION] Mutation Operator: resetRoutes
+17:01:59 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/search?q=Primates&q=Plantae&rank=KINGDOM
+17:01:59 [INFO]    Masked Request: https://api.gbif.org/v1/species/<route>?q=Primates&q=Plantae&rank=KINGDOM
+17:02:02 [SUCCESS] Found Values: ['search', 'classification', 'name', 'key', 'suggest', 'synonym', 'children', 'parents', 'related', 'metrics', 'search?q=coelacanthus', 'classification?name=Mammalia', 'name?q=Panthera%20leo', '14']
+17:02:02 [TITLE]   Mutated Request Verification
+17:02:02 [REQUEST] https://api.gbif.org/v1/species/suggest/plants?rank=GENUS
+17:02:03 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:03 [REQUEST] https://api.gbif.org/v1/species/suggest/mammals?rank=GENUS
+17:02:03 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:03 [REQUEST] https://api.gbif.org/v1/species/suggest/birds?rank=GENUS
+17:02:04 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:04 [REQUEST] https://api.gbif.org/v1/species/suggest/reptiles?rank=GENUS
+17:02:04 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:04 [REQUEST] https://api.gbif.org/v1/species/suggest/insects?rank=GENUS
+17:02:05 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:05 [REQUEST] https://api.gbif.org/v1/species/suggest/fish?rank=GENUS
+17:02:05 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:05 [REQUEST] https://api.gbif.org/v1/species/suggest/amphibians?rank=GENUS
+17:02:06 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:06 [REQUEST] https://api.gbif.org/v1/species/suggest/fungi?rank=GENUS
+17:02:06 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:06 [REQUEST] https://api.gbif.org/v1/species/suggest/bacteria?rank=GENUS
+17:02:07 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:07 [REQUEST] https://api.gbif.org/v1/species/suggest/algae?rank=GENUS
+17:02:07 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:07 [REQUEST] https://api.gbif.org/v1/species/suggest/plants?q=oak&rank=GENUS
+17:02:08 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:08 [REQUEST] https://api.gbif.org/v1/species/suggest/mammals?q=tiger&rank=GENUS
+17:02:08 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:08 [REQUEST] https://api.gbif.org/v1/species/suggest/birds?q=parrot&rank=GENUS
+17:02:09 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:09 [REQUEST] https://api.gbif.org/v1/species/suggest/85?rank=GENUS
+17:02:09 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:09 [REQUEST] https://api.gbif.org/v1/species
+17:02:10 [SUCCESS] Valid Request | Status Code: 200
+17:02:10 [SUCCESS] Saved API Seed
+17:02:10 [SUCCESS] Saved API Data
+17:02:10 [REQUEST] https://api.gbif.org/v1/species/search?language=eng
+17:02:11 [SUCCESS] Valid Request | Status Code: 200
+17:02:11 [SUCCESS] Saved API Seed
+17:02:11 [SUCCESS] Saved API Data
+17:02:11 [REQUEST] https://api.gbif.org/v1/species/lookup?language=eng
+17:02:12 [SUCCESS] Valid Request | Status Code: 204
+17:02:12 [WARNING] Request Already in Seeds
+17:02:12 [SUCCESS] Saved API Data
+17:02:12 [REQUEST] https://api.gbif.org/v1/species/suggest?language=eng
+17:02:12 [SUCCESS] Valid Request | Status Code: 200
+17:02:12 [SUCCESS] Saved API Seed
+17:02:12 [SUCCESS] Saved API Data
+17:02:12 [REQUEST] https://api.gbif.org/v1/species/classification?language=eng
+17:02:13 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:13 [REQUEST] https://api.gbif.org/v1/species/metrics?language=eng
+17:02:13 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:13 [REQUEST] https://api.gbif.org/v1/species/synonyms?language=eng
+17:02:14 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:14 [REQUEST] https://api.gbif.org/v1/species/parents?language=eng
+17:02:14 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:14 [REQUEST] https://api.gbif.org/v1/species/children?language=eng
+17:02:15 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:15 [REQUEST] https://api.gbif.org/v1/species/descendants?language=eng
+17:02:15 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:15 [REQUEST] https://api.gbif.org/v1/species/ancestors?language=eng
+17:02:16 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:16 [REQUEST] https://api.gbif.org/v1/species/search?q=bear&language=eng
+17:02:17 [SUCCESS] Valid Request | Status Code: 200
+17:02:17 [SUCCESS] Saved API Seed
+17:02:17 [SUCCESS] Saved API Data
+17:02:17 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&language=eng
+17:02:17 [SUCCESS] Valid Request | Status Code: 200
+17:02:17 [SUCCESS] Saved API Seed
+17:02:17 [SUCCESS] Saved API Data
+17:02:17 [REQUEST] https://api.gbif.org/v1/species/69?language=eng
+17:02:18 [SUCCESS] Valid Request | Status Code: 200
+17:02:18 [SUCCESS] Saved API Seed
+17:02:18 [SUCCESS] Saved API Data
+17:02:18 [REQUEST] https://api.gbif.org/v1/species/search?q=Primates&q=Plantae&rank=KINGDOM
+17:02:19 [SUCCESS] Valid Request | Status Code: 200
+17:02:19 [WARNING] Request Already in Seeds
+17:02:19 [SUCCESS] Saved API Data
+17:02:19 [REQUEST] https://api.gbif.org/v1/species/classification?q=Primates&q=Plantae&rank=KINGDOM
+17:02:19 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:19 [REQUEST] https://api.gbif.org/v1/species/name?q=Primates&q=Plantae&rank=KINGDOM
+17:02:20 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:20 [REQUEST] https://api.gbif.org/v1/species/key?q=Primates&q=Plantae&rank=KINGDOM
+17:02:20 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:20 [REQUEST] https://api.gbif.org/v1/species/suggest?q=Primates&q=Plantae&rank=KINGDOM
+17:02:21 [SUCCESS] Valid Request | Status Code: 200
+17:02:21 [SUCCESS] Saved API Seed
+17:02:21 [SUCCESS] Saved API Data
+17:02:21 [REQUEST] https://api.gbif.org/v1/species/synonym?q=Primates&q=Plantae&rank=KINGDOM
+17:02:22 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:22 [REQUEST] https://api.gbif.org/v1/species/children?q=Primates&q=Plantae&rank=KINGDOM
+17:02:22 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:22 [REQUEST] https://api.gbif.org/v1/species/parents?q=Primates&q=Plantae&rank=KINGDOM
+17:02:23 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:23 [REQUEST] https://api.gbif.org/v1/species/related?q=Primates&q=Plantae&rank=KINGDOM
+17:02:24 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:24 [REQUEST] https://api.gbif.org/v1/species/metrics?q=Primates&q=Plantae&rank=KINGDOM
+17:02:24 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:24 [REQUEST] https://api.gbif.org/v1/species/search?q=coelacanthus&q=Primates&q=Plantae&rank=KINGDOM
+17:02:25 [SUCCESS] Valid Request | Status Code: 200
+17:02:25 [SUCCESS] Saved API Seed
+17:02:25 [SUCCESS] Saved API Data
+17:02:25 [REQUEST] https://api.gbif.org/v1/species/classification?name=Mammalia&q=Primates&q=Plantae&rank=KINGDOM
+17:02:25 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:25 [REQUEST] https://api.gbif.org/v1/species/name?q=Panthera%20leo&q=Primates&q=Plantae&rank=KINGDOM
+17:02:26 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:02:26 [REQUEST] https://api.gbif.org/v1/species/14?q=Primates&q=Plantae&rank=KINGDOM
+17:02:26 [SUCCESS] Valid Request | Status Code: 200
+17:02:26 [SUCCESS] Saved API Seed
+17:02:26 [SUCCESS] Saved API Data
+17:02:26 [TITLE]   Mutation Process: focusParameters
+17:02:26 [TITLE]   Mutating Request (1/1)
+17:02:26 [SECTION] Mutation Operator: addParameter
+17:02:26 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/lookup?name=Panthera%20leo
+17:02:26 [INFO]    Masked Request: https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&<parameter=value>
+17:02:28 [SUCCESS] Found Values: ['rank=genus', 'rank=family', 'rank=order', 'rank=class', 'rank=phylum', 'rank=kingdom', 'limit=100', 'limit=50', 'limit=10', 'language=en']
+17:02:28 [SECTION] Mutation Operator: removeParameter
+17:02:28 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/8730599/distributions
+17:02:28 [INFO]    Masked Request: https://api.gbif.org/v1/species/8730599/distributions
+17:02:28 [SECTION] Mutation Operator: modifyParameter
+17:02:28 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/8730599/media?limit=10
+17:02:28 [INFO]    Masked Request: https://api.gbif.org/v1/species/8730599/media?<parameter=value>
+17:02:29 [SUCCESS] Found Values: ['limit=100', 'offset=50', 'type=stillImage', 'creator=Smith', 'license=CC-BY', 'taxonKey=3329047', 'year=2005', 'country=US', 'mediaType=video', 'rank=SPECIES']
+17:02:29 [SECTION] Mutation Operator: resetParameters
+17:02:29 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/8730599/media?creator=John+Doe
+17:02:29 [INFO]    Masked Request: https://api.gbif.org/v1/species/8730599/media?<parameter=value>
+17:02:30 [SUCCESS] Found Values: ['limit=10', 'offset=5', 'type=StillImage', 'mimeType=image', 'source=DarwinCore', 'creator=Smith', 'date=2021', 'license=CC-BY', 'mediaType=StillImage', 'tag=flower', 'rank=SPECIES']
+17:02:30 [TITLE]   Mutated Request Verification
+17:02:30 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&rank=genus
+17:02:31 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:31 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&rank=family
+17:02:32 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:32 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&rank=order
+17:02:32 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:32 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&rank=class
+17:02:33 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:33 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&rank=phylum
+17:02:34 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:34 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&rank=kingdom
+17:02:34 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:02:34 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&limit=100
+17:02:35 [SUCCESS] Valid Request | Status Code: 200
+17:02:35 [SUCCESS] Saved API Seed
+17:02:35 [SUCCESS] Saved API Data
+17:02:35 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&limit=50
+17:02:35 [SUCCESS] Valid Request | Status Code: 200
+17:02:35 [SUCCESS] Saved API Seed
+17:02:35 [SUCCESS] Saved API Data
+17:02:35 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&limit=10
+17:02:36 [SUCCESS] Valid Request | Status Code: 200
+17:02:36 [SUCCESS] Saved API Seed
+17:02:36 [SUCCESS] Saved API Data
+17:02:36 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&language=en
+17:02:37 [SUCCESS] Valid Request | Status Code: 200
+17:02:37 [SUCCESS] Saved API Seed
+17:02:37 [SUCCESS] Saved API Data
+17:02:37 [REQUEST] https://api.gbif.org/v1/species/8730599/distributions
+17:02:37 [SUCCESS] Valid Request | Status Code: 200
+17:02:37 [WARNING] Request Already in Seeds
+17:02:37 [SUCCESS] Saved API Data
+17:02:37 [REQUEST] https://api.gbif.org/v1/species/8730599/media?limit=100
+17:02:38 [SUCCESS] Valid Request | Status Code: 200
+17:02:38 [SUCCESS] Saved API Seed
+17:02:38 [SUCCESS] Saved API Data
+17:02:38 [REQUEST] https://api.gbif.org/v1/species/8730599/media?offset=50
+17:02:38 [SUCCESS] Valid Request | Status Code: 200
+17:02:38 [SUCCESS] Saved API Seed
+17:02:38 [SUCCESS] Saved API Data
+17:02:38 [REQUEST] https://api.gbif.org/v1/species/8730599/media?type=stillImage
+17:02:39 [SUCCESS] Valid Request | Status Code: 200
+17:02:39 [SUCCESS] Saved API Seed
+17:02:39 [SUCCESS] Saved API Data
+17:02:39 [REQUEST] https://api.gbif.org/v1/species/8730599/media?creator=Smith
+17:02:39 [SUCCESS] Valid Request | Status Code: 200
+17:02:39 [SUCCESS] Saved API Seed
+17:02:39 [SUCCESS] Saved API Data
+17:02:39 [REQUEST] https://api.gbif.org/v1/species/8730599/media?license=CC-BY
+17:02:40 [SUCCESS] Valid Request | Status Code: 200
+17:02:40 [WARNING] Request Already in Seeds
+17:02:40 [SUCCESS] Saved API Data
+17:02:40 [REQUEST] https://api.gbif.org/v1/species/8730599/media?taxonKey=3329047
+17:02:41 [SUCCESS] Valid Request | Status Code: 200
+17:02:41 [SUCCESS] Saved API Seed
+17:02:41 [SUCCESS] Saved API Data
+17:02:41 [REQUEST] https://api.gbif.org/v1/species/8730599/media?year=2005
+17:02:41 [SUCCESS] Valid Request | Status Code: 200
+17:02:41 [SUCCESS] Saved API Seed
+17:02:41 [SUCCESS] Saved API Data
+17:02:41 [REQUEST] https://api.gbif.org/v1/species/8730599/media?country=US
+17:02:42 [SUCCESS] Valid Request | Status Code: 200
+17:02:42 [SUCCESS] Saved API Seed
+17:02:42 [SUCCESS] Saved API Data
+17:02:42 [REQUEST] https://api.gbif.org/v1/species/8730599/media?mediaType=video
+17:02:42 [SUCCESS] Valid Request | Status Code: 200
+17:02:42 [SUCCESS] Saved API Seed
+17:02:42 [SUCCESS] Saved API Data
+17:02:42 [REQUEST] https://api.gbif.org/v1/species/8730599/media?rank=SPECIES
+17:02:43 [SUCCESS] Valid Request | Status Code: 200
+17:02:43 [SUCCESS] Saved API Seed
+17:02:43 [SUCCESS] Saved API Data
+17:02:43 [REQUEST] https://api.gbif.org/v1/species/8730599/media?limit=10
+17:02:44 [SUCCESS] Valid Request | Status Code: 200
+17:02:44 [WARNING] Request Already in Seeds
+17:02:44 [SUCCESS] Saved API Data
+17:02:44 [REQUEST] https://api.gbif.org/v1/species/8730599/media?offset=5
+17:02:44 [SUCCESS] Valid Request | Status Code: 200
+17:02:44 [SUCCESS] Saved API Seed
+17:02:44 [SUCCESS] Saved API Data
+17:02:44 [REQUEST] https://api.gbif.org/v1/species/8730599/media?type=StillImage
+17:02:45 [SUCCESS] Valid Request | Status Code: 200
+17:02:45 [SUCCESS] Saved API Seed
+17:02:45 [SUCCESS] Saved API Data
+17:02:45 [REQUEST] https://api.gbif.org/v1/species/8730599/media?mimeType=image
+17:02:46 [SUCCESS] Valid Request | Status Code: 200
+17:02:46 [SUCCESS] Saved API Seed
+17:02:46 [SUCCESS] Saved API Data
+17:02:46 [REQUEST] https://api.gbif.org/v1/species/8730599/media?source=DarwinCore
+17:02:46 [SUCCESS] Valid Request | Status Code: 200
+17:02:46 [SUCCESS] Saved API Seed
+17:02:46 [SUCCESS] Saved API Data
+17:02:46 [REQUEST] https://api.gbif.org/v1/species/8730599/media?creator=Smith
+17:02:47 [SUCCESS] Valid Request | Status Code: 200
+17:02:47 [WARNING] Request Already in Seeds
+17:02:47 [SUCCESS] Saved API Data
+17:02:47 [REQUEST] https://api.gbif.org/v1/species/8730599/media?date=2021
+17:02:47 [SUCCESS] Valid Request | Status Code: 200
+17:02:47 [SUCCESS] Saved API Seed
+17:02:47 [SUCCESS] Saved API Data
+17:02:47 [REQUEST] https://api.gbif.org/v1/species/8730599/media?license=CC-BY
+17:02:48 [SUCCESS] Valid Request | Status Code: 200
+17:02:48 [WARNING] Request Already in Seeds
+17:02:48 [SUCCESS] Saved API Data
+17:02:48 [REQUEST] https://api.gbif.org/v1/species/8730599/media?mediaType=StillImage
+17:02:48 [SUCCESS] Valid Request | Status Code: 200
+17:02:48 [WARNING] Request Already in Seeds
+17:02:48 [SUCCESS] Saved API Data
+17:02:48 [REQUEST] https://api.gbif.org/v1/species/8730599/media?tag=flower
+17:02:49 [SUCCESS] Valid Request | Status Code: 200
+17:02:49 [SUCCESS] Saved API Seed
+17:02:49 [SUCCESS] Saved API Data
+17:02:49 [REQUEST] https://api.gbif.org/v1/species/8730599/media?rank=SPECIES
+17:02:49 [SUCCESS] Valid Request | Status Code: 200
+17:02:50 [WARNING] Request Already in Seeds
+17:02:50 [SUCCESS] Saved API Data
+17:02:50 [TITLE]   Execution Results
+17:02:50 [INFO]    Saved to: ./outputs/GBIF_Species_API/executions/4.json
+17:02:50 [TITLE]   Launching RESTSpecIT
+17:02:50 [TITLE]   Executing: GBIF Species API
+17:02:50 [SUCCESS] Loaded API Data
+17:02:50 [SUCCESS] Loaded API Seeds
+17:02:50 [SUCCESS] Loaded API Seeds
+17:02:50 [TITLE]   Inferring Base API Data
+17:02:50 [SECTION] Inferring Info Data
+17:02:50 [WARNING] Info Data Already Exists
+17:02:50 [SECTION] Inferring Online Documentation Data
+17:02:50 [WARNING] Online Documentation Data Already Exists
+17:02:50 [SECTION] Inferring Server Data
+17:02:50 [WARNING] Server Data Already Exists
+17:02:50 [SECTION] Inferring Request Seeds
+17:02:58 [REQUEST] https://api.gbif.org/v1/species/search?q=Prunus&limit=10
+17:02:58 [SUCCESS] Valid Request | Status Code: 200
+17:02:58 [SUCCESS] Saved API Seed
+17:02:58 [SUCCESS] Saved API Data
+17:02:58 [REQUEST] https://api.gbif.org/v1/species/2435093
+17:02:59 [SUCCESS] Valid Request | Status Code: 200
+17:02:59 [SUCCESS] Saved API Seed
+17:02:59 [SUCCESS] Saved API Data
+17:02:59 [REQUEST] https://api.gbif.org/v1/species/match?name=Ursus%20americanus&kingdom=Animalia
+17:02:59 [SUCCESS] Valid Request | Status Code: 200
+17:02:59 [SUCCESS] Saved API Seed
+17:02:59 [SUCCESS] Saved API Data
+17:02:59 [REQUEST] https://api.gbif.org/v1/species/lookup?name=Panthera%20leo&rank=SPECIES
+17:03:00 [SUCCESS] Valid Request | Status Code: 200
+17:03:00 [WARNING] Request Already in Seeds
+17:03:00 [SUCCESS] Saved API Data
+17:03:00 [REQUEST] https://api.gbif.org/v1/species/suggest?q=Ailuropoda%20melanoleuca
+17:03:01 [SUCCESS] Valid Request | Status Code: 200
+17:03:01 [SUCCESS] Saved API Seed
+17:03:01 [SUCCESS] Saved API Data
+17:03:01 [REQUEST] https://api.gbif.org/v1/species/2435093/related
+17:03:01 [SUCCESS] Valid Request | Status Code: 200
+17:03:01 [SUCCESS] Saved API Seed
+17:03:01 [SUCCESS] Saved API Data
+17:03:01 [REQUEST] https://api.gbif.org/v1/species/2435093/datasets
+17:03:02 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:02 [REQUEST] https://api.gbif.org/v1/species/2435093/distributions
+17:03:03 [SUCCESS] Valid Request | Status Code: 200
+17:03:03 [SUCCESS] Saved API Seed
+17:03:03 [SUCCESS] Saved API Data
+17:03:03 [REQUEST] https://api.gbif.org/v1/species/2435093/descriptions
+17:03:03 [SUCCESS] Valid Request | Status Code: 200
+17:03:03 [SUCCESS] Saved API Seed
+17:03:03 [SUCCESS] Saved API Data
+17:03:03 [REQUEST] https://api.gbif.org/v1/species/2435093/metrics
+17:03:04 [SUCCESS] Valid Request | Status Code: 200
+17:03:04 [SUCCESS] Saved API Seed
+17:03:04 [SUCCESS] Saved API Data
+17:03:04 [SECTION] Inferring Error Schema
+17:03:04 [REQUEST] https://api.gbif.org/invalidRoute/?invalidParam=invalidValue
+17:03:04 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:04 [SUCCESS] Error Schema Found
+17:03:04 [SUCCESS] Saved API Data
+17:03:04 [TITLE]   Mutation Process: focusRoutes
+17:03:04 [TITLE]   Mutating Request (1/1)
+17:03:04 [SECTION] Mutation Operator: addRoute
+17:03:04 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/8730599/media?q=flower
+17:03:04 [INFO]    Masked Request: https://api.gbif.org/v1/species/8730599/media/<route>?q=flower
+17:03:07 [SUCCESS] Found Values: ['images', 'videos', 'audio', 'maps', 'thumbnails', 'diagrams', 'documents', 'charts', 'illustrations', 'infographics', 'images?limit=10', 'videos?q=license:CC-BY-NC-4.0', 'audio?limit=5', '6']
+17:03:07 [SECTION] Mutation Operator: removeRoute
+17:03:07 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/lookup?q=Plantae&rank=KINGDOM
+17:03:07 [INFO]    Masked Request: https://api.gbif.org/v1/species?q=Plantae&rank=KINGDOM
+17:03:07 [SECTION] Mutation Operator: modifyRoute
+17:03:07 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/2435093/metrics
+17:03:07 [INFO]    Masked Request: https://api.gbif.org/v1/species/2435093/<route>
+17:03:10 [SUCCESS] Found Values: ['ancestors', 'children', 'name', 'synonyms', 'vernacularNames', 'descriptions', 'distributions', 'media', 'references', 'treatments', 'ancestors?rank=kingdom,phylum,class', 'children?limit=10&offset=20', 'name?verbose=true', '76']
+17:03:10 [SECTION] Mutation Operator: resetRoutes
+17:03:10 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/suggest?highertaxonKey=1
+17:03:10 [INFO]    Masked Request: https://api.gbif.org/v1/species/<route>?highertaxonKey=1
+17:03:13 [SUCCESS] Found Values: ['search', 'classification', 'suggest', 'children', 'parents', 'synonyms', 'name', 'metrics', 'related', 'media', 'search?q=Primates', 'classification?name=Panthera%20leo', 'suggest?q=Panthera+tigris', '60']
+17:03:13 [TITLE]   Mutated Request Verification
+17:03:13 [REQUEST] https://api.gbif.org/v1/species/8730599/media/images?q=flower
+17:03:13 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:13 [REQUEST] https://api.gbif.org/v1/species/8730599/media/videos?q=flower
+17:03:14 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:14 [REQUEST] https://api.gbif.org/v1/species/8730599/media/audio?q=flower
+17:03:15 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:15 [REQUEST] https://api.gbif.org/v1/species/8730599/media/maps?q=flower
+17:03:15 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:15 [REQUEST] https://api.gbif.org/v1/species/8730599/media/thumbnails?q=flower
+17:03:16 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:16 [REQUEST] https://api.gbif.org/v1/species/8730599/media/diagrams?q=flower
+17:03:16 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:16 [REQUEST] https://api.gbif.org/v1/species/8730599/media/documents?q=flower
+17:03:17 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:17 [REQUEST] https://api.gbif.org/v1/species/8730599/media/charts?q=flower
+17:03:18 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:18 [REQUEST] https://api.gbif.org/v1/species/8730599/media/illustrations?q=flower
+17:03:18 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:18 [REQUEST] https://api.gbif.org/v1/species/8730599/media/infographics?q=flower
+17:03:19 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:19 [REQUEST] https://api.gbif.org/v1/species/8730599/media/images?limit=10&q=flower
+17:03:19 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:19 [REQUEST] https://api.gbif.org/v1/species/8730599/media/videos?q=license:CC-BY-NC-4.0&q=flower
+17:03:20 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:20 [REQUEST] https://api.gbif.org/v1/species/8730599/media/audio?limit=5&q=flower
+17:03:20 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:20 [REQUEST] https://api.gbif.org/v1/species/8730599/media/6?q=flower
+17:03:21 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:21 [REQUEST] https://api.gbif.org/v1/species?q=Plantae&rank=KINGDOM
+17:03:23 [SUCCESS] Valid Request | Status Code: 200
+17:03:23 [SUCCESS] Saved API Seed
+17:03:23 [SUCCESS] Saved API Data
+17:03:23 [REQUEST] https://api.gbif.org/v1/species/2435093/ancestors
+17:03:23 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:23 [REQUEST] https://api.gbif.org/v1/species/2435093/children
+17:03:24 [SUCCESS] Valid Request | Status Code: 200
+17:03:24 [SUCCESS] Saved API Seed
+17:03:24 [SUCCESS] Saved API Data
+17:03:24 [REQUEST] https://api.gbif.org/v1/species/2435093/name
+17:03:24 [SUCCESS] Valid Request | Status Code: 200
+17:03:24 [SUCCESS] Saved API Seed
+17:03:24 [SUCCESS] Saved API Data
+17:03:24 [REQUEST] https://api.gbif.org/v1/species/2435093/synonyms
+17:03:25 [SUCCESS] Valid Request | Status Code: 200
+17:03:25 [SUCCESS] Saved API Seed
+17:03:25 [SUCCESS] Saved API Data
+17:03:25 [REQUEST] https://api.gbif.org/v1/species/2435093/vernacularNames
+17:03:26 [SUCCESS] Valid Request | Status Code: 200
+17:03:26 [SUCCESS] Saved API Seed
+17:03:26 [SUCCESS] Saved API Data
+17:03:26 [REQUEST] https://api.gbif.org/v1/species/2435093/descriptions
+17:03:26 [SUCCESS] Valid Request | Status Code: 200
+17:03:26 [WARNING] Request Already in Seeds
+17:03:26 [SUCCESS] Saved API Data
+17:03:26 [REQUEST] https://api.gbif.org/v1/species/2435093/distributions
+17:03:27 [SUCCESS] Valid Request | Status Code: 200
+17:03:27 [WARNING] Request Already in Seeds
+17:03:27 [SUCCESS] Saved API Data
+17:03:27 [REQUEST] https://api.gbif.org/v1/species/2435093/media
+17:03:27 [SUCCESS] Valid Request | Status Code: 200
+17:03:27 [SUCCESS] Saved API Seed
+17:03:27 [SUCCESS] Saved API Data
+17:03:27 [REQUEST] https://api.gbif.org/v1/species/2435093/references
+17:03:28 [SUCCESS] Valid Request | Status Code: 200
+17:03:28 [SUCCESS] Saved API Seed
+17:03:28 [SUCCESS] Saved API Data
+17:03:28 [REQUEST] https://api.gbif.org/v1/species/2435093/treatments
+17:03:29 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:29 [REQUEST] https://api.gbif.org/v1/species/2435093/ancestors?rank=kingdom,phylum,class
+17:03:29 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:29 [REQUEST] https://api.gbif.org/v1/species/2435093/children?limit=10&offset=20
+17:03:30 [SUCCESS] Valid Request | Status Code: 200
+17:03:30 [SUCCESS] Saved API Seed
+17:03:30 [SUCCESS] Saved API Data
+17:03:30 [REQUEST] https://api.gbif.org/v1/species/2435093/name?verbose=true
+17:03:31 [SUCCESS] Valid Request | Status Code: 200
+17:03:31 [SUCCESS] Saved API Seed
+17:03:31 [SUCCESS] Saved API Data
+17:03:31 [REQUEST] https://api.gbif.org/v1/species/2435093/76
+17:03:32 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:03:32 [REQUEST] https://api.gbif.org/v1/species/search?highertaxonKey=1
+17:03:33 [SUCCESS] Valid Request | Status Code: 200
+17:03:33 [SUCCESS] Saved API Seed
+17:03:33 [SUCCESS] Saved API Data
+17:03:33 [REQUEST] https://api.gbif.org/v1/species/classification?highertaxonKey=1
+17:03:33 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:03:33 [REQUEST] https://api.gbif.org/v1/species/suggest?highertaxonKey=1
+17:03:34 [SUCCESS] Valid Request | Status Code: 200
+17:03:34 [WARNING] Request Already in Seeds
+17:03:34 [SUCCESS] Saved API Data
+17:03:34 [REQUEST] https://api.gbif.org/v1/species/children?highertaxonKey=1
+17:03:34 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:03:34 [REQUEST] https://api.gbif.org/v1/species/parents?highertaxonKey=1
+17:03:35 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:03:35 [REQUEST] https://api.gbif.org/v1/species/synonyms?highertaxonKey=1
+17:03:35 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:03:35 [REQUEST] https://api.gbif.org/v1/species/name?highertaxonKey=1
+17:03:36 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:03:36 [REQUEST] https://api.gbif.org/v1/species/metrics?highertaxonKey=1
+17:03:36 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:03:36 [REQUEST] https://api.gbif.org/v1/species/related?highertaxonKey=1
+17:03:37 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:03:37 [REQUEST] https://api.gbif.org/v1/species/media?highertaxonKey=1
+17:03:37 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:03:37 [REQUEST] https://api.gbif.org/v1/species/search?q=Primates&highertaxonKey=1
+17:03:38 [SUCCESS] Valid Request | Status Code: 200
+17:03:38 [SUCCESS] Saved API Seed
+17:03:38 [SUCCESS] Saved API Data
+17:03:38 [REQUEST] https://api.gbif.org/v1/species/classification?name=Panthera%20leo&highertaxonKey=1
+17:03:38 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:03:38 [REQUEST] https://api.gbif.org/v1/species/suggest?q=Panthera+tigris&highertaxonKey=1
+17:03:39 [SUCCESS] Valid Request | Status Code: 200
+17:03:39 [SUCCESS] Saved API Seed
+17:03:39 [SUCCESS] Saved API Data
+17:03:39 [REQUEST] https://api.gbif.org/v1/species/60?highertaxonKey=1
+17:03:40 [SUCCESS] Valid Request | Status Code: 200
+17:03:40 [SUCCESS] Saved API Seed
+17:03:40 [SUCCESS] Saved API Data
+17:03:40 [TITLE]   Mutation Process: focusParameters
+17:03:40 [TITLE]   Mutating Request (1/1)
+17:03:40 [SECTION] Mutation Operator: addParameter
+17:03:40 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/2435093/metrics
+17:03:40 [INFO]    Masked Request: https://api.gbif.org/v1/species/2435093/metrics?<parameter=value>
+17:03:41 [SUCCESS] Found Values: ['year=2000', 'source=IUCN', 'rank=GENUS', 'taxonomicStatus=ACCEPTED', 'limit=100', 'offset=50', 'isExtinct=true', 'isMarine=false', 'isFreshwater=true', 'hasCoordinate=true']
+17:03:41 [SECTION] Mutation Operator: removeParameter
+17:03:41 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/2435093/references
+17:03:41 [INFO]    Masked Request: https://api.gbif.org/v1/species/2435093/references
+17:03:41 [SECTION] Mutation Operator: modifyParameter
+17:03:41 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/2435093/references
+17:03:41 [INFO]    Masked Request: https://api.gbif.org/v1/species/2435093/references
+17:03:41 [SECTION] Mutation Operator: resetParameters
+17:03:41 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/2435093/related
+17:03:41 [INFO]    Masked Request: https://api.gbif.org/v1/species/2435093/related?<parameter=value>
+17:03:42 [SUCCESS] Found Values: ['rank=genus', 'limit=100', 'offset=50', 'offset=100', 'rank=family', 'fields=vernacularNames', 'fields=canonicalName', 'nameType=SCIENTIFIC', 'nameType=VERNACULAR', 'taxonomicStatus=ACCEPTED']
+17:03:42 [TITLE]   Mutated Request Verification
+17:03:42 [REQUEST] https://api.gbif.org/v1/species/2435093/metrics?year=2000
+17:03:43 [SUCCESS] Valid Request | Status Code: 200
+17:03:43 [SUCCESS] Saved API Seed
+17:03:43 [SUCCESS] Saved API Data
+17:03:43 [REQUEST] https://api.gbif.org/v1/species/2435093/metrics?source=IUCN
+17:03:44 [SUCCESS] Valid Request | Status Code: 200
+17:03:44 [SUCCESS] Saved API Seed
+17:03:44 [SUCCESS] Saved API Data
+17:03:44 [REQUEST] https://api.gbif.org/v1/species/2435093/metrics?rank=GENUS
+17:03:44 [SUCCESS] Valid Request | Status Code: 200
+17:03:44 [SUCCESS] Saved API Seed
+17:03:44 [SUCCESS] Saved API Data
+17:03:44 [REQUEST] https://api.gbif.org/v1/species/2435093/metrics?taxonomicStatus=ACCEPTED
+17:03:45 [SUCCESS] Valid Request | Status Code: 200
+17:03:45 [SUCCESS] Saved API Seed
+17:03:45 [SUCCESS] Saved API Data
+17:03:45 [REQUEST] https://api.gbif.org/v1/species/2435093/metrics?limit=100
+17:03:46 [SUCCESS] Valid Request | Status Code: 200
+17:03:46 [SUCCESS] Saved API Seed
+17:03:46 [SUCCESS] Saved API Data
+17:03:46 [REQUEST] https://api.gbif.org/v1/species/2435093/metrics?offset=50
+17:03:46 [SUCCESS] Valid Request | Status Code: 200
+17:03:46 [SUCCESS] Saved API Seed
+17:03:46 [SUCCESS] Saved API Data
+17:03:46 [REQUEST] https://api.gbif.org/v1/species/2435093/metrics?isExtinct=true
+17:03:47 [SUCCESS] Valid Request | Status Code: 200
+17:03:47 [SUCCESS] Saved API Seed
+17:03:47 [SUCCESS] Saved API Data
+17:03:47 [REQUEST] https://api.gbif.org/v1/species/2435093/metrics?isMarine=false
+17:03:47 [SUCCESS] Valid Request | Status Code: 200
+17:03:47 [SUCCESS] Saved API Seed
+17:03:47 [SUCCESS] Saved API Data
+17:03:47 [REQUEST] https://api.gbif.org/v1/species/2435093/metrics?isFreshwater=true
+17:03:48 [SUCCESS] Valid Request | Status Code: 200
+17:03:48 [SUCCESS] Saved API Seed
+17:03:48 [SUCCESS] Saved API Data
+17:03:48 [REQUEST] https://api.gbif.org/v1/species/2435093/metrics?hasCoordinate=true
+17:03:49 [SUCCESS] Valid Request | Status Code: 200
+17:03:49 [SUCCESS] Saved API Seed
+17:03:49 [SUCCESS] Saved API Data
+17:03:49 [REQUEST] https://api.gbif.org/v1/species/2435093/references
+17:03:49 [SUCCESS] Valid Request | Status Code: 200
+17:03:49 [WARNING] Request Already in Seeds
+17:03:49 [SUCCESS] Saved API Data
+17:03:49 [REQUEST] https://api.gbif.org/v1/species/2435093/references
+17:03:50 [SUCCESS] Valid Request | Status Code: 200
+17:03:50 [WARNING] Request Already in Seeds
+17:03:50 [SUCCESS] Saved API Data
+17:03:50 [REQUEST] https://api.gbif.org/v1/species/2435093/related?rank=genus
+17:03:50 [SUCCESS] Valid Request | Status Code: 200
+17:03:50 [SUCCESS] Saved API Seed
+17:03:51 [SUCCESS] Saved API Data
+17:03:51 [REQUEST] https://api.gbif.org/v1/species/2435093/related?limit=100
+17:03:51 [SUCCESS] Valid Request | Status Code: 200
+17:03:51 [SUCCESS] Saved API Seed
+17:03:51 [SUCCESS] Saved API Data
+17:03:51 [REQUEST] https://api.gbif.org/v1/species/2435093/related?offset=50
+17:03:52 [SUCCESS] Valid Request | Status Code: 200
+17:03:52 [SUCCESS] Saved API Seed
+17:03:52 [SUCCESS] Saved API Data
+17:03:52 [REQUEST] https://api.gbif.org/v1/species/2435093/related?offset=100
+17:03:52 [SUCCESS] Valid Request | Status Code: 200
+17:03:52 [SUCCESS] Saved API Seed
+17:03:53 [SUCCESS] Saved API Data
+17:03:53 [REQUEST] https://api.gbif.org/v1/species/2435093/related?rank=family
+17:03:53 [SUCCESS] Valid Request | Status Code: 200
+17:03:53 [SUCCESS] Saved API Seed
+17:03:53 [SUCCESS] Saved API Data
+17:03:53 [REQUEST] https://api.gbif.org/v1/species/2435093/related?fields=vernacularNames
+17:03:54 [SUCCESS] Valid Request | Status Code: 200
+17:03:54 [SUCCESS] Saved API Seed
+17:03:54 [SUCCESS] Saved API Data
+17:03:54 [REQUEST] https://api.gbif.org/v1/species/2435093/related?fields=canonicalName
+17:03:55 [SUCCESS] Valid Request | Status Code: 200
+17:03:55 [SUCCESS] Saved API Seed
+17:03:55 [SUCCESS] Saved API Data
+17:03:55 [REQUEST] https://api.gbif.org/v1/species/2435093/related?nameType=SCIENTIFIC
+17:03:55 [SUCCESS] Valid Request | Status Code: 200
+17:03:55 [SUCCESS] Saved API Seed
+17:03:56 [SUCCESS] Saved API Data
+17:03:56 [REQUEST] https://api.gbif.org/v1/species/2435093/related?nameType=VERNACULAR
+17:03:56 [SUCCESS] Valid Request | Status Code: 200
+17:03:56 [SUCCESS] Saved API Seed
+17:03:56 [SUCCESS] Saved API Data
+17:03:56 [REQUEST] https://api.gbif.org/v1/species/2435093/related?taxonomicStatus=ACCEPTED
+17:03:57 [SUCCESS] Valid Request | Status Code: 200
+17:03:57 [SUCCESS] Saved API Seed
+17:03:57 [SUCCESS] Saved API Data
+17:03:57 [TITLE]   Execution Results
+17:03:57 [INFO]    Saved to: ./outputs/GBIF_Species_API/executions/5.json
+17:03:57 [TITLE]   Launching RESTSpecIT
+17:03:57 [TITLE]   Executing: GBIF Species API
+17:03:57 [SUCCESS] Loaded API Data
+17:03:57 [SUCCESS] Loaded API Seeds
+17:03:57 [SUCCESS] Loaded API Seeds
+17:03:57 [TITLE]   Inferring Base API Data
+17:03:57 [SECTION] Inferring Info Data
+17:03:57 [WARNING] Info Data Already Exists
+17:03:57 [SECTION] Inferring Online Documentation Data
+17:03:57 [WARNING] Online Documentation Data Already Exists
+17:03:57 [SECTION] Inferring Server Data
+17:03:58 [WARNING] Server Data Already Exists
+17:03:58 [SECTION] Inferring Request Seeds
+17:04:02 [REQUEST] https://api.gbif.org/v1/species/search?q=Primates&rank=GENUS
+17:04:03 [SUCCESS] Valid Request | Status Code: 200
+17:04:03 [WARNING] Request Already in Seeds
+17:04:03 [SUCCESS] Saved API Data
+17:04:03 [REQUEST] https://api.gbif.org/v1/species/2435097
+17:04:04 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:04 [REQUEST] https://api.gbif.org/v1/species/match?name=Panthera%20leo
+17:04:04 [SUCCESS] Valid Request | Status Code: 200
+17:04:04 [SUCCESS] Saved API Seed
+17:04:04 [SUCCESS] Saved API Data
+17:04:04 [REQUEST] https://api.gbif.org/v1/species/suggest?q=Panthera&rank=GENUS
+17:04:05 [SUCCESS] Valid Request | Status Code: 200
+17:04:05 [SUCCESS] Saved API Seed
+17:04:05 [SUCCESS] Saved API Data
+17:04:05 [REQUEST] https://api.gbif.org/v1/species/2435097/datasets
+17:04:05 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:05 [REQUEST] https://api.gbif.org/v1/species/2435097/distributions
+17:04:06 [SUCCESS] Valid Request | Status Code: 200
+17:04:06 [SUCCESS] Saved API Seed
+17:04:06 [SUCCESS] Saved API Data
+17:04:06 [REQUEST] https://api.gbif.org/v1/species/2435097/multimedia
+17:04:07 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:07 [REQUEST] https://api.gbif.org/v1/species/2435097/descriptions
+17:04:08 [SUCCESS] Valid Request | Status Code: 200
+17:04:08 [SUCCESS] Saved API Seed
+17:04:08 [SUCCESS] Saved API Data
+17:04:08 [REQUEST] https://api.gbif.org/v1/species/2435097/names
+17:04:08 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:08 [REQUEST] https://api.gbif.org/v1/species/2435097/vernacularNames
+17:04:09 [SUCCESS] Valid Request | Status Code: 200
+17:04:09 [SUCCESS] Saved API Seed
+17:04:09 [SUCCESS] Saved API Data
+17:04:09 [REQUEST] https://api.gbif.org/v1/species/2435097/habitats
+17:04:09 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:09 [SECTION] Inferring Error Schema
+17:04:09 [REQUEST] https://api.gbif.org/invalidRoute/?invalidParam=invalidValue
+17:04:10 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:10 [SUCCESS] Error Schema Found
+17:04:10 [SUCCESS] Saved API Data
+17:04:10 [TITLE]   Mutation Process: focusRoutes
+17:04:10 [TITLE]   Mutating Request (1/1)
+17:04:10 [SECTION] Mutation Operator: addRoute
+17:04:10 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/search?q=mammals&name=Panthera%20leo
+17:04:10 [INFO]    Masked Request: https://api.gbif.org/v1/species/search/<route>?q=mammals&name=Panthera%20leo
+17:04:14 [SUCCESS] Found Values: ['byKey', 'byName', 'byCanonicalName', 'byNameWithAuth', 'byNameUsage', 'byNameBackbone', 'byNameBackboneWithAuth', 'byNameBackboneWithChildren', 'byNameWithChildren', 'byNubKey', 'byKey?q=Homo+sapiens', 'byName?q=Plantae', 'byCanonicalName?q=Plantae', '94']
+17:04:14 [SECTION] Mutation Operator: removeRoute
+17:04:14 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/2435093/related?fields=vernacularNames
+17:04:14 [INFO]    Masked Request: https://api.gbif.org/v1/species/2435093?fields=vernacularNames
+17:04:14 [SECTION] Mutation Operator: modifyRoute
+17:04:14 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/1234/vernacularNames?language=es
+17:04:14 [INFO]    Masked Request: https://api.gbif.org/v1/species/1234/<route>?language=es
+17:04:16 [SUCCESS] Found Values: ['classification', 'descriptions', 'distribution', 'media', 'name', 'narratives', 'references', 'synonyms', 'vernacularNames', 'classification?rank=order', 'descriptions?language=en', 'distribution?limit=10', '2']
+17:04:16 [SECTION] Mutation Operator: resetRoutes
+17:04:16 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/lookup?class=Mammalia
+17:04:16 [INFO]    Masked Request: https://api.gbif.org/v1/species/<route>?class=Mammalia
+17:04:19 [SUCCESS] Found Values: ['search', 'classification', 'suggest', 'name', 'lookup', 'parents', 'children', 'synonyms', 'media', 'description', 'search?q=Primates&rank=GENUS', 'classification?name=Panthera%20leo', '70']
+17:04:19 [TITLE]   Mutated Request Verification
+17:04:19 [REQUEST] https://api.gbif.org/v1/species/search/byKey?q=mammals&name=Panthera%20leo
+17:04:20 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:20 [REQUEST] https://api.gbif.org/v1/species/search/byName?q=mammals&name=Panthera%20leo
+17:04:20 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:20 [REQUEST] https://api.gbif.org/v1/species/search/byCanonicalName?q=mammals&name=Panthera%20leo
+17:04:21 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:21 [REQUEST] https://api.gbif.org/v1/species/search/byNameWithAuth?q=mammals&name=Panthera%20leo
+17:04:21 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:21 [REQUEST] https://api.gbif.org/v1/species/search/byNameUsage?q=mammals&name=Panthera%20leo
+17:04:22 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:22 [REQUEST] https://api.gbif.org/v1/species/search/byNameBackbone?q=mammals&name=Panthera%20leo
+17:04:23 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:23 [REQUEST] https://api.gbif.org/v1/species/search/byNameBackboneWithAuth?q=mammals&name=Panthera%20leo
+17:04:23 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:23 [REQUEST] https://api.gbif.org/v1/species/search/byNameBackboneWithChildren?q=mammals&name=Panthera%20leo
+17:04:23 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:23 [REQUEST] https://api.gbif.org/v1/species/search/byNameWithChildren?q=mammals&name=Panthera%20leo
+17:04:24 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:24 [REQUEST] https://api.gbif.org/v1/species/search/byNubKey?q=mammals&name=Panthera%20leo
+17:04:24 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:24 [REQUEST] https://api.gbif.org/v1/species/search/byKey?q=Homo+sapiens&q=mammals&name=Panthera%20leo
+17:04:24 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:24 [REQUEST] https://api.gbif.org/v1/species/search/byName?q=Plantae&q=mammals&name=Panthera%20leo
+17:04:25 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:25 [REQUEST] https://api.gbif.org/v1/species/search/byCanonicalName?q=Plantae&q=mammals&name=Panthera%20leo
+17:04:25 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:25 [REQUEST] https://api.gbif.org/v1/species/search/94?q=mammals&name=Panthera%20leo
+17:04:26 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:26 [REQUEST] https://api.gbif.org/v1/species/2435093?fields=vernacularNames
+17:04:26 [SUCCESS] Valid Request | Status Code: 200
+17:04:26 [SUCCESS] Saved API Seed
+17:04:26 [SUCCESS] Saved API Data
+17:04:26 [REQUEST] https://api.gbif.org/v1/species/1234/classification?language=es
+17:04:27 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:27 [REQUEST] https://api.gbif.org/v1/species/1234/descriptions?language=es
+17:04:27 [SUCCESS] Valid Request | Status Code: 200
+17:04:27 [SUCCESS] Saved API Seed
+17:04:27 [SUCCESS] Saved API Data
+17:04:27 [REQUEST] https://api.gbif.org/v1/species/1234/distribution?language=es
+17:04:27 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:27 [REQUEST] https://api.gbif.org/v1/species/1234/media?language=es
+17:04:28 [SUCCESS] Valid Request | Status Code: 200
+17:04:28 [SUCCESS] Saved API Seed
+17:04:28 [SUCCESS] Saved API Data
+17:04:28 [REQUEST] https://api.gbif.org/v1/species/1234/name?language=es
+17:04:28 [SUCCESS] Valid Request | Status Code: 200
+17:04:28 [SUCCESS] Saved API Seed
+17:04:28 [SUCCESS] Saved API Data
+17:04:28 [REQUEST] https://api.gbif.org/v1/species/1234/narratives?language=es
+17:04:29 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:29 [REQUEST] https://api.gbif.org/v1/species/1234/references?language=es
+17:04:29 [SUCCESS] Valid Request | Status Code: 200
+17:04:29 [SUCCESS] Saved API Seed
+17:04:29 [SUCCESS] Saved API Data
+17:04:29 [REQUEST] https://api.gbif.org/v1/species/1234/synonyms?language=es
+17:04:29 [SUCCESS] Valid Request | Status Code: 200
+17:04:29 [SUCCESS] Saved API Seed
+17:04:29 [SUCCESS] Saved API Data
+17:04:29 [REQUEST] https://api.gbif.org/v1/species/1234/vernacularNames?language=es
+17:04:30 [SUCCESS] Valid Request | Status Code: 200
+17:04:30 [WARNING] Request Already in Seeds
+17:04:30 [SUCCESS] Saved API Data
+17:04:30 [REQUEST] https://api.gbif.org/v1/species/1234/classification?rank=order&language=es
+17:04:30 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:30 [REQUEST] https://api.gbif.org/v1/species/1234/descriptions?language=en&language=es
+17:04:31 [SUCCESS] Valid Request | Status Code: 200
+17:04:31 [SUCCESS] Saved API Seed
+17:04:31 [SUCCESS] Saved API Data
+17:04:31 [REQUEST] https://api.gbif.org/v1/species/1234/distribution?limit=10&language=es
+17:04:31 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:31 [REQUEST] https://api.gbif.org/v1/species/1234/2?language=es
+17:04:31 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:04:31 [REQUEST] https://api.gbif.org/v1/species/search?class=Mammalia
+17:04:32 [SUCCESS] Valid Request | Status Code: 200
+17:04:32 [SUCCESS] Saved API Seed
+17:04:32 [SUCCESS] Saved API Data
+17:04:32 [REQUEST] https://api.gbif.org/v1/species/classification?class=Mammalia
+17:04:33 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:04:33 [REQUEST] https://api.gbif.org/v1/species/suggest?class=Mammalia
+17:04:33 [SUCCESS] Valid Request | Status Code: 200
+17:04:33 [SUCCESS] Saved API Seed
+17:04:33 [SUCCESS] Saved API Data
+17:04:33 [REQUEST] https://api.gbif.org/v1/species/name?class=Mammalia
+17:04:33 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:04:33 [REQUEST] https://api.gbif.org/v1/species/lookup?class=Mammalia
+17:04:34 [SUCCESS] Valid Request | Status Code: 204
+17:04:34 [WARNING] Request Already in Seeds
+17:04:34 [SUCCESS] Saved API Data
+17:04:34 [REQUEST] https://api.gbif.org/v1/species/parents?class=Mammalia
+17:04:34 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:04:34 [REQUEST] https://api.gbif.org/v1/species/children?class=Mammalia
+17:04:34 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:04:34 [REQUEST] https://api.gbif.org/v1/species/synonyms?class=Mammalia
+17:04:35 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:04:35 [REQUEST] https://api.gbif.org/v1/species/media?class=Mammalia
+17:04:35 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:04:35 [REQUEST] https://api.gbif.org/v1/species/description?class=Mammalia
+17:04:36 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:04:36 [REQUEST] https://api.gbif.org/v1/species/search?q=Primates&rank=GENUS&class=Mammalia
+17:04:36 [SUCCESS] Valid Request | Status Code: 200
+17:04:36 [SUCCESS] Saved API Seed
+17:04:36 [SUCCESS] Saved API Data
+17:04:36 [REQUEST] https://api.gbif.org/v1/species/classification?name=Panthera%20leo&class=Mammalia
+17:04:36 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:04:36 [REQUEST] https://api.gbif.org/v1/species/70?class=Mammalia
+17:04:37 [SUCCESS] Valid Request | Status Code: 200
+17:04:37 [SUCCESS] Saved API Seed
+17:04:37 [SUCCESS] Saved API Data
+17:04:37 [TITLE]   Mutation Process: focusParameters
+17:04:37 [TITLE]   Mutating Request (1/1)
+17:04:37 [SECTION] Mutation Operator: addParameter
+17:04:37 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/2435093/related?rank=family
+17:04:37 [INFO]    Masked Request: https://api.gbif.org/v1/species/2435093/related?rank=family&<parameter=value>
+17:04:38 [SUCCESS] Found Values: ['offset=0', 'limit=20', 'name=Canidae', 'status=accepted', 'highlight=false', 'locale=en', 'strict=true', 'verbose=true', 'source=Catalogue+of+Life', 'kingdom=Animalia']
+17:04:38 [SECTION] Mutation Operator: removeParameter
+17:04:38 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/1234/descriptions
+17:04:38 [INFO]    Masked Request: https://api.gbif.org/v1/species/1234/descriptions
+17:04:38 [SECTION] Mutation Operator: modifyParameter
+17:04:38 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/2435093/related?rank=family
+17:04:38 [INFO]    Masked Request: https://api.gbif.org/v1/species/2435093/related?<parameter=value>
+17:04:40 [SUCCESS] Found Values: ['offset=10', 'limit=100', 'rank=GENUS', 'nameType=SCIENTIFIC', 'nameUsage=accepted', 'datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7', 'locale=en', 'name=Homo', 'nameRank=SPECIES', 'strict=true', 'nameClass=INFORMAL']
+17:04:40 [SECTION] Mutation Operator: resetParameters
+17:04:40 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/search?q=Mammalia&rank=kingdom
+17:04:40 [INFO]    Masked Request: https://api.gbif.org/v1/species/search?<parameter=value>
+17:04:41 [SUCCESS] Found Values: ['q=cat', 'rank=species', 'limit=100', 'offset=50', 'kingdom=Animalia', 'phylum=Chordata', 'order=Carnivora', 'class=Mammalia', 'family=Felidae', 'genus=Panthera']
+17:04:41 [TITLE]   Mutated Request Verification
+17:04:41 [REQUEST] https://api.gbif.org/v1/species/2435093/related?rank=family&offset=0
+17:04:42 [SUCCESS] Valid Request | Status Code: 200
+17:04:42 [SUCCESS] Saved API Seed
+17:04:42 [SUCCESS] Saved API Data
+17:04:42 [REQUEST] https://api.gbif.org/v1/species/2435093/related?rank=family&limit=20
+17:04:42 [SUCCESS] Valid Request | Status Code: 200
+17:04:42 [SUCCESS] Saved API Seed
+17:04:42 [SUCCESS] Saved API Data
+17:04:42 [REQUEST] https://api.gbif.org/v1/species/2435093/related?rank=family&name=Canidae
+17:04:42 [SUCCESS] Valid Request | Status Code: 200
+17:04:42 [SUCCESS] Saved API Seed
+17:04:43 [SUCCESS] Saved API Data
+17:04:43 [REQUEST] https://api.gbif.org/v1/species/2435093/related?rank=family&status=accepted
+17:04:43 [SUCCESS] Valid Request | Status Code: 200
+17:04:43 [SUCCESS] Saved API Seed
+17:04:43 [SUCCESS] Saved API Data
+17:04:43 [REQUEST] https://api.gbif.org/v1/species/2435093/related?rank=family&highlight=false
+17:04:43 [SUCCESS] Valid Request | Status Code: 200
+17:04:43 [SUCCESS] Saved API Seed
+17:04:43 [SUCCESS] Saved API Data
+17:04:43 [REQUEST] https://api.gbif.org/v1/species/2435093/related?rank=family&locale=en
+17:04:44 [SUCCESS] Valid Request | Status Code: 200
+17:04:44 [SUCCESS] Saved API Seed
+17:04:44 [SUCCESS] Saved API Data
+17:04:44 [REQUEST] https://api.gbif.org/v1/species/2435093/related?rank=family&strict=true
+17:04:44 [SUCCESS] Valid Request | Status Code: 200
+17:04:44 [SUCCESS] Saved API Seed
+17:04:44 [SUCCESS] Saved API Data
+17:04:44 [REQUEST] https://api.gbif.org/v1/species/2435093/related?rank=family&verbose=true
+17:04:45 [SUCCESS] Valid Request | Status Code: 200
+17:04:45 [SUCCESS] Saved API Seed
+17:04:45 [SUCCESS] Saved API Data
+17:04:45 [REQUEST] https://api.gbif.org/v1/species/2435093/related?rank=family&source=Catalogue+of+Life
+17:04:45 [SUCCESS] Valid Request | Status Code: 200
+17:04:45 [SUCCESS] Saved API Seed
+17:04:45 [SUCCESS] Saved API Data
+17:04:45 [REQUEST] https://api.gbif.org/v1/species/2435093/related?rank=family&kingdom=Animalia
+17:04:46 [SUCCESS] Valid Request | Status Code: 200
+17:04:46 [SUCCESS] Saved API Seed
+17:04:46 [SUCCESS] Saved API Data
+17:04:46 [REQUEST] https://api.gbif.org/v1/species/1234/descriptions
+17:04:46 [SUCCESS] Valid Request | Status Code: 200
+17:04:46 [WARNING] Request Already in Seeds
+17:04:46 [SUCCESS] Saved API Data
+17:04:46 [REQUEST] https://api.gbif.org/v1/species/2435093/related?offset=10
+17:04:47 [SUCCESS] Valid Request | Status Code: 200
+17:04:47 [SUCCESS] Saved API Seed
+17:04:47 [SUCCESS] Saved API Data
+17:04:47 [REQUEST] https://api.gbif.org/v1/species/2435093/related?limit=100
+17:04:47 [SUCCESS] Valid Request | Status Code: 200
+17:04:47 [WARNING] Request Already in Seeds
+17:04:47 [SUCCESS] Saved API Data
+17:04:47 [REQUEST] https://api.gbif.org/v1/species/2435093/related?rank=GENUS
+17:04:47 [SUCCESS] Valid Request | Status Code: 200
+17:04:47 [SUCCESS] Saved API Seed
+17:04:48 [SUCCESS] Saved API Data
+17:04:48 [REQUEST] https://api.gbif.org/v1/species/2435093/related?nameType=SCIENTIFIC
+17:04:48 [SUCCESS] Valid Request | Status Code: 200
+17:04:48 [WARNING] Request Already in Seeds
+17:04:48 [SUCCESS] Saved API Data
+17:04:48 [REQUEST] https://api.gbif.org/v1/species/2435093/related?nameUsage=accepted
+17:04:48 [SUCCESS] Valid Request | Status Code: 200
+17:04:48 [SUCCESS] Saved API Seed
+17:04:48 [SUCCESS] Saved API Data
+17:04:48 [REQUEST] https://api.gbif.org/v1/species/2435093/related?datasetKey=50c9509d-22c7-4a22-a47d-8c48425ef4a7
+17:04:49 [SUCCESS] Valid Request | Status Code: 200
+17:04:49 [SUCCESS] Saved API Seed
+17:04:49 [SUCCESS] Saved API Data
+17:04:49 [REQUEST] https://api.gbif.org/v1/species/2435093/related?locale=en
+17:04:49 [SUCCESS] Valid Request | Status Code: 200
+17:04:49 [SUCCESS] Saved API Seed
+17:04:49 [SUCCESS] Saved API Data
+17:04:49 [REQUEST] https://api.gbif.org/v1/species/2435093/related?name=Homo
+17:04:50 [SUCCESS] Valid Request | Status Code: 200
+17:04:50 [SUCCESS] Saved API Seed
+17:04:50 [SUCCESS] Saved API Data
+17:04:50 [REQUEST] https://api.gbif.org/v1/species/2435093/related?nameRank=SPECIES
+17:04:50 [SUCCESS] Valid Request | Status Code: 200
+17:04:50 [SUCCESS] Saved API Seed
+17:04:50 [SUCCESS] Saved API Data
+17:04:50 [REQUEST] https://api.gbif.org/v1/species/2435093/related?strict=true
+17:04:51 [SUCCESS] Valid Request | Status Code: 200
+17:04:51 [SUCCESS] Saved API Seed
+17:04:51 [SUCCESS] Saved API Data
+17:04:51 [REQUEST] https://api.gbif.org/v1/species/2435093/related?nameClass=INFORMAL
+17:04:51 [SUCCESS] Valid Request | Status Code: 200
+17:04:51 [SUCCESS] Saved API Seed
+17:04:51 [SUCCESS] Saved API Data
+17:04:51 [REQUEST] https://api.gbif.org/v1/species/search?q=cat
+17:04:52 [SUCCESS] Valid Request | Status Code: 200
+17:04:52 [SUCCESS] Saved API Seed
+17:04:52 [SUCCESS] Saved API Data
+17:04:52 [REQUEST] https://api.gbif.org/v1/species/search?rank=species
+17:04:52 [SUCCESS] Valid Request | Status Code: 200
+17:04:52 [SUCCESS] Saved API Seed
+17:04:52 [SUCCESS] Saved API Data
+17:04:52 [REQUEST] https://api.gbif.org/v1/species/search?limit=100
+17:04:53 [SUCCESS] Valid Request | Status Code: 200
+17:04:53 [SUCCESS] Saved API Seed
+17:04:53 [SUCCESS] Saved API Data
+17:04:53 [REQUEST] https://api.gbif.org/v1/species/search?offset=50
+17:04:54 [SUCCESS] Valid Request | Status Code: 200
+17:04:54 [SUCCESS] Saved API Seed
+17:04:54 [SUCCESS] Saved API Data
+17:04:54 [REQUEST] https://api.gbif.org/v1/species/search?kingdom=Animalia
+17:04:55 [SUCCESS] Valid Request | Status Code: 200
+17:04:55 [SUCCESS] Saved API Seed
+17:04:55 [SUCCESS] Saved API Data
+17:04:55 [REQUEST] https://api.gbif.org/v1/species/search?phylum=Chordata
+17:04:55 [SUCCESS] Valid Request | Status Code: 200
+17:04:55 [SUCCESS] Saved API Seed
+17:04:55 [SUCCESS] Saved API Data
+17:04:55 [REQUEST] https://api.gbif.org/v1/species/search?order=Carnivora
+17:04:56 [SUCCESS] Valid Request | Status Code: 200
+17:04:56 [SUCCESS] Saved API Seed
+17:04:56 [SUCCESS] Saved API Data
+17:04:56 [REQUEST] https://api.gbif.org/v1/species/search?class=Mammalia
+17:04:57 [SUCCESS] Valid Request | Status Code: 200
+17:04:57 [WARNING] Request Already in Seeds
+17:04:57 [SUCCESS] Saved API Data
+17:04:57 [REQUEST] https://api.gbif.org/v1/species/search?family=Felidae
+17:04:57 [SUCCESS] Valid Request | Status Code: 200
+17:04:57 [SUCCESS] Saved API Seed
+17:04:57 [SUCCESS] Saved API Data
+17:04:57 [REQUEST] https://api.gbif.org/v1/species/search?genus=Panthera
+17:04:58 [SUCCESS] Valid Request | Status Code: 200
+17:04:58 [SUCCESS] Saved API Seed
+17:04:58 [SUCCESS] Saved API Data
+17:04:58 [TITLE]   Execution Results
+17:04:58 [INFO]    Saved to: ./outputs/GBIF_Species_API/executions/6.json
+17:04:58 [TITLE]   Launching RESTSpecIT
+17:04:58 [TITLE]   Executing: GBIF Species API
+17:04:58 [SUCCESS] Loaded API Data
+17:04:59 [SUCCESS] Loaded API Seeds
+17:04:59 [SUCCESS] Loaded API Seeds
+17:04:59 [TITLE]   Inferring Base API Data
+17:04:59 [SECTION] Inferring Info Data
+17:04:59 [WARNING] Info Data Already Exists
+17:04:59 [SECTION] Inferring Online Documentation Data
+17:04:59 [WARNING] Online Documentation Data Already Exists
+17:04:59 [SECTION] Inferring Server Data
+17:04:59 [WARNING] Server Data Already Exists
+17:04:59 [SECTION] Inferring Request Seeds
+17:05:01 [REQUEST] https://api.gbif.org/v1/species/search?q=Prunus&rank=GENUS
+17:05:02 [SUCCESS] Valid Request | Status Code: 200
+17:05:02 [SUCCESS] Saved API Seed
+17:05:02 [SUCCESS] Saved API Data
+17:05:02 [REQUEST] https://api.gbif.org/v1/species/123
+17:05:02 [SUCCESS] Valid Request | Status Code: 200
+17:05:02 [SUCCESS] Saved API Seed
+17:05:02 [SUCCESS] Saved API Data
+17:05:02 [REQUEST] https://api.gbif.org/v1/species/123/children
+17:05:03 [SUCCESS] Valid Request | Status Code: 200
+17:05:03 [SUCCESS] Saved API Seed
+17:05:03 [SUCCESS] Saved API Data
+17:05:03 [REQUEST] https://api.gbif.org/v1/species/123/descriptions
+17:05:03 [SUCCESS] Valid Request | Status Code: 200
+17:05:03 [SUCCESS] Saved API Seed
+17:05:03 [SUCCESS] Saved API Data
+17:05:03 [REQUEST] https://api.gbif.org/v1/species/123/media
+17:05:03 [SUCCESS] Valid Request | Status Code: 200
+17:05:03 [SUCCESS] Saved API Seed
+17:05:03 [SUCCESS] Saved API Data
+17:05:03 [REQUEST] https://api.gbif.org/v1/species/123/occurrences
+17:05:04 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:04 [REQUEST] https://api.gbif.org/v1/species/123/names
+17:05:04 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:04 [REQUEST] https://api.gbif.org/v1/species/match?name=Ursus%20arctos
+17:05:05 [SUCCESS] Valid Request | Status Code: 200
+17:05:05 [SUCCESS] Saved API Seed
+17:05:05 [SUCCESS] Saved API Data
+17:05:05 [SECTION] Inferring Error Schema
+17:05:05 [REQUEST] https://api.gbif.org/invalidRoute/?invalidParam=invalidValue
+17:05:05 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:05 [SUCCESS] Error Schema Found
+17:05:05 [SUCCESS] Saved API Data
+17:05:05 [TITLE]   Mutation Process: focusRoutes
+17:05:05 [TITLE]   Mutating Request (1/1)
+17:05:05 [SECTION] Mutation Operator: addRoute
+17:05:05 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/8730599/children?strict=false
+17:05:05 [INFO]    Masked Request: https://api.gbif.org/v1/species/8730599/children/<route>?strict=false
+17:05:08 [SUCCESS] Found Values: ['byKey', 'byName', 'byRank', 'byCanonicalName', 'byParent', 'byDatasetKey', 'byNameLike', 'byCanonicalNameLike', 'byRankType', 'byIssue', 'byKey?limit=10', 'byName?rank=GENUS', 'byRank?rank=GENUS', '4']
+17:05:08 [SECTION] Mutation Operator: removeRoute
+17:05:08 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/2435093/metrics?taxonomicStatus=ACCEPTED
+17:05:08 [INFO]    Masked Request: https://api.gbif.org/v1/species/2435093?taxonomicStatus=ACCEPTED
+17:05:08 [SECTION] Mutation Operator: modifyRoute
+17:05:08 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/1234/references?language=es
+17:05:08 [INFO]    Masked Request: https://api.gbif.org/v1/species/1234/<route>?language=es
+17:05:11 [SUCCESS] Found Values: ['classification', 'images', 'descriptions', 'synonyms', 'references', 'vernacularNames', 'media', 'occurrence', 'literature', 'classification?rank=genus', 'images?limit=10', 'descriptions?language=en', '84']
+17:05:11 [SECTION] Mutation Operator: resetRoutes
+17:05:11 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/58?name=Panthera%20leo&language=en
+17:05:11 [INFO]    Masked Request: https://api.gbif.org/v1/species/<route>?name=Panthera%20leo&language=en
+17:05:14 [SUCCESS] Found Values: ['search', 'classification', 'synonym', 'parent', 'children', 'related', 'nameUsage', 'vernacularName', 'media', 'description', 'search?q=Primates&rank=GENUS', 'classification?name=Panthera%20leo', 'synonym?q=Panthera%20leo', '96']
+17:05:14 [TITLE]   Mutated Request Verification
+17:05:14 [REQUEST] https://api.gbif.org/v1/species/8730599/children/byKey?strict=false
+17:05:15 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:15 [REQUEST] https://api.gbif.org/v1/species/8730599/children/byName?strict=false
+17:05:15 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:15 [REQUEST] https://api.gbif.org/v1/species/8730599/children/byRank?strict=false
+17:05:15 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:15 [REQUEST] https://api.gbif.org/v1/species/8730599/children/byCanonicalName?strict=false
+17:05:16 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:16 [REQUEST] https://api.gbif.org/v1/species/8730599/children/byParent?strict=false
+17:05:16 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:16 [REQUEST] https://api.gbif.org/v1/species/8730599/children/byDatasetKey?strict=false
+17:05:17 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:17 [REQUEST] https://api.gbif.org/v1/species/8730599/children/byNameLike?strict=false
+17:05:17 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:17 [REQUEST] https://api.gbif.org/v1/species/8730599/children/byCanonicalNameLike?strict=false
+17:05:17 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:17 [REQUEST] https://api.gbif.org/v1/species/8730599/children/byRankType?strict=false
+17:05:18 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:18 [REQUEST] https://api.gbif.org/v1/species/8730599/children/byIssue?strict=false
+17:05:18 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:18 [REQUEST] https://api.gbif.org/v1/species/8730599/children/byKey?limit=10&strict=false
+17:05:19 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:19 [REQUEST] https://api.gbif.org/v1/species/8730599/children/byName?rank=GENUS&strict=false
+17:05:19 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:19 [REQUEST] https://api.gbif.org/v1/species/8730599/children/byRank?rank=GENUS&strict=false
+17:05:19 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:19 [REQUEST] https://api.gbif.org/v1/species/8730599/children/4?strict=false
+17:05:20 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:20 [REQUEST] https://api.gbif.org/v1/species/2435093?taxonomicStatus=ACCEPTED
+17:05:20 [SUCCESS] Valid Request | Status Code: 200
+17:05:20 [SUCCESS] Saved API Seed
+17:05:20 [SUCCESS] Saved API Data
+17:05:20 [REQUEST] https://api.gbif.org/v1/species/1234/classification?language=es
+17:05:21 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:21 [REQUEST] https://api.gbif.org/v1/species/1234/images?language=es
+17:05:21 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:21 [REQUEST] https://api.gbif.org/v1/species/1234/descriptions?language=es
+17:05:21 [SUCCESS] Valid Request | Status Code: 200
+17:05:21 [WARNING] Request Already in Seeds
+17:05:21 [SUCCESS] Saved API Data
+17:05:21 [REQUEST] https://api.gbif.org/v1/species/1234/synonyms?language=es
+17:05:22 [SUCCESS] Valid Request | Status Code: 200
+17:05:22 [WARNING] Request Already in Seeds
+17:05:22 [SUCCESS] Saved API Data
+17:05:22 [REQUEST] https://api.gbif.org/v1/species/1234/references?language=es
+17:05:22 [SUCCESS] Valid Request | Status Code: 200
+17:05:22 [WARNING] Request Already in Seeds
+17:05:22 [SUCCESS] Saved API Data
+17:05:22 [REQUEST] https://api.gbif.org/v1/species/1234/vernacularNames?language=es
+17:05:22 [SUCCESS] Valid Request | Status Code: 200
+17:05:22 [WARNING] Request Already in Seeds
+17:05:22 [SUCCESS] Saved API Data
+17:05:22 [REQUEST] https://api.gbif.org/v1/species/1234/media?language=es
+17:05:23 [SUCCESS] Valid Request | Status Code: 200
+17:05:23 [WARNING] Request Already in Seeds
+17:05:23 [SUCCESS] Saved API Data
+17:05:23 [REQUEST] https://api.gbif.org/v1/species/1234/occurrence?language=es
+17:05:23 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:23 [REQUEST] https://api.gbif.org/v1/species/1234/literature?language=es
+17:05:23 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:23 [REQUEST] https://api.gbif.org/v1/species/1234/classification?rank=genus&language=es
+17:05:24 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:24 [REQUEST] https://api.gbif.org/v1/species/1234/images?limit=10&language=es
+17:05:24 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:24 [REQUEST] https://api.gbif.org/v1/species/1234/descriptions?language=en&language=es
+17:05:24 [SUCCESS] Valid Request | Status Code: 200
+17:05:24 [WARNING] Request Already in Seeds
+17:05:25 [SUCCESS] Saved API Data
+17:05:25 [REQUEST] https://api.gbif.org/v1/species/1234/84?language=es
+17:05:25 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+17:05:25 [REQUEST] https://api.gbif.org/v1/species/search?name=Panthera%20leo&language=en
+17:05:26 [SUCCESS] Valid Request | Status Code: 200
+17:05:26 [SUCCESS] Saved API Seed
+17:05:26 [SUCCESS] Saved API Data
+17:05:26 [REQUEST] https://api.gbif.org/v1/species/classification?name=Panthera%20leo&language=en
+17:05:26 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:05:26 [REQUEST] https://api.gbif.org/v1/species/synonym?name=Panthera%20leo&language=en
+17:05:26 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:05:26 [REQUEST] https://api.gbif.org/v1/species/parent?name=Panthera%20leo&language=en
+17:05:27 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:05:27 [REQUEST] https://api.gbif.org/v1/species/children?name=Panthera%20leo&language=en
+17:05:27 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:05:27 [REQUEST] https://api.gbif.org/v1/species/related?name=Panthera%20leo&language=en
+17:05:27 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:05:27 [REQUEST] https://api.gbif.org/v1/species/nameUsage?name=Panthera%20leo&language=en
+17:05:28 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:05:28 [REQUEST] https://api.gbif.org/v1/species/vernacularName?name=Panthera%20leo&language=en
+17:05:28 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:05:28 [REQUEST] https://api.gbif.org/v1/species/media?name=Panthera%20leo&language=en
+17:05:29 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:05:29 [REQUEST] https://api.gbif.org/v1/species/description?name=Panthera%20leo&language=en
+17:05:29 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:05:29 [REQUEST] https://api.gbif.org/v1/species/search?q=Primates&rank=GENUS&name=Panthera%20leo&language=en
+17:05:29 [SUCCESS] Valid Request | Status Code: 200
+17:05:29 [SUCCESS] Saved API Seed
+17:05:29 [SUCCESS] Saved API Data
+17:05:29 [REQUEST] https://api.gbif.org/v1/species/classification?name=Panthera%20leo&name=Panthera%20leo&language=en
+17:05:30 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:05:30 [REQUEST] https://api.gbif.org/v1/species/synonym?q=Panthera%20leo&name=Panthera%20leo&language=en
+17:05:30 [ERROR]   Invalid Request | Status Code: 400 | Reason: status-code
+17:05:30 [REQUEST] https://api.gbif.org/v1/species/96?name=Panthera%20leo&language=en
+17:05:30 [SUCCESS] Valid Request | Status Code: 200
+17:05:30 [SUCCESS] Saved API Seed
+17:05:30 [SUCCESS] Saved API Data
+17:05:30 [TITLE]   Mutation Process: focusParameters
+17:05:30 [TITLE]   Mutating Request (1/1)
+17:05:30 [SECTION] Mutation Operator: addParameter
+17:05:30 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/8730599/media?date=2021
+17:05:30 [INFO]    Masked Request: https://api.gbif.org/v1/species/8730599/media?date=2021&<parameter=value>
+17:05:33 [SUCCESS] Found Values: ['taxonKey=8730599', 'limit=10', 'offset=0', 'mimeTypes=image', 'publishingOrg=5f4a1b1c-4ab3-44b3-ae1a-7f892b0b3f4a', 'format=json', 'country=US', 'basisOfRecord=OBSERVATION', 'year=2020', 'mediaType=StillImage', 'source=INaturalist']
+17:05:33 [SECTION] Mutation Operator: removeParameter
+17:05:33 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/1234/synonyms?language=es
+17:05:33 [INFO]    Masked Request: https://api.gbif.org/v1/species/1234/synonyms
+17:05:33 [SECTION] Mutation Operator: modifyParameter
+17:05:33 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/2435093/related?rank=family
+17:05:33 [INFO]    Masked Request: https://api.gbif.org/v1/species/2435093/related?<parameter=value>
+17:05:34 [SUCCESS] Found Values: ['offset=10', 'key=demo', 'rank=species', 'limit=5', 'language=eng', 'datasetKey=7ddf754f-d193-4cc9-b351-99906754a03b', 'nameType=SCIENTIFIC', 'highertaxonKey=212', 'nameUsageKey=123456', 'fields=vernacularNames', 'strict=true']
+17:05:34 [SECTION] Mutation Operator: resetParameters
+17:05:34 [INFO]    Chosen Seed: https://api.gbif.org/v1/species/search?q=Prunus&limit=10
+17:05:34 [INFO]    Masked Request: https://api.gbif.org/v1/species/search?<parameter=value>
+17:05:35 [SUCCESS] Found Values: ['q=plantae', 'rank=GENUS', 'limit=20', 'offset=10', 'kingdom=Animalia', 'phylum=Chordata', 'class=Mammalia', 'order=Carnivora', 'family=Felidae', 'genus=Panthera']
+17:05:35 [TITLE]   Mutated Request Verification
+17:05:35 [REQUEST] https://api.gbif.org/v1/species/8730599/media?date=2021&taxonKey=8730599
+17:05:36 [SUCCESS] Valid Request | Status Code: 200
+17:05:36 [SUCCESS] Saved API Seed
+17:05:36 [SUCCESS] Saved API Data
+17:05:36 [REQUEST] https://api.gbif.org/v1/species/8730599/media?date=2021&limit=10
+17:05:36 [SUCCESS] Valid Request | Status Code: 200
+17:05:36 [SUCCESS] Saved API Seed
+17:05:36 [SUCCESS] Saved API Data
+17:05:36 [REQUEST] https://api.gbif.org/v1/species/8730599/media?date=2021&offset=0
+17:05:37 [SUCCESS] Valid Request | Status Code: 200
+17:05:37 [SUCCESS] Saved API Seed
+17:05:37 [SUCCESS] Saved API Data
+17:05:37 [REQUEST] https://api.gbif.org/v1/species/8730599/media?date=2021&mimeTypes=image
+17:05:37 [SUCCESS] Valid Request | Status Code: 200
+17:05:37 [SUCCESS] Saved API Seed
+17:05:37 [SUCCESS] Saved API Data
+17:05:37 [REQUEST] https://api.gbif.org/v1/species/8730599/media?date=2021&publishingOrg=5f4a1b1c-4ab3-44b3-ae1a-7f892b0b3f4a
+17:05:37 [SUCCESS] Valid Request | Status Code: 200
+17:05:37 [SUCCESS] Saved API Seed
+17:05:37 [SUCCESS] Saved API Data
+17:05:37 [REQUEST] https://api.gbif.org/v1/species/8730599/media?date=2021&format=json
+17:05:38 [SUCCESS] Valid Request | Status Code: 200
+17:05:38 [SUCCESS] Saved API Seed
+17:05:38 [SUCCESS] Saved API Data
+17:05:38 [REQUEST] https://api.gbif.org/v1/species/8730599/media?date=2021&country=US
+17:05:38 [SUCCESS] Valid Request | Status Code: 200
+17:05:38 [SUCCESS] Saved API Seed
+17:05:38 [SUCCESS] Saved API Data
+17:05:38 [REQUEST] https://api.gbif.org/v1/species/8730599/media?date=2021&basisOfRecord=OBSERVATION
+17:05:38 [SUCCESS] Valid Request | Status Code: 200
+17:05:38 [SUCCESS] Saved API Seed
+17:05:38 [SUCCESS] Saved API Data
+17:05:38 [REQUEST] https://api.gbif.org/v1/species/8730599/media?date=2021&year=2020
+17:05:39 [SUCCESS] Valid Request | Status Code: 200
+17:05:39 [SUCCESS] Saved API Seed
+17:05:39 [SUCCESS] Saved API Data
+17:05:39 [REQUEST] https://api.gbif.org/v1/species/8730599/media?date=2021&mediaType=StillImage
+17:05:39 [SUCCESS] Valid Request | Status Code: 200
+17:05:39 [SUCCESS] Saved API Seed
+17:05:39 [SUCCESS] Saved API Data
+17:05:39 [REQUEST] https://api.gbif.org/v1/species/8730599/media?date=2021&source=INaturalist
+17:05:39 [SUCCESS] Valid Request | Status Code: 200
+17:05:39 [SUCCESS] Saved API Seed
+17:05:40 [SUCCESS] Saved API Data
+17:05:40 [REQUEST] https://api.gbif.org/v1/species/1234/synonyms
+17:05:40 [SUCCESS] Valid Request | Status Code: 200
+17:05:40 [SUCCESS] Saved API Seed
+17:05:40 [SUCCESS] Saved API Data
+17:05:40 [REQUEST] https://api.gbif.org/v1/species/2435093/related?offset=10
+17:05:40 [SUCCESS] Valid Request | Status Code: 200
+17:05:40 [WARNING] Request Already in Seeds
+17:05:40 [SUCCESS] Saved API Data
+17:05:40 [REQUEST] https://api.gbif.org/v1/species/2435093/related?key=demo
+17:05:41 [SUCCESS] Valid Request | Status Code: 200
+17:05:41 [SUCCESS] Saved API Seed
+17:05:41 [SUCCESS] Saved API Data
+17:05:41 [REQUEST] https://api.gbif.org/v1/species/2435093/related?rank=species
+17:05:41 [SUCCESS] Valid Request | Status Code: 200
+17:05:41 [SUCCESS] Saved API Seed
+17:05:41 [SUCCESS] Saved API Data
+17:05:41 [REQUEST] https://api.gbif.org/v1/species/2435093/related?limit=5
+17:05:42 [SUCCESS] Valid Request | Status Code: 200
+17:05:42 [SUCCESS] Saved API Seed
+17:05:42 [SUCCESS] Saved API Data
+17:05:42 [REQUEST] https://api.gbif.org/v1/species/2435093/related?language=eng
+17:05:42 [SUCCESS] Valid Request | Status Code: 200
+17:05:42 [SUCCESS] Saved API Seed
+17:05:42 [SUCCESS] Saved API Data
+17:05:42 [REQUEST] https://api.gbif.org/v1/species/2435093/related?datasetKey=7ddf754f-d193-4cc9-b351-99906754a03b
+17:05:42 [SUCCESS] Valid Request | Status Code: 200
+17:05:42 [SUCCESS] Saved API Seed
+17:05:42 [SUCCESS] Saved API Data
+17:05:42 [REQUEST] https://api.gbif.org/v1/species/2435093/related?nameType=SCIENTIFIC
+17:05:43 [SUCCESS] Valid Request | Status Code: 200
+17:05:43 [WARNING] Request Already in Seeds
+17:05:43 [SUCCESS] Saved API Data
+17:05:43 [REQUEST] https://api.gbif.org/v1/species/2435093/related?highertaxonKey=212
+17:05:43 [SUCCESS] Valid Request | Status Code: 200
+17:05:43 [SUCCESS] Saved API Seed
+17:05:43 [SUCCESS] Saved API Data
+17:05:43 [REQUEST] https://api.gbif.org/v1/species/2435093/related?nameUsageKey=123456
+17:05:44 [SUCCESS] Valid Request | Status Code: 200
+17:05:44 [SUCCESS] Saved API Seed
+17:05:44 [SUCCESS] Saved API Data
+17:05:44 [REQUEST] https://api.gbif.org/v1/species/2435093/related?fields=vernacularNames
+17:05:44 [SUCCESS] Valid Request | Status Code: 200
+17:05:44 [WARNING] Request Already in Seeds
+17:05:44 [SUCCESS] Saved API Data
+17:05:44 [REQUEST] https://api.gbif.org/v1/species/2435093/related?strict=true
+17:05:44 [SUCCESS] Valid Request | Status Code: 200
+17:05:44 [WARNING] Request Already in Seeds
+17:05:44 [SUCCESS] Saved API Data
+17:05:44 [REQUEST] https://api.gbif.org/v1/species/search?q=plantae
+17:05:45 [SUCCESS] Valid Request | Status Code: 200
+17:05:45 [SUCCESS] Saved API Seed
+17:05:45 [SUCCESS] Saved API Data
+17:05:45 [REQUEST] https://api.gbif.org/v1/species/search?rank=GENUS
+17:05:45 [SUCCESS] Valid Request | Status Code: 200
+17:05:45 [SUCCESS] Saved API Seed
+17:05:45 [SUCCESS] Saved API Data
+17:05:45 [REQUEST] https://api.gbif.org/v1/species/search?limit=20
+17:05:46 [SUCCESS] Valid Request | Status Code: 200
+17:05:46 [SUCCESS] Saved API Seed
+17:05:46 [SUCCESS] Saved API Data
+17:05:46 [REQUEST] https://api.gbif.org/v1/species/search?offset=10
+17:05:47 [SUCCESS] Valid Request | Status Code: 200
+17:05:47 [WARNING] Request Already in Seeds
+17:05:47 [SUCCESS] Saved API Data
+17:05:47 [REQUEST] https://api.gbif.org/v1/species/search?kingdom=Animalia
+17:05:47 [SUCCESS] Valid Request | Status Code: 200
+17:05:47 [WARNING] Request Already in Seeds
+17:05:47 [SUCCESS] Saved API Data
+17:05:47 [REQUEST] https://api.gbif.org/v1/species/search?phylum=Chordata
+17:05:48 [SUCCESS] Valid Request | Status Code: 200
+17:05:48 [WARNING] Request Already in Seeds
+17:05:48 [SUCCESS] Saved API Data
+17:05:48 [REQUEST] https://api.gbif.org/v1/species/search?class=Mammalia
+17:05:48 [SUCCESS] Valid Request | Status Code: 200
+17:05:48 [WARNING] Request Already in Seeds
+17:05:48 [SUCCESS] Saved API Data
+17:05:48 [REQUEST] https://api.gbif.org/v1/species/search?order=Carnivora
+17:05:49 [SUCCESS] Valid Request | Status Code: 200
+17:05:49 [WARNING] Request Already in Seeds
+17:05:49 [SUCCESS] Saved API Data
+17:05:49 [REQUEST] https://api.gbif.org/v1/species/search?family=Felidae
+17:05:49 [SUCCESS] Valid Request | Status Code: 200
+17:05:49 [WARNING] Request Already in Seeds
+17:05:49 [SUCCESS] Saved API Data
+17:05:49 [REQUEST] https://api.gbif.org/v1/species/search?genus=Panthera
+17:05:50 [SUCCESS] Valid Request | Status Code: 200
+17:05:50 [WARNING] Request Already in Seeds
+17:05:50 [SUCCESS] Saved API Data
+17:05:50 [TITLE]   Execution Results
+17:05:50 [INFO]    Saved to: ./outputs/GBIF_Species_API/executions/7.json

@@ -1,134 +1,141 @@
 {
     "requests": {
-        "valid": 45,
+        "valid": 46,
         "total": 73
     },
     "routes": {
-        "amount": 11,
+        "amount": 12,
         "list": [
-            "/v1/species/{id}",
-            "/v1/species/{id}/name",
-            "/v1/species/{id}/synonyms",
-            "/v1/species/{id}/vernacularNames",
-            "/v1/species/{id}/descriptions",
-            "/v1/species/{id}/media",
-            "/v1/species/{id}/references",
-            "/v1/species/{id}/distributions",
             "/v1/species/search",
+            "/v1/species/match",
+            "/v1/species/lookup",
+            "/v1/species/{id}",
+            "/v1/species/{id}/children",
+            "/v1/species/{id}/synonyms",
+            "/v1/species/{id}/name",
+            "/v1/species/{id}/references",
+            "/v1/species/{id}/media",
+            "/v1/species/{id}/descriptions",
             "/v1/species/suggest",
-            "/v1/species/{id}/related"
+            "/v1/species/{id}/vernacularNames"
         ]
     },
     "parameters": {
-        "amount": 21,
+        "amount": 23,
         "list": [
             "q",
-            "rank",
-            "isExtinct",
-            "year",
-            "language",
+            "name",
+            "fields",
             "limit",
-            "order",
-            "country",
+            "language",
+            "kingdom",
+            "rank",
             "offset",
-            "isMarine",
-            "isFreshwater",
-            "locale",
-            "datasetKey",
-            "taxonKey",
+            "highertaxon_key",
+            "name_type",
+            "dataset_key",
+            "country",
+            "year",
+            "phylum",
+            "class",
+            "order",
+            "family",
+            "genus",
             "nameType",
-            "strict",
-            "status",
-            "mediaType",
-            "typeStatus",
-            "sourceTaxonKey",
-            "lifezone"
+            "isPreferredName",
+            "isPlural",
+            "isTranslated",
+            "source"
         ]
     },
     "parameter-values": {
         "q": [
-            "elephant"
+            "Canis%20lupus",
+            "Panthera+tigris",
+            "rose",
+            "mammal"
         ],
-        "rank": [
-            "species",
-            "kingdom"
+        "name": [
+            "Panthera%20leo",
+            "Ursus%20arctos"
         ],
-        "isExtinct": [
-            "true",
-            "false"
-        ],
-        "year": [
-            "2020",
-            "1990",
-            "2010"
-        ],
-        "language": [
-            "en"
+        "fields": [
+            "vernacularNames"
         ],
         "limit": [
             "10",
             "100",
-            "5"
+            "20"
         ],
-        "order": [
-            "Artiodactyla",
-            "asc"
+        "language": [
+            "en",
+            "es",
+            "spanish"
         ],
-        "country": [
-            "US",
-            "DE",
-            "Canada"
+        "kingdom": [
+            "Animalia"
+        ],
+        "rank": [
+            "species",
+            "GENUS"
         ],
         "offset": [
             "50",
-            "10",
-            "20"
+            "10"
         ],
-        "isMarine": [
-            "true"
+        "highertaxon_key": [
+            "332"
         ],
-        "isFreshwater": [
-            "false"
+        "name_type": [
+            "SCIENTIFIC"
         ],
-        "locale": [
-            "en"
+        "dataset_key": [
+            "50c9509d-22c7-4a22-a47d-8c48425ef4a7"
         ],
-        "datasetKey": [
-            "1a2b3c4d"
+        "country": [
+            "US"
         ],
-        "taxonKey": [
-            "5678"
+        "year": [
+            "1800"
+        ],
+        "phylum": [
+            "Chordata"
+        ],
+        "class": [
+            "Mammalia"
+        ],
+        "order": [
+            "Carnivora"
+        ],
+        "family": [
+            "Felidae"
+        ],
+        "genus": [
+            "Panthera"
         ],
         "nameType": [
             "SCIENTIFIC"
         ],
-        "strict": [
+        "isPreferredName": [
+            "true"
+        ],
+        "isPlural": [
             "false"
         ],
-        "status": [
-            "ACCEPTED"
+        "isTranslated": [
+            "true"
         ],
-        "mediaType": [
-            "image",
-            "video"
-        ],
-        "typeStatus": [
-            "holotype"
-        ],
-        "sourceTaxonKey": [
-            "12345"
-        ],
-        "lifezone": [
-            "temperate"
+        "source": [
+            "ITIS"
         ]
     },
     "strategies": [
         "focusRoutes",
         "focusParameters"
     ],
-    "time": "105.27s",
+    "time": "51.59s",
     "tokens": {
-        "input": 1043,
-        "output": 333
+        "input": 1130,
+        "output": 481
     }
 }
