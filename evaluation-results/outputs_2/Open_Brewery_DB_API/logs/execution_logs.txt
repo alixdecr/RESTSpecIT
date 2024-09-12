@@ -1,0 +1,1862 @@
+11:59:04 [TITLE]   Launching RESTSpecIT
+11:59:04 [TITLE]   Executing: Open Brewery DB API
+11:59:04 [SUCCESS] Created New API Data File
+11:59:04 [SUCCESS] Created New API Seed File
+11:59:04 [SUCCESS] Created New API Seed File
+11:59:04 [TITLE]   Inferring Base API Data
+11:59:04 [SECTION] Inferring Info Data
+11:59:06 [REQUEST] https://www.openbrewerydb.org/terms
+11:59:06 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:07 [REQUEST] https://www.openbrewerydb.org/terms-of-service
+11:59:07 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:07 [REQUEST] https://www.openbrewerydb.org/terms
+11:59:08 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:08 [REQUEST] https://www.openbrewerydb.org/contact
+11:59:09 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:09 [REQUEST] https://www.openbrewerydb.org/support
+11:59:10 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:11 [REQUEST] https://www.openbrewerydb.org/contact
+11:59:12 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:13 [REQUEST] https://opendatacommons.org/licenses/odbl
+11:59:14 [SUCCESS] Valid Request | Status Code: 200
+11:59:14 [SUCCESS] Info Data Found
+11:59:14 [SUCCESS] Saved API Data
+11:59:14 [SECTION] Inferring Online Documentation Data
+11:59:14 [REQUEST] https://www.openbrewerydb.org
+11:59:15 [SUCCESS] Valid Request | Status Code: 200
+11:59:15 [SUCCESS] Online Documentation Data Found
+11:59:15 [SUCCESS] Saved API Data
+11:59:15 [SECTION] Inferring Server Data
+11:59:15 [SUCCESS] Server Data Found
+11:59:15 [SUCCESS] Saved API Data
+11:59:15 [SECTION] Inferring Request Seeds
+11:59:18 [REQUEST] https://api.openbrewerydb.org/breweries
+11:59:19 [SUCCESS] Valid Request | Status Code: 200
+11:59:19 [SUCCESS] Saved API Seed
+11:59:19 [SUCCESS] Saved API Data
+11:59:19 [REQUEST] https://api.openbrewerydb.org/breweries?by_city=San+Diego
+11:59:19 [SUCCESS] Valid Request | Status Code: 200
+11:59:19 [SUCCESS] Saved API Seed
+11:59:19 [SUCCESS] Saved API Data
+11:59:19 [REQUEST] https://api.openbrewerydb.org/breweries?by_state=California
+11:59:19 [SUCCESS] Valid Request | Status Code: 200
+11:59:19 [SUCCESS] Saved API Seed
+11:59:19 [SUCCESS] Saved API Data
+11:59:19 [REQUEST] https://api.openbrewerydb.org/breweries?by_name=Stone+Brewing
+11:59:20 [SUCCESS] Valid Request | Status Code: 200
+11:59:20 [SUCCESS] Saved API Seed
+11:59:20 [SUCCESS] Saved API Data
+11:59:20 [REQUEST] https://api.openbrewerydb.org/breweries?by_tag=dog-friendly
+11:59:20 [SUCCESS] Valid Request | Status Code: 200
+11:59:20 [SUCCESS] Saved API Seed
+11:59:20 [SUCCESS] Saved API Data
+11:59:20 [REQUEST] https://api.openbrewerydb.org/breweries?per_page=50
+11:59:21 [SUCCESS] Valid Request | Status Code: 200
+11:59:21 [SUCCESS] Saved API Seed
+11:59:21 [SUCCESS] Saved API Data
+11:59:21 [REQUEST] https://api.openbrewerydb.org/breweries?sort=name
+11:59:21 [SUCCESS] Valid Request | Status Code: 200
+11:59:21 [SUCCESS] Saved API Seed
+11:59:21 [SUCCESS] Saved API Data
+11:59:21 [REQUEST] https://api.openbrewerydb.org/breweries/123
+11:59:22 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:22 [REQUEST] https://api.openbrewerydb.org/breweries/123/beers
+11:59:22 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:22 [REQUEST] https://api.openbrewerydb.org/breweries/123/events
+11:59:23 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:23 [SECTION] Inferring Error Schema
+11:59:23 [REQUEST] https://api.openbrewerydb.org/invalidRoute/?invalidParam=invalidValue
+11:59:23 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:23 [SUCCESS] Error Schema Found
+11:59:23 [SUCCESS] Saved API Data
+11:59:23 [TITLE]   Mutation Process: focusRoutes
+11:59:23 [TITLE]   Mutating Request (1/1)
+11:59:23 [SECTION] Mutation Operator: addRoute
+11:59:23 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries?sort=name
+11:59:23 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/<route>?sort=name
+11:59:26 [SUCCESS] Found Values: ['by_city', 'by_state', 'by_type', 'by_postal', 'by_name', 'by_tag', 'by_associated_brewery', 'by_search', 'by_distance', 'random', 'by_city?city=Portland', 'by_state?state=California', 'by_type?brewery_type=micro', '95']
+11:59:26 [SECTION] Mutation Operator: removeRoute
+11:59:26 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries?per_page=50
+11:59:26 [INFO]    Masked Request: https://api.openbrewerydb.org?per_page=50
+11:59:26 [SECTION] Mutation Operator: modifyRoute
+11:59:26 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries?per_page=50
+11:59:26 [INFO]    Masked Request: https://api.openbrewerydb.org/<route>?per_page=50
+11:59:28 [SUCCESS] Found Values: ['breweries', 'search', 'states', 'cities', 'types', 'regions', 'postal_codes', 'phone', 'tag', 'ids', 'breweries?by_state=California', 'search?query=ipa', 'states?per_page=10', '7']
+11:59:28 [SECTION] Mutation Operator: resetRoutes
+11:59:28 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries
+11:59:28 [INFO]    Masked Request: https://api.openbrewerydb.org/<route>
+11:59:30 [SUCCESS] Found Values: ['breweries', 'cities', 'states', 'types', 'search', 'random', 'postal_codes', 'regions', 'features', 'events', 'breweries?by_state=California', 'cities?state=California', 'states?per_page=10', '44']
+11:59:30 [TITLE]   Mutated Request Verification
+11:59:30 [REQUEST] https://api.openbrewerydb.org/breweries/by_city?sort=name
+11:59:31 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:31 [REQUEST] https://api.openbrewerydb.org/breweries/by_state?sort=name
+11:59:31 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:31 [REQUEST] https://api.openbrewerydb.org/breweries/by_type?sort=name
+11:59:32 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:32 [REQUEST] https://api.openbrewerydb.org/breweries/by_postal?sort=name
+11:59:32 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:32 [REQUEST] https://api.openbrewerydb.org/breweries/by_name?sort=name
+11:59:33 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:33 [REQUEST] https://api.openbrewerydb.org/breweries/by_tag?sort=name
+11:59:34 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:34 [REQUEST] https://api.openbrewerydb.org/breweries/by_associated_brewery?sort=name
+11:59:34 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:34 [REQUEST] https://api.openbrewerydb.org/breweries/by_search?sort=name
+11:59:35 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:35 [REQUEST] https://api.openbrewerydb.org/breweries/by_distance?sort=name
+11:59:36 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:36 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name
+11:59:37 [SUCCESS] Valid Request | Status Code: 200
+11:59:37 [SUCCESS] Saved API Seed
+11:59:37 [SUCCESS] Saved API Data
+11:59:37 [REQUEST] https://api.openbrewerydb.org/breweries/by_city?city=Portland&sort=name
+11:59:37 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:37 [REQUEST] https://api.openbrewerydb.org/breweries/by_state?state=California&sort=name
+11:59:38 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:38 [REQUEST] https://api.openbrewerydb.org/breweries/by_type?brewery_type=micro&sort=name
+11:59:39 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:39 [REQUEST] https://api.openbrewerydb.org/breweries/95?sort=name
+11:59:40 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:40 [REQUEST] https://api.openbrewerydb.org?per_page=50
+11:59:41 [SUCCESS] Valid Request | Status Code: 200
+11:59:41 [WARNING] Valid request invalidated: HTML is not accepted
+11:59:41 [REQUEST] https://api.openbrewerydb.org/breweries?per_page=50
+11:59:41 [SUCCESS] Valid Request | Status Code: 200
+11:59:41 [WARNING] Request Already in Seeds
+11:59:41 [SUCCESS] Saved API Data
+11:59:41 [REQUEST] https://api.openbrewerydb.org/search?per_page=50
+11:59:42 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:42 [REQUEST] https://api.openbrewerydb.org/states?per_page=50
+11:59:43 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:43 [REQUEST] https://api.openbrewerydb.org/cities?per_page=50
+11:59:44 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:44 [REQUEST] https://api.openbrewerydb.org/types?per_page=50
+11:59:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:45 [REQUEST] https://api.openbrewerydb.org/regions?per_page=50
+11:59:46 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:46 [REQUEST] https://api.openbrewerydb.org/postal_codes?per_page=50
+11:59:46 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:46 [REQUEST] https://api.openbrewerydb.org/phone?per_page=50
+11:59:47 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:47 [REQUEST] https://api.openbrewerydb.org/tag?per_page=50
+11:59:48 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:48 [REQUEST] https://api.openbrewerydb.org/ids?per_page=50
+11:59:49 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:49 [REQUEST] https://api.openbrewerydb.org/breweries?by_state=California&per_page=50
+11:59:50 [SUCCESS] Valid Request | Status Code: 200
+11:59:50 [SUCCESS] Saved API Seed
+11:59:50 [SUCCESS] Saved API Data
+11:59:50 [REQUEST] https://api.openbrewerydb.org/search?query=ipa&per_page=50
+11:59:51 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:51 [REQUEST] https://api.openbrewerydb.org/states?per_page=10&per_page=50
+11:59:52 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:52 [REQUEST] https://api.openbrewerydb.org/7?per_page=50
+11:59:52 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:52 [REQUEST] https://api.openbrewerydb.org/breweries
+11:59:53 [SUCCESS] Valid Request | Status Code: 200
+11:59:53 [WARNING] Request Already in Seeds
+11:59:53 [SUCCESS] Saved API Data
+11:59:53 [REQUEST] https://api.openbrewerydb.org/cities
+11:59:54 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:54 [REQUEST] https://api.openbrewerydb.org/states
+11:59:54 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:54 [REQUEST] https://api.openbrewerydb.org/types
+11:59:55 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:55 [REQUEST] https://api.openbrewerydb.org/search
+11:59:56 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:56 [REQUEST] https://api.openbrewerydb.org/random
+11:59:57 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:57 [REQUEST] https://api.openbrewerydb.org/postal_codes
+11:59:58 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:58 [REQUEST] https://api.openbrewerydb.org/regions
+11:59:58 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:58 [REQUEST] https://api.openbrewerydb.org/features
+11:59:59 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+11:59:59 [REQUEST] https://api.openbrewerydb.org/events
+12:00:00 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:00 [REQUEST] https://api.openbrewerydb.org/breweries?by_state=California
+12:00:01 [SUCCESS] Valid Request | Status Code: 200
+12:00:01 [WARNING] Request Already in Seeds
+12:00:01 [SUCCESS] Saved API Data
+12:00:01 [REQUEST] https://api.openbrewerydb.org/cities?state=California
+12:00:02 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:02 [REQUEST] https://api.openbrewerydb.org/states?per_page=10
+12:00:03 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:03 [REQUEST] https://api.openbrewerydb.org/44
+12:00:03 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:03 [TITLE]   Mutation Process: focusParameters
+12:00:03 [TITLE]   Mutating Request (1/1)
+12:00:03 [SECTION] Mutation Operator: addParameter
+12:00:03 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name
+12:00:03 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random?sort=name&<parameter=value>
+12:00:06 [SUCCESS] Found Values: ['by_state=California', 'by_city=San_Francisco', 'by_type=micro', 'per_page=25', 'page=2', 'since=2010', 'by_tag=dog-friendly', 'by_name=Stone', 'by_postal=94103', 'by_dist=20']
+12:00:06 [SECTION] Mutation Operator: removeParameter
+12:00:06 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name
+12:00:06 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random
+12:00:06 [SECTION] Mutation Operator: modifyParameter
+12:00:06 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name
+12:00:06 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random?<parameter=value>
+12:00:07 [SUCCESS] Found Values: ['by_city=san_diego', 'by_state=california', 'by_name=stone_brewing_co', 'by_postal=92101', 'by_type=micro', 'by_tag=dog_friendly', 'by_street=main_street', 'by_phone=555-1234', 'by_website=example.com', 'by_updated_since=2021-01-01']
+12:00:07 [SECTION] Mutation Operator: resetParameters
+12:00:07 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries?by_state=California&per_page=50
+12:00:07 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries?<parameter=value>
+12:00:09 [SUCCESS] Found Values: ['name=Sunset+Brewery', 'city=Portland', 'state=Oregon', 'type=micro', 'postal_code=97202', 'brewery_type=brewpub', 'country=United+States', 'phone=503-555-1234', 'tag=organic', 'since=2010']
+12:00:09 [TITLE]   Mutated Request Verification
+12:00:09 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_state=California
+12:00:09 [SUCCESS] Valid Request | Status Code: 200
+12:00:09 [SUCCESS] Saved API Seed
+12:00:09 [SUCCESS] Saved API Data
+12:00:09 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_city=San_Francisco
+12:00:10 [SUCCESS] Valid Request | Status Code: 200
+12:00:10 [SUCCESS] Saved API Seed
+12:00:10 [SUCCESS] Saved API Data
+12:00:10 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_type=micro
+12:00:11 [SUCCESS] Valid Request | Status Code: 200
+12:00:11 [SUCCESS] Saved API Seed
+12:00:11 [SUCCESS] Saved API Data
+12:00:11 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&per_page=25
+12:00:11 [SUCCESS] Valid Request | Status Code: 200
+12:00:11 [SUCCESS] Saved API Seed
+12:00:11 [SUCCESS] Saved API Data
+12:00:11 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&page=2
+12:00:12 [SUCCESS] Valid Request | Status Code: 200
+12:00:12 [SUCCESS] Saved API Seed
+12:00:12 [SUCCESS] Saved API Data
+12:00:12 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&since=2010
+12:00:13 [SUCCESS] Valid Request | Status Code: 200
+12:00:13 [SUCCESS] Saved API Seed
+12:00:13 [SUCCESS] Saved API Data
+12:00:13 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_tag=dog-friendly
+12:00:14 [SUCCESS] Valid Request | Status Code: 200
+12:00:14 [SUCCESS] Saved API Seed
+12:00:14 [SUCCESS] Saved API Data
+12:00:14 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone
+12:00:14 [SUCCESS] Valid Request | Status Code: 200
+12:00:14 [SUCCESS] Saved API Seed
+12:00:14 [SUCCESS] Saved API Data
+12:00:14 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_postal=94103
+12:00:15 [SUCCESS] Valid Request | Status Code: 200
+12:00:15 [SUCCESS] Saved API Seed
+12:00:15 [SUCCESS] Saved API Data
+12:00:15 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_dist=20
+12:00:16 [SUCCESS] Valid Request | Status Code: 200
+12:00:16 [SUCCESS] Saved API Seed
+12:00:16 [SUCCESS] Saved API Data
+12:00:16 [REQUEST] https://api.openbrewerydb.org/breweries/random
+12:00:17 [SUCCESS] Valid Request | Status Code: 200
+12:00:17 [SUCCESS] Saved API Seed
+12:00:17 [SUCCESS] Saved API Data
+12:00:17 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_city=san_diego
+12:00:17 [SUCCESS] Valid Request | Status Code: 200
+12:00:17 [SUCCESS] Saved API Seed
+12:00:17 [SUCCESS] Saved API Data
+12:00:17 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_state=california
+12:00:18 [SUCCESS] Valid Request | Status Code: 200
+12:00:18 [SUCCESS] Saved API Seed
+12:00:18 [SUCCESS] Saved API Data
+12:00:18 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_name=stone_brewing_co
+12:00:19 [SUCCESS] Valid Request | Status Code: 200
+12:00:19 [SUCCESS] Saved API Seed
+12:00:19 [SUCCESS] Saved API Data
+12:00:19 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_postal=92101
+12:00:20 [SUCCESS] Valid Request | Status Code: 200
+12:00:20 [SUCCESS] Saved API Seed
+12:00:20 [SUCCESS] Saved API Data
+12:00:20 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_type=micro
+12:00:21 [SUCCESS] Valid Request | Status Code: 200
+12:00:21 [SUCCESS] Saved API Seed
+12:00:21 [SUCCESS] Saved API Data
+12:00:21 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_tag=dog_friendly
+12:00:21 [SUCCESS] Valid Request | Status Code: 200
+12:00:21 [SUCCESS] Saved API Seed
+12:00:21 [SUCCESS] Saved API Data
+12:00:21 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_street=main_street
+12:00:22 [SUCCESS] Valid Request | Status Code: 200
+12:00:22 [SUCCESS] Saved API Seed
+12:00:22 [SUCCESS] Saved API Data
+12:00:22 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_phone=555-1234
+12:00:23 [SUCCESS] Valid Request | Status Code: 200
+12:00:23 [SUCCESS] Saved API Seed
+12:00:23 [SUCCESS] Saved API Data
+12:00:23 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_website=example.com
+12:00:23 [SUCCESS] Valid Request | Status Code: 200
+12:00:23 [SUCCESS] Saved API Seed
+12:00:23 [SUCCESS] Saved API Data
+12:00:23 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_updated_since=2021-01-01
+12:00:24 [SUCCESS] Valid Request | Status Code: 200
+12:00:24 [SUCCESS] Saved API Seed
+12:00:24 [SUCCESS] Saved API Data
+12:00:24 [REQUEST] https://api.openbrewerydb.org/breweries?name=Sunset+Brewery
+12:00:24 [SUCCESS] Valid Request | Status Code: 200
+12:00:24 [SUCCESS] Saved API Seed
+12:00:24 [SUCCESS] Saved API Data
+12:00:24 [REQUEST] https://api.openbrewerydb.org/breweries?city=Portland
+12:00:25 [SUCCESS] Valid Request | Status Code: 200
+12:00:25 [SUCCESS] Saved API Seed
+12:00:25 [SUCCESS] Saved API Data
+12:00:25 [REQUEST] https://api.openbrewerydb.org/breweries?state=Oregon
+12:00:26 [SUCCESS] Valid Request | Status Code: 200
+12:00:26 [SUCCESS] Saved API Seed
+12:00:26 [SUCCESS] Saved API Data
+12:00:26 [REQUEST] https://api.openbrewerydb.org/breweries?type=micro
+12:00:26 [SUCCESS] Valid Request | Status Code: 200
+12:00:26 [SUCCESS] Saved API Seed
+12:00:26 [SUCCESS] Saved API Data
+12:00:26 [REQUEST] https://api.openbrewerydb.org/breweries?postal_code=97202
+12:00:27 [SUCCESS] Valid Request | Status Code: 200
+12:00:27 [SUCCESS] Saved API Seed
+12:00:27 [SUCCESS] Saved API Data
+12:00:27 [REQUEST] https://api.openbrewerydb.org/breweries?brewery_type=brewpub
+12:00:27 [SUCCESS] Valid Request | Status Code: 200
+12:00:27 [SUCCESS] Saved API Seed
+12:00:27 [SUCCESS] Saved API Data
+12:00:27 [REQUEST] https://api.openbrewerydb.org/breweries?country=United+States
+12:00:28 [SUCCESS] Valid Request | Status Code: 200
+12:00:28 [SUCCESS] Saved API Seed
+12:00:28 [SUCCESS] Saved API Data
+12:00:28 [REQUEST] https://api.openbrewerydb.org/breweries?phone=503-555-1234
+12:00:28 [SUCCESS] Valid Request | Status Code: 200
+12:00:28 [SUCCESS] Saved API Seed
+12:00:28 [SUCCESS] Saved API Data
+12:00:28 [REQUEST] https://api.openbrewerydb.org/breweries?tag=organic
+12:00:29 [SUCCESS] Valid Request | Status Code: 200
+12:00:29 [SUCCESS] Saved API Seed
+12:00:29 [SUCCESS] Saved API Data
+12:00:29 [REQUEST] https://api.openbrewerydb.org/breweries?since=2010
+12:00:30 [SUCCESS] Valid Request | Status Code: 200
+12:00:30 [SUCCESS] Saved API Seed
+12:00:30 [SUCCESS] Saved API Data
+12:00:30 [TITLE]   Execution Results
+12:00:30 [INFO]    Saved to: ./outputs/Open_Brewery_DB_API/executions/1.json
+12:00:30 [TITLE]   Launching RESTSpecIT
+12:00:30 [TITLE]   Executing: Open Brewery DB API
+12:00:30 [SUCCESS] Loaded API Data
+12:00:30 [SUCCESS] Loaded API Seeds
+12:00:30 [SUCCESS] Loaded API Seeds
+12:00:30 [TITLE]   Inferring Base API Data
+12:00:30 [SECTION] Inferring Info Data
+12:00:30 [WARNING] Info Data Already Exists
+12:00:30 [SECTION] Inferring Online Documentation Data
+12:00:30 [WARNING] Online Documentation Data Already Exists
+12:00:30 [SECTION] Inferring Server Data
+12:00:30 [WARNING] Server Data Already Exists
+12:00:30 [SECTION] Inferring Request Seeds
+12:00:32 [REQUEST] https://api.openbrewerydb.org/breweries
+12:00:32 [SUCCESS] Valid Request | Status Code: 200
+12:00:32 [WARNING] Request Already in Seeds
+12:00:32 [SUCCESS] Saved API Data
+12:00:32 [REQUEST] https://api.openbrewerydb.org/breweries?by_city=san_diego&by_state=california
+12:00:33 [SUCCESS] Valid Request | Status Code: 200
+12:00:33 [SUCCESS] Saved API Seed
+12:00:33 [SUCCESS] Saved API Data
+12:00:33 [REQUEST] https://api.openbrewerydb.org/breweries?per_page=50&page=2
+12:00:34 [SUCCESS] Valid Request | Status Code: 200
+12:00:34 [SUCCESS] Saved API Seed
+12:00:34 [SUCCESS] Saved API Data
+12:00:34 [REQUEST] https://api.openbrewerydb.org/breweries?by_name=dogfish_head_brewery
+12:00:34 [SUCCESS] Valid Request | Status Code: 200
+12:00:34 [SUCCESS] Saved API Seed
+12:00:34 [SUCCESS] Saved API Data
+12:00:34 [REQUEST] https://api.openbrewerydb.org/breweries?by_postal=92101&by_state=california
+12:00:35 [SUCCESS] Valid Request | Status Code: 200
+12:00:35 [SUCCESS] Saved API Seed
+12:00:35 [SUCCESS] Saved API Data
+12:00:35 [SECTION] Inferring Error Schema
+12:00:35 [REQUEST] https://api.openbrewerydb.org/invalidRoute/?invalidParam=invalidValue
+12:00:35 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:35 [SUCCESS] Error Schema Found
+12:00:35 [SUCCESS] Saved API Data
+12:00:35 [TITLE]   Mutation Process: focusRoutes
+12:00:35 [TITLE]   Mutating Request (1/1)
+12:00:35 [SECTION] Mutation Operator: addRoute
+12:00:35 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries?city=Portland
+12:00:35 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/<route>?city=Portland
+12:00:38 [SUCCESS] Found Values: ['search', 'random', 'states', 'types', 'search/autocomplete', 'search/geolocation', 'search/geo/point', 'search/geo/polygon', 'search/geo/rectangle', 'search/geo/radius', 'search?query=California', 'random?by_state=colorado', 'states?state=California', '17']
+12:00:38 [SECTION] Mutation Operator: removeRoute
+12:00:38 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?by_street=main_street
+12:00:38 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries?by_street=main_street
+12:00:38 [SECTION] Mutation Operator: modifyRoute
+12:00:38 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?by_website=example.com
+12:00:38 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/<route>?by_website=example.com
+12:00:40 [SUCCESS] Found Values: ['search', 'random', 'state/california', 'city/portland', 'type/micro', 'name/stone', 'postal_code/90210', 'city/san_diego', 'by_state/texas', 'by_city/chicago', 'search?query=IPA', 'random?by_state=California', 'state/california?per_page=10', '32']
+12:00:40 [SECTION] Mutation Operator: resetRoutes
+12:00:40 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?by_updated_since=2021-01-01
+12:00:40 [INFO]    Masked Request: https://api.openbrewerydb.org/<route>?by_updated_since=2021-01-01
+12:00:43 [SUCCESS] Found Values: ['breweries', 'search', 'states', 'cities', 'types', 'features', 'events', 'organizers', 'beers', 'guilds', 'breweries?by_state=California', 'search?query=IPA', 'states?per_page=10', '71']
+12:00:43 [TITLE]   Mutated Request Verification
+12:00:43 [REQUEST] https://api.openbrewerydb.org/breweries/search?city=Portland
+12:00:43 [SUCCESS] Valid Request | Status Code: 200
+12:00:43 [SUCCESS] Saved API Seed
+12:00:43 [SUCCESS] Saved API Data
+12:00:43 [REQUEST] https://api.openbrewerydb.org/breweries/random?city=Portland
+12:00:44 [SUCCESS] Valid Request | Status Code: 200
+12:00:44 [SUCCESS] Saved API Seed
+12:00:44 [SUCCESS] Saved API Data
+12:00:44 [REQUEST] https://api.openbrewerydb.org/breweries/states?city=Portland
+12:00:44 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:44 [REQUEST] https://api.openbrewerydb.org/breweries/types?city=Portland
+12:00:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:45 [REQUEST] https://api.openbrewerydb.org/breweries/search/autocomplete?city=Portland
+12:00:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:45 [REQUEST] https://api.openbrewerydb.org/breweries/search/geolocation?city=Portland
+12:00:46 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:46 [REQUEST] https://api.openbrewerydb.org/breweries/search/geo/point?city=Portland
+12:00:47 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:47 [REQUEST] https://api.openbrewerydb.org/breweries/search/geo/polygon?city=Portland
+12:00:47 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:47 [REQUEST] https://api.openbrewerydb.org/breweries/search/geo/rectangle?city=Portland
+12:00:48 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:48 [REQUEST] https://api.openbrewerydb.org/breweries/search/geo/radius?city=Portland
+12:00:48 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:48 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=California&city=Portland
+12:00:49 [SUCCESS] Valid Request | Status Code: 200
+12:00:49 [SUCCESS] Saved API Seed
+12:00:49 [SUCCESS] Saved API Data
+12:00:49 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_state=colorado&city=Portland
+12:00:50 [SUCCESS] Valid Request | Status Code: 200
+12:00:50 [SUCCESS] Saved API Seed
+12:00:50 [SUCCESS] Saved API Data
+12:00:50 [REQUEST] https://api.openbrewerydb.org/breweries/states?state=California&city=Portland
+12:00:50 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:50 [REQUEST] https://api.openbrewerydb.org/breweries/17?city=Portland
+12:00:51 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:51 [REQUEST] https://api.openbrewerydb.org/breweries?by_street=main_street
+12:00:52 [SUCCESS] Valid Request | Status Code: 200
+12:00:52 [SUCCESS] Saved API Seed
+12:00:52 [SUCCESS] Saved API Data
+12:00:52 [REQUEST] https://api.openbrewerydb.org/breweries/search?by_website=example.com
+12:00:52 [SUCCESS] Valid Request | Status Code: 200
+12:00:52 [SUCCESS] Saved API Seed
+12:00:52 [SUCCESS] Saved API Data
+12:00:52 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_website=example.com
+12:00:53 [SUCCESS] Valid Request | Status Code: 200
+12:00:53 [WARNING] Request Already in Seeds
+12:00:53 [SUCCESS] Saved API Data
+12:00:53 [REQUEST] https://api.openbrewerydb.org/breweries/state/california?by_website=example.com
+12:00:53 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:53 [REQUEST] https://api.openbrewerydb.org/breweries/city/portland?by_website=example.com
+12:00:54 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:54 [REQUEST] https://api.openbrewerydb.org/breweries/type/micro?by_website=example.com
+12:00:55 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:55 [REQUEST] https://api.openbrewerydb.org/breweries/name/stone?by_website=example.com
+12:00:56 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:56 [REQUEST] https://api.openbrewerydb.org/breweries/postal_code/90210?by_website=example.com
+12:00:56 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:56 [REQUEST] https://api.openbrewerydb.org/breweries/city/san_diego?by_website=example.com
+12:00:56 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:56 [REQUEST] https://api.openbrewerydb.org/breweries/by_state/texas?by_website=example.com
+12:00:57 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:57 [REQUEST] https://api.openbrewerydb.org/breweries/by_city/chicago?by_website=example.com
+12:00:58 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:00:58 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&by_website=example.com
+12:00:58 [SUCCESS] Valid Request | Status Code: 200
+12:00:58 [SUCCESS] Saved API Seed
+12:00:58 [SUCCESS] Saved API Data
+12:00:58 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_state=California&by_website=example.com
+12:00:59 [SUCCESS] Valid Request | Status Code: 200
+12:00:59 [SUCCESS] Saved API Seed
+12:00:59 [SUCCESS] Saved API Data
+12:00:59 [REQUEST] https://api.openbrewerydb.org/breweries/state/california?per_page=10&by_website=example.com
+12:01:01 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:01 [REQUEST] https://api.openbrewerydb.org/breweries/32?by_website=example.com
+12:01:01 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:01 [REQUEST] https://api.openbrewerydb.org/breweries?by_updated_since=2021-01-01
+12:01:02 [SUCCESS] Valid Request | Status Code: 200
+12:01:02 [SUCCESS] Saved API Seed
+12:01:02 [SUCCESS] Saved API Data
+12:01:02 [REQUEST] https://api.openbrewerydb.org/search?by_updated_since=2021-01-01
+12:01:02 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:02 [REQUEST] https://api.openbrewerydb.org/states?by_updated_since=2021-01-01
+12:01:03 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:03 [REQUEST] https://api.openbrewerydb.org/cities?by_updated_since=2021-01-01
+12:01:04 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:04 [REQUEST] https://api.openbrewerydb.org/types?by_updated_since=2021-01-01
+12:01:05 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:05 [REQUEST] https://api.openbrewerydb.org/features?by_updated_since=2021-01-01
+12:01:06 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:06 [REQUEST] https://api.openbrewerydb.org/events?by_updated_since=2021-01-01
+12:01:06 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:06 [REQUEST] https://api.openbrewerydb.org/organizers?by_updated_since=2021-01-01
+12:01:07 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:07 [REQUEST] https://api.openbrewerydb.org/beers?by_updated_since=2021-01-01
+12:01:08 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:08 [REQUEST] https://api.openbrewerydb.org/guilds?by_updated_since=2021-01-01
+12:01:08 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:08 [REQUEST] https://api.openbrewerydb.org/breweries?by_state=California&by_updated_since=2021-01-01
+12:01:09 [SUCCESS] Valid Request | Status Code: 200
+12:01:09 [SUCCESS] Saved API Seed
+12:01:09 [SUCCESS] Saved API Data
+12:01:09 [REQUEST] https://api.openbrewerydb.org/search?query=IPA&by_updated_since=2021-01-01
+12:01:10 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:10 [REQUEST] https://api.openbrewerydb.org/states?per_page=10&by_updated_since=2021-01-01
+12:01:10 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:10 [REQUEST] https://api.openbrewerydb.org/71?by_updated_since=2021-01-01
+12:01:11 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:11 [TITLE]   Mutation Process: focusParameters
+12:01:11 [TITLE]   Mutating Request (1/1)
+12:01:11 [SECTION] Mutation Operator: addParameter
+12:01:11 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone
+12:01:11 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&<parameter=value>
+12:01:12 [SUCCESS] Found Values: ['by_state=California', 'by_city=Portland', 'by_type=micro', 'by_tag=dog-friendly', 'per_page=50', 'page=2', 'by_postal=97202', 'by_dist=10', 'by_phone=555-5555', 'by_website=example.com']
+12:01:12 [SECTION] Mutation Operator: removeParameter
+12:01:12 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?by_name=stone_brewing_co
+12:01:12 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random
+12:01:12 [SECTION] Mutation Operator: modifyParameter
+12:01:12 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name&by_tag=dog-friendly
+12:01:12 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random?sort=name&<parameter=value>
+12:01:13 [SUCCESS] Found Values: ['by_state=California', 'by_city=San_Francisco', 'by_type=micro', 'by_tag=dog-friendly', 'per_page=50', 'sort=city', 'sort=state', 'sort=type', 'sort=postal_code', 'sort=country']
+12:01:13 [SECTION] Mutation Operator: resetParameters
+12:01:13 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name&by_type=micro
+12:01:13 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random?<parameter=value>
+12:01:15 [SUCCESS] Found Values: ['by_city=san_diego', 'by_state=california', 'by_tag=dog_friendly', 'by_name=stone_brewing', 'by_type=micro', 'by_postal=92101', 'by_distance=10', 'per_page=25', 'sort=name', 'sort=-city']
+12:01:15 [TITLE]   Mutated Request Verification
+12:01:15 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_state=California
+12:01:15 [SUCCESS] Valid Request | Status Code: 200
+12:01:15 [SUCCESS] Saved API Seed
+12:01:15 [SUCCESS] Saved API Data
+12:01:15 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland
+12:01:16 [SUCCESS] Valid Request | Status Code: 200
+12:01:16 [SUCCESS] Saved API Seed
+12:01:16 [SUCCESS] Saved API Data
+12:01:16 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_type=micro
+12:01:16 [SUCCESS] Valid Request | Status Code: 200
+12:01:16 [SUCCESS] Saved API Seed
+12:01:16 [SUCCESS] Saved API Data
+12:01:16 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_tag=dog-friendly
+12:01:17 [SUCCESS] Valid Request | Status Code: 200
+12:01:17 [SUCCESS] Saved API Seed
+12:01:17 [SUCCESS] Saved API Data
+12:01:17 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&per_page=50
+12:01:17 [SUCCESS] Valid Request | Status Code: 200
+12:01:17 [SUCCESS] Saved API Seed
+12:01:17 [SUCCESS] Saved API Data
+12:01:17 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&page=2
+12:01:18 [SUCCESS] Valid Request | Status Code: 200
+12:01:18 [SUCCESS] Saved API Seed
+12:01:18 [SUCCESS] Saved API Data
+12:01:18 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_postal=97202
+12:01:18 [SUCCESS] Valid Request | Status Code: 200
+12:01:18 [SUCCESS] Saved API Seed
+12:01:18 [SUCCESS] Saved API Data
+12:01:18 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_dist=10
+12:01:19 [SUCCESS] Valid Request | Status Code: 200
+12:01:19 [SUCCESS] Saved API Seed
+12:01:19 [SUCCESS] Saved API Data
+12:01:19 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_phone=555-5555
+12:01:19 [SUCCESS] Valid Request | Status Code: 200
+12:01:19 [SUCCESS] Saved API Seed
+12:01:19 [SUCCESS] Saved API Data
+12:01:19 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_website=example.com
+12:01:20 [SUCCESS] Valid Request | Status Code: 200
+12:01:20 [SUCCESS] Saved API Seed
+12:01:20 [SUCCESS] Saved API Data
+12:01:20 [REQUEST] https://api.openbrewerydb.org/breweries/random
+12:01:20 [SUCCESS] Valid Request | Status Code: 200
+12:01:20 [WARNING] Request Already in Seeds
+12:01:20 [SUCCESS] Saved API Data
+12:01:20 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_state=California
+12:01:20 [SUCCESS] Valid Request | Status Code: 200
+12:01:20 [WARNING] Request Already in Seeds
+12:01:20 [SUCCESS] Saved API Data
+12:01:20 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_city=San_Francisco
+12:01:21 [SUCCESS] Valid Request | Status Code: 200
+12:01:21 [WARNING] Request Already in Seeds
+12:01:21 [SUCCESS] Saved API Data
+12:01:21 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_type=micro
+12:01:21 [SUCCESS] Valid Request | Status Code: 200
+12:01:21 [WARNING] Request Already in Seeds
+12:01:21 [SUCCESS] Saved API Data
+12:01:21 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_tag=dog-friendly
+12:01:21 [SUCCESS] Valid Request | Status Code: 200
+12:01:21 [WARNING] Request Already in Seeds
+12:01:21 [SUCCESS] Saved API Data
+12:01:21 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&per_page=50
+12:01:22 [SUCCESS] Valid Request | Status Code: 200
+12:01:22 [SUCCESS] Saved API Seed
+12:01:22 [SUCCESS] Saved API Data
+12:01:22 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&sort=city
+12:01:22 [SUCCESS] Valid Request | Status Code: 200
+12:01:22 [SUCCESS] Saved API Seed
+12:01:22 [SUCCESS] Saved API Data
+12:01:22 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&sort=state
+12:01:23 [SUCCESS] Valid Request | Status Code: 200
+12:01:23 [SUCCESS] Saved API Seed
+12:01:23 [SUCCESS] Saved API Data
+12:01:23 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&sort=type
+12:01:23 [SUCCESS] Valid Request | Status Code: 200
+12:01:23 [SUCCESS] Saved API Seed
+12:01:23 [SUCCESS] Saved API Data
+12:01:23 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&sort=postal_code
+12:01:24 [SUCCESS] Valid Request | Status Code: 200
+12:01:24 [SUCCESS] Saved API Seed
+12:01:24 [SUCCESS] Saved API Data
+12:01:24 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&sort=country
+12:01:24 [SUCCESS] Valid Request | Status Code: 200
+12:01:24 [SUCCESS] Saved API Seed
+12:01:24 [SUCCESS] Saved API Data
+12:01:24 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_city=san_diego
+12:01:24 [SUCCESS] Valid Request | Status Code: 200
+12:01:24 [WARNING] Request Already in Seeds
+12:01:24 [SUCCESS] Saved API Data
+12:01:24 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_state=california
+12:01:25 [SUCCESS] Valid Request | Status Code: 200
+12:01:25 [WARNING] Request Already in Seeds
+12:01:25 [SUCCESS] Saved API Data
+12:01:25 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_tag=dog_friendly
+12:01:25 [SUCCESS] Valid Request | Status Code: 200
+12:01:25 [WARNING] Request Already in Seeds
+12:01:25 [SUCCESS] Saved API Data
+12:01:25 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_name=stone_brewing
+12:01:26 [SUCCESS] Valid Request | Status Code: 200
+12:01:26 [SUCCESS] Saved API Seed
+12:01:26 [SUCCESS] Saved API Data
+12:01:26 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_type=micro
+12:01:26 [SUCCESS] Valid Request | Status Code: 200
+12:01:26 [WARNING] Request Already in Seeds
+12:01:26 [SUCCESS] Saved API Data
+12:01:26 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_postal=92101
+12:01:26 [SUCCESS] Valid Request | Status Code: 200
+12:01:26 [WARNING] Request Already in Seeds
+12:01:26 [SUCCESS] Saved API Data
+12:01:26 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_distance=10
+12:01:27 [SUCCESS] Valid Request | Status Code: 200
+12:01:27 [SUCCESS] Saved API Seed
+12:01:27 [SUCCESS] Saved API Data
+12:01:27 [REQUEST] https://api.openbrewerydb.org/breweries/random?per_page=25
+12:01:27 [SUCCESS] Valid Request | Status Code: 200
+12:01:27 [SUCCESS] Saved API Seed
+12:01:27 [SUCCESS] Saved API Data
+12:01:27 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name
+12:01:28 [SUCCESS] Valid Request | Status Code: 200
+12:01:28 [WARNING] Request Already in Seeds
+12:01:28 [SUCCESS] Saved API Data
+12:01:28 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=-city
+12:01:28 [SUCCESS] Valid Request | Status Code: 200
+12:01:28 [SUCCESS] Saved API Seed
+12:01:28 [SUCCESS] Saved API Data
+12:01:28 [TITLE]   Execution Results
+12:01:28 [INFO]    Saved to: ./outputs/Open_Brewery_DB_API/executions/2.json
+12:01:28 [TITLE]   Launching RESTSpecIT
+12:01:28 [TITLE]   Executing: Open Brewery DB API
+12:01:28 [SUCCESS] Loaded API Data
+12:01:28 [SUCCESS] Loaded API Seeds
+12:01:28 [SUCCESS] Loaded API Seeds
+12:01:28 [TITLE]   Inferring Base API Data
+12:01:28 [SECTION] Inferring Info Data
+12:01:28 [WARNING] Info Data Already Exists
+12:01:28 [SECTION] Inferring Online Documentation Data
+12:01:28 [WARNING] Online Documentation Data Already Exists
+12:01:28 [SECTION] Inferring Server Data
+12:01:28 [WARNING] Server Data Already Exists
+12:01:28 [SECTION] Inferring Request Seeds
+12:01:31 [REQUEST] https://api.openbrewerydb.org/breweries
+12:01:31 [SUCCESS] Valid Request | Status Code: 200
+12:01:31 [WARNING] Request Already in Seeds
+12:01:31 [SUCCESS] Saved API Data
+12:01:31 [REQUEST] https://api.openbrewerydb.org/breweries?by_city=Portland
+12:01:32 [SUCCESS] Valid Request | Status Code: 200
+12:01:32 [SUCCESS] Saved API Seed
+12:01:32 [SUCCESS] Saved API Data
+12:01:32 [REQUEST] https://api.openbrewerydb.org/breweries?by_state=California
+12:01:32 [SUCCESS] Valid Request | Status Code: 200
+12:01:32 [WARNING] Request Already in Seeds
+12:01:32 [SUCCESS] Saved API Data
+12:01:32 [REQUEST] https://api.openbrewerydb.org/breweries?by_name=Stone
+12:01:33 [SUCCESS] Valid Request | Status Code: 200
+12:01:33 [SUCCESS] Saved API Seed
+12:01:33 [SUCCESS] Saved API Data
+12:01:33 [REQUEST] https://api.openbrewerydb.org/breweries?by_tag=dog-friendly
+12:01:33 [SUCCESS] Valid Request | Status Code: 200
+12:01:33 [WARNING] Request Already in Seeds
+12:01:33 [SUCCESS] Saved API Data
+12:01:33 [REQUEST] https://api.openbrewerydb.org/breweries/123
+12:01:33 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:33 [REQUEST] https://api.openbrewerydb.org/breweries/456
+12:01:34 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:34 [REQUEST] https://api.openbrewerydb.org/breweries/789
+12:01:34 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:34 [SECTION] Inferring Error Schema
+12:01:34 [REQUEST] https://api.openbrewerydb.org/invalidRoute/?invalidParam=invalidValue
+12:01:35 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:35 [SUCCESS] Error Schema Found
+12:01:35 [SUCCESS] Saved API Data
+12:01:35 [TITLE]   Mutation Process: focusRoutes
+12:01:35 [TITLE]   Mutating Request (1/1)
+12:01:35 [SECTION] Mutation Operator: addRoute
+12:01:35 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/search?city=Portland
+12:01:35 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/search/<route>?city=Portland
+12:01:37 [SUCCESS] Found Values: ['by_name', 'by_state', 'by_type', 'by_tag', 'by_postal', 'by_country', 'by_id', 'by_associated_brewery', 'by_location', 'by_phone_number', 'by_name?name=example+brewery', 'by_state?state=California', 'by_type?query=Microbrewery', '25']
+12:01:37 [SECTION] Mutation Operator: removeRoute
+12:01:37 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?by_website=example.com
+12:01:37 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries?by_website=example.com
+12:01:37 [SECTION] Mutation Operator: modifyRoute
+12:01:37 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name&sort=type
+12:01:37 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/<route>?sort=name&sort=type
+12:01:40 [SUCCESS] Found Values: ['search', 'random', 'city', 'state', 'postal_code', 'type', 'tag', 'name', 'id', 'brewery_type', 'search?query=IPA', 'random?by_city=san_diego', 'city?city=Denver', '52']
+12:01:40 [SECTION] Mutation Operator: resetRoutes
+12:01:40 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/search?by_website=example.com
+12:01:40 [INFO]    Masked Request: https://api.openbrewerydb.org/<route>?by_website=example.com
+12:01:42 [SUCCESS] Found Values: ['breweries', 'search', 'cities', 'types', 'states', 'regions', 'features', 'events', 'random', 'favorites', 'breweries?by_state=Colorado', 'search?query=IPA', 'cities?state=California', '44']
+12:01:42 [TITLE]   Mutated Request Verification
+12:01:42 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_name?city=Portland
+12:01:43 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:43 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_state?city=Portland
+12:01:43 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:43 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_type?city=Portland
+12:01:43 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:43 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_tag?city=Portland
+12:01:44 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:44 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_postal?city=Portland
+12:01:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:45 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_country?city=Portland
+12:01:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:45 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_id?city=Portland
+12:01:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:45 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_associated_brewery?city=Portland
+12:01:46 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:46 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_location?city=Portland
+12:01:46 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:47 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_phone_number?city=Portland
+12:01:47 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:47 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_name?name=example+brewery&city=Portland
+12:01:48 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:48 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_state?state=California&city=Portland
+12:01:48 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:48 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_type?query=Microbrewery&city=Portland
+12:01:48 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:48 [REQUEST] https://api.openbrewerydb.org/breweries/search/25?city=Portland
+12:01:49 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:49 [REQUEST] https://api.openbrewerydb.org/breweries?by_website=example.com
+12:01:49 [SUCCESS] Valid Request | Status Code: 200
+12:01:49 [SUCCESS] Saved API Seed
+12:01:49 [SUCCESS] Saved API Data
+12:01:49 [REQUEST] https://api.openbrewerydb.org/breweries/search?sort=name&sort=type
+12:01:50 [SUCCESS] Valid Request | Status Code: 200
+12:01:50 [SUCCESS] Saved API Seed
+12:01:50 [SUCCESS] Saved API Data
+12:01:50 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&sort=type
+12:01:50 [SUCCESS] Valid Request | Status Code: 200
+12:01:50 [WARNING] Request Already in Seeds
+12:01:50 [SUCCESS] Saved API Data
+12:01:50 [REQUEST] https://api.openbrewerydb.org/breweries/city?sort=name&sort=type
+12:01:51 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:51 [REQUEST] https://api.openbrewerydb.org/breweries/state?sort=name&sort=type
+12:01:52 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:52 [REQUEST] https://api.openbrewerydb.org/breweries/postal_code?sort=name&sort=type
+12:01:52 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:52 [REQUEST] https://api.openbrewerydb.org/breweries/type?sort=name&sort=type
+12:01:53 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:53 [REQUEST] https://api.openbrewerydb.org/breweries/tag?sort=name&sort=type
+12:01:53 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:53 [REQUEST] https://api.openbrewerydb.org/breweries/name?sort=name&sort=type
+12:01:54 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:54 [REQUEST] https://api.openbrewerydb.org/breweries/id?sort=name&sort=type
+12:01:54 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:54 [REQUEST] https://api.openbrewerydb.org/breweries/brewery_type?sort=name&sort=type
+12:01:55 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:55 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type
+12:01:56 [SUCCESS] Valid Request | Status Code: 200
+12:01:56 [SUCCESS] Saved API Seed
+12:01:56 [SUCCESS] Saved API Data
+12:01:56 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_city=san_diego&sort=name&sort=type
+12:01:56 [SUCCESS] Valid Request | Status Code: 200
+12:01:56 [SUCCESS] Saved API Seed
+12:01:56 [SUCCESS] Saved API Data
+12:01:56 [REQUEST] https://api.openbrewerydb.org/breweries/city?city=Denver&sort=name&sort=type
+12:01:57 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:57 [REQUEST] https://api.openbrewerydb.org/breweries/52?sort=name&sort=type
+12:01:57 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:57 [REQUEST] https://api.openbrewerydb.org/breweries?by_website=example.com
+12:01:58 [SUCCESS] Valid Request | Status Code: 200
+12:01:58 [WARNING] Request Already in Seeds
+12:01:58 [SUCCESS] Saved API Data
+12:01:58 [REQUEST] https://api.openbrewerydb.org/search?by_website=example.com
+12:01:58 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:58 [REQUEST] https://api.openbrewerydb.org/cities?by_website=example.com
+12:01:58 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:58 [REQUEST] https://api.openbrewerydb.org/types?by_website=example.com
+12:01:59 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:01:59 [REQUEST] https://api.openbrewerydb.org/states?by_website=example.com
+12:01:59 [ERROR]   Invalid Request | Status Code: 408 | Reason: timeout
+12:01:59 [REQUEST] https://api.openbrewerydb.org/regions?by_website=example.com
+12:01:59 [ERROR]   Invalid Request | Status Code: 408 | Reason: timeout
+12:01:59 [REQUEST] https://api.openbrewerydb.org/features?by_website=example.com
+12:01:59 [ERROR]   Invalid Request | Status Code: 408 | Reason: timeout
+12:01:59 [REQUEST] https://api.openbrewerydb.org/events?by_website=example.com
+12:01:59 [ERROR]   Invalid Request | Status Code: 408 | Reason: timeout
+12:01:59 [REQUEST] https://api.openbrewerydb.org/random?by_website=example.com
+12:01:59 [ERROR]   Invalid Request | Status Code: 408 | Reason: timeout
+12:01:59 [REQUEST] https://api.openbrewerydb.org/favorites?by_website=example.com
+12:01:59 [ERROR]   Invalid Request | Status Code: 408 | Reason: timeout
+12:01:59 [REQUEST] https://api.openbrewerydb.org/breweries?by_state=Colorado&by_website=example.com
+12:01:59 [ERROR]   Invalid Request | Status Code: 408 | Reason: timeout
+12:01:59 [REQUEST] https://api.openbrewerydb.org/search?query=IPA&by_website=example.com
+12:01:59 [ERROR]   Invalid Request | Status Code: 408 | Reason: timeout
+12:01:59 [REQUEST] https://api.openbrewerydb.org/cities?state=California&by_website=example.com
+12:01:59 [ERROR]   Invalid Request | Status Code: 408 | Reason: timeout
+12:01:59 [REQUEST] https://api.openbrewerydb.org/44?by_website=example.com
+12:01:59 [ERROR]   Invalid Request | Status Code: 408 | Reason: timeout
+12:01:59 [TITLE]   Mutation Process: focusParameters
+12:01:59 [TITLE]   Mutating Request (1/1)
+12:01:59 [SECTION] Mutation Operator: addParameter
+12:01:59 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type
+12:01:59 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&<parameter=value>
+12:02:01 [SUCCESS] Found Values: ['state=California', 'city=San+Diego', 'type=micro', 'established=2010', 'postal=92101', 'name=Stone', 'phone=1234567890', 'tag=dog-friendly', 'country=United+States', 'brewed=collaboratively']
+12:02:01 [SECTION] Mutation Operator: removeParameter
+12:02:01 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/search?query=IPA&by_website=example.com
+12:02:01 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/search?query=IPA
+12:02:01 [SECTION] Mutation Operator: modifyParameter
+12:02:02 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name&by_city=San_Francisco
+12:02:02 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random?sort=name&<parameter=value>
+12:02:04 [SUCCESS] Found Values: ['by_city=San+Diego', 'by_state=California', 'by_type=micro', 'by_tag=dog-friendly', 'per_page=50', 'page=2', 'by_postal=92101', 'by_distance=10', 'by_name=Stone', 'by_tag=IPA']
+12:02:04 [SECTION] Mutation Operator: resetParameters
+12:02:04 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name&per_page=50
+12:02:04 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random?<parameter=value>
+12:02:06 [SUCCESS] Found Values: ['by_city=san_diego', 'by_state=california', 'by_name=stone', 'by_tag=dog_friendly', 'per_page=50', 'sort=city', 'type=micro', 'since=2010', 'is_organic=true', 'by_postal=92101']
+12:02:06 [TITLE]   Mutated Request Verification
+12:02:06 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&state=California
+12:02:07 [SUCCESS] Valid Request | Status Code: 200
+12:02:07 [SUCCESS] Saved API Seed
+12:02:07 [SUCCESS] Saved API Data
+12:02:07 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&city=San+Diego
+12:02:07 [SUCCESS] Valid Request | Status Code: 200
+12:02:07 [SUCCESS] Saved API Seed
+12:02:07 [SUCCESS] Saved API Data
+12:02:07 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&type=micro
+12:02:08 [SUCCESS] Valid Request | Status Code: 200
+12:02:08 [SUCCESS] Saved API Seed
+12:02:08 [SUCCESS] Saved API Data
+12:02:08 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&established=2010
+12:02:08 [SUCCESS] Valid Request | Status Code: 200
+12:02:08 [SUCCESS] Saved API Seed
+12:02:08 [SUCCESS] Saved API Data
+12:02:08 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&postal=92101
+12:02:09 [SUCCESS] Valid Request | Status Code: 200
+12:02:09 [SUCCESS] Saved API Seed
+12:02:09 [SUCCESS] Saved API Data
+12:02:09 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&name=Stone
+12:02:10 [SUCCESS] Valid Request | Status Code: 200
+12:02:10 [SUCCESS] Saved API Seed
+12:02:10 [SUCCESS] Saved API Data
+12:02:10 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&phone=1234567890
+12:02:10 [SUCCESS] Valid Request | Status Code: 200
+12:02:10 [SUCCESS] Saved API Seed
+12:02:10 [SUCCESS] Saved API Data
+12:02:10 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&tag=dog-friendly
+12:02:11 [SUCCESS] Valid Request | Status Code: 200
+12:02:11 [SUCCESS] Saved API Seed
+12:02:11 [SUCCESS] Saved API Data
+12:02:11 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&country=United+States
+12:02:12 [SUCCESS] Valid Request | Status Code: 200
+12:02:12 [SUCCESS] Saved API Seed
+12:02:12 [SUCCESS] Saved API Data
+12:02:12 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&brewed=collaboratively
+12:02:12 [SUCCESS] Valid Request | Status Code: 200
+12:02:12 [SUCCESS] Saved API Seed
+12:02:12 [SUCCESS] Saved API Data
+12:02:12 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA
+12:02:13 [SUCCESS] Valid Request | Status Code: 200
+12:02:13 [SUCCESS] Saved API Seed
+12:02:13 [SUCCESS] Saved API Data
+12:02:13 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_city=San+Diego
+12:02:13 [SUCCESS] Valid Request | Status Code: 200
+12:02:13 [SUCCESS] Saved API Seed
+12:02:13 [SUCCESS] Saved API Data
+12:02:13 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_state=California
+12:02:14 [SUCCESS] Valid Request | Status Code: 200
+12:02:14 [WARNING] Request Already in Seeds
+12:02:14 [SUCCESS] Saved API Data
+12:02:14 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_type=micro
+12:02:14 [SUCCESS] Valid Request | Status Code: 200
+12:02:14 [WARNING] Request Already in Seeds
+12:02:14 [SUCCESS] Saved API Data
+12:02:14 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_tag=dog-friendly
+12:02:14 [SUCCESS] Valid Request | Status Code: 200
+12:02:14 [WARNING] Request Already in Seeds
+12:02:14 [SUCCESS] Saved API Data
+12:02:14 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&per_page=50
+12:02:14 [SUCCESS] Valid Request | Status Code: 200
+12:02:14 [WARNING] Request Already in Seeds
+12:02:14 [SUCCESS] Saved API Data
+12:02:14 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&page=2
+12:02:15 [SUCCESS] Valid Request | Status Code: 200
+12:02:15 [WARNING] Request Already in Seeds
+12:02:15 [SUCCESS] Saved API Data
+12:02:15 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_postal=92101
+12:02:15 [SUCCESS] Valid Request | Status Code: 200
+12:02:15 [SUCCESS] Saved API Seed
+12:02:15 [SUCCESS] Saved API Data
+12:02:15 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_distance=10
+12:02:16 [SUCCESS] Valid Request | Status Code: 200
+12:02:16 [SUCCESS] Saved API Seed
+12:02:16 [SUCCESS] Saved API Data
+12:02:16 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone
+12:02:16 [SUCCESS] Valid Request | Status Code: 200
+12:02:16 [WARNING] Request Already in Seeds
+12:02:16 [SUCCESS] Saved API Data
+12:02:16 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_tag=IPA
+12:02:16 [SUCCESS] Valid Request | Status Code: 200
+12:02:16 [SUCCESS] Saved API Seed
+12:02:16 [SUCCESS] Saved API Data
+12:02:16 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_city=san_diego
+12:02:17 [SUCCESS] Valid Request | Status Code: 200
+12:02:17 [WARNING] Request Already in Seeds
+12:02:17 [SUCCESS] Saved API Data
+12:02:17 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_state=california
+12:02:17 [SUCCESS] Valid Request | Status Code: 200
+12:02:17 [WARNING] Request Already in Seeds
+12:02:17 [SUCCESS] Saved API Data
+12:02:17 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_name=stone
+12:02:18 [SUCCESS] Valid Request | Status Code: 200
+12:02:18 [SUCCESS] Saved API Seed
+12:02:18 [SUCCESS] Saved API Data
+12:02:18 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_tag=dog_friendly
+12:02:18 [SUCCESS] Valid Request | Status Code: 200
+12:02:18 [WARNING] Request Already in Seeds
+12:02:18 [SUCCESS] Saved API Data
+12:02:18 [REQUEST] https://api.openbrewerydb.org/breweries/random?per_page=50
+12:02:18 [SUCCESS] Valid Request | Status Code: 200
+12:02:18 [SUCCESS] Saved API Seed
+12:02:18 [SUCCESS] Saved API Data
+12:02:18 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=city
+12:02:19 [SUCCESS] Valid Request | Status Code: 200
+12:02:19 [SUCCESS] Saved API Seed
+12:02:19 [SUCCESS] Saved API Data
+12:02:19 [REQUEST] https://api.openbrewerydb.org/breweries/random?type=micro
+12:02:19 [SUCCESS] Valid Request | Status Code: 200
+12:02:19 [SUCCESS] Saved API Seed
+12:02:19 [SUCCESS] Saved API Data
+12:02:19 [REQUEST] https://api.openbrewerydb.org/breweries/random?since=2010
+12:02:20 [SUCCESS] Valid Request | Status Code: 200
+12:02:20 [SUCCESS] Saved API Seed
+12:02:20 [SUCCESS] Saved API Data
+12:02:20 [REQUEST] https://api.openbrewerydb.org/breweries/random?is_organic=true
+12:02:20 [SUCCESS] Valid Request | Status Code: 200
+12:02:20 [SUCCESS] Saved API Seed
+12:02:20 [SUCCESS] Saved API Data
+12:02:20 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_postal=92101
+12:02:20 [SUCCESS] Valid Request | Status Code: 200
+12:02:20 [WARNING] Request Already in Seeds
+12:02:20 [SUCCESS] Saved API Data
+12:02:20 [TITLE]   Execution Results
+12:02:20 [INFO]    Saved to: ./outputs/Open_Brewery_DB_API/executions/3.json
+12:02:21 [TITLE]   Launching RESTSpecIT
+12:02:21 [TITLE]   Executing: Open Brewery DB API
+12:02:21 [SUCCESS] Loaded API Data
+12:02:21 [SUCCESS] Loaded API Seeds
+12:02:21 [SUCCESS] Loaded API Seeds
+12:02:21 [TITLE]   Inferring Base API Data
+12:02:21 [SECTION] Inferring Info Data
+12:02:21 [WARNING] Info Data Already Exists
+12:02:21 [SECTION] Inferring Online Documentation Data
+12:02:21 [WARNING] Online Documentation Data Already Exists
+12:02:21 [SECTION] Inferring Server Data
+12:02:21 [WARNING] Server Data Already Exists
+12:02:21 [SECTION] Inferring Request Seeds
+12:02:24 [REQUEST] https://api.openbrewerydb.org/breweries
+12:02:25 [SUCCESS] Valid Request | Status Code: 200
+12:02:25 [WARNING] Request Already in Seeds
+12:02:25 [SUCCESS] Saved API Data
+12:02:25 [REQUEST] https://api.openbrewerydb.org/breweries?by_city=San%20Diego
+12:02:25 [SUCCESS] Valid Request | Status Code: 200
+12:02:25 [SUCCESS] Saved API Seed
+12:02:25 [SUCCESS] Saved API Data
+12:02:25 [REQUEST] https://api.openbrewerydb.org/breweries?by_state=California
+12:02:26 [SUCCESS] Valid Request | Status Code: 200
+12:02:26 [WARNING] Request Already in Seeds
+12:02:26 [SUCCESS] Saved API Data
+12:02:26 [REQUEST] https://api.openbrewerydb.org/breweries?by_name=Stone%20Brewing
+12:02:26 [SUCCESS] Valid Request | Status Code: 200
+12:02:26 [SUCCESS] Saved API Seed
+12:02:26 [SUCCESS] Saved API Data
+12:02:26 [REQUEST] https://api.openbrewerydb.org/breweries?by_tag=dog-friendly
+12:02:26 [SUCCESS] Valid Request | Status Code: 200
+12:02:26 [WARNING] Request Already in Seeds
+12:02:26 [SUCCESS] Saved API Data
+12:02:26 [REQUEST] https://api.openbrewerydb.org/breweries?by_type=micro
+12:02:26 [SUCCESS] Valid Request | Status Code: 200
+12:02:26 [SUCCESS] Saved API Seed
+12:02:27 [SUCCESS] Saved API Data
+12:02:27 [REQUEST] https://api.openbrewerydb.org/breweries?by_postal=92101
+12:02:27 [SUCCESS] Valid Request | Status Code: 200
+12:02:27 [SUCCESS] Saved API Seed
+12:02:27 [SUCCESS] Saved API Data
+12:02:27 [REQUEST] https://api.openbrewerydb.org/breweries?by_city=San%20Diego&by_state=California
+12:02:28 [SUCCESS] Valid Request | Status Code: 200
+12:02:28 [SUCCESS] Saved API Seed
+12:02:28 [SUCCESS] Saved API Data
+12:02:28 [REQUEST] https://api.openbrewerydb.org/breweries?by_name=Stone%20Brewing&by_tag=dog-friendly
+12:02:28 [SUCCESS] Valid Request | Status Code: 200
+12:02:28 [SUCCESS] Saved API Seed
+12:02:28 [SUCCESS] Saved API Data
+12:02:28 [REQUEST] https://api.openbrewerydb.org/breweries?by_type=micro&by_postal=92101
+12:02:29 [SUCCESS] Valid Request | Status Code: 200
+12:02:29 [SUCCESS] Saved API Seed
+12:02:29 [SUCCESS] Saved API Data
+12:02:29 [SECTION] Inferring Error Schema
+12:02:29 [REQUEST] https://api.openbrewerydb.org/invalidRoute/?invalidParam=invalidValue
+12:02:29 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:29 [SUCCESS] Error Schema Found
+12:02:29 [SUCCESS] Saved API Data
+12:02:29 [TITLE]   Mutation Process: focusRoutes
+12:02:29 [TITLE]   Mutating Request (1/1)
+12:02:29 [SECTION] Mutation Operator: addRoute
+12:02:29 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&type=micro
+12:02:29 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/search/<route>?query=IPA&sort=name&sort=type&type=micro
+12:02:32 [SUCCESS] Found Values: ['by_city', 'by_state', 'by_postal', 'by_name', 'by_type', 'by_tag', 'by_country', 'by_region', 'by_association', 'by_city?city=Portland', 'by_state?state=California', 'by_postal?postal_code=90210', '65']
+12:02:32 [SECTION] Mutation Operator: removeRoute
+12:02:32 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name&by_city=San+Diego
+12:02:32 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries?sort=name&by_city=San+Diego
+12:02:32 [SECTION] Mutation Operator: modifyRoute
+12:02:32 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name&by_postal=94103
+12:02:32 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/<route>?sort=name&by_postal=94103
+12:02:36 [SUCCESS] Found Values: ['search', 'random', 'state/california', 'city/san_diego', 'type/micro', 'name/stone_brewing', 'postal/90210', 'search?query=IPA', 'city/portland', 'state/texas', 'search?query=IPA', 'random?by_state=California', 'state/california?per_page=10', '74']
+12:02:36 [SECTION] Mutation Operator: resetRoutes
+12:02:36 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&phone=1234567890
+12:02:36 [INFO]    Masked Request: https://api.openbrewerydb.org/<route>?query=IPA&sort=name&sort=type&phone=1234567890
+12:02:39 [SUCCESS] Found Values: ['breweries', 'search', 'regions', 'brewery_types', 'cities', 'states', 'search/geo', 'search/autocomplete', 'search/random', 'search/advanced', 'breweries?by_state=California', 'search?query=ipa', 'regions?per_page=10', '50']
+12:02:39 [TITLE]   Mutated Request Verification
+12:02:39 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_city?query=IPA&sort=name&sort=type&type=micro
+12:02:39 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:39 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_state?query=IPA&sort=name&sort=type&type=micro
+12:02:39 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:39 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_postal?query=IPA&sort=name&sort=type&type=micro
+12:02:40 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:40 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_name?query=IPA&sort=name&sort=type&type=micro
+12:02:41 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:41 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_type?query=IPA&sort=name&sort=type&type=micro
+12:02:41 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:41 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_tag?query=IPA&sort=name&sort=type&type=micro
+12:02:42 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:42 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_country?query=IPA&sort=name&sort=type&type=micro
+12:02:42 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:42 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_region?query=IPA&sort=name&sort=type&type=micro
+12:02:43 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:43 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_association?query=IPA&sort=name&sort=type&type=micro
+12:02:43 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:43 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_city?city=Portland&query=IPA&sort=name&sort=type&type=micro
+12:02:44 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:44 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_state?state=California&query=IPA&sort=name&sort=type&type=micro
+12:02:44 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:44 [REQUEST] https://api.openbrewerydb.org/breweries/search/by_postal?postal_code=90210&query=IPA&sort=name&sort=type&type=micro
+12:02:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:45 [REQUEST] https://api.openbrewerydb.org/breweries/search/65?query=IPA&sort=name&sort=type&type=micro
+12:02:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:45 [REQUEST] https://api.openbrewerydb.org/breweries?sort=name&by_city=San+Diego
+12:02:46 [SUCCESS] Valid Request | Status Code: 200
+12:02:46 [SUCCESS] Saved API Seed
+12:02:46 [SUCCESS] Saved API Data
+12:02:46 [REQUEST] https://api.openbrewerydb.org/breweries/search?sort=name&by_postal=94103
+12:02:46 [SUCCESS] Valid Request | Status Code: 200
+12:02:46 [SUCCESS] Saved API Seed
+12:02:46 [SUCCESS] Saved API Data
+12:02:46 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_postal=94103
+12:02:46 [SUCCESS] Valid Request | Status Code: 200
+12:02:46 [WARNING] Request Already in Seeds
+12:02:46 [SUCCESS] Saved API Data
+12:02:46 [REQUEST] https://api.openbrewerydb.org/breweries/state/california?sort=name&by_postal=94103
+12:02:47 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:47 [REQUEST] https://api.openbrewerydb.org/breweries/city/san_diego?sort=name&by_postal=94103
+12:02:48 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:48 [REQUEST] https://api.openbrewerydb.org/breweries/type/micro?sort=name&by_postal=94103
+12:02:48 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:48 [REQUEST] https://api.openbrewerydb.org/breweries/name/stone_brewing?sort=name&by_postal=94103
+12:02:49 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:49 [REQUEST] https://api.openbrewerydb.org/breweries/postal/90210?sort=name&by_postal=94103
+12:02:49 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:49 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&by_postal=94103
+12:02:50 [SUCCESS] Valid Request | Status Code: 200
+12:02:50 [SUCCESS] Saved API Seed
+12:02:50 [SUCCESS] Saved API Data
+12:02:50 [REQUEST] https://api.openbrewerydb.org/breweries/city/portland?sort=name&by_postal=94103
+12:02:51 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:51 [REQUEST] https://api.openbrewerydb.org/breweries/state/texas?sort=name&by_postal=94103
+12:02:51 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:51 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&by_postal=94103
+12:02:51 [SUCCESS] Valid Request | Status Code: 200
+12:02:51 [WARNING] Request Already in Seeds
+12:02:51 [SUCCESS] Saved API Data
+12:02:51 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_state=California&sort=name&by_postal=94103
+12:02:52 [SUCCESS] Valid Request | Status Code: 200
+12:02:52 [SUCCESS] Saved API Seed
+12:02:52 [SUCCESS] Saved API Data
+12:02:52 [REQUEST] https://api.openbrewerydb.org/breweries/state/california?per_page=10&sort=name&by_postal=94103
+12:02:53 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:53 [REQUEST] https://api.openbrewerydb.org/breweries/74?sort=name&by_postal=94103
+12:02:53 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:53 [REQUEST] https://api.openbrewerydb.org/breweries?query=IPA&sort=name&sort=type&phone=1234567890
+12:02:53 [SUCCESS] Valid Request | Status Code: 200
+12:02:53 [SUCCESS] Saved API Seed
+12:02:53 [SUCCESS] Saved API Data
+12:02:53 [REQUEST] https://api.openbrewerydb.org/search?query=IPA&sort=name&sort=type&phone=1234567890
+12:02:54 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:54 [REQUEST] https://api.openbrewerydb.org/regions?query=IPA&sort=name&sort=type&phone=1234567890
+12:02:55 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:55 [REQUEST] https://api.openbrewerydb.org/brewery_types?query=IPA&sort=name&sort=type&phone=1234567890
+12:02:55 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:55 [REQUEST] https://api.openbrewerydb.org/cities?query=IPA&sort=name&sort=type&phone=1234567890
+12:02:56 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:56 [REQUEST] https://api.openbrewerydb.org/states?query=IPA&sort=name&sort=type&phone=1234567890
+12:02:57 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:57 [REQUEST] https://api.openbrewerydb.org/search/geo?query=IPA&sort=name&sort=type&phone=1234567890
+12:02:57 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:57 [REQUEST] https://api.openbrewerydb.org/search/autocomplete?query=IPA&sort=name&sort=type&phone=1234567890
+12:02:58 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:58 [REQUEST] https://api.openbrewerydb.org/search/random?query=IPA&sort=name&sort=type&phone=1234567890
+12:02:58 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:58 [REQUEST] https://api.openbrewerydb.org/search/advanced?query=IPA&sort=name&sort=type&phone=1234567890
+12:02:59 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:02:59 [REQUEST] https://api.openbrewerydb.org/breweries?by_state=California&query=IPA&sort=name&sort=type&phone=1234567890
+12:02:59 [SUCCESS] Valid Request | Status Code: 200
+12:02:59 [SUCCESS] Saved API Seed
+12:02:59 [SUCCESS] Saved API Data
+12:02:59 [REQUEST] https://api.openbrewerydb.org/search?query=ipa&query=IPA&sort=name&sort=type&phone=1234567890
+12:03:00 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:00 [REQUEST] https://api.openbrewerydb.org/regions?per_page=10&query=IPA&sort=name&sort=type&phone=1234567890
+12:03:00 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:00 [REQUEST] https://api.openbrewerydb.org/50?query=IPA&sort=name&sort=type&phone=1234567890
+12:03:01 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:01 [TITLE]   Mutation Process: focusParameters
+12:03:01 [TITLE]   Mutating Request (1/1)
+12:03:01 [SECTION] Mutation Operator: addParameter
+12:03:01 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland
+12:03:01 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&<parameter=value>
+12:03:03 [SUCCESS] Found Values: ['by_state=California', 'by_type=micro', 'by_postal=97209', 'by_phone=1234567890', 'by_tag=dog-friendly', 'by_tag=pet-friendly', 'by_tag=outdoor-seating', 'by_tag=food-truck', 'by_tag=gluten-free-options', 'by_tag=brewery-tours']
+12:03:03 [SECTION] Mutation Operator: removeParameter
+12:03:03 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&phone=1234567890
+12:03:03 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type
+12:03:03 [SECTION] Mutation Operator: modifyParameter
+12:03:03 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland
+12:03:03 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&<parameter=value>
+12:03:04 [SUCCESS] Found Values: ['state=California', 'city=San+Diego', 'type=micro', 'per_page=50', 'page=2', 'name=Ballast+Point+Brewing+Co', 'postal=92101', 'since=2015', 'phone=555-555-5555', 'website=https:']
+12:03:04 [SECTION] Mutation Operator: resetParameters
+12:03:04 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?by_name=stone_brewing_co
+12:03:04 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random?<parameter=value>
+12:03:06 [SUCCESS] Found Values: ['by_state=California', 'by_city=San+Diego', 'by_name=Stone+Brewing', 'by_type=micro', 'by_tag=dog-friendly', 'per_page=25', 'sort=type,-name', 'by_postal=92101', 'by_district=Midwest', 'by_country=United+States']
+12:03:06 [TITLE]   Mutated Request Verification
+12:03:06 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_state=California
+12:03:06 [SUCCESS] Valid Request | Status Code: 200
+12:03:06 [SUCCESS] Saved API Seed
+12:03:06 [SUCCESS] Saved API Data
+12:03:06 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:03:07 [SUCCESS] Valid Request | Status Code: 200
+12:03:07 [SUCCESS] Saved API Seed
+12:03:07 [SUCCESS] Saved API Data
+12:03:07 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_postal=97209
+12:03:07 [SUCCESS] Valid Request | Status Code: 200
+12:03:07 [SUCCESS] Saved API Seed
+12:03:07 [SUCCESS] Saved API Data
+12:03:07 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_phone=1234567890
+12:03:08 [SUCCESS] Valid Request | Status Code: 200
+12:03:08 [SUCCESS] Saved API Seed
+12:03:08 [SUCCESS] Saved API Data
+12:03:08 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_tag=dog-friendly
+12:03:08 [SUCCESS] Valid Request | Status Code: 200
+12:03:08 [SUCCESS] Saved API Seed
+12:03:08 [SUCCESS] Saved API Data
+12:03:08 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_tag=pet-friendly
+12:03:08 [SUCCESS] Valid Request | Status Code: 200
+12:03:08 [SUCCESS] Saved API Seed
+12:03:08 [SUCCESS] Saved API Data
+12:03:08 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_tag=outdoor-seating
+12:03:09 [SUCCESS] Valid Request | Status Code: 200
+12:03:09 [SUCCESS] Saved API Seed
+12:03:09 [SUCCESS] Saved API Data
+12:03:09 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_tag=food-truck
+12:03:09 [SUCCESS] Valid Request | Status Code: 200
+12:03:09 [SUCCESS] Saved API Seed
+12:03:09 [SUCCESS] Saved API Data
+12:03:09 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_tag=gluten-free-options
+12:03:10 [SUCCESS] Valid Request | Status Code: 200
+12:03:10 [SUCCESS] Saved API Seed
+12:03:10 [SUCCESS] Saved API Data
+12:03:10 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_tag=brewery-tours
+12:03:10 [SUCCESS] Valid Request | Status Code: 200
+12:03:10 [SUCCESS] Saved API Seed
+12:03:10 [SUCCESS] Saved API Data
+12:03:10 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type
+12:03:11 [SUCCESS] Valid Request | Status Code: 200
+12:03:11 [WARNING] Request Already in Seeds
+12:03:11 [SUCCESS] Saved API Data
+12:03:11 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&state=California
+12:03:11 [SUCCESS] Valid Request | Status Code: 200
+12:03:11 [SUCCESS] Saved API Seed
+12:03:11 [SUCCESS] Saved API Data
+12:03:11 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&city=San+Diego
+12:03:12 [SUCCESS] Valid Request | Status Code: 200
+12:03:12 [SUCCESS] Saved API Seed
+12:03:12 [SUCCESS] Saved API Data
+12:03:12 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&type=micro
+12:03:12 [SUCCESS] Valid Request | Status Code: 200
+12:03:12 [SUCCESS] Saved API Seed
+12:03:12 [SUCCESS] Saved API Data
+12:03:12 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&per_page=50
+12:03:13 [SUCCESS] Valid Request | Status Code: 200
+12:03:13 [WARNING] Request Already in Seeds
+12:03:13 [SUCCESS] Saved API Data
+12:03:13 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&page=2
+12:03:13 [SUCCESS] Valid Request | Status Code: 200
+12:03:13 [WARNING] Request Already in Seeds
+12:03:13 [SUCCESS] Saved API Data
+12:03:13 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&name=Ballast+Point+Brewing+Co
+12:03:13 [SUCCESS] Valid Request | Status Code: 200
+12:03:13 [SUCCESS] Saved API Seed
+12:03:13 [SUCCESS] Saved API Data
+12:03:13 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&postal=92101
+12:03:14 [SUCCESS] Valid Request | Status Code: 200
+12:03:14 [SUCCESS] Saved API Seed
+12:03:14 [SUCCESS] Saved API Data
+12:03:14 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&since=2015
+12:03:14 [SUCCESS] Valid Request | Status Code: 200
+12:03:14 [SUCCESS] Saved API Seed
+12:03:14 [SUCCESS] Saved API Data
+12:03:14 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&phone=555-555-5555
+12:03:15 [SUCCESS] Valid Request | Status Code: 200
+12:03:15 [SUCCESS] Saved API Seed
+12:03:15 [SUCCESS] Saved API Data
+12:03:15 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&website=https:
+12:03:15 [SUCCESS] Valid Request | Status Code: 200
+12:03:15 [SUCCESS] Saved API Seed
+12:03:15 [SUCCESS] Saved API Data
+12:03:15 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_state=California
+12:03:16 [SUCCESS] Valid Request | Status Code: 200
+12:03:16 [SUCCESS] Saved API Seed
+12:03:16 [SUCCESS] Saved API Data
+12:03:16 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_city=San+Diego
+12:03:16 [SUCCESS] Valid Request | Status Code: 200
+12:03:16 [SUCCESS] Saved API Seed
+12:03:16 [SUCCESS] Saved API Data
+12:03:16 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_name=Stone+Brewing
+12:03:17 [SUCCESS] Valid Request | Status Code: 200
+12:03:17 [SUCCESS] Saved API Seed
+12:03:17 [SUCCESS] Saved API Data
+12:03:17 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_type=micro
+12:03:17 [SUCCESS] Valid Request | Status Code: 200
+12:03:17 [WARNING] Request Already in Seeds
+12:03:17 [SUCCESS] Saved API Data
+12:03:17 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_tag=dog-friendly
+12:03:18 [SUCCESS] Valid Request | Status Code: 200
+12:03:18 [SUCCESS] Saved API Seed
+12:03:18 [SUCCESS] Saved API Data
+12:03:18 [REQUEST] https://api.openbrewerydb.org/breweries/random?per_page=25
+12:03:18 [SUCCESS] Valid Request | Status Code: 200
+12:03:18 [WARNING] Request Already in Seeds
+12:03:18 [SUCCESS] Saved API Data
+12:03:18 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=type,-name
+12:03:18 [SUCCESS] Valid Request | Status Code: 200
+12:03:18 [SUCCESS] Saved API Seed
+12:03:18 [SUCCESS] Saved API Data
+12:03:18 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_postal=92101
+12:03:19 [SUCCESS] Valid Request | Status Code: 200
+12:03:19 [WARNING] Request Already in Seeds
+12:03:19 [SUCCESS] Saved API Data
+12:03:19 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_district=Midwest
+12:03:19 [SUCCESS] Valid Request | Status Code: 200
+12:03:19 [SUCCESS] Saved API Seed
+12:03:19 [SUCCESS] Saved API Data
+12:03:19 [REQUEST] https://api.openbrewerydb.org/breweries/random?by_country=United+States
+12:03:20 [SUCCESS] Valid Request | Status Code: 200
+12:03:20 [SUCCESS] Saved API Seed
+12:03:20 [SUCCESS] Saved API Data
+12:03:20 [TITLE]   Execution Results
+12:03:20 [INFO]    Saved to: ./outputs/Open_Brewery_DB_API/executions/4.json
+12:03:20 [TITLE]   Launching RESTSpecIT
+12:03:20 [TITLE]   Executing: Open Brewery DB API
+12:03:20 [SUCCESS] Loaded API Data
+12:03:20 [SUCCESS] Loaded API Seeds
+12:03:20 [SUCCESS] Loaded API Seeds
+12:03:20 [TITLE]   Inferring Base API Data
+12:03:20 [SECTION] Inferring Info Data
+12:03:20 [WARNING] Info Data Already Exists
+12:03:20 [SECTION] Inferring Online Documentation Data
+12:03:20 [WARNING] Online Documentation Data Already Exists
+12:03:20 [SECTION] Inferring Server Data
+12:03:20 [WARNING] Server Data Already Exists
+12:03:20 [SECTION] Inferring Request Seeds
+12:03:23 [REQUEST] https://api.openbrewerydb.org/breweries
+12:03:24 [SUCCESS] Valid Request | Status Code: 200
+12:03:24 [WARNING] Request Already in Seeds
+12:03:24 [SUCCESS] Saved API Data
+12:03:24 [REQUEST] https://api.openbrewerydb.org/breweries?by_state=California
+12:03:24 [SUCCESS] Valid Request | Status Code: 200
+12:03:24 [WARNING] Request Already in Seeds
+12:03:24 [SUCCESS] Saved API Data
+12:03:24 [REQUEST] https://api.openbrewerydb.org/breweries?by_city=San_Diego
+12:03:24 [SUCCESS] Valid Request | Status Code: 200
+12:03:24 [SUCCESS] Saved API Seed
+12:03:24 [SUCCESS] Saved API Data
+12:03:24 [REQUEST] https://api.openbrewerydb.org/breweries?by_type=micro
+12:03:25 [SUCCESS] Valid Request | Status Code: 200
+12:03:25 [WARNING] Request Already in Seeds
+12:03:25 [SUCCESS] Saved API Data
+12:03:25 [REQUEST] https://api.openbrewerydb.org/breweries?per_page=50
+12:03:25 [SUCCESS] Valid Request | Status Code: 200
+12:03:25 [WARNING] Request Already in Seeds
+12:03:25 [SUCCESS] Saved API Data
+12:03:25 [REQUEST] https://api.openbrewerydb.org/breweries?by_state=Texas&by_city=Austin&per_page=10
+12:03:25 [SUCCESS] Valid Request | Status Code: 200
+12:03:25 [SUCCESS] Saved API Seed
+12:03:25 [SUCCESS] Saved API Data
+12:03:25 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=dog
+12:03:26 [SUCCESS] Valid Request | Status Code: 200
+12:03:26 [SUCCESS] Saved API Seed
+12:03:26 [SUCCESS] Saved API Data
+12:03:26 [REQUEST] https://api.openbrewerydb.org/breweries/random
+12:03:26 [SUCCESS] Valid Request | Status Code: 200
+12:03:26 [WARNING] Request Already in Seeds
+12:03:26 [SUCCESS] Saved API Data
+12:03:26 [REQUEST] https://api.openbrewerydb.org/breweries/123
+12:03:26 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:26 [REQUEST] https://api.openbrewerydb.org/breweries/123/events
+12:03:27 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:27 [REQUEST] https://api.openbrewerydb.org/breweries/456/beers
+12:03:27 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:27 [REQUEST] https://api.openbrewerydb.org/breweries/789/employees?role=brewer
+12:03:28 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:28 [SECTION] Inferring Error Schema
+12:03:28 [REQUEST] https://api.openbrewerydb.org/invalidRoute/?invalidParam=invalidValue
+12:03:28 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:28 [SUCCESS] Error Schema Found
+12:03:28 [SUCCESS] Saved API Data
+12:03:28 [TITLE]   Mutation Process: focusRoutes
+12:03:28 [TITLE]   Mutating Request (1/1)
+12:03:28 [SECTION] Mutation Operator: addRoute
+12:03:28 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?by_state=colorado&city=Portland
+12:03:28 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random/<route>?by_state=colorado&city=Portland
+12:03:31 [SUCCESS] Found Values: ['name', 'type', 'state', 'city', 'postal_code', 'phone', 'website_url', 'updated_at', 'country', 'longitude', 'latitude', 'name?state=California', 'type?by_state=California', 'state?state=California', '9']
+12:03:31 [SECTION] Mutation Operator: removeRoute
+12:03:31 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/search?query=IPA&by_website=example.com
+12:03:31 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries?query=IPA&by_website=example.com
+12:03:31 [SECTION] Mutation Operator: modifyRoute
+12:03:31 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type
+12:03:31 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/<route>?query=IPA&sort=name&sort=type
+12:03:33 [SUCCESS] Found Values: ['search', 'name', 'city', 'state', 'postal_code', 'country', 'type', 'tag', 'status', 'updated_at', 'search?query=IPA', 'name?query=dogfish', 'city?city=san_diego', '29']
+12:03:33 [SECTION] Mutation Operator: resetRoutes
+12:03:33 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?by_state=California&sort=name&by_postal=94103
+12:03:33 [INFO]    Masked Request: https://api.openbrewerydb.org/<route>?by_state=California&sort=name&by_postal=94103
+12:03:35 [SUCCESS] Found Values: ['breweries', 'search', 'regions', 'styles', 'cities', 'categories', 'features', 'events', 'organizations', 'locations', 'breweries?by_state=Colorado', 'search?query=IPA', 'regions?per_page=10', '76']
+12:03:35 [TITLE]   Mutated Request Verification
+12:03:35 [REQUEST] https://api.openbrewerydb.org/breweries/random/name?by_state=colorado&city=Portland
+12:03:36 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:36 [REQUEST] https://api.openbrewerydb.org/breweries/random/type?by_state=colorado&city=Portland
+12:03:36 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:36 [REQUEST] https://api.openbrewerydb.org/breweries/random/state?by_state=colorado&city=Portland
+12:03:37 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:37 [REQUEST] https://api.openbrewerydb.org/breweries/random/city?by_state=colorado&city=Portland
+12:03:37 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:37 [REQUEST] https://api.openbrewerydb.org/breweries/random/postal_code?by_state=colorado&city=Portland
+12:03:38 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:38 [REQUEST] https://api.openbrewerydb.org/breweries/random/phone?by_state=colorado&city=Portland
+12:03:38 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:38 [REQUEST] https://api.openbrewerydb.org/breweries/random/website_url?by_state=colorado&city=Portland
+12:03:38 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:38 [REQUEST] https://api.openbrewerydb.org/breweries/random/updated_at?by_state=colorado&city=Portland
+12:03:39 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:39 [REQUEST] https://api.openbrewerydb.org/breweries/random/country?by_state=colorado&city=Portland
+12:03:39 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:39 [REQUEST] https://api.openbrewerydb.org/breweries/random/longitude?by_state=colorado&city=Portland
+12:03:40 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:40 [REQUEST] https://api.openbrewerydb.org/breweries/random/latitude?by_state=colorado&city=Portland
+12:03:40 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:40 [REQUEST] https://api.openbrewerydb.org/breweries/random/name?state=California&by_state=colorado&city=Portland
+12:03:41 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:41 [REQUEST] https://api.openbrewerydb.org/breweries/random/type?by_state=California&by_state=colorado&city=Portland
+12:03:42 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:42 [REQUEST] https://api.openbrewerydb.org/breweries/random/state?state=California&by_state=colorado&city=Portland
+12:03:42 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:42 [REQUEST] https://api.openbrewerydb.org/breweries/random/9?by_state=colorado&city=Portland
+12:03:43 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:43 [REQUEST] https://api.openbrewerydb.org/breweries?query=IPA&by_website=example.com
+12:03:43 [SUCCESS] Valid Request | Status Code: 200
+12:03:43 [SUCCESS] Saved API Seed
+12:03:43 [SUCCESS] Saved API Data
+12:03:43 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type
+12:03:44 [SUCCESS] Valid Request | Status Code: 200
+12:03:44 [WARNING] Request Already in Seeds
+12:03:44 [SUCCESS] Saved API Data
+12:03:44 [REQUEST] https://api.openbrewerydb.org/breweries/name?query=IPA&sort=name&sort=type
+12:03:44 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:44 [REQUEST] https://api.openbrewerydb.org/breweries/city?query=IPA&sort=name&sort=type
+12:03:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:45 [REQUEST] https://api.openbrewerydb.org/breweries/state?query=IPA&sort=name&sort=type
+12:03:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:45 [REQUEST] https://api.openbrewerydb.org/breweries/postal_code?query=IPA&sort=name&sort=type
+12:03:46 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:46 [REQUEST] https://api.openbrewerydb.org/breweries/country?query=IPA&sort=name&sort=type
+12:03:46 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:46 [REQUEST] https://api.openbrewerydb.org/breweries/type?query=IPA&sort=name&sort=type
+12:03:47 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:47 [REQUEST] https://api.openbrewerydb.org/breweries/tag?query=IPA&sort=name&sort=type
+12:03:47 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:47 [REQUEST] https://api.openbrewerydb.org/breweries/status?query=IPA&sort=name&sort=type
+12:03:48 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:48 [REQUEST] https://api.openbrewerydb.org/breweries/updated_at?query=IPA&sort=name&sort=type
+12:03:48 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:48 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&query=IPA&sort=name&sort=type
+12:03:49 [SUCCESS] Valid Request | Status Code: 200
+12:03:49 [SUCCESS] Saved API Seed
+12:03:49 [SUCCESS] Saved API Data
+12:03:49 [REQUEST] https://api.openbrewerydb.org/breweries/name?query=dogfish&query=IPA&sort=name&sort=type
+12:03:49 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:49 [REQUEST] https://api.openbrewerydb.org/breweries/city?city=san_diego&query=IPA&sort=name&sort=type
+12:03:50 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:50 [REQUEST] https://api.openbrewerydb.org/breweries/29?query=IPA&sort=name&sort=type
+12:03:50 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:50 [REQUEST] https://api.openbrewerydb.org/breweries?by_state=California&sort=name&by_postal=94103
+12:03:51 [SUCCESS] Valid Request | Status Code: 200
+12:03:51 [SUCCESS] Saved API Seed
+12:03:51 [SUCCESS] Saved API Data
+12:03:51 [REQUEST] https://api.openbrewerydb.org/search?by_state=California&sort=name&by_postal=94103
+12:03:51 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:51 [REQUEST] https://api.openbrewerydb.org/regions?by_state=California&sort=name&by_postal=94103
+12:03:52 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:52 [REQUEST] https://api.openbrewerydb.org/styles?by_state=California&sort=name&by_postal=94103
+12:03:52 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:52 [REQUEST] https://api.openbrewerydb.org/cities?by_state=California&sort=name&by_postal=94103
+12:03:53 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:53 [REQUEST] https://api.openbrewerydb.org/categories?by_state=California&sort=name&by_postal=94103
+12:03:53 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:53 [REQUEST] https://api.openbrewerydb.org/features?by_state=California&sort=name&by_postal=94103
+12:03:54 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:54 [REQUEST] https://api.openbrewerydb.org/events?by_state=California&sort=name&by_postal=94103
+12:03:54 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:54 [REQUEST] https://api.openbrewerydb.org/organizations?by_state=California&sort=name&by_postal=94103
+12:03:55 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:55 [REQUEST] https://api.openbrewerydb.org/locations?by_state=California&sort=name&by_postal=94103
+12:03:55 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:55 [REQUEST] https://api.openbrewerydb.org/breweries?by_state=Colorado&by_state=California&sort=name&by_postal=94103
+12:03:56 [SUCCESS] Valid Request | Status Code: 200
+12:03:56 [SUCCESS] Saved API Seed
+12:03:56 [SUCCESS] Saved API Data
+12:03:56 [REQUEST] https://api.openbrewerydb.org/search?query=IPA&by_state=California&sort=name&by_postal=94103
+12:03:56 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:56 [REQUEST] https://api.openbrewerydb.org/regions?per_page=10&by_state=California&sort=name&by_postal=94103
+12:03:57 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:57 [REQUEST] https://api.openbrewerydb.org/76?by_state=California&sort=name&by_postal=94103
+12:03:57 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:03:57 [TITLE]   Mutation Process: focusParameters
+12:03:57 [TITLE]   Mutating Request (1/1)
+12:03:57 [SECTION] Mutation Operator: addParameter
+12:03:57 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=-city
+12:03:57 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random?sort=-city&<parameter=value>
+12:03:59 [SUCCESS] Found Values: ['by_state=California', 'by_name=Sierra+Nevada+Brewing+Co', 'by_type=micro', 'by_tag=dog-friendly', 'per_page=25', 'page=2', 'since=2010-01-01', 'before=2020-12-31', 'by_postal=94110', 'by_dist=10']
+12:03:59 [SECTION] Mutation Operator: removeParameter
+12:03:59 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/search?query=IPA&query=IPA&sort=name&sort=type
+12:03:59 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/search?query=IPA&query=IPA&sort=name
+12:03:59 [SECTION] Mutation Operator: modifyParameter
+12:03:59 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name&page=2
+12:03:59 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random?sort=name&<parameter=value>
+12:04:00 [SUCCESS] Found Values: ['state=California', 'city=Portland', 'type=micro', 'per_page=50', 'postal_code=97209', 'since=2015', 'country=United+States', 'brewed_before=2010', 'tags=dog_friendly', 'phone=503-555-1234']
+12:04:00 [SECTION] Mutation Operator: resetParameters
+12:04:00 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&postal=92101
+12:04:00 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/search?<parameter=value>
+12:04:01 [SUCCESS] Found Values: ['name=example_brewery', 'city=san_diego', 'state=california', 'type=micro', 'postal_code=92101', 'country=united_states', 'tag=brewpub', 'established=2010', 'updated_since=2021-01-01', 'per_page=50']
+12:04:01 [TITLE]   Mutated Request Verification
+12:04:01 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=-city&by_state=California
+12:04:01 [SUCCESS] Valid Request | Status Code: 200
+12:04:01 [SUCCESS] Saved API Seed
+12:04:01 [SUCCESS] Saved API Data
+12:04:01 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=-city&by_name=Sierra+Nevada+Brewing+Co
+12:04:02 [SUCCESS] Valid Request | Status Code: 200
+12:04:02 [SUCCESS] Saved API Seed
+12:04:02 [SUCCESS] Saved API Data
+12:04:02 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=-city&by_type=micro
+12:04:02 [SUCCESS] Valid Request | Status Code: 200
+12:04:02 [SUCCESS] Saved API Seed
+12:04:02 [SUCCESS] Saved API Data
+12:04:02 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=-city&by_tag=dog-friendly
+12:04:03 [SUCCESS] Valid Request | Status Code: 200
+12:04:03 [SUCCESS] Saved API Seed
+12:04:03 [SUCCESS] Saved API Data
+12:04:03 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=-city&per_page=25
+12:04:04 [SUCCESS] Valid Request | Status Code: 200
+12:04:04 [SUCCESS] Saved API Seed
+12:04:04 [SUCCESS] Saved API Data
+12:04:04 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=-city&page=2
+12:04:04 [SUCCESS] Valid Request | Status Code: 200
+12:04:04 [SUCCESS] Saved API Seed
+12:04:04 [SUCCESS] Saved API Data
+12:04:04 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=-city&since=2010-01-01
+12:04:05 [SUCCESS] Valid Request | Status Code: 200
+12:04:05 [SUCCESS] Saved API Seed
+12:04:05 [SUCCESS] Saved API Data
+12:04:05 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=-city&before=2020-12-31
+12:04:05 [SUCCESS] Valid Request | Status Code: 200
+12:04:05 [SUCCESS] Saved API Seed
+12:04:05 [SUCCESS] Saved API Data
+12:04:05 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=-city&by_postal=94110
+12:04:06 [SUCCESS] Valid Request | Status Code: 200
+12:04:06 [SUCCESS] Saved API Seed
+12:04:06 [SUCCESS] Saved API Data
+12:04:06 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=-city&by_dist=10
+12:04:06 [SUCCESS] Valid Request | Status Code: 200
+12:04:06 [SUCCESS] Saved API Seed
+12:04:06 [SUCCESS] Saved API Data
+12:04:06 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=IPA&query=IPA&sort=name
+12:04:07 [SUCCESS] Valid Request | Status Code: 200
+12:04:07 [SUCCESS] Saved API Seed
+12:04:07 [SUCCESS] Saved API Data
+12:04:07 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&state=California
+12:04:07 [SUCCESS] Valid Request | Status Code: 200
+12:04:07 [SUCCESS] Saved API Seed
+12:04:07 [SUCCESS] Saved API Data
+12:04:07 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&city=Portland
+12:04:08 [SUCCESS] Valid Request | Status Code: 200
+12:04:08 [SUCCESS] Saved API Seed
+12:04:08 [SUCCESS] Saved API Data
+12:04:08 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&type=micro
+12:04:08 [SUCCESS] Valid Request | Status Code: 200
+12:04:08 [SUCCESS] Saved API Seed
+12:04:08 [SUCCESS] Saved API Data
+12:04:08 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&per_page=50
+12:04:09 [SUCCESS] Valid Request | Status Code: 200
+12:04:09 [WARNING] Request Already in Seeds
+12:04:09 [SUCCESS] Saved API Data
+12:04:09 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&postal_code=97209
+12:04:09 [SUCCESS] Valid Request | Status Code: 200
+12:04:09 [SUCCESS] Saved API Seed
+12:04:09 [SUCCESS] Saved API Data
+12:04:09 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&since=2015
+12:04:10 [SUCCESS] Valid Request | Status Code: 200
+12:04:10 [SUCCESS] Saved API Seed
+12:04:10 [SUCCESS] Saved API Data
+12:04:10 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&country=United+States
+12:04:10 [SUCCESS] Valid Request | Status Code: 200
+12:04:10 [SUCCESS] Saved API Seed
+12:04:10 [SUCCESS] Saved API Data
+12:04:10 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&brewed_before=2010
+12:04:11 [SUCCESS] Valid Request | Status Code: 200
+12:04:11 [SUCCESS] Saved API Seed
+12:04:11 [SUCCESS] Saved API Data
+12:04:11 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&tags=dog_friendly
+12:04:11 [SUCCESS] Valid Request | Status Code: 200
+12:04:11 [SUCCESS] Saved API Seed
+12:04:11 [SUCCESS] Saved API Data
+12:04:11 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name&phone=503-555-1234
+12:04:12 [SUCCESS] Valid Request | Status Code: 200
+12:04:12 [SUCCESS] Saved API Seed
+12:04:12 [SUCCESS] Saved API Data
+12:04:12 [REQUEST] https://api.openbrewerydb.org/breweries/search?name=example_brewery
+12:04:12 [SUCCESS] Valid Request | Status Code: 200
+12:04:12 [SUCCESS] Saved API Seed
+12:04:12 [SUCCESS] Saved API Data
+12:04:12 [REQUEST] https://api.openbrewerydb.org/breweries/search?city=san_diego
+12:04:13 [SUCCESS] Valid Request | Status Code: 200
+12:04:13 [SUCCESS] Saved API Seed
+12:04:13 [SUCCESS] Saved API Data
+12:04:13 [REQUEST] https://api.openbrewerydb.org/breweries/search?state=california
+12:04:13 [SUCCESS] Valid Request | Status Code: 200
+12:04:13 [SUCCESS] Saved API Seed
+12:04:13 [SUCCESS] Saved API Data
+12:04:13 [REQUEST] https://api.openbrewerydb.org/breweries/search?type=micro
+12:04:13 [SUCCESS] Valid Request | Status Code: 200
+12:04:13 [SUCCESS] Saved API Seed
+12:04:13 [SUCCESS] Saved API Data
+12:04:13 [REQUEST] https://api.openbrewerydb.org/breweries/search?postal_code=92101
+12:04:14 [SUCCESS] Valid Request | Status Code: 200
+12:04:14 [SUCCESS] Saved API Seed
+12:04:14 [SUCCESS] Saved API Data
+12:04:14 [REQUEST] https://api.openbrewerydb.org/breweries/search?country=united_states
+12:04:14 [SUCCESS] Valid Request | Status Code: 200
+12:04:14 [SUCCESS] Saved API Seed
+12:04:14 [SUCCESS] Saved API Data
+12:04:14 [REQUEST] https://api.openbrewerydb.org/breweries/search?tag=brewpub
+12:04:15 [SUCCESS] Valid Request | Status Code: 200
+12:04:15 [SUCCESS] Saved API Seed
+12:04:15 [SUCCESS] Saved API Data
+12:04:15 [REQUEST] https://api.openbrewerydb.org/breweries/search?established=2010
+12:04:15 [SUCCESS] Valid Request | Status Code: 200
+12:04:15 [SUCCESS] Saved API Seed
+12:04:15 [SUCCESS] Saved API Data
+12:04:15 [REQUEST] https://api.openbrewerydb.org/breweries/search?updated_since=2021-01-01
+12:04:15 [SUCCESS] Valid Request | Status Code: 200
+12:04:15 [SUCCESS] Saved API Seed
+12:04:15 [SUCCESS] Saved API Data
+12:04:15 [REQUEST] https://api.openbrewerydb.org/breweries/search?per_page=50
+12:04:16 [SUCCESS] Valid Request | Status Code: 200
+12:04:16 [SUCCESS] Saved API Seed
+12:04:16 [SUCCESS] Saved API Data
+12:04:16 [TITLE]   Execution Results
+12:04:16 [INFO]    Saved to: ./outputs/Open_Brewery_DB_API/executions/5.json
+12:04:16 [TITLE]   Launching RESTSpecIT
+12:04:16 [TITLE]   Executing: Open Brewery DB API
+12:04:16 [SUCCESS] Loaded API Data
+12:04:16 [SUCCESS] Loaded API Seeds
+12:04:16 [SUCCESS] Loaded API Seeds
+12:04:16 [TITLE]   Inferring Base API Data
+12:04:16 [SECTION] Inferring Info Data
+12:04:16 [WARNING] Info Data Already Exists
+12:04:16 [SECTION] Inferring Online Documentation Data
+12:04:16 [WARNING] Online Documentation Data Already Exists
+12:04:16 [SECTION] Inferring Server Data
+12:04:16 [WARNING] Server Data Already Exists
+12:04:16 [SECTION] Inferring Request Seeds
+12:04:20 [REQUEST] https://api.openbrewerydb.org/breweries
+12:04:21 [SUCCESS] Valid Request | Status Code: 200
+12:04:21 [WARNING] Request Already in Seeds
+12:04:21 [SUCCESS] Saved API Data
+12:04:21 [REQUEST] https://api.openbrewerydb.org/breweries?by_city=san_diego
+12:04:21 [SUCCESS] Valid Request | Status Code: 200
+12:04:21 [SUCCESS] Saved API Seed
+12:04:21 [SUCCESS] Saved API Data
+12:04:21 [REQUEST] https://api.openbrewerydb.org/breweries?by_type=micro
+12:04:22 [SUCCESS] Valid Request | Status Code: 200
+12:04:22 [WARNING] Request Already in Seeds
+12:04:22 [SUCCESS] Saved API Data
+12:04:22 [REQUEST] https://api.openbrewerydb.org/breweries?by_state=california
+12:04:22 [SUCCESS] Valid Request | Status Code: 200
+12:04:22 [SUCCESS] Saved API Seed
+12:04:22 [SUCCESS] Saved API Data
+12:04:22 [REQUEST] https://api.openbrewerydb.org/breweries?per_page=50
+12:04:23 [SUCCESS] Valid Request | Status Code: 200
+12:04:23 [WARNING] Request Already in Seeds
+12:04:23 [SUCCESS] Saved API Data
+12:04:23 [REQUEST] https://api.openbrewerydb.org/breweries?page=2
+12:04:23 [SUCCESS] Valid Request | Status Code: 200
+12:04:23 [SUCCESS] Saved API Seed
+12:04:23 [SUCCESS] Saved API Data
+12:04:23 [REQUEST] https://api.openbrewerydb.org/breweries?sort=name
+12:04:23 [SUCCESS] Valid Request | Status Code: 200
+12:04:24 [WARNING] Request Already in Seeds
+12:04:24 [SUCCESS] Saved API Data
+12:04:24 [REQUEST] https://api.openbrewerydb.org/breweries?sort=type
+12:04:24 [SUCCESS] Valid Request | Status Code: 200
+12:04:24 [SUCCESS] Saved API Seed
+12:04:24 [SUCCESS] Saved API Data
+12:04:24 [REQUEST] https://api.openbrewerydb.org/breweries?by_city=san_diego&by_state=california
+12:04:24 [SUCCESS] Valid Request | Status Code: 200
+12:04:24 [WARNING] Request Already in Seeds
+12:04:24 [SUCCESS] Saved API Data
+12:04:24 [REQUEST] https://api.openbrewerydb.org/breweries?by_city=san_diego&per_page=10
+12:04:25 [SUCCESS] Valid Request | Status Code: 200
+12:04:25 [SUCCESS] Saved API Seed
+12:04:25 [SUCCESS] Saved API Data
+12:04:25 [REQUEST] https://api.openbrewerydb.org/breweries?by_type=brewpub&sort=name
+12:04:25 [SUCCESS] Valid Request | Status Code: 200
+12:04:25 [SUCCESS] Saved API Seed
+12:04:25 [SUCCESS] Saved API Data
+12:04:25 [REQUEST] https://api.openbrewerydb.org/breweries?by_state=california&per_page=20&page=3
+12:04:26 [SUCCESS] Valid Request | Status Code: 200
+12:04:26 [SUCCESS] Saved API Seed
+12:04:26 [SUCCESS] Saved API Data
+12:04:26 [SECTION] Inferring Error Schema
+12:04:26 [REQUEST] https://api.openbrewerydb.org/invalidRoute/?invalidParam=invalidValue
+12:04:26 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:26 [SUCCESS] Error Schema Found
+12:04:26 [SUCCESS] Saved API Data
+12:04:26 [TITLE]   Mutation Process: focusRoutes
+12:04:26 [TITLE]   Mutating Request (1/1)
+12:04:26 [SECTION] Mutation Operator: addRoute
+12:04:26 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/search?city=Portland
+12:04:26 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/search/<route>?city=Portland
+12:04:29 [SUCCESS] Found Values: ['name', 'state', 'type', 'tag', 'postal_code', 'country', 'longitude', 'latitude', 'phone', 'website_url', 'name?query=Stone', 'state?query=California', 'type?query=brewpub', '85']
+12:04:29 [SECTION] Mutation Operator: removeRoute
+12:04:29 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries?by_state=Colorado&by_state=California&sort=name&by_postal=94103
+12:04:29 [INFO]    Masked Request: https://api.openbrewerydb.org?by_state=Colorado&by_state=California&sort=name&by_postal=94103
+12:04:29 [SECTION] Mutation Operator: modifyRoute
+12:04:29 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name
+12:04:29 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/<route>?sort=name
+12:04:31 [SUCCESS] Found Values: ['search', 'city', 'state', 'type', 'name', 'brewery_type', 'postal_code', 'country', 'tag', 'id', 'search?query=California', 'city?city=san_diego', 'state?state=California', '53']
+12:04:31 [SECTION] Mutation Operator: resetRoutes
+12:04:31 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:31 [INFO]    Masked Request: https://api.openbrewerydb.org/<route>?sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:33 [SUCCESS] Found Values: ['breweries', 'search', 'regions', 'categories', 'brewery_types', 'cities', 'states', 'countries', 'features', 'events', 'breweries?by_city=san_diego', 'search?query=IPA', 'regions?state=California', '39']
+12:04:33 [TITLE]   Mutated Request Verification
+12:04:33 [REQUEST] https://api.openbrewerydb.org/breweries/search/name?city=Portland
+12:04:34 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:34 [REQUEST] https://api.openbrewerydb.org/breweries/search/state?city=Portland
+12:04:35 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:35 [REQUEST] https://api.openbrewerydb.org/breweries/search/type?city=Portland
+12:04:35 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:35 [REQUEST] https://api.openbrewerydb.org/breweries/search/tag?city=Portland
+12:04:36 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:36 [REQUEST] https://api.openbrewerydb.org/breweries/search/postal_code?city=Portland
+12:04:37 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:37 [REQUEST] https://api.openbrewerydb.org/breweries/search/country?city=Portland
+12:04:37 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:37 [REQUEST] https://api.openbrewerydb.org/breweries/search/longitude?city=Portland
+12:04:38 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:38 [REQUEST] https://api.openbrewerydb.org/breweries/search/latitude?city=Portland
+12:04:38 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:38 [REQUEST] https://api.openbrewerydb.org/breweries/search/phone?city=Portland
+12:04:39 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:39 [REQUEST] https://api.openbrewerydb.org/breweries/search/website_url?city=Portland
+12:04:39 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:39 [REQUEST] https://api.openbrewerydb.org/breweries/search/name?query=Stone&city=Portland
+12:04:40 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:40 [REQUEST] https://api.openbrewerydb.org/breweries/search/state?query=California&city=Portland
+12:04:40 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:40 [REQUEST] https://api.openbrewerydb.org/breweries/search/type?query=brewpub&city=Portland
+12:04:41 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:41 [REQUEST] https://api.openbrewerydb.org/breweries/search/85?city=Portland
+12:04:41 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:41 [REQUEST] https://api.openbrewerydb.org?by_state=Colorado&by_state=California&sort=name&by_postal=94103
+12:04:42 [SUCCESS] Valid Request | Status Code: 200
+12:04:42 [WARNING] Valid request invalidated: HTML is not accepted
+12:04:42 [REQUEST] https://api.openbrewerydb.org/breweries/search?sort=name
+12:04:43 [SUCCESS] Valid Request | Status Code: 200
+12:04:43 [SUCCESS] Saved API Seed
+12:04:43 [SUCCESS] Saved API Data
+12:04:43 [REQUEST] https://api.openbrewerydb.org/breweries/city?sort=name
+12:04:43 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:43 [REQUEST] https://api.openbrewerydb.org/breweries/state?sort=name
+12:04:44 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:44 [REQUEST] https://api.openbrewerydb.org/breweries/type?sort=name
+12:04:44 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:44 [REQUEST] https://api.openbrewerydb.org/breweries/name?sort=name
+12:04:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:45 [REQUEST] https://api.openbrewerydb.org/breweries/brewery_type?sort=name
+12:04:45 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:45 [REQUEST] https://api.openbrewerydb.org/breweries/postal_code?sort=name
+12:04:46 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:46 [REQUEST] https://api.openbrewerydb.org/breweries/country?sort=name
+12:04:46 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:46 [REQUEST] https://api.openbrewerydb.org/breweries/tag?sort=name
+12:04:47 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:47 [REQUEST] https://api.openbrewerydb.org/breweries/id?sort=name
+12:04:47 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:47 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=California&sort=name
+12:04:48 [SUCCESS] Valid Request | Status Code: 200
+12:04:48 [SUCCESS] Saved API Seed
+12:04:48 [SUCCESS] Saved API Data
+12:04:48 [REQUEST] https://api.openbrewerydb.org/breweries/city?city=san_diego&sort=name
+12:04:49 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:49 [REQUEST] https://api.openbrewerydb.org/breweries/state?state=California&sort=name
+12:04:49 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:49 [REQUEST] https://api.openbrewerydb.org/breweries/53?sort=name
+12:04:50 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:50 [REQUEST] https://api.openbrewerydb.org/breweries?sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:50 [SUCCESS] Valid Request | Status Code: 200
+12:04:50 [SUCCESS] Saved API Seed
+12:04:50 [SUCCESS] Saved API Data
+12:04:50 [REQUEST] https://api.openbrewerydb.org/search?sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:50 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:50 [REQUEST] https://api.openbrewerydb.org/regions?sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:51 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:51 [REQUEST] https://api.openbrewerydb.org/categories?sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:51 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:51 [REQUEST] https://api.openbrewerydb.org/brewery_types?sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:52 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:52 [REQUEST] https://api.openbrewerydb.org/cities?sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:52 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:52 [REQUEST] https://api.openbrewerydb.org/states?sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:53 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:53 [REQUEST] https://api.openbrewerydb.org/countries?sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:53 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:53 [REQUEST] https://api.openbrewerydb.org/features?sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:54 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:54 [REQUEST] https://api.openbrewerydb.org/events?sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:54 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:54 [REQUEST] https://api.openbrewerydb.org/breweries?by_city=san_diego&sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:55 [SUCCESS] Valid Request | Status Code: 200
+12:04:55 [SUCCESS] Saved API Seed
+12:04:55 [SUCCESS] Saved API Data
+12:04:55 [REQUEST] https://api.openbrewerydb.org/search?query=IPA&sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:55 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:55 [REQUEST] https://api.openbrewerydb.org/regions?state=California&sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:55 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:55 [REQUEST] https://api.openbrewerydb.org/39?sort=name&by_name=Stone&by_city=Portland&by_type=micro
+12:04:56 [ERROR]   Invalid Request | Status Code: 404 | Reason: status-code
+12:04:56 [TITLE]   Mutation Process: focusParameters
+12:04:56 [TITLE]   Mutating Request (1/1)
+12:04:56 [SECTION] Mutation Operator: addParameter
+12:04:56 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/search?query=dog
+12:04:56 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/search?query=dog&<parameter=value>
+12:04:57 [SUCCESS] Found Values: ['by_state=California', 'by_city=San+Diego', 'by_name=Stone', 'by_tag=brewpub', 'per_page=50', 'page=2', 'sort=type,-name', 'since=2010-01-01', 'is_organic=true', 'is_closed=false']
+12:04:57 [SECTION] Mutation Operator: removeParameter
+12:04:57 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/random?sort=name&sort=country
+12:04:57 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/random?sort=name
+12:04:57 [SECTION] Mutation Operator: modifyParameter
+12:04:57 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/search?tag=brewpub
+12:04:57 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/search?<parameter=value>
+12:04:58 [SUCCESS] Found Values: ['name=Sunshine+Brewery', 'city=Portland', 'state=California', 'type=micro', 'postal=97201', 'brewed_before=2010', 'brewed_after=2015', 'sort=city', 'per_page=50', 'page=2']
+12:04:58 [SECTION] Mutation Operator: resetParameters
+12:04:58 [INFO]    Chosen Seed: https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&by_postal=94103
+12:04:58 [INFO]    Masked Request: https://api.openbrewerydb.org/breweries/search?<parameter=value>
+12:05:00 [ERROR]   Could Not Extract a List from the Prompt Response: 1. name=Stone 2. city=Portland 3. state=California 4. type=micro 5. postal=97202 6. country=United States 7. tag=dog-friendly 8. phone=555-123-4567 9. updatedSince=2021-01-01 10. sort=name
+12:05:05 [SUCCESS] Found Values: []
+12:05:05 [TITLE]   Mutated Request Verification
+12:05:05 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=dog&by_state=California
+12:05:06 [SUCCESS] Valid Request | Status Code: 200
+12:05:06 [SUCCESS] Saved API Seed
+12:05:06 [SUCCESS] Saved API Data
+12:05:06 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=dog&by_city=San+Diego
+12:05:06 [SUCCESS] Valid Request | Status Code: 200
+12:05:06 [SUCCESS] Saved API Seed
+12:05:06 [SUCCESS] Saved API Data
+12:05:06 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=dog&by_name=Stone
+12:05:07 [SUCCESS] Valid Request | Status Code: 200
+12:05:07 [SUCCESS] Saved API Seed
+12:05:07 [SUCCESS] Saved API Data
+12:05:07 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=dog&by_tag=brewpub
+12:05:08 [SUCCESS] Valid Request | Status Code: 200
+12:05:08 [SUCCESS] Saved API Seed
+12:05:08 [SUCCESS] Saved API Data
+12:05:08 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=dog&per_page=50
+12:05:08 [SUCCESS] Valid Request | Status Code: 200
+12:05:08 [SUCCESS] Saved API Seed
+12:05:08 [SUCCESS] Saved API Data
+12:05:08 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=dog&page=2
+12:05:09 [ERROR]   Invalid Request | Status Code: 429 | Reason: status-code
+12:05:09 [ERROR]   Invalid Request | Status Code: 429 (Too Many Requests) - PAUSING EXECUTION FOR 30s
+12:05:39 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=dog&sort=type,-name
+12:05:39 [SUCCESS] Valid Request | Status Code: 200
+12:05:39 [SUCCESS] Saved API Seed
+12:05:39 [SUCCESS] Saved API Data
+12:05:39 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=dog&since=2010-01-01
+12:05:40 [SUCCESS] Valid Request | Status Code: 200
+12:05:40 [SUCCESS] Saved API Seed
+12:05:40 [SUCCESS] Saved API Data
+12:05:40 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=dog&is_organic=true
+12:05:41 [SUCCESS] Valid Request | Status Code: 200
+12:05:41 [SUCCESS] Saved API Seed
+12:05:41 [SUCCESS] Saved API Data
+12:05:41 [REQUEST] https://api.openbrewerydb.org/breweries/search?query=dog&is_closed=false
+12:05:41 [SUCCESS] Valid Request | Status Code: 200
+12:05:41 [SUCCESS] Saved API Seed
+12:05:41 [SUCCESS] Saved API Data
+12:05:41 [REQUEST] https://api.openbrewerydb.org/breweries/random?sort=name
+12:05:42 [SUCCESS] Valid Request | Status Code: 200
+12:05:42 [WARNING] Request Already in Seeds
+12:05:42 [SUCCESS] Saved API Data
+12:05:42 [REQUEST] https://api.openbrewerydb.org/breweries/search?name=Sunshine+Brewery
+12:05:42 [SUCCESS] Valid Request | Status Code: 200
+12:05:42 [SUCCESS] Saved API Seed
+12:05:42 [SUCCESS] Saved API Data
+12:05:42 [REQUEST] https://api.openbrewerydb.org/breweries/search?city=Portland
+12:05:43 [SUCCESS] Valid Request | Status Code: 200
+12:05:43 [WARNING] Request Already in Seeds
+12:05:43 [SUCCESS] Saved API Data
+12:05:43 [REQUEST] https://api.openbrewerydb.org/breweries/search?state=California
+12:05:43 [SUCCESS] Valid Request | Status Code: 200
+12:05:43 [SUCCESS] Saved API Seed
+12:05:43 [SUCCESS] Saved API Data
+12:05:43 [REQUEST] https://api.openbrewerydb.org/breweries/search?type=micro
+12:05:43 [SUCCESS] Valid Request | Status Code: 200
+12:05:43 [WARNING] Request Already in Seeds
+12:05:43 [SUCCESS] Saved API Data
+12:05:43 [REQUEST] https://api.openbrewerydb.org/breweries/search?postal=97201
+12:05:44 [SUCCESS] Valid Request | Status Code: 200
+12:05:44 [SUCCESS] Saved API Seed
+12:05:44 [SUCCESS] Saved API Data
+12:05:44 [REQUEST] https://api.openbrewerydb.org/breweries/search?brewed_before=2010
+12:05:45 [SUCCESS] Valid Request | Status Code: 200
+12:05:45 [SUCCESS] Saved API Seed
+12:05:45 [SUCCESS] Saved API Data
+12:05:45 [REQUEST] https://api.openbrewerydb.org/breweries/search?brewed_after=2015
+12:05:45 [SUCCESS] Valid Request | Status Code: 200
+12:05:45 [SUCCESS] Saved API Seed
+12:05:45 [SUCCESS] Saved API Data
+12:05:45 [REQUEST] https://api.openbrewerydb.org/breweries/search?sort=city
+12:05:46 [SUCCESS] Valid Request | Status Code: 200
+12:05:46 [SUCCESS] Saved API Seed
+12:05:46 [SUCCESS] Saved API Data
+12:05:46 [REQUEST] https://api.openbrewerydb.org/breweries/search?per_page=50
+12:05:46 [SUCCESS] Valid Request | Status Code: 200
+12:05:46 [WARNING] Request Already in Seeds
+12:05:46 [SUCCESS] Saved API Data
+12:05:46 [REQUEST] https://api.openbrewerydb.org/breweries/search?page=2
+12:05:47 [ERROR]   Invalid Request | Status Code: 429 | Reason: status-code
+12:05:47 [ERROR]   Invalid Request | Status Code: 429 (Too Many Requests) - PAUSING EXECUTION FOR 30s
+12:06:17 [TITLE]   Execution Results
+12:06:17 [INFO]    Saved to: ./outputs/Open_Brewery_DB_API/executions/6.json

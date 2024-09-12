@@ -1,231 +1,507 @@
 TIME     | VALID | REASON      | COD | RESPONSE DATA                     | REQUEST
 ==================================================================================
-09:04:08 | False | status-code | 404 | <!DOCTYPE html><html lang="en"... | https://www.openbrewerydb.org/terms 
-09:04:16 | False | status-code | 404 | <!DOCTYPE html><html lang="en"... | https://www.openbrewerydb.org/terms-of-service 
-09:04:21 | False | status-code | 404 | <!DOCTYPE html><html lang="en"... | https://www.openbrewerydb.org/terms 
-09:04:24 | False | status-code | 404 | <!DOCTYPE html><html lang="en"... | https://www.openbrewerydb.org/contact 
-09:05:06 | False | status-code | 404 | <!DOCTYPE html><html lang="en"... | https://www.openbrewerydb.org/support 
-09:05:12 | False | status-code | 404 | <!DOCTYPE html><html lang="en"... | https://www.openbrewerydb.org/contact 
-09:05:19 | True  | valid-req   | 200 | <!DOCTYPE html><html dir="ltr"... | https://creativecommons.org/licenses/by-sa/4.0 
-09:05:21 | True  | valid-req   | 200 | <!DOCTYPE html><html lang="en"... | https://www.openbrewerydb.org/documentation 
-09:05:45 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_city=Chicago&by_state=Illinois 
-09:05:45 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_city=Chicago&by_state=Illinois 
-09:05:46 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/invalidRoute/?invalidParam=invalidValue 
-09:06:55 | True  | valid-req   | 200 | [{"id":"30f16fe6-539b-4238-aff... | https://api.openbrewerydb.org/breweries/random?by_city=Chicago&by_state=Illinois 
-09:06:56 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?by_city=Chicago&by_state=Illinois 
-09:06:57 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/list?by_city=Chicago&by_state=Illinois 
-09:06:57 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/count?by_city=Chicago&by_state=Illinois 
-09:06:58 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois 
-09:06:59 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_tag?by_city=Chicago&by_state=Illinois 
-09:07:00 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_name?by_city=Chicago&by_state=Illinois 
-09:07:01 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_state?by_city=Chicago&by_state=Illinois 
-09:07:01 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_city?by_city=Chicago&by_state=Illinois 
-09:07:02 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_postal?by_city=Chicago&by_state=Illinois 
-09:07:03 | True  | valid-req   | 200 | [{"id":"724c81c8-1ab1-47ce-bd1... | https://api.openbrewerydb.org/breweries/random?by_city=Chicago&by_city=Chicago&by_state=Illinois 
-09:07:04 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_state=Illinois 
-09:07:05 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/list?by_city=Portland&by_city=Chicago&by_state=Illinois 
-09:07:05 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/65?by_city=Chicago&by_state=Illinois 
-09:07:07 | True  | valid-req   | 200 | <!DOCTYPE html><html lang="en"... | https://api.openbrewerydb.org?by_city=Chicago&by_state=Illinois 
-09:07:07 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_city=Chicago&by_state=Illinois 
-09:07:08 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/1?by_city=Chicago&by_state=Illinois 
-09:07:09 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/2?by_city=Chicago&by_state=Illinois 
-09:07:10 | True  | valid-req   | 200 | [{"id":"30f16fe6-539b-4238-aff... | https://api.openbrewerydb.org/breweries/random?by_city=Chicago&by_state=Illinois 
-09:07:10 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?by_city=Chicago&by_state=Illinois 
-09:07:11 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?per_page=10&by_city=Chicago&by_state=Illinois 
-09:07:12 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries?by_name=ABC&by_city=Chicago&by_state=Illinois 
-09:07:13 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_tag=craft&by_city=Chicago&by_state=Illinois 
-09:07:13 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_city=New+York&by_city=Chicago&by_state=Illinois 
-09:07:14 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_state=California&by_city=Chicago&by_state=Illinois 
-09:07:15 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_state=California&by_city=Chicago&by_state=Illinois 
-09:07:15 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/1?sort=name&by_city=Chicago&by_state=Illinois 
-09:07:16 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/2?by_state=California&by_city=Chicago&by_state=Illinois 
-09:07:17 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/75?by_city=Chicago&by_state=Illinois 
-09:07:18 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_city=Chicago&by_state=Illinois 
-09:07:18 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?by_city=Chicago&by_state=Illinois 
-09:07:19 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/3?by_city=Chicago&by_state=Illinois 
-09:07:20 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_type=micro&by_city=Chicago&by_state=Illinois 
-09:07:20 | True  | valid-req   | 200 | [{"id":"49cf8feb-2997-4da6-99b... | https://api.openbrewerydb.org/breweries?by_type=regional&by_city=Chicago&by_state=Illinois 
-09:07:21 | True  | valid-req   | 200 | [{"id":"108b8592-3098-42a3-b46... | https://api.openbrewerydb.org/breweries?by_type=brewpub&by_city=Chicago&by_state=Illinois 
-09:07:21 | True  | valid-req   | 200 | [{"id":"8e309724-11ae-4fc0-8d1... | https://api.openbrewerydb.org/breweries?by_type=large&by_city=Chicago&by_state=Illinois 
-09:07:22 | True  | valid-req   | 200 | [{"id":"1aefb103-ced0-49cb-96c... | https://api.openbrewerydb.org/breweries?by_type=planning&by_city=Chicago&by_state=Illinois 
-09:07:23 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries?by_type=bar&by_city=Chicago&by_state=Illinois 
-09:07:23 | True  | valid-req   | 200 | [{"id":"3c820163-0cdf-4f61-a2d... | https://api.openbrewerydb.org/breweries?by_type=contract&by_city=Chicago&by_state=Illinois 
-09:07:24 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_state=California&by_city=Chicago&by_state=Illinois 
-09:07:24 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_state=Illinois 
-09:07:25 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/3?sort=name&by_city=Chicago&by_state=Illinois 
-09:07:26 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/43?by_city=Chicago&by_state=Illinois 
-09:08:23 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:08:24 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&by_type=micro 
-09:08:25 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&by_tag=dog-friendly 
-09:08:26 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&by_city=Portland 
-09:08:27 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&by_state=California 
-09:08:27 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&by_postal=90210 
-09:08:28 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&by_country=United+States 
-09:08:29 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&by_phone=555-1234 
-09:08:30 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&by_website=www.example.com 
-09:08:31 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25 
-09:08:32 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago 
-09:08:33 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_state 
-09:08:33 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_name 
-09:08:34 | False | status-code | 400 | {"errors":["Brewery type must ... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_type 
-09:08:35 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_tag 
-09:08:36 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_postal 
-09:08:37 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_distance 
-09:08:38 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_tags 
-09:08:38 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&per_page 
-09:08:39 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&sort 
-09:08:40 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&page 
-09:08:41 | True  | valid-req   | 200 | [{"id":"9c9090eb-a361-47e7-b2e... | https://api.openbrewerydb.org/breweries?by_city=Seattle 
-09:08:41 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_state=California 
-09:08:42 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?by_type=micro 
-09:08:43 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?by_tag=dog-friendly 
-09:08:43 | True  | valid-req   | 200 | [{"id":"6f2cc06f-175c-4b85-89f... | https://api.openbrewerydb.org/breweries?by_name=Stone+Brewing 
-09:08:44 | True  | valid-req   | 200 | [{"id":"8f9621dc-da98-4ddb-82a... | https://api.openbrewerydb.org/breweries?by_postal=94107 
-09:08:45 | False | status-code | 400 | {"errors":["You must provide l... | https://api.openbrewerydb.org/breweries?by_dist=10 
-09:08:46 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?per_page=50 
-09:08:46 | True  | valid-req   | 200 | [{"id":"03118499-a3d0-4c22-860... | https://api.openbrewerydb.org/breweries?sort=name 
-09:08:47 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?sort=-brewery_type 
-09:30:30 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/invalidRoute/?invalidParam=invalidValue 
-09:31:36 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/name?by_city=Chicago&by_state=Illinois 
-09:31:36 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/city?by_city=Chicago&by_state=Illinois 
-09:31:37 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/type?by_city=Chicago&by_state=Illinois 
-09:31:38 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/by_type?by_city=Chicago&by_state=Illinois 
-09:31:39 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/by_tag?by_city=Chicago&by_state=Illinois 
-09:31:40 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/by_state?by_city=Chicago&by_state=Illinois 
-09:31:41 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/by_postal?by_city=Chicago&by_state=Illinois 
-09:31:41 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/by_country?by_city=Chicago&by_state=Illinois 
-09:31:42 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/by_name?by_city=Chicago&by_state=Illinois 
-09:31:43 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/by_state_and_type?by_city=Chicago&by_state=Illinois 
-09:31:44 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/name?state=California&by_city=Chicago&by_state=Illinois 
-09:31:44 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/city?per_page=10&by_city=Chicago&by_state=Illinois 
-09:31:45 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/type?by_state=California&by_city=Chicago&by_state=Illinois 
-09:31:46 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/65?by_city=Chicago&by_state=Illinois 
-09:31:47 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_city=Chicago&by_state=Illinois 
-09:31:48 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:31:48 | True  | valid-req   | 200 | [{"id":"2907b143-57b4-49ec-aa4... | https://api.openbrewerydb.org/breweries/random?by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:31:49 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_postal?by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:31:50 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_type?by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:31:51 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_state?by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:31:52 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_city?by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:31:53 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_name?by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:31:53 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_tag?by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:31:54 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_distance?by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:31:55 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_ids?by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:31:56 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:31:57 | True  | valid-req   | 200 | [{"id":"0a92f902-3d1d-4ef8-935... | https://api.openbrewerydb.org/breweries/random?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:31:58 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_postal?postal_code=12345&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:31:58 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/73?by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:31:59 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_city=Chicago&by_state=Illinois 
-09:31:59 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?by_city=Chicago&by_state=Illinois 
-09:32:00 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois 
-09:32:01 | True  | valid-req   | 200 | [{"id":"a4aa30b0-6073-4a0b-b9c... | https://api.openbrewerydb.org/breweries?per_page=10&page=2&by_city=Chicago&by_state=Illinois 
-09:32:02 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?sort=name&by_city=Chicago&by_state=Illinois 
-09:32:02 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_type=micro&by_city=Chicago&by_state=Illinois 
-09:32:03 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_tag=dog-friendly&by_city=Chicago&by_state=Illinois 
-09:32:04 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_city=New_York&by_city=Chicago&by_state=Illinois 
-09:32:04 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_state=California&by_city=Chicago&by_state=Illinois 
-09:32:05 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries?by_postal=90210&by_city=Chicago&by_state=Illinois 
-09:32:06 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?by_state=California&by_city=Chicago&by_state=Illinois 
-09:32:06 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?q=California&by_city=Chicago&by_state=Illinois 
-09:32:07 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/5?by_city=Chicago&by_state=Illinois 
-09:33:25 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&by_name 
-09:33:26 | False | status-code | 400 | {"errors":["Brewery type must ... | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&by_type 
-09:33:27 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&by_postal 
-09:33:28 | False | status-code | 500 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&by_dist 
-09:33:29 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&by_tags 
-09:33:30 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&by_city 
-09:33:30 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&by_state 
-09:33:31 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&per_page 
-09:33:32 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&page 
-09:33:33 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&sort 
-09:33:34 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois 
-09:33:34 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_state=California 
-09:33:35 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_name=Stone+Brewing 
-09:33:36 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_tag=craft 
-09:33:37 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_type=micro 
-09:33:38 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_postal=90210 
-09:33:39 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_country=United+States 
-09:33:40 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_tagged=dog-friendly 
-09:33:41 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_street=Main+St 
-09:33:41 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_phone=555-123-4567 
-09:33:42 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_city=Chicago&by_website=www.example.com 
-09:33:43 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?name=example 
-09:33:44 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?city=example 
-09:33:45 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?state=example 
-09:33:46 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?country=example 
-09:33:46 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?type=example 
-09:33:47 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?tag=example 
-09:33:48 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?phone=example 
-09:33:49 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?postal=example 
-09:33:50 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?website=example 
-09:33:51 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?sort=example 
-09:49:27 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/invalidRoute/?invalidParam=invalidValue 
-09:50:57 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/autocomplete/name?by_city=Chicago&by_state=Illinois&per_page=25&by_state 
-09:50:57 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/autocomplete/city?by_city=Chicago&by_state=Illinois&per_page=25&by_state 
-09:50:58 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/autocomplete/postal?by_city=Chicago&by_state=Illinois&per_page=25&by_state 
-09:50:59 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/autocomplete/state?by_city=Chicago&by_state=Illinois&per_page=25&by_state 
-09:51:00 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/autocomplete/country?by_city=Chicago&by_state=Illinois&per_page=25&by_state 
-09:51:01 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/autocomplete/name?query=example&by_city=Chicago&by_state=Illinois&per_page=25&by_state 
-09:51:02 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/autocomplete/city?query=Portland&by_city=Chicago&by_state=Illinois&per_page=25&by_state 
-09:51:03 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/autocomplete/postal?query=90210&by_city=Chicago&by_state=Illinois&per_page=25&by_state 
-09:51:03 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/autocomplete/26?by_city=Chicago&by_state=Illinois&per_page=25&by_state 
-09:51:04 | True  | valid-req   | 200 | [{"id":"f927d8d6-3151-4073-9d2... | https://api.openbrewerydb.org/breweries?query=IPA&by_city=Chicago&by_tagged=dog-friendly 
-09:51:05 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_id?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:06 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_name?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:07 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_state?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:08 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_city?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:08 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_postal?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:09 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_street?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:10 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_type?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:11 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_tags?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:11 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_phone?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:12 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_website?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:13 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_id?brewery_id=123&by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:14 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_name?name=example&by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:15 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_state?state=California&by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:16 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/66?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:16 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:17 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/1?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:18 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/2?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:19 | True  | valid-req   | 200 | [{"id":"0a92f902-3d1d-4ef8-935... | https://api.openbrewerydb.org/breweries/random?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:20 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:20 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries?by_state=California&by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:21 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries?by_city=san+diego&by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:22 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries?by_type=micro&by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:23 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries?by_name=BreweryName&by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:24 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries?by_tag=dog-friendly&by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:24 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries?by_state=California&by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:25 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/1?by_city=Denver&by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:26 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/2?by_state=California&by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:51:27 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/96?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName 
-09:52:11 | True  | valid-req   | 200 | [{"id":"1eff0c5d-93dc-4b96-ace... | https://api.openbrewerydb.org/breweries/random?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName&by_tag=craft 
-09:52:12 | True  | valid-req   | 200 | [{"id":"1c2fd1ee-d81c-4408-a58... | https://api.openbrewerydb.org/breweries/random?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName&by_state=California 
-09:52:13 | True  | valid-req   | 200 | [{"id":"88a7ac77-a52b-4496-91d... | https://api.openbrewerydb.org/breweries/random?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName&by_tag=micro 
-09:52:14 | True  | valid-req   | 200 | [{"id":"bee91126-b9e1-4bb0-b7b... | https://api.openbrewerydb.org/breweries/random?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName&by_city=Portland 
-09:52:15 | True  | valid-req   | 200 | [{"id":"de23fb6c-55b7-4e7d-a27... | https://api.openbrewerydb.org/breweries/random?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName&by_state=New+York 
-09:52:15 | True  | valid-req   | 200 | [{"id":"b887c0e4-e2d9-47ad-973... | https://api.openbrewerydb.org/breweries/random?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName&by_city=Denver 
-09:52:16 | True  | valid-req   | 200 | [{"id":"2d60ec76-646d-4512-9e5... | https://api.openbrewerydb.org/breweries/random?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName&by_name=BeerCo 
-09:52:17 | True  | valid-req   | 200 | [{"id":"c947eb60-863c-4676-996... | https://api.openbrewerydb.org/breweries/random?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName&by_state=Texas 
-09:52:18 | True  | valid-req   | 200 | [{"id":"f80ad04c-4af6-4773-8a2... | https://api.openbrewerydb.org/breweries/random?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName&by_tag=brewpub 
-09:52:19 | True  | valid-req   | 200 | [{"id":"469e0667-cecc-4e07-b27... | https://api.openbrewerydb.org/breweries/random?by_city=san+francisco&by_city=Chicago&by_state=Illinois&by_name=BreweryName&by_type=micro 
-09:52:20 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search 
-09:52:20 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&by_name=ABC+Brewery 
-09:52:21 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&by_type=micro 
-09:52:22 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&by_postal=12345 
-09:52:23 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&sort=state 
-09:52:24 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&per_page=50 
-09:52:25 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&by_tag=IPA 
-09:52:26 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&by_name=XYZ+Brewery 
-09:52:26 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&by_state=California 
-09:52:27 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&by_city=San+Francisco 
-09:52:28 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/autocomplete?by_city=Chicago&by_state=Illinois&per_page=25&per_page=10 
-09:52:29 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?by_state=California 
-09:52:29 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?by_city=San+Francisco 
-09:52:30 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?by_name=Hoppy 
-09:52:31 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?by_tag=IPA 
-09:52:32 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?per_page=20 
-09:52:33 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?sort=name 
-09:52:33 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?sort=-name 
-09:52:34 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?sort=city 
-09:52:34 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?sort=-city 
-09:52:35 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?sort=state 
+11:59:06 | False | status-code | 404 | <!DOCTYPE html><html lang="en"... | https://www.openbrewerydb.org/terms 
+11:59:07 | False | status-code | 404 | <!DOCTYPE html><html lang="en"... | https://www.openbrewerydb.org/terms-of-service 
+11:59:08 | False | status-code | 404 | <!DOCTYPE html><html lang="en"... | https://www.openbrewerydb.org/terms 
+11:59:09 | False | status-code | 404 | <!DOCTYPE html><html lang="en"... | https://www.openbrewerydb.org/contact 
+11:59:10 | False | status-code | 404 | <!DOCTYPE html><html lang="en"... | https://www.openbrewerydb.org/support 
+11:59:12 | False | status-code | 404 | <!DOCTYPE html><html lang="en"... | https://www.openbrewerydb.org/contact 
+11:59:14 | True  | valid-req   | 200 | <!DOCTYPE html><html lang=""> ... | https://opendatacommons.org/licenses/odbl 
+11:59:15 | True  | valid-req   | 200 | <!DOCTYPE html><html lang="en"... | https://www.openbrewerydb.org 
+11:59:19 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries 
+11:59:19 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_city=San+Diego 
+11:59:19 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_state=California 
+11:59:20 | True  | valid-req   | 200 | [{"id":"6f2cc06f-175c-4b85-89f... | https://api.openbrewerydb.org/breweries?by_name=Stone+Brewing 
+11:59:20 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?by_tag=dog-friendly 
+11:59:21 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?per_page=50 
+11:59:21 | True  | valid-req   | 200 | [{"id":"03118499-a3d0-4c22-860... | https://api.openbrewerydb.org/breweries?sort=name 
+11:59:22 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/123 
+11:59:22 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/123/beers 
+11:59:23 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/123/events 
+11:59:23 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/invalidRoute/?invalidParam=invalidValue 
+11:59:31 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_city?sort=name 
+11:59:31 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_state?sort=name 
+11:59:32 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_type?sort=name 
+11:59:32 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_postal?sort=name 
+11:59:33 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_name?sort=name 
+11:59:34 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_tag?sort=name 
+11:59:34 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_associated_brewery?sort=name 
+11:59:35 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_search?sort=name 
+11:59:36 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_distance?sort=name 
+11:59:37 | True  | valid-req   | 200 | [{"id":"93000035-2da2-4b19-9ef... | https://api.openbrewerydb.org/breweries/random?sort=name 
+11:59:37 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_city?city=Portland&sort=name 
+11:59:38 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_state?state=California&sort=name 
+11:59:39 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/by_type?brewery_type=micro&sort=name 
+11:59:40 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/95?sort=name 
+11:59:41 | True  | valid-req   | 200 | <!DOCTYPE html><html lang="en"... | https://api.openbrewerydb.org?per_page=50 
+11:59:41 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?per_page=50 
+11:59:42 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search?per_page=50 
+11:59:43 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/states?per_page=50 
+11:59:44 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/cities?per_page=50 
+11:59:45 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/types?per_page=50 
+11:59:46 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/regions?per_page=50 
+11:59:46 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/postal_codes?per_page=50 
+11:59:47 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/phone?per_page=50 
+11:59:48 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/tag?per_page=50 
+11:59:49 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/ids?per_page=50 
+11:59:50 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_state=California&per_page=50 
+11:59:51 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search?query=ipa&per_page=50 
+11:59:52 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/states?per_page=10&per_page=50 
+11:59:52 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/7?per_page=50 
+11:59:53 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries 
+11:59:54 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/cities 
+11:59:54 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/states 
+11:59:55 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/types 
+11:59:56 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search 
+11:59:57 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/random 
+11:59:58 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/postal_codes 
+11:59:58 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/regions 
+11:59:59 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/features 
+12:00:00 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/events 
+12:00:01 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_state=California 
+12:00:02 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/cities?state=California 
+12:00:03 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/states?per_page=10 
+12:00:03 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/44 
+12:00:09 | True  | valid-req   | 200 | [{"id":"760e8395-f2a2-4161-9bf... | https://api.openbrewerydb.org/breweries/random?sort=name&by_state=California 
+12:00:10 | True  | valid-req   | 200 | [{"id":"589a5420-aaa2-4cca-a8c... | https://api.openbrewerydb.org/breweries/random?sort=name&by_city=San_Francisco 
+12:00:11 | True  | valid-req   | 200 | [{"id":"213a3276-bfc0-4b98-a47... | https://api.openbrewerydb.org/breweries/random?sort=name&by_type=micro 
+12:00:11 | True  | valid-req   | 200 | [{"id":"d1061663-6fed-48be-830... | https://api.openbrewerydb.org/breweries/random?sort=name&per_page=25 
+12:00:12 | True  | valid-req   | 200 | [{"id":"e85a8ede-cc69-446a-a75... | https://api.openbrewerydb.org/breweries/random?sort=name&page=2 
+12:00:13 | True  | valid-req   | 200 | [{"id":"85c77773-c9af-4863-9f7... | https://api.openbrewerydb.org/breweries/random?sort=name&since=2010 
+12:00:14 | True  | valid-req   | 200 | [{"id":"53129047-f8f0-44a6-a06... | https://api.openbrewerydb.org/breweries/random?sort=name&by_tag=dog-friendly 
+12:00:14 | True  | valid-req   | 200 | [{"id":"ecde2a37-e88b-4637-933... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone 
+12:00:15 | True  | valid-req   | 200 | [{"id":"b837ff0c-ea8e-40c2-885... | https://api.openbrewerydb.org/breweries/random?sort=name&by_postal=94103 
+12:00:16 | True  | valid-req   | 200 | [{"id":"f31b2eb4-38d1-41b2-90d... | https://api.openbrewerydb.org/breweries/random?sort=name&by_dist=20 
+12:00:17 | True  | valid-req   | 200 | [{"id":"66883061-9c0c-47b2-b6d... | https://api.openbrewerydb.org/breweries/random 
+12:00:17 | True  | valid-req   | 200 | [{"id":"7f459973-0ae7-40d5-825... | https://api.openbrewerydb.org/breweries/random?by_city=san_diego 
+12:00:18 | True  | valid-req   | 200 | [{"id":"d8ec5a8b-a005-492b-aa9... | https://api.openbrewerydb.org/breweries/random?by_state=california 
+12:00:19 | True  | valid-req   | 200 | [{"id":"ecbd7424-8f25-4db0-af5... | https://api.openbrewerydb.org/breweries/random?by_name=stone_brewing_co 
+12:00:20 | True  | valid-req   | 200 | [{"id":"8e778ec9-3331-41b5-a22... | https://api.openbrewerydb.org/breweries/random?by_postal=92101 
+12:00:21 | True  | valid-req   | 200 | [{"id":"0ed75909-c4d0-4c3f-863... | https://api.openbrewerydb.org/breweries/random?by_type=micro 
+12:00:21 | True  | valid-req   | 200 | [{"id":"f9f49460-31c1-4237-b59... | https://api.openbrewerydb.org/breweries/random?by_tag=dog_friendly 
+12:00:22 | True  | valid-req   | 200 | [{"id":"6e0bab8b-6adc-4584-b6d... | https://api.openbrewerydb.org/breweries/random?by_street=main_street 
+12:00:23 | True  | valid-req   | 200 | [{"id":"b76e67fb-fe15-41c3-8a4... | https://api.openbrewerydb.org/breweries/random?by_phone=555-1234 
+12:00:23 | True  | valid-req   | 200 | [{"id":"5f30ddff-dac4-472b-adb... | https://api.openbrewerydb.org/breweries/random?by_website=example.com 
+12:00:24 | True  | valid-req   | 200 | [{"id":"2b5d9ce9-b8bd-4ece-98a... | https://api.openbrewerydb.org/breweries/random?by_updated_since=2021-01-01 
+12:00:24 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?name=Sunset+Brewery 
+12:00:25 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?city=Portland 
+12:00:26 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?state=Oregon 
+12:00:26 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?type=micro 
+12:00:27 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?postal_code=97202 
+12:00:27 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?brewery_type=brewpub 
+12:00:28 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?country=United+States 
+12:00:28 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?phone=503-555-1234 
+12:00:29 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?tag=organic 
+12:00:30 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?since=2010 
+12:00:32 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries 
+12:00:33 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_city=san_diego&by_state=california 
+12:00:34 | True  | valid-req   | 200 | [{"id":"4ccad9b9-f9cf-4d21-b6d... | https://api.openbrewerydb.org/breweries?per_page=50&page=2 
+12:00:34 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries?by_name=dogfish_head_brewery 
+12:00:35 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_postal=92101&by_state=california 
+12:00:35 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/invalidRoute/?invalidParam=invalidValue 
+12:00:43 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?city=Portland 
+12:00:44 | True  | valid-req   | 200 | [{"id":"bf9882b7-4f26-4f9f-afd... | https://api.openbrewerydb.org/breweries/random?city=Portland 
+12:00:44 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/states?city=Portland 
+12:00:45 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/types?city=Portland 
+12:00:45 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/autocomplete?city=Portland 
+12:00:46 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/geolocation?city=Portland 
+12:00:47 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/geo/point?city=Portland 
+12:00:47 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/geo/polygon?city=Portland 
+12:00:48 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/geo/rectangle?city=Portland 
+12:00:48 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/geo/radius?city=Portland 
+12:00:49 | True  | valid-req   | 200 | [{"id":"23905042-9078-410a-a3f... | https://api.openbrewerydb.org/breweries/search?query=California&city=Portland 
+12:00:50 | True  | valid-req   | 200 | [{"id":"dc1b146d-741e-426b-821... | https://api.openbrewerydb.org/breweries/random?by_state=colorado&city=Portland 
+12:00:50 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/states?state=California&city=Portland 
+12:00:51 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/17?city=Portland 
+12:00:52 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?by_street=main_street 
+12:00:52 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?by_website=example.com 
+12:00:53 | True  | valid-req   | 200 | [{"id":"5f30ddff-dac4-472b-adb... | https://api.openbrewerydb.org/breweries/random?by_website=example.com 
+12:00:53 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/state/california?by_website=example.com 
+12:00:54 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/city/portland?by_website=example.com 
+12:00:55 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/type/micro?by_website=example.com 
+12:00:56 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/name/stone?by_website=example.com 
+12:00:56 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/postal_code/90210?by_website=example.com 
+12:00:56 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/city/san_diego?by_website=example.com 
+12:00:57 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/by_state/texas?by_website=example.com 
+12:00:58 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/by_city/chicago?by_website=example.com 
+12:00:58 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&by_website=example.com 
+12:00:59 | True  | valid-req   | 200 | [{"id":"4b9222e3-f231-4d53-889... | https://api.openbrewerydb.org/breweries/random?by_state=California&by_website=example.com 
+12:01:01 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/state/california?per_page=10&by_website=example.com 
+12:01:01 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/32?by_website=example.com 
+12:01:02 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?by_updated_since=2021-01-01 
+12:01:02 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search?by_updated_since=2021-01-01 
+12:01:03 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/states?by_updated_since=2021-01-01 
+12:01:04 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/cities?by_updated_since=2021-01-01 
+12:01:05 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/types?by_updated_since=2021-01-01 
+12:01:06 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/features?by_updated_since=2021-01-01 
+12:01:06 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/events?by_updated_since=2021-01-01 
+12:01:07 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/organizers?by_updated_since=2021-01-01 
+12:01:08 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/beers?by_updated_since=2021-01-01 
+12:01:08 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/guilds?by_updated_since=2021-01-01 
+12:01:09 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_state=California&by_updated_since=2021-01-01 
+12:01:10 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search?query=IPA&by_updated_since=2021-01-01 
+12:01:10 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/states?per_page=10&by_updated_since=2021-01-01 
+12:01:11 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/71?by_updated_since=2021-01-01 
+12:01:15 | True  | valid-req   | 200 | [{"id":"6cf234fc-dbea-49e6-8f4... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_state=California 
+12:01:16 | True  | valid-req   | 200 | [{"id":"6242defc-11ab-46ad-a43... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland 
+12:01:16 | True  | valid-req   | 200 | [{"id":"e58f1b87-85b0-4adb-8fb... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_type=micro 
+12:01:17 | True  | valid-req   | 200 | [{"id":"e82fff5f-5eb0-4a01-bd1... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_tag=dog-friendly 
+12:01:17 | True  | valid-req   | 200 | [{"id":"e18fd074-fb35-422b-85b... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&per_page=50 
+12:01:18 | True  | valid-req   | 200 | [{"id":"44892f34-eb78-4fc3-ace... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&page=2 
+12:01:18 | True  | valid-req   | 200 | [{"id":"bb868abb-212b-4862-a8b... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_postal=97202 
+12:01:19 | True  | valid-req   | 200 | [{"id":"6e5e63f5-4465-4ea8-9db... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_dist=10 
+12:01:19 | True  | valid-req   | 200 | [{"id":"d267fb22-568a-4037-83d... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_phone=555-5555 
+12:01:20 | True  | valid-req   | 200 | [{"id":"b8852f37-7df8-49d3-aac... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_website=example.com 
+12:01:20 | True  | valid-req   | 200 | [{"id":"66883061-9c0c-47b2-b6d... | https://api.openbrewerydb.org/breweries/random 
+12:01:20 | True  | valid-req   | 200 | [{"id":"760e8395-f2a2-4161-9bf... | https://api.openbrewerydb.org/breweries/random?sort=name&by_state=California 
+12:01:21 | True  | valid-req   | 200 | [{"id":"589a5420-aaa2-4cca-a8c... | https://api.openbrewerydb.org/breweries/random?sort=name&by_city=San_Francisco 
+12:01:21 | True  | valid-req   | 200 | [{"id":"213a3276-bfc0-4b98-a47... | https://api.openbrewerydb.org/breweries/random?sort=name&by_type=micro 
+12:01:21 | True  | valid-req   | 200 | [{"id":"53129047-f8f0-44a6-a06... | https://api.openbrewerydb.org/breweries/random?sort=name&by_tag=dog-friendly 
+12:01:22 | True  | valid-req   | 200 | [{"id":"21ba3bb4-b9ec-47c9-8e9... | https://api.openbrewerydb.org/breweries/random?sort=name&per_page=50 
+12:01:22 | True  | valid-req   | 200 | [{"id":"c4ce5349-c572-4c37-99a... | https://api.openbrewerydb.org/breweries/random?sort=name&sort=city 
+12:01:23 | True  | valid-req   | 200 | [{"id":"c59d0db5-f675-4808-97c... | https://api.openbrewerydb.org/breweries/random?sort=name&sort=state 
+12:01:23 | True  | valid-req   | 200 | [{"id":"713bb4bb-a85b-490f-aae... | https://api.openbrewerydb.org/breweries/random?sort=name&sort=type 
+12:01:24 | True  | valid-req   | 200 | [{"id":"551c4a45-2563-4d1d-b6d... | https://api.openbrewerydb.org/breweries/random?sort=name&sort=postal_code 
+12:01:24 | True  | valid-req   | 200 | [{"id":"b79c9be7-524c-413c-ba5... | https://api.openbrewerydb.org/breweries/random?sort=name&sort=country 
+12:01:24 | True  | valid-req   | 200 | [{"id":"7f459973-0ae7-40d5-825... | https://api.openbrewerydb.org/breweries/random?by_city=san_diego 
+12:01:25 | True  | valid-req   | 200 | [{"id":"d8ec5a8b-a005-492b-aa9... | https://api.openbrewerydb.org/breweries/random?by_state=california 
+12:01:25 | True  | valid-req   | 200 | [{"id":"f9f49460-31c1-4237-b59... | https://api.openbrewerydb.org/breweries/random?by_tag=dog_friendly 
+12:01:26 | True  | valid-req   | 200 | [{"id":"5316786e-711d-485c-a17... | https://api.openbrewerydb.org/breweries/random?by_name=stone_brewing 
+12:01:26 | True  | valid-req   | 200 | [{"id":"0ed75909-c4d0-4c3f-863... | https://api.openbrewerydb.org/breweries/random?by_type=micro 
+12:01:26 | True  | valid-req   | 200 | [{"id":"8e778ec9-3331-41b5-a22... | https://api.openbrewerydb.org/breweries/random?by_postal=92101 
+12:01:27 | True  | valid-req   | 200 | [{"id":"56289e78-9880-4933-ad9... | https://api.openbrewerydb.org/breweries/random?by_distance=10 
+12:01:27 | True  | valid-req   | 200 | [{"id":"a0cb0659-7da0-4ad1-92b... | https://api.openbrewerydb.org/breweries/random?per_page=25 
+12:01:28 | True  | valid-req   | 200 | [{"id":"93000035-2da2-4b19-9ef... | https://api.openbrewerydb.org/breweries/random?sort=name 
+12:01:28 | True  | valid-req   | 200 | [{"id":"7e1b62e7-054d-4dc9-835... | https://api.openbrewerydb.org/breweries/random?sort=-city 
+12:01:31 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries 
+12:01:32 | True  | valid-req   | 200 | [{"id":"e432899b-7f58-455f-9c7... | https://api.openbrewerydb.org/breweries?by_city=Portland 
+12:01:32 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_state=California 
+12:01:33 | True  | valid-req   | 200 | [{"id":"ee6d39c6-092f-4623-809... | https://api.openbrewerydb.org/breweries?by_name=Stone 
+12:01:33 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?by_tag=dog-friendly 
+12:01:33 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/123 
+12:01:34 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/456 
+12:01:34 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/789 
+12:01:35 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/invalidRoute/?invalidParam=invalidValue 
+12:01:43 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_name?city=Portland 
+12:01:43 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_state?city=Portland 
+12:01:43 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_type?city=Portland 
+12:01:44 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_tag?city=Portland 
+12:01:45 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_postal?city=Portland 
+12:01:45 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_country?city=Portland 
+12:01:45 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_id?city=Portland 
+12:01:46 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_associated_brewery?city=Portland 
+12:01:46 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_location?city=Portland 
+12:01:47 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_phone_number?city=Portland 
+12:01:48 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_name?name=example+brewery&city=Portland 
+12:01:48 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_state?state=California&city=Portland 
+12:01:48 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_type?query=Microbrewery&city=Portland 
+12:01:49 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/25?city=Portland 
+12:01:49 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?by_website=example.com 
+12:01:50 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?sort=name&sort=type 
+12:01:50 | True  | valid-req   | 200 | [{"id":"713bb4bb-a85b-490f-aae... | https://api.openbrewerydb.org/breweries/random?sort=name&sort=type 
+12:01:51 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/city?sort=name&sort=type 
+12:01:52 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/state?sort=name&sort=type 
+12:01:52 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/postal_code?sort=name&sort=type 
+12:01:53 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/type?sort=name&sort=type 
+12:01:53 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/tag?sort=name&sort=type 
+12:01:54 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/name?sort=name&sort=type 
+12:01:54 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/id?sort=name&sort=type 
+12:01:55 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/brewery_type?sort=name&sort=type 
+12:01:56 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type 
+12:01:56 | True  | valid-req   | 200 | [{"id":"b2ad6e2c-1bdc-45df-a0b... | https://api.openbrewerydb.org/breweries/random?by_city=san_diego&sort=name&sort=type 
+12:01:57 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/city?city=Denver&sort=name&sort=type 
+12:01:57 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/52?sort=name&sort=type 
+12:01:58 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?by_website=example.com 
+12:01:58 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search?by_website=example.com 
+12:01:58 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/cities?by_website=example.com 
+12:01:59 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/types?by_website=example.com 
+12:01:59 | False | timeout     | 408 |                                   | https://api.openbrewerydb.org/states?by_website=example.com 
+12:01:59 | False | timeout     | 408 |                                   | https://api.openbrewerydb.org/regions?by_website=example.com 
+12:01:59 | False | timeout     | 408 |                                   | https://api.openbrewerydb.org/features?by_website=example.com 
+12:01:59 | False | timeout     | 408 |                                   | https://api.openbrewerydb.org/events?by_website=example.com 
+12:01:59 | False | timeout     | 408 |                                   | https://api.openbrewerydb.org/random?by_website=example.com 
+12:01:59 | False | timeout     | 408 |                                   | https://api.openbrewerydb.org/favorites?by_website=example.com 
+12:01:59 | False | timeout     | 408 |                                   | https://api.openbrewerydb.org/breweries?by_state=Colorado&by_website=example.com 
+12:01:59 | False | timeout     | 408 |                                   | https://api.openbrewerydb.org/search?query=IPA&by_website=example.com 
+12:01:59 | False | timeout     | 408 |                                   | https://api.openbrewerydb.org/cities?state=California&by_website=example.com 
+12:01:59 | False | timeout     | 408 |                                   | https://api.openbrewerydb.org/44?by_website=example.com 
+12:02:07 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&state=California 
+12:02:07 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&city=San+Diego 
+12:02:08 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&type=micro 
+12:02:08 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&established=2010 
+12:02:09 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&postal=92101 
+12:02:10 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&name=Stone 
+12:02:10 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&phone=1234567890 
+12:02:11 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&tag=dog-friendly 
+12:02:12 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&country=United+States 
+12:02:12 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type&brewed=collaboratively 
+12:02:13 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA 
+12:02:13 | True  | valid-req   | 200 | [{"id":"72ca0074-8bfb-4c8e-93c... | https://api.openbrewerydb.org/breweries/random?sort=name&by_city=San+Diego 
+12:02:14 | True  | valid-req   | 200 | [{"id":"760e8395-f2a2-4161-9bf... | https://api.openbrewerydb.org/breweries/random?sort=name&by_state=California 
+12:02:14 | True  | valid-req   | 200 | [{"id":"213a3276-bfc0-4b98-a47... | https://api.openbrewerydb.org/breweries/random?sort=name&by_type=micro 
+12:02:14 | True  | valid-req   | 200 | [{"id":"53129047-f8f0-44a6-a06... | https://api.openbrewerydb.org/breweries/random?sort=name&by_tag=dog-friendly 
+12:02:14 | True  | valid-req   | 200 | [{"id":"21ba3bb4-b9ec-47c9-8e9... | https://api.openbrewerydb.org/breweries/random?sort=name&per_page=50 
+12:02:15 | True  | valid-req   | 200 | [{"id":"e85a8ede-cc69-446a-a75... | https://api.openbrewerydb.org/breweries/random?sort=name&page=2 
+12:02:15 | True  | valid-req   | 200 | [{"id":"8968d98d-b553-4b7d-ae1... | https://api.openbrewerydb.org/breweries/random?sort=name&by_postal=92101 
+12:02:16 | True  | valid-req   | 200 | [{"id":"3ef4fdd1-cf1f-4227-a6b... | https://api.openbrewerydb.org/breweries/random?sort=name&by_distance=10 
+12:02:16 | True  | valid-req   | 200 | [{"id":"ecde2a37-e88b-4637-933... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone 
+12:02:16 | True  | valid-req   | 200 | [{"id":"f0f38619-5ed5-4064-83b... | https://api.openbrewerydb.org/breweries/random?sort=name&by_tag=IPA 
+12:02:17 | True  | valid-req   | 200 | [{"id":"7f459973-0ae7-40d5-825... | https://api.openbrewerydb.org/breweries/random?by_city=san_diego 
+12:02:17 | True  | valid-req   | 200 | [{"id":"d8ec5a8b-a005-492b-aa9... | https://api.openbrewerydb.org/breweries/random?by_state=california 
+12:02:18 | True  | valid-req   | 200 | [{"id":"f85daa7e-055a-4649-96e... | https://api.openbrewerydb.org/breweries/random?by_name=stone 
+12:02:18 | True  | valid-req   | 200 | [{"id":"f9f49460-31c1-4237-b59... | https://api.openbrewerydb.org/breweries/random?by_tag=dog_friendly 
+12:02:18 | True  | valid-req   | 200 | [{"id":"538a9de0-db76-4d2e-af6... | https://api.openbrewerydb.org/breweries/random?per_page=50 
+12:02:19 | True  | valid-req   | 200 | [{"id":"bd3648d3-4497-4f53-ac4... | https://api.openbrewerydb.org/breweries/random?sort=city 
+12:02:19 | True  | valid-req   | 200 | [{"id":"1529695e-6fe4-4799-986... | https://api.openbrewerydb.org/breweries/random?type=micro 
+12:02:20 | True  | valid-req   | 200 | [{"id":"2d60ec76-646d-4512-9e5... | https://api.openbrewerydb.org/breweries/random?since=2010 
+12:02:20 | True  | valid-req   | 200 | [{"id":"8c661895-c05b-4300-a08... | https://api.openbrewerydb.org/breweries/random?is_organic=true 
+12:02:20 | True  | valid-req   | 200 | [{"id":"8e778ec9-3331-41b5-a22... | https://api.openbrewerydb.org/breweries/random?by_postal=92101 
+12:02:25 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries 
+12:02:25 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_city=San%20Diego 
+12:02:26 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_state=California 
+12:02:26 | True  | valid-req   | 200 | [{"id":"6f2cc06f-175c-4b85-89f... | https://api.openbrewerydb.org/breweries?by_name=Stone%20Brewing 
+12:02:26 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?by_tag=dog-friendly 
+12:02:26 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?by_type=micro 
+12:02:27 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_postal=92101 
+12:02:28 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_city=San%20Diego&by_state=California 
+12:02:28 | True  | valid-req   | 200 | [{"id":"6f2cc06f-175c-4b85-89f... | https://api.openbrewerydb.org/breweries?by_name=Stone%20Brewing&by_tag=dog-friendly 
+12:02:29 | True  | valid-req   | 200 | [{"id":"bd87d056-d676-4efa-bb1... | https://api.openbrewerydb.org/breweries?by_type=micro&by_postal=92101 
+12:02:29 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/invalidRoute/?invalidParam=invalidValue 
+12:02:39 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_city?query=IPA&sort=name&sort=type&type=micro 
+12:02:39 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_state?query=IPA&sort=name&sort=type&type=micro 
+12:02:40 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_postal?query=IPA&sort=name&sort=type&type=micro 
+12:02:41 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_name?query=IPA&sort=name&sort=type&type=micro 
+12:02:41 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_type?query=IPA&sort=name&sort=type&type=micro 
+12:02:42 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_tag?query=IPA&sort=name&sort=type&type=micro 
+12:02:42 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_country?query=IPA&sort=name&sort=type&type=micro 
+12:02:43 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_region?query=IPA&sort=name&sort=type&type=micro 
+12:02:43 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_association?query=IPA&sort=name&sort=type&type=micro 
+12:02:44 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_city?city=Portland&query=IPA&sort=name&sort=type&type=micro 
+12:02:44 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_state?state=California&query=IPA&sort=name&sort=type&type=micro 
+12:02:45 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/by_postal?postal_code=90210&query=IPA&sort=name&sort=type&type=micro 
+12:02:45 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/65?query=IPA&sort=name&sort=type&type=micro 
+12:02:46 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?sort=name&by_city=San+Diego 
+12:02:46 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?sort=name&by_postal=94103 
+12:02:46 | True  | valid-req   | 200 | [{"id":"b837ff0c-ea8e-40c2-885... | https://api.openbrewerydb.org/breweries/random?sort=name&by_postal=94103 
+12:02:47 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/state/california?sort=name&by_postal=94103 
+12:02:48 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/city/san_diego?sort=name&by_postal=94103 
+12:02:48 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/type/micro?sort=name&by_postal=94103 
+12:02:49 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/name/stone_brewing?sort=name&by_postal=94103 
+12:02:49 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/postal/90210?sort=name&by_postal=94103 
+12:02:50 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&by_postal=94103 
+12:02:51 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/city/portland?sort=name&by_postal=94103 
+12:02:51 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/state/texas?sort=name&by_postal=94103 
+12:02:51 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&by_postal=94103 
+12:02:52 | True  | valid-req   | 200 | [{"id":"448fb5bd-505b-40a0-ab8... | https://api.openbrewerydb.org/breweries/random?by_state=California&sort=name&by_postal=94103 
+12:02:52 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/state/california?per_page=10&sort=name&by_postal=94103 
+12:02:53 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/74?sort=name&by_postal=94103 
+12:02:53 | True  | valid-req   | 200 | [{"id":"21ba3bb4-b9ec-47c9-8e9... | https://api.openbrewerydb.org/breweries?query=IPA&sort=name&sort=type&phone=1234567890 
+12:02:54 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search?query=IPA&sort=name&sort=type&phone=1234567890 
+12:02:55 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/regions?query=IPA&sort=name&sort=type&phone=1234567890 
+12:02:55 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/brewery_types?query=IPA&sort=name&sort=type&phone=1234567890 
+12:02:56 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/cities?query=IPA&sort=name&sort=type&phone=1234567890 
+12:02:57 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/states?query=IPA&sort=name&sort=type&phone=1234567890 
+12:02:57 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search/geo?query=IPA&sort=name&sort=type&phone=1234567890 
+12:02:58 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search/autocomplete?query=IPA&sort=name&sort=type&phone=1234567890 
+12:02:58 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search/random?query=IPA&sort=name&sort=type&phone=1234567890 
+12:02:59 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search/advanced?query=IPA&sort=name&sort=type&phone=1234567890 
+12:02:59 | True  | valid-req   | 200 | [{"id":"50da8137-1da4-4939-932... | https://api.openbrewerydb.org/breweries?by_state=California&query=IPA&sort=name&sort=type&phone=1234567890 
+12:03:00 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search?query=ipa&query=IPA&sort=name&sort=type&phone=1234567890 
+12:03:00 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/regions?per_page=10&query=IPA&sort=name&sort=type&phone=1234567890 
+12:03:01 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/50?query=IPA&sort=name&sort=type&phone=1234567890 
+12:03:06 | True  | valid-req   | 200 | [{"id":"6eb31b02-b69d-4c55-9e5... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_state=California 
+12:03:07 | True  | valid-req   | 200 | [{"id":"27361067-b6df-4298-8d4... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_type=micro 
+12:03:07 | True  | valid-req   | 200 | [{"id":"31ea7b52-41bb-42de-928... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_postal=97209 
+12:03:08 | True  | valid-req   | 200 | [{"id":"f026c03d-a77b-4af5-8b8... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_phone=1234567890 
+12:03:08 | True  | valid-req   | 200 | [{"id":"e99f22dd-9f82-4a46-966... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_tag=dog-friendly 
+12:03:08 | True  | valid-req   | 200 | [{"id":"2533ff4b-6bf8-4219-88c... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_tag=pet-friendly 
+12:03:09 | True  | valid-req   | 200 | [{"id":"89be9447-b3be-42a4-ad1... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_tag=outdoor-seating 
+12:03:09 | True  | valid-req   | 200 | [{"id":"5caa5486-f355-4e8a-b7c... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_tag=food-truck 
+12:03:10 | True  | valid-req   | 200 | [{"id":"7570bfc2-7a5e-444e-bbb... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_tag=gluten-free-options 
+12:03:10 | True  | valid-req   | 200 | [{"id":"dc6da585-1369-4b60-b00... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&by_city=Portland&by_tag=brewery-tours 
+12:03:11 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type 
+12:03:11 | True  | valid-req   | 200 | [{"id":"9eae20d8-c073-4f43-b3a... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&state=California 
+12:03:12 | True  | valid-req   | 200 | [{"id":"0c325218-d9f7-47c5-830... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&city=San+Diego 
+12:03:12 | True  | valid-req   | 200 | [{"id":"2b08803c-7d1c-4eb9-bb7... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&type=micro 
+12:03:13 | True  | valid-req   | 200 | [{"id":"e18fd074-fb35-422b-85b... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&per_page=50 
+12:03:13 | True  | valid-req   | 200 | [{"id":"44892f34-eb78-4fc3-ace... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&page=2 
+12:03:13 | True  | valid-req   | 200 | [{"id":"48c4fc12-7c05-4a6a-877... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&name=Ballast+Point+Brewing+Co 
+12:03:14 | True  | valid-req   | 200 | [{"id":"267e407e-db63-4026-846... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&postal=92101 
+12:03:14 | True  | valid-req   | 200 | [{"id":"7bf1aca7-78cb-4592-95b... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&since=2015 
+12:03:15 | True  | valid-req   | 200 | [{"id":"77ff798d-2961-4062-8c4... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&phone=555-555-5555 
+12:03:15 | True  | valid-req   | 200 | [{"id":"ab31aeb1-b596-461a-85d... | https://api.openbrewerydb.org/breweries/random?sort=name&by_name=Stone&website=https: 
+12:03:16 | True  | valid-req   | 200 | [{"id":"86590a44-6260-4fc2-a71... | https://api.openbrewerydb.org/breweries/random?by_state=California 
+12:03:16 | True  | valid-req   | 200 | [{"id":"32e48cef-1c43-4445-bba... | https://api.openbrewerydb.org/breweries/random?by_city=San+Diego 
+12:03:17 | True  | valid-req   | 200 | [{"id":"71e0c498-d10f-4229-a71... | https://api.openbrewerydb.org/breweries/random?by_name=Stone+Brewing 
+12:03:17 | True  | valid-req   | 200 | [{"id":"0ed75909-c4d0-4c3f-863... | https://api.openbrewerydb.org/breweries/random?by_type=micro 
+12:03:18 | True  | valid-req   | 200 | [{"id":"43e3961c-245d-448b-974... | https://api.openbrewerydb.org/breweries/random?by_tag=dog-friendly 
+12:03:18 | True  | valid-req   | 200 | [{"id":"a0cb0659-7da0-4ad1-92b... | https://api.openbrewerydb.org/breweries/random?per_page=25 
+12:03:18 | True  | valid-req   | 200 | [{"id":"a3a1eac7-b858-4bdd-81a... | https://api.openbrewerydb.org/breweries/random?sort=type,-name 
+12:03:19 | True  | valid-req   | 200 | [{"id":"8e778ec9-3331-41b5-a22... | https://api.openbrewerydb.org/breweries/random?by_postal=92101 
+12:03:19 | True  | valid-req   | 200 | [{"id":"8c10201d-d42a-4573-938... | https://api.openbrewerydb.org/breweries/random?by_district=Midwest 
+12:03:20 | True  | valid-req   | 200 | [{"id":"bff7304d-177d-44ed-bbb... | https://api.openbrewerydb.org/breweries/random?by_country=United+States 
+12:03:24 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries 
+12:03:24 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_state=California 
+12:03:24 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_city=San_Diego 
+12:03:25 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?by_type=micro 
+12:03:25 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?per_page=50 
+12:03:25 | True  | valid-req   | 200 | [{"id":"9c5a66c8-cc13-416f-a5d... | https://api.openbrewerydb.org/breweries?by_state=Texas&by_city=Austin&per_page=10 
+12:03:26 | True  | valid-req   | 200 | [{"id":"0759476d-8fed-46cc-abe... | https://api.openbrewerydb.org/breweries/search?query=dog 
+12:03:26 | True  | valid-req   | 200 | [{"id":"66883061-9c0c-47b2-b6d... | https://api.openbrewerydb.org/breweries/random 
+12:03:26 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/123 
+12:03:27 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/123/events 
+12:03:27 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/456/beers 
+12:03:28 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/789/employees?role=brewer 
+12:03:28 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/invalidRoute/?invalidParam=invalidValue 
+12:03:36 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/name?by_state=colorado&city=Portland 
+12:03:36 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/type?by_state=colorado&city=Portland 
+12:03:37 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/state?by_state=colorado&city=Portland 
+12:03:37 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/city?by_state=colorado&city=Portland 
+12:03:38 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/postal_code?by_state=colorado&city=Portland 
+12:03:38 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/phone?by_state=colorado&city=Portland 
+12:03:38 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/website_url?by_state=colorado&city=Portland 
+12:03:39 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/updated_at?by_state=colorado&city=Portland 
+12:03:39 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/country?by_state=colorado&city=Portland 
+12:03:40 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/longitude?by_state=colorado&city=Portland 
+12:03:40 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/latitude?by_state=colorado&city=Portland 
+12:03:41 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/name?state=California&by_state=colorado&city=Portland 
+12:03:42 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/type?by_state=California&by_state=colorado&city=Portland 
+12:03:42 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/state?state=California&by_state=colorado&city=Portland 
+12:03:43 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/random/9?by_state=colorado&city=Portland 
+12:03:43 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?query=IPA&by_website=example.com 
+12:03:44 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&sort=name&sort=type 
+12:03:44 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/name?query=IPA&sort=name&sort=type 
+12:03:45 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/city?query=IPA&sort=name&sort=type 
+12:03:45 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/state?query=IPA&sort=name&sort=type 
+12:03:46 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/postal_code?query=IPA&sort=name&sort=type 
+12:03:46 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/country?query=IPA&sort=name&sort=type 
+12:03:47 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/type?query=IPA&sort=name&sort=type 
+12:03:47 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/tag?query=IPA&sort=name&sort=type 
+12:03:48 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/status?query=IPA&sort=name&sort=type 
+12:03:48 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/updated_at?query=IPA&sort=name&sort=type 
+12:03:49 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&query=IPA&sort=name&sort=type 
+12:03:49 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/name?query=dogfish&query=IPA&sort=name&sort=type 
+12:03:50 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/city?city=san_diego&query=IPA&sort=name&sort=type 
+12:03:50 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/29?query=IPA&sort=name&sort=type 
+12:03:51 | True  | valid-req   | 200 | [{"id":"7d69186e-193b-47cd-84d... | https://api.openbrewerydb.org/breweries?by_state=California&sort=name&by_postal=94103 
+12:03:51 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search?by_state=California&sort=name&by_postal=94103 
+12:03:52 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/regions?by_state=California&sort=name&by_postal=94103 
+12:03:52 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/styles?by_state=California&sort=name&by_postal=94103 
+12:03:53 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/cities?by_state=California&sort=name&by_postal=94103 
+12:03:53 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/categories?by_state=California&sort=name&by_postal=94103 
+12:03:54 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/features?by_state=California&sort=name&by_postal=94103 
+12:03:54 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/events?by_state=California&sort=name&by_postal=94103 
+12:03:55 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/organizations?by_state=California&sort=name&by_postal=94103 
+12:03:55 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/locations?by_state=California&sort=name&by_postal=94103 
+12:03:56 | True  | valid-req   | 200 | [{"id":"7d69186e-193b-47cd-84d... | https://api.openbrewerydb.org/breweries?by_state=Colorado&by_state=California&sort=name&by_postal=94103 
+12:03:56 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search?query=IPA&by_state=California&sort=name&by_postal=94103 
+12:03:57 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/regions?per_page=10&by_state=California&sort=name&by_postal=94103 
+12:03:57 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/76?by_state=California&sort=name&by_postal=94103 
+12:04:01 | True  | valid-req   | 200 | [{"id":"be4d1a52-2a5c-493b-900... | https://api.openbrewerydb.org/breweries/random?sort=-city&by_state=California 
+12:04:02 | True  | valid-req   | 200 | [{"id":"49c63f60-1304-43cb-839... | https://api.openbrewerydb.org/breweries/random?sort=-city&by_name=Sierra+Nevada+Brewing+Co 
+12:04:02 | True  | valid-req   | 200 | [{"id":"3a255fa1-c05a-42ce-ad9... | https://api.openbrewerydb.org/breweries/random?sort=-city&by_type=micro 
+12:04:03 | True  | valid-req   | 200 | [{"id":"cbdb28e4-633a-4b27-95f... | https://api.openbrewerydb.org/breweries/random?sort=-city&by_tag=dog-friendly 
+12:04:04 | True  | valid-req   | 200 | [{"id":"2b5d9ce9-b8bd-4ece-98a... | https://api.openbrewerydb.org/breweries/random?sort=-city&per_page=25 
+12:04:04 | True  | valid-req   | 200 | [{"id":"bc0330df-68a5-497a-9a1... | https://api.openbrewerydb.org/breweries/random?sort=-city&page=2 
+12:04:05 | True  | valid-req   | 200 | [{"id":"ecd253a8-292a-4233-908... | https://api.openbrewerydb.org/breweries/random?sort=-city&since=2010-01-01 
+12:04:05 | True  | valid-req   | 200 | [{"id":"679836c6-d52e-4f21-a39... | https://api.openbrewerydb.org/breweries/random?sort=-city&before=2020-12-31 
+12:04:06 | True  | valid-req   | 200 | [{"id":"f4daf3e7-c246-47ec-9d2... | https://api.openbrewerydb.org/breweries/random?sort=-city&by_postal=94110 
+12:04:06 | True  | valid-req   | 200 | [{"id":"baecf304-6a51-4e6e-a48... | https://api.openbrewerydb.org/breweries/random?sort=-city&by_dist=10 
+12:04:07 | True  | valid-req   | 200 | [{"id":"e7098631-04bb-4065-bf6... | https://api.openbrewerydb.org/breweries/search?query=IPA&query=IPA&sort=name 
+12:04:07 | True  | valid-req   | 200 | [{"id":"5d702444-3683-463e-abf... | https://api.openbrewerydb.org/breweries/random?sort=name&state=California 
+12:04:08 | True  | valid-req   | 200 | [{"id":"1db452cf-edd7-4eed-bba... | https://api.openbrewerydb.org/breweries/random?sort=name&city=Portland 
+12:04:08 | True  | valid-req   | 200 | [{"id":"b8e7517b-317b-4e4d-9d3... | https://api.openbrewerydb.org/breweries/random?sort=name&type=micro 
+12:04:09 | True  | valid-req   | 200 | [{"id":"21ba3bb4-b9ec-47c9-8e9... | https://api.openbrewerydb.org/breweries/random?sort=name&per_page=50 
+12:04:09 | True  | valid-req   | 200 | [{"id":"6b197016-089f-4fa7-ac7... | https://api.openbrewerydb.org/breweries/random?sort=name&postal_code=97209 
+12:04:10 | True  | valid-req   | 200 | [{"id":"543f9be5-b99f-4537-a64... | https://api.openbrewerydb.org/breweries/random?sort=name&since=2015 
+12:04:10 | True  | valid-req   | 200 | [{"id":"7e73a2ce-ff58-462d-923... | https://api.openbrewerydb.org/breweries/random?sort=name&country=United+States 
+12:04:11 | True  | valid-req   | 200 | [{"id":"8aadd633-ee8b-4550-9b3... | https://api.openbrewerydb.org/breweries/random?sort=name&brewed_before=2010 
+12:04:11 | True  | valid-req   | 200 | [{"id":"bbf8905d-9def-4a8f-b24... | https://api.openbrewerydb.org/breweries/random?sort=name&tags=dog_friendly 
+12:04:12 | True  | valid-req   | 200 | [{"id":"b0d9dfce-11dc-4f85-9b2... | https://api.openbrewerydb.org/breweries/random?sort=name&phone=503-555-1234 
+12:04:12 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?name=example_brewery 
+12:04:13 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?city=san_diego 
+12:04:13 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?state=california 
+12:04:13 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?type=micro 
+12:04:14 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?postal_code=92101 
+12:04:14 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?country=united_states 
+12:04:15 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?tag=brewpub 
+12:04:15 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?established=2010 
+12:04:15 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?updated_since=2021-01-01 
+12:04:16 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?per_page=50 
+12:04:21 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries 
+12:04:21 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_city=san_diego 
+12:04:22 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?by_type=micro 
+12:04:22 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_state=california 
+12:04:23 | True  | valid-req   | 200 | [{"id":"5128df48-79fc-4f0f-8b5... | https://api.openbrewerydb.org/breweries?per_page=50 
+12:04:23 | True  | valid-req   | 200 | [{"id":"4ccad9b9-f9cf-4d21-b6d... | https://api.openbrewerydb.org/breweries?page=2 
+12:04:23 | True  | valid-req   | 200 | [{"id":"03118499-a3d0-4c22-860... | https://api.openbrewerydb.org/breweries?sort=name 
+12:04:24 | True  | valid-req   | 200 | [{"id":"21ba3bb4-b9ec-47c9-8e9... | https://api.openbrewerydb.org/breweries?sort=type 
+12:04:24 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_city=san_diego&by_state=california 
+12:04:25 | True  | valid-req   | 200 | [{"id":"ef970757-fe42-416f-931... | https://api.openbrewerydb.org/breweries?by_city=san_diego&per_page=10 
+12:04:25 | True  | valid-req   | 200 | [{"id":"03118499-a3d0-4c22-860... | https://api.openbrewerydb.org/breweries?by_type=brewpub&sort=name 
+12:04:26 | True  | valid-req   | 200 | [{"id":"ce487823-fb0a-4ad9-b3d... | https://api.openbrewerydb.org/breweries?by_state=california&per_page=20&page=3 
+12:04:26 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/invalidRoute/?invalidParam=invalidValue 
+12:04:34 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/name?city=Portland 
+12:04:35 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/state?city=Portland 
+12:04:35 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/type?city=Portland 
+12:04:36 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/tag?city=Portland 
+12:04:37 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/postal_code?city=Portland 
+12:04:37 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/country?city=Portland 
+12:04:38 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/longitude?city=Portland 
+12:04:38 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/latitude?city=Portland 
+12:04:39 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/phone?city=Portland 
+12:04:39 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/website_url?city=Portland 
+12:04:40 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/name?query=Stone&city=Portland 
+12:04:40 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/state?query=California&city=Portland 
+12:04:41 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/type?query=brewpub&city=Portland 
+12:04:41 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/breweries/search/85?city=Portland 
+12:04:42 | True  | valid-req   | 200 | <!DOCTYPE html><html lang="en"... | https://api.openbrewerydb.org?by_state=Colorado&by_state=California&sort=name&by_postal=94103 
+12:04:43 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?sort=name 
+12:04:43 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/city?sort=name 
+12:04:44 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/state?sort=name 
+12:04:44 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/type?sort=name 
+12:04:45 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/name?sort=name 
+12:04:45 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/brewery_type?sort=name 
+12:04:46 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/postal_code?sort=name 
+12:04:46 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/country?sort=name 
+12:04:47 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/tag?sort=name 
+12:04:47 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/id?sort=name 
+12:04:48 | True  | valid-req   | 200 | [{"id":"23905042-9078-410a-a3f... | https://api.openbrewerydb.org/breweries/search?query=California&sort=name 
+12:04:49 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/city?city=san_diego&sort=name 
+12:04:49 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/state?state=California&sort=name 
+12:04:50 | False | status-code | 404 | {"message":"Couldn't find Brew... | https://api.openbrewerydb.org/breweries/53?sort=name 
+12:04:50 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries?sort=name&by_name=Stone&by_city=Portland&by_type=micro 
+12:04:50 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search?sort=name&by_name=Stone&by_city=Portland&by_type=micro 
+12:04:51 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/regions?sort=name&by_name=Stone&by_city=Portland&by_type=micro 
+12:04:51 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/categories?sort=name&by_name=Stone&by_city=Portland&by_type=micro 
+12:04:52 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/brewery_types?sort=name&by_name=Stone&by_city=Portland&by_type=micro 
+12:04:52 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/cities?sort=name&by_name=Stone&by_city=Portland&by_type=micro 
+12:04:53 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/states?sort=name&by_name=Stone&by_city=Portland&by_type=micro 
+12:04:53 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/countries?sort=name&by_name=Stone&by_city=Portland&by_type=micro 
+12:04:54 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/features?sort=name&by_name=Stone&by_city=Portland&by_type=micro 
+12:04:54 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/events?sort=name&by_name=Stone&by_city=Portland&by_type=micro 
+12:04:55 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries?by_city=san_diego&sort=name&by_name=Stone&by_city=Portland&by_type=micro 
+12:04:55 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/search?query=IPA&sort=name&by_name=Stone&by_city=Portland&by_type=micro 
+12:04:55 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/regions?state=California&sort=name&by_name=Stone&by_city=Portland&by_type=micro 
+12:04:56 | False | status-code | 404 | <text/html; charset=UTF-8 DATA... | https://api.openbrewerydb.org/39?sort=name&by_name=Stone&by_city=Portland&by_type=micro 
+12:05:06 | True  | valid-req   | 200 | [{"id":"0759476d-8fed-46cc-abe... | https://api.openbrewerydb.org/breweries/search?query=dog&by_state=California 
+12:05:06 | True  | valid-req   | 200 | [{"id":"0759476d-8fed-46cc-abe... | https://api.openbrewerydb.org/breweries/search?query=dog&by_city=San+Diego 
+12:05:07 | True  | valid-req   | 200 | [{"id":"0759476d-8fed-46cc-abe... | https://api.openbrewerydb.org/breweries/search?query=dog&by_name=Stone 
+12:05:08 | True  | valid-req   | 200 | [{"id":"0759476d-8fed-46cc-abe... | https://api.openbrewerydb.org/breweries/search?query=dog&by_tag=brewpub 
+12:05:08 | True  | valid-req   | 200 | [{"id":"0759476d-8fed-46cc-abe... | https://api.openbrewerydb.org/breweries/search?query=dog&per_page=50 
+12:05:09 | False | status-code | 429 | {"message":"Concurrent request... | https://api.openbrewerydb.org/breweries/search?query=dog&page=2 
+12:05:39 | True  | valid-req   | 200 | [{"id":"0759476d-8fed-46cc-abe... | https://api.openbrewerydb.org/breweries/search?query=dog&sort=type,-name 
+12:05:40 | True  | valid-req   | 200 | [{"id":"0759476d-8fed-46cc-abe... | https://api.openbrewerydb.org/breweries/search?query=dog&since=2010-01-01 
+12:05:41 | True  | valid-req   | 200 | [{"id":"0759476d-8fed-46cc-abe... | https://api.openbrewerydb.org/breweries/search?query=dog&is_organic=true 
+12:05:41 | True  | valid-req   | 200 | [{"id":"0759476d-8fed-46cc-abe... | https://api.openbrewerydb.org/breweries/search?query=dog&is_closed=false 
+12:05:42 | True  | valid-req   | 200 | [{"id":"93000035-2da2-4b19-9ef... | https://api.openbrewerydb.org/breweries/random?sort=name 
+12:05:42 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?name=Sunshine+Brewery 
+12:05:43 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?city=Portland 
+12:05:43 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?state=California 
+12:05:43 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?type=micro 
+12:05:44 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?postal=97201 
+12:05:45 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?brewed_before=2010 
+12:05:45 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?brewed_after=2015 
+12:05:46 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?sort=city 
+12:05:46 | True  | valid-req   | 200 | []                                | https://api.openbrewerydb.org/breweries/search?per_page=50 
+12:05:47 | False | status-code | 429 | {"message":"Concurrent request... | https://api.openbrewerydb.org/breweries/search?page=2 

@@ -2,16 +2,16 @@
     "openapi": "3.1.0",
     "info": {
         "title": "Open Brewery DB API",
-        "description": "**API Description** - The Open Brewery DB API is a database API that provides information about breweries worldwide.<br><br>**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid API parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.",
+        "description": "**Disclaimer** - This *OpenAPI* specification was generated with the tool *RESTSpecIT*. Even though the tool verifies as much as possible the model responses, mistakes and/or inaccuracies may be found in the generated specification. Thus, data such as the license or the e-mail of the API should still be manually verified. Moreover, invalid query parameters are often ignored in *nearly* valid requests, as RESTful APIs tend to apply the **robustness principle**. This principle states that *programs receiving messages should accept non-conformant input as long as the meaning is clear*. As the validity of such parameters is difficult to verify, some described parameters may result in false positives. Query parameters that were found but did not specify a value have their schema type set to **x-null**.<br><br>**Be Reassured** - The tool *RESTSpecIT* has been thouroughly tested on various APIs. Additionally, the tool is capable of discovering undocumented and valid routes and query parameters of APIs.<br><br>**API Description** - Open Brewery DB API is a free public database of breweries worldwide, providing information such as location, contact details, and beer offerings.",
         "termsOfService": "",
         "contact": {
             "name": "Open Brewery DB API Contact",
             "url": "",
-            "email": "info@openbrewerydb.org"
+            "email": "contact@openbrewerydb.org"
         },
         "license": {
-            "name": "MIT License",
-            "url": "https://opensource.org/licenses/MIT"
+            "name": "CC BY-SA 4.0",
+            "url": "https://creativecommons.org/licenses/by-sa/4.0"
         },
         "version": "v1"
     },
@@ -29,52 +29,121 @@
     "paths": {
         "/breweries": {
             "get": {
-                "description": "No description.",
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
                 "parameters": [
                     {
                         "name": "by_city",
-                        "description": "No description.",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string"
                         },
                         "examples": {
-                            "san_diego": {
-                                "value": "san_diego"
+                            "San+Diego": {
+                                "value": "San+Diego"
+                            },
+                            "San_Diego": {
+                                "value": "San_Diego"
                             },
                             "Portland": {
                                 "value": "Portland"
                             },
-                            "los_angeles": {
-                                "value": "los_angeles"
+                            "san_diego": {
+                                "value": "san_diego"
                             },
-                            "Los+Angeles": {
-                                "value": "Los+Angeles"
+                            "San%20Diego": {
+                                "value": "San%20Diego"
                             },
-                            "portland": {
-                                "value": "portland"
+                            "Boston": {
+                                "value": "Boston"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_state",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "California": {
+                                "value": "California"
                             },
-                            "San+Francisco": {
-                                "value": "San+Francisco"
+                            "Colorado": {
+                                "value": "Colorado"
                             },
-                            "Denver": {
-                                "value": "Denver"
+                            "california": {
+                                "value": "california"
                             },
-                            "Chicago": {
-                                "value": "Chicago"
+                            "North%20Carolina": {
+                                "value": "North%20Carolina"
                             },
-                            "san_francisco": {
-                                "value": "san_francisco"
+                            "Texas": {
+                                "value": "Texas"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_name",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Stone+Brewing+Co": {
+                                "value": "Stone+Brewing+Co"
                             },
-                            "seattle": {
-                                "value": "seattle"
+                            "Stone": {
+                                "value": "Stone"
+                            },
+                            "stone": {
+                                "value": "stone"
+                            },
+                            "Stone%20Brewing%20Co": {
+                                "value": "Stone%20Brewing%20Co"
+                            },
+                            "Sierra%20Nevada%20Brewing%20Co": {
+                                "value": "Sierra%20Nevada%20Brewing%20Co"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_tag",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "dog-friendly": {
+                                "value": "dog-friendly"
+                            },
+                            "patio": {
+                                "value": "patio"
+                            },
+                            "food+truck": {
+                                "value": "food+truck"
+                            },
+                            "organic": {
+                                "value": "organic"
+                            },
+                            "dog_friendly": {
+                                "value": "dog_friendly"
+                            },
+                            "food": {
+                                "value": "food"
                             }
                         }
                     },
                     {
                         "name": "per_page",
-                        "description": "No description.",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -90,38 +159,63 @@
                             },
                             "50": {
                                 "value": "50"
+                            },
+                            "30": {
+                                "value": "30"
                             }
                         }
                     },
                     {
-                        "name": "by_state",
-                        "description": "No description.",
+                        "name": "state",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string"
                         },
                         "examples": {
-                            "california": {
-                                "value": "california"
-                            },
-                            "ohio": {
-                                "value": "ohio"
-                            },
-                            "oregon": {
-                                "value": "oregon"
-                            },
                             "California": {
                                 "value": "California"
-                            },
-                            "texas": {
-                                "value": "texas"
                             }
                         }
                     },
                     {
-                        "name": "by_type",
-                        "description": "No description.",
+                        "name": "city",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Portland": {
+                                "value": "Portland"
+                            },
+                            "San+Diego": {
+                                "value": "San+Diego"
+                            }
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Stone+Brewing": {
+                                "value": "Stone+Brewing"
+                            },
+                            "stone": {
+                                "value": "stone"
+                            }
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -130,94 +224,118 @@
                         "examples": {
                             "micro": {
                                 "value": "micro"
-                            },
-                            "regional": {
-                                "value": "regional"
-                            },
-                            "brewpub": {
-                                "value": "brewpub"
-                            },
-                            "large": {
-                                "value": "large"
-                            },
-                            "planning": {
-                                "value": "planning"
-                            },
-                            "bar": {
-                                "value": "bar"
-                            },
-                            "contract": {
-                                "value": "contract"
                             }
                         }
                     },
                     {
-                        "name": "by_name",
-                        "description": "No description.",
+                        "name": "postal",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "97202": {
+                                "value": "97202"
+                            }
+                        }
+                    },
+                    {
+                        "name": "since",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2010": {
+                                "value": "2010"
+                            }
+                        }
+                    },
+                    {
+                        "name": "phone",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string"
                         },
                         "examples": {
-                            "stone": {
-                                "value": "stone"
-                            },
-                            "example": {
-                                "value": "example"
-                            },
-                            "Stone+Brewing": {
-                                "value": "Stone+Brewing"
-                            },
-                            "Hoppy": {
-                                "value": "Hoppy"
-                            },
-                            "anchor": {
-                                "value": "anchor"
-                            },
-                            "abc_brewery": {
-                                "value": "abc_brewery"
-                            },
-                            "hop": {
-                                "value": "hop"
+                            "555-1234": {
+                                "value": "555-1234"
                             }
                         }
                     },
                     {
-                        "name": "by_tag",
-                        "description": "No description.",
+                        "name": "website",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string"
                         },
                         "examples": {
-                            "dog_friendly": {
-                                "value": "dog_friendly"
-                            },
-                            "patio": {
-                                "value": "patio"
-                            },
-                            "dog-friendly": {
-                                "value": "dog-friendly"
-                            },
+                            "dogfish.com": {
+                                "value": "dogfish.com"
+                            }
+                        }
+                    },
+                    {
+                        "name": "brewed",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
                             "organic": {
                                 "value": "organic"
+                            }
+                        }
+                    },
+                    {
+                        "name": "tag",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "dog-friendly": {
+                                "value": "dog-friendly"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "city,-name": {
+                                "value": "city,-name"
                             },
-                            "craft": {
-                                "value": "craft"
+                            "-name": {
+                                "value": "-name"
                             },
-                            "brewpub": {
-                                "value": "brewpub"
-                            },
-                            "ipa": {
-                                "value": "ipa"
+                            "name": {
+                                "value": "name"
                             }
                         }
                     },
                     {
                         "name": "by_postal",
-                        "description": "No description.",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -227,453 +345,26 @@
                         "examples": {
                             "92101": {
                                 "value": "92101"
-                            },
-                            "12345": {
-                                "value": "12345"
-                            },
-                            "94110": {
-                                "value": "94110"
                             }
                         }
                     },
                     {
-                        "name": "by_country",
-                        "description": "No description.",
+                        "name": "by_dist",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "array"
                         },
                         "examples": {
-                            "United+States": {
-                                "value": "United+States"
-                            },
-                            "united_states": {
-                                "value": "united_states"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_phone",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "555-123-4567": {
-                                "value": "555-123-4567"
-                            },
-                            "1234567890": {
-                                "value": "1234567890"
-                            },
-                            "123-456-7890": {
-                                "value": "123-456-7890"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_website",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "www.example.com": {
-                                "value": "www.example.com"
-                            }
-                        }
-                    },
-                    {
-                        "name": "sort",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "name": {
-                                "value": "name"
-                            },
-                            "-name": {
-                                "value": "-name"
-                            }
-                        }
-                    },
-                    {
-                        "name": "page",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        },
-                        "examples": {
-                            "2": {
-                                "value": "2"
-                            }
-                        }
-                    },
-                    {
-                        "name": "sort_type",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "desc": {
-                                "value": "desc"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_street",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "Main": {
-                                "value": "Main"
-                            },
-                            "Main+Street": {
-                                "value": "Main+Street"
-                            },
-                            "main_street": {
-                                "value": "main_street"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_brewery_type",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "contract": {
-                                "value": "contract"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_order",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "name": {
-                                "value": "name"
-                            }
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "No description.",
-                        "content": {
-                            "application/json; charset=utf-8": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ResponseSchema_breweries"
-                                },
-                                "example": [
-                                    {
-                                        "id": "ef970757-fe42-416f-931d-722451f1f59c",
-                                        "name": "10 Barrel Brewing Co",
-                                        "brewery_type": "large",
-                                        "address_1": "1501 E St",
-                                        "address_2": null,
-                                        "address_3": null,
-                                        "city": "San Diego",
-                                        "state_province": "California",
-                                        "postal_code": "92101-6618",
-                                        "country": "United States",
-                                        "longitude": "-117.129593",
-                                        "latitude": "32.714813",
-                                        "phone": "6195782311",
-                                        "website_url": "http://10barrel.com",
-                                        "state": "California",
-                                        "street": "1501 E St"
-                                    },
-                                    {
-                                        "id": "5fdcc498-f9df-4fa5-b35d-487a59f0fecc",
-                                        "name": "2Kids Brewing Company",
-                                        "brewery_type": "micro",
-                                        "address_1": "8680 Miralani Dr Ste 123",
-                                        "address_2": null,
-                                        "address_3": null,
-                                        "city": "San Diego",
-                                        "state_province": "California",
-                                        "postal_code": "92126-6391",
-                                        "country": "United States",
-                                        "longitude": "-117.137429",
-                                        "latitude": "32.896584",
-                                        "phone": "8584805437",
-                                        "website_url": "http://www.2kidsBrewing.com",
-                                        "state": "California",
-                                        "street": "8680 Miralani Dr Ste 123"
-                                    },
-                                    {
-                                        "id": "3b0b5b9b-f6d8-49e3-8ebd-0bcef6939bcd",
-                                        "name": "32 North Brewing Co",
-                                        "brewery_type": "closed",
-                                        "address_1": "8655 Production Ave Ste A",
-                                        "address_2": null,
-                                        "address_3": null,
-                                        "city": "San Diego",
-                                        "state_province": "California",
-                                        "postal_code": "92121-2258",
-                                        "country": "United States",
-                                        "longitude": "-117.1649842",
-                                        "latitude": "32.88313237",
-                                        "phone": null,
-                                        "website_url": null,
-                                        "state": "California",
-                                        "street": "8655 Production Ave Ste A"
-                                    },
-                                    {
-                                        "id": "4db32843-26ff-4e73-9e24-1cb874109b24",
-                                        "name": "Abnormal Beer Company",
-                                        "brewery_type": "micro",
-                                        "address_1": "16990 Via Tazon Ste 123",
-                                        "address_2": null,
-                                        "address_3": null,
-                                        "city": "San Diego",
-                                        "state_province": "California",
-                                        "postal_code": "92127-1649",
-                                        "country": "United States",
-                                        "longitude": "-117.08575",
-                                        "latitude": "33.02391",
-                                        "phone": "8586182463",
-                                        "website_url": "http://abnormalbeer.co",
-                                        "state": "California",
-                                        "street": "16990 Via Tazon Ste 123"
-                                    },
-                                    {
-                                        "id": "2fe1e670-d832-4ba5-b957-f86a09ee062d",
-                                        "name": "Acoustic Ales Brewing Experiment",
-                                        "brewery_type": "closed",
-                                        "address_1": "1795 Hancock St Ste P1",
-                                        "address_2": null,
-                                        "address_3": null,
-                                        "city": "San Diego",
-                                        "state_province": "California",
-                                        "postal_code": "92110-2006",
-                                        "country": "United States",
-                                        "longitude": "-117.1840465",
-                                        "latitude": "32.74219079",
-                                        "phone": "6192992537",
-                                        "website_url": "http://www.acousticales.com",
-                                        "state": "California",
-                                        "street": "1795 Hancock St Ste P1"
-                                    },
-                                    {
-                                        "id": "f8097dbc-c8e6-4068-9540-5c4bd4ac0bcf",
-                                        "name": "AleSmith Brewing Co",
-                                        "brewery_type": "regional",
-                                        "address_1": "9990 Alesmith Ct",
-                                        "address_2": null,
-                                        "address_3": null,
-                                        "city": "San Diego",
-                                        "state_province": "California",
-                                        "postal_code": "92126-4200",
-                                        "country": "United States",
-                                        "longitude": "-117.1495496",
-                                        "latitude": "32.88858458",
-                                        "phone": "8585499888",
-                                        "website_url": "http://www.alesmith.com",
-                                        "state": "California",
-                                        "street": "9990 Alesmith Ct"
-                                    },
-                                    {
-                                        "id": "68b447a3-c65c-459f-8d02-334757bc6f71",
-                                        "name": "Align Brewing Co",
-                                        "brewery_type": "micro",
-                                        "address_1": "8680 Miralani Dr",
-                                        "address_2": null,
-                                        "address_3": null,
-                                        "city": "San Diego",
-                                        "state_province": "California",
-                                        "postal_code": "92126-6300",
-                                        "country": "United States",
-                                        "longitude": "-117.137429",
-                                        "latitude": "32.896584",
-                                        "phone": null,
-                                        "website_url": "http://www.facebook.com/alignbrewing",
-                                        "state": "California",
-                                        "street": "8680 Miralani Dr"
-                                    },
-                                    {
-                                        "id": "1d7c2273-8031-40d2-bb50-7f518722e291",
-                                        "name": "Alpine Beer Company",
-                                        "brewery_type": "brewpub",
-                                        "address_1": "6550 Mira Mesa Blvd",
-                                        "address_2": null,
-                                        "address_3": null,
-                                        "city": "San Diego",
-                                        "state_province": "California",
-                                        "postal_code": "92121-4100",
-                                        "country": "United States",
-                                        "longitude": "-117.113975",
-                                        "latitude": "32.9167796",
-                                        "phone": "6194452337",
-                                        "website_url": "http://www.alpinebrewing.com",
-                                        "state": "California",
-                                        "street": "6550 Mira Mesa Blvd"
-                                    },
-                                    {
-                                        "id": "728f9750-1c56-48be-9f96-b26d04215958",
-                                        "name": "Alta Brewing Company",
-                                        "brewery_type": "micro",
-                                        "address_1": "1983 Julian Avenue",
-                                        "address_2": null,
-                                        "address_3": null,
-                                        "city": "San Diego",
-                                        "state_province": "California",
-                                        "postal_code": "92113-1125",
-                                        "country": "United States",
-                                        "longitude": "-117.1414712",
-                                        "latitude": "32.7018758",
-                                        "phone": "6197957300",
-                                        "website_url": "http://www.altabrewing.com",
-                                        "state": "California",
-                                        "street": "1983 Julian Avenue"
-                                    },
-                                    {
-                                        "id": "fd0d376e-1c1d-48ce-ba6f-897298c20b85",
-                                        "name": "Amplified Ale Works",
-                                        "brewery_type": "brewpub",
-                                        "address_1": "4150 Mission Blvd Ste 208",
-                                        "address_2": null,
-                                        "address_3": null,
-                                        "city": "San Diego",
-                                        "state_province": "California",
-                                        "postal_code": "92109-5054",
-                                        "country": "United States",
-                                        "longitude": "-117.2511178",
-                                        "latitude": "32.7719729",
-                                        "phone": "6195871400",
-                                        "website_url": "http://www.amplifiedales.com",
-                                        "state": "California",
-                                        "street": "4150 Mission Blvd Ste 208"
-                                    }
-                                ]
-                            }
-                        }
-                    },
-                    "default": {
-                        "description": "Request Error",
-                        "content": {
-                            "text/html; charset=UTF-8": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ErrorSchema"
-                                },
-                                "example": "<text/html; charset=UTF-8 DATA>"
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/breweries/random": {
-            "get": {
-                "description": "No description.",
-                "parameters": [
-                    {
-                        "name": "by_state",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "oregon": {
-                                "value": "oregon"
-                            },
-                            "California": {
-                                "value": "California"
-                            },
-                            "california": {
-                                "value": "california"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_city",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "san_diego": {
-                                "value": "san_diego"
-                            },
-                            "portland": {
-                                "value": "portland"
-                            }
-                        }
-                    },
-                    {
-                        "name": "per_page",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        },
-                        "examples": {
-                            "20": {
-                                "value": "20"
-                            },
-                            "25": {
-                                "value": "25"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_name",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "brewery_name": {
-                                "value": "brewery_name"
-                            },
-                            "brewery": {
-                                "value": "brewery"
-                            },
-                            "hop": {
-                                "value": "hop"
-                            },
-                            "hopworks": {
-                                "value": "hopworks"
+                            "37.7749,-122.4194": {
+                                "value": "37.7749,-122.4194"
                             }
                         }
                     },
                     {
                         "name": "by_type",
-                        "description": "No description.",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -682,46 +373,24 @@
                         "examples": {
                             "micro": {
                                 "value": "micro"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_tag",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "dog_friendly": {
-                                "value": "dog_friendly"
                             },
-                            "dog-friendly": {
-                                "value": "dog-friendly"
-                            }
-                        }
-                    },
-                    {
-                        "name": "sort",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "-name": {
-                                "value": "-name"
+                            "brewpub": {
+                                "value": "brewpub"
                             },
-                            "+name": {
-                                "value": "+name"
+                            "contract": {
+                                "value": "contract"
+                            },
+                            "regional": {
+                                "value": "regional"
+                            },
+                            "large": {
+                                "value": "large"
                             }
                         }
                     },
                     {
                         "name": "page",
-                        "description": "No description.",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -735,126 +404,29 @@
                         }
                     },
                     {
-                        "name": "since",
-                        "description": "No description.",
+                        "name": "street",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string"
                         },
                         "examples": {
-                            "2010-01-01": {
-                                "value": "2010-01-01"
+                            "main": {
+                                "value": "main"
                             }
                         }
-                    },
-                    {
-                        "name": "by_postal",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        },
-                        "examples": {
-                            "90210": {
-                                "value": "90210"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_dist",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        },
-                        "examples": {
-                            "10": {
-                                "value": "10"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_country",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "united_states": {
-                                "value": "united_states"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_phone",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "555-123-4567": {
-                                "value": "555-123-4567"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_street",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "x-null"
-                        },
-                        "examples": {}
-                    },
-                    {
-                        "name": "by_website",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "x-null"
-                        },
-                        "examples": {}
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "No description.",
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
                         "content": {
                             "application/json; charset=utf-8": {
                                 "schema": {
-                                    "$ref": "#/components/schemas/ResponseSchema_breweries_random"
+                                    "$ref": "#/components/schemas/ResponseSchema_breweries"
                                 },
-                                "example": [
-                                    {
-                                        "id": "f8d5fa60-f3d6-41b1-8e60-750dc9baf9e4",
-                                        "name": "Catalina Brewing Company",
-                                        "brewery_type": "micro",
-                                        "address_1": "6918 N Camino Martin",
-                                        "address_2": null,
-                                        "address_3": null,
-                                        "city": "Tucson",
-                                        "state_province": "Arizona",
-                                        "postal_code": "85741-2281",
-                                        "country": "United States",
-                                        "longitude": null,
-                                        "latitude": null,
-                                        "phone": "5203293622",
-                                        "website_url": "http://www.catalinabrewingco.com/",
-                                        "state": "Arizona",
-                                        "street": "6918 N Camino Martin"
-                                    }
-                                ]
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
                             }
                         }
                     },
@@ -874,51 +446,11 @@
         },
         "/breweries/search": {
             "get": {
-                "description": "No description.",
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
                 "parameters": [
                     {
-                        "name": "by_state",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "oregon": {
-                                "value": "oregon"
-                            },
-                            "California": {
-                                "value": "California"
-                            },
-                            "california": {
-                                "value": "california"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_city",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "san_diego": {
-                                "value": "san_diego"
-                            },
-                            "San+Francisco": {
-                                "value": "San+Francisco"
-                            },
-                            "seattle": {
-                                "value": "seattle"
-                            }
-                        }
-                    },
-                    {
                         "name": "per_page",
-                        "description": "No description.",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -936,7 +468,7 @@
                     },
                     {
                         "name": "query",
-                        "description": "No description.",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -945,41 +477,84 @@
                         "examples": {
                             "IPA": {
                                 "value": "IPA"
+                            },
+                            "California": {
+                                "value": "California"
                             }
                         }
                     },
                     {
-                        "name": "by_postal",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        },
-                        "examples": {
-                            "94110": {
-                                "value": "94110"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_name",
-                        "description": "No description.",
+                        "name": "name",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string"
                         },
                         "examples": {
-                            "Golden": {
-                                "value": "Golden"
+                            "Stone+Brewing+Co": {
+                                "value": "Stone+Brewing+Co"
+                            },
+                            "stone": {
+                                "value": "stone"
+                            },
+                            "Stone": {
+                                "value": "Stone"
+                            },
+                            "dog": {
+                                "value": "dog"
+                            },
+                            "Stone+Brewing": {
+                                "value": "Stone+Brewing"
+                            },
+                            "example": {
+                                "value": "example"
                             }
                         }
                     },
                     {
-                        "name": "by_type",
-                        "description": "No description.",
+                        "name": "city",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "San+Diego": {
+                                "value": "San+Diego"
+                            },
+                            "san_diego": {
+                                "value": "san_diego"
+                            },
+                            "Portland": {
+                                "value": "Portland"
+                            },
+                            "san+diego": {
+                                "value": "san+diego"
+                            }
+                        }
+                    },
+                    {
+                        "name": "state",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "California": {
+                                "value": "California"
+                            },
+                            "california": {
+                                "value": "california"
+                            }
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -992,8 +567,43 @@
                         }
                     },
                     {
-                        "name": "by_tag",
-                        "description": "No description.",
+                        "name": "postal",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "92101": {
+                                "value": "92101"
+                            }
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "United+States": {
+                                "value": "United+States"
+                            },
+                            "united_states": {
+                                "value": "united_states"
+                            },
+                            "united+states": {
+                                "value": "united+states"
+                            }
+                        }
+                    },
+                    {
+                        "name": "tags",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -1006,37 +616,34 @@
                         }
                     },
                     {
-                        "name": "by_page",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        },
-                        "examples": {
-                            "2": {
-                                "value": "2"
-                            }
-                        }
-                    },
-                    {
-                        "name": "sort",
-                        "description": "No description.",
+                        "name": "phone",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string"
                         },
                         "examples": {
-                            "name": {
-                                "value": "name"
+                            "555-123-4567": {
+                                "value": "555-123-4567"
+                            },
+                            "555-5555": {
+                                "value": "555-5555"
+                            },
+                            "555-1234": {
+                                "value": "555-1234"
+                            },
+                            "1234567890": {
+                                "value": "1234567890"
+                            },
+                            "123-456-7890": {
+                                "value": "123-456-7890"
                             }
                         }
                     },
                     {
-                        "name": "by_phone",
-                        "description": "No description.",
+                        "name": "since",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -1044,21 +651,198 @@
                             "format": "int32"
                         },
                         "examples": {
-                            "1234567890": {
-                                "value": "1234567890"
+                            "2010": {
+                                "value": "2010"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "city": {
+                                "value": "city"
+                            },
+                            "type,-name": {
+                                "value": "type,-name"
+                            },
+                            "name": {
+                                "value": "name"
+                            }
+                        }
+                    },
+                    {
+                        "name": "postal_code",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "92101": {
+                                "value": "92101"
+                            },
+                            "97209": {
+                                "value": "97209"
+                            }
+                        }
+                    },
+                    {
+                        "name": "tag",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "dog-friendly": {
+                                "value": "dog-friendly"
+                            },
+                            "dog_friendly": {
+                                "value": "dog_friendly"
+                            }
+                        }
+                    },
+                    {
+                        "name": "established",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "1996": {
+                                "value": "1996"
+                            },
+                            "2010": {
+                                "value": "2010"
+                            }
+                        }
+                    },
+                    {
+                        "name": "updated_since",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2021-01-01": {
+                                "value": "2021-01-01"
+                            },
+                            "2020-01-01": {
+                                "value": "2020-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "street",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "main": {
+                                "value": "main"
+                            }
+                        }
+                    },
+                    {
+                        "name": "brewed_organic",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "website",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "www.example.com": {
+                                "value": "www.example.com"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_dist",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "array"
+                        },
+                        "examples": {
+                            "37.7749,-122.4194": {
+                                "value": "37.7749,-122.4194"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_state",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "California": {
+                                "value": "California"
+                            }
+                        }
+                    },
+                    {
+                        "name": "brewery_type",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "brewpub": {
+                                "value": "brewpub"
                             }
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "No description.",
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
                         "content": {
                             "application/json; charset=utf-8": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ResponseSchema_breweries_search"
                                 },
-                                "example": []
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
                             }
                         }
                     },
@@ -1078,17 +862,104 @@
         },
         "/breweries/autocomplete": {
             "get": {
-                "description": "No description.",
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
                 "parameters": [
                     {
-                        "name": "by_state",
-                        "description": "No description.",
+                        "name": "per_page",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "50": {
+                                "value": "50"
+                            }
+                        }
+                    },
+                    {
+                        "name": "phone",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string"
                         },
                         "examples": {
+                            "555-1234": {
+                                "value": "555-1234"
+                            },
+                            "123-456-7890": {
+                                "value": "123-456-7890"
+                            }
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example_brewery": {
+                                "value": "example_brewery"
+                            },
+                            "XYZ+Brewery": {
+                                "value": "XYZ+Brewery"
+                            },
+                            "dog": {
+                                "value": "dog"
+                            },
+                            "example": {
+                                "value": "example"
+                            }
+                        }
+                    },
+                    {
+                        "name": "city",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example_city": {
+                                "value": "example_city"
+                            },
+                            "San+Francisco": {
+                                "value": "San+Francisco"
+                            },
+                            "portland": {
+                                "value": "portland"
+                            },
+                            "seattle": {
+                                "value": "seattle"
+                            },
+                            "san_diego": {
+                                "value": "san_diego"
+                            }
+                        }
+                    },
+                    {
+                        "name": "state",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "CA": {
+                                "value": "CA"
+                            },
+                            "California": {
+                                "value": "California"
+                            },
                             "oregon": {
                                 "value": "oregon"
                             },
@@ -1098,66 +969,8 @@
                         }
                     },
                     {
-                        "name": "by_city",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "san_diego": {
-                                "value": "san_diego"
-                            },
-                            "san_francisco": {
-                                "value": "san_francisco"
-                            },
-                            "portland": {
-                                "value": "portland"
-                            }
-                        }
-                    },
-                    {
-                        "name": "per_page",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "integer",
-                            "format": "int32"
-                        },
-                        "examples": {
-                            "20": {
-                                "value": "20"
-                            },
-                            "50": {
-                                "value": "50"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_name",
-                        "description": "No description.",
-                        "in": "query",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "examples": {
-                            "abc": {
-                                "value": "abc"
-                            },
-                            "stone": {
-                                "value": "stone"
-                            },
-                            "example": {
-                                "value": "example"
-                            }
-                        }
-                    },
-                    {
-                        "name": "by_type",
-                        "description": "No description.",
+                        "name": "type",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -1170,8 +983,8 @@
                         }
                     },
                     {
-                        "name": "by_postal",
-                        "description": "No description.",
+                        "name": "postal_code",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -1181,49 +994,46 @@
                         "examples": {
                             "12345": {
                                 "value": "12345"
-                            },
-                            "92101": {
-                                "value": "92101"
-                            },
-                            "97202": {
-                                "value": "97202"
                             }
                         }
                     },
                     {
-                        "name": "by_country",
-                        "description": "No description.",
+                        "name": "street",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string"
                         },
                         "examples": {
-                            "united_states": {
-                                "value": "united_states"
+                            "example_street": {
+                                "value": "example_street"
                             }
                         }
                     },
                     {
-                        "name": "by_tag",
-                        "description": "No description.",
+                        "name": "tag",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string"
                         },
                         "examples": {
-                            "craft": {
-                                "value": "craft"
+                            "brewpub": {
+                                "value": "brewpub"
                             },
-                            "dog-friendly": {
-                                "value": "dog-friendly"
+                            "IPA": {
+                                "value": "IPA"
+                            },
+                            "organic": {
+                                "value": "organic"
                             }
                         }
                     },
                     {
-                        "name": "by_phone",
-                        "description": "No description.",
+                        "name": "established",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -1231,17 +1041,34 @@
                             "format": "int32"
                         },
                         "examples": {
-                            "1234567890": {
-                                "value": "1234567890"
-                            },
-                            "555-123-4567": {
-                                "value": "555-123-4567"
+                            "2010": {
+                                "value": "2010"
                             }
                         }
                     },
                     {
-                        "name": "by_website",
-                        "description": "No description.",
+                        "name": "country",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "US": {
+                                "value": "US"
+                            },
+                            "United+States": {
+                                "value": "United+States"
+                            },
+                            "united_states": {
+                                "value": "united_states"
+                            }
+                        }
+                    },
+                    {
+                        "name": "website_url",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
@@ -1254,43 +1081,366 @@
                         }
                     },
                     {
-                        "name": "by_street",
-                        "description": "No description.",
+                        "name": "postal",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "integer",
+                            "format": "int32"
                         },
                         "examples": {
-                            "main_street": {
-                                "value": "main_street"
+                            "94102": {
+                                "value": "94102"
+                            },
+                            "92101": {
+                                "value": "92101"
                             }
                         }
                     },
                     {
-                        "name": "by_food",
-                        "description": "No description.",
+                        "name": "brewery_type",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
                         "in": "query",
                         "required": false,
                         "schema": {
                             "type": "string"
                         },
                         "examples": {
-                            "vegan": {
-                                "value": "vegan"
+                            "brewpub": {
+                                "value": "brewpub"
+                            }
+                        }
+                    },
+                    {
+                        "name": "updated_since",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "2022-01-01": {
+                                "value": "2022-01-01"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "-name": {
+                                "value": "-name"
+                            },
+                            "name": {
+                                "value": "name"
+                            }
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "3": {
+                                "value": "3"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_state",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "California": {
+                                "value": "California"
+                            }
+                        }
+                    },
+                    {
+                        "name": "query",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Stone": {
+                                "value": "Stone"
+                            }
+                        }
+                    },
+                    {
+                        "name": "since",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2010": {
+                                "value": "2010"
+                            }
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "verified": {
+                                "value": "verified"
                             }
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "No description.",
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
                         "content": {
                             "application/json; charset=utf-8": {
                                 "schema": {
                                     "$ref": "#/components/schemas/ResponseSchema_breweries_autocomplete"
                                 },
-                                "example": []
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Request Error",
+                        "content": {
+                            "text/html; charset=UTF-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorSchema"
+                                },
+                                "example": "<text/html; charset=UTF-8 DATA>"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/breweries/random": {
+            "get": {
+                "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route descriptions.",
+                "parameters": [
+                    {
+                        "name": "by_type",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "brewpub": {
+                                "value": "brewpub"
+                            },
+                            "micro": {
+                                "value": "micro"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_state",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "California": {
+                                "value": "California"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_city",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "San+Diego": {
+                                "value": "San+Diego"
+                            },
+                            "Chicago": {
+                                "value": "Chicago"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_postal",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "92101": {
+                                "value": "92101"
+                            },
+                            "94107": {
+                                "value": "94107"
+                            }
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "50": {
+                                "value": "50"
+                            },
+                            "25": {
+                                "value": "25"
+                            }
+                        }
+                    },
+                    {
+                        "name": "sort",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "name": {
+                                "value": "name"
+                            },
+                            "-name": {
+                                "value": "-name"
+                            },
+                            "city": {
+                                "value": "city"
+                            },
+                            "-city": {
+                                "value": "-city"
+                            },
+                            "state": {
+                                "value": "state"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_name",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "Stone": {
+                                "value": "Stone"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_tag",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "examples": {
+                            "dog-friendly": {
+                                "value": "dog-friendly"
+                            }
+                        }
+                    },
+                    {
+                        "name": "established_since",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "2010": {
+                                "value": "2010"
+                            }
+                        }
+                    },
+                    {
+                        "name": "is_organic",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "true": {
+                                "value": "true"
+                            },
+                            "false": {
+                                "value": "false"
+                            }
+                        }
+                    },
+                    {
+                        "name": "by_dist",
+                        "description": "Set 'parameter-desc' to true in the RESTSpecIT configuration file to generate parameter descriptions.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        },
+                        "examples": {
+                            "10": {
+                                "value": "10"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Set 'route-desc' to true in the RESTSpecIT configuration file to generate route request descriptions.",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ResponseSchema_breweries_random"
+                                },
+                                "example": "Set 'save-response-examples' to true in the RESTSpecIT configuration file to display API response examples."
                             }
                         }
                     },
@@ -1315,9 +1465,9 @@
                 "type": "string"
             },
             "ResponseSchema_breweries": {},
-            "ResponseSchema_breweries_random": {},
             "ResponseSchema_breweries_search": {},
-            "ResponseSchema_breweries_autocomplete": {}
+            "ResponseSchema_breweries_autocomplete": {},
+            "ResponseSchema_breweries_random": {}
         }
     }
 }

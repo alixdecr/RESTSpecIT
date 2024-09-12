@@ -3,21 +3,21 @@
         "total": 6,
         "found": 4,
         "names": {
-            "/breweries/{id}": false,
+            "/breweries/{id}": true,
             "/breweries": true,
             "/breweries/random": true,
             "/breweries/search": true,
-            "/breweries/autocomplete": true,
+            "/breweries/autocomplete": false,
             "/breweries/meta": false
         }
     },
     "doc-parameters": {
         "total": 13,
-        "found": 11,
+        "found": 9,
         "names": {
             "per_page": true,
             "by_city": true,
-            "by_dist": true,
+            "by_dist": false,
             "by_ids": false,
             "by_name": true,
             "by_state": true,
@@ -27,7 +27,7 @@
             "sort": true,
             "size": false,
             "query": true,
-            "by_country": true
+            "by_country": false
         }
     },
     "undoc-routes": {
@@ -43,128 +43,63 @@
         "list": []
     },
     "other-parameters": {
-        "total": 20,
+        "total": 18,
         "list": [
             "by_tag",
-            "by_street",
-            "by_phone",
-            "by_website",
-            "by_order",
-            "by_page",
-            "by_sort",
-            "brewery_type",
-            "postal",
+            "since",
             "name",
             "city",
             "state",
             "type",
-            "tag",
-            "country",
             "postal_code",
-            "website",
+            "brewery_type",
+            "country",
             "phone",
-            "by_tags",
-            "by_per_page"
+            "tag",
+            "website",
+            "established",
+            "status",
+            "postal",
+            "order",
+            "updatedSince",
+            "only"
         ]
     },
     "parameter-values": {
-        "by_state": [
-            "California",
-            "New+York",
-            "Colorado",
-            "Texas",
-            "true"
-        ],
-        "per_page": [
-            "10",
-            "50",
-            "20",
-            "25"
-        ],
-        "query": [
-            "IPA",
-            "ipa",
-            "Seattle",
-            "example"
-        ],
         "by_city": [
+            "san_diego",
             "San+Diego",
+            "true",
+            "SanDiego",
             "Los+Angeles",
-            "San+Francisco",
-            "Seattle",
-            "Chicago",
-            "Portland",
-            "Denver",
-            "Austin",
-            "false"
+            "Portland"
         ],
-        "by_type": [
-            "micro",
-            "contract",
-            "regional",
-            "brewpub",
-            "planning",
-            "bar",
-            "proprietor",
-            "closed"
+        "by_state": [
+            "california",
+            "California",
+            "true",
+            "Colorado"
         ],
         "by_name": [
-            "Stone",
-            "Golden+State+Brewery",
-            "Pacific+Brewing",
-            "Golden+Road+Brewing",
-            "ABC+Brewery",
+            "stone",
+            "lagunitas",
             "Stone+Brewing",
-            "example",
-            "Anchor+Brewing",
-            "Golden+Gate+Brewing",
-            "Golden",
-            "Hoppy",
-            "Anchor"
-        ],
-        "by_postal": [
-            "92101",
-            "90210",
-            "94107",
-            "90001",
-            "94110",
-            "12345",
-            "94102",
-            "10001"
+            "stone_brewing",
+            "Stone+Brewing+Co",
+            "StoneBrewing",
+            "ballast+point"
         ],
         "by_tag": [
-            "craft",
+            "dog_friendly",
             "dog-friendly",
-            "patio",
             "organic",
-            "outdoor-seating",
-            "food",
-            "live-music",
-            "IPA",
-            "food-service"
+            "brewpub",
+            "micro"
         ],
-        "by_street": [
-            "Main+Street",
-            "123+Main+St"
+        "per_page": [
+            "50"
         ],
-        "by_phone": [
-            "555-1234",
-            "123-456-7890",
-            "000-000-0000",
-            "555-123-4567"
-        ],
-        "by_website": [
-            "www.example.com"
-        ],
-        "by_country": [
-            "United+States"
-        ],
-        "by_order": [
-            "type,name",
-            "name",
-            "city"
-        ],
-        "by_page": [
+        "page": [
             "2"
         ],
         "sort": [
@@ -172,59 +107,86 @@
             "-city",
             "-name",
             "city",
-            "state",
-            "postal_code",
-            "+name"
+            "city,-name",
+            "+name",
+            "-state"
         ],
-        "by_sort": [
-            "name"
+        "by_type": [
+            "micro",
+            "regional"
         ],
-        "brewery_type": [
-            "brewpub"
+        "since": [
+            "2010"
         ],
-        "postal": [
-            "94104"
-        ],
-        "page": [
-            "2"
-        ],
-        "by_dist": [
-            "37.7749,-122.4194"
+        "by_postal": [
+            "92101",
+            "90210",
+            "97202"
         ],
         "name": [
-            "example"
+            "Stone+Brewing+Co",
+            "Stone+Brewing",
+            "dog",
+            "XYZ+Brewery",
+            "Stone"
         ],
         "city": [
-            "some_city",
+            "San+Diego",
+            "san+diego",
             "San+Francisco"
         ],
         "state": [
-            "example_state",
-            "California"
+            "California",
+            "california"
         ],
         "type": [
             "micro"
         ],
-        "tag": [
-            "example_tag"
+        "postal_code": [
+            "92101"
+        ],
+        "brewery_type": [
+            "brewpub"
         ],
         "country": [
-            "example_country"
-        ],
-        "postal_code": [
-            "12345"
-        ],
-        "website": [
-            "example.com"
+            "United+States"
         ],
         "phone": [
+            "555-123-4567",
             "123-456-7890"
         ],
-        "by_tags": [
-            "dog-friendly"
+        "tag": [
+            "dog-friendly",
+            "patio",
+            "organic"
         ],
-        "by_per_page": [
-            "20"
+        "query": [
+            "California",
+            "dog",
+            "IPA"
+        ],
+        "website": [
+            "www.example.com"
+        ],
+        "established": [
+            "2010",
+            "2015"
+        ],
+        "status": [
+            "verified"
+        ],
+        "postal": [
+            "92101",
+            "94107"
+        ],
+        "order": [
+            "desc"
+        ],
+        "updatedSince": [
+            "2021-01-01"
+        ],
+        "only": [
+            "brewpub"
         ]
     }
 }
