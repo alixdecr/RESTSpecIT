@@ -8,7 +8,9 @@ Repository of the tool RESTSpecIT.
 
 ## Installation
 
-To install and use the tool, you can follow the instructions below.
+To install and use the tool, you can follow the instructions below. There are also helpful videos for the tool:
+- Short demonstration: https://youtu.be/OM6Q4Le3kTM
+- Full installation guide: https://youtu.be/jMGHEl0MO2M
 
 ### 1. Clone the Repository
 
