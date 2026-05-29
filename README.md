@@ -9,7 +9,7 @@ Repository of the tool RESTSpecIT.
 
 **Disclaimer 1: Please respect REST API rate limits when not using the tool locally, as lots of requests may be sent to API servers. The developers of the tool are not responsible for potential IP blacklists and/or API bans. The `wait-time-between-requests` configuration parameter may be used when executing the tool on online services.**
 
-**Disclaimer 2: The tool utilizes LLMs for inference purposes. Be wary of (1) exposing your API key, and (2) exceeding your billing plans.**
+**Disclaimer 2: The tool utilizes LLMs for inference purposes. Be wary of (1) exposing your API key, and (2) exceeding your billing plans. However for a typical execution, the tool costs less than $0.01 (with `deepseek-v4-flash`), so it is unlikely.**
 
 ## Installation
 
