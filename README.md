@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/Version-1.0.0-green)
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
-![Supported LLMs](https://img.shields.io/badge/Supported%20LLMs-GPT%%20%7C%20DeepSeek-purple)
+![Supported LLMs](https://img.shields.io/badge/Supported%20LLMs-GPT%20%7C%20DeepSeek-purple)
 
 Repository of the tool RESTSpecIT.
 
