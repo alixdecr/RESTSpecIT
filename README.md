@@ -1,8 +1,9 @@
 # RESTSpecIT: REST API Specification Inference Tool
 
 ![Version](https://img.shields.io/badge/Version-1.0.0-green)
-![Python](https://img.shields.io/badge/Python-3.12-blue)
-![Supported LLMs](https://img.shields.io/badge/Supported%20LLMs-GPT%20%7C%20DeepSeek-purple)
+![Python](https://img.shields.io/badge/Python-v3.12-blue)
+![OAS](https://img.shields.io/badge/OAS-v3.2.0-blue)
+![Supported LLMs](https://img.shields.io/badge/Supported%20LLMs-DeepSeek%20%7C%20GPT-purple)
 
 Repository of the tool RESTSpecIT.
 
