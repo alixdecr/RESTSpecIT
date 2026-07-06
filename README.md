@@ -11,6 +11,22 @@ Repository of the tool RESTSpecIT.
 
 **Disclaimer 2: The tool utilizes LLMs for inference purposes. Be wary of (1) exposing your API key, and (2) exceeding your billing plans. However for a typical tool execution, LLM costs are less than $0.01 (with `deepseek-v4-flash`), so it is unlikely.**
 
+## Citation
+
+If you use this tool in your research or find it useful in your work, please cite our paper:
+
+Decrop, A., Devroey, X., Papadakis, M., Schobbens, PY., and Perrouin, G. 2026. RESTSpecIT: REST API Specification Generation with LLM-assisted Request Mutations. In Proceedings of the IEEE 42nd International Conference on Software Maintenance and Evolution (ICSME 2026).
+
+```bibtex
+@inproceedings{decrop2026restspecit,
+    title={RESTSpecIT: REST API Specification Generation with LLM-assisted Request Mutations},
+    author={Decrop, Alix and Devroey, Xavier and Papadakis, Mike and Schobbens, Pierre-Yves and Perrouin, Gilles},
+    booktitle={Proceedings of the IEEE 42nd International Conference on Software Maintenance and Evolution (ICSME 2026)},
+    year={2026},
+    note={Accepted for publication}
+}
+```
+
 ## Installation
 
 To install and use the tool, you can follow the instructions below. There are also helpful videos for the tool:
